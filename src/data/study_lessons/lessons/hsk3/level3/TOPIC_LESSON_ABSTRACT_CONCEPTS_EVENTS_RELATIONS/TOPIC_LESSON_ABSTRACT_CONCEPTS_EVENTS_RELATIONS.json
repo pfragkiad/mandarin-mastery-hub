@@ -1,0 +1,1386 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-events-culture-influence",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Events, Culture & Influence",
+    "subtitle": "Events, development, relationships, culture, and influence",
+    "description": "Talk about things happening and changing, relationships, culture, daily life, requirements, and influence.",
+    "slug": "events-culture-influence"
+  },
+  "classification": {
+    "primary_topic_id": "abstract-concepts",
+    "topic_ids": [
+      "abstract-concepts"
+    ],
+    "tags": [
+      "culture",
+      "changes",
+      "relationships"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Describe events and growth: 发生, 变化, and 发展.",
+    "Discuss connections and topics: 关系, 关于, 有关, and 文化.",
+    "Talk about life, requirements, and impact: 生活, 要求, 影响, 受, and 受到."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "与": "Characters:与",
+    "世": "Characters:世",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "为": "Characters:为",
+    "主": "Characters:主",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "于": "Characters:于",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "仅": "Characters:仅",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "位": "Characters:位",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "保": "Characters:保",
+    "儿": "Characters:儿",
+    "充": "Characters:充",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "关": "Characters:关",
+    "兴": "Characters:兴",
+    "再": "Characters:再",
+    "几": "Characters:几",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "助": "Characters:助",
+    "化": "Characters:化",
+    "半": "Characters:半",
+    "单": "Characters:单",
+    "历": "Characters:历",
+    "去": "Characters:去",
+    "发": "Characters:发",
+    "受": "Characters:受",
+    "变": "Characters:变",
+    "可": "Characters:可",
+    "史": "Characters:史",
+    "司": "Characters:司",
+    "吃": "Characters:吃",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "响": "Characters:响",
+    "商": "Characters:商",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "境": "Characters:境",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "学": "Characters:学",
+    "实": "Characters:实",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "展": "Characters:展",
+    "工": "Characters:工",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "座": "Characters:座",
+    "开": "Characters:开",
+    "影": "Characters:影",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "惯": "Characters:惯",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "感": "Characters:感",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "手": "Characters:手",
+    "技": "Characters:技",
+    "护": "Characters:护",
+    "择": "Characters:择",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "旅": "Characters:旅",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "更": "Characters:更",
+    "有": "Characters:有",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "求": "Characters:求",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "活": "Characters:活",
+    "游": "Characters:游",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "特": "Characters:特",
+    "环": "Characters:环",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "界": "Characters:界",
+    "留": "Characters:留",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "益": "Characters:益",
+    "目": "Characters:目",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "科": "Characters:科",
+    "章": "Characters:章",
+    "简": "Characters:简",
+    "管": "Characters:管",
+    "系": "Characters:系",
+    "练": "Characters:练",
+    "经": "Characters:经",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "能": "Characters:能",
+    "节": "Characters:节",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "要": "Characters:要",
+    "解": "Characters:解",
+    "认": "Characters:认",
+    "让": "Characters:让",
+    "讲": "Characters:讲",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "赛": "Characters:赛",
+    "起": "Characters:起",
+    "趣": "Characters:趣",
+    "轻": "Characters:轻",
+    "迎": "Characters:迎",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "迟": "Characters:迟",
+    "选": "Characters:选",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "阅": "Characters:阅",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "题": "Characters:题",
+    "食": "Characters:食",
+    "饭": "Characters:饭",
+    "饮": "Characters:饮",
+    "馆": "Characters:馆",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Abstract verbs and nouns for events, cultural topics, requirements, and influence.",
+      "focus": "Use 关于…… to introduce a topic (\"regarding…\"), and 受到 + 影响 (\"be influenced by\")."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0757",
+          "hanzi": "了解",
+          "pinyin": "liǎojiě",
+          "meaning_en": "understand; get to know",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0757-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想了解你。",
+              "pinyin": "wǒ xiǎng liǎojiě nǐ.",
+              "english": "I want to get to know you.",
+              "teaching_note": "Short everyday spoken use of 了解."
+            },
+            {
+              "id": "ex-0757-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他想了解中国文化。",
+              "pinyin": "tā xiǎng liǎojiě Zhōngguó wénhuà.",
+              "english": "He wants to learn about Chinese culture.",
+              "teaching_note": "Simple descriptive or narrative use of 了解."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 757
+            }
+          ]
+        },
+        {
+          "id": "w-0773",
+          "hanzi": "明白",
+          "pinyin": "míngbai",
+          "meaning_en": "understand; clear",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0773-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我明白了！",
+              "pinyin": "wǒ míngbai le!",
+              "english": "I understand!",
+              "teaching_note": "Short everyday spoken use of 明白."
+            },
+            {
+              "id": "ex-0773-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "现在学生们都明白这个问题了。",
+              "pinyin": "xiànzài xuéshēngmen dōu míngbai zhège wèntí le.",
+              "english": "Now the students all understand the question.",
+              "teaching_note": "Simple descriptive or narrative use of 明白."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 773
+            }
+          ]
+        },
+        {
+          "id": "w-0816",
+          "hanzi": "认为",
+          "pinyin": "rènwéi",
+          "meaning_en": "think; believe; consider",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0816-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你认为这个办法怎么样？",
+              "pinyin": "nǐ rènwéi zhège bànfǎ zěnmeyàng?",
+              "english": "What do you think of this method?",
+              "teaching_note": "Short everyday spoken use of 认为."
+            },
+            {
+              "id": "ex-0816-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我认为这个办法很好。",
+              "pinyin": "wǒ rènwéi zhège bànfǎ hěn hǎo.",
+              "english": "I think this method is very good.",
+              "teaching_note": "Simple descriptive or narrative use of 认为."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 816
+            }
+          ]
+        },
+        {
+          "id": "w-0828",
+          "hanzi": "生活",
+          "pinyin": "shēnghuó",
+          "meaning_en": "life; live",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0828-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢这里的生活吗？",
+              "pinyin": "nǐ xǐhuan zhèlǐ de shēnghuó ma?",
+              "english": "Do you like life here?",
+              "teaching_note": "Short everyday spoken use of 生活."
+            },
+            {
+              "id": "ex-0828-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的生活很简单。",
+              "pinyin": "tā de shēnghuó hěn jiǎndān.",
+              "english": "His life is very simple.",
+              "teaching_note": "Simple descriptive or narrative use of 生活."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 828
+            }
+          ]
+        },
+        {
+          "id": "w-0838",
+          "hanzi": "受",
+          "pinyin": "shòu",
+          "meaning_en": "receive; undergo; suffer",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0838-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我受不了这么热！",
+              "pinyin": "wǒ shòu bù le zhème rè!",
+              "english": "I can't stand this heat!",
+              "teaching_note": "Short everyday spoken use of 受."
+            },
+            {
+              "id": "ex-0838-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他受到了老师的帮助。",
+              "pinyin": "tā shòudào le lǎoshī de bāngzhù.",
+              "english": "He received help from the teacher.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 838
+            }
+          ]
+        },
+        {
+          "id": "w-0839",
+          "hanzi": "受到",
+          "pinyin": "shòudào",
+          "meaning_en": "be subjected to; receive",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0839-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我来中国以后，受到了很多人的帮助。",
+              "pinyin": "wǒ lái Zhōngguó yǐhòu, shòudào le hěn duō rén de bāngzhù.",
+              "english": "A lot of people helped me after I came to China.",
+              "teaching_note": "Short everyday spoken use of 受到."
+            },
+            {
+              "id": "ex-0839-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆受到了很多客人的欢迎。",
+              "pinyin": "zhè jiā fànguǎn shòudào le hěn duō kèrén de huānyíng.",
+              "english": "This restaurant was popular with many customers.",
+              "teaching_note": "Simple descriptive or narrative use of 受到."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 839
+            }
+          ]
+        },
+        {
+          "id": "w-0878",
+          "hanzi": "文化",
+          "pinyin": "wénhuà",
+          "meaning_en": "culture",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0878-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你了解中国文化吗？",
+              "pinyin": "nǐ liǎojiě Zhōngguó wénhuà ma?",
+              "english": "Do you know Chinese culture?",
+              "teaching_note": "Short everyday spoken use of 文化."
+            },
+            {
+              "id": "ex-0878-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我很喜欢中国的文化。",
+              "pinyin": "wǒ hěn xǐhuan Zhōngguó de wénhuà.",
+              "english": "I really like Chinese culture.",
+              "teaching_note": "Simple descriptive or narrative use of 文化."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 878
+            }
+          ]
+        },
+        {
+          "id": "w-0914",
+          "hanzi": "选择",
+          "pinyin": "xuǎnzé",
+          "meaning_en": "choose; selection",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0914-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会怎么选择？",
+              "pinyin": "nǐ huì zěnme xuǎnzé?",
+              "english": "How will you choose?",
+              "teaching_note": "Short everyday spoken use of 选择."
+            },
+            {
+              "id": "ex-0914-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他选择坐高铁回家。",
+              "pinyin": "tā xuǎnzé zuò gāotiě huí jiā.",
+              "english": "He chose to take the high-speed train home.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 914
+            }
+          ]
+        },
+        {
+          "id": "w-0920",
+          "hanzi": "要求",
+          "pinyin": "yāoqiú",
+          "meaning_en": "require; demand; request",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts",
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0920-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "老师有什么要求？",
+              "pinyin": "lǎoshī yǒu shénme yāoqiú?",
+              "english": "What does the teacher require?",
+              "teaching_note": "Short everyday spoken use of 要求."
+            },
+            {
+              "id": "ex-0920-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校要求学生上课不要迟到。",
+              "pinyin": "xuéxiào yāoqiú xuéshēng shàngkè bú yào chídào.",
+              "english": "The school requires students not to be late for class.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 920
+            }
+          ]
+        },
+        {
+          "id": "w-0940",
+          "hanzi": "影响",
+          "pinyin": "yǐngxiǎng",
+          "meaning_en": "influence; affect; effect",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0940-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "下雨影响比赛吗？",
+              "pinyin": "xià yǔ yǐngxiǎng bǐsài ma?",
+              "english": "Will rain affect the game?",
+              "teaching_note": "Short everyday spoken use of 影响."
+            },
+            {
+              "id": "ex-0940-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "天气不好会影响旅游。",
+              "pinyin": "tiānqì bù hǎo huì yǐngxiǎng lǚyóu.",
+              "english": "Bad weather can affect travel.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 940
+            }
+          ]
+        },
+        {
+          "id": "w-0946",
+          "hanzi": "有关",
+          "pinyin": "yǒuguān",
+          "meaning_en": "related to; concerning",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0946-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件事和我有关吗？",
+              "pinyin": "zhè jiàn shì hé wǒ yǒuguān ma?",
+              "english": "Does this concern me?",
+              "teaching_note": "Short everyday spoken use of 有关."
+            },
+            {
+              "id": "ex-0946-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这本书和中国历史有关。",
+              "pinyin": "zhè běn shū hé Zhōngguó lìshǐ yǒuguān.",
+              "english": "This book is related to Chinese history.",
+              "teaching_note": "Simple descriptive or narrative use of 有关."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 946
+            }
+          ]
+        },
+        {
+          "id": "w-0987",
+          "hanzi": "主要",
+          "pinyin": "zhǔyào",
+          "meaning_en": "main; principal",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0987-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "主要问题是什么？",
+              "pinyin": "zhǔyào wèntí shì shénme?",
+              "english": "What's the main issue?",
+              "teaching_note": "Short everyday spoken use of 主要."
+            },
+            {
+              "id": "ex-0987-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学习汉语的主要方法是多练习。",
+              "pinyin": "xuéxí Hànyǔ de zhǔyào fāngfǎ shì duō liànxí.",
+              "english": "The main way to learn Chinese is to practice a lot.",
+              "teaching_note": "Simple descriptive or narrative use of 主要."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 987
+            }
+          ]
+        },
+        {
+          "id": "w-0079",
+          "hanzi": "很",
+          "pinyin": "hěn",
+          "meaning_en": "very",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions",
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0079-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他很高兴。",
+              "pinyin": "tā hěn gāoxìng.",
+              "english": "He is very happy.",
+              "teaching_note": "很 often functions as a natural degree linker before adjectives, not an emphatic “very.”"
+            },
+            {
+              "id": "ex-0079-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家商店很大。",
+              "pinyin": "zhè jiā shāngdiàn hěn dà.",
+              "english": "This shop is very big.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 很."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 79
+            }
+          ]
+        },
+        {
+          "id": "w-0108",
+          "hanzi": "了",
+          "pinyin": "le",
+          "meaning_en": "completion particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0108-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我吃了一个苹果。",
+              "pinyin": "wǒ chī le yí ge píngguǒ.",
+              "english": "I ate an apple.",
+              "teaching_note": "了 after 吃 marks a completed event, not a past-tense conjugation."
+            },
+            {
+              "id": "ex-0108-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "现在八点半了，学生们已经开始上课了。",
+              "pinyin": "xiànzài bā diǎn bàn le, xuéshengmen yǐjīng kāishǐ shàngkè le.",
+              "english": "It’s eight thirty now, and the students have already started class.",
+              "teaching_note": "Both clause endings mark an update to the situation."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 108
+            }
+          ]
+        },
+        {
+          "id": "w-0222",
+          "hanzi": "我们",
+          "pinyin": "wǒmen",
+          "meaning_en": "we",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0222-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们一起学习。",
+              "pinyin": "wǒmen yìqǐ xuéxí.",
+              "english": "We study together.",
+              "teaching_note": "我们 is “we”; 一起 emphasizes acting as a group."
+            },
+            {
+              "id": "ex-0222-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "去年，我们一起在这个学校学习。",
+              "pinyin": "qùnián, wǒmen yìqǐ zài zhè ge xuéxiào xuéxí.",
+              "english": "Last year, we studied together at this school.",
+              "teaching_note": "The opening time word places this first-person account in the past."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 222
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 了解 (liǎojiě)",
+        "explanation": "了解 (liǎojiě) means “understand; get to know” (verb).",
+        "example_id": "ex-0757-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 明白 (míngbai)",
+        "explanation": "明白 (míngbai) means “understand; clear” (adjective).",
+        "example_id": "ex-0773-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0757-1",
+      "ex-0773-1",
+      "ex-0816-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What often has a big influence on a person’s life according to the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Their reading habits.",
+          "explanation": "The first sentence states 一个人的阅读习惯往往对他的生活有很大的影响."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 关于 and 变化 or 影响.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我看了很多关于环境变化的文章，受了很大的影响。",
+          "explanation": "Use 关于 with 变化 or 影响."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to happen / occur\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "发展",
+              "pinyin": "fāzhǎn",
+              "meaning_en": "develop"
+            },
+            {
+              "id": "b",
+              "hanzi": "发生",
+              "pinyin": "fāshēng",
+              "meaning_en": "happen"
+            },
+            {
+              "id": "c",
+              "hanzi": "影响",
+              "pinyin": "yǐngxiǎng",
+              "meaning_en": "influence"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "发生 means to happen or occur."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"culture\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "生活",
+              "pinyin": "shēnghuó",
+              "meaning_en": "life"
+            },
+            {
+              "id": "b",
+              "hanzi": "文化",
+              "pinyin": "wénhuà",
+              "meaning_en": "culture"
+            },
+            {
+              "id": "c",
+              "hanzi": "关系",
+              "pinyin": "guānxì",
+              "meaning_en": "relationship"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "文化 means culture."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"requirement / demand\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "要求",
+              "pinyin": "yāoqiú",
+              "meaning_en": "require / demand"
+            },
+            {
+              "id": "b",
+              "hanzi": "变化",
+              "pinyin": "biànhuà",
+              "meaning_en": "change"
+            },
+            {
+              "id": "c",
+              "hanzi": "关于",
+              "pinyin": "guānyú",
+              "meaning_en": "regarding"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "要求 means requirement or demand."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Talking About City Changes",
+        "context_en": "Two friends talk about how their hometown has changed and a cultural talk they attended.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "这几年我们城市发生了很大的变化，发展得真快！",
+            "pinyin": "Zhè jǐ nián wǒmen chéngshì fāshēng le hěn dà de biànhuà, fāzhǎn de zhēn kuài!",
+            "english": "In the last few years our city has undergone huge changes—it’s developing so fast!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是啊，科技发展对大家的生活影响特别大。",
+            "pinyin": "Shì a, kējì fāzhǎn duì dàjiā de shēnghuó yǐngxiǎng tèbié dà.",
+            "english": "Yes, technological development has an especially big influence on everyone’s life."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "对了，昨天我听了一个关于中国茶文化的讲座，很有意思。",
+            "pinyin": "Duìle, zuótiān wǒ tīng le yí ge guānyú Zhōngguó chá wénhuà de jiǎngzuò, hěn yǒu yìsi.",
+            "english": "By the way, yesterday I attended a talk about Chinese tea culture—it was very interesting."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我也对这方面很感兴趣，和历史有关的书我都喜欢看。",
+            "pinyin": "Wǒ yě duì zhè fāngmiàn hěn gǎn xìngqù, hé lìshǐ yǒuguān de shū wǒ dōu xǐhuan kàn.",
+            "english": "I’m very interested in that area too; I like reading any books related to history."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Introducing a topic with 关于 / 有关",
+          "explanation_en": "关于 (guānyú) precedes a topic noun (\"about / regarding\"); 有关 (yǒuguān) follows 和 / 与 (\"related to\").",
+          "pattern_hanzi": "关于 + <Topic> + 的 + <Noun>  /  和 + <Topic> + 有关的 + <Noun>",
+          "pattern_pinyin": "guānyú + <Topic> + de + <Noun>  /  hé + <Topic> + yǒuguān de + <Noun>",
+          "pattern_pseudo_translation": "regarding + <Topic> + ’s + <Noun>  /  with + <Topic> + related + <Noun>",
+          "examples": [
+            {
+              "hanzi": "这是一本关于环境保护的书。",
+              "pinyin": "Zhè shì yì běn guānyú huánjìng bǎohù de shū.",
+              "english": "This is a book about environmental protection."
+            },
+            {
+              "hanzi": "老师讲了很多和考试有关的要求。",
+              "pinyin": "Lǎoshī jiǎng le hěn duō hé kǎoshì yǒuguān de yāoqiú.",
+              "english": "The teacher explained many requirements related to the exam."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Receiving influence or welcome with 受到",
+          "explanation_en": "受到 (shòudào) pairs with abstract nouns like 影响 (influence) or 欢迎 (welcome).",
+          "pattern_hanzi": "<Subject> + 受到 + (了) + <Abstract Noun>",
+          "pattern_pinyin": "<Subject> + shòudào + (le) + <Abstract Noun>",
+          "pattern_pseudo_translation": "<Subject> + received + <Abstract Noun>",
+          "examples": [
+            {
+              "hanzi": "他的想法受到了老师的影响。",
+              "pinyin": "Tā de xiǎngfǎ shòudào le lǎoshī de yǐngxiǎng.",
+              "english": "His ideas were influenced by the teacher."
+            },
+            {
+              "hanzi": "这位新歌手受到了年轻人的欢迎。",
+              "pinyin": "Zhè wèi xīn gēshǒu shòudào le niánqīngrén de huānyíng.",
+              "english": "This new singer was welcomed by young people."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about relationships, requirements, and things happening.",
+        "model": {
+          "hanzi": "这件事和我们的学习关系很大。",
+          "pinyin": "Zhè jiàn shì hé wǒmen de xuéxí guānxì hěn dà.",
+          "english": "This matter has a big connection to our studies."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say something interesting happened at school today.",
+            "model_answer": {
+              "hanzi": "今天学校里发生了一件有趣的事。",
+              "pinyin": "Jīntiān xuéxiào lǐ fāshēng le yí jiàn yǒuqù de shì.",
+              "english": "Something interesting happened at school today."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say the company has high requirements for work.",
+            "model_answer": {
+              "hanzi": "公司对工作的要求很高。",
+              "pinyin": "Gōngsī duì gōngzuò de yāoqiú hěn gāo.",
+              "english": "The company has high requirements for work."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say it doesn’t matter (没关系), we can try again.",
+            "model_answer": {
+              "hanzi": "没关系，咱们可以再试一次。",
+              "pinyin": "Méiguānxi, zánmen kěyǐ zài shì yí cì.",
+              "english": "It doesn’t matter; we can try one more time."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "How Reading Changes Life",
+        "paragraphs": [
+          {
+            "hanzi": "一个人的阅读习惯往往对他的生活有很大的影响。多读好书不仅能帮我们了解不同的文化，还能让我们看到世界的发展和变化。",
+            "pinyin": "Yí ge rén de yuèdú xíguàn wǎngwǎng duì tā de shēnghuó yǒu hěn dà de yǐngxiǎng. Duō dú hǎo shū bùjǐn néng bāng wǒmen liǎojiě bù tóng de wénhuà, hái néng ràng wǒmen kàndào shìjiè de fāzhǎn hé biànhuà.",
+            "english": "A person’s reading habits often have a big influence on their life. Reading more good books not only helps us understand different cultures, but also lets us see the world’s development and changes."
+          },
+          {
+            "hanzi": "不管工作要求有多高，每天留一点儿时间看看关于生活或历史的书，都会让人受益。",
+            "pinyin": "Bùguǎn gōngzuò yāoqiú yǒu duō gāo, měitiān liú yìdiǎnr shíjiān kànkan guānyú shēnghuó huò lìshǐ de shū, dōu huì ràng rén shòuyì.",
+            "english": "No matter how high work demands are, setting aside a little time each day to read books about life or history will benefit you."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What two benefits of reading good books are mentioned?",
+            "answer_en": "Understanding different cultures and seeing the world’s development and changes."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What kinds of books does the passage suggest reading each day?",
+            "answer_en": "Books about life or history."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe a change in your city or life using 发生 and 变化.",
+          "model_answer": {
+            "hanzi": "这几年我的生活发生了很大的变化，工作更忙但也更充实了。",
+            "pinyin": "Zhè jǐ nián wǒ de shēnghuó fāshēng le hěn dà de biànhuà, gōngzuò gèng máng dàn yě gèng chōngshí le.",
+            "english": "Over the past few years my life has undergone big changes—work is busier yet more fulfilling."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say what kind of books or culture you like using 关于 or 文化.",
+          "model_answer": {
+            "hanzi": "我特别喜欢看关于中国饮食文化的节目。",
+            "pinyin": "Wǒ tèbié xǐhuan kàn guānyú Zhōngguó yǐnshí wénhuà de jiémù.",
+            "english": "I especially like watching programs about Chinese food culture."
+          }
+        }
+      ],
+      "common_pitfall": "Use 发生 (\"happen / occur\") for events, accidents, or changes (发生了一件事 / 发生了变化), not for people doing things.",
+      "pronunciation_focus": "文化 (wénhuà) moves from rising wén to falling huà; 影响 (yǐngxiǎng) has two third tones, so the first shifts to yíngxiǎng.",
+      "review": {
+        "can_do": [
+          "Talk about events, changes, and development.",
+          "Use 关于 and 和……有关.",
+          "Describe requirements, culture, and influence."
+        ],
+        "entry_ids": [
+          757,
+          773,
+          816,
+          828,
+          838,
+          839,
+          878,
+          914,
+          920,
+          940,
+          946,
+          987
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-events-culture-influence--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Introducing a topic with 关于 / 有关",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-events-culture-influence--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Receiving influence or welcome with 受到",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say something interesting happened at school today.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-events-culture-influence--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the company has high requirements for work.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-events-culture-influence--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say it doesn’t matter (没关系), we can try again.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What two benefits of reading good books are mentioned?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-events-culture-influence--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What kinds of books does the passage suggest reading each day?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe a change in your city or life using 发生 and 变化.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-events-culture-influence--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say what kind of books or culture you like using 关于 or 文化.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-events-culture-influence--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-events-culture-influence--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to happen / occur\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-events-culture-influence--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"culture\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-events-culture-influence--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"requirement / demand\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-events-culture-influence--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-events-culture-influence--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 18
+}

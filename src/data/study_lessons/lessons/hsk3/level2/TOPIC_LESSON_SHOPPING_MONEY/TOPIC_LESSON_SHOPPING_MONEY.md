@@ -150,7 +150,7 @@ How much did you spend buying admission tickets?
 
 - 超市 (chāoshì) — supermarket [HSK entry 19]
 
-- 店 (diàn) — shop [HSK entry 34]
+- 店 (diàn) — shop [HSK entry 39]
 
 - 贵 (guì) — expensive [HSK entry 65]
 

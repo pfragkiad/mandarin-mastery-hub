@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { vocabularyData, sentencePhraseEntries } from './data-contract';
 import { vocabularyFacetOptions, vocabularyKind, words } from './mandarin';
 
-const raw = readFileSync('importer/hsk/hsk3_level5_1.0.6.json');
+const raw = readFileSync('importer/hsk/hsk3_level5_1.0.7.json');
 const source = JSON.parse(raw.toString());
 const level5 = vocabularyData.entries.filter(e => e.hskLevel === 5);
 

@@ -162,13 +162,13 @@ Do not assume 会 (huì), 能 (néng) and 想 (xiǎng) all mean “can”. Choos
 
 - 唱 (chàng) — sing [HSK entry 18]
 
-- 电视 (diànshì) — TV [HSK entry 37]
+- 电视 (diànshì) — TV [HSK entry 36]
 
-- 电影 (diànyǐng) — film [HSK entry 38]
+- 电影 (diànyǐng) — film [HSK entry 37]
 
-- 电影院 (diànyǐngyuàn) — cinema [HSK entry 39]
+- 电影院 (diànyǐngyuàn) — cinema [HSK entry 38]
 
-- 歌 (gē) — song [HSK entry 58]
+- 歌 (gē) — song [HSK entry 59]
 
 - 好玩儿 (hǎowánr) — fun [HSK entry 75]
 

@@ -142,7 +142,7 @@ Do not use the same classifier for all nouns. For a book use 本 (běn), not 件
 
 - 本 (běn) — measure word for books [HSK entry 10]
 
-- 第 (dì) — ordinal prefix [HSK entry 31]
+- 第 (dì) — ordinal prefix [HSK entry 32]
 
 - 个 (gè) — general measure word [HSK entry 60]
 
@@ -154,13 +154,13 @@ Do not use the same classifier for all nouns. For a book use 本 (běn), not 件
 
 - 些 (xiē) — some [HSK entry 239]
 
-- 一半 (yíbàn) — half [HSK entry 258]
+- 一半 (yíbàn) — half [HSK entry 255]
 
-- 一下 (yíxià) — a moment; briefly [HSK entry 259]
+- 一下 (yíxià) — a moment; briefly [HSK entry 257]
 
-- 一点儿 (yìdiǎnr) — a little [HSK entry 261]
+- 一点儿 (yìdiǎnr) — a little [HSK entry 256]
 
-- 一些 (yìxiē) — some [HSK entry 262]
+- 一些 (yìxiē) — some [HSK entry 258]
 
 - 有的 (yǒude) — some [HSK entry 264]
 

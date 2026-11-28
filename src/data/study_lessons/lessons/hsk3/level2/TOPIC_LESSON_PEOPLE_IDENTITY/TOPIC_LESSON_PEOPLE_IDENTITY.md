@@ -154,7 +154,7 @@ Do not confuse 姓 (xìng), a surname, with 姓名 (xìngmíng), a full name; �
 
 - 姓名 (xìngmíng) — full name [HSK entry 465]
 
-- 名字 (míngzi) — name [HSK entry 130]
+- 名字 (míngzi) — name [HSK entry 128]
 
 - 男 (nán) — male [HSK entry 142]
 

@@ -15,11 +15,10 @@ New versioned handoffs preserve `legacy_syllabus_id`, correct the reviewed POS
 issues and retain official citation pinyin separately from recorded pronunciation
 where they differ. Current vocabulary keeps UUIDs and compatible audio.
 
-Canonical lesson packages retain their original version-bound numbers and bytes.
-The shared lesson/reference adapter resolves those exact recorded identities
-against current vocabulary using the explicit legacy mapping; lesson, placement,
-question and progress IDs remain unchanged. Importer validation uses a read-only
-legacy-number view, never a numeric rewrite of the source archives.
+Runtime lessons and curriculum manifests now use current IDs directly; browser
+vocabulary exports no historical numbering fields. Original packages and this
+binding ledger remain offline evidence. See the
+[current app-reference audit](../../../reports/hsk-current-app-references.md).
 
 ## Reproduce
 

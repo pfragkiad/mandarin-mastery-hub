@@ -1,0 +1,1594 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-body-illness-health",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Body, Illness & Staying Healthy",
+    "subtitle": "Body parts, catching a cold, hospital stays, and exercise",
+    "description": "Talk about parts of the body, symptoms like fever or thirst, medical checkups, and staying healthy.",
+    "slug": "body-illness-health"
+  },
+  "classification": {
+    "primary_topic_id": "health-wellbeing",
+    "topic_ids": [
+      "health-wellbeing"
+    ],
+    "tags": [
+      "health",
+      "body",
+      "hospital"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name body parts: 脸, 耳朵, 嘴, 牙, 腿, 脚, and 身高.",
+    "Talk about illness and medical care: 病人, 感冒, 发烧, 渴, 检查, 住院, 出院, and 担心.",
+    "Talk about staying fit with 锻炼 and 健康."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "久": "Characters:久",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "了": "Characters:了",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "住": "Characters:住",
+    "体": "Characters:体",
+    "你": "Characters:你",
+    "保": "Characters:保",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "健": "Characters:健",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "关": "Characters:关",
+    "冒": "Characters:冒",
+    "冬": "Characters:冬",
+    "冷": "Characters:冷",
+    "冻": "Characters:冻",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "别": "Characters:别",
+    "刷": "Characters:刷",
+    "前": "Characters:前",
+    "力": "Characters:力",
+    "动": "Characters:动",
+    "医": "Characters:医",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "及": "Characters:及",
+    "发": "Characters:发",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "和": "Characters:和",
+    "喝": "Characters:喝",
+    "嘴": "Characters:嘴",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "如": "Characters:如",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "家": "Characters:家",
+    "容": "Characters:容",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "常": "Characters:常",
+    "平": "Characters:平",
+    "应": "Characters:应",
+    "康": "Characters:康",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "息": "Characters:息",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "感": "Characters:感",
+    "我": "Characters:我",
+    "才": "Characters:才",
+    "护": "Characters:护",
+    "担": "Characters:担",
+    "拖": "Characters:拖",
+    "持": "Characters:持",
+    "提": "Characters:提",
+    "擦": "Characters:擦",
+    "散": "Characters:散",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "易": "Characters:易",
+    "星": "Characters:星",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "更": "Characters:更",
+    "最": "Characters:最",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "朵": "Characters:朵",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "查": "Characters:查",
+    "样": "Characters:样",
+    "检": "Characters:检",
+    "正": "Characters:正",
+    "步": "Characters:步",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "注": "Characters:注",
+    "洗": "Characters:洗",
+    "渴": "Characters:渴",
+    "点": "Characters:点",
+    "炼": "Characters:炼",
+    "烧": "Characters:烧",
+    "爷": "Characters:爷",
+    "牙": "Characters:牙",
+    "物": "Characters:物",
+    "狗": "Characters:狗",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "疼": "Characters:疼",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "短": "Characters:短",
+    "笑": "Characters:笑",
+    "管": "Characters:管",
+    "米": "Characters:米",
+    "红": "Characters:红",
+    "给": "Characters:给",
+    "耳": "Characters:耳",
+    "能": "Characters:能",
+    "脚": "Characters:脚",
+    "脸": "Characters:脸",
+    "腿": "Characters:腿",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "让": "Characters:让",
+    "该": "Characters:该",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谢": "Characters:谢",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "路": "Characters:路",
+    "身": "Characters:身",
+    "运": "Characters:运",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "醒": "Characters:醒",
+    "重": "Characters:重",
+    "量": "Characters:量",
+    "锻": "Characters:锻",
+    "长": "Characters:长",
+    "问": "Characters:问",
+    "院": "Characters:院",
+    "需": "Characters:需",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "题": "Characters:题",
+    "高": "Characters:高",
+    "齿": "Characters:齿"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Health, body, illness, and fitness vocabulary for doctor visits and daily wellbeing.",
+      "focus": "Use 感冒 for catching a cold, 发烧 for having a fever, and 锻炼身体 for exercising."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0537",
+          "hanzi": "病人",
+          "pinyin": "bìngrén",
+          "meaning_en": "patient; sick person",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0537-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "病人好多了。",
+              "pinyin": "bìngrén hǎoduō le.",
+              "english": "The patient is much better.",
+              "teaching_note": "Short everyday spoken use of 病人."
+            },
+            {
+              "id": "ex-0537-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "医生正在给病人看病。",
+              "pinyin": "yīshēng zhèngzài gěi bìngrén kànbìng.",
+              "english": "The doctor is treating a patient.",
+              "teaching_note": "Simple descriptive or narrative use of 病人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 537
+            }
+          ]
+        },
+        {
+          "id": "w-0564",
+          "hanzi": "出院",
+          "pinyin": "chūyuàn",
+          "meaning_en": "leave hospital; be discharged",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0564-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你什么时候出院？",
+              "pinyin": "nǐ shénme shíhou chūyuàn?",
+              "english": "When will you leave the hospital?",
+              "teaching_note": "Short everyday spoken use of 出院."
+            },
+            {
+              "id": "ex-0564-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "病人今天可以出院了。",
+              "pinyin": "bìngrén jīntiān kěyǐ chūyuàn le.",
+              "english": "The patient can be discharged today.",
+              "teaching_note": "Simple descriptive or narrative use of 出院."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 564
+            }
+          ]
+        },
+        {
+          "id": "w-0579",
+          "hanzi": "担心",
+          "pinyin": "dānxīn",
+          "meaning_en": "worry about",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0579-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别担心我。",
+              "pinyin": "bié dānxīn wǒ.",
+              "english": "Don't worry about me.",
+              "teaching_note": "Short everyday spoken use of 担心."
+            },
+            {
+              "id": "ex-0579-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈很担心孩子的身体。",
+              "pinyin": "māma hěn dānxīn háizi de shēntǐ.",
+              "english": "Mom is very worried about her child's health.",
+              "teaching_note": "Simple descriptive or narrative use of 担心."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 579
+            }
+          ]
+        },
+        {
+          "id": "w-0608",
+          "hanzi": "锻炼",
+          "pinyin": "duànliàn",
+          "meaning_en": "exercise; work out",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0608-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一起去锻炼吧。",
+              "pinyin": "yìqǐ qù duànliàn ba.",
+              "english": "Let's go exercise together.",
+              "teaching_note": "Short everyday spoken use of 锻炼."
+            },
+            {
+              "id": "ex-0608-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爷爷每天早上去公园锻炼。",
+              "pinyin": "yéye měi tiān zǎoshang qù gōngyuán duànliàn.",
+              "english": "Grandpa goes to the park to exercise every morning.",
+              "teaching_note": "Simple descriptive or narrative use of 锻炼."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 608
+            }
+          ]
+        },
+        {
+          "id": "w-0612",
+          "hanzi": "耳朵",
+          "pinyin": "ěrduo",
+          "meaning_en": "ear",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0612-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "耳朵疼吗？",
+              "pinyin": "ěrduo téng ma?",
+              "english": "Do your ears hurt?",
+              "teaching_note": "Short everyday spoken use of 耳朵."
+            },
+            {
+              "id": "ex-0612-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个动物的耳朵很长。",
+              "pinyin": "zhège dòngwù de ěrduo hěn cháng.",
+              "english": "This animal has long ears.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 612
+            }
+          ]
+        },
+        {
+          "id": "w-0615",
+          "hanzi": "发烧",
+          "pinyin": "fāshāo",
+          "meaning_en": "have a fever",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0615-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你发烧了吗？",
+              "pinyin": "nǐ fāshāo le ma?",
+              "english": "Do you have a fever?",
+              "teaching_note": "Short everyday spoken use of 发烧."
+            },
+            {
+              "id": "ex-0615-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子发烧了，需要看医生。",
+              "pinyin": "háizi fāshāo le, xūyào kàn yīshēng.",
+              "english": "The child has a fever and needs to see a doctor.",
+              "teaching_note": "Simple descriptive or narrative use of 发烧."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 615
+            }
+          ]
+        },
+        {
+          "id": "w-0638",
+          "hanzi": "感冒",
+          "pinyin": "gǎnmào",
+          "meaning_en": "catch a cold",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0638-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我感冒了。",
+              "pinyin": "wǒ gǎnmào le.",
+              "english": "I've caught a cold.",
+              "teaching_note": "Short everyday spoken use of 感冒."
+            },
+            {
+              "id": "ex-0638-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妹妹感冒了，在家休息。",
+              "pinyin": "mèimei gǎnmào le, zài jiā xiūxi.",
+              "english": "My younger sister has a cold and is resting at home.",
+              "teaching_note": "Simple descriptive or narrative use of 感冒."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 638
+            }
+          ]
+        },
+        {
+          "id": "w-0698",
+          "hanzi": "检查",
+          "pinyin": "jiǎnchá",
+          "meaning_en": "check; examine",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0698-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "医生给你检查了吗？",
+              "pinyin": "yīshēng gěi nǐ jiǎnchá le ma?",
+              "english": "Did the doctor examine you?",
+              "teaching_note": "Short everyday spoken use of 检查."
+            },
+            {
+              "id": "ex-0698-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "医生正在检查病人的身体。",
+              "pinyin": "yīshēng zhèngzài jiǎnchá bìngrén de shēntǐ.",
+              "english": "The doctor is examining the patient's body.",
+              "teaching_note": "Simple descriptive or narrative use of 检查."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 698
+            }
+          ]
+        },
+        {
+          "id": "w-0702",
+          "hanzi": "健康",
+          "pinyin": "jiànkāng",
+          "meaning_en": "healthy; health",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0702-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "身体健康最重要。",
+              "pinyin": "shēntǐ jiànkāng zuì zhòngyào.",
+              "english": "Health is most important.",
+              "teaching_note": "Short everyday spoken use of 健康."
+            },
+            {
+              "id": "ex-0702-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "锻炼对身体健康很重要。",
+              "pinyin": "duànliàn duì shēntǐ jiànkāng hěn zhòngyào.",
+              "english": "Exercise is important for good health.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 702
+            }
+          ]
+        },
+        {
+          "id": "w-0705",
+          "hanzi": "脚",
+          "pinyin": "jiǎo",
+          "meaning_en": "foot",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0705-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的脚疼。",
+              "pinyin": "wǒ de jiǎo téng.",
+              "english": "My foot hurts.",
+              "teaching_note": "Short everyday spoken use of 脚."
+            },
+            {
+              "id": "ex-0705-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "走路太多，脚会疼。",
+              "pinyin": "zǒulù tài duō, jiǎo huì téng.",
+              "english": "Walking too much can make your feet hurt.",
+              "teaching_note": "Simple descriptive or narrative use of 脚."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 705
+            }
+          ]
+        },
+        {
+          "id": "w-0734",
+          "hanzi": "渴",
+          "pinyin": "kě",
+          "meaning_en": "thirsty",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0734-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我渴了。",
+              "pinyin": "wǒ kě le.",
+              "english": "I'm thirsty.",
+              "teaching_note": "Short everyday spoken use of 渴."
+            },
+            {
+              "id": "ex-0734-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "运动后他非常渴。",
+              "pinyin": "yùndòng hòu tā fēicháng kě.",
+              "english": "He is very thirsty after exercising.",
+              "teaching_note": "Simple descriptive or narrative use of 渴."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 734
+            }
+          ]
+        },
+        {
+          "id": "w-0750",
+          "hanzi": "脸",
+          "pinyin": "liǎn",
+          "meaning_en": "face",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0750-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的脸怎么了？",
+              "pinyin": "nǐ de liǎn zěnme le?",
+              "english": "What's wrong with your face?",
+              "teaching_note": "Short everyday spoken use of 脸."
+            },
+            {
+              "id": "ex-0750-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她洗了脸就去睡觉。",
+              "pinyin": "tā xǐ le liǎn jiù qù shuìjiào.",
+              "english": "She washed her face and went to sleep.",
+              "teaching_note": "Simple descriptive or narrative use of 脸."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 750
+            }
+          ]
+        },
+        {
+          "id": "w-0827",
+          "hanzi": "身高",
+          "pinyin": "shēngāo",
+          "meaning_en": "height (of a person)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0827-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的身高是多少？",
+              "pinyin": "nǐ de shēngāo shì duōshao?",
+              "english": "How tall are you?",
+              "teaching_note": "Short everyday spoken use of 身高."
+            },
+            {
+              "id": "ex-0827-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "医生检查了孩子的身高。",
+              "pinyin": "yīshēng jiǎnchá le háizi de shēngāo.",
+              "english": "The doctor checked the child's height.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 827
+            }
+          ]
+        },
+        {
+          "id": "w-0864",
+          "hanzi": "腿",
+          "pinyin": "tuǐ",
+          "meaning_en": "leg",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0864-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的腿有点疼。",
+              "pinyin": "wǒ de tuǐ yǒudiǎn téng.",
+              "english": "My leg hurts a little.",
+              "teaching_note": "Short everyday spoken use of 腿."
+            },
+            {
+              "id": "ex-0864-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这只小狗的腿很短。",
+              "pinyin": "zhè zhī xiǎogǒu de tuǐ hěn duǎn.",
+              "english": "This little dog has very short legs.",
+              "teaching_note": "Simple descriptive or narrative use of 腿."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 864
+            }
+          ]
+        },
+        {
+          "id": "w-0916",
+          "hanzi": "牙",
+          "pinyin": "yá",
+          "meaning_en": "tooth",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0916-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的牙疼！",
+              "pinyin": "wǒ de yá téng!",
+              "english": "My tooth hurts!",
+              "teaching_note": "Short everyday spoken use of 牙."
+            },
+            {
+              "id": "ex-0916-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子每天都要刷牙。",
+              "pinyin": "háizi měi tiān dōu yào shuā yá.",
+              "english": "The child needs to brush their teeth every day.",
+              "teaching_note": "Simple descriptive or narrative use of 牙."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 916
+            }
+          ]
+        },
+        {
+          "id": "w-0988",
+          "hanzi": "住院",
+          "pinyin": "zhùyuàn",
+          "meaning_en": "be hospitalized",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0988-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他住院了。",
+              "pinyin": "tā zhùyuàn le.",
+              "english": "He's been hospitalized.",
+              "teaching_note": "Short everyday spoken use of 住院."
+            },
+            {
+              "id": "ex-0988-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "病人需要住院三天。",
+              "pinyin": "bìngrén xūyào zhùyuàn sān tiān.",
+              "english": "The patient needs to stay in the hospital for three days.",
+              "teaching_note": "Simple descriptive or narrative use of 住院."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 988
+            }
+          ]
+        },
+        {
+          "id": "w-0995",
+          "hanzi": "嘴",
+          "pinyin": "zuǐ",
+          "meaning_en": "mouth",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0995-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "张开嘴。",
+              "pinyin": "zhāng kāi zuǐ.",
+              "english": "Open your mouth.",
+              "teaching_note": "Short everyday spoken use of 嘴."
+            },
+            {
+              "id": "ex-0995-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他张开嘴笑了。",
+              "pinyin": "tā zhāng kāi zuǐ xiào le.",
+              "english": "He opened his mouth and smiled.",
+              "teaching_note": "Describes a simple physical action using 嘴 (mouth); avoids the out-of-level verb 擦 (to wipe)."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 995
+            }
+          ]
+        },
+        {
+          "id": "w-0012",
+          "hanzi": "病",
+          "pinyin": "bìng",
+          "meaning_en": "illness",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0012-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他生病了。",
+              "pinyin": "tā shēngbìng le.",
+              "english": "He is ill.",
+              "teaching_note": "生病 is the ordinary way to say someone is ill; 有病 can sound judgmental in conversation."
+            },
+            {
+              "id": "ex-0012-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他的病好了。",
+              "pinyin": "tā de bìng hǎo le.",
+              "english": "His illness has gotten better.",
+              "teaching_note": "Short beginner-level description illustrating 病 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 12
+            }
+          ]
+        },
+        {
+          "id": "w-0194",
+          "hanzi": "睡",
+          "pinyin": "shuì",
+          "meaning_en": "sleep",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0194-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我每天睡八个小时。",
+              "pinyin": "wǒ měitiān shuì bā gè xiǎoshí.",
+              "english": "I sleep eight hours every day.",
+              "teaching_note": "每天 expresses habitual frequency and 八个小时 expresses duration of sleep."
+            },
+            {
+              "id": "ex-0194-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妹妹每天晚上九点睡。",
+              "pinyin": "mèimei měitiān wǎnshang jiǔ diǎn shuì.",
+              "english": "My younger sister goes to sleep at nine every night.",
+              "teaching_note": "Daily time or schedule context illustrating 睡 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 194
+            }
+          ]
+        },
+        {
+          "id": "w-0246",
+          "hanzi": "休息",
+          "pinyin": "xiūxi",
+          "meaning_en": "rest",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing",
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0246-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天想休息。",
+              "pinyin": "wǒ jīntiān xiǎng xiūxi.",
+              "english": "I want to rest today.",
+              "teaching_note": "休息 means rest or take a break, not necessarily go to sleep."
+            },
+            {
+              "id": "ex-0246-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生下课后可以休息。",
+              "pinyin": "xuéshēng xiàkè hòu kěyǐ xiūxi.",
+              "english": "The students can rest after class.",
+              "teaching_note": "School or study context showing 休息 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 246
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 病人 (bìngrén)",
+        "explanation": "病人 (bìngrén) means “patient; sick person” (noun).",
+        "example_id": "ex-0537-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 出院 (chūyuàn)",
+        "explanation": "出院 (chūyuàn) means “leave hospital; be discharged” (verb).",
+        "example_id": "ex-0564-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0537-1",
+      "ex-0564-1",
+      "ex-0579-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why does the passage advise against putting off a doctor’s checkup when you have a fever?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "You should get checked promptly so you recover and your family doesn’t worry.",
+          "explanation": "The passage advises 应该及时去医院请医生检查，不要拖着不管."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 感冒 or 发烧 and 锻炼 or 担心.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "他昨天感冒发烧了，妈妈很担心，提醒他好起来以后要多锻炼。",
+          "explanation": "Use illness and wellbeing vocabulary together."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to exercise / work out\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "检查",
+              "pinyin": "jiǎnchá",
+              "meaning_en": "examine"
+            },
+            {
+              "id": "b",
+              "hanzi": "锻炼",
+              "pinyin": "duànliàn",
+              "meaning_en": "exercise"
+            },
+            {
+              "id": "c",
+              "hanzi": "住院",
+              "pinyin": "zhùyuàn",
+              "meaning_en": "be hospitalized"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "锻炼 means to exercise or work out."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"to have a fever\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "发烧",
+              "pinyin": "fāshāo",
+              "meaning_en": "have a fever"
+            },
+            {
+              "id": "b",
+              "hanzi": "感冒",
+              "pinyin": "gǎnmào",
+              "meaning_en": "catch a cold"
+            },
+            {
+              "id": "c",
+              "hanzi": "渴",
+              "pinyin": "kě",
+              "meaning_en": "thirsty"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "发烧 means to have a fever."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which body part is 嘴?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "ear",
+              "pinyin": "ěrduo",
+              "meaning_en": "ear"
+            },
+            {
+              "id": "b",
+              "hanzi": "tooth",
+              "pinyin": "yá",
+              "meaning_en": "tooth"
+            },
+            {
+              "id": "c",
+              "hanzi": "mouth",
+              "pinyin": "zuǐ",
+              "meaning_en": "mouth"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "嘴 means mouth."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Visiting a Friend After the Hospital",
+        "context_en": "Linlin checks on her friend who caught a cold and just left the hospital.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "听说你前几天感冒发烧了，我很担心，现在好点儿了吗？",
+            "pinyin": "Tīngshuō nǐ qián jǐ tiān gǎnmào fāshāo le, wǒ hěn dānxīn, xiànzài hǎo diǎnr le ma?",
+            "english": "I heard you caught a cold and had a fever a few days ago—I was worried! Are you feeling better now?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好多了，昨天做完检查就出院了，没住院太久。",
+            "pinyin": "Hǎo duō le, zuótiān zuò wán jiǎnchá jiù chūyuàn le, méi zhùyuàn tài jiǔ.",
+            "english": "Much better; yesterday after finishing the checkup I was discharged and didn’t stay in the hospital too long."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那就好！多喝水，别觉得渴了才喝。",
+            "pinyin": "Nà jiù hǎo! Duō hē shuǐ, bié juéde kě le cái hē.",
+            "english": "That’s good! Drink plenty of water—don’t wait until you feel thirsty to drink."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "谢谢关心，医生也让我以后多锻炼，保持健康。",
+            "pinyin": "Xièxie guānxīn, yīshēng yě ràng wǒ yǐhòu duō duànliàn, bǎochí jiànkāng.",
+            "english": "Thanks for caring; the doctor also told me to exercise more from now on to stay healthy."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Hospital admission and discharge",
+          "explanation_en": "住院 (zhùyuàn) means to be hospitalized; 出院 (chūyuàn) means to be discharged from the hospital.",
+          "pattern_hanzi": "<Patient> + 住院 / 出院 + 了",
+          "pattern_pinyin": "<Patient> + zhùyuàn / chūyuàn + le",
+          "pattern_pseudo_translation": "<Patient> + entered hospital / left hospital + (change)",
+          "examples": [
+            {
+              "hanzi": "爷爷昨天住院了，我们要去看看他。",
+              "pinyin": "Yéye zuótiān zhùyuàn le, wǒmen yào qù kànkan tā.",
+              "english": "Grandpa was hospitalized yesterday; we need to go visit him."
+            },
+            {
+              "hanzi": "这位病人下星期一就可以出院了。",
+              "pinyin": "Zhè wèi bìngrén xià xīngqīyī jiù kěyǐ chūyuàn le.",
+              "english": "This patient can be discharged next Monday."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Worrying about someone with 担心",
+          "explanation_en": "Place the person or situation you worry about directly after 担心 (dānxīn).",
+          "pattern_hanzi": "<Subject> + 担心 + <Person / Situation>",
+          "pattern_pinyin": "<Subject> + dānxīn + <Person / Situation>",
+          "pattern_pseudo_translation": "<Subject> + worry about + <Person / Situation>",
+          "examples": [
+            {
+              "hanzi": "妈妈很担心孩子的健康。",
+              "pinyin": "Māma hěn dānxīn háizi de jiànkāng.",
+              "english": "Mom worries a lot about her child’s health."
+            },
+            {
+              "hanzi": "别担心，医生检查以后说没什么大问题。",
+              "pinyin": "Bié dānxīn, yīshēng jiǎnchá yǐhòu shuō méi shénme dà wèntí.",
+              "english": "Don’t worry; after checking, the doctor said there’s no big problem."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe body parts, symptoms, and healthy habits.",
+        "model": {
+          "hanzi": "他每天跑步锻炼，腿和脚都很有力量。",
+          "pinyin": "Tā měitiān pǎobù duànliàn, tuǐ hé jiǎo dōu hěn yǒu lìliàng.",
+          "english": "He runs to exercise every day, and both his legs and feet are very strong."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you have a toothache and need a checkup.",
+            "model_answer": {
+              "hanzi": "我的牙有点儿疼，想去医院检查一下。",
+              "pinyin": "Wǒ de yá yǒudiǎnr téng, xiǎng qù yīyuàn jiǎnchá yíxià.",
+              "english": "My tooth hurts a bit; I want to go to the hospital for a checkup."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say his height is one meter eighty.",
+            "model_answer": {
+              "hanzi": "他的身高是一米八。",
+              "pinyin": "Tā de shēngāo shì yì mǐ bā.",
+              "english": "His height is 1.8 meters."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say when you’re cold, your face and ears turn red.",
+            "model_answer": {
+              "hanzi": "外面很冷，她的脸和耳朵都冻红了。",
+              "pinyin": "Wàimiàn hěn lěng, tā de liǎn hé ěrduo dōu dòng hóng le.",
+              "english": "It’s very cold outside; her face and ears both got red from the cold."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Staying Healthy in Winter",
+        "paragraphs": [
+          {
+            "hanzi": "冬天天气冷，人很容易感冒。如果不小心发烧了，应该及时去医院请医生检查，不要拖着不管。",
+            "pinyin": "Dōngtiān tiānqì lěng, rén hěn róngyì gǎnmào. Rúguǒ bù xiǎoxīn fāshāo le, yīnggāi jíshí qù yīyuàn qǐng yīshēng jiǎnchá, búyào tuō zhe bù guǎn.",
+            "english": "Winter weather is cold, so people easily catch a cold. If you accidentally get a fever, you should go to the hospital promptly to have a doctor check you, rather than putting it off."
+          },
+          {
+            "hanzi": "平时也要注意多锻炼，早睡早起，保护好牙齿和身体，这样才能少生病，让家人不用担心。",
+            "pinyin": "Píngshí yě yào zhùyì duō duànliàn, zǎo shuì zǎo qǐ, bǎohù hǎo yáchǐ hé shēntǐ, zhèyàng cái néng shǎo shēngbìng, ràng jiārén búyòng dānxīn.",
+            "english": "Normally you should also pay attention to exercising more, sleeping and waking early, and taking good care of your teeth and body—that way you get sick less and your family won’t need to worry."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What should you do if you get a fever in winter?",
+            "answer_en": "Go to the hospital promptly to have a doctor check you."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What daily habits help you get sick less?",
+            "answer_en": "Exercising more, sleeping and waking early, and taking care of your teeth and body."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say how you stay healthy using 锻炼 and 健康.",
+          "model_answer": {
+            "hanzi": "我每天晚上散步半小时，多锻炼身体才会更健康。",
+            "pinyin": "Wǒ měitiān wǎnshang sànbù bàn xiǎoshí, duō duànliàn shēntǐ cái huì gèng jiànkāng.",
+            "english": "I walk for half an hour every evening; exercising more keeps your body healthier."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe a time you had a cold or went for a checkup.",
+          "model_answer": {
+            "hanzi": "上个月我感冒了，有点儿发烧，去医院检查后很快就好了。",
+            "pinyin": "Shàng ge yuè wǒ gǎnmào le, yǒudiǎnr fāshāo, qù yīyuàn jiǎnchá hòu hěn kuài jiù hǎo le.",
+            "english": "Last month I caught a cold and had a slight fever; after a hospital checkup I recovered quickly."
+          }
+        }
+      ],
+      "common_pitfall": "住院 means \"be admitted to / stay in the hospital\", not \"live near a hospital\". Use 住 + hospital name only if you are an inpatient.",
+      "pronunciation_focus": "耳朵 (ěrduo) has a neutral tone on duo; 锻炼 (duànliàn) has two consecutive fourth tones.",
+      "review": {
+        "can_do": [
+          "Name body parts like 脸, 耳朵, 嘴, 牙, 腿, and 脚.",
+          "Talk about colds, fevers, checkups, and hospital stays.",
+          "Discuss exercise and health with 锻炼 and 健康."
+        ],
+        "entry_ids": [
+          537,
+          564,
+          579,
+          608,
+          612,
+          615,
+          638,
+          698,
+          702,
+          705,
+          734,
+          750,
+          827,
+          864,
+          916,
+          988,
+          995
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-body-illness-health--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Hospital admission and discharge",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-body-illness-health--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Worrying about someone with 担心",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you have a toothache and need a checkup.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-body-illness-health--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say his height is one meter eighty.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-body-illness-health--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say when you’re cold, your face and ears turn red.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What should you do if you get a fever in winter?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-body-illness-health--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What daily habits help you get sick less?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Say how you stay healthy using 锻炼 and 健康.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-body-illness-health--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe a time you had a cold or went for a checkup.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-body-illness-health--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-body-illness-health--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to exercise / work out\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-body-illness-health--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"to have a fever\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-body-illness-health--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which body part is 嘴?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-body-illness-health--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-body-illness-health--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

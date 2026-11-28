@@ -160,7 +160,7 @@ Avoid confusing 小时候 (xiǎoshíhou), meaning when someone was little, with 
 
 - 一会儿 (yíhuìr) — a little while; a moment [HSK entry 471]
 
-- 有时 (yǒushí) — sometimes; at times [HSK entry 480]
+- 有时 (yǒushí) — sometimes; at times [HSK entry 479]
 
 - 周 (zhōu) — week [HSK entry 492]
 

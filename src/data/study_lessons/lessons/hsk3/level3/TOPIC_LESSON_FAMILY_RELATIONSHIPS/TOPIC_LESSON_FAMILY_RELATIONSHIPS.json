@@ -1,0 +1,1597 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-family-guests-neighbors",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Family, Guests & Neighbors",
+    "subtitle": "Relatives, neighbors, guests, and caring for one another",
+    "description": "Talk about extended family, neighbors, visiting as a guest, meeting people, and looking after others.",
+    "slug": "family-guests-neighbors"
+  },
+  "classification": {
+    "primary_topic_id": "family-relationships",
+    "topic_ids": [
+      "family-relationships"
+    ],
+    "tags": [
+      "family",
+      "guests",
+      "relationships"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Refer to relatives and social circles such as 阿姨, 叔叔, 夫妻, 姐妹, and 邻居.",
+    "Talk about visiting, bringing gifts, and meeting with 见面, 做客, and 礼物.",
+    "Express care and encounters using 关心, 照顾, 遇到, and 遇见."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "久": "Characters:久",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "俩": "Characters:俩",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "健": "Characters:健",
+    "像": "Characters:像",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "关": "Characters:关",
+    "兴": "Characters:兴",
+    "几": "Characters:几",
+    "刘": "Characters:刘",
+    "刚": "Characters:刚",
+    "到": "Characters:到",
+    "助": "Characters:助",
+    "包": "Characters:包",
+    "区": "Characters:区",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "叔": "Characters:叔",
+    "司": "Characters:司",
+    "吃": "Characters:吃",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哪": "Characters:哪",
+    "唱": "Characters:唱",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "块": "Characters:块",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "夫": "Characters:夫",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "妻": "Characters:妻",
+    "姐": "Characters:姐",
+    "姨": "Characters:姨",
+    "婚": "Characters:婚",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "居": "Characters:居",
+    "工": "Characters:工",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "平": "Characters:平",
+    "年": "Characters:年",
+    "康": "Characters:康",
+    "张": "Characters:张",
+    "很": "Characters:很",
+    "心": "Characters:心",
+    "忙": "Characters:忙",
+    "总": "Characters:总",
+    "您": "Characters:您",
+    "情": "Characters:情",
+    "感": "Characters:感",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "才": "Characters:才",
+    "打": "Characters:打",
+    "搬": "Characters:搬",
+    "文": "Characters:文",
+    "旁": "Characters:旁",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "春": "Characters:春",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "望": "Characters:望",
+    "末": "Characters:末",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "楼": "Characters:楼",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "正": "Characters:正",
+    "母": "Characters:母",
+    "每": "Characters:每",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "照": "Characters:照",
+    "爱": "Characters:爱",
+    "父": "Characters:父",
+    "爸": "Characters:爸",
+    "物": "Characters:物",
+    "猫": "Characters:猫",
+    "王": "Characters:王",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "礼": "Characters:礼",
+    "站": "Characters:站",
+    "算": "Characters:算",
+    "结": "Characters:结",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "者": "Characters:者",
+    "聊": "Characters:聊",
+    "节": "Characters:节",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "认": "Characters:认",
+    "识": "Characters:识",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "谢": "Characters:谢",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "身": "Characters:身",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "近": "Characters:近",
+    "这": "Characters:这",
+    "送": "Characters:送",
+    "通": "Characters:通",
+    "遇": "Characters:遇",
+    "邻": "Characters:邻",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "阿": "Characters:阿",
+    "附": "Characters:附",
+    "院": "Characters:院",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "顾": "Characters:顾",
+    "饭": "Characters:饭",
+    "饺": "Characters:饺",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Vocabulary for family life, social visits, neighbors, and caring relationships.",
+      "focus": "Use 照顾 for looking after someone and 见面 / 遇见 for meeting up or running into someone."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0501",
+          "hanzi": "阿姨",
+          "pinyin": "āyí",
+          "meaning_en": "auntie; aunt; woman addressed politely",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0501-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "阿姨，您好！",
+              "pinyin": "āyí, nín hǎo!",
+              "english": "Hello, auntie!",
+              "teaching_note": "Short everyday spoken use of 阿姨."
+            },
+            {
+              "id": "ex-0501-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "阿姨今天来我家做客。",
+              "pinyin": "āyí jīntiān lái wǒ jiā zuòkè.",
+              "english": "My aunt is visiting our home today.",
+              "teaching_note": "Simple descriptive or narrative use of 阿姨."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 501
+            }
+          ]
+        },
+        {
+          "id": "w-0503",
+          "hanzi": "爱人",
+          "pinyin": "àiren",
+          "meaning_en": "spouse; husband or wife",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0503-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你爱人在哪儿工作？",
+              "pinyin": "nǐ àiren zài nǎr gōngzuò?",
+              "english": "Where does your spouse work?",
+              "teaching_note": "Short everyday spoken use of 爱人."
+            },
+            {
+              "id": "ex-0503-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的爱人是一名医生。",
+              "pinyin": "tā de àiren shì yì míng yīshēng.",
+              "english": "His spouse is a doctor.",
+              "teaching_note": "Simple descriptive or narrative use of 爱人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 503
+            }
+          ]
+        },
+        {
+          "id": "w-0631",
+          "hanzi": "夫妻",
+          "pinyin": "fūqī",
+          "meaning_en": "married couple; husband and wife",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0631-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他们是夫妻吗？",
+              "pinyin": "tāmen shì fūqī ma?",
+              "english": "Are they a married couple?",
+              "teaching_note": "Short everyday spoken use of 夫妻."
+            },
+            {
+              "id": "ex-0631-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这对夫妻住在中国。",
+              "pinyin": "zhè duì fūqī zhù zài Zhōngguó.",
+              "english": "This married couple lives in China.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 631
+            }
+          ]
+        },
+        {
+          "id": "w-0655",
+          "hanzi": "关心",
+          "pinyin": "guānxīn",
+          "meaning_en": "care about; be concerned for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0655-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "谢谢你关心我。",
+              "pinyin": "xièxie nǐ guānxīn wǒ.",
+              "english": "Thank you for caring about me.",
+              "teaching_note": "Short everyday spoken use of 关心."
+            },
+            {
+              "id": "ex-0655-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师很关心学生的学习。",
+              "pinyin": "lǎoshī hěn guānxīn xuéshēng de xuéxí.",
+              "english": "The teacher cares a lot about the students' learning.",
+              "teaching_note": "Simple descriptive or narrative use of 关心."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 655
+            }
+          ]
+        },
+        {
+          "id": "w-0701",
+          "hanzi": "见面",
+          "pinyin": "jiànmiàn",
+          "meaning_en": "meet; see each other",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0701-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "明天见面吧！",
+              "pinyin": "míngtiān jiànmiàn ba!",
+              "english": "Let's meet tomorrow!",
+              "teaching_note": "Short everyday spoken use of 见面."
+            },
+            {
+              "id": "ex-0701-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们每周末见面一次。",
+              "pinyin": "tāmen měi zhōumò jiànmiàn yí cì.",
+              "english": "They meet once every weekend.",
+              "teaching_note": "Simple descriptive or narrative use of 见面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 701
+            }
+          ]
+        },
+        {
+          "id": "w-0711",
+          "hanzi": "结婚",
+          "pinyin": "jiéhūn",
+          "meaning_en": "marry; get married",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0711-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他们要结婚了！",
+              "pinyin": "tāmen yào jiéhūn le!",
+              "english": "They're getting married!",
+              "teaching_note": "Short everyday spoken use of 结婚."
+            },
+            {
+              "id": "ex-0711-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐明年春天结婚。",
+              "pinyin": "jiějie míngnián chūntiān jiéhūn.",
+              "english": "My older sister will marry next spring.",
+              "teaching_note": "Simple descriptive or narrative use of 结婚."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 711
+            }
+          ]
+        },
+        {
+          "id": "w-0713",
+          "hanzi": "姐妹",
+          "pinyin": "jiěmèi",
+          "meaning_en": "sisters",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0713-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有姐妹吗？",
+              "pinyin": "nǐ yǒu jiěmèi ma?",
+              "english": "Do you have sisters?",
+              "teaching_note": "Short everyday spoken use of 姐妹."
+            },
+            {
+              "id": "ex-0713-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她们姐妹都喜欢唱歌。",
+              "pinyin": "tāmen jiěmèi dōu xǐhuan chàng gē.",
+              "english": "Both sisters enjoy singing.",
+              "teaching_note": "Simple descriptive or narrative use of 姐妹."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 713
+            }
+          ]
+        },
+        {
+          "id": "w-0736",
+          "hanzi": "客人",
+          "pinyin": "kèrén",
+          "meaning_en": "guest; visitor",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0736-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天有客人来。",
+              "pinyin": "jīntiān yǒu kèrén lái.",
+              "english": "We have guests coming today.",
+              "teaching_note": "Short everyday spoken use of 客人."
+            },
+            {
+              "id": "ex-0736-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈正在给客人做饭。",
+              "pinyin": "māma zhèngzài gěi kèrén zuò fàn.",
+              "english": "Mom is cooking for the guests.",
+              "teaching_note": "Simple descriptive or narrative use of 客人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 736
+            }
+          ]
+        },
+        {
+          "id": "w-0748",
+          "hanzi": "礼物",
+          "pinyin": "lǐwù",
+          "meaning_en": "gift; present",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0748-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "送你一个礼物！",
+              "pinyin": "sòng nǐ yí ge lǐwù!",
+              "english": "Here's a present for you!",
+              "teaching_note": "Short everyday spoken use of 礼物."
+            },
+            {
+              "id": "ex-0748-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这是朋友送给我的生日礼物。",
+              "pinyin": "zhè shì péngyou sòng gěi wǒ de shēngrì lǐwù.",
+              "english": "This is a birthday present my friend gave me.",
+              "teaching_note": "Simple descriptive or narrative use of 礼物."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 748
+            }
+          ]
+        },
+        {
+          "id": "w-0758",
+          "hanzi": "邻居",
+          "pinyin": "línjū",
+          "meaning_en": "neighbor",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0758-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你认识邻居吗？",
+              "pinyin": "nǐ rènshi línjū ma?",
+              "english": "Do you know your neighbors?",
+              "teaching_note": "Short everyday spoken use of 邻居."
+            },
+            {
+              "id": "ex-0758-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们的邻居人很好。",
+              "pinyin": "wǒmen de línjū rén hěn hǎo.",
+              "english": "Our neighbors are very nice.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 758
+            }
+          ]
+        },
+        {
+          "id": "w-0826",
+          "hanzi": "身边",
+          "pinyin": "shēnbiān",
+          "meaning_en": "by one's side; beside one",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0826-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在我身边就好。",
+              "pinyin": "nǐ zài wǒ shēnbiān jiù hǎo.",
+              "english": "It's good to have you by my side.",
+              "teaching_note": "Short everyday spoken use of 身边."
+            },
+            {
+              "id": "ex-0826-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子坐在妈妈身边。",
+              "pinyin": "háizi zuò zài māma shēnbiān.",
+              "english": "The child sits beside Mom.",
+              "teaching_note": "Simple descriptive or narrative use of 身边."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 826
+            }
+          ]
+        },
+        {
+          "id": "w-0841",
+          "hanzi": "叔叔",
+          "pinyin": "shūshu",
+          "meaning_en": "uncle; younger male elder",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0841-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "叔叔来了！",
+              "pinyin": "shūshu lái le!",
+              "english": "Uncle is here!",
+              "teaching_note": "Short everyday spoken use of 叔叔."
+            },
+            {
+              "id": "ex-0841-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "叔叔在医院工作。",
+              "pinyin": "shūshu zài yīyuàn gōngzuò.",
+              "english": "My uncle works at the hospital.",
+              "teaching_note": "Simple descriptive or narrative use of 叔叔."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 841
+            }
+          ]
+        },
+        {
+          "id": "w-0926",
+          "hanzi": "一块儿",
+          "pinyin": "yíkuàir",
+          "meaning_en": "together; with one another",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "adverb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0926-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们一块儿走吧！",
+              "pinyin": "wǒmen yíkuàir zǒu ba!",
+              "english": "Let's go together!",
+              "teaching_note": "Short everyday spoken use of 一块儿."
+            },
+            {
+              "id": "ex-0926-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“周末我们一块儿做饭吧。”妈妈说。",
+              "pinyin": "“zhōumò wǒmen yíkuàir zuòfàn ba.” māma shuō.",
+              "english": "“Let’s cook together this weekend,” Mom said.",
+              "teaching_note": "Quoted speech in a written narrative frame."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 926
+            }
+          ]
+        },
+        {
+          "id": "w-0953",
+          "hanzi": "遇到",
+          "pinyin": "yùdào",
+          "meaning_en": "encounter; come across",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0953-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我昨天遇到他了。",
+              "pinyin": "wǒ zuótiān yùdào tā le.",
+              "english": "I ran into him yesterday.",
+              "teaching_note": "Short everyday spoken use of 遇到."
+            },
+            {
+              "id": "ex-0953-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她在车站遇到了一位朋友。",
+              "pinyin": "tā zài chēzhàn yùdào le yí wèi péngyou.",
+              "english": "She met a friend at the station.",
+              "teaching_note": "Simple descriptive or narrative use of 遇到."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 953
+            }
+          ]
+        },
+        {
+          "id": "w-0954",
+          "hanzi": "遇见",
+          "pinyin": "yùjiàn",
+          "meaning_en": "meet unexpectedly; run into",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0954-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "遇见你真高兴！",
+              "pinyin": "yùjiàn nǐ zhēn gāoxìng!",
+              "english": "I'm so happy to see you!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0954-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们在中国遇见了老朋友。",
+              "pinyin": "tāmen zài Zhōngguó yùjiàn le lǎo péngyou.",
+              "english": "They met an old friend in China.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 954
+            }
+          ]
+        },
+        {
+          "id": "w-0971",
+          "hanzi": "照顾",
+          "pinyin": "zhàogù",
+          "meaning_en": "look after; care for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0971-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "帮我照顾猫吧。",
+              "pinyin": "bāng wǒ zhàogù māo ba.",
+              "english": "Please look after my cat!",
+              "teaching_note": "Short everyday spoken use of 照顾."
+            },
+            {
+              "id": "ex-0971-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐在家照顾生病的妈妈。",
+              "pinyin": "jiějie zài jiā zhàogù shēngbìng de māma.",
+              "english": "My older sister is caring for our sick mother at home.",
+              "teaching_note": "Simple descriptive or narrative use of 照顾."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 971
+            }
+          ]
+        },
+        {
+          "id": "w-1000",
+          "hanzi": "做客",
+          "pinyin": "zuòkè",
+          "meaning_en": "visit as guest",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-1000-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "周末来我家做客吧！",
+              "pinyin": "zhōumò lái wǒ jiā zuòkè ba!",
+              "english": "Come visit my home this weekend!",
+              "teaching_note": "Short everyday spoken use of 做客."
+            },
+            {
+              "id": "ex-1000-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "昨天朋友来我们家做客。",
+              "pinyin": "zuótiān péngyou lái wǒmen jiā zuòkè.",
+              "english": "A friend visited our home yesterday.",
+              "teaching_note": "Simple descriptive or narrative use of 做客."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 1000
+            }
+          ]
+        },
+        {
+          "id": "w-0003",
+          "hanzi": "爸爸",
+          "pinyin": "bàba",
+          "meaning_en": "father",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0003-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸是老师。",
+              "pinyin": "wǒ bàba shì lǎoshī.",
+              "english": "My father is a teacher.",
+              "teaching_note": "爸爸 is a familiar kinship noun, and the possessive 的 is often omitted before close family terms."
+            },
+            {
+              "id": "ex-0003-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸在家做饭。",
+              "pinyin": "bàba zài jiā zuò fàn.",
+              "english": "Dad is cooking at home.",
+              "teaching_note": "Family or daily-life description using 爸爸 without advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 3
+            }
+          ]
+        },
+        {
+          "id": "w-0154",
+          "hanzi": "女朋友",
+          "pinyin": "nǚpéngyou",
+          "meaning_en": "girlfriend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0154-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他的女朋友会说中文。",
+              "pinyin": "tā de nǚpéngyou huì shuō Zhōngwén.",
+              "english": "His girlfriend can speak Chinese.",
+              "teaching_note": "女朋友 normally identifies a romantic partner."
+            },
+            {
+              "id": "ex-0154-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他的女朋友也在这家公司工作。",
+              "pinyin": "tā de nǚpéngyou yě zài zhè jiā gōngsī gōngzuò.",
+              "english": "His girlfriend also works at this company.",
+              "teaching_note": "Short beginner-level description illustrating 女朋友 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 154
+            }
+          ]
+        },
+        {
+          "id": "w-0156",
+          "hanzi": "朋友",
+          "pinyin": "péngyou",
+          "meaning_en": "friend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0156-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是我的好朋友。",
+              "pinyin": "tā shì wǒ de hǎo péngyou.",
+              "english": "He is my good friend.",
+              "teaching_note": "好朋友 means a good or close friend, not a romantic partner."
+            },
+            {
+              "id": "ex-0156-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我的朋友住在学校旁边。",
+              "pinyin": "wǒ de péngyou zhù zài xuéxiào pángbiān.",
+              "english": "My friend lives next to the school.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 156
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 阿姨 (āyí)",
+        "explanation": "阿姨 (āyí) means “auntie; aunt; woman addressed politely” (noun).",
+        "example_id": "ex-0501-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 爱人 (àiren)",
+        "explanation": "爱人 (àiren) means “spouse; husband or wife” (noun).",
+        "example_id": "ex-0503-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0501-1",
+      "ex-0503-1",
+      "ex-0631-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why did the neighbors gather at Uncle Wang and Auntie Liu’s home?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "They were invited as guests for Spring Festival.",
+          "explanation": "The second paragraph says they invited nearby neighbors to visit for Spring Festival."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write a sentence using 和……见面 or 遇见 and 一块儿.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "周末我打算和姐妹见面，一块儿去吃饭。",
+          "explanation": "Use 和……见面 for meeting and 一块儿 before the shared activity."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"neighbor\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "邻居",
+              "pinyin": "línjū",
+              "meaning_en": "neighbor"
+            },
+            {
+              "id": "b",
+              "hanzi": "客人",
+              "pinyin": "kèrén",
+              "meaning_en": "guest"
+            },
+            {
+              "id": "c",
+              "hanzi": "夫妻",
+              "pinyin": "fūqī",
+              "meaning_en": "married couple"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "邻居 refers to a neighbor."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to look after / care for\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "结婚",
+              "pinyin": "jiéhūn",
+              "meaning_en": "marry"
+            },
+            {
+              "id": "b",
+              "hanzi": "照顾",
+              "pinyin": "zhàogù",
+              "meaning_en": "look after"
+            },
+            {
+              "id": "c",
+              "hanzi": "做客",
+              "pinyin": "zuòkè",
+              "meaning_en": "visit as a guest"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "照顾 means to look after or take care of someone."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"gift\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "礼物",
+              "pinyin": "lǐwù",
+              "meaning_en": "gift"
+            },
+            {
+              "id": "b",
+              "hanzi": "身边",
+              "pinyin": "shēnbiān",
+              "meaning_en": "by one’s side"
+            },
+            {
+              "id": "c",
+              "hanzi": "爱人",
+              "pinyin": "àiren",
+              "meaning_en": "spouse"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "礼物 means a gift or present."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Visiting the Neighbors",
+        "context_en": "Xiao Lin and her husband prepare a small gift to visit their neighbors.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天晚上咱们去张叔叔和李阿姨家做客吧。",
+            "pinyin": "Jīntiān wǎnshang zánmen qù Zhāng shūshu hé Lǐ āyí jiā zuòkè ba.",
+            "english": "Tonight let’s go visit Uncle Zhang and Auntie Li at their home."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊，他们这对夫妻平时很关心咱们，咱们买点儿礼物带过去。",
+            "pinyin": "Hǎo a, tāmen zhè duì fūqī píngshí hěn guānxīn zánmen, zánmen mǎi diǎnr lǐwù dài guòqù.",
+            "english": "Sure, that couple usually cares a lot about us—let’s buy a small gift to bring over."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "昨天我在楼下遇见李阿姨了，她说她妹妹也要一块儿来。",
+            "pinyin": "Zuótiān wǒ zài lóuxià yùjiàn Lǐ āyí le, tā shuō tā mèimei yě yào yíkuàir lái.",
+            "english": "Yesterday I ran into Auntie Li downstairs, and she said her younger sister is coming too."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "太好了，她们姐妹好久没见面了，咱们早点儿去帮忙照顾客人吧。",
+            "pinyin": "Tài hǎo le, tāmen jiěmèi hǎojiǔ méi jiànmiàn le, zánmen zǎodiǎnr qù bāngmáng zhàogù kèrén ba.",
+            "english": "Great! Those sisters haven’t seen each other in a long time—let’s go early to help look after the guests."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Meeting up or running into someone",
+          "explanation_en": "见面 (jiànmiàn) is a separable verb for meeting up; 遇见 / 遇到 take an object directly for running into someone.",
+          "pattern_hanzi": "<Person A> + 和 + <Person B> + 见面",
+          "pattern_pinyin": "<Person A> + hé + <Person B> + jiànmiàn",
+          "pattern_pseudo_translation": "<Person A> + and + <Person B> + meet",
+          "examples": [
+            {
+              "hanzi": "我明天上午和老朋友见面。",
+              "pinyin": "Wǒ míngtiān shàngwǔ hé lǎo péngyou jiànmiàn.",
+              "english": "I am meeting an old friend tomorrow morning."
+            },
+            {
+              "hanzi": "刚才在公园里，我遇见了我的邻居。",
+              "pinyin": "Gāngcái zài gōngyuán lǐ, wǒ yùjiàn le wǒ de línjū.",
+              "english": "Just now in the park, I ran into my neighbor."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Doing something together with 一块儿",
+          "explanation_en": "Place 一块儿 (yíkuàir) before the verb phrase to mean doing something together (colloquial northern equivalent of 一起).",
+          "pattern_hanzi": "<Subject> + 一块儿 + <Verb Phrase>",
+          "pattern_pinyin": "<Subject> + yíkuàir + <Verb Phrase>",
+          "pattern_pseudo_translation": "<Subject> + together + <Verb Phrase>",
+          "examples": [
+            {
+              "hanzi": "周末姐妹俩一块儿去买东西。",
+              "pinyin": "Zhōumò jiěmèi liǎ yíkuàir qù mǎi dōngxi.",
+              "english": "On the weekend the two sisters go shopping together."
+            },
+            {
+              "hanzi": "下班以后，我们一块儿去看望叔叔。",
+              "pinyin": "Xiàbān yǐhòu, wǒmen yíkuàir qù kànwàng shūshu.",
+              "english": "After work, we’ll go visit Uncle together."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about family, neighbors, and caring for guests.",
+        "model": {
+          "hanzi": "姐姐一直很照顾身边的人。",
+          "pinyin": "Jiějie yìzhí hěn zhàogù shēnbiān de rén.",
+          "english": "My older sister always takes good care of the people around her."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say your neighbor is getting married next month.",
+            "model_answer": {
+              "hanzi": "我的邻居下个月要结婚了。",
+              "pinyin": "Wǒ de línjū xià ge yuè yào jiéhūn le.",
+              "english": "My neighbor is getting married next month."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you brought a gift when visiting Uncle’s home.",
+            "model_answer": {
+              "hanzi": "我去叔叔家做客的时候带了一件礼物。",
+              "pinyin": "Wǒ qù shūshu jiā zuòkè de shíhou dài le yí jiàn lǐwù.",
+              "english": "When I visited Uncle’s home as a guest, I brought a gift."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say parents care very much about their children’s health.",
+            "model_answer": {
+              "hanzi": "父母非常关心孩子的健康。",
+              "pinyin": "Fùmǔ fēicháng guānxīn háizi de jiànkāng.",
+              "english": "Parents care very much about their children’s health."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Warm Neighbors",
+        "paragraphs": [
+          {
+            "hanzi": "王叔叔和刘阿姨是一对热情的夫妻。他们搬来这个小区以后，总是很关心身边的邻居。",
+            "pinyin": "Wáng shūshu hé Liú āyí shì yí duì rèqíng de fūqī. Tāmen bān lái zhège xiǎoqū yǐhòu, zǒngshì hěn guānxīn shēnbiān de línjū.",
+            "english": "Uncle Wang and Auntie Liu are a warm-hearted couple. After moving to this neighborhood, they have always cared about the neighbors around them."
+          },
+          {
+            "hanzi": "今年春节，他们请附近的几家邻居到家里做客。大家一块儿包饺子、聊家常，像一家人一样。",
+            "pinyin": "Jīnnián Chūnjié, tāmen qǐng fùjìn de jǐ jiā línjū dào jiālǐ zuòkè. Dàjiā yíkuàir bāo jiǎozi, liáo jiācháng, xiàng yì jiā rén yíyàng.",
+            "english": "This Spring Festival, they invited several nearby neighbors to visit their home. Everyone made dumplings and chatted together, just like one family."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "How do Uncle Wang and Auntie Liu treat their neighbors?",
+            "answer_en": "They are warm-hearted and always care about the neighbors around them."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What did everyone do together at their home during Spring Festival?",
+            "answer_en": "They made dumplings and chatted together."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Talk about a neighbor or relative who looks after others.",
+          "model_answer": {
+            "hanzi": "我的邻居张阿姨常常帮助老人，大家都很感谢她。",
+            "pinyin": "Wǒ de línjū Zhāng āyí chángcháng bāngzhù lǎorén, dàjiā dōu hěn gǎnxiè tā.",
+            "english": "My neighbor Auntie Zhang often helps elderly people, and everyone is very grateful to her."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe what you bring when visiting someone as a guest.",
+          "model_answer": {
+            "hanzi": "我去朋友家做客时，通常会带水果或者小礼物。",
+            "pinyin": "Wǒ qù péngyou jiā zuòkè shí, tōngcháng huì dài shuǐguǒ huòzhě xiǎo lǐwù.",
+            "english": "When I visit a friend’s home, I usually bring fruit or a small gift."
+          }
+        }
+      ],
+      "common_pitfall": "见面 cannot take a direct object (*见面朋友 is wrong). Say 和朋友见面 (\"meet with a friend\") or 见朋友.",
+      "pronunciation_focus": "一块儿 (yíkuàir) has tone sandhi on 一 (changing to yí before fourth-tone 块) and an erhua ending.",
+      "review": {
+        "can_do": [
+          "Name relatives, couples, guests, and neighbors.",
+          "Distinguish 见面 from 遇见 / 遇到.",
+          "Talk about visiting and caring for others."
+        ],
+        "entry_ids": [
+          501,
+          503,
+          631,
+          655,
+          701,
+          711,
+          713,
+          736,
+          748,
+          758,
+          826,
+          841,
+          926,
+          953,
+          954,
+          971,
+          1000
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-family-guests-neighbors--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Meeting up or running into someone",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-family-guests-neighbors--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Doing something together with 一块儿",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say your neighbor is getting married next month.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-family-guests-neighbors--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you brought a gift when visiting Uncle’s home.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-family-guests-neighbors--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say parents care very much about their children’s health.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: How do Uncle Wang and Auntie Liu treat their neighbors?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-family-guests-neighbors--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What did everyone do together at their home during Spring Festival?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Talk about a neighbor or relative who looks after others.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-family-guests-neighbors--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe what you bring when visiting someone as a guest.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-family-guests-neighbors--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-family-guests-neighbors--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"neighbor\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-family-guests-neighbors--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to look after / care for\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-family-guests-neighbors--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"gift\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-family-guests-neighbors--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-family-guests-neighbors--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

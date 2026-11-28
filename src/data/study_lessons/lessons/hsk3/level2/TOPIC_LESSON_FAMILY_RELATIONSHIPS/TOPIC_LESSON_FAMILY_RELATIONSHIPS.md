@@ -154,7 +154,7 @@ Do not use 爷爷 (yéye) or 奶奶 (nǎinai) interchangeably; they refer to dis
 
 - 爸爸 (bàba) — father [HSK entry 3]
 
-- 弟弟 (dìdi) — younger brother [HSK entry 32]
+- 弟弟 (dìdi) — younger brother [HSK entry 31]
 
 ## Optional vocabulary recall quiz
 

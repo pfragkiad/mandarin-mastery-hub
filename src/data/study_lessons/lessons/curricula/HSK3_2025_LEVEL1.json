@@ -1,12 +1,12 @@
 {
   "schema_version": "mandarin-curriculum/3.0.0",
   "curriculum_id": "hsk3-2025",
-  "title": "HSK 3.0 (2025) — Level 1 and Level 2 Learning Path",
+  "title": "HSK 3.0 (2025) — Level 1, Level 2 and Level 3 Learning Path",
   "kind": "syllabus",
   "language": "zh-CN",
   "edition": "2025-11",
   "status": "draft",
-  "description": "Practise foundational Mandarin through complete thematic lessons covering all 300 Level 1 and 200 Level 2 vocabulary entries, with conversations, grammar, reading, speaking and progress checkpoints.",
+  "description": "Practise foundational Mandarin through complete thematic lessons covering all 300 Level 1, 200 Level 2 and 500 Level 3 vocabulary entries, with conversations, grammar, reading, speaking and progress checkpoints.",
   "course_topics": [
     {
       "id": "numbers-quantities",
@@ -154,6 +154,13 @@
       "global_topic_ids": [
         "science-technology"
       ]
+    },
+    {
+      "id": "society-government-law",
+      "label": "Society, Government & Law",
+      "global_topic_ids": [
+        "society-government-law"
+      ]
     }
   ],
   "sections": [
@@ -185,10 +192,10 @@
                 148,
                 150,
                 200,
-                201,
                 202,
-                203,
                 204,
+                201,
+                203,
                 205,
                 221,
                 222
@@ -247,7 +254,7 @@
                 219,
                 220,
                 241,
-                272,
+                271,
                 187
               ],
               "reviewed_syllabus_entry_ids": []
@@ -340,16 +347,16 @@
               "introduced_syllabus_entry_ids": [
                 7,
                 10,
-                31,
+                32,
                 60,
                 85,
                 89,
                 111,
                 239,
+                255,
+                257,
+                256,
                 258,
-                259,
-                261,
-                262,
                 264,
                 265,
                 266,
@@ -379,7 +386,7 @@
                 186,
                 215,
                 217,
-                230,
+                229,
                 232,
                 236,
                 273,
@@ -404,8 +411,8 @@
                 76,
                 93,
                 94,
-                128,
                 129,
+                130,
                 149,
                 168,
                 172,
@@ -441,9 +448,9 @@
               "introduced_syllabus_entry_ids": [
                 1,
                 3,
-                32,
+                31,
                 48,
-                59,
+                58,
                 68,
                 86,
                 87,
@@ -471,16 +478,16 @@
                 "work-jobs"
               ],
               "introduced_syllabus_entry_ids": [
-                130,
+                128,
                 142,
                 152,
                 155,
                 170,
                 231,
-                62,
                 63,
+                62,
                 176,
-                228
+                227
               ],
               "reviewed_syllabus_entry_ids": []
             },
@@ -535,7 +542,7 @@
               ],
               "introduced_syllabus_entry_ids": [
                 19,
-                34,
+                39,
                 65,
                 105,
                 116,
@@ -545,13 +552,13 @@
                 174,
                 268,
                 9,
+                34,
                 35,
-                36,
                 40,
                 52,
                 189,
-                255,
-                260,
+                259,
+                262,
                 295
               ],
               "reviewed_syllabus_entry_ids": []
@@ -579,7 +586,7 @@
                 20,
                 22,
                 29,
-                54,
+                53,
                 81,
                 83,
                 98,
@@ -650,7 +657,7 @@
                 197,
                 209,
                 210,
-                229,
+                228,
                 240,
                 247,
                 249,
@@ -716,10 +723,10 @@
                 252,
                 263,
                 18,
+                36,
                 37,
                 38,
-                39,
-                58,
+                59,
                 75
               ],
               "reviewed_syllabus_entry_ids": []
@@ -778,8 +785,8 @@
                 194,
                 195,
                 246,
-                256,
-                257
+                260,
+                261
               ],
               "reviewed_syllabus_entry_ids": []
             },
@@ -800,7 +807,7 @@
                 119,
                 169,
                 208,
-                227,
+                230,
                 251,
                 267
               ],
@@ -820,14 +827,14 @@
               ],
               "introduced_syllabus_entry_ids": [
                 41,
-                53,
+                54,
                 67,
                 78,
                 79,
                 206,
                 253,
                 270,
-                271,
+                272,
                 285,
                 286
               ],
@@ -866,7 +873,7 @@
                 465
               ],
               "reviewed_syllabus_entry_ids": [
-                130,
+                128,
                 142,
                 152
               ]
@@ -891,7 +898,7 @@
               "reviewed_syllabus_entry_ids": [
                 1,
                 3,
-                32
+                31
               ]
             },
             {
@@ -933,7 +940,7 @@
               "introduced_syllabus_entry_ids": [
                 406,
                 407,
-                454,
+                453,
                 488,
                 489,
                 494
@@ -1003,7 +1010,7 @@
                 431,
                 462,
                 471,
-                480,
+                479,
                 492
               ],
               "reviewed_syllabus_entry_ids": [
@@ -1030,7 +1037,7 @@
                 404,
                 443,
                 449,
-                453
+                454
               ],
               "reviewed_syllabus_entry_ids": [
                 2,
@@ -1083,7 +1090,7 @@
               ],
               "reviewed_syllabus_entry_ids": [
                 19,
-                34,
+                39,
                 65
               ]
             },
@@ -1132,7 +1139,7 @@
               ],
               "introduced_syllabus_entry_ids": [
                 356,
-                371,
+                373,
                 389,
                 390,
                 391,
@@ -1175,8 +1182,8 @@
                 361,
                 362,
                 370,
+                371,
                 372,
-                373,
                 425,
                 427,
                 458,
@@ -1204,7 +1211,7 @@
                 392,
                 401,
                 446,
-                450,
+                451,
                 457
               ],
               "reviewed_syllabus_entry_ids": [
@@ -1295,7 +1302,7 @@
                 414,
                 448,
                 452,
-                473,
+                472,
                 493,
                 495,
                 496
@@ -1353,7 +1360,7 @@
                 358,
                 411,
                 420,
-                475,
+                476,
                 477
               ],
               "reviewed_syllabus_entry_ids": [
@@ -1385,8 +1392,8 @@
               ],
               "reviewed_syllabus_entry_ids": [
                 18,
-                37,
-                38
+                36,
+                37
               ]
             }
           ]
@@ -1443,7 +1450,7 @@
                 385,
                 398,
                 455,
-                479
+                480
               ],
               "reviewed_syllabus_entry_ids": [
                 25,
@@ -1471,7 +1478,7 @@
                 382,
                 438,
                 439,
-                476
+                475
               ],
               "reviewed_syllabus_entry_ids": [
                 4,
@@ -1493,10 +1500,10 @@
               "introduced_syllabus_entry_ids": [
                 301,
                 311,
-                332,
                 333,
+                332,
                 351,
-                472,
+                473,
                 490,
                 491,
                 498
@@ -1547,13 +1554,1158 @@
               ],
               "introduced_syllabus_entry_ids": [
                 428,
-                451
+                450
+              ],
+              "reviewed_syllabus_entry_ids": [
+                34,
+                35,
+                189
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "hsk3-level-3",
+      "sequence": 3,
+      "title": "HSK 3.0 Level 3 — Everyday Fluency",
+      "description": "35 thematic lessons introducing all 500 HSK 3.0 Level 3 entries (official IDs 501–1000) across all 22 taxonomy topics.",
+      "units": [
+        {
+          "unit_id": "hsk3-l3-u1",
+          "sequence": 1,
+          "title": "People, Family & Work",
+          "placements": [
+            {
+              "placement_id": "hsk3-l3-topic-people-and-backgrounds",
+              "sequence": 1,
+              "lesson_id": "topic-people-and-backgrounds",
+              "role": "core",
+              "course_topic_ids": [
+                "people-identity"
+              ],
+              "introduced_syllabus_entry_ids": [
+                532,
+                563,
+                574,
+                676,
+                743,
+                746,
+                772,
+                774,
+                775,
+                787,
+                788,
+                861,
+                961
+              ],
+              "reviewed_syllabus_entry_ids": [
+                130,
+                152,
+                231
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-asking-how-and-others",
+              "sequence": 2,
+              "lesson_id": "topic-asking-how-and-others",
+              "role": "core",
+              "course_topic_ids": [
+                "reference-questions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                531,
+                798,
+                962,
+                964,
+                965
+              ],
+              "reviewed_syllabus_entry_ids": [
+                146,
+                200,
+                204
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-family-guests-neighbors",
+              "sequence": 3,
+              "lesson_id": "topic-family-guests-neighbors",
+              "role": "core",
+              "course_topic_ids": [
+                "family-relationships"
+              ],
+              "introduced_syllabus_entry_ids": [
+                501,
+                503,
+                631,
+                655,
+                701,
+                711,
+                713,
+                736,
+                748,
+                758,
+                826,
+                841,
+                926,
+                953,
+                954,
+                971,
+                1000
+              ],
+              "reviewed_syllabus_entry_ids": [
+                3,
+                154,
+                156
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-office-and-leave",
+              "sequence": 4,
+              "lesson_id": "topic-office-and-leave",
+              "role": "core",
+              "course_topic_ids": [
+                "work-jobs"
+              ],
+              "introduced_syllabus_entry_ids": [
+                512,
+                632,
+                683,
+                684,
+                718,
+                727,
+                808,
+                847,
+                859,
+                911,
+                956
+              ],
+              "reviewed_syllabus_entry_ids": [
+                62,
+                63,
+                176
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-banks-and-cards",
+              "sequence": 5,
+              "lesson_id": "topic-banks-and-cards",
+              "role": "core",
+              "course_topic_ids": [
+                "shopping-money"
+              ],
+              "introduced_syllabus_entry_ids": [
+                907,
+                936,
+                937
+              ],
+              "reviewed_syllabus_entry_ids": [
+                164,
+                174,
+                295
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-devices-and-websites",
+              "sequence": 6,
+              "lesson_id": "topic-devices-and-websites",
+              "role": "core",
+              "course_topic_ids": [
+                "science-technology"
+              ],
+              "introduced_syllabus_entry_ids": [
+                593,
+                595,
+                613,
+                653,
+                728,
+                873
+              ],
+              "reviewed_syllabus_entry_ids": [
+                52,
+                189,
+                255
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-safety-and-rules",
+              "sequence": 7,
+              "lesson_id": "topic-safety-and-rules",
+              "role": "core",
+              "course_topic_ids": [
+                "society-government-law"
+              ],
+              "introduced_syllabus_entry_ids": [
+                505
+              ],
+              "reviewed_syllabus_entry_ids": [
+                64,
+                175,
+                212
+              ],
+              "prerequisite_lesson_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l3-u2",
+          "sequence": 2,
+          "title": "Communication & Study",
+          "placements": [
+            {
+              "placement_id": "hsk3-l3-topic-chatting-and-helping",
+              "sequence": 1,
+              "lesson_id": "topic-chatting-and-helping",
+              "role": "core",
+              "course_topic_ids": [
+                "communication-social"
+              ],
+              "introduced_syllabus_entry_ids": [
+                514,
+                542,
+                609,
+                657,
+                677,
+                682,
+                703,
+                755,
+                756,
+                809,
+                815,
+                860
+              ],
+              "reviewed_syllabus_entry_ids": [
+                14,
+                171,
+                220
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-letters-emails-attention",
+              "sequence": 2,
+              "lesson_id": "topic-letters-emails-attention",
+              "role": "core",
+              "course_topic_ids": [
+                "communication-social"
+              ],
+              "introduced_syllabus_entry_ids": [
+                614,
+                830,
+                831,
+                837,
+                857,
+                891,
+                898,
+                906,
+                908,
+                942,
+                943,
+                989
+              ],
+              "reviewed_syllabus_entry_ids": [
+                45,
+                218,
+                272
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-campus-and-grades",
+              "sequence": 3,
+              "lesson_id": "topic-campus-and-grades",
+              "role": "core",
+              "course_topic_ids": [
+                "school-language"
+              ],
+              "introduced_syllabus_entry_ids": [
+                507,
+                559,
+                565,
+                627,
+                669,
+                749,
+                759,
+                760,
+                771,
+                783,
+                843,
+                863,
+                867,
+                899,
+                900,
+                915,
+                952
+              ],
+              "reviewed_syllabus_entry_ids": [
+                27,
+                28,
+                293
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-notes-dictionaries-practice",
+              "sequence": 4,
+              "lesson_id": "topic-notes-dictionaries-practice",
+              "role": "core",
+              "course_topic_ids": [
+                "school-language"
+              ],
+              "introduced_syllabus_entry_ids": [
+                523,
+                524,
+                556,
+                557,
+                569,
+                634,
+                692,
+                723,
+                737,
+                738,
+                751,
+                752,
+                781,
+                804,
+                846,
+                852,
+                992,
+                999
+              ],
+              "reviewed_syllabus_entry_ids": [
+                196,
+                240,
+                290
+              ],
+              "prerequisite_lesson_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l3-u3",
+          "sequence": 3,
+          "title": "Time, Quantities & Daily Needs",
+          "placements": [
+            {
+              "placement_id": "hsk3-l3-topic-seasons-holidays-days",
+              "sequence": 1,
+              "lesson_id": "topic-seasons-holidays-days",
+              "role": "core",
+              "course_topic_ids": [
+                "time-calendar"
+              ],
+              "introduced_syllabus_entry_ids": [
+                513,
+                625,
+                647,
+                660,
+                672,
+                673,
+                693,
+                694,
+                696,
+                719,
+                735,
+                805,
+                806,
+                903,
+                986
+              ],
+              "reviewed_syllabus_entry_ids": [
+                55,
+                128,
+                243
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-sequence-and-frequency",
+              "sequence": 2,
+              "lesson_id": "topic-sequence-and-frequency",
+              "role": "core",
+              "course_topic_ids": [
+                "time-calendar"
+              ],
+              "introduced_syllabus_entry_ids": [
+                540,
+                554,
+                555,
+                561,
+                641,
+                642,
+                643,
+                664,
+                671,
+                712,
+                766,
+                795,
+                862,
+                890,
+                928,
+                929,
+                930,
+                983,
+                994,
+                997,
+                998
+              ],
+              "reviewed_syllabus_entry_ids": [
+                5,
+                178,
+                217
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-classifiers-and-units",
+              "sequence": 3,
+              "lesson_id": "topic-classifiers-and-units",
+              "role": "core",
+              "course_topic_ids": [
+                "numbers-quantities"
+              ],
+              "introduced_syllabus_entry_ids": [
+                529,
+                549,
+                573,
+                607,
+                630,
+                648,
+                663,
+                666,
+                704,
+                716,
+                722,
+                754,
+                768,
+                769,
+                845,
+                921,
+                925,
+                931,
+                934,
+                967,
+                984
+              ],
+              "reviewed_syllabus_entry_ids": [
+                6,
+                10,
+                60
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-ordering-snacks-and-drinks",
+              "sequence": 4,
+              "lesson_id": "topic-ordering-snacks-and-drinks",
+              "role": "core",
+              "course_topic_ids": [
+                "food-drink"
+              ],
+              "introduced_syllabus_entry_ids": [
+                515,
+                534,
+                535,
+                545,
+                553,
+                580,
+                610,
+                620,
+                689,
+                720,
+                741,
+                742,
+                794,
+                825,
+                850,
+                855,
+                866,
+                871,
+                883,
+                892,
+                905,
+                938
+              ],
+              "reviewed_syllabus_entry_ids": [
+                16,
+                17,
+                72
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-moving-and-appliances",
+              "sequence": 5,
+              "lesson_id": "topic-moving-and-appliances",
+              "role": "core",
+              "course_topic_ids": [
+                "home-objects"
+              ],
+              "introduced_syllabus_entry_ids": [
+                509,
+                536,
+                623,
+                675,
+                739,
+                822,
+                879,
+                886
               ],
               "reviewed_syllabus_entry_ids": [
                 35,
+                117,
+                260
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-clothes-and-belongings",
+              "sequence": 6,
+              "lesson_id": "topic-clothes-and-belongings",
+              "role": "core",
+              "course_topic_ids": [
+                "home-objects"
+              ],
+              "introduced_syllabus_entry_ids": [
+                558,
+                577,
+                588,
+                606,
+                725,
+                792,
+                796,
+                812,
+                820,
+                824,
+                893,
+                901,
+                917,
+                951,
+                980
+              ],
+              "reviewed_syllabus_entry_ids": [
                 36,
-                189
-              ]
+                40,
+                295
+              ],
+              "prerequisite_lesson_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l3-u4",
+          "sequence": 4,
+          "title": "Places, Travel & Daily Life",
+          "placements": [
+            {
+              "placement_id": "hsk3-l3-topic-compass-and-positions",
+              "sequence": 1,
+              "lesson_id": "topic-compass-and-positions",
+              "role": "core",
+              "course_topic_ids": [
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                517,
+                518,
+                582,
+                597,
+                598,
+                599,
+                600,
+                622,
+                633,
+                770,
+                776,
+                777,
+                880,
+                881,
+                882,
+                884,
+                894,
+                981,
+                982
+              ],
+              "reviewed_syllabus_entry_ids": [
+                11,
+                213,
+                226
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-cities-streets-buildings",
+              "sequence": 2,
+              "lesson_id": "topic-cities-streets-buildings",
+              "role": "core",
+              "course_topic_ids": [
+                "places-directions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                560,
+                589,
+                590,
+                591,
+                594,
+                649,
+                658,
+                707,
+                761,
+                762,
+                832,
+                833,
+                835,
+                865,
+                875,
+                897,
+                955
+              ],
+              "reviewed_syllabus_entry_ids": [
+                66,
+                80,
+                110
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-journeys-and-transit",
+              "sequence": 3,
+              "lesson_id": "topic-journeys-and-transit",
+              "role": "core",
+              "course_topic_ids": [
+                "travel-transport"
+              ],
+              "introduced_syllabus_entry_ids": [
+                533,
+                562,
+                567,
+                592,
+                644,
+                670,
+                674,
+                699,
+                706,
+                717,
+                747,
+                763,
+                765,
+                800,
+                802,
+                803,
+                869,
+                909,
+                944,
+                991
+              ],
+              "reviewed_syllabus_entry_ids": [
+                29,
+                81,
+                83
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-everyday-actions-chores",
+              "sequence": 4,
+              "lesson_id": "topic-everyday-actions-chores",
+              "role": "core",
+              "course_topic_ids": [
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                508,
+                550,
+                571,
+                578,
+                596,
+                624,
+                628,
+                640,
+                652,
+                789,
+                801,
+                821,
+                844,
+                856,
+                885,
+                887,
+                919,
+                941,
+                966
+              ],
+              "reviewed_syllabus_entry_ids": [
+                61,
+                88,
+                91
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-plans-and-changes",
+              "sequence": 5,
+              "lesson_id": "topic-plans-and-changes",
+              "role": "core",
+              "course_topic_ids": [
+                "daily-actions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                526,
+                527,
+                539,
+                546,
+                572,
+                583,
+                584,
+                617,
+                678,
+                680,
+                695,
+                697,
+                715,
+                834,
+                836,
+                868,
+                874,
+                913,
+                968,
+                970
+              ],
+              "reviewed_syllabus_entry_ids": [
+                23,
+                97,
+                298
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-body-illness-health",
+              "sequence": 6,
+              "lesson_id": "topic-body-illness-health",
+              "role": "core",
+              "course_topic_ids": [
+                "health-wellbeing"
+              ],
+              "introduced_syllabus_entry_ids": [
+                537,
+                564,
+                579,
+                608,
+                612,
+                615,
+                638,
+                698,
+                702,
+                705,
+                734,
+                750,
+                827,
+                864,
+                916,
+                988,
+                995
+              ],
+              "reviewed_syllabus_entry_ids": [
+                12,
+                194,
+                246
+              ],
+              "prerequisite_lesson_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l3-u5",
+          "sequence": 5,
+          "title": "Nature, Leisure & Descriptions",
+          "placements": [
+            {
+              "placement_id": "hsk3-l3-topic-weather-seasons-animals",
+              "sequence": 1,
+              "lesson_id": "topic-weather-seasons-animals",
+              "role": "core",
+              "course_topic_ids": [
+                "animals-weather"
+              ],
+              "introduced_syllabus_entry_ids": [
+                568,
+                576,
+                601,
+                603,
+                629,
+                651,
+                753,
+                764,
+                785,
+                810,
+                848,
+                889,
+                918
+              ],
+              "reviewed_syllabus_entry_ids": [
+                64,
+                227,
+                267
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-mountains-rivers-nature",
+              "sequence": 2,
+              "lesson_id": "topic-mountains-rivers-nature",
+              "role": "core",
+              "course_topic_ids": [
+                "animals-weather"
+              ],
+              "introduced_syllabus_entry_ids": [
+                547,
+                548,
+                661,
+                668,
+                679,
+                726,
+                823,
+                842,
+                849,
+                958
+              ],
+              "reviewed_syllabus_entry_ids": [
+                119,
+                169,
+                251
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-sports-matches-games",
+              "sequence": 3,
+              "lesson_id": "topic-sports-matches-games",
+              "role": "core",
+              "course_topic_ids": [
+                "leisure-media"
+              ],
+              "introduced_syllabus_entry_ids": [
+                522,
+                585,
+                604,
+                811,
+                853,
+                854,
+                872,
+                910,
+                945,
+                950,
+                960
+              ],
+              "reviewed_syllabus_entry_ids": [
+                39,
+                58,
+                75
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-music-festivals-media",
+              "sequence": 4,
+              "lesson_id": "topic-music-festivals-media",
+              "role": "core",
+              "course_topic_ids": [
+                "leisure-media"
+              ],
+              "introduced_syllabus_entry_ids": [
+                516,
+                530,
+                650,
+                659,
+                708,
+                709,
+                710,
+                791,
+                870,
+                895,
+                904,
+                935,
+                972,
+                973
+              ],
+              "reviewed_syllabus_entry_ids": [
+                18,
+                37,
+                38
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-appearance-and-comparison",
+              "sequence": 5,
+              "lesson_id": "topic-appearance-and-comparison",
+              "role": "core",
+              "course_topic_ids": [
+                "qualities-feelings"
+              ],
+              "introduced_syllabus_entry_ids": [
+                502,
+                504,
+                520,
+                541,
+                552,
+                575,
+                605,
+                636,
+                646,
+                681,
+                721,
+                744,
+                745,
+                784,
+                793,
+                840,
+                927,
+                963
+              ],
+              "reviewed_syllabus_entry_ids": [
+                44,
+                46,
+                57
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-feelings-and-attitudes",
+              "sequence": 6,
+              "lesson_id": "topic-feelings-and-attitudes",
+              "role": "core",
+              "course_topic_ids": [
+                "qualities-feelings"
+              ],
+              "introduced_syllabus_entry_ids": [
+                626,
+                637,
+                639,
+                662,
+                691,
+                729,
+                740,
+                767,
+                779,
+                786,
+                790,
+                814,
+                829,
+                888,
+                896,
+                902,
+                957,
+                969
+              ],
+              "reviewed_syllabus_entry_ids": [
+                71,
+                73,
+                180
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-quality-and-difficulty",
+              "sequence": 7,
+              "lesson_id": "topic-quality-and-difficulty",
+              "role": "core",
+              "course_topic_ids": [
+                "qualities-feelings"
+              ],
+              "introduced_syllabus_entry_ids": [
+                551,
+                570,
+                619,
+                667,
+                690,
+                700,
+                732,
+                778,
+                780,
+                782,
+                799,
+                807,
+                817,
+                818,
+                851,
+                858,
+                947,
+                948,
+                985
+              ],
+              "reviewed_syllabus_entry_ids": [
+                25,
+                118,
+                242
+              ],
+              "prerequisite_lesson_ids": []
+            }
+          ]
+        },
+        {
+          "unit_id": "hsk3-l3-u6",
+          "sequence": 6,
+          "title": "Ideas & Core Grammar",
+          "placements": [
+            {
+              "placement_id": "hsk3-l3-topic-understanding-and-decisions",
+              "sequence": 1,
+              "lesson_id": "topic-understanding-and-decisions",
+              "role": "core",
+              "course_topic_ids": [
+                "abstract-concepts"
+              ],
+              "introduced_syllabus_entry_ids": [
+                510,
+                511,
+                528,
+                602,
+                616,
+                618,
+                621,
+                654,
+                656,
+                688,
+                714,
+                724
+              ],
+              "reviewed_syllabus_entry_ids": [
+                214,
+                233,
+                252
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-events-culture-influence",
+              "sequence": 2,
+              "lesson_id": "topic-events-culture-influence",
+              "role": "core",
+              "course_topic_ids": [
+                "abstract-concepts"
+              ],
+              "introduced_syllabus_entry_ids": [
+                757,
+                773,
+                816,
+                828,
+                838,
+                839,
+                878,
+                914,
+                920,
+                940,
+                946,
+                987
+              ],
+              "reviewed_syllabus_entry_ids": [
+                79,
+                108,
+                222
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-necessity-advice-certainty",
+              "sequence": 3,
+              "lesson_id": "topic-necessity-advice-certainty",
+              "role": "core",
+              "course_topic_ids": [
+                "grammar-functions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                525,
+                543,
+                581,
+                587,
+                635,
+                687,
+                797,
+                876,
+                877,
+                912,
+                922,
+                924,
+                939,
+                993,
+                996
+              ],
+              "reviewed_syllabus_entry_ids": [
+                15,
+                30,
+                122
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-conditions-and-conjunctions",
+              "sequence": 4,
+              "lesson_id": "topic-conditions-and-conjunctions",
+              "role": "core",
+              "course_topic_ids": [
+                "grammar-functions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                521,
+                538,
+                586,
+                611,
+                645,
+                685,
+                686,
+                731,
+                733,
+                813,
+                819,
+                974,
+                978,
+                979
+              ],
+              "reviewed_syllabus_entry_ids": [
+                67,
+                253,
+                286
+              ],
+              "prerequisite_lesson_ids": []
+            },
+            {
+              "placement_id": "hsk3-l3-topic-ba-bei-and-adverbs",
+              "sequence": 5,
+              "lesson_id": "topic-ba-bei-and-adverbs",
+              "role": "core",
+              "course_topic_ids": [
+                "grammar-functions"
+              ],
+              "introduced_syllabus_entry_ids": [
+                506,
+                519,
+                544,
+                566,
+                665,
+                730,
+                923,
+                932,
+                933,
+                949,
+                959,
+                975,
+                976,
+                977,
+                990
+              ],
+              "reviewed_syllabus_entry_ids": [
+                41,
+                78,
+                206
+              ],
+              "prerequisite_lesson_ids": []
             }
           ]
         }

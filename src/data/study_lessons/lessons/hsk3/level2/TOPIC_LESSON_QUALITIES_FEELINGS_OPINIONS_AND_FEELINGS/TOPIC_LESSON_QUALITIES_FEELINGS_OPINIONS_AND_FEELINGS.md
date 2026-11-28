@@ -154,7 +154,7 @@ I hope tomorrow’s weather will be good.
 
 - 希望 (xīwàng) — to hope; to wish [HSK entry 455]
 
-- 有意思 (yǒu yìsi) — interesting; fun [HSK entry 479]
+- 有意思 (yǒu yìsi) — interesting; fun [HSK entry 480]
 
 - 大 (dà) — big [HSK entry 25]
 

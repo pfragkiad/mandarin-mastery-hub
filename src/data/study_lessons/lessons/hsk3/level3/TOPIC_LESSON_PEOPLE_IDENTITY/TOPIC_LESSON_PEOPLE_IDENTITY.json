@@ -1,0 +1,1384 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-people-and-backgrounds",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "People, Ages & Backgrounds",
+    "subtitle": "Where people are from, their ages, and what they do",
+    "description": "Learn to introduce people by background, age group, appearance, and occupation in natural Mandarin.",
+    "slug": "people-and-backgrounds"
+  },
+  "classification": {
+    "primary_topic_id": "people-identity",
+    "topic_ids": [
+      "people-identity"
+    ],
+    "tags": [
+      "introductions",
+      "backgrounds",
+      "people"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Say where someone was born or comes from using 出生 and 来自.",
+    "Refer to men, women, students, adults, and older people naturally.",
+    "Describe a person’s hair or role such as 画家 or 运动员."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "且": "Characters:且",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "京": "Characters:京",
+    "人": "Characters:人",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "位": "Characters:位",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "像": "Characters:像",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "全": "Characters:全",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "别": "Characters:别",
+    "前": "Characters:前",
+    "加": "Characters:加",
+    "动": "Characters:动",
+    "助": "Characters:助",
+    "北": "Characters:北",
+    "区": "Characters:区",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "南": "Characters:南",
+    "去": "Characters:去",
+    "参": "Characters:参",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "叫": "Characters:叫",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "吗": "Characters:吗",
+    "员": "Characters:员",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "头": "Characters:头",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "妹": "Characters:妹",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "居": "Characters:居",
+    "山": "Characters:山",
+    "岛": "Characters:岛",
+    "州": "Characters:州",
+    "工": "Characters:工",
+    "已": "Characters:已",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "年": "Characters:年",
+    "广": "Characters:广",
+    "应": "Characters:应",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "成": "Characters:成",
+    "我": "Characters:我",
+    "拿": "Characters:拿",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "末": "Characters:末",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "杭": "Characters:杭",
+    "校": "Characters:校",
+    "欢": "Characters:欢",
+    "武": "Characters:武",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "泳": "Characters:泳",
+    "活": "Characters:活",
+    "海": "Characters:海",
+    "游": "Characters:游",
+    "点": "Characters:点",
+    "炼": "Characters:炼",
+    "爷": "Characters:爷",
+    "王": "Characters:王",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "男": "Characters:男",
+    "画": "Characters:画",
+    "留": "Characters:留",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "短": "Characters:短",
+    "社": "Characters:社",
+    "经": "Characters:经",
+    "老": "Characters:老",
+    "而": "Characters:而",
+    "聊": "Characters:聊",
+    "自": "Characters:自",
+    "色": "Characters:色",
+    "茶": "Characters:茶",
+    "西": "Characters:西",
+    "认": "Characters:认",
+    "识": "Characters:识",
+    "该": "Characters:该",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "起": "Characters:起",
+    "轻": "Characters:轻",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "邻": "Characters:邻",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "错": "Characters:错",
+    "锻": "Characters:锻",
+    "长": "Characters:长",
+    "陈": "Characters:陈",
+    "青": "Characters:青",
+    "黑": "Characters:黑"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Words for describing who people are, where they come from, their life stage, and notable roles.",
+      "focus": "Use 来自 to state origin and 出生 to give a birthplace or birth year."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0532",
+          "hanzi": "别人",
+          "pinyin": "biérén",
+          "meaning_en": "other people",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0532-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别人的书别拿。",
+              "pinyin": "biérén de shū bié ná.",
+              "english": "Don't take other people's books.",
+              "teaching_note": "Short everyday spoken use of 别人."
+            },
+            {
+              "id": "ex-0532-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们应该帮助别人。",
+              "pinyin": "wǒmen yīnggāi bāngzhù biérén.",
+              "english": "We should help others.",
+              "teaching_note": "Simple descriptive or narrative use of 别人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 532
+            }
+          ]
+        },
+        {
+          "id": "w-0563",
+          "hanzi": "出生",
+          "pinyin": "chūshēng",
+          "meaning_en": "be born",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0563-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在哪儿出生的？",
+              "pinyin": "nǐ zài nǎr chūshēng de?",
+              "english": "Where were you born?",
+              "teaching_note": "Short everyday spoken use of 出生."
+            },
+            {
+              "id": "ex-0563-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他出生在中国。",
+              "pinyin": "tā chūshēng zài Zhōngguó.",
+              "english": "He was born in China.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 563
+            }
+          ]
+        },
+        {
+          "id": "w-0574",
+          "hanzi": "大人",
+          "pinyin": "dàren",
+          "meaning_en": "adult; grown-up",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0574-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里有大人吗？",
+              "pinyin": "zhèlǐ yǒu dàren ma?",
+              "english": "Are there any adults here?",
+              "teaching_note": "Short everyday spoken use of 大人."
+            },
+            {
+              "id": "ex-0574-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大人和孩子都喜欢这个公园。",
+              "pinyin": "dàren hé háizi dōu xǐhuan zhège gōngyuán.",
+              "english": "Both adults and children like this park.",
+              "teaching_note": "Simple descriptive or narrative use of 大人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 574
+            }
+          ]
+        },
+        {
+          "id": "w-0676",
+          "hanzi": "画家",
+          "pinyin": "huàjiā",
+          "meaning_en": "painter; artist",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity",
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0676-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他是画家吗？",
+              "pinyin": "tā shì huàjiā ma?",
+              "english": "Is he a painter?",
+              "teaching_note": "Short everyday spoken use of 画家."
+            },
+            {
+              "id": "ex-0676-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这位画家喜欢画山。",
+              "pinyin": "zhè wèi huàjiā xǐhuan huà shān.",
+              "english": "This painter likes painting mountains.",
+              "teaching_note": "Simple descriptive or narrative use of 画家."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 676
+            }
+          ]
+        },
+        {
+          "id": "w-0743",
+          "hanzi": "来自",
+          "pinyin": "láizì",
+          "meaning_en": "come from; originate from",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0743-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你来自哪里？",
+              "pinyin": "nǐ láizì nǎlǐ?",
+              "english": "Where are you from?",
+              "teaching_note": "Short everyday spoken use of 来自."
+            },
+            {
+              "id": "ex-0743-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个学生来自中国北方。",
+              "pinyin": "zhège xuéshēng láizì Zhōngguó běifāng.",
+              "english": "This student comes from northern China.",
+              "teaching_note": "Simple descriptive or narrative use of 来自."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 743
+            }
+          ]
+        },
+        {
+          "id": "w-0746",
+          "hanzi": "老人",
+          "pinyin": "lǎorén",
+          "meaning_en": "elderly person",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0746-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "那位老人是谁？",
+              "pinyin": "nà wèi lǎorén shì shéi?",
+              "english": "Who is that elderly person?",
+              "teaching_note": "Short everyday spoken use of 老人."
+            },
+            {
+              "id": "ex-0746-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公园里有很多老人在锻炼。",
+              "pinyin": "gōngyuán lǐ yǒu hěn duō lǎorén zài duànliàn.",
+              "english": "Many elderly people are exercising in the park.",
+              "teaching_note": "Simple descriptive or narrative use of 老人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 746
+            }
+          ]
+        },
+        {
+          "id": "w-0772",
+          "hanzi": "名人",
+          "pinyin": "míngrén",
+          "meaning_en": "famous person",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0772-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你认识这个名人吗？",
+              "pinyin": "nǐ rènshi zhège míngrén ma?",
+              "english": "Do you know this celebrity?",
+              "teaching_note": "Short everyday spoken use of 名人."
+            },
+            {
+              "id": "ex-0772-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这位名人来自中国。",
+              "pinyin": "zhè wèi míngrén láizì Zhōngguó.",
+              "english": "This famous person comes from China.",
+              "teaching_note": "Simple descriptive or narrative use of 名人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 772
+            }
+          ]
+        },
+        {
+          "id": "w-0774",
+          "hanzi": "男人",
+          "pinyin": "nánrén",
+          "meaning_en": "man; adult male",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0774-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "那个男人是谁？",
+              "pinyin": "nàge nánrén shì shéi?",
+              "english": "Who is that man?",
+              "teaching_note": "Short everyday spoken use of 男人."
+            },
+            {
+              "id": "ex-0774-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个男人是我的邻居。",
+              "pinyin": "zhège nánrén shì wǒ de línjū.",
+              "english": "This man is my neighbor.",
+              "teaching_note": "Simple descriptive or narrative use of 男人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 774
+            }
+          ]
+        },
+        {
+          "id": "w-0775",
+          "hanzi": "男生",
+          "pinyin": "nánshēng",
+          "meaning_en": "male student; boy",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0775-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们班有几个男生？",
+              "pinyin": "nǐmen bān yǒu jǐ gè nánshēng?",
+              "english": "How many boys are in your class?",
+              "teaching_note": "Short everyday spoken use of 男生."
+            },
+            {
+              "id": "ex-0775-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这位男生是新学生。",
+              "pinyin": "zhè wèi nánshēng shì xīn xuéshēng.",
+              "english": "This boy is a new student.",
+              "teaching_note": "Simple descriptive or narrative use of 男生."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 775
+            }
+          ]
+        },
+        {
+          "id": "w-0787",
+          "hanzi": "女人",
+          "pinyin": "nǚrén",
+          "meaning_en": "woman; adult female",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0787-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "那个女人是谁？",
+              "pinyin": "nàge nǚrén shì shéi?",
+              "english": "Who is that woman?",
+              "teaching_note": "Short everyday spoken use of 女人."
+            },
+            {
+              "id": "ex-0787-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个女人是一名医生。",
+              "pinyin": "zhège nǚrén shì yì míng yīshēng.",
+              "english": "This woman is a doctor.",
+              "teaching_note": "Simple descriptive or narrative use of 女人."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 787
+            }
+          ]
+        },
+        {
+          "id": "w-0788",
+          "hanzi": "女生",
+          "pinyin": "nǚshēng",
+          "meaning_en": "female student; girl",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0788-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们班有几个女生？",
+              "pinyin": "nǐmen bān yǒu jǐ gè nǚshēng?",
+              "english": "How many girls are in your class?",
+              "teaching_note": "Short everyday spoken use of 女生."
+            },
+            {
+              "id": "ex-0788-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "那位女生是我的同学。",
+              "pinyin": "nà wèi nǚshēng shì wǒ de tóngxué.",
+              "english": "That girl is my classmate.",
+              "teaching_note": "Simple descriptive or narrative use of 女生."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 788
+            }
+          ]
+        },
+        {
+          "id": "w-0861",
+          "hanzi": "头发",
+          "pinyin": "tóufa",
+          "meaning_en": "hair",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0861-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的头发真长！",
+              "pinyin": "nǐ de tóufa zhēn cháng!",
+              "english": "Your hair is so long!",
+              "teaching_note": "Short everyday spoken use of 头发."
+            },
+            {
+              "id": "ex-0861-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她的头发是黑色的。",
+              "pinyin": "tā de tóufa shì hēisè de.",
+              "english": "Her hair is black.",
+              "teaching_note": "Simple descriptive or narrative use of 头发."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 861
+            }
+          ]
+        },
+        {
+          "id": "w-0961",
+          "hanzi": "运动员",
+          "pinyin": "yùndòngyuán",
+          "meaning_en": "athlete",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity",
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0961-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他是运动员吗？",
+              "pinyin": "tā shì yùndòngyuán ma?",
+              "english": "Is he an athlete?",
+              "teaching_note": "Short everyday spoken use of 运动员."
+            },
+            {
+              "id": "ex-0961-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这位运动员每天都锻炼。",
+              "pinyin": "zhè wèi yùndòngyuán měi tiān dōu duànliàn.",
+              "english": "This athlete trains every day.",
+              "teaching_note": "Simple descriptive or narrative use of 运动员."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 961
+            }
+          ]
+        },
+        {
+          "id": "w-0130",
+          "hanzi": "明天",
+          "pinyin": "míngtiān",
+          "meaning_en": "tomorrow",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0130-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "明天我们去学校。",
+              "pinyin": "míngtiān wǒmen qù xuéxiào.",
+              "english": "Tomorrow we are going to school.",
+              "teaching_note": "明天 sets the time for a planned future action."
+            },
+            {
+              "id": "ex-0130-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "明天上午八点开始上课。",
+              "pinyin": "míngtiān shàngwǔ bā diǎn kāishǐ shàngkè.",
+              "english": "Class starts at eight tomorrow morning.",
+              "teaching_note": "Daily time or schedule context illustrating 明天 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 130
+            }
+          ]
+        },
+        {
+          "id": "w-0152",
+          "hanzi": "女",
+          "pinyin": "nǚ",
+          "meaning_en": "female",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0152-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那个女学生在看书。",
+              "pinyin": "nàge nǚ xuéshēng zài kàn shū.",
+              "english": "That female student is reading a book.",
+              "teaching_note": "女 modifies 学生 to specify a female student."
+            },
+            {
+              "id": "ex-0152-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有八个女学生。",
+              "pinyin": "zhège bān yǒu bā gè nǚ xuéshēng.",
+              "english": "There are eight female students in this class.",
+              "teaching_note": "School or study context showing 女 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 152
+            }
+          ]
+        },
+        {
+          "id": "w-0231",
+          "hanzi": "先生",
+          "pinyin": "xiānsheng",
+          "meaning_en": "Mr.; sir",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0231-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "这位先生是医生。",
+              "pinyin": "zhè wèi xiānsheng shì yīshēng.",
+              "english": "This gentleman is a doctor.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-0231-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "那位先生在学校工作。",
+              "pinyin": "nà wèi xiānsheng zài xuéxiào gōngzuò.",
+              "english": "That gentleman works at the school.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 231
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 别人 (biérén)",
+        "explanation": "别人 (biérén) means “other people” (pronoun).",
+        "example_id": "ex-0532-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 出生 (chūshēng)",
+        "explanation": "出生 (chūshēng) means “be born” (verb).",
+        "example_id": "ex-0563-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0532-1",
+      "ex-0563-1",
+      "ex-0574-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "In the reading passage, what happens in the community room on weekends?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Many boys and girls join activities, and a painter from Xi’an teaches everyone to paint.",
+          "explanation": "The second paragraph describes weekend activities for students and the painter from Xi’an."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences introducing a person: where they were born and what their role or job is.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "她叫小李，在成都出生。她现在是一位有名的画家。",
+          "explanation": "Use 在……出生 for birthplace and 是…… for occupation."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"to come from\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "来自",
+              "pinyin": "láizì",
+              "meaning_en": "come from"
+            },
+            {
+              "id": "b",
+              "hanzi": "出生",
+              "pinyin": "chūshēng",
+              "meaning_en": "be born"
+            },
+            {
+              "id": "c",
+              "hanzi": "别人",
+              "pinyin": "biérén",
+              "meaning_en": "other people"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "来自 introduces a person’s place of origin."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word refers to a famous person?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "大人",
+              "pinyin": "dàren",
+              "meaning_en": "adult"
+            },
+            {
+              "id": "b",
+              "hanzi": "名人",
+              "pinyin": "míngrén",
+              "meaning_en": "famous person"
+            },
+            {
+              "id": "c",
+              "hanzi": "老人",
+              "pinyin": "lǎorén",
+              "meaning_en": "elderly person"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "名人 literally means a well-known person."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"hair\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "头发",
+              "pinyin": "tóufa",
+              "meaning_en": "hair"
+            },
+            {
+              "id": "b",
+              "hanzi": "画家",
+              "pinyin": "huàjiā",
+              "meaning_en": "painter"
+            },
+            {
+              "id": "c",
+              "hanzi": "运动员",
+              "pinyin": "yùndòngyuán",
+              "meaning_en": "athlete"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "头发 refers to hair on the head."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Meeting a New Classmate",
+        "context_en": "Linlin tells her friend about a new classmate who just joined their art club.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "那个男生是谁？他来自哪里？",
+            "pinyin": "Nàge nánshēng shì shéi? Tā láizì nǎlǐ?",
+            "english": "Who is that male student? Where is he from?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "他叫小陈，在广州出生，现在住在北京。",
+            "pinyin": "Tā jiào Xiǎo Chén, zài Guǎngzhōu chūshēng, xiànzài zhù zài Běijīng.",
+            "english": "He is Xiao Chen; he was born in Guangzhou and lives in Beijing now."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "他的头发很长，看起来像一位年轻画家。",
+            "pinyin": "Tā de tóufa hěn cháng, kàn qǐlái xiàng yí wèi niánqīng huàjiā.",
+            "english": "His hair is quite long; he looks like a young painter."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没错，而且他以前还是学校的运动员呢。",
+            "pinyin": "Méicuò, érqiě tā yǐqián hái shì xuéxiào de yùndòngyuán ne.",
+            "english": "That’s right, and he used to be a school athlete too."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Stating where someone is from",
+          "explanation_en": "Place 来自 (láizì) before a city or country to say where a person originates.",
+          "pattern_hanzi": "<Person> + 来自 + <Place>",
+          "pattern_pinyin": "<Person> + láizì + <Place>",
+          "pattern_pseudo_translation": "<Person> + comes from + <Place>",
+          "examples": [
+            {
+              "hanzi": "那位女老师来自上海。",
+              "pinyin": "Nà wèi nǚ lǎoshī láizì Shànghǎi.",
+              "english": "That female teacher comes from Shanghai."
+            },
+            {
+              "hanzi": "我们班的留学生来自不同的国家。",
+              "pinyin": "Wǒmen bān de liúxuéshēng láizì bù tóng de guójiā.",
+              "english": "The international students in our class come from different countries."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Talking about birthplace",
+          "explanation_en": "Put 在 + place before 出生 (chūshēng) to state where someone was born.",
+          "pattern_hanzi": "<Person> + 在 + <Place> + 出生",
+          "pattern_pinyin": "<Person> + zài + <Place> + chūshēng",
+          "pattern_pseudo_translation": "<Person> + at + <Place> + was born",
+          "examples": [
+            {
+              "hanzi": "我妹妹在成都出生。",
+              "pinyin": "Wǒ mèimei zài Chéngdū chūshēng.",
+              "english": "My younger sister was born in Chengdu."
+            },
+            {
+              "hanzi": "这位老人是在南京出生的。",
+              "pinyin": "Zhè wèi lǎorén shì zài Nánjīng chūshēng de.",
+              "english": "This elderly person was born in Nanjing."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Introduce someone by swapping in a new role, birthplace, or origin.",
+        "model": {
+          "hanzi": "我的朋友来自杭州，她是一位有名的画家。",
+          "pinyin": "Wǒ de péngyou láizì Hángzhōu, tā shì yí wèi yǒumíng de huàjiā.",
+          "english": "My friend comes from Hangzhou; she is a famous painter."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say that the athlete was born in Qingdao.",
+            "model_answer": {
+              "hanzi": "那位运动员在青岛出生。",
+              "pinyin": "Nà wèi yùndòngyuán zài Qīngdǎo chūshēng.",
+              "english": "That athlete was born in Qingdao."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say that female student has very short hair.",
+            "model_answer": {
+              "hanzi": "那个女生的头发很短。",
+              "pinyin": "Nàge nǚshēng de tóufa hěn duǎn.",
+              "english": "That female student has very short hair."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say that adults should help elderly people.",
+            "model_answer": {
+              "hanzi": "大人应该多帮助老人。",
+              "pinyin": "Dàren yīnggāi duō bāngzhù lǎorén.",
+              "english": "Adults should help elderly people more."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Our Community Center",
+        "paragraphs": [
+          {
+            "hanzi": "我们社区的活动室每天都有很多人。早上，几位老人一起来这里喝茶、聊天。",
+            "pinyin": "Wǒmen shèqū de huódòngshì měitiān dōu yǒu hěn duō rén. Zǎoshang, jǐ wèi lǎorén yìqǐ lái zhèlǐ hē chá, liáotiān.",
+            "english": "Our community activity room has many people every day. In the morning, several elderly people come here together to drink tea and chat."
+          },
+          {
+            "hanzi": "周末的时候，很多男生和女生也来参加活动，还有一位来自西安的画家教大家画画儿。",
+            "pinyin": "Zhōumò de shíhou, hěn duō nánshēng hé nǚshēng yě lái cānjiā huódòng, hái yǒu yí wèi láizì Xī’ān de huàjiā jiāo dàjiā huà huàr.",
+            "english": "On weekends, many boys and girls also come to join activities, and a painter from Xi’an teaches everyone to paint."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Who comes to the community room in the morning?",
+            "answer_en": "Several elderly people come to drink tea and chat."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Where is the painter who teaches on weekends from?",
+            "answer_en": "The painter is from Xi’an."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Introduce a friend: say where they are from and what they do.",
+          "model_answer": {
+            "hanzi": "我的朋友小王来自武汉，他现在是一名游泳运动员。",
+            "pinyin": "Wǒ de péngyou Xiǎo Wáng láizì Wǔhàn, tā xiànzài shì yì míng yóuyǒng yùndòngyuán.",
+            "english": "My friend Xiao Wang comes from Wuhan, and he is a swimming athlete now."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe a family member or neighbor using 大人, 老人, or 头发.",
+          "model_answer": {
+            "hanzi": "我爷爷是一位老人，他的头发已经全白了。",
+            "pinyin": "Wǒ yéye shì yí wèi lǎorén, tā de tóufa yǐjīng quán bái le.",
+            "english": "My grandfather is an elderly person, and his hair is already completely white."
+          }
+        }
+      ],
+      "common_pitfall": "Use 男生 / 女生 for students or young people, and 男人 / 女人 for adult men and women in general. Calling a classmate 男人 sounds unnatural.",
+      "pronunciation_focus": "头发 (tóufa) uses a neutral tone on the second syllable; 来自 (láizì) pairs a rising second tone with a falling fourth tone.",
+      "review": {
+        "can_do": [
+          "State where someone was born or comes from.",
+          "Distinguish student and adult gender terms.",
+          "Describe hair and roles like 画家 and 运动员."
+        ],
+        "entry_ids": [
+          532,
+          563,
+          574,
+          676,
+          743,
+          746,
+          772,
+          774,
+          775,
+          787,
+          788,
+          861,
+          961
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-people-and-backgrounds--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Stating where someone is from",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-people-and-backgrounds--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Talking about birthplace",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say that the athlete was born in Qingdao.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-people-and-backgrounds--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say that female student has very short hair.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-people-and-backgrounds--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say that adults should help elderly people.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Who comes to the community room in the morning?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-people-and-backgrounds--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Where is the painter who teaches on weekends from?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Introduce a friend: say where they are from and what they do.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-people-and-backgrounds--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe a family member or neighbor using 大人, 老人, or 头发.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-people-and-backgrounds--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-people-and-backgrounds--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"to come from\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-people-and-backgrounds--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word refers to a famous person?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-people-and-backgrounds--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"hair\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-people-and-backgrounds--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-people-and-backgrounds--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

@@ -1,0 +1,1301 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-office-and-leave",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "At the Office & Taking Leave",
+    "subtitle": "Meetings, colleagues, managers, and taking leave",
+    "description": "Talk about office routines, attending meetings, working with colleagues and managers, and requesting leave.",
+    "slug": "office-and-leave"
+  },
+  "classification": {
+    "primary_topic_id": "work-jobs",
+    "topic_ids": [
+      "work-jobs"
+    ],
+    "tags": [
+      "office",
+      "meetings",
+      "workplace"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name workplace people and places: 办公室, 同事, 经理, 司机, and the suffix 员.",
+    "Discuss meetings using 会, 会议, and 开会.",
+    "Ask for or take time off using 请假 and 休假."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "之": "Characters:之",
+    "九": "Characters:九",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "五": "Characters:五",
+    "些": "Characters:些",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "假": "Characters:假",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "再": "Characters:再",
+    "冒": "Characters:冒",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "刘": "Characters:刘",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "办": "Characters:办",
+    "加": "Characters:加",
+    "务": "Characters:务",
+    "动": "Characters:动",
+    "医": "Characters:医",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "参": "Characters:参",
+    "口": "Characters:口",
+    "司": "Characters:司",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "向": "Characters:向",
+    "吗": "Characters:吗",
+    "告": "Characters:告",
+    "员": "Characters:员",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "四": "Characters:四",
+    "回": "Characters:回",
+    "因": "Characters:因",
+    "在": "Characters:在",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "始": "Characters:始",
+    "安": "Characters:安",
+    "完": "Characters:完",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "宾": "Characters:宾",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "差": "Characters:差",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "您": "Characters:您",
+    "情": "Characters:情",
+    "想": "Characters:想",
+    "感": "Characters:感",
+    "我": "Characters:我",
+    "所": "Characters:所",
+    "才": "Characters:才",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "排": "Characters:排",
+    "提": "Characters:提",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "机": "Characters:机",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "爸": "Characters:爸",
+    "王": "Characters:王",
+    "班": "Characters:班",
+    "理": "Characters:理",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "租": "Characters:租",
+    "等": "Characters:等",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "舒": "Characters:舒",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "认": "Characters:认",
+    "议": "Characters:议",
+    "记": "Characters:记",
+    "识": "Characters:识",
+    "诉": "Characters:诉",
+    "话": "Characters:话",
+    "请": "Characters:请",
+    "赛": "Characters:赛",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "过": "Characters:过",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "部": "Characters:部",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "院": "Characters:院",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "题": "Characters:题",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Essential workplace nouns and verbs for office communication and scheduling.",
+      "focus": "Use 开会 for holding or attending a meeting and 请假 for requesting time off."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0512",
+          "hanzi": "办公室",
+          "pinyin": "bàngōngshì",
+          "meaning_en": "office",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0512-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "办公室在哪儿？",
+              "pinyin": "bàngōngshì zài nǎr?",
+              "english": "Where is the office?",
+              "teaching_note": "Short everyday spoken use of 办公室."
+            },
+            {
+              "id": "ex-0512-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师正在办公室工作。",
+              "pinyin": "lǎoshī zhèngzài bàngōngshì gōngzuò.",
+              "english": "The teacher is working in the office.",
+              "teaching_note": "Simple descriptive or narrative use of 办公室."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 512
+            }
+          ]
+        },
+        {
+          "id": "w-0632",
+          "hanzi": "服务",
+          "pinyin": "fúwù",
+          "meaning_en": "serve; service",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0632-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里的服务很好。",
+              "pinyin": "zhèlǐ de fúwù hěn hǎo.",
+              "english": "The service here is very good.",
+              "teaching_note": "Short everyday spoken use of 服务."
+            },
+            {
+              "id": "ex-0632-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家宾馆的服务很好。",
+              "pinyin": "zhè jiā bīnguǎn de fúwù hěn hǎo.",
+              "english": "This hotel has good service.",
+              "teaching_note": "Simple descriptive or narrative use of 服务."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 632
+            }
+          ]
+        },
+        {
+          "id": "w-0683",
+          "hanzi": "会",
+          "pinyin": "huì",
+          "meaning_en": "meeting; association (noun sense of 会)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0683-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天有个会。",
+              "pinyin": "jīntiān yǒu gè huì.",
+              "english": "There's a meeting today.",
+              "teaching_note": "会 here refers to a meeting as a noun; it is distinct from 会 (huì) the modal verb in Level 1."
+            },
+            {
+              "id": "ex-0683-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个会下午三点开始。",
+              "pinyin": "zhège huì xiàwǔ sān diǎn kāishǐ.",
+              "english": "This meeting starts at three in the afternoon.",
+              "teaching_note": "会 here refers to a meeting as a noun; it is distinct from 会 (huì) the modal verb in Level 1."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 683
+            }
+          ]
+        },
+        {
+          "id": "w-0684",
+          "hanzi": "会议",
+          "pinyin": "huìyì",
+          "meaning_en": "meeting; conference",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0684-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "会议几点开始？",
+              "pinyin": "huìyì jǐ diǎn kāishǐ?",
+              "english": "What time does the meeting start?",
+              "teaching_note": "Short everyday spoken use of 会议."
+            },
+            {
+              "id": "ex-0684-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公司明天上午有会议。",
+              "pinyin": "gōngsī míngtiān shàngwǔ yǒu huìyì.",
+              "english": "The company has a meeting tomorrow morning.",
+              "teaching_note": "Simple descriptive or narrative use of 会议."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 684
+            }
+          ]
+        },
+        {
+          "id": "w-0718",
+          "hanzi": "经理",
+          "pinyin": "jīnglǐ",
+          "meaning_en": "manager",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0718-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "经理在吗？",
+              "pinyin": "jīnglǐ zài ma?",
+              "english": "Is the manager here?",
+              "teaching_note": "Short everyday spoken use of 经理."
+            },
+            {
+              "id": "ex-0718-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "经理今天下午开会。",
+              "pinyin": "jīnglǐ jīntiān xiàwǔ kāihuì.",
+              "english": "The manager has a meeting this afternoon.",
+              "teaching_note": "Simple descriptive or narrative use of 经理."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 718
+            }
+          ]
+        },
+        {
+          "id": "w-0727",
+          "hanzi": "开会",
+          "pinyin": "kāihuì",
+          "meaning_en": "hold a meeting; attend a meeting",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0727-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你要开会吗？",
+              "pinyin": "nǐ yào kāihuì ma?",
+              "english": "Do you have a meeting?",
+              "teaching_note": "Short everyday spoken use of 开会."
+            },
+            {
+              "id": "ex-0727-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "经理下午三点开会。",
+              "pinyin": "jīnglǐ xiàwǔ sān diǎn kāihuì.",
+              "english": "The manager has a meeting at three.",
+              "teaching_note": "Simple descriptive or narrative use of 开会."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 727
+            }
+          ]
+        },
+        {
+          "id": "w-0808",
+          "hanzi": "请假",
+          "pinyin": "qǐngjià",
+          "meaning_en": "ask for leave",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0808-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想请假一天。",
+              "pinyin": "wǒ xiǎng qǐngjià yì tiān.",
+              "english": "I'd like to take a day off.",
+              "teaching_note": "Short everyday spoken use of 请假."
+            },
+            {
+              "id": "ex-0808-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他生病了，向老师请假。",
+              "pinyin": "tā shēngbìng le, xiàng lǎoshī qǐngjià.",
+              "english": "He was ill and asked the teacher for leave.",
+              "teaching_note": "Simple descriptive or narrative use of 请假."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 808
+            }
+          ]
+        },
+        {
+          "id": "w-0847",
+          "hanzi": "司机",
+          "pinyin": "sījī",
+          "meaning_en": "driver",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0847-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "司机到了吗？",
+              "pinyin": "sījī dào le ma?",
+              "english": "Has the driver arrived?",
+              "teaching_note": "Short everyday spoken use of 司机."
+            },
+            {
+              "id": "ex-0847-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "出租车司机在门口等我们。",
+              "pinyin": "chūzūchē sījī zài ménkǒu děng wǒmen.",
+              "english": "The taxi driver is waiting for us at the entrance.",
+              "teaching_note": "Simple descriptive or narrative use of 司机."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 847
+            }
+          ]
+        },
+        {
+          "id": "w-0859",
+          "hanzi": "同事",
+          "pinyin": "tóngshì",
+          "meaning_en": "colleague; coworker",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0859-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你认识我的同事吗？",
+              "pinyin": "nǐ rènshi wǒ de tóngshì ma?",
+              "english": "Do you know my colleague?",
+              "teaching_note": "Short everyday spoken use of 同事."
+            },
+            {
+              "id": "ex-0859-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的同事都很热情。",
+              "pinyin": "tā de tóngshì dōu hěn rèqíng.",
+              "english": "His coworkers are all friendly.",
+              "teaching_note": "Simple descriptive or narrative use of 同事."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 859
+            }
+          ]
+        },
+        {
+          "id": "w-0911",
+          "hanzi": "休假",
+          "pinyin": "xiūjià",
+          "meaning_en": "take leave; go on holiday",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0911-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你下周休假吗？",
+              "pinyin": "nǐ xià zhōu xiūjià ma?",
+              "english": "Are you taking leave next week?",
+              "teaching_note": "Short everyday spoken use of 休假."
+            },
+            {
+              "id": "ex-0911-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "经理下个月休假一周。",
+              "pinyin": "jīnglǐ xià gè yuè xiūjià yì zhōu.",
+              "english": "The manager is taking a week's leave next month.",
+              "teaching_note": "Simple descriptive or narrative use of 休假."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 911
+            }
+          ]
+        },
+        {
+          "id": "w-0956",
+          "hanzi": "员",
+          "pinyin": "yuán",
+          "meaning_en": "member; employee (suffix)",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0956-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们都是运动员吗？",
+              "pinyin": "nǐmen dōu shì yùndòngyuán ma?",
+              "english": "Are you all athletes?",
+              "teaching_note": "员 functions as a person-denoting suffix inside 运动员 (an official Level 3 word); replaces unlisted 工作人员."
+            },
+            {
+              "id": "ex-0956-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这些运动员今天参加比赛。",
+              "pinyin": "zhèxiē yùndòngyuán jīntiān cānjiā bǐsài.",
+              "english": "These athletes are competing today.",
+              "teaching_note": "员 is usually a suffix indicating a person or member, as in 运动员."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 956
+            }
+          ]
+        },
+        {
+          "id": "w-0062",
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "meaning_en": "work; job",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0062-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天要工作。",
+              "pinyin": "wǒ jīntiān yào gōngzuò.",
+              "english": "I have to work today.",
+              "teaching_note": "要 can express necessity or a planned action; context determines how strong “have to” is."
+            },
+            {
+              "id": "ex-0062-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妈妈在医院工作。",
+              "pinyin": "māma zài yīyuàn gōngzuò.",
+              "english": "Mom works at a hospital.",
+              "teaching_note": "Family or daily-life description using 工作 without advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 62
+            }
+          ]
+        },
+        {
+          "id": "w-0063",
+          "hanzi": "公司",
+          "pinyin": "gōngsī",
+          "meaning_en": "company",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs",
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0063-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她在一家公司上班。",
+              "pinyin": "tā zài yì jiā gōngsī shàngbān.",
+              "english": "She works for a company.",
+              "teaching_note": "家 classifies companies; 一 is pronounced yì before first-tone 家."
+            },
+            {
+              "id": "ex-0063-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "公司里有很多人。",
+              "pinyin": "gōngsī lǐ yǒu hěn duō rén.",
+              "english": "There are many people at the company.",
+              "teaching_note": "Short beginner-level description illustrating 公司 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 63
+            }
+          ]
+        },
+        {
+          "id": "w-0176",
+          "hanzi": "上班",
+          "pinyin": "shàngbān",
+          "meaning_en": "go to work",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0176-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸每天八点上班。",
+              "pinyin": "wǒ bàba měitiān bā diǎn shàngbān.",
+              "english": "My dad goes to work at eight every day.",
+              "teaching_note": "上班 means go to work or start work, not simply enter a building."
+            },
+            {
+              "id": "ex-0176-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "很多人每天早上八点上班。",
+              "pinyin": "hěn duō rén měitiān zǎoshang bā diǎn shàngbān.",
+              "english": "Many people start work at eight every morning.",
+              "teaching_note": "The time phrase states when the workday starts."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 176
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 办公室 (bàngōngshì)",
+        "explanation": "办公室 (bàngōngshì) means “office” (noun).",
+        "example_id": "ex-0512-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 服务 (fúwù)",
+        "explanation": "服务 (fúwù) means “serve; service” (verb).",
+        "example_id": "ex-0632-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0512-1",
+      "ex-0632-1",
+      "ex-0683-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "When can Manager Zhang take leave according to the passage?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Only after his business trip next week.",
+          "explanation": "The passage states 下周他要出差，之后才能休假."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write a short message to your manager asking for one day of leave.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "王经理，我今天有点儿不舒服，想向您请假一天。",
+          "explanation": "Address the manager politely and use 请假一天."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to ask for leave\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "开会",
+              "pinyin": "kāihuì",
+              "meaning_en": "hold a meeting"
+            },
+            {
+              "id": "b",
+              "hanzi": "请假",
+              "pinyin": "qǐngjià",
+              "meaning_en": "ask for leave"
+            },
+            {
+              "id": "c",
+              "hanzi": "服务",
+              "pinyin": "fúwù",
+              "meaning_en": "serve"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "请假 means requesting time off."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"colleague\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "经理",
+              "pinyin": "jīnglǐ",
+              "meaning_en": "manager"
+            },
+            {
+              "id": "b",
+              "hanzi": "司机",
+              "pinyin": "sījī",
+              "meaning_en": "driver"
+            },
+            {
+              "id": "c",
+              "hanzi": "同事",
+              "pinyin": "tóngshì",
+              "meaning_en": "colleague"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "同事 refers to a coworker."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which suffix forms words for staff or members (like 服务员)?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "员",
+              "pinyin": "yuán",
+              "meaning_en": "member / staff"
+            },
+            {
+              "id": "b",
+              "hanzi": "会",
+              "pinyin": "huì",
+              "meaning_en": "meeting"
+            },
+            {
+              "id": "c",
+              "hanzi": "室",
+              "pinyin": "shì",
+              "meaning_en": "room"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "员 is a common suffix for roles and members."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Before the Morning Meeting",
+        "context_en": "Two colleagues talk in the office before a meeting with their manager.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，李经理在办公室吗？",
+            "pinyin": "Qǐngwèn, Lǐ jīnglǐ zài bàngōngshì ma?",
+            "english": "Excuse me, is Manager Li in the office?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "他去会议室开会了，一会儿才回来。",
+            "pinyin": "Tā qù huìyìshì kāihuì le, yíhuìr cái huílai.",
+            "english": "He went to the meeting room for a meeting and won’t be back for a bit."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那我等他开完会再找他，我想下周请假两天。",
+            "pinyin": "Nà wǒ děng tā kāi wán huì zài zhǎo tā, wǒ xiǎng xià zhōu qǐngjià liǎng tiān.",
+            "english": "Then I’ll look for him after his meeting ends; I’d like to ask for two days off next week."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没问题，不过记得提前告诉部门的同事。",
+            "pinyin": "Méi wèntí, búguò jìde tíqián gàosu bùmén de tóngshì.",
+            "english": "No problem, just remember to tell your department colleagues in advance."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Holding or attending a meeting",
+          "explanation_en": "开会 (kāihuì) is a separable verb; insert duration or completion words like 完 between 开 and 会.",
+          "pattern_hanzi": "开 + <Duration / Result> + 会",
+          "pattern_pinyin": "kāi + <Duration / Result> + huì",
+          "pattern_pseudo_translation": "hold + <Duration / Result> + meeting",
+          "examples": [
+            {
+              "hanzi": "我们上午开了两个小时的会。",
+              "pinyin": "Wǒmen shàngwǔ kāi le liǎng ge xiǎoshí de huì.",
+              "english": "We had a two-hour meeting this morning."
+            },
+            {
+              "hanzi": "经理一开完会就给我打电话了。",
+              "pinyin": "Jīnglǐ yì kāi wán huì jiù gěi wǒ dǎ diànhuà le.",
+              "english": "As soon as the manager finished the meeting, he called me."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Requesting leave for a period",
+          "explanation_en": "State the reason or length of time off with 请假 (qǐngjià); duration follows 请假.",
+          "pattern_hanzi": "向 + <Person> + 请假 + <Duration>",
+          "pattern_pinyin": "xiàng + <Person> + qǐngjià + <Duration>",
+          "pattern_pseudo_translation": "to + <Person> + ask for leave + <Duration>",
+          "examples": [
+            {
+              "hanzi": "小刘感冒了，今天向经理请假一天。",
+              "pinyin": "Xiǎo Liú gǎnmào le, jīntiān xiàng jīnglǐ qǐngjià yì tiān.",
+              "english": "Xiao Liu caught a cold and asked the manager for one day of leave today."
+            },
+            {
+              "hanzi": "下个月我想休假一个星期。",
+              "pinyin": "Xià ge yuè wǒ xiǎng xiūjià yí ge xīngqī.",
+              "english": "Next month I want to take a one-week vacation."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Practice workplace requests and scheduling.",
+        "model": {
+          "hanzi": "我明天上午要和同事一起去开会。",
+          "pinyin": "Wǒ míngtiān shàngwǔ yào hé tóngshì yìqǐ qù kāihuì.",
+          "english": "Tomorrow morning I need to go to a meeting with my colleagues."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say the driver is waiting outside the office.",
+            "model_answer": {
+              "hanzi": "司机正在办公室外面等着呢。",
+              "pinyin": "Sījī zhèngzài bàngōngshì wàimiàn děng zhe ne.",
+              "english": "The driver is waiting outside the office."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say the service staff are very friendly.",
+            "model_answer": {
+              "hanzi": "这里的服务员非常热情。",
+              "pinyin": "Zhèlǐ de fúwùyuán fēicháng rèqíng.",
+              "english": "The service staff here are very warm and friendly."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say there is an important meeting this afternoon.",
+            "model_answer": {
+              "hanzi": "今天下午有一个重要的会议。",
+              "pinyin": "Jīntiān xiàwǔ yǒu yí ge zhòngyào de huìyì.",
+              "english": "There is an important meeting this afternoon."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Busy Friday",
+        "paragraphs": [
+          {
+            "hanzi": "星期五上午，张经理在办公室里看了看今天的安排。九点半有一个重要的会议，所有同事都要参加。",
+            "pinyin": "Xīngqīwǔ shàngwǔ, Zhāng jīnglǐ zài bàngōngshì lǐ kàn le kan jīntiān de ānpái. Jiǔ diǎn bàn yǒu yí ge zhòngyào de huìyì, suǒyǒu tóngshì dōu yào cānjiā.",
+            "english": "On Friday morning, Manager Zhang checked today’s schedule in his office. At 9:30 there is an important meeting that all colleagues must attend."
+          },
+          {
+            "hanzi": "开完会以后，他还要见一位新来的司机，因为下周他要出差，之后才能休假。",
+            "pinyin": "Kāi wán huì yǐhòu, tā hái yào jiàn yí wèi xīn lái de sījī, yīnwèi xià zhōu tā yào chūchāi, zhīhòu cái néng xiūjià.",
+            "english": "After the meeting, he also needs to meet a newly arrived driver, because next week he has a business trip and only afterward can he take leave."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "When is the important meeting?",
+            "answer_en": "At 9:30 on Friday morning."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Who does Manager Zhang need to meet after the meeting?",
+            "answer_en": "A newly arrived driver."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Tell a colleague that you are going to a meeting or asking for leave.",
+          "model_answer": {
+            "hanzi": "我下午两点去开会，四点回办公室。",
+            "pinyin": "Wǒ xiàwǔ liǎng diǎn qù kāihuì, sì diǎn huí bàngōngshì.",
+            "english": "I am going to a meeting at 2 p.m. and returning to the office at 4 p.m."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say what job someone has using 服务, 经理, or 司机.",
+          "model_answer": {
+            "hanzi": "我哥哥是一家公司的经理，他每天工作很忙。",
+            "pinyin": "Wǒ gēge shì yì jiā gōngsī de jīnglǐ, tā měitiān gōngzuò hěn máng.",
+            "english": "My older brother is a manager at a company; he is very busy at work every day."
+          }
+        }
+      ],
+      "common_pitfall": "请假 means \"ask for leave\" (from work or school), while 休假 means \"be on leave / take vacation\".",
+      "pronunciation_focus": "办公室 (bàngōngshì) ends with a falling fourth-tone shì; 会议 (huìyì) has two fourth tones in a row.",
+      "review": {
+        "can_do": [
+          "Name office roles and places.",
+          "Talk about meetings with 开会 and 会议.",
+          "Distinguish 请假 and 休假."
+        ],
+        "entry_ids": [
+          512,
+          632,
+          683,
+          684,
+          718,
+          727,
+          808,
+          847,
+          859,
+          911,
+          956
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-office-and-leave--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Holding or attending a meeting",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-office-and-leave--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Requesting leave for a period",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the driver is waiting outside the office.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-office-and-leave--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the service staff are very friendly.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-office-and-leave--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there is an important meeting this afternoon.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: When is the important meeting?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-office-and-leave--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Who does Manager Zhang need to meet after the meeting?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Tell a colleague that you are going to a meeting or asking for leave.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-office-and-leave--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say what job someone has using 服务, 经理, or 司机.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-office-and-leave--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-office-and-leave--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to ask for leave\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-office-and-leave--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"colleague\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-office-and-leave--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which suffix forms words for staff or members (l",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-office-and-leave--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-office-and-leave--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 18
+}

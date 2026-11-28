@@ -30,8 +30,8 @@ import vocabulary_store  # noqa: E402  (split-by-level vocabulary reader/writer)
 ROOT = Path(__file__).resolve().parent.parent
 INPUT = ROOT / 'importer/data/hsk-audio'
 VOCABULARY = vocabulary_store.DIRECTORY
-HANDOFF = ROOT / 'importer/hsk/hsk3_level2_1.1.2.json'
-MANIFEST = INPUT / 'level2-manifest-1.1.2.json'
+HANDOFF = ROOT / 'importer/hsk/hsk3_level2_1.1.3.json'
+MANIFEST = INPUT / 'level2-manifest-1.1.3.json'
 COMMIT = 'f759a0f18f27690742957619e1248ed91e9b3f2c'
 BASE = 'https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/'
 INDEX_SHA256 = '59052c11fcdfd0f0f21fcaf9618371f269f4a0228eaed920c3923e827f8d81a6'

@@ -13,7 +13,7 @@ lesson JSON plus its generated Markdown/HTML companions and an editorial `report
 | `curricula/CONVERSATIONAL_MANDARIN.json` | Conversational Mandarin course: one section of 17 topic units, one lesson each, independent of HSK. | `src/lib/lesson-curricula.ts`. |
 | `curricula/HSK3_2025_LEVEL1.json` | Course placement manifest: levels → units → placements (lesson ID, order, prerequisites, syllabus entries). | `src/lib/lesson-curricula.ts` (By course view, lesson position). |
 | `legacy/` | Pre-v3 copies of the two character lessons, kept for migration only. | Not loaded (excluded from the lesson globs, would duplicate lesson IDs). |
-| `manifest.json` | Historical HSK package index; current source packages and versions are recorded in the source handoff guide. | Authoring reference; not loaded. |
+| `manifest.json` | HSK package index with current official entry IDs; current source packages and versions are recorded in the source handoff guide. | Authoring reference; not loaded. |
 
 Lesson files are discovered by `lessons/**/*_LESSON_*/*.json`. The directory name starts
 with the lesson kind (`CHARACTER_`, `WORD_`, `PHRASE_` record a `headword`; `TOPIC_` and
@@ -24,7 +24,7 @@ named key fails the whole app in the browser.
 General lessons (`mandarin-general-lesson`) render their recorded `sections.blocks` in order (explanation, dialogue, grammar pattern, review set); their words link only to a unique exact-headword record, and a recording plays only when that record's pinyin matches.
 
 Topic-lesson words link to Vocabulary only through their recorded `syllabus_refs`
-(HSK 3.0 entry number) plus the exact headword. Source entry 36's example pinyin was
+(HSK 3.0 entry number) plus the exact headword. Current entry 35's example pinyin was
 corrected in the lesson (see its `report.md`) and the same correction is applied to the
 Vocabulary word list (`src/data/vocabulary/level-1.json`); the importer source under
 `importer/hsk/` is kept byte-for-byte, so a re-import must reapply it.
@@ -38,3 +38,5 @@ Core/schema, exact HSK dictionary, catalog-reference and checkpoint validation.
 and copies supplied conversational/independent files without content rewriting.
 Current packages are in [lesson handoffs](../../../../importer/data/lessons/README.md);
 older upload ZIPs and notes are recoverable from Git history.
+
+Runtime lesson JSON and HTML/Markdown labels use current official IDs directly. Check both with the [reference audit](../../../../reports/hsk-current-app-references.md). Original ZIPs remain offline source evidence; numeric labels in runtime companions are normalized from their authoritative JSON.

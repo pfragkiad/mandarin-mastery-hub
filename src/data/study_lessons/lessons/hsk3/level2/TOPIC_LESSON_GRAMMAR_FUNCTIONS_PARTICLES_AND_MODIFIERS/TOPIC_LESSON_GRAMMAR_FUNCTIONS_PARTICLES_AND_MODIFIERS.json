@@ -284,7 +284,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 332
+              "entry_id": 333
             }
           ],
           "primary_topic_id": "grammar-functions",
@@ -328,7 +328,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 333
+              "entry_id": 332
             }
           ],
           "primary_topic_id": "grammar-functions",
@@ -416,7 +416,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 472
+              "entry_id": 473
             }
           ],
           "primary_topic_id": "grammar-functions",
@@ -989,10 +989,10 @@
         "entry_ids": [
           301,
           311,
-          332,
           333,
+          332,
           351,
-          472,
+          473,
           490,
           491,
           498

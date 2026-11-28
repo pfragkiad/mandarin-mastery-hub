@@ -150,7 +150,7 @@ A weather event such as 下雨 (xià yǔ) is not an adjective. Prefer 今天下�
 
 - 天气 (tiānqì) — weather [HSK entry 208]
 
-- 下雨 (xià yǔ) — rain [HSK entry 227]
+- 下雨 (xià yǔ) — rain [HSK entry 230]
 
 - 雪 (xuě) — snow [HSK entry 251]
 

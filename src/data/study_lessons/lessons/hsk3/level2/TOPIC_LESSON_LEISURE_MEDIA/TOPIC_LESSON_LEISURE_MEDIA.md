@@ -162,9 +162,9 @@ Do not say 打足球 for ordinary football; standard Mandarin uses 踢足球 (t�
 
 - 唱 (chàng) — sing [HSK entry 18]
 
-- 电视 (diànshì) — TV [HSK entry 37]
+- 电视 (diànshì) — TV [HSK entry 36]
 
-- 电影 (diànyǐng) — film [HSK entry 38]
+- 电影 (diànyǐng) — film [HSK entry 37]
 
 ## Optional vocabulary recall quiz
 

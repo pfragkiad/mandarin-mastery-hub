@@ -9,7 +9,8 @@ import { readVocabulary, dumpEntries } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const digest = path => createHash('sha256').update(readFileSync(path)).digest('hex');
-const builds = read('reports/hsk-level1-5-official-numbering-migration.json').levels;
+const lengthReleases = new Map(read('reports/hsk-short-sentence-release.json').levels.map(row => [row.level, row]));
+const builds = read('reports/hsk-level1-5-official-numbering-migration.json').levels.map(row => lengthReleases.get(row.level) ?? row);
 const baseline = read('importer/data/hsk-level1-5-numbering/legacy-bindings.json').entries;
 const missingManifest = read('importer/data/missing-audio/manifest.json');
 const listeningReview = read('importer/data/missing-audio/listening-review.json');
@@ -56,7 +57,7 @@ for (const build of builds) {
     assert.equal(entry.hskSource.sourceName, build.current_source.split('/').at(-1));
     assert.equal(entry.studyMetadata.sourceSha256, build.sha256);
     assert.equal(entry.studyMetadata.syllabusPinyin, row.pinyin);
-    assert.deepEqual(entry.studyMetadata.numberingRevision, { name: 'official-site-1219', previousId: old.legacy_id });
+    assert.equal(entry.studyMetadata.numberingRevision, undefined);
     changed += entry.hsk_index !== old.legacy_id;
     recordings += Boolean(entry.audio);
   }

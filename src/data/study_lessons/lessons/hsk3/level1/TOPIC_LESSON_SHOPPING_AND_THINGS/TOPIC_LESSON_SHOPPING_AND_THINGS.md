@@ -142,7 +142,7 @@ I want to buy a phone.
 
 - 超市 (chāoshì) — supermarket [HSK entry 19]
 
-- 店 (diàn) — shop [HSK entry 34]
+- 店 (diàn) — shop [HSK entry 39]
 
 - 贵 (guì) — expensive [HSK entry 65]
 
@@ -162,9 +162,9 @@ I want to buy a phone.
 
 - 杯子 (bēizi) — cup [HSK entry 9]
 
-- 电话 (diànhuà) — telephone [HSK entry 35]
+- 电话 (diànhuà) — telephone [HSK entry 34]
 
-- 电脑 (diànnǎo) — computer [HSK entry 36]
+- 电脑 (diànnǎo) — computer [HSK entry 35]
 
 - 东西 (dōngxi) — thing [HSK entry 40]
 
@@ -172,9 +172,9 @@ I want to buy a phone.
 
 - 手机 (shǒujī) — mobile phone [HSK entry 189]
 
-- 衣服 (yīfu) — clothes [HSK entry 255]
+- 衣服 (yīfu) — clothes [HSK entry 259]
 
-- 椅子 (yǐzi) — chair [HSK entry 260]
+- 椅子 (yǐzi) — chair [HSK entry 262]
 
 - 桌子 (zhuōzi) — table [HSK entry 295]
 

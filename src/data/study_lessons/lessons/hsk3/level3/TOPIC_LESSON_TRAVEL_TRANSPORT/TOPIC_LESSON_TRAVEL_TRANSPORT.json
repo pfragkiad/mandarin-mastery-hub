@@ -1,0 +1,1728 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-journeys-and-transit",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Journeys, Tickets & Transit",
+    "subtitle": "High-speed trains, flights, tickets, and getting around",
+    "description": "Talk about traveling by high-speed rail, plane, boat, car, or bike, checking tickets, luggage, and delays.",
+    "slug": "journeys-and-transit"
+  },
+  "classification": {
+    "primary_topic_id": "travel-transport",
+    "topic_ids": [
+      "travel-transport"
+    ],
+    "tags": [
+      "travel",
+      "transport",
+      "tickets"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name vehicles and travel essentials: 高铁, 汽车, 船, 自行车, 护照, 行李, 地图, 宾馆, and 游客.",
+    "Discuss departures, arrivals, and delays: 出发, 离开, 起飞, 检票, 接, 经过, and 晚点.",
+    "Navigate streets and traffic with 马路, 路口, 红绿灯, and 骑."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "五": "Characters:五",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "位": "Characters:位",
+    "住": "Characters:住",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "再": "Characters:再",
+    "准": "Characters:准",
+    "凉": "Characters:凉",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "单": "Characters:单",
+    "南": "Characters:南",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "吴": "Characters:吴",
+    "呢": "Characters:呢",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "喜": "Characters:喜",
+    "回": "Characters:回",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "容": "Characters:容",
+    "宾": "Characters:宾",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "左": "Characters:左",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "带": "Characters:带",
+    "开": "Characters:开",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "必": "Characters:必",
+    "快": "Characters:快",
+    "愿": "Characters:愿",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "护": "Characters:护",
+    "拍": "Characters:拍",
+    "拿": "Characters:拿",
+    "接": "Characters:接",
+    "放": "Characters:放",
+    "方": "Characters:方",
+    "旅": "Characters:旅",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "易": "Characters:易",
+    "春": "Characters:春",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "机": "Characters:机",
+    "李": "Characters:李",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "检": "Characters:检",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "汽": "Characters:汽",
+    "没": "Characters:没",
+    "河": "Characters:河",
+    "游": "Characters:游",
+    "湖": "Characters:湖",
+    "火": "Characters:火",
+    "灯": "Characters:灯",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "照": "Characters:照",
+    "爸": "Characters:爸",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "票": "Characters:票",
+    "离": "Characters:离",
+    "站": "Characters:站",
+    "简": "Characters:简",
+    "红": "Characters:红",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "绿": "Characters:绿",
+    "自": "Characters:自",
+    "航": "Characters:航",
+    "船": "Characters:船",
+    "色": "Characters:色",
+    "行": "Characters:行",
+    "表": "Characters:表",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "趟": "Characters:趟",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "辆": "Characters:辆",
+    "边": "Characters:边",
+    "达": "Characters:达",
+    "过": "Characters:过",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "铁": "Characters:铁",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "附": "Characters:附",
+    "面": "Characters:面",
+    "须": "Characters:须",
+    "风": "Characters:风",
+    "飞": "Characters:飞",
+    "馆": "Characters:馆",
+    "马": "Characters:马",
+    "骑": "Characters:骑",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Travel, transit, and road-navigation vocabulary for trips and commutes.",
+      "focus": "Use 骑 for riding bikes/horses, 坐 for trains/planes/cars, and 晚点 when a train or flight is delayed."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0533",
+          "hanzi": "宾馆",
+          "pinyin": "bīnguǎn",
+          "meaning_en": "hotel; guesthouse",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0533-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "宾馆在哪儿？",
+              "pinyin": "bīnguǎn zài nǎr?",
+              "english": "Where is the hotel?",
+              "teaching_note": "Short everyday spoken use of 宾馆."
+            },
+            {
+              "id": "ex-0533-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家宾馆离车站很近。",
+              "pinyin": "zhè jiā bīnguǎn lí chēzhàn hěn jìn.",
+              "english": "This hotel is close to the station.",
+              "teaching_note": "Simple descriptive or narrative use of 宾馆."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 533
+            }
+          ]
+        },
+        {
+          "id": "w-0562",
+          "hanzi": "出发",
+          "pinyin": "chūfā",
+          "meaning_en": "set off; depart",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0562-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们什么时候出发？",
+              "pinyin": "wǒmen shénme shíhou chūfā?",
+              "english": "When are we leaving?",
+              "teaching_note": "Short everyday spoken use of 出发."
+            },
+            {
+              "id": "ex-0562-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "火车八点出发。",
+              "pinyin": "huǒchē bā diǎn chūfā.",
+              "english": "The train departs at eight.",
+              "teaching_note": "Simple descriptive or narrative use of 出发."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 562
+            }
+          ]
+        },
+        {
+          "id": "w-0567",
+          "hanzi": "船",
+          "pinyin": "chuán",
+          "meaning_en": "boat; ship",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0567-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们坐船去吧。",
+              "pinyin": "wǒmen zuò chuán qù ba.",
+              "english": "Let's go by boat.",
+              "teaching_note": "Short everyday spoken use of 船."
+            },
+            {
+              "id": "ex-0567-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "河上有一条小船。",
+              "pinyin": "hé shàng yǒu yì tiáo xiǎo chuán.",
+              "english": "There is a small boat on the river.",
+              "teaching_note": "Simple descriptive or narrative use of 船."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 567
+            }
+          ]
+        },
+        {
+          "id": "w-0592",
+          "hanzi": "地图",
+          "pinyin": "dìtú",
+          "meaning_en": "map",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0592-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "地图给我看看。",
+              "pinyin": "dìtú gěi wǒ kàn kàn.",
+              "english": "Let me see the map.",
+              "teaching_note": "Short everyday spoken use of 地图."
+            },
+            {
+              "id": "ex-0592-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "地图上有很多城市的名字。",
+              "pinyin": "dìtú shàng yǒu hěn duō chéngshì de míngzi.",
+              "english": "Many city names appear on the map.",
+              "teaching_note": "Simple descriptive or narrative use of 地图."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 592
+            }
+          ]
+        },
+        {
+          "id": "w-0644",
+          "hanzi": "高铁",
+          "pinyin": "gāotiě",
+          "meaning_en": "high-speed rail",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0644-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们坐高铁吧。",
+              "pinyin": "wǒmen zuò gāotiě ba.",
+              "english": "Let's take the high-speed train.",
+              "teaching_note": "Short everyday spoken use of 高铁."
+            },
+            {
+              "id": "ex-0644-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "坐高铁比坐汽车快。",
+              "pinyin": "zuò gāotiě bǐ zuò qìchē kuài.",
+              "english": "Taking high-speed rail is faster than going by car.",
+              "teaching_note": "Simple descriptive or narrative use of 高铁."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 644
+            }
+          ]
+        },
+        {
+          "id": "w-0670",
+          "hanzi": "红绿灯",
+          "pinyin": "hóng-lǜdēng",
+          "meaning_en": "traffic light",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0670-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "前面有红绿灯。",
+              "pinyin": "qiánmiàn yǒu hóng-lǜdēng.",
+              "english": "There's a traffic light ahead.",
+              "teaching_note": "Short everyday spoken use of 红绿灯."
+            },
+            {
+              "id": "ex-0670-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "过马路时要看红绿灯。",
+              "pinyin": "guò mǎlù shí yào kàn hóng-lǜdēng.",
+              "english": "Watch the traffic lights when crossing the road.",
+              "teaching_note": "Simple descriptive or narrative use of 红绿灯."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 670
+            }
+          ]
+        },
+        {
+          "id": "w-0674",
+          "hanzi": "护照",
+          "pinyin": "hùzhào",
+          "meaning_en": "passport",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport",
+            "society-government-law"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0674-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "护照带了吗？",
+              "pinyin": "hùzhào dài le ma?",
+              "english": "Did you bring your passport?",
+              "teaching_note": "Short everyday spoken use of 护照."
+            },
+            {
+              "id": "ex-0674-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "出国时必须带护照。",
+              "pinyin": "chūguó shí bìxū dài hùzhào.",
+              "english": "You must bring your passport when going abroad.",
+              "teaching_note": "Simple descriptive or narrative use of 护照."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 674
+            }
+          ]
+        },
+        {
+          "id": "w-0699",
+          "hanzi": "检票",
+          "pinyin": "jiǎnpiào",
+          "meaning_en": "check tickets",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0699-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "现在检票了吗？",
+              "pinyin": "xiànzài jiǎnpiào le ma?",
+              "english": "Are they checking tickets now?",
+              "teaching_note": "Short everyday spoken use of 检票."
+            },
+            {
+              "id": "ex-0699-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上火车前要检票。",
+              "pinyin": "shàng huǒchē qián yào jiǎnpiào.",
+              "english": "Tickets must be checked before boarding the train.",
+              "teaching_note": "Simple descriptive or narrative use of 检票."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 699
+            }
+          ]
+        },
+        {
+          "id": "w-0706",
+          "hanzi": "接",
+          "pinyin": "jiē",
+          "meaning_en": "pick up; receive; meet",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0706-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你去接他吗？",
+              "pinyin": "nǐ qù jiē tā ma?",
+              "english": "Are you going to pick him up?",
+              "teaching_note": "Short everyday spoken use of 接."
+            },
+            {
+              "id": "ex-0706-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸去机场接朋友。",
+              "pinyin": "bàba qù jīchǎng jiē péngyou.",
+              "english": "Dad goes to the airport to pick up a friend.",
+              "teaching_note": "Simple descriptive or narrative use of 接."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 706
+            }
+          ]
+        },
+        {
+          "id": "w-0717",
+          "hanzi": "经过",
+          "pinyin": "jīngguò",
+          "meaning_en": "pass through; go by; after",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0717-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "去学校要经过车站。",
+              "pinyin": "qù xuéxiào yào jīngguò chēzhàn.",
+              "english": "You pass the station on the way to school.",
+              "teaching_note": "Short everyday spoken use of 经过."
+            },
+            {
+              "id": "ex-0717-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们经过公园再回家。",
+              "pinyin": "wǒmen jīngguò gōngyuán zài huí jiā.",
+              "english": "We go past the park before heading home.",
+              "teaching_note": "Simple descriptive or narrative use of 经过."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 717
+            }
+          ]
+        },
+        {
+          "id": "w-0747",
+          "hanzi": "离开",
+          "pinyin": "líkāi",
+          "meaning_en": "leave; depart",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0747-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你什么时候离开？",
+              "pinyin": "nǐ shénme shíhou líkāi?",
+              "english": "When are you leaving?",
+              "teaching_note": "Short everyday spoken use of 离开."
+            },
+            {
+              "id": "ex-0747-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他昨天离开了中国。",
+              "pinyin": "tā zuótiān líkāi le Zhōngguó.",
+              "english": "He left China yesterday.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 747
+            }
+          ]
+        },
+        {
+          "id": "w-0763",
+          "hanzi": "路口",
+          "pinyin": "lùkǒu",
+          "meaning_en": "intersection; road crossing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0763-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "路口见！",
+              "pinyin": "lùkǒu jiàn!",
+              "english": "See you at the intersection!",
+              "teaching_note": "Short everyday spoken use of 路口."
+            },
+            {
+              "id": "ex-0763-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下一个路口往左走。",
+              "pinyin": "xià yí ge lùkǒu wǎng zuǒ zǒu.",
+              "english": "Turn left at the next intersection.",
+              "teaching_note": "Simple descriptive or narrative use of 路口."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 763
+            }
+          ]
+        },
+        {
+          "id": "w-0765",
+          "hanzi": "马路",
+          "pinyin": "mǎlù",
+          "meaning_en": "road; street",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0765-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "过马路小心！",
+              "pinyin": "guò mǎlù xiǎoxīn!",
+              "english": "Be careful crossing the road!",
+              "teaching_note": "Short everyday spoken use of 马路."
+            },
+            {
+              "id": "ex-0765-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校前面有一条马路。",
+              "pinyin": "xuéxiào qiánmiàn yǒu yì tiáo mǎlù.",
+              "english": "There is a road in front of the school.",
+              "teaching_note": "Simple descriptive or narrative use of 马路."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 765
+            }
+          ]
+        },
+        {
+          "id": "w-0800",
+          "hanzi": "骑",
+          "pinyin": "qí",
+          "meaning_en": "ride (bike, horse)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0800-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会骑自行车吗？",
+              "pinyin": "nǐ huì qí zìxíngchē ma?",
+              "english": "Can you ride a bike?",
+              "teaching_note": "Short everyday spoken use of 骑."
+            },
+            {
+              "id": "ex-0800-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸每天骑自行车去上班。",
+              "pinyin": "bàba měi tiān qí zìxíngchē qù shàngbān.",
+              "english": "Dad rides his bike to work every day.",
+              "teaching_note": "Simple descriptive or narrative use of 骑."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 800
+            }
+          ]
+        },
+        {
+          "id": "w-0802",
+          "hanzi": "起飞",
+          "pinyin": "qǐfēi",
+          "meaning_en": "take off (of an aircraft)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0802-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "飞机几点起飞？",
+              "pinyin": "fēijī jǐ diǎn qǐfēi?",
+              "english": "When does the plane take off?",
+              "teaching_note": "Short everyday spoken use of 起飞."
+            },
+            {
+              "id": "ex-0802-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "飞机上午九点起飞。",
+              "pinyin": "fēijī shàngwǔ jiǔ diǎn qǐfēi.",
+              "english": "The plane takes off at nine in the morning.",
+              "teaching_note": "Simple descriptive or narrative use of 起飞."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 802
+            }
+          ]
+        },
+        {
+          "id": "w-0803",
+          "hanzi": "汽车",
+          "pinyin": "qìchē",
+          "meaning_en": "car; automobile",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0803-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有汽车吗？",
+              "pinyin": "nǐ yǒu qìchē ma?",
+              "english": "Do you have a car?",
+              "teaching_note": "Short everyday spoken use of 汽车."
+            },
+            {
+              "id": "ex-0803-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这辆汽车是白色的。",
+              "pinyin": "zhè liàng qìchē shì báisè de.",
+              "english": "This car is white.",
+              "teaching_note": "Simple descriptive or narrative use of 汽车."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 803
+            }
+          ]
+        },
+        {
+          "id": "w-0869",
+          "hanzi": "晚点",
+          "pinyin": "wǎndiǎn",
+          "meaning_en": "late; delayed",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0869-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "火车晚点了吗？",
+              "pinyin": "huǒchē wǎndiǎn le ma?",
+              "english": "Is the train delayed?",
+              "teaching_note": "Short everyday spoken use of 晚点."
+            },
+            {
+              "id": "ex-0869-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天的飞机晚点半个小时。",
+              "pinyin": "jīntiān de fēijī wǎndiǎn bàn gè xiǎoshí.",
+              "english": "Today's flight is delayed by half an hour.",
+              "teaching_note": "Simple descriptive or narrative use of 晚点."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 869
+            }
+          ]
+        },
+        {
+          "id": "w-0909",
+          "hanzi": "行李",
+          "pinyin": "xíngli",
+          "meaning_en": "luggage; baggage",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0909-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "行李都带了吗？",
+              "pinyin": "xíngli dōu dài le ma?",
+              "english": "Did you bring all your luggage?",
+              "teaching_note": "Short everyday spoken use of 行李."
+            },
+            {
+              "id": "ex-0909-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的行李放在房间里。",
+              "pinyin": "tā de xíngli fàng zài fángjiān lǐ.",
+              "english": "His luggage is in the room.",
+              "teaching_note": "Simple descriptive or narrative use of 行李."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 909
+            }
+          ]
+        },
+        {
+          "id": "w-0944",
+          "hanzi": "游客",
+          "pinyin": "yóukè",
+          "meaning_en": "tourist; visitor",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0944-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里游客多吗？",
+              "pinyin": "zhèlǐ yóukè duō ma?",
+              "english": "Are there many tourists here?",
+              "teaching_note": "Short everyday spoken use of 游客."
+            },
+            {
+              "id": "ex-0944-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "春天很多游客来这个城市。",
+              "pinyin": "chūntiān hěn duō yóukè lái zhège chéngshì.",
+              "english": "Many tourists visit this city in spring.",
+              "teaching_note": "Simple descriptive or narrative use of 游客."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 944
+            }
+          ]
+        },
+        {
+          "id": "w-0991",
+          "hanzi": "自行车",
+          "pinyin": "zìxíngchē",
+          "meaning_en": "bicycle",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0991-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我骑自行车上班。",
+              "pinyin": "wǒ qí zìxíngchē shàngbān.",
+              "english": "I ride a bike to work.",
+              "teaching_note": "Short everyday spoken use of 自行车."
+            },
+            {
+              "id": "ex-0991-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校门口有很多自行车。",
+              "pinyin": "xuéxiào ménkǒu yǒu hěn duō zìxíngchē.",
+              "english": "There are many bicycles at the school entrance.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 991
+            }
+          ]
+        },
+        {
+          "id": "w-0029",
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning_en": "arrive",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0029-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他九点到学校。",
+              "pinyin": "tā jiǔ diǎn dào xuéxiào.",
+              "english": "He arrives at school at nine.",
+              "teaching_note": "九点 gives the arrival time; 到 indicates reaching the school."
+            },
+            {
+              "id": "ex-0029-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "从家到学校可以坐车。",
+              "pinyin": "cóng jiā dào xuéxiào kěyǐ zuò chē.",
+              "english": "You can go from home to school by car.",
+              "teaching_note": "School or study context showing 到 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 29
+            }
+          ]
+        },
+        {
+          "id": "w-0081",
+          "hanzi": "回",
+          "pinyin": "huí",
+          "meaning_en": "return",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "classifier"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0081-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我明天回家。",
+              "pinyin": "wǒ míngtiān huí jiā.",
+              "english": "I will go home tomorrow.",
+              "teaching_note": "回家 means return home; 明天 indicates the future without a future-tense ending."
+            },
+            {
+              "id": "ex-0081-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他下午六点回家。",
+              "pinyin": "tā xiàwǔ liù diǎn huí jiā.",
+              "english": "He goes home at six in the afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 回 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 81
+            }
+          ]
+        },
+        {
+          "id": "w-0083",
+          "hanzi": "火车",
+          "pinyin": "huǒchē",
+          "meaning_en": "train",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "travel-transport",
+          "topic_ids": [
+            "travel-transport"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0083-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐火车去看朋友。",
+              "pinyin": "wǒ zuò huǒchē qù kàn péngyou.",
+              "english": "I take the train to visit a friend.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-0083-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "火车上午九点到。",
+              "pinyin": "huǒchē shàngwǔ jiǔ diǎn dào.",
+              "english": "The train arrives at nine in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 火车 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 83
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 宾馆 (bīnguǎn)",
+        "explanation": "宾馆 (bīnguǎn) means “hotel; guesthouse” (noun).",
+        "example_id": "ex-0533-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 出发 (chūfā)",
+        "explanation": "出发 (chūfā) means “set off; depart” (verb).",
+        "example_id": "ex-0562-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0533-1",
+      "ex-0562-1",
+      "ex-0567-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Did Xiao Wu’s high-speed train arrive on time?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Yes, it departed on time without delay and arrived in three hours.",
+          "explanation": "The passage states 高铁准时出发，没有晚点."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about a trip using 出发, 宾馆, or 行李.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我们早上八点出发，下午到达宾馆以后先把行李放好。",
+          "explanation": "Use 出发, 宾馆, and 行李 naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to be delayed / late (of transport)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "起飞",
+              "pinyin": "qǐfēi",
+              "meaning_en": "take off"
+            },
+            {
+              "id": "b",
+              "hanzi": "晚点",
+              "pinyin": "wǎndiǎn",
+              "meaning_en": "be delayed"
+            },
+            {
+              "id": "c",
+              "hanzi": "检票",
+              "pinyin": "jiǎnpiào",
+              "meaning_en": "check tickets"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "晚点 means a train, bus, or flight is delayed."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"passport\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "护照",
+              "pinyin": "hùzhào",
+              "meaning_en": "passport"
+            },
+            {
+              "id": "b",
+              "hanzi": "地图",
+              "pinyin": "dìtú",
+              "meaning_en": "map"
+            },
+            {
+              "id": "c",
+              "hanzi": "行李",
+              "pinyin": "xíngli",
+              "meaning_en": "luggage"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "护照 means passport."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which verb means \"to pick up (someone)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "骑",
+              "pinyin": "qí",
+              "meaning_en": "ride"
+            },
+            {
+              "id": "b",
+              "hanzi": "接",
+              "pinyin": "jiē",
+              "meaning_en": "pick up"
+            },
+            {
+              "id": "c",
+              "hanzi": "离开",
+              "pinyin": "líkāi",
+              "meaning_en": "leave"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "接 means to meet/pick up someone."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Catching the High-Speed Train",
+        "context_en": "Xiao Zhou and his friend arrive at the station to take a high-speed train.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "护照和车票都带了吗？前面路口有红绿灯，咱们过马路吧。",
+            "pinyin": "Hùzhào hé chēpiào dōu dài le ma? Qiánmiàn lùkǒu yǒu hóng-lǜdēng, zánmen guò mǎlù ba.",
+            "english": "Did you bring your passport and ticket? There’s a traffic light at the intersection ahead—let’s cross the street."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "都带着呢，行李也不重。咱们几点出发去检票？",
+            "pinyin": "Dōu dài zhe ne, xíngli yě bú zhòng. Zánmen jǐ diǎn chūfā qù jiǎnpiào?",
+            "english": "I have both, and my luggage isn’t heavy. What time do we head to ticket inspection?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "八点半开车，现在已经可以检票了。但愿这趟高铁别晚点。",
+            "pinyin": "Bā diǎn bàn kāichē, xiànzài yǐjīng kěyǐ jiǎnpiào le. Dànyuàn zhè tàng gāotiě bié wǎndiǎn.",
+            "english": "It leaves at 8:30, so we can check tickets now. Hopefully this high-speed train isn’t delayed."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "到了以后我表哥会开车来接我们去宾馆。",
+            "pinyin": "Dào le yǐhòu wǒ biǎogē huì kāichē lái jiē wǒmen qù bīnguǎn.",
+            "english": "After we arrive, my cousin will drive to pick us up and take us to the hotel."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Picking someone up with 接",
+          "explanation_en": "Use 来 / 去 + 接 + person to mean going or coming to pick someone up at a station, airport, or school.",
+          "pattern_hanzi": "去 / 来 + <Place> + 接 + <Person>",
+          "pattern_pinyin": "qù / lái + <Place> + jiē + <Person>",
+          "pattern_pseudo_translation": "go / come + <Place> + pick up + <Person>",
+          "examples": [
+            {
+              "hanzi": "下午我去机场接一位外国游客。",
+              "pinyin": "Xiàwǔ wǒ qù jīchǎng jiē yí wèi wàiguó yóukè.",
+              "english": "This afternoon I am going to the airport to pick up a foreign tourist."
+            },
+            {
+              "hanzi": "爸爸每天五点开车去接妹妹放学。",
+              "pinyin": "Bàba měitiān wǔ diǎn kāichē qù jiē mèimei fàngxué.",
+              "english": "Dad drives to pick up my younger sister from school every day at five."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Passing by or through with 经过",
+          "explanation_en": "经过 (jīngguò) means to pass through a place on the way somewhere.",
+          "pattern_hanzi": "<Vehicle / Person> + 经过 + <Place>",
+          "pattern_pinyin": "<Vehicle / Person> + jīngguò + <Place>",
+          "pattern_pseudo_translation": "<Vehicle / Person> + pass through + <Place>",
+          "examples": [
+            {
+              "hanzi": "这路汽车经过图书馆门口。",
+              "pinyin": "Zhè lù qìchē jīngguò túshūguǎn ménkǒu.",
+              "english": "This bus route passes by the library entrance."
+            },
+            {
+              "hanzi": "回家的路上我们经过一个很大的路口。",
+              "pinyin": "Huí jiā de lùshang wǒmen jīngguò yí ge hěn dà de lùkǒu.",
+              "english": "On the way home we passed through a very big intersection."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about departures, riding bikes, and travel delays.",
+        "model": {
+          "hanzi": "飞机九点起飞，我们七点就得离开家。",
+          "pinyin": "Fēijī jiǔ diǎn qǐfēi, wǒmen qī diǎn jiù děi líkāi jiā.",
+          "english": "The plane takes off at nine, so we have to leave home at seven."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you like riding a bicycle to work.",
+            "model_answer": {
+              "hanzi": "我喜欢骑自行车去上班。",
+              "pinyin": "Wǒ xǐhuan qí zìxíngchē qù shàngbān.",
+              "english": "I like riding a bicycle to work."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say the flight was delayed by half an hour.",
+            "model_answer": {
+              "hanzi": "今天的航班晚点了半个小时。",
+              "pinyin": "Jīntiān de hángbān wǎndiǎn le bàn ge xiǎoshí.",
+              "english": "Today’s flight was delayed by half an hour."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say you looked at the map and found the hotel.",
+            "model_answer": {
+              "hanzi": "我看了地图，很快就找到了宾馆。",
+              "pinyin": "Wǒ kàn le dìtú, hěn kuài jiù zhǎodào le bīnguǎn.",
+              "english": "I looked at the map and quickly found the hotel."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Smooth Trip by Train and Boat",
+        "paragraphs": [
+          {
+            "hanzi": "上个月，小吴带着简单的行李坐高铁去南方旅游。高铁准时出发，没有晚点，三个小时就到了。",
+            "pinyin": "Shàng ge yuè, Xiǎo Wú dài zhe jiǎndān de xíngli zuò gāotiě qù nánfāng lǚyóu. Gāotiě zhǔnshí chūfā, méiyǒu wǎndiǎn, sān ge xiǎoshí jiù dào le.",
+            "english": "Last month, Xiao Wu took light luggage and rode the high-speed train to travel in the south. The train departed on time without delay and arrived in three hours."
+          },
+          {
+            "hanzi": "住进宾馆以后，他拿着地图去湖边坐船。湖面上风很凉快，船上还有不少拍照的游客。",
+            "pinyin": "Zhù jìn bīnguǎn yǐhòu, tā ná zhe dìtú qù húbiān zuò chuán. Húmiàn shàng fēng hěn liángkuai, chuán shàng hái yǒu bùshǎo pāizhào de yóukè.",
+            "english": "After checking into the hotel, he took a map and went to the lake to ride a boat. The breeze on the lake was cool, and there were quite a few tourists taking photos on the boat."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "How long did the high-speed train trip take?",
+            "answer_en": "Three hours."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What did Xiao Wu do after checking into the hotel?",
+            "answer_en": "He took a map and went to the lake to ride a boat."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe how you usually travel between cities and why.",
+          "model_answer": {
+            "hanzi": "去附近的城市我喜欢坐高铁，又快又不容易晚点。",
+            "pinyin": "Qù fùjìn de chéngshì wǒ xǐhuan zuò gāotiě, yòu kuài yòu bù róngyì wǎndiǎn.",
+            "english": "To nearby cities I like taking the high-speed train—it’s fast and not easily delayed."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Talk about a time you picked someone up or went to a hotel.",
+          "model_answer": {
+            "hanzi": "朋友来玩儿时，我去火车站接他，然后一起去宾馆。",
+            "pinyin": "Péngyou lái wánr shí, wǒ qù huǒchēzhàn jiē tā, ránhòu yìqǐ qù bīnguǎn.",
+            "english": "When my friend came to visit, I went to the train station to pick him up, then we went to the hotel together."
+          }
+        }
+      ],
+      "common_pitfall": "Use 骑 (qí) only for straddling vehicles/animals (骑自行车, 骑马); use 坐 for trains, planes, boats, and buses, and 开 for driving a car.",
+      "pronunciation_focus": "红绿灯 (hóng-lǜdēng) keeps the rounded vowel ü in lǜ; 高铁 (gāotiě) moves from flat gāo to low third-tone tiě.",
+      "review": {
+        "can_do": [
+          "Name vehicles and travel items like 高铁, 护照, and 行李.",
+          "Talk about departing, checking tickets, and delays.",
+          "Give street directions with 马路, 路口, and 红绿灯."
+        ],
+        "entry_ids": [
+          533,
+          562,
+          567,
+          592,
+          644,
+          670,
+          674,
+          699,
+          706,
+          717,
+          747,
+          763,
+          765,
+          800,
+          802,
+          803,
+          869,
+          909,
+          944,
+          991
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-journeys-and-transit--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Picking someone up with 接",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-journeys-and-transit--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Passing by or through with 经过",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you like riding a bicycle to work.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-journeys-and-transit--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the flight was delayed by half an hour.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-journeys-and-transit--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you looked at the map and found the hotel.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: How long did the high-speed train trip take?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-journeys-and-transit--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What did Xiao Wu do after checking into the hotel?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe how you usually travel between cities and why.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-journeys-and-transit--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Talk about a time you picked someone up or went to a hotel.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-journeys-and-transit--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-journeys-and-transit--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to be delayed / late (of trans",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-journeys-and-transit--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"passport\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-journeys-and-transit--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to pick up (someone)\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-journeys-and-transit--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-journeys-and-transit--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

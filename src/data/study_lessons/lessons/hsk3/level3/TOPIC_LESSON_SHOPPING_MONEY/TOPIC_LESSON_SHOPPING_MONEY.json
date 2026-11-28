@@ -1,0 +1,927 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-banks-and-cards",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Banks & Payment Cards",
+    "subtitle": "Using banks, bank cards, and credit cards",
+    "description": "Learn to talk about going to the bank and paying with a bank card or credit card.",
+    "slug": "banks-and-cards"
+  },
+  "classification": {
+    "primary_topic_id": "shopping-money",
+    "topic_ids": [
+      "shopping-money"
+    ],
+    "tags": [
+      "banking",
+      "cards",
+      "payments"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "money-finance",
+    "subtopic_ids": [
+      "money-finance"
+    ]
+  },
+  "learning_objectives": [
+    "Refer to a bank with 银行.",
+    "Distinguish 银行卡 (bank card) and 信用卡 (credit card).",
+    "Ask whether card payment is accepted in everyday situations."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "丢": "Characters:丢",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "九": "Characters:九",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "付": "Characters:付",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "信": "Characters:信",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "刚": "Characters:刚",
+    "前": "Characters:前",
+    "办": "Characters:办",
+    "包": "Characters:包",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "卡": "Characters:卡",
+    "去": "Characters:去",
+    "可": "Characters:可",
+    "吗": "Characters:吗",
+    "员": "Characters:员",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "块": "Characters:块",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "平": "Characters:平",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "忘": "Characters:忘",
+    "快": "Characters:快",
+    "情": "Characters:情",
+    "惯": "Characters:惯",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "手": "Characters:手",
+    "护": "Characters:护",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "更": "Characters:更",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "水": "Characters:水",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "照": "Characters:照",
+    "现": "Characters:现",
+    "用": "Characters:用",
+    "留": "Characters:留",
+    "百": "Characters:百",
+    "的": "Characters:的",
+    "着": "Characters:着",
+    "票": "Characters:票",
+    "米": "Characters:米",
+    "者": "Characters:者",
+    "能": "Characters:能",
+    "行": "Characters:行",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "请": "Characters:请",
+    "谢": "Characters:谢",
+    "走": "Characters:走",
+    "辆": "Characters:辆",
+    "近": "Characters:近",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "酒": "Characters:酒",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "银": "Characters:银",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "附": "Characters:附",
+    "陈": "Characters:陈",
+    "需": "Characters:需"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Three focused banking and payment terms in HSK 3.",
+      "focus": "Use 银行卡 for a general bank card and 信用卡 specifically for a credit card."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0907",
+          "hanzi": "信用卡",
+          "pinyin": "xìnyòngkǎ",
+          "meaning_en": "credit card",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "primary_subtopic_id": "money-finance",
+          "subtopic_ids": [
+            "money-finance"
+          ],
+          "examples": [
+            {
+              "id": "ex-0907-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "能用信用卡吗？",
+              "pinyin": "néng yòng xìnyòngkǎ ma?",
+              "english": "Can I use a credit card?",
+              "teaching_note": "Short everyday spoken use of 信用卡."
+            },
+            {
+              "id": "ex-0907-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他用信用卡买了机票。",
+              "pinyin": "tā yòng xìnyòngkǎ mǎi le jīpiào.",
+              "english": "He bought a plane ticket with a credit card.",
+              "teaching_note": "Simple descriptive or narrative use of 信用卡."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 907
+            }
+          ]
+        },
+        {
+          "id": "w-0936",
+          "hanzi": "银行",
+          "pinyin": "yínháng",
+          "meaning_en": "bank",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "primary_subtopic_id": "money-finance",
+          "subtopic_ids": [
+            "money-finance"
+          ],
+          "examples": [
+            {
+              "id": "ex-0936-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "银行在哪儿？",
+              "pinyin": "yínháng zài nǎr?",
+              "english": "Where is the bank?",
+              "teaching_note": "Short everyday spoken use of 银行."
+            },
+            {
+              "id": "ex-0936-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家银行周末不开门。",
+              "pinyin": "zhè jiā yínháng zhōumò bù kāi mén.",
+              "english": "This bank is closed on weekends.",
+              "teaching_note": "Simple descriptive or narrative use of 银行."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 936
+            }
+          ]
+        },
+        {
+          "id": "w-0937",
+          "hanzi": "银行卡",
+          "pinyin": "yínhángkǎ",
+          "meaning_en": "bank card",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "primary_subtopic_id": "money-finance",
+          "subtopic_ids": [
+            "money-finance"
+          ],
+          "examples": [
+            {
+              "id": "ex-0937-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "银行卡丢了！",
+              "pinyin": "yínhángkǎ diū le!",
+              "english": "I've lost my bank card!",
+              "teaching_note": "Short everyday spoken use of 银行卡."
+            },
+            {
+              "id": "ex-0937-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她用银行卡买了机票。",
+              "pinyin": "tā yòng yínhángkǎ mǎi le jīpiào.",
+              "english": "She bought a plane ticket with her bank card.",
+              "teaching_note": "Simple descriptive or narrative use of 银行卡."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 937
+            }
+          ]
+        },
+        {
+          "id": "w-0164",
+          "hanzi": "钱",
+          "pinyin": "qián",
+          "meaning_en": "money",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "primary_subtopic_id": "money-finance",
+          "subtopic_ids": [
+            "money-finance"
+          ],
+          "examples": [
+            {
+              "id": "ex-0164-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我没有钱。",
+              "pinyin": "wǒ méiyǒu qián.",
+              "english": "I don't have money.",
+              "teaching_note": "没有钱 expresses the absence of money; 不有 is not grammatical here."
+            },
+            {
+              "id": "ex-0164-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "桌子上有二十块钱。",
+              "pinyin": "zhuōzi shàng yǒu èr shí kuài qián.",
+              "english": "There are twenty yuan on the table.",
+              "teaching_note": "Straightforward statement of where an amount of money is located."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 164
+            }
+          ]
+        },
+        {
+          "id": "w-0174",
+          "hanzi": "商店",
+          "pinyin": "shāngdiàn",
+          "meaning_en": "store",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money",
+            "places-directions"
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "examples": [
+            {
+              "id": "ex-0174-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们去商店买水。",
+              "pinyin": "wǒmen qù shāngdiàn mǎi shuǐ.",
+              "english": "We go to the store to buy water.",
+              "teaching_note": "去商店买水 expresses purpose: go to the shop to buy water."
+            },
+            {
+              "id": "ex-0174-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "商店上午九点开门。",
+              "pinyin": "shāngdiàn shàngwǔ jiǔ diǎn kāimén.",
+              "english": "The shop opens at nine in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 商店 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 174
+            }
+          ]
+        },
+        {
+          "id": "w-0295",
+          "hanzi": "桌子",
+          "pinyin": "zhuōzi",
+          "meaning_en": "table",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0295-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "桌子上有一本书。",
+              "pinyin": "zhuōzi shàng yǒu yì běn shū.",
+              "english": "There is a book on the table.",
+              "teaching_note": "桌子上 means on the table; 有 introduces something located there."
+            },
+            {
+              "id": "ex-0295-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "教室里有很多桌子。",
+              "pinyin": "jiàoshì lǐ yǒu hěn duō zhuōzi.",
+              "english": "There are many desks in the classroom.",
+              "teaching_note": "Short beginner-level description illustrating 桌子 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 295
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 信用卡 (xìnyòngkǎ)",
+        "explanation": "信用卡 (xìnyòngkǎ) means “credit card” (noun).",
+        "example_id": "ex-0907-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 银行 (yínháng)",
+        "explanation": "银行 (yínháng) means “bank” (noun).",
+        "example_id": "ex-0936-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0907-1",
+      "ex-0936-1",
+      "ex-0937-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why did Xiao Chen go to the bank near his school?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "To get a local bank card.",
+          "explanation": "The first paragraph says he needed a local bank card after arriving in China."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write one sentence asking if a shop accepts credit cards.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请问，这里可以用信用卡付钱吗？",
+          "explanation": "Use 可以用信用卡……吗？"
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"bank\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "银行",
+              "pinyin": "yínháng",
+              "meaning_en": "bank"
+            },
+            {
+              "id": "b",
+              "hanzi": "银行卡",
+              "pinyin": "yínhángkǎ",
+              "meaning_en": "bank card"
+            },
+            {
+              "id": "c",
+              "hanzi": "信用卡",
+              "pinyin": "xìnyòngkǎ",
+              "meaning_en": "credit card"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "银行 is the bank itself."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"credit card\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "银行卡",
+              "pinyin": "yínhángkǎ",
+              "meaning_en": "bank card"
+            },
+            {
+              "id": "b",
+              "hanzi": "信用卡",
+              "pinyin": "xìnyòngkǎ",
+              "meaning_en": "credit card"
+            },
+            {
+              "id": "c",
+              "hanzi": "银行",
+              "pinyin": "yínháng",
+              "meaning_en": "bank"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "信用 means credit, so 信用卡 is a credit card."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which classifier is used with 银行卡?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "张",
+              "pinyin": "zhāng",
+              "meaning_en": "classifier for flat objects/cards"
+            },
+            {
+              "id": "b",
+              "hanzi": "本",
+              "pinyin": "běn",
+              "meaning_en": "classifier for books"
+            },
+            {
+              "id": "c",
+              "hanzi": "辆",
+              "pinyin": "liàng",
+              "meaning_en": "classifier for vehicles"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "Cards take the classifier 张."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "At the Bank and Shop",
+        "context_en": "Xiao Ming needs to go to the bank before buying a train ticket.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，附近有银行吗？我要去办一张银行卡。",
+            "pinyin": "Qǐngwèn, fùjìn yǒu yínháng ma? Wǒ yào qù bàn yì zhāng yínhángkǎ.",
+            "english": "Excuse me, is there a bank nearby? I need to get a bank card."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "往前走两百米就有一家银行，很方便。",
+            "pinyin": "Wǎng qián zǒu liǎng bǎi mǐ jiù yǒu yì jiā yínháng, hěn fāngbiàn.",
+            "english": "Walk 200 meters ahead and there is a bank; it’s very convenient."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "谢谢！对了，买票的时候可以用信用卡吗？",
+            "pinyin": "Xièxie! Duìle, mǎi piào de shíhou kěyǐ yòng xìnyòngkǎ ma?",
+            "english": "Thanks! By the way, can I use a credit card when buying tickets?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "可以，银行卡和信用卡都能用。",
+            "pinyin": "Kěyǐ, yínhángkǎ hé xìnyòngkǎ dōu néng yòng.",
+            "english": "Yes, both bank cards and credit cards can be used."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Using a card to pay",
+          "explanation_en": "Use 用 (yòng) + card + verb (such as 付钱 or 买) to say how you pay.",
+          "pattern_hanzi": "用 + 银行卡 / 信用卡 + <Action>",
+          "pattern_pinyin": "yòng + yínhángkǎ / xìnyòngkǎ + <Action>",
+          "pattern_pseudo_translation": "using + bank card / credit card + <Action>",
+          "examples": [
+            {
+              "hanzi": "我习惯用银行卡买东西。",
+              "pinyin": "Wǒ xíguàn yòng yínhángkǎ mǎi dōngxi.",
+              "english": "I am used to using a bank card to buy things."
+            },
+            {
+              "hanzi": "在酒店可以用信用卡付钱吗？",
+              "pinyin": "Zài jiǔdiàn kěyǐ yòng xìnyòngkǎ fù qián ma?",
+              "english": "Can I pay with a credit card at the hotel?"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Applying for or getting a card at the bank",
+          "explanation_en": "Use 办 (bàn) with 一张银行卡 / 信用卡 to mean applying for or setting up a card.",
+          "pattern_hanzi": "去银行办 + 一张 + 银行卡 / 信用卡",
+          "pattern_pinyin": "qù yínháng bàn + yì zhāng + yínhángkǎ / xìnyòngkǎ",
+          "pattern_pseudo_translation": "go to bank handle + one sheet + bank card / credit card",
+          "examples": [
+            {
+              "hanzi": "明天上午我要去银行办一张新卡。",
+              "pinyin": "Míngtiān shàngwǔ wǒ yào qù yínháng bàn yì zhāng xīn kǎ.",
+              "english": "Tomorrow morning I need to go to the bank to get a new card."
+            },
+            {
+              "hanzi": "这家银行办信用卡很快。",
+              "pinyin": "Zhè jiā yínháng bàn xìnyòngkǎ hěn kuài.",
+              "english": "Applying for a credit card at this bank is very fast."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Ask about banks and card payments.",
+        "model": {
+          "hanzi": "我忘了带信用卡，可以用手机付钱吗？",
+          "pinyin": "Wǒ wàng le dài xìnyòngkǎ, kěyǐ yòng shǒujī fù qián ma?",
+          "english": "I forgot to bring my credit card; can I pay with my phone?"
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Ask where the nearest bank is.",
+            "model_answer": {
+              "hanzi": "请问，最近的银行在哪里？",
+              "pinyin": "Qǐngwèn, zuìjìn de yínháng zài nǎlǐ?",
+              "english": "Excuse me, where is the nearest bank?"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you have two bank cards in your bag.",
+            "model_answer": {
+              "hanzi": "我包里有两张银行卡。",
+              "pinyin": "Wǒ bāo lǐ yǒu liǎng zhāng yínhángkǎ.",
+              "english": "I have two bank cards in my bag."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say you don’t use a credit card very often.",
+            "model_answer": {
+              "hanzi": "我平时很少用信用卡。",
+              "pinyin": "Wǒ píngshí hěn shǎo yòng xìnyòngkǎ.",
+              "english": "I rarely use a credit card."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Opening a Bank Account",
+        "paragraphs": [
+          {
+            "hanzi": "小陈刚来中国留学，他需要办一张本地的银行卡。今天早上，他带着护照去了学校附近的一家银行。",
+            "pinyin": "Xiǎo Chén gāng lái Zhōngguó liúxué, tā xūyào bàn yì zhāng běndì de yínhángkǎ. Jīntiān zǎoshang, tā dài zhe hùzhào qù le xuéxiào fùjìn de yì jiā yínháng.",
+            "english": "Xiao Chen just came to China to study abroad and needs to get a local bank card. This morning, he brought his passport and went to a bank near his school."
+          },
+          {
+            "hanzi": "银行的工作人员很热情，半个小时就帮他办好了。现在他买东西更方便了。",
+            "pinyin": "Yínháng de gōngzuò rényuán hěn rèqíng, bàn ge xiǎoshí jiù bāng tā bàn hǎo le. Xiànzài tā mǎi dōngxi gèng fāngbiàn le.",
+            "english": "The bank staff were very helpful and got it done for him in half an hour. Now shopping is much more convenient for him."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What did Xiao Chen bring with him to the bank?",
+            "answer_en": "His passport."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "How long did it take to get his bank card?",
+            "answer_en": "Half an hour."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask a clerk if you can pay with a bank card or credit card.",
+          "model_answer": {
+            "hanzi": "你好，这里可以用信用卡或者银行卡吗？",
+            "pinyin": "Nǐhǎo, zhèlǐ kěyǐ yòng xìnyòngkǎ huòzhě yínhángkǎ ma?",
+            "english": "Hello, can I use a credit card or bank card here?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say why you are going to the bank today.",
+          "model_answer": {
+            "hanzi": "我今天要去银行办一张新银行卡。",
+            "pinyin": "Wǒ jīntiān yào qù yínháng bàn yì zhāng xīn yínhángkǎ.",
+            "english": "I need to go to the bank today to get a new bank card."
+          }
+        }
+      ],
+      "common_pitfall": "Use the classifier 张 (zhāng) for flat cards like 一张银行卡 and 家 (jiā) for banks like 一家银行.",
+      "pronunciation_focus": "银行 (yínháng) is second tone + second tone; 信用卡 (xìnyòngkǎ) is fourth + fourth + third tone.",
+      "review": {
+        "can_do": [
+          "Ask where a bank is.",
+          "Distinguish 银行卡 and 信用卡.",
+          "Ask about paying by card."
+        ],
+        "entry_ids": [
+          907,
+          936,
+          937
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-banks-and-cards--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Using a card to pay",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-banks-and-cards--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Applying for or getting a card at the bank",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Ask where the nearest bank is.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-banks-and-cards--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you have two bank cards in your bag.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-banks-and-cards--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you don’t use a credit card very often.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What did Xiao Chen bring with him to the bank?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-banks-and-cards--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: How long did it take to get his bank card?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Ask a clerk if you can pay with a bank card or credit card.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-banks-and-cards--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say why you are going to the bank today.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-banks-and-cards--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-banks-and-cards--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"bank\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-banks-and-cards--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"credit card\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-banks-and-cards--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which classifier is used with 银行卡?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-banks-and-cards--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-banks-and-cards--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 12
+}

@@ -1,0 +1,552 @@
+{
+  "source": {
+    "file": "Mandarin_HSK_Level3_Lessons_v3.6.1_taxonomy-v2.0.0_vocab-v1.1.3.zip",
+    "sha256": "7d790b8e396792f7b0fa6221a1c6994abb79ad73ddc0ce7bf50950255778225b"
+  },
+  "checks": {
+    "level3LessonsValidated": 35,
+    "introducedHsk3Entries": 500,
+    "exactHskWordBindingsMatched": 605,
+    "threeLinePatterns": 70,
+    "curriculumValidated": true,
+    "currentOfficialIdsOnly": true
+  },
+  "normalizedCompanionLabels": [
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_ANIMALS_WEATHER_SEASONS/TOPIC_LESSON_ANIMALS_WEATHER_SEASONS.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_ANIMALS_WEATHER_SEASONS/TOPIC_LESSON_ANIMALS_WEATHER_SEASONS.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES/TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES/TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS/TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS/TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD/TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD/TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA/TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA/TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES/TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES/TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_PEOPLE_IDENTITY/TOPIC_LESSON_PEOPLE_IDENTITY.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_PEOPLE_IDENTITY/TOPIC_LESSON_PEOPLE_IDENTITY.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_REFERENCE_QUESTIONS/TOPIC_LESSON_REFERENCE_QUESTIONS.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_REFERENCE_QUESTIONS/TOPIC_LESSON_REFERENCE_QUESTIONS.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SCIENCE_TECHNOLOGY/TOPIC_LESSON_SCIENCE_TECHNOLOGY.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SCIENCE_TECHNOLOGY/TOPIC_LESSON_SCIENCE_TECHNOLOGY.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_TIME_CALENDAR_PERIODS/TOPIC_LESSON_TIME_CALENDAR_PERIODS.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_TIME_CALENDAR_PERIODS/TOPIC_LESSON_TIME_CALENDAR_PERIODS.md",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_WORK_JOBS/TOPIC_LESSON_WORK_JOBS.html",
+    "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_WORK_JOBS/TOPIC_LESSON_WORK_JOBS.md"
+  ],
+  "sourceReferenceNormalizations": [
+    {
+      "lesson": "topic-weather-seasons-animals",
+      "headword": "下班",
+      "sourceId": 228,
+      "currentId": 227
+    },
+    {
+      "lesson": "topic-letters-emails-attention",
+      "headword": "在",
+      "sourceId": 271,
+      "currentId": 272
+    },
+    {
+      "lesson": "topic-clothes-and-belongings",
+      "headword": "电视",
+      "sourceId": 37,
+      "currentId": 36
+    },
+    {
+      "lesson": "topic-moving-and-appliances",
+      "headword": "电脑",
+      "sourceId": 36,
+      "currentId": 35
+    },
+    {
+      "lesson": "topic-moving-and-appliances",
+      "headword": "医生",
+      "sourceId": 256,
+      "currentId": 260
+    },
+    {
+      "lesson": "topic-music-festivals-media",
+      "headword": "电影",
+      "sourceId": 38,
+      "currentId": 37
+    },
+    {
+      "lesson": "topic-music-festivals-media",
+      "headword": "电影院",
+      "sourceId": 39,
+      "currentId": 38
+    },
+    {
+      "lesson": "topic-sports-matches-games",
+      "headword": "店",
+      "sourceId": 34,
+      "currentId": 39
+    },
+    {
+      "lesson": "topic-sports-matches-games",
+      "headword": "哥哥",
+      "sourceId": 59,
+      "currentId": 58
+    },
+    {
+      "lesson": "topic-people-and-backgrounds",
+      "headword": "明天",
+      "sourceId": 129,
+      "currentId": 130
+    },
+    {
+      "lesson": "topic-asking-how-and-others",
+      "headword": "她",
+      "sourceId": 202,
+      "currentId": 204
+    },
+    {
+      "lesson": "topic-devices-and-websites",
+      "headword": "一半",
+      "sourceId": 258,
+      "currentId": 255
+    },
+    {
+      "lesson": "topic-seasons-holidays-days",
+      "headword": "名字",
+      "sourceId": 130,
+      "currentId": 128
+    },
+    {
+      "lesson": "topic-office-and-leave",
+      "headword": "工作",
+      "sourceId": 63,
+      "currentId": 62
+    },
+    {
+      "lesson": "topic-office-and-leave",
+      "headword": "公司",
+      "sourceId": 62,
+      "currentId": 63
+    }
+  ],
+  "lessons": {
+    "topic-events-culture-influence": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_ABSTRACT_CONCEPTS_EVENTS_RELATIONS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "fac0a9b60b8b22105f59af2428ec8b8177b27d7f0b8987ff65cf07dc2dab7241",
+      "files": {
+        "TOPIC_LESSON_ABSTRACT_CONCEPTS_EVENTS_RELATIONS.json": "847876a7b27a1d952b3d5b113dca348bde369d10dfc51e23c2cf9091c5cd340c",
+        "TOPIC_LESSON_ABSTRACT_CONCEPTS_EVENTS_RELATIONS.html": "aef29e7f28cedc1fd494a122ee4973994946922a08cd3e517576e8434bfde33c",
+        "TOPIC_LESSON_ABSTRACT_CONCEPTS_EVENTS_RELATIONS.md": "ab256823bbcfb7df1084a450dbbfe809e7aa168b0585bef28add21ff1fc9df4f",
+        "report.md": "3a49f0533ed42b2ef5e9dc7a8613ccf2395500adf4aec54dfea914b94e00b1d5"
+      },
+      "patterns": 2
+    },
+    "topic-understanding-and-decisions": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_ABSTRACT_CONCEPTS_THINKING_DECIDING",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "22764510bd187bb6122395728a778d7a39b723d2f0402e863031d60fa8a988e8",
+      "files": {
+        "TOPIC_LESSON_ABSTRACT_CONCEPTS_THINKING_DECIDING.json": "2dc52ac50b96cf5e9345eeb73a057f598df4c11ea743361c4c11b2f1718a3d6c",
+        "TOPIC_LESSON_ABSTRACT_CONCEPTS_THINKING_DECIDING.html": "7251377ff98a521f5b48de4f3043ad04336719e7ec9ad8a21e80ccf991e56721",
+        "TOPIC_LESSON_ABSTRACT_CONCEPTS_THINKING_DECIDING.md": "9d34b105738dc6e7b34c247fe5c5beace615dedd15ae4dd5143be1b1bf768fb6",
+        "report.md": "e62bf83c15a1080ea2f32081715e818368d7ac65be65a737df14650f6bd442b5"
+      },
+      "patterns": 2
+    },
+    "topic-mountains-rivers-nature": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_ANIMALS_WEATHER_NATURE",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "0d8aef04557bdcea71f025487aa37377283d7775286420dc9387bafb746bf9e0",
+      "files": {
+        "TOPIC_LESSON_ANIMALS_WEATHER_NATURE.json": "53e3a1e347ff411d8d197e3408e585bbca0e29ae9e623da04de991da20a52a5e",
+        "TOPIC_LESSON_ANIMALS_WEATHER_NATURE.html": "4feb0dbe701989913118ad88c51d43e27c2b18d0b0995ae94ec8001d19f17af5",
+        "TOPIC_LESSON_ANIMALS_WEATHER_NATURE.md": "4fc2279003b63db467bcc33c92533996b1b9780337a09008033bfd2446456511",
+        "report.md": "46b264b07702820ead533a1bdd48e575831e610d866d4c9a65b57b278a9803b6"
+      },
+      "patterns": 2
+    },
+    "topic-weather-seasons-animals": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_ANIMALS_WEATHER_SEASONS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "a43bb80baa231992c36f1d69e4467092c50636178a7015e8d5789b119dfe7059",
+      "files": {
+        "TOPIC_LESSON_ANIMALS_WEATHER_SEASONS.json": "d230ec32ef40ad7d20605dd60073ab8fb837c3f206fa068ad83d444ac91e5182",
+        "TOPIC_LESSON_ANIMALS_WEATHER_SEASONS.html": "d58c302080221ea17f6d85cedfb751afd3ef89f1dca6700a9fe642a4b47b2031",
+        "TOPIC_LESSON_ANIMALS_WEATHER_SEASONS.md": "872613fb1ed3c59c6c85b415b62103658105c28881eda34d765f97cf6fddbf33",
+        "report.md": "a6a7a3e796a13ed3f97da311cf0574792f1e70aebd763859704dbcca98edfaab"
+      },
+      "patterns": 2
+    },
+    "topic-chatting-and-helping": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_COMMUNICATION_SOCIAL_CONVERSATION",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "98a293784b7bafc99887dec351ce56f013b67ae5f4332154f914db420a656655",
+      "files": {
+        "TOPIC_LESSON_COMMUNICATION_SOCIAL_CONVERSATION.json": "7d9407764eeca12e1d8c1392c42937eed4500ec24b9221f81ab48cc38f277e69",
+        "TOPIC_LESSON_COMMUNICATION_SOCIAL_CONVERSATION.html": "aac968dc71da2e0b95a52dd04f6a2914fce75d5eb362e293541353a9e68afd02",
+        "TOPIC_LESSON_COMMUNICATION_SOCIAL_CONVERSATION.md": "127448abc5e80d2692c31c1ac40b8dc915081e3fd658002dc207369e9f9e415c",
+        "report.md": "47eeb8132439a072af51d143952504f66b9fa0c45c9879d942a9ab802ec5d7b6"
+      },
+      "patterns": 2
+    },
+    "topic-letters-emails-attention": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "c42cc6e5a22169d14d46a4a3f1508bccfc7131d7c0120b668e37f7b8a2bd8e28",
+      "files": {
+        "TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES.json": "6b02fd1272a9160d0875169877520b17958f1b3bf9a920106f68b9017b7372fb",
+        "TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES.html": "aabfa42175815dbc78e50fca3e93272509e8beb91414a495d6ccc337e0ad5243",
+        "TOPIC_LESSON_COMMUNICATION_SOCIAL_MESSAGES.md": "57b7a48427c84ba1d28c9cfe7cf8ac3635f3122099edce486edcb59b4b9e3cca",
+        "report.md": "dde4549097860798357d5169419061b3fa39a5ed459d2ac117480b19e21a5fd7"
+      },
+      "patterns": 2
+    },
+    "topic-everyday-actions-chores": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_DAILY_ACTIONS_PHYSICAL_ROUTINES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "cd23c007a284112cf497d8054893a7806a79a3bde82f10f64a36e9d84a3e2633",
+      "files": {
+        "TOPIC_LESSON_DAILY_ACTIONS_PHYSICAL_ROUTINES.json": "384be89516b3db13a009609f342d86930ed81de5af0ceba748c06688b4758d4f",
+        "TOPIC_LESSON_DAILY_ACTIONS_PHYSICAL_ROUTINES.html": "d60ccb8e810499c7212b93bc250313041c44bf0128b6f544be1f2a66aa50dc87",
+        "TOPIC_LESSON_DAILY_ACTIONS_PHYSICAL_ROUTINES.md": "272d593031733d5afd3d0437ee50ab3a4e7f6ec21005b3faa2fcc13059c744dd",
+        "report.md": "cf8430d3fc9158ed82d3e7bced004acd248822a25aebf9ca3a5df66e88f94f5a"
+      },
+      "patterns": 2
+    },
+    "topic-plans-and-changes": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_DAILY_ACTIONS_PLANS_CHANGES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "964b371dd04c370da85674a0f1df8b4718f68f1201fc04c44ef8bdcd1c3fa827",
+      "files": {
+        "TOPIC_LESSON_DAILY_ACTIONS_PLANS_CHANGES.json": "7f236049a58e075e24849312640ab496f017e353d680adac851d0f5e83bd5a87",
+        "TOPIC_LESSON_DAILY_ACTIONS_PLANS_CHANGES.html": "42412b88934d8e9636ef1ca83ea9987557d24d6a4d4cede887fbc612bd5e5809",
+        "TOPIC_LESSON_DAILY_ACTIONS_PLANS_CHANGES.md": "c7d7ca249fa155e5cab251e173bf60789ed2949573d16a7702ce349e5d626f33",
+        "report.md": "3f1535539db6e5fe48d496e0d957f7856a0d476dee71852b644b5956cf3289d0"
+      },
+      "patterns": 2
+    },
+    "topic-family-guests-neighbors": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_FAMILY_RELATIONSHIPS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "19806e195cc790ff7f3ecb7b3dd959a6d06bf659260a131528f99abb22148dcc",
+      "files": {
+        "TOPIC_LESSON_FAMILY_RELATIONSHIPS.json": "7c4174631b928ef601a89ccf272316c5d04b1508bffb51a1bea54cbae5151424",
+        "TOPIC_LESSON_FAMILY_RELATIONSHIPS.html": "f5f5fcb3a92700165517a63a54f57dbe99c7b8358da920e285858208fc2f3c3f",
+        "TOPIC_LESSON_FAMILY_RELATIONSHIPS.md": "5b58f13b30cf986ea9b7b82575ad771ae30aaf7cc8c5008e5f54628115493345",
+        "report.md": "ac4f9485a8f7d94dca96be97ff2c6c08e988de84a9575835a1dc72e1b25dace0"
+      },
+      "patterns": 2
+    },
+    "topic-ordering-snacks-and-drinks": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_FOOD_DRINK",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "23cda9a48b33198dcf069b5b799a47e0d48c86a49f5a297a1fa4117d8f8f571a",
+      "files": {
+        "TOPIC_LESSON_FOOD_DRINK.json": "44ca6ad4d224fbab60929af532f87cec18b1dddc6fad3ffe3af27af3c3436817",
+        "TOPIC_LESSON_FOOD_DRINK.html": "87730ba97a5d9aa1442d8f2e5223d63e1ed3d2c92fa9ac1ac951ca9e7ce3e219",
+        "TOPIC_LESSON_FOOD_DRINK.md": "f2743cfc4aa2af225be2f7ee6f865c61df0fcd44e5e10d21e25c743e4f483d06",
+        "report.md": "ed0c0cf2a42b72178dea6b9130778e7b719e1dd179de00baf4a88d3f6b385abf"
+      },
+      "patterns": 2
+    },
+    "topic-conditions-and-conjunctions": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_GRAMMAR_FUNCTIONS_CLAUSES_CONJUNCTIONS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "835e4438c0f6b1416852e64e9b67d827f232dd674ac14c2bfceec5f4b1e01c8a",
+      "files": {
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_CLAUSES_CONJUNCTIONS.json": "b231c0cb8838b7ea815fe1909c921ddfb3ef707d9b9ce067d1bb2cf1961c1b44",
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_CLAUSES_CONJUNCTIONS.html": "a6c226849e0cba41fb32b124650596be8ec78283ce5b22c78f26db173368f06c",
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_CLAUSES_CONJUNCTIONS.md": "b33f3043f6337beb291a2b3789db05b4b02a18041843fdc518009912e887a8ec",
+        "report.md": "a27b9eb87fb1928c46295a0753c83e848dadef6c95db9b5e3189001fe4e9a3ef"
+      },
+      "patterns": 2
+    },
+    "topic-necessity-advice-certainty": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_GRAMMAR_FUNCTIONS_MODALS_ADVICE",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "6b2232e682414d0d9130197770f4a6467de43d36f76e652e3431a40ad8a94fbb",
+      "files": {
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_MODALS_ADVICE.json": "6cfc140a298fa3cb300c717247c9ea476c3218e8699c40fefb566d98604e57dd",
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_MODALS_ADVICE.html": "b3259f6ea68702c68feefdc00e0ebc86a6739b367266bf3d84dcdb6358bf769b",
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_MODALS_ADVICE.md": "175daff959de89d562321bcd112b945b7c21685dbbdd09b4e4a622fba786b704",
+        "report.md": "204458a11ada2795109aab3ef0f1aa41441bc6458243a1c9b459be513c6412fb"
+      },
+      "patterns": 2
+    },
+    "topic-ba-bei-and-adverbs": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_GRAMMAR_FUNCTIONS_PASSIVE_BA_ADVERBS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "b5194196860790093316c869d40bef0fa768e43cc179b4b69887207684bbc276",
+      "files": {
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_PASSIVE_BA_ADVERBS.json": "8e795b8479a5f1222e53137171a33d9dfcf21b2c2fcbd4f9d59b3ca01db00abf",
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_PASSIVE_BA_ADVERBS.html": "0fe2524d6285b7b75c9797725f51e5b5bf709fab8e811604669c9a501668153c",
+        "TOPIC_LESSON_GRAMMAR_FUNCTIONS_PASSIVE_BA_ADVERBS.md": "bc90dd64d95f6739214e39c0acc28a6abca023d239dfff75c8cd762d97376b0b",
+        "report.md": "a0604c2b5e7ba7551bcd7755c7a07e908293dede06ef01abfe61545d1a0ca581"
+      },
+      "patterns": 2
+    },
+    "topic-body-illness-health": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HEALTH_WELLBEING",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "68eafab4de9a3076aec253751fd737340318b5546d44ca6045118f79913e0293",
+      "files": {
+        "TOPIC_LESSON_HEALTH_WELLBEING.json": "aa80840723d3f9c6bef3c9d965f6159f9bd2f1f9b61fb5f6e9bdb1d51427c70c",
+        "TOPIC_LESSON_HEALTH_WELLBEING.html": "4616e1ca43f63fcd50838028909ad4b7b00fd495796683d808b872745a2da648",
+        "TOPIC_LESSON_HEALTH_WELLBEING.md": "90eccb442e7f2a200aee414bce0be3dd74c9a0d8e7abcfde14f7707d197bb6af",
+        "report.md": "bec07c2ab471c2a6975bce7400eb7fca947a0b28879cd2249fd6ce3a01ab9751"
+      },
+      "patterns": 2
+    },
+    "topic-clothes-and-belongings": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "8abb066aa3a132f9c67612c40ce6f29f8746edb17cc147e7e625e49a7272b891",
+      "files": {
+        "TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS.json": "513e91430411120a05d85b8a6b9ab8daf8bfdee83e8ef58296a0caf39133f545",
+        "TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS.html": "70a38aed60cc5cabb3a22c19bd38057017fe864f062e59cf54e2439e0917b1f4",
+        "TOPIC_LESSON_HOME_OBJECTS_CLOTHING_ITEMS.md": "bba45a25f8bc92ade6de61a8766df777a0f1a81000fbd2c17bb0537263879fde",
+        "report.md": "82ed7660e9510b82b3bf4143eb95525773a0eb27deda0fc4374cdae106429116"
+      },
+      "patterns": 2
+    },
+    "topic-moving-and-appliances": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "925d122b3c303ddbc4eec812f14b60614e746142f843c86f32a3d11ced203f13",
+      "files": {
+        "TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD.json": "629ac22dc92adf072bd82fe771c8a4992259039cf563ed6902db4f249f4aa5e1",
+        "TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD.html": "4bb94c9caaa805a48cebf04aec7b6c51d22dbff8dae25b4f319d08ffa3e623e5",
+        "TOPIC_LESSON_HOME_OBJECTS_HOUSEHOLD.md": "f350f14c3c3596475fb6864ae33a99ec9b5e58a1ed9667103ebd529710e61593",
+        "report.md": "766c57df5df6d760022dddcc9dd3caa6f15f2e776496228aba425c8d4309ec79"
+      },
+      "patterns": 2
+    },
+    "topic-music-festivals-media": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "05a328d993a16845c29ccc1a14c06ee7388a92f9e473922301514ac47012f4d0",
+      "files": {
+        "TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA.json": "3e4d7be91e6995516fe37ede58e26ee1a24e0c01717fe97cb2f4a1d4f51a2d02",
+        "TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA.html": "34279c52c33632e28ed2a22bc2e3babee97b7373ec4e5670a1295aea2a323641",
+        "TOPIC_LESSON_LEISURE_MEDIA_ARTS_MEDIA.md": "2301ed667d6bcb5679aec3f404418f182a1d877bd7a3dfc04d0266e6f06eadbd",
+        "report.md": "60cb759ecf9c03a2b25053d28817af91f5b798b3d046d6e0504d0208cead049d"
+      },
+      "patterns": 2
+    },
+    "topic-sports-matches-games": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "b273de6fe9de6f609af85d33668afd95925169e4bae7ecf987369278cf5b40f4",
+      "files": {
+        "TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES.json": "0f13958c1083e7a4383def51949c72a7e0dfa1d95abc16dbad69013cee3f9972",
+        "TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES.html": "df4f5210f534ad9b90d2e6ac1e4e9b1e28f41297d973bb3456f55c94404719fe",
+        "TOPIC_LESSON_LEISURE_MEDIA_SPORTS_GAMES.md": "dfcbdcdbfdb7a49068f1c2e4ea9d2d5788590b9db38a474062daada6e52d87ef",
+        "report.md": "ae57a3947f58cf9c781652398302d29aafd6d2c153eda30b82251d8211986c90"
+      },
+      "patterns": 2
+    },
+    "topic-classifiers-and-units": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_NUMBERS_QUANTITIES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "fbf196fd7c7e8720557d78f079c3fd352dcb3c4f6c76ca62793312b23f9c797c",
+      "files": {
+        "TOPIC_LESSON_NUMBERS_QUANTITIES.json": "15732b9c4f2dc8bc81f74b281efa9819232e13bd8d02856829d09d6172242c02",
+        "TOPIC_LESSON_NUMBERS_QUANTITIES.html": "550fed9d072c2f249007a75744e475a4c85b377be0bfc484417e3e73b668cc9a",
+        "TOPIC_LESSON_NUMBERS_QUANTITIES.md": "5b230e21dd1a46799860b0b2e716529cd6235105bdc338155865c9ecd35ae53c",
+        "report.md": "e847218aa217ce316fc448d9d63184a1178ba6e18f00ed0da54ba9c7b9b21a78"
+      },
+      "patterns": 2
+    },
+    "topic-people-and-backgrounds": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_PEOPLE_IDENTITY",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "88e43b6b7d701885e5bf9c7e6a058447e0d69003e1e3ab60cf9e3a18c54d9c33",
+      "files": {
+        "TOPIC_LESSON_PEOPLE_IDENTITY.json": "17b1c4f79d1826063dca749790d24d3229b84783c39f252abfc4e166aed071b0",
+        "TOPIC_LESSON_PEOPLE_IDENTITY.html": "db410ea7b5061d78406b8619a4c117adc69edaed211705dfaa51d6b55dc6833e",
+        "TOPIC_LESSON_PEOPLE_IDENTITY.md": "3c99082be4f3f013536607af9e73877364a043cce1be2a79d26aed5c2bb53a60",
+        "report.md": "1b5124a9459d2640d76b7ff0047c668e4e8de96acbb6964d809d5f1056ce3a7f"
+      },
+      "patterns": 2
+    },
+    "topic-cities-streets-buildings": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_PLACES_DIRECTIONS_CITIES_BUILDINGS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "6ccbb007da27bdd2777d99dd53f4cc857999002adcdb706f5828e0d5eaa1781f",
+      "files": {
+        "TOPIC_LESSON_PLACES_DIRECTIONS_CITIES_BUILDINGS.json": "d936f7c6aee7d30d8da02b3ff0e6d40cfa79b1b5ace954d5a2379754ca5b1458",
+        "TOPIC_LESSON_PLACES_DIRECTIONS_CITIES_BUILDINGS.html": "6decc2ff60b429e46ffe79cc127528e57344273ee90a4ab84e36b7d61a088747",
+        "TOPIC_LESSON_PLACES_DIRECTIONS_CITIES_BUILDINGS.md": "8adfc0f0986a9ce4c64be41859969694e7bf03be0e6ad12f73b5a1a04e848579",
+        "report.md": "d764bf162d0aa814ab8e7f92caedf1beea6891bd594a2d27c6d5205a1d8ebb14"
+      },
+      "patterns": 2
+    },
+    "topic-compass-and-positions": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_PLACES_DIRECTIONS_COMPASS_POSITION",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "8043d7daa7d2e4dd2cba32a851dbd2578a240b5eb4b6b145d2f98f2fe03194ea",
+      "files": {
+        "TOPIC_LESSON_PLACES_DIRECTIONS_COMPASS_POSITION.json": "93beb507810976e94a242a0bc14292e3bfde38821240f1ea7a20f6d21a8e1136",
+        "TOPIC_LESSON_PLACES_DIRECTIONS_COMPASS_POSITION.html": "9c9b55e04931e98deb240cd358f122c5d6ea580ae38c8a1c698dcae6a71e2b59",
+        "TOPIC_LESSON_PLACES_DIRECTIONS_COMPASS_POSITION.md": "e5621dffaa353f9787d0bf2a7f720b87fba0502057aa0a1aa7e31b567a82dbbc",
+        "report.md": "fe725aedbddd2478a6100c3910e1fb0470be79b7ce0bc1bff4aa4102f9a7ebdd"
+      },
+      "patterns": 2
+    },
+    "topic-appearance-and-comparison": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_PROPERTIES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "8ff7e23f217517b43a708f29e00709990ae3b011c16c2bdeb13182fbcc719614",
+      "files": {
+        "TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_PROPERTIES.json": "b9178fe6b8a1862ec29d2f237233a27e460cbd2a3419d13e1cadd3c121f3fc8d",
+        "TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_PROPERTIES.html": "251bbab26e3f50c332af413a321d36bb84e3eb704329ad1e1bff6a59d84fb582",
+        "TOPIC_LESSON_QUALITIES_FEELINGS_APPEARANCE_PROPERTIES.md": "6b2f634bee8f30e17f5308259325bd5d326b374fceee15dc8fc7f0b5f152614a",
+        "report.md": "35329a7070c54a132bd683ff6bb86db2cc66acff2e550767dc7c6ace011dc4a7"
+      },
+      "patterns": 2
+    },
+    "topic-feelings-and-attitudes": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_QUALITIES_FEELINGS_EMOTIONS_ATTITUDES",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "cbefd1122690ab8d9cb028971e11f76cb3762cf91d92cc6b4ea8db48a3b4341f",
+      "files": {
+        "TOPIC_LESSON_QUALITIES_FEELINGS_EMOTIONS_ATTITUDES.json": "9971f83d001922684f3810d7fdb0d5c8b46e1f39fd9e467e495069f797a806ea",
+        "TOPIC_LESSON_QUALITIES_FEELINGS_EMOTIONS_ATTITUDES.html": "4d439b9aeaf9144b4e6fffdcf505fb0b68d8a10cc8770e08bcf16ab8975904f5",
+        "TOPIC_LESSON_QUALITIES_FEELINGS_EMOTIONS_ATTITUDES.md": "00e1f8552926824affd4399d8c58dd096b9664edb8e6757d61a38f2f38bc1e81",
+        "report.md": "ce51142b8f1a3badaf45f64dccc4ea2e5a911834bf024c5fb522f9d4fbd7a8c0"
+      },
+      "patterns": 2
+    },
+    "topic-quality-and-difficulty": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_QUALITIES_FEELINGS_JUDGMENTS_EVALUATION",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "df3236013bd11f6b8dd2d14dfdf559a1b9e8054e98b72a6b9efe52fac2dd6002",
+      "files": {
+        "TOPIC_LESSON_QUALITIES_FEELINGS_JUDGMENTS_EVALUATION.json": "a625e3e5d281f1bb40b9aacc108340d7deab0531868e60b63f518efb9e805fc7",
+        "TOPIC_LESSON_QUALITIES_FEELINGS_JUDGMENTS_EVALUATION.html": "c902104bf340742648984a4affbdad78412ebea9118dc1190dbf7b1804aa8cb8",
+        "TOPIC_LESSON_QUALITIES_FEELINGS_JUDGMENTS_EVALUATION.md": "514bcf45e9e6f3969ff7aa4ecd5a0d30725f17f8b6972e84d3e619d3200f6345",
+        "report.md": "6475b85f47840cc5776bc69613909a66608f9b2addc7c1799f484468c9d539a0"
+      },
+      "patterns": 2
+    },
+    "topic-asking-how-and-others": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_REFERENCE_QUESTIONS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "47b0c6dcaa001d1d82a6bf7b76b5b938458d134f8b0d7911622e32e11ebaefa9",
+      "files": {
+        "TOPIC_LESSON_REFERENCE_QUESTIONS.json": "8b9eaca0a1f2067196dab837ecf17a64c3fd77ed3822bd1cd52cbc5dca16351a",
+        "TOPIC_LESSON_REFERENCE_QUESTIONS.html": "18a897a5ba88a78fb14d038f7bcc3fa4c7c9b31f7c0672928ba912756e8a217b",
+        "TOPIC_LESSON_REFERENCE_QUESTIONS.md": "b80d0e6780bf2b74b95ae69e89918b1b41b35937227c658dc94259343d5652e3",
+        "report.md": "3ee65520028397a0f7cfbb8a3de4a8fcb4e6a4301aae5b53d06fe38a45c60b0e"
+      },
+      "patterns": 2
+    },
+    "topic-campus-and-grades": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SCHOOL_LANGUAGE_CAMPUS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "066e46bfc16c7dbc8e502b3e7bf32cc7ed9329aae5be82aac83a6c81b556669c",
+      "files": {
+        "TOPIC_LESSON_SCHOOL_LANGUAGE_CAMPUS.json": "4e9a3d63c69c3b1caf169114876b50a6fca17c8293d5560dbfb33dcb96d3c52d",
+        "TOPIC_LESSON_SCHOOL_LANGUAGE_CAMPUS.html": "b63f072af9db20efbf9d4d21268e6a81445ccd53c31741d64802f0edc7cc1c82",
+        "TOPIC_LESSON_SCHOOL_LANGUAGE_CAMPUS.md": "96740c2b390c9401d083201cf1ff571ab4c2f3b6196177a6d9a7d2fbc15fb237",
+        "report.md": "62c19348aa74f67a26df6b54e92b89e4811b309dd0e918a3e4210c845de65311"
+      },
+      "patterns": 2
+    },
+    "topic-notes-dictionaries-practice": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SCHOOL_LANGUAGE_STUDY",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "d39d4277f27d9daebd556b20e3a058ac42e91a48fc03f0b545ad70730667dfee",
+      "files": {
+        "TOPIC_LESSON_SCHOOL_LANGUAGE_STUDY.json": "f53114ac38eb03c4454064c8d5bec089ea8b960ee21ffca16be3d702e182f6bf",
+        "TOPIC_LESSON_SCHOOL_LANGUAGE_STUDY.html": "d38a3f03595bf7108bb6e4ea927dae6c7b84ec95ede4911d53c9d3c60e30b9a0",
+        "TOPIC_LESSON_SCHOOL_LANGUAGE_STUDY.md": "fd868fa9676204256d629dcd849b98ff47fb83c80bff4a777afb4e53ff2f9464",
+        "report.md": "7f9f1148c0105c49953bc60a995100fecea46cffd3ab7087d5cf5f115b211580"
+      },
+      "patterns": 2
+    },
+    "topic-devices-and-websites": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SCIENCE_TECHNOLOGY",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "1127fe7f644160be7b3bf2748f4588135e0f3d0d49afc90cc758bad6ebf0e7ee",
+      "files": {
+        "TOPIC_LESSON_SCIENCE_TECHNOLOGY.json": "3236cac8b88c5d305e3a06e07c483b4879b32e3c9451e7384efcd0f424a249d2",
+        "TOPIC_LESSON_SCIENCE_TECHNOLOGY.html": "3ad535bfeeee95fc2cda91ba41dcb64b858e412ab3b8ecc817626674692a63f1",
+        "TOPIC_LESSON_SCIENCE_TECHNOLOGY.md": "3065cb004e4496a55972afbc8934af1ec6a9651d3fa54a7a0e24a9189dc160a5",
+        "report.md": "42cf0ec6cd2578d68bdda2b627280f231a22982430cc37510a4200c78fa15f12"
+      },
+      "patterns": 2
+    },
+    "topic-banks-and-cards": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SHOPPING_MONEY",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "f380df6f7b88510c0a7a6a86a1add36f4e38f4dc37ddb30e9eab79729fc63fb0",
+      "files": {
+        "TOPIC_LESSON_SHOPPING_MONEY.json": "fc5b56fdaeb97a524ca04b863a22c230d6aee6a0d7b3cae9a58454ede21b6d5d",
+        "TOPIC_LESSON_SHOPPING_MONEY.html": "bd964a61520eeed273c2ba7852645b9bbe0c09cae8bd3e944f0ca63915903125",
+        "TOPIC_LESSON_SHOPPING_MONEY.md": "4255960f4dd65d1c0508333dbb5ea0f5d4bcbafed28dac6a270525f1c6137215",
+        "report.md": "d8956d885465bac4838836beac7ef78b946b089b7bb2fd969c74a2b1e92ebe9e"
+      },
+      "patterns": 2
+    },
+    "topic-safety-and-rules": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_SOCIETY_GOVERNMENT_LAW",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "1e53d518416230e28e2d200d913378611bd5ebe07fc42ea04787fff5c48bfd39",
+      "files": {
+        "TOPIC_LESSON_SOCIETY_GOVERNMENT_LAW.json": "0c04b85b241cf6b87cedd1d44adb2e6db6a9f495b05d4466bc4d94a0190ab3ac",
+        "TOPIC_LESSON_SOCIETY_GOVERNMENT_LAW.html": "b611e52013215ce6ee5f36736a4b7054a5544df834137f6b507cfcaf6f9f8b27",
+        "TOPIC_LESSON_SOCIETY_GOVERNMENT_LAW.md": "526453ac03f162c97c20acf726d223bce282023a128f8d8bc313353f60c32dfc",
+        "report.md": "3171059909c6b46f4bba84fe1defa1076735ec0730ff5f6095723fa95509eae8"
+      },
+      "patterns": 2
+    },
+    "topic-seasons-holidays-days": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_TIME_CALENDAR_PERIODS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "1d91409982c5d5cef28159260abe657c3539788937bc00878f187d63c6ab3583",
+      "files": {
+        "TOPIC_LESSON_TIME_CALENDAR_PERIODS.json": "c8b578586f8210c7d748cb4e93f99dc55cdbed6539c131964b9eee9d01c6a1fb",
+        "TOPIC_LESSON_TIME_CALENDAR_PERIODS.html": "3dc8f16caabcb494b3e8ec28370caaced1ee9048146388c84dbeddee70398e03",
+        "TOPIC_LESSON_TIME_CALENDAR_PERIODS.md": "b8afa3c4b0db3a79362cffaced8f030b54b732c245e910cfc99478d997b3cfc6",
+        "report.md": "944357abdd7b748b4e51390bd77787b31d5f905ed90ae6c120e76c6722899177"
+      },
+      "patterns": 2
+    },
+    "topic-sequence-and-frequency": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_TIME_CALENDAR_SEQUENCE",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "196ea0dd591fd49cfad5d66bc3221f24bb60eb44713795635fa44495c656cb3f",
+      "files": {
+        "TOPIC_LESSON_TIME_CALENDAR_SEQUENCE.json": "a7463ed26612032e571bec52ef07907674add518ccd4575fa099e59ef5c4a7a4",
+        "TOPIC_LESSON_TIME_CALENDAR_SEQUENCE.html": "7f15adb72593853251d83d60ad8faa8036432f75fd4dad73b2be2892381667e2",
+        "TOPIC_LESSON_TIME_CALENDAR_SEQUENCE.md": "68b194c8f3429fdb922b04f3ca615c991163120e6e0b4afa154bcf06ce2050d9",
+        "report.md": "6ec79730ec208a4b997e07e60e29601c89bf2d143d251e1a6f0f0c46b5f84da3"
+      },
+      "patterns": 2
+    },
+    "topic-journeys-and-transit": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_TRAVEL_TRANSPORT",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "1a308ee9eb6be742274fb2ab7ef24479a894e97d84c2d7f5de1525d4326b519a",
+      "files": {
+        "TOPIC_LESSON_TRAVEL_TRANSPORT.json": "3f0c4646c21464b07f585987be78f257e3f107898f2ef3a7bf7f38ac4cb28a3a",
+        "TOPIC_LESSON_TRAVEL_TRANSPORT.html": "676ed16fd8fe7ce4ec91711671588b50f30da984b1ba11a24c1b1579753909c3",
+        "TOPIC_LESSON_TRAVEL_TRANSPORT.md": "9fb117be128773d2744004213821299aef59e4e3b5b7219b164f2ede06c2c221",
+        "report.md": "167417eb1d2f28540ae2de3bb9abefe14eab91f0405146c55e72f70176b39061"
+      },
+      "patterns": 2
+    },
+    "topic-office-and-leave": {
+      "directory": "src/data/study_lessons/lessons/hsk3/level3/TOPIC_LESSON_WORK_JOBS",
+      "schema_version": "mandarin-topic-lesson/3.4.0",
+      "nestedSha256": "94236c9442e85baf5bf98110a5b2ce2f17bc941ee7fa13d59878e6392166329b",
+      "files": {
+        "TOPIC_LESSON_WORK_JOBS.json": "06119a90a66195b47a513f5664c722be599210b6d90482879310693134666064",
+        "TOPIC_LESSON_WORK_JOBS.html": "20cd406d0feb57ea8db70bad2993ba1d804fb38357424e8a531a3902fce3e52e",
+        "TOPIC_LESSON_WORK_JOBS.md": "8e6e8027ba38bcba5fddff2285a7bc2b27ddb6df5d8e7facf48c4e35d5193425",
+        "report.md": "6d3125f898ba52dd0428cf69484dbea845f6460694ea0c05d4ed407e59089677"
+      },
+      "patterns": 2
+    }
+  }
+}

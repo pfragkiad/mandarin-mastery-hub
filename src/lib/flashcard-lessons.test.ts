@@ -31,7 +31,7 @@ describe('Flashcard lesson decks', () => {
   });
   it('lists lessons grouped by course, HSK course first, then independent lessons', () => {
     const groups = lessonDeckGroups();
-    expect(groups.map(g => g.lessons.length)).toEqual([46, 17, 2]);
+    expect(groups.map(g => g.lessons.length)).toEqual([81, 17, 2]);
     expect(groups[2]?.label).toBe('Independent lessons');
     expect(groups[0]?.lessons[0]?.title).toMatch(/^1\. /);
   });

@@ -154,7 +154,7 @@ We’re ready; we can go.
 
 - 忘 (wàng) — to forget [HSK entry 452]
 
-- 一起 (yìqǐ) — together [HSK entry 473]
+- 一起 (yìqǐ) — together [HSK entry 472]
 
 - 准备 (zhǔnbèi) — to prepare; to get ready [HSK entry 493]
 

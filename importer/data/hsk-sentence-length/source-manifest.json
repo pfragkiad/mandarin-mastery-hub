@@ -1,0 +1,54 @@
+{
+  "schema_version": "hsk-short-sentence-inputs/1.0.0",
+  "levels": [
+    {
+      "level": 2,
+      "baseline": {
+        "path": "importer/hsk/hsk3_level2_1.1.2.json",
+        "sha256": "570c01067ae3262d112ac096e990cc54b06ab336f6df7e342f4084135c67199d"
+      },
+      "version": "1.1.3",
+      "audio_baseline": {
+        "path": "importer/data/hsk-audio/level2-manifest-1.1.2.json",
+        "sha256": "79bc77ea929c8253f1f3fe733375f3a068a0351bcb6eeca92dbcfd5c41a60b5e"
+      }
+    },
+    {
+      "level": 3,
+      "baseline": {
+        "path": "importer/hsk/hsk3_level3_1.1.3.json",
+        "sha256": "0013c3aab12f576f2334db92e5e7aa135b0029e3e64302dbd89cdc9f8de38a4e"
+      },
+      "version": "1.1.4",
+      "audio_baseline": {
+        "path": "importer/data/hsk-audio/level3-manifest-1.1.3.json",
+        "sha256": "cb5c1831426e209dfe888b2d431bcf03846aea53de5a54a1c9fc08ff3ecc6ac5"
+      }
+    },
+    {
+      "level": 4,
+      "baseline": {
+        "path": "importer/hsk/hsk3_level4_1.1.2.json",
+        "sha256": "11e78e9f9774229c2d2d985b158bdf09af6ce125d81c208d9c94a1f4a4c3eabd"
+      },
+      "version": "1.1.3",
+      "audio_baseline": {
+        "path": "importer/data/hsk-audio/level4-manifest-1.1.2.json",
+        "sha256": "87186e0c846e575969645bb2bf2afd0826c88cbff57dc4972526d4350473d6e1"
+      }
+    },
+    {
+      "level": 5,
+      "baseline": {
+        "path": "importer/hsk/hsk3_level5_1.0.6.json",
+        "sha256": "e3c39b5c543f52aed90ae9c9cd0f2bd5be50879839513ebf6a171eeda35c29d1"
+      },
+      "version": "1.0.7",
+      "audio_baseline": {
+        "path": "importer/data/hsk-audio/level5-manifest-1.0.6.json",
+        "sha256": "128c54d81d5589446b0a0b152c5bf0a511e2cf613545ca079abbc80d4f347dea"
+      }
+    }
+  ],
+  "replacements_sha256": "5b27fd34135ea62dd0101b4b89295ca16c7214bce5aefbc902788482504ba7c2"
+}

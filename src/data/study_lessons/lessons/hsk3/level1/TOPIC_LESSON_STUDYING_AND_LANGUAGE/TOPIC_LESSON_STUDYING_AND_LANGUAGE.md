@@ -164,7 +164,7 @@ Can you write Chinese characters?
 
 - 听见 (tīngjiàn) — hear [HSK entry 210]
 
-- 下课 (xiàkè) — finish class [HSK entry 229]
+- 下课 (xiàkè) — finish class [HSK entry 228]
 
 - 写 (xiě) — write [HSK entry 240]
 

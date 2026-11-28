@@ -319,16 +319,10 @@ export function toTeachingPlan(raw: Record<string, unknown>): TeachingPlan {
 export const SYLLABUS_VERSION: Record<string, '3.0'> = { 'hsk3-2025': '3.0' };
 type SyllabusEntry = SyllabusRecordFields & { id: string; simplified: string };
 /** Fields that decide whether a Vocabulary record is an official syllabus entry. */
-export type SyllabusRecordFields = { entryKind: string; hskVersion: string | null; hsk_index: number | null; hskSource?: { sourceId?: string | null } | null; sentenceSource?: unknown; studyMetadata?: { numberingRevision?: { name: string; previousId: number } } };
-/** The canonical hsk3-2025 packages retain their original, version-bound serials.
- * Resolve those source references through the imported explicit mapping; current
- * HSK labels and UUIDs remain unchanged. Unknown revisions fail closed.
- */
+export type SyllabusRecordFields = { entryKind: string; hskVersion: string | null; hsk_index: number | null; hskSource?: { sourceId?: string | null } | null; sentenceSource?: unknown };
+/** Resolve the official syllabus entry number directly from hsk_index. */
 export function syllabusIndexForReference(entry: SyllabusRecordFields, curriculumId: string): number | null {
-  if (curriculumId !== 'hsk3-2025') return null;
-  const revision = entry.studyMetadata?.numberingRevision;
-  if (!revision) return entry.hsk_index;
-  return revision.name === 'official-site-1219' && Number.isInteger(revision.previousId) ? revision.previousId : null;
+  return curriculumId === 'hsk3-2025' ? entry.hsk_index : null;
 }
 /** An official syllabus record: a word, or one of the syllabus's own phrases (不好意思 #313),
  *  recognised by its HSK source ID equalling its own entry number. Example-sentence phrases

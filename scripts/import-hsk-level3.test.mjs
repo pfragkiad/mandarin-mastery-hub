@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { importLevel3 } from './import-hsk-level3.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourcePath = 'importer/hsk/hsk3_level3_1.1.3.json';
+const sourcePath = 'importer/hsk/hsk3_level3_1.1.4.json';
 const topicsPath = 'importer/hsk/hsk3_topics.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const vocabulary = readVocabulary();
@@ -45,7 +45,7 @@ test('creates all Level 3 records and reimports them without changing any record
   const homographs = entries.filter(e => e.simplified === '得');
   assert.equal(homographs.length, 2);
   assert.equal(new Set(homographs.map(e => e.id)).size, 2);
-  assert.deepEqual(entries.find(e => e.studyMetadata.numberingRevision.previousId === 670).tokens.map(t => t.pinyin), ['hóng', 'lǜ', 'dēng']);
+  assert.deepEqual(entries.find(e => e.hsk_index === 670).tokens.map(t => t.pinyin), ['hóng', 'lǜ', 'dēng']);
   writeFileSync(paths.vocabularyPath, JSON.stringify(first.data));
   assert.deepEqual(importLevel3(paths).data, first.data);
 });

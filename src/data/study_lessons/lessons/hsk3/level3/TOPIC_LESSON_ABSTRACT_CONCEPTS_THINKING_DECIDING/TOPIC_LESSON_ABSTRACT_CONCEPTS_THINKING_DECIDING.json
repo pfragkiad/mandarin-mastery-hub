@@ -1,0 +1,1386 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-understanding-and-decisions",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Understanding, Methods & Decisions",
+    "subtitle": "Understanding, methods, decisions, and solving problems",
+    "description": "Talk about understanding ideas, finding methods, making decisions and choices, and solving problems.",
+    "slug": "understanding-and-decisions"
+  },
+  "classification": {
+    "primary_topic_id": "abstract-concepts",
+    "topic_ids": [
+      "abstract-concepts"
+    ],
+    "tags": [
+      "decisions",
+      "methods",
+      "understanding"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Express understanding clearly: 懂得, 了解, 明白, and 认为.",
+    "Discuss methods and problem-solving: 办, 办法, 方法, 机会, and 解决.",
+    "Talk about choices and decisions: 决定, 选择, and 主要."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "临": "Characters:临",
+    "为": "Characters:为",
+    "主": "Characters:主",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "二": "Characters:二",
+    "于": "Characters:于",
+    "京": "Characters:京",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "光": "Characters:光",
+    "关": "Characters:关",
+    "决": "Characters:决",
+    "况": "Characters:况",
+    "准": "Characters:准",
+    "分": "Characters:分",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "助": "Characters:助",
+    "化": "Characters:化",
+    "北": "Characters:北",
+    "十": "Characters:十",
+    "半": "Characters:半",
+    "单": "Characters:单",
+    "历": "Characters:历",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "发": "Characters:发",
+    "变": "Characters:变",
+    "句": "Characters:句",
+    "只": "Characters:只",
+    "史": "Characters:史",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坚": "Characters:坚",
+    "城": "Characters:城",
+    "备": "Characters:备",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "如": "Characters:如",
+    "妈": "Characters:妈",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "定": "Characters:定",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "展": "Characters:展",
+    "工": "Characters:工",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "总": "Characters:总",
+    "情": "Characters:情",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "懂": "Characters:懂",
+    "我": "Characters:我",
+    "找": "Characters:找",
+    "抓": "Characters:抓",
+    "择": "Characters:择",
+    "持": "Characters:持",
+    "换": "Characters:换",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "旅": "Characters:旅",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "更": "Characters:更",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "朗": "Characters:朗",
+    "机": "Characters:机",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "次": "Characters:次",
+    "正": "Characters:正",
+    "母": "Characters:母",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "毕": "Characters:毕",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "法": "Characters:法",
+    "游": "Characters:游",
+    "点": "Characters:点",
+    "炼": "Characters:炼",
+    "父": "Characters:父",
+    "玩": "Characters:玩",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "留": "Characters:留",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "睡": "Characters:睡",
+    "简": "Characters:简",
+    "系": "Characters:系",
+    "练": "Characters:练",
+    "终": "Characters:终",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "聊": "Characters:聊",
+    "背": "Characters:背",
+    "能": "Characters:能",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "解": "Characters:解",
+    "认": "Characters:认",
+    "记": "Characters:记",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "赛": "Characters:赛",
+    "起": "Characters:起",
+    "身": "Characters:身",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "选": "Characters:选",
+    "造": "Characters:造",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "量": "Characters:量",
+    "钟": "Characters:钟",
+    "错": "Characters:错",
+    "锻": "Characters:锻",
+    "问": "Characters:问",
+    "难": "Characters:难",
+    "面": "Characters:面",
+    "题": "Characters:题",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Cognitive and problem-solving verbs and nouns for discussion and planning.",
+      "focus": "Distinguish 办法 (practical way out / solution to a problem) from 方法 (systematic method or technique)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0510",
+          "hanzi": "办",
+          "pinyin": "bàn",
+          "meaning_en": "handle; do; organize",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0510-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件事怎么办？",
+              "pinyin": "zhè jiàn shì zěnme bàn?",
+              "english": "What should we do about this?",
+              "teaching_note": "Short everyday spoken use of 办."
+            },
+            {
+              "id": "ex-0510-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他正在办一件重要的事。",
+              "pinyin": "tā zhèngzài bàn yí jiàn zhòngyào de shì.",
+              "english": "He is handling an important matter.",
+              "teaching_note": "Simple descriptive or narrative use of 办."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 510
+            }
+          ]
+        },
+        {
+          "id": "w-0511",
+          "hanzi": "办法",
+          "pinyin": "bànfǎ",
+          "meaning_en": "way; method; solution",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0511-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有什么办法？",
+              "pinyin": "nǐ yǒu shénme bànfǎ?",
+              "english": "Do you have a solution?",
+              "teaching_note": "Short everyday spoken use of 办法."
+            },
+            {
+              "id": "ex-0511-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个办法很简单。",
+              "pinyin": "zhège bànfǎ hěn jiǎndān.",
+              "english": "This method is very simple.",
+              "teaching_note": "Simple descriptive or narrative use of 办法."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 511
+            }
+          ]
+        },
+        {
+          "id": "w-0528",
+          "hanzi": "变化",
+          "pinyin": "biànhuà",
+          "meaning_en": "change; change in circumstances",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0528-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "有什么变化吗？",
+              "pinyin": "yǒu shénme biànhuà ma?",
+              "english": "Has anything changed?",
+              "teaching_note": "Short everyday spoken use of 变化."
+            },
+            {
+              "id": "ex-0528-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个城市的变化很大。",
+              "pinyin": "zhège chéngshì de biànhuà hěn dà.",
+              "english": "This city has changed a lot.",
+              "teaching_note": "Simple descriptive or narrative use of 变化."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 528
+            }
+          ]
+        },
+        {
+          "id": "w-0602",
+          "hanzi": "懂得",
+          "pinyin": "dǒngde",
+          "meaning_en": "understand; appreciate",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0602-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我懂得你的意思。",
+              "pinyin": "wǒ dǒngde nǐ de yìsi.",
+              "english": "I understand what you mean.",
+              "teaching_note": "Short everyday spoken use of 懂得."
+            },
+            {
+              "id": "ex-0602-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他懂得帮助别人很重要。",
+              "pinyin": "tā dǒngde bāngzhù biérén hěn zhòngyào.",
+              "english": "He understands that helping others is important.",
+              "teaching_note": "Simple descriptive or narrative use of 懂得."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 602
+            }
+          ]
+        },
+        {
+          "id": "w-0616",
+          "hanzi": "发生",
+          "pinyin": "fāshēng",
+          "meaning_en": "happen; occur",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0616-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "发生什么事了？",
+              "pinyin": "fāshēng shénme shì le?",
+              "english": "What happened?",
+              "teaching_note": "Short everyday spoken use of 发生."
+            },
+            {
+              "id": "ex-0616-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "昨天学校发生了一件事。",
+              "pinyin": "zuótiān xuéxiào fāshēng le yí jiàn shì.",
+              "english": "Something happened at school yesterday.",
+              "teaching_note": "Simple descriptive or narrative use of 发生."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 616
+            }
+          ]
+        },
+        {
+          "id": "w-0618",
+          "hanzi": "发展",
+          "pinyin": "fāzhǎn",
+          "meaning_en": "develop; grow",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0618-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里发展得很快。",
+              "pinyin": "zhèlǐ fāzhǎn de hěn kuài.",
+              "english": "This place is developing quickly.",
+              "teaching_note": "Short everyday spoken use of 发展."
+            },
+            {
+              "id": "ex-0618-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个城市发展得很快。",
+              "pinyin": "zhège chéngshì fāzhǎn de hěn kuài.",
+              "english": "This city is developing rapidly.",
+              "teaching_note": "Simple descriptive or narrative use of 发展."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 618
+            }
+          ]
+        },
+        {
+          "id": "w-0621",
+          "hanzi": "方法",
+          "pinyin": "fāngfǎ",
+          "meaning_en": "method; way",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0621-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "有什么好方法？",
+              "pinyin": "yǒu shénme hǎo fāngfǎ?",
+              "english": "Do you have a good method?",
+              "teaching_note": "Short everyday spoken use of 方法."
+            },
+            {
+              "id": "ex-0621-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个学习方法很有用。",
+              "pinyin": "zhège xuéxí fāngfǎ hěn yǒuyòng.",
+              "english": "This study method is very useful.",
+              "teaching_note": "Simple descriptive or narrative use of 方法."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 621
+            }
+          ]
+        },
+        {
+          "id": "w-0654",
+          "hanzi": "关系",
+          "pinyin": "guānxì",
+          "meaning_en": "relationship; connection",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts",
+            "family-relationships"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0654-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们是什么关系？",
+              "pinyin": "nǐmen shì shénme guānxì?",
+              "english": "What is your relationship?",
+              "teaching_note": "Short everyday spoken use of 关系."
+            },
+            {
+              "id": "ex-0654-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们的关系很好。",
+              "pinyin": "tāmen de guānxì hěn hǎo.",
+              "english": "They have a good relationship.",
+              "teaching_note": "Simple descriptive or narrative use of 关系."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 654
+            }
+          ]
+        },
+        {
+          "id": "w-0656",
+          "hanzi": "关于",
+          "pinyin": "guānyú",
+          "meaning_en": "about; regarding",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0656-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "关于这件事，你怎么想？",
+              "pinyin": "guānyú zhè jiàn shì, nǐ zěnme xiǎng?",
+              "english": "What do you think about this matter?",
+              "teaching_note": "Short everyday spoken use of 关于."
+            },
+            {
+              "id": "ex-0656-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "关于明天的比赛，我们已经准备好了。",
+              "pinyin": "guānyú míngtiān de bǐsài, wǒmen yǐjīng zhǔnbèi hǎo le.",
+              "english": "We are ready for tomorrow's match.",
+              "teaching_note": "Simple descriptive or narrative use of 关于."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 656
+            }
+          ]
+        },
+        {
+          "id": "w-0688",
+          "hanzi": "机会",
+          "pinyin": "jīhuì",
+          "meaning_en": "chance; opportunity",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0688-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我一次机会吧！",
+              "pinyin": "gěi wǒ yí cì jīhuì ba!",
+              "english": "Give me a chance!",
+              "teaching_note": "Short everyday spoken use of 机会."
+            },
+            {
+              "id": "ex-0688-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这次旅游是学习汉语的好机会。",
+              "pinyin": "zhè cì lǚyóu shì xuéxí Hànyǔ de hǎo jīhuì.",
+              "english": "This trip is a good opportunity to study Chinese.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 688
+            }
+          ]
+        },
+        {
+          "id": "w-0714",
+          "hanzi": "解决",
+          "pinyin": "jiějué",
+          "meaning_en": "solve; resolve",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0714-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "问题解决了吗？",
+              "pinyin": "wèntí jiějué le ma?",
+              "english": "Has the problem been solved?",
+              "teaching_note": "Short everyday spoken use of 解决."
+            },
+            {
+              "id": "ex-0714-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们一起解决这个问题。",
+              "pinyin": "wǒmen yìqǐ jiějué zhège wèntí.",
+              "english": "We will solve this problem together.",
+              "teaching_note": "Simple descriptive or narrative use of 解决."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 714
+            }
+          ]
+        },
+        {
+          "id": "w-0724",
+          "hanzi": "决定",
+          "pinyin": "juédìng",
+          "meaning_en": "decide; decision",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0724-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你决定了吗？",
+              "pinyin": "nǐ juédìng le ma?",
+              "english": "Have you decided?",
+              "teaching_note": "Short everyday spoken use of 决定."
+            },
+            {
+              "id": "ex-0724-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我决定明年去中国。",
+              "pinyin": "wǒ juédìng míngnián qù Zhōngguó.",
+              "english": "I decided to go to China next year.",
+              "teaching_note": "Simple descriptive or narrative use of 决定."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 724
+            }
+          ]
+        },
+        {
+          "id": "w-0214",
+          "hanzi": "玩",
+          "pinyin": "wán",
+          "meaning_en": "play",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions",
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0214-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "孩子们在玩。",
+              "pinyin": "háizimen zài wán.",
+              "english": "The children are playing.",
+              "teaching_note": "在 before 玩 marks ongoing play; 孩子们 refers to the children as a group."
+            },
+            {
+              "id": "ex-0214-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们下课后在外边玩。",
+              "pinyin": "xuéshēngmen xiàkè hòu zài wàibian wán.",
+              "english": "The students play outside after class.",
+              "teaching_note": "School or study context showing 玩 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 214
+            }
+          ]
+        },
+        {
+          "id": "w-0233",
+          "hanzi": "想",
+          "pinyin": "xiǎng",
+          "meaning_en": "think; want",
+          "primary_pos_id": "modal-verb",
+          "pos_ids": [
+            "modal-verb",
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0233-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我想学汉语。",
+              "pinyin": "wǒ xiǎng xué Hànyǔ.",
+              "english": "I want to learn Chinese.",
+              "teaching_note": "想 indicates desire or intention; 学汉语 means learn Chinese."
+            },
+            {
+              "id": "ex-0233-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我妈妈想买一件新衣服。",
+              "pinyin": "wǒ māma xiǎng mǎi yí jiàn xīn yīfu.",
+              "english": "My mom wants to buy a new item of clothing.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 想."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 233
+            }
+          ]
+        },
+        {
+          "id": "w-0252",
+          "hanzi": "要",
+          "pinyin": "yào",
+          "meaning_en": "want; will",
+          "primary_pos_id": "modal-verb",
+          "pos_ids": [
+            "modal-verb",
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0252-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我要喝水。",
+              "pinyin": "wǒ yào hē shuǐ.",
+              "english": "I want to drink water.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-0252-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "上课的时候要听老师说话。",
+              "pinyin": "shàngkè de shíhou yào tīng lǎoshī shuōhuà.",
+              "english": "You must listen to the teacher during class.",
+              "teaching_note": "School or study context showing 要 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 252
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 办 (bàn)",
+        "explanation": "办 (bàn) means “handle; do; organize” (verb).",
+        "example_id": "ex-0510-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 办法 (bànfǎ)",
+        "explanation": "办法 (bànfǎ) means “way; method; solution” (noun).",
+        "example_id": "ex-0511-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0510-1",
+      "ex-0511-1",
+      "ex-0528-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What did Xiao Zhou do before making his final decision?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He learned about both situations and discussed it with his parents.",
+          "explanation": "The passage says 他先了解了两边的情况，又和父母商量了半天."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 决定 and 办法 or 解决.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我们决定一起想办法解决这个难题。",
+          "explanation": "Use 决定, 办法, and 解决."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to solve / resolve\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "解决",
+              "pinyin": "jiějué",
+              "meaning_en": "solve"
+            },
+            {
+              "id": "b",
+              "hanzi": "决定",
+              "pinyin": "juédìng",
+              "meaning_en": "decide"
+            },
+            {
+              "id": "c",
+              "hanzi": "认为",
+              "pinyin": "rènwéi",
+              "meaning_en": "think / believe"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "解决 means to solve or resolve."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which noun means \"opportunity / chance\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "方法",
+              "pinyin": "fāngfǎ",
+              "meaning_en": "method"
+            },
+            {
+              "id": "b",
+              "hanzi": "机会",
+              "pinyin": "jīhuì",
+              "meaning_en": "opportunity"
+            },
+            {
+              "id": "c",
+              "hanzi": "选择",
+              "pinyin": "xuǎnzé",
+              "meaning_en": "choice"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "机会 means chance or opportunity."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"main / principal\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "主要",
+              "pinyin": "zhǔyào",
+              "meaning_en": "main"
+            },
+            {
+              "id": "b",
+              "hanzi": "明白",
+              "pinyin": "míngbai",
+              "meaning_en": "understand"
+            },
+            {
+              "id": "c",
+              "hanzi": "了解",
+              "pinyin": "liǎojiě",
+              "meaning_en": "get to know"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "主要 means main or principal."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Solving a Study Problem",
+        "context_en": "Two classmates discuss how to improve and decide on a study method.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "我记生词总是记不住，你有什么好办法吗？",
+            "pinyin": "Wǒ jì shēngcí zǒngshì jì bú zhù, nǐ yǒu shénme hǎo bànfǎ ma?",
+            "english": "I can never remember new words—do you have a good way to handle this?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我认为主要的问题是光背不造句。你得换一个学习方法。",
+            "pinyin": "Wǒ rènwéi zhǔyào de wèntí shì guāng bèi bú zàojù. Nǐ děi huàn yí ge xuéxí fāngfǎ.",
+            "english": "I think the main problem is memorizing without making sentences. You have to switch to a different study method."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "我明白了！如果我有机会多和中国人聊天，也能更快解决这个难题。",
+            "pinyin": "Wǒ míngbai le! Rúguǒ wǒ yǒu jīhuì duō hé Zhōngguórén liáotiān, yě néng gèng kuài jiějué zhège nántí.",
+            "english": "I understand! If I have the chance to chat more with Chinese speakers, I can solve this hard problem faster too."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，你已经决定这样做了，就选每天晚饭后练习二十分钟吧。",
+            "pinyin": "Duì, nǐ yǐjīng juédìng zhèyàng zuò le, jiù xuǎn měitiān wǎnfàn hòu liànxí èrshí fēnzhōng ba.",
+            "english": "Right—now that you’ve decided to do that, choose to practice for twenty minutes after dinner every day."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Sharing an opinion with 认为",
+          "explanation_en": "Use <Person> + 认为 + <Clause> to state what someone thinks or believes.",
+          "pattern_hanzi": "<Person> + 认为 + <Opinion Clause>",
+          "pattern_pinyin": "<Person> + rènwéi + <Opinion Clause>",
+          "pattern_pseudo_translation": "<Person> + thinks/believes + <Opinion Clause>",
+          "examples": [
+            {
+              "hanzi": "老师认为每天朗读课文很有帮助。",
+              "pinyin": "Lǎoshī rènwéi měitiān lǎngdú kèwén hěn yǒu bāngzhù.",
+              "english": "The teacher thinks reading the lesson text aloud every day is very helpful."
+            },
+            {
+              "hanzi": "很多人认为早睡早起对身体更好。",
+              "pinyin": "Hěn duō rén rènwéi zǎo shuì zǎo qǐ duì shēntǐ gèng hǎo.",
+              "english": "Many people believe going to bed early and waking early is better for health."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Solving a problem with 解决",
+          "explanation_en": "Pair 解决 (jiějué) with 问题 (problem), 难题 (hard problem), or 办法.",
+          "pattern_hanzi": "解决 + <Problem / Difficulty>",
+          "pattern_pinyin": "jiějué + <Problem / Difficulty>",
+          "pattern_pseudo_translation": "solve + <Problem / Difficulty>",
+          "examples": [
+            {
+              "hanzi": "他们很快找到了解决问题的办法。",
+              "pinyin": "Tāmen hěn kuài zhǎodào le jiějué wèntí de bànfǎ.",
+              "english": "They quickly found a way to solve the problem."
+            },
+            {
+              "hanzi": "这件事我已经想办法解决了。",
+              "pinyin": "Zhè jiàn shì wǒ yǐjīng xiǎng bànfǎ jiějué le.",
+              "english": "I have already figured out a way to resolve this matter."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Discuss decisions, choices, and understanding.",
+        "model": {
+          "hanzi": "她决定抓住这次去留学的机会。",
+          "pinyin": "Tā juédìng zhuāzhù zhè cì qù liúxué de jīhuì.",
+          "english": "She decided to seize this opportunity to study abroad."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you want to get to know Chinese history better.",
+            "model_answer": {
+              "hanzi": "我想多了解一点儿中国历史。",
+              "pinyin": "Wǒ xiǎng duō liǎojiě yìdiǎnr Zhōngguó lìshǐ.",
+              "english": "I want to learn more about Chinese history."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say he finally understood his parents’ care.",
+            "model_answer": {
+              "hanzi": "他终于懂得了父母的关心。",
+              "pinyin": "Tā zhōngyú dǒngde le fùmǔ de guānxīn.",
+              "english": "He finally came to understand his parents’ care."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this is an important choice.",
+            "model_answer": {
+              "hanzi": "这是一个很重要的选择。",
+              "pinyin": "Zhè shì yí ge hěn zhòngyào de xuǎnzé.",
+              "english": "This is a very important choice."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Making a New Choice",
+        "paragraphs": [
+          {
+            "hanzi": "大学毕业以后，小周面临两个选择：一是留在北京工作，二是回老家帮家里办一家小店。",
+            "pinyin": "Dàxué bìyè yǐhòu, Xiǎo Zhōu miànlín liǎng ge xuǎnzé: yī shì liú zài Běijīng gōngzuò, èr shì huí lǎojiā bāng jiālǐ bàn yì jiā xiǎo diàn.",
+            "english": "After graduating from university, Xiao Zhou faced two choices: one was staying in Beijing to work, and the other was returning to his hometown to help his family run a small shop."
+          },
+          {
+            "hanzi": "他先了解了两边的情况，又和父母商量了半天，最后决定先回老家试试。他认为只要方法对，在哪里都有发展的机会。",
+            "pinyin": "Tā xiān liǎojiě le liǎngbiān de qíngkuàng, yòu hé fùmǔ shāngliang le bàntiān, zuìhòu juédìng xiān huí lǎojiā shìshi. Tā rènwéi zhǐyào fāngfǎ duì, zài nǎlǐ dōu yǒu fāzhǎn de jīhuì.",
+            "english": "He first learned about the situation on both sides, discussed it with his parents for a long time, and finally decided to try returning home first. He believes that as long as the method is right, there are opportunities to develop anywhere."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What two choices did Xiao Zhou face after graduation?",
+            "answer_en": "Staying in Beijing to work or returning to his hometown to help run a family shop."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What does Xiao Zhou believe about opportunities?",
+            "answer_en": "As long as the method is right, there are opportunities to develop anywhere."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Share an opinion about learning Chinese using 认为 and 方法.",
+          "model_answer": {
+            "hanzi": "我认为学汉语最好的方法是每天坚持听和说。",
+            "pinyin": "Wǒ rènwéi xué Hànyǔ zuì hǎo de fāngfǎ shì měitiān jiānchí tīng hé shuō.",
+            "english": "I think the best method for learning Chinese is sticking to listening and speaking every day."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Talk about a decision you made using 决定 or 选择.",
+          "model_answer": {
+            "hanzi": "今年我决定每天早起锻炼，这是个不错的选择。",
+            "pinyin": "Jīnnián wǒ juédìng měitiān zǎoqǐ duànliàn, zhè shì ge búcuò de xuǎnzé.",
+            "english": "This year I decided to wake up early every day to exercise—it’s a great choice."
+          }
+        }
+      ],
+      "common_pitfall": "了解 means to understand/know about a person, situation, or subject in depth; 明白 means to grasp/get the meaning of what someone just said.",
+      "pronunciation_focus": "解决 (jiějué) moves from third tone to second tone; 决定 (juédìng) moves from second tone to fourth tone.",
+      "review": {
+        "can_do": [
+          "Express understanding with 明白, 了解, 懂得, and 认为.",
+          "Discuss methods and solutions with 办法, 方法, and 解决.",
+          "Talk about opportunities, choices, and decisions."
+        ],
+        "entry_ids": [
+          510,
+          511,
+          528,
+          602,
+          616,
+          618,
+          621,
+          654,
+          656,
+          688,
+          714,
+          724
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-understanding-and-decisions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Sharing an opinion with 认为",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-understanding-and-decisions--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Solving a problem with 解决",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you want to get to know Chinese history better.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-understanding-and-decisions--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say he finally understood his parents’ care.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-understanding-and-decisions--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this is an important choice.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What two choices did Xiao Zhou face after graduation?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-understanding-and-decisions--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What does Xiao Zhou believe about opportunities?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Share an opinion about learning Chinese using 认为 and 方法.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-understanding-and-decisions--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Talk about a decision you made using 决定 or 选择.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-understanding-and-decisions--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-understanding-and-decisions--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to solve / resolve\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-understanding-and-decisions--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which noun means \"opportunity / chance\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-understanding-and-decisions--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"main / principal\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-understanding-and-decisions--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-understanding-and-decisions--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 18
+}

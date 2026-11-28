@@ -54,7 +54,7 @@ describe('course building', () => {
 
 describe('topic-lesson words and Vocabulary records', () => {
   const entries = words.flatMap(w => w.entry ? [{ ...w.entry, word: w }] : []);
-  it('every HSK topic-lesson word (Level 1 and Level 2 lessons) matches exactly one Vocabulary record', async () => {
+  it('every HSK topic-lesson word (Level 1, Level 2 and Level 3 lessons) matches exactly one Vocabulary record', async () => {
     const topics = lessonSummaries.filter(s => s.schemaVersion.startsWith('mandarin-topic-lesson/'));
     let checked = 0;
     for (const s of topics) for (const item of (await loadLesson(s.id))!.topic!.items) {
@@ -62,9 +62,9 @@ describe('topic-lesson words and Vocabulary records', () => {
       expect(hit?.simplified, `${s.id} ${item.hanzi}`).toBe(item.hanzi);
       checked++;
     }
-    expect(checked).toBe(574); // 300 Level 1 + 274 Level 2 lesson items (200 new + reviews)
+    expect(checked).toBe(1179); // 300 Level 1 + 274 Level 2 + 605 Level 3 lesson items
   });
-  it('all 1,148 Level 1 + Level 2 word-card examples and recorded topic/subtopic IDs match the vocabulary', async () => {
+  it('all Level 1–3 word-card examples and recorded topic/subtopic IDs match the vocabulary', async () => {
     let checked = 0;
     for (const summary of lessonSummaries.filter(s => s.schemaVersion.startsWith('mandarin-topic-lesson/'))) {
       for (const item of (await loadLesson(summary.id))!.topic!.items) {
@@ -78,7 +78,7 @@ describe('topic-lesson words and Vocabulary records', () => {
         checked += item.examples.length;
       }
     }
-    expect(checked).toBe(1148);
+    expect(checked).toBe(2358);
   });
   it('点 #33 and 点 #336 stay separate records', () => {
     const a = syllabusEntryFor({ hanzi: '点', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 33 }] }, entries);
@@ -121,7 +121,7 @@ describe('course lessons on word cards', () => {
     const at = (n: number) => wordLessonPlacements(courses, level2.find(w => w.entry!.hsk_index === n)!.entry!)[0]?.placement.lesson.id;
     expect(at(302)).toBe('topic-sports-games-and-hobbies'); // 爱好
     expect(at(313)).toBe('topic-asking-for-help-and-making-introductions'); // 不好意思, a syllabus phrase
-    expect(courses.find(c => c.id === 'hsk3-2025')!.sections.map(s => sectionPlacements(s).length)).toEqual([21, 25]);
+    expect(courses.find(c => c.id === 'hsk3-2025')!.sections.map(s => sectionPlacements(s).length)).toEqual([21, 25, 35]);
   });
   it('example phrases with their parent word\'s number, other editions and unnumbered words get no lessons', () => {
     expect(wordLessonPlacements(courses, word(82, { entryKind: 'phrase' }))).toEqual([]);

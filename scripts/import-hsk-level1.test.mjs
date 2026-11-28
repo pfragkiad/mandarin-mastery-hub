@@ -38,7 +38,7 @@ test('reimport is idempotent and preserves all records outside Level 1', t => {
   const { data, report } = importLevel1(paths);
   assert.deepEqual(data, vocabulary);
   assert.equal(report.alignedExamples, 600);
-  assert.equal(report.preservedWordRecordings, 276);
+  assert.equal(report.preservedWordRecordings, vocabulary.entries.filter(e => e.hskLevel === 1 && e.audio).length);
 });
 
 test('replacement removes Level 1 phrases while retaining other-level phrases and recordings', t => {

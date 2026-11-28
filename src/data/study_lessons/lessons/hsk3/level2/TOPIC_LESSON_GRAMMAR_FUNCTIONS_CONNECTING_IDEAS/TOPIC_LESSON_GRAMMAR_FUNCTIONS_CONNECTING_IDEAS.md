@@ -158,7 +158,7 @@ Do you drink tea or water?
 
 - 所以 (suǒyǐ) — therefore; so [HSK entry 439]
 
-- 因为 (yīnwèi) — because [HSK entry 476]
+- 因为 (yīnwèi) — because [HSK entry 475]
 
 - 吧 (ba) — suggestion particle [HSK entry 4]
 

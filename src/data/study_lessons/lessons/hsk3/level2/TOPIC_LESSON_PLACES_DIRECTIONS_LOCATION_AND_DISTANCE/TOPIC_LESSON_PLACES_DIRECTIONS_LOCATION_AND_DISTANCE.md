@@ -146,7 +146,7 @@ Do not confuse 近 (jìn), near, with 进 (jìn), enter. They have the same piny
 
 - 后面 (hòumiàn) — behind; at the back [HSK entry 356]
 
-- 近 (jìn) — near; close [HSK entry 371]
+- 近 (jìn) — near; close [HSK entry 373]
 
 - 离 (lí) — from; away from (distance) [HSK entry 389]
 

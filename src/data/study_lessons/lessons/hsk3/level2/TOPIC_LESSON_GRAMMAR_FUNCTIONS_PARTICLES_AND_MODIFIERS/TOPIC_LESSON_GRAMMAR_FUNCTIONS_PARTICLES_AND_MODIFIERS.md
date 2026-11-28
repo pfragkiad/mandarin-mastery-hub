@@ -146,13 +146,13 @@ Do not mix up the written characters 地 (de), 得 (de) and 的 (de); their gram
 
 - 别 (bié) — do not; must not [HSK entry 311]
 
-- 得 (de) — structural particle introducing complements [HSK entry 332]
+- 得 (de) — structural particle introducing complements [HSK entry 333]
 
-- 地 (de) — structural particle marking an adverbial [HSK entry 333]
+- 地 (de) — structural particle marking an adverbial [HSK entry 332]
 
 - 过 (guo) — experiential aspect particle; have done [HSK entry 351]
 
-- 已经 (yǐjīng) — already [HSK entry 472]
+- 已经 (yǐjīng) — already [HSK entry 473]
 
 - 着 (zhe) — durative aspect particle; ongoing state [HSK entry 490]
 

@@ -152,7 +152,7 @@ It’s cloudy today; let’s read at home.
 
 - 晴 (qíng) — sunny; clear weather [HSK entry 420]
 
-- 阴 (yīn) — overcast; cloudy [HSK entry 475]
+- 阴 (yīn) — overcast; cloudy [HSK entry 476]
 
 - 游 (yóu) — to swim; to travel through water [HSK entry 477]
 

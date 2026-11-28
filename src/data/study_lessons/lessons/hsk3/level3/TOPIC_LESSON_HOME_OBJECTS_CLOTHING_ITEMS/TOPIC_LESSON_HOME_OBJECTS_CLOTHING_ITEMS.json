@@ -1,0 +1,1518 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-clothes-and-belongings",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Clothes & Everyday Belongings",
+    "subtitle": "Clothes, shoes, bags, and everyday personal items",
+    "description": "Talk about clothing items and everyday objects such as shirts, coats, skirts, shoes, umbrellas, lamps, and suitcases.",
+    "slug": "clothes-and-belongings"
+  },
+  "classification": {
+    "primary_topic_id": "home-objects",
+    "topic_ids": [
+      "home-objects"
+    ],
+    "tags": [
+      "clothing",
+      "everyday-items",
+      "belongings"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "clothing-accessories",
+    "subtopic_ids": [
+      "clothing-accessories",
+      "everyday-objects"
+    ]
+  },
+  "learning_objectives": [
+    "Name clothing and footwear: 衬衫, 大衣, 短裤, 裙子, 上衣, and 鞋.",
+    "Name everyday personal and household items: 灯, 盘子, 瓶子, 伞, 箱子, 牙刷, 雨衣, 纸, and 卡.",
+    "Pair clothing and objects with appropriate classifiers like 件, 条, 双, 把, and 张."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "临": "Characters:临",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "交": "Characters:交",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "伞": "Characters:伞",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "公": "Characters:公",
+    "关": "Characters:关",
+    "写": "Characters:写",
+    "冬": "Characters:冬",
+    "冷": "Characters:冷",
+    "凉": "Characters:凉",
+    "出": "Characters:出",
+    "别": "Characters:别",
+    "刷": "Characters:刷",
+    "前": "Characters:前",
+    "动": "Characters:动",
+    "包": "Characters:包",
+    "卡": "Characters:卡",
+    "去": "Characters:去",
+    "双": "Characters:双",
+    "口": "Characters:口",
+    "台": "Characters:台",
+    "号": "Characters:号",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "喜": "Characters:喜",
+    "四": "Characters:四",
+    "在": "Characters:在",
+    "夏": "Characters:夏",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "带": "Characters:带",
+    "常": "Characters:常",
+    "床": "Characters:床",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "很": "Characters:很",
+    "忘": "Characters:忘",
+    "快": "Characters:快",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "把": "Characters:把",
+    "拾": "Characters:拾",
+    "拿": "Characters:拿",
+    "挑": "Characters:挑",
+    "收": "Characters:收",
+    "放": "Characters:放",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "条": "Characters:条",
+    "柜": "Characters:柜",
+    "桌": "Characters:桌",
+    "欢": "Characters:欢",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "洗": "Characters:洗",
+    "深": "Characters:深",
+    "灯": "Characters:灯",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "爸": "Characters:爸",
+    "牙": "Characters:牙",
+    "王": "Characters:王",
+    "瓶": "Characters:瓶",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "盘": "Characters:盘",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "短": "Characters:短",
+    "码": "Characters:码",
+    "票": "Characters:票",
+    "空": "Characters:空",
+    "穿": "Characters:穿",
+    "箱": "Characters:箱",
+    "纸": "Characters:纸",
+    "给": "Characters:给",
+    "者": "Characters:者",
+    "脑": "Characters:脑",
+    "脸": "Characters:脸",
+    "舒": "Characters:舒",
+    "色": "Characters:色",
+    "蓝": "Characters:蓝",
+    "行": "Characters:行",
+    "衣": "Characters:衣",
+    "衫": "Characters:衫",
+    "衬": "Characters:衬",
+    "袋": "Characters:袋",
+    "袖": "Characters:袖",
+    "装": "Characters:装",
+    "裙": "Characters:裙",
+    "裤": "Characters:裤",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "视": "Characters:视",
+    "觉": "Characters:觉",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "谁": "Characters:谁",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "银": "Characters:银",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "阴": "Characters:阴",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "鞋": "Characters:鞋",
+    "顺": "Characters:顺",
+    "骑": "Characters:骑"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Clothing and everyday handheld/personal objects used in daily life and packing.",
+      "focus": "Use 件 for shirts/coats/tops, 条 for skirts/shorts, 双 for shoes, and 把 for umbrellas."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0558",
+          "hanzi": "衬衫",
+          "pinyin": "chènshān",
+          "meaning_en": "shirt; button-up shirt",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ],
+          "examples": [
+            {
+              "id": "ex-0558-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件衬衫好看吗？",
+              "pinyin": "zhè jiàn chènshān hǎokàn ma?",
+              "english": "Does this shirt look good?",
+              "teaching_note": "Short everyday spoken use of 衬衫."
+            },
+            {
+              "id": "ex-0558-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸买了一件白色的衬衫。",
+              "pinyin": "bàba mǎi le yí jiàn báisè de chènshān.",
+              "english": "Dad bought a white shirt.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 558
+            }
+          ]
+        },
+        {
+          "id": "w-0577",
+          "hanzi": "大衣",
+          "pinyin": "dàyī",
+          "meaning_en": "coat; overcoat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ],
+          "examples": [
+            {
+              "id": "ex-0577-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别忘了大衣！",
+              "pinyin": "bié wàng le dàyī!",
+              "english": "Don't forget your coat!",
+              "teaching_note": "Short everyday spoken use of 大衣."
+            },
+            {
+              "id": "ex-0577-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "冬天他常穿一件大衣。",
+              "pinyin": "dōngtiān tā cháng chuān yí jiàn dàyī.",
+              "english": "He often wears an overcoat in winter.",
+              "teaching_note": "Simple descriptive or narrative use of 大衣."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 577
+            }
+          ]
+        },
+        {
+          "id": "w-0588",
+          "hanzi": "灯",
+          "pinyin": "dēng",
+          "meaning_en": "lamp; light",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-0588-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "把灯打开吧。",
+              "pinyin": "bǎ dēng dǎkāi ba.",
+              "english": "Turn on the light.",
+              "teaching_note": "Short everyday spoken use of 灯."
+            },
+            {
+              "id": "ex-0588-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "房间里有两个灯。",
+              "pinyin": "fángjiān lǐ yǒu liǎng ge dēng.",
+              "english": "There are two lights in the room.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 588
+            }
+          ]
+        },
+        {
+          "id": "w-0606",
+          "hanzi": "短裤",
+          "pinyin": "duǎnkù",
+          "meaning_en": "shorts",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0606-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你买短裤了吗？",
+              "pinyin": "nǐ mǎi duǎnkù le ma?",
+              "english": "Did you buy shorts?",
+              "teaching_note": "Short everyday spoken use of 短裤."
+            },
+            {
+              "id": "ex-0606-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "夏天我喜欢穿短裤。",
+              "pinyin": "xiàtiān wǒ xǐhuan chuān duǎnkù.",
+              "english": "I like wearing shorts in summer.",
+              "teaching_note": "Simple descriptive or narrative use of 短裤."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 606
+            }
+          ]
+        },
+        {
+          "id": "w-0725",
+          "hanzi": "卡",
+          "pinyin": "kǎ",
+          "meaning_en": "card",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0725-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的卡呢？",
+              "pinyin": "nǐ de kǎ ne?",
+              "english": "Where's your card?",
+              "teaching_note": "Short everyday spoken use of 卡."
+            },
+            {
+              "id": "ex-0725-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她用银行卡买了车票。",
+              "pinyin": "tā yòng yínhángkǎ mǎi le chē piào.",
+              "english": "She bought a ticket with her bank card.",
+              "teaching_note": "Simple descriptive or narrative use of 卡."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 725
+            }
+          ]
+        },
+        {
+          "id": "w-0792",
+          "hanzi": "盘子",
+          "pinyin": "pánzi",
+          "meaning_en": "plate; dish",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0792-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "盘子在哪儿？",
+              "pinyin": "pánzi zài nǎr?",
+              "english": "Where is the plate?",
+              "teaching_note": "Short everyday spoken use of 盘子."
+            },
+            {
+              "id": "ex-0792-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上有四个盘子。",
+              "pinyin": "zhuōzi shàng yǒu sì gè pánzi.",
+              "english": "There are four plates on the table.",
+              "teaching_note": "Simple descriptive or narrative use of 盘子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 792
+            }
+          ]
+        },
+        {
+          "id": "w-0796",
+          "hanzi": "瓶子",
+          "pinyin": "píngzi",
+          "meaning_en": "bottle",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-0796-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "瓶子里有水吗？",
+              "pinyin": "píngzi lǐ yǒu shuǐ ma?",
+              "english": "Is there water in the bottle?",
+              "teaching_note": "Short everyday spoken use of 瓶子."
+            },
+            {
+              "id": "ex-0796-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上有两个瓶子。",
+              "pinyin": "zhuōzi shàng yǒu liǎng ge píngzi.",
+              "english": "There are two bottles on the table.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 796
+            }
+          ]
+        },
+        {
+          "id": "w-0812",
+          "hanzi": "裙子",
+          "pinyin": "qúnzi",
+          "meaning_en": "skirt",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ],
+          "examples": [
+            {
+              "id": "ex-0812-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条裙子多少钱？",
+              "pinyin": "zhè tiáo qúnzi duōshao qián?",
+              "english": "How much is this skirt?",
+              "teaching_note": "Short everyday spoken use of 裙子."
+            },
+            {
+              "id": "ex-0812-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她今天穿了一条蓝裙子。",
+              "pinyin": "tā jīntiān chuān le yì tiáo lán qúnzi.",
+              "english": "She wore a blue skirt today.",
+              "teaching_note": "Simple descriptive or narrative use of 裙子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 812
+            }
+          ]
+        },
+        {
+          "id": "w-0820",
+          "hanzi": "伞",
+          "pinyin": "sǎn",
+          "meaning_en": "umbrella",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0820-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "带伞了吗？",
+              "pinyin": "dài sǎn le ma?",
+              "english": "Did you bring an umbrella?",
+              "teaching_note": "Short everyday spoken use of 伞."
+            },
+            {
+              "id": "ex-0820-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨时别忘了带伞。",
+              "pinyin": "xià yǔ shí bié wàng le dài sǎn.",
+              "english": "Don't forget an umbrella when it rains.",
+              "teaching_note": "Simple descriptive or narrative use of 伞."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 820
+            }
+          ]
+        },
+        {
+          "id": "w-0824",
+          "hanzi": "上衣",
+          "pinyin": "shàngyī",
+          "meaning_en": "top; shirt; jacket",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ],
+          "examples": [
+            {
+              "id": "ex-0824-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件上衣好看吗？",
+              "pinyin": "zhè jiàn shàngyī hǎokàn ma?",
+              "english": "Does this top look good?",
+              "teaching_note": "Short everyday spoken use of 上衣."
+            },
+            {
+              "id": "ex-0824-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她买了一件新的上衣。",
+              "pinyin": "tā mǎi le yí jiàn xīn de shàngyī.",
+              "english": "She bought a new top.",
+              "teaching_note": "Simple descriptive or narrative use of 上衣."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 824
+            }
+          ]
+        },
+        {
+          "id": "w-0893",
+          "hanzi": "箱子",
+          "pinyin": "xiāngzi",
+          "meaning_en": "box; suitcase",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-0893-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个箱子是谁的？",
+              "pinyin": "zhège xiāngzi shì shéi de?",
+              "english": "Whose box is this?",
+              "teaching_note": "Short everyday spoken use of 箱子."
+            },
+            {
+              "id": "ex-0893-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他把衣服放进箱子里。",
+              "pinyin": "tā bǎ yīfu fàng jìn xiāngzi lǐ.",
+              "english": "He put his clothes into the suitcase.",
+              "teaching_note": "Simple descriptive or narrative use of 箱子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 893
+            }
+          ]
+        },
+        {
+          "id": "w-0901",
+          "hanzi": "鞋",
+          "pinyin": "xié",
+          "meaning_en": "shoes",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "clothing-accessories",
+          "subtopic_ids": [
+            "clothing-accessories"
+          ],
+          "examples": [
+            {
+              "id": "ex-0901-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的鞋真好看！",
+              "pinyin": "nǐ de xié zhēn hǎokàn!",
+              "english": "Your shoes look great!",
+              "teaching_note": "Short everyday spoken use of 鞋."
+            },
+            {
+              "id": "ex-0901-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨天他穿了一双新鞋。",
+              "pinyin": "xià yǔ tiān tā chuān le yì shuāng xīn xié.",
+              "english": "He wore new shoes on the rainy day.",
+              "teaching_note": "Simple descriptive or narrative use of 鞋."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 901
+            }
+          ]
+        },
+        {
+          "id": "w-0917",
+          "hanzi": "牙刷",
+          "pinyin": "yáshuā",
+          "meaning_en": "toothbrush",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0917-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的牙刷在哪儿？",
+              "pinyin": "wǒ de yáshuā zài nǎr?",
+              "english": "Where is my toothbrush?",
+              "teaching_note": "Short everyday spoken use of 牙刷."
+            },
+            {
+              "id": "ex-0917-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他买了一把新牙刷。",
+              "pinyin": "tā mǎi le yì bǎ xīn yáshuā.",
+              "english": "He bought a new toothbrush.",
+              "teaching_note": "Simple descriptive or narrative use of 牙刷."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 917
+            }
+          ]
+        },
+        {
+          "id": "w-0951",
+          "hanzi": "雨衣",
+          "pinyin": "yǔyī",
+          "meaning_en": "raincoat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0951-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "雨衣带了吗？",
+              "pinyin": "yǔyī dài le ma?",
+              "english": "Did you bring your raincoat?",
+              "teaching_note": "Short everyday spoken use of 雨衣."
+            },
+            {
+              "id": "ex-0951-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨时他穿着雨衣。",
+              "pinyin": "xià yǔ shí tā chuān zhe yǔyī.",
+              "english": "He wears a raincoat when it rains.",
+              "teaching_note": "Simple descriptive or narrative use of 雨衣."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 951
+            }
+          ]
+        },
+        {
+          "id": "w-0980",
+          "hanzi": "纸",
+          "pinyin": "zhǐ",
+          "meaning_en": "paper",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-0980-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "有纸吗？",
+              "pinyin": "yǒu zhǐ ma?",
+              "english": "Do you have paper?",
+              "teaching_note": "Short everyday spoken use of 纸."
+            },
+            {
+              "id": "ex-0980-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请在纸上写名字。",
+              "pinyin": "qǐng zài zhǐ shàng xiě míngzi.",
+              "english": "Please write your name on the paper.",
+              "teaching_note": "Simple descriptive or narrative use of 纸."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 980
+            }
+          ]
+        },
+        {
+          "id": "w-0036",
+          "hanzi": "电视",
+          "pinyin": "diànshì",
+          "meaning_en": "TV",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media",
+            "home-objects"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0036-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "晚上我们看电视。",
+              "pinyin": "wǎnshang wǒmen kàn diànshì.",
+              "english": "We watch TV in the evening.",
+              "teaching_note": "看电视 is the standard expression for watching television."
+            },
+            {
+              "id": "ex-0036-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个房间里有电视，也有电脑。",
+              "pinyin": "zhège fángjiān lǐ yǒu diànshì, yě yǒu diànnǎo.",
+              "english": "There is a television and a computer in this room.",
+              "teaching_note": "Location phrase 房间里 makes the description of equipment in a room explicit."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 36
+            }
+          ]
+        },
+        {
+          "id": "w-0040",
+          "hanzi": "东西",
+          "pinyin": "dōngxi",
+          "meaning_en": "thing",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "everyday-objects",
+          "subtopic_ids": [
+            "everyday-objects"
+          ],
+          "examples": [
+            {
+              "id": "ex-0040-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这些东西是谁的？",
+              "pinyin": "zhèxiē dōngxi shì shéi de?",
+              "english": "Whose things are these?",
+              "teaching_note": "谁 asks about the owner; 谁 can be pronounced shéi or shuí, here read shéi."
+            },
+            {
+              "id": "ex-0040-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请拿好你的东西。",
+              "pinyin": "qǐng ná hǎo nǐ de dōngxi.",
+              "english": "Please take care of your belongings.",
+              "teaching_note": "Short everyday instruction or request using 东西; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 40
+            }
+          ]
+        },
+        {
+          "id": "w-0295",
+          "hanzi": "桌子",
+          "pinyin": "zhuōzi",
+          "meaning_en": "table",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0295-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "桌子上有一本书。",
+              "pinyin": "zhuōzi shàng yǒu yì běn shū.",
+              "english": "There is a book on the table.",
+              "teaching_note": "桌子上 means on the table; 有 introduces something located there."
+            },
+            {
+              "id": "ex-0295-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "教室里有很多桌子。",
+              "pinyin": "jiàoshì lǐ yǒu hěn duō zhuōzi.",
+              "english": "There are many desks in the classroom.",
+              "teaching_note": "Short beginner-level description illustrating 桌子 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 295
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 衬衫 (chènshān)",
+        "explanation": "衬衫 (chènshān) means “shirt; button-up shirt” (noun).",
+        "example_id": "ex-0558-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 大衣 (dàyī)",
+        "explanation": "大衣 (dàyī) means “coat; overcoat” (noun).",
+        "example_id": "ex-0577-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0558-1",
+      "ex-0577-1",
+      "ex-0588-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What did Xiao Wang do right before walking out the door?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He grabbed an umbrella, put his transit card in his pocket, and turned off the light.",
+          "explanation": "The second paragraph lists these three actions before he walked out."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences describing what you packed in your suitcase using 箱子 and two clothing items.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我的箱子里装了两件衬衫、一件大衣和一双鞋。",
+          "explanation": "Use 箱子 with clothing items and classifiers."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"umbrella\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "雨衣",
+              "pinyin": "yǔyī",
+              "meaning_en": "raincoat"
+            },
+            {
+              "id": "b",
+              "hanzi": "伞",
+              "pinyin": "sǎn",
+              "meaning_en": "umbrella"
+            },
+            {
+              "id": "c",
+              "hanzi": "箱子",
+              "pinyin": "xiāngzi",
+              "meaning_en": "suitcase"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "伞 means umbrella."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"toothbrush\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "牙刷",
+              "pinyin": "yáshuā",
+              "meaning_en": "toothbrush"
+            },
+            {
+              "id": "b",
+              "hanzi": "盘子",
+              "pinyin": "pánzi",
+              "meaning_en": "plate"
+            },
+            {
+              "id": "c",
+              "hanzi": "瓶子",
+              "pinyin": "píngzi",
+              "meaning_en": "bottle"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "牙刷 means toothbrush."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"skirt\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "短裤",
+              "pinyin": "duǎnkù",
+              "meaning_en": "shorts"
+            },
+            {
+              "id": "b",
+              "hanzi": "衬衫",
+              "pinyin": "chènshān",
+              "meaning_en": "shirt"
+            },
+            {
+              "id": "c",
+              "hanzi": "裙子",
+              "pinyin": "qúnzi",
+              "meaning_en": "skirt"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "裙子 means skirt."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Packing a Suitcase",
+        "context_en": "Xiao Mei checks what clothes and daily items to put in her suitcase before a trip.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你的箱子收拾好了吗？明天要早起呢。",
+            "pinyin": "Nǐ de xiāngzi shōushi hǎo le ma? Míngtiān yào zǎoqǐ ne.",
+            "english": "Have you finished packing your suitcase? We have to get up early tomorrow."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "快了！我带了两件衬衫、一条裙子和一双舒服的鞋。",
+            "pinyin": "Kuài le! Wǒ dài le liǎng jiàn chènshān, yì tiáo qúnzi hé yì shuāng shūfu de xié.",
+            "english": "Almost! I packed two shirts, a skirt, and a pair of comfortable shoes."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "听说那边会下雨，别忘了带伞或者雨衣，还有牙刷！",
+            "pinyin": "Tīngshuō nàbiān huì xià yǔ, bié wàng le dài sǎn huòzhě yǔyī, hái yǒu yáshuā!",
+            "english": "I heard it might rain there—don’t forget an umbrella or raincoat, and your toothbrush!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "都放进去了，门卡也装在包里了，关灯睡觉吧！",
+            "pinyin": "Dōu fàng jìnqù le, ménkǎ yě zhuāng zài bāo lǐ le, guān dēng shuìjiào ba!",
+            "english": "All packed, and the key card is in my bag too—let’s turn off the lamp and sleep!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Using the right classifier for clothes",
+          "explanation_en": "Use 件 for tops/coats (衬衫, 大衣, 上衣), 条 for skirts/shorts (裙子, 短裤), and 双 for shoes (鞋).",
+          "pattern_hanzi": "一 + 件 / 条 / 双 + <Clothing>",
+          "pattern_pinyin": "yí + jiàn / yì + tiáo / yì + shuāng + <Clothing>",
+          "pattern_pseudo_translation": "one + piece / strip / pair + <Clothing>",
+          "examples": [
+            {
+              "hanzi": "她穿了一件白色衬衫和一条蓝裙子。",
+              "pinyin": "Tā chuān le yí jiàn báisè chènshān hé yì tiáo lán qúnzi.",
+              "english": "She wore a white shirt and a blue skirt."
+            },
+            {
+              "hanzi": "天气冷了，出门要穿大衣。",
+              "pinyin": "Tiānqì lěng le, chūmén yào chuān dàyī.",
+              "english": "The weather got cold; you should wear a coat when going out."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Everyday containers and tools",
+          "explanation_en": "Use 把 for umbrellas (一把伞), 个 for plates/bottles/boxes, and 张 for paper and cards.",
+          "pattern_hanzi": "一 + 把 / 张 / 个 + <Object>",
+          "pattern_pinyin": "yì + bǎ / yì + zhāng / yí + ge + <Object>",
+          "pattern_pseudo_translation": "one + handle / sheet / unit + <Object>",
+          "examples": [
+            {
+              "hanzi": "桌子上放着一个盘子和两个瓶子。",
+              "pinyin": "Zhuōzi shàng fàng zhe yí ge pánzi hé liǎng ge píngzi.",
+              "english": "On the table are a plate and two bottles."
+            },
+            {
+              "hanzi": "请给我一张纸，我要写个号码。",
+              "pinyin": "Qǐng gěi wǒ yì zhāng zhǐ, wǒ yào xiě ge hàomǎ.",
+              "english": "Please give me a sheet of paper; I need to write a number."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about clothes and personal items with matching classifiers.",
+        "model": {
+          "hanzi": "夏天大家常穿短裤和凉快的上衣。",
+          "pinyin": "Xiàtiān dàjiā cháng chuān duǎnkù hé liángkuai de shàngyī.",
+          "english": "In summer people often wear shorts and cool tops."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you forgot to bring an umbrella when it started raining.",
+            "model_answer": {
+              "hanzi": "下雨了，我忘了带一把伞。",
+              "pinyin": "Xià yǔ le, wǒ wàng le dài yì bǎ sǎn.",
+              "english": "It’s raining, and I forgot to bring an umbrella."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you turned on the desk lamp to read.",
+            "model_answer": {
+              "hanzi": "我打开台灯开始看书。",
+              "pinyin": "Wǒ dǎkāi táidēng kāishǐ kànshū.",
+              "english": "I turned on the desk lamp and started reading."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say you bought a new raincoat for cycling.",
+            "model_answer": {
+              "hanzi": "我买了一件新雨衣，骑车时用。",
+              "pinyin": "Wǒ mǎi le yí jiàn xīn yǔyī, qí chē shí yòng.",
+              "english": "I bought a new raincoat to use when cycling."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Getting Ready for a Rainy Morning",
+        "paragraphs": [
+          {
+            "hanzi": "早上起床以后，小王先刷牙洗脸，然后打开衣柜挑衣服。外面有点儿凉，他穿了一件长袖上衣和一条深色长裤。",
+            "pinyin": "Zǎoshang qǐchuáng yǐhòu, Xiǎo Wáng xiān shuāyá xǐliǎn, ránhòu dǎkāi yīguì tiāo yīfu. Wàimiàn yǒudiǎnr liáng, tā chuān le yí jiàn chángxiù shàngyī hé yì tiáo shēnsè chángkù.",
+            "english": "After getting up in the morning, Xiao Wang brushed his teeth and washed his face first, then opened the closet to pick clothes. It was a bit cool outside, so he put on a long-sleeved top and dark trousers."
+          },
+          {
+            "hanzi": "临出门前，他看见天空阴阴的，就顺手拿了一把伞，还把公交卡放进口袋，最后关上灯走了出去。",
+            "pinyin": "Lín chūmén qián, tā kànjiàn tiānkōng yīnyīn de, jiù shùnshǒu ná le yì bǎ sǎn, hái bǎ gōngjiāokǎ fàng jìn kǒudài, zuìhòu guān shàng dēng zǒu le chūqù.",
+            "english": "Right before heading out, he saw the sky was overcast, so he grabbed an umbrella, put his transit card in his pocket, and finally turned off the light and walked out."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Why did Xiao Wang grab an umbrella before leaving?",
+            "answer_en": "Because the sky looked overcast."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What did he put in his pocket?",
+            "answer_en": "His transit card (公交卡)."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe what you are wearing today using 衬衫, 上衣, 裙子, 短裤, or 鞋.",
+          "model_answer": {
+            "hanzi": "今天我穿了一件蓝衬衫和一双运动鞋。",
+            "pinyin": "Jīntiān wǒ chuān le yí jiàn lán chènshān hé yì shuāng yùndòngxié.",
+            "english": "Today I am wearing a blue shirt and a pair of sneakers."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Name three everyday items in your room or bag.",
+          "model_answer": {
+            "hanzi": "我的包里有一把伞、一张纸和一个水瓶子。",
+            "pinyin": "Wǒ de bāo lǐ yǒu yì bǎ sǎn, yì zhāng zhǐ hé yí ge shuǐ píngzi.",
+            "english": "In my bag there is an umbrella, a sheet of paper, and a water bottle."
+          }
+        }
+      ],
+      "common_pitfall": "Use 件 for shirts/coats (衬衫, 大衣, 雨衣), 条 for skirts/pants (裙子, 短裤), and 把 for umbrellas (伞).",
+      "pronunciation_focus": "衬衫 (chènshān) moves from fourth tone to first tone; 牙刷 (yáshuā) moves from second tone to first tone.",
+      "review": {
+        "can_do": [
+          "Name clothes and footwear with right classifiers.",
+          "Name everyday items like 伞, 箱子, 盘子, and 瓶子.",
+          "Talk about packing and getting ready."
+        ],
+        "entry_ids": [
+          558,
+          577,
+          588,
+          606,
+          725,
+          792,
+          796,
+          812,
+          820,
+          824,
+          893,
+          901,
+          917,
+          951,
+          980
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-clothes-and-belongings--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Using the right classifier for clothes",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-clothes-and-belongings--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Everyday containers and tools",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you forgot to bring an umbrella when it started raining.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-clothes-and-belongings--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you turned on the desk lamp to read.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-clothes-and-belongings--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you bought a new raincoat for cycling.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Why did Xiao Wang grab an umbrella before leaving?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-clothes-and-belongings--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What did he put in his pocket?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe what you are wearing today using 衬衫, 上衣, 裙子, 短裤, or 鞋.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-clothes-and-belongings--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Name three everyday items in your room or bag.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-clothes-and-belongings--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-clothes-and-belongings--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"umbrella\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-clothes-and-belongings--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"toothbrush\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-clothes-and-belongings--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"skirt\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-clothes-and-belongings--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-clothes-and-belongings--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

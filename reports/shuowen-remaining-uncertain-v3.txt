@@ -1,0 +1,1554 @@
+# Still uncertain after external-check pass v3
+# Entries: 775; master total: 9833
+# Only the entries retaining the [UNCERTAIN] tag are included.
+# Original keys and Chinese (working edition) are preserved.
+
+KEY: shuowen:53    ||    CHINESE: 禳 — 磔禳祀，除癘殃也。古者燧人禜子所造。从示襄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An apotropaic sacrifice involving dismembered victims to ward off pestilence and calamity. The text attributes its invention to Suiren, in connection with a rite to avert disaster from his son; Duan Yucai remarks that the story is otherwise unattested. Formed from 示, with 襄 indicating the sound.
+
+KEY: shuowen:141    ||    CHINESE: 瑮 — 玉英華羅列秩秩。从玉㮚聲。《逸論語》曰：“玉粲之璱兮。其𤩰猛也。”    ||    ENGLISH DRAFT [UNCERTAIN]: Jade's brilliance arrayed in orderly ranks. Formed from 玉, with 㮚 indicating the sound. The Lost Analects says: “The jade glitters lustrously; its 𤩰 is vigorous.” [The final description is uncertain.]
+
+KEY: shuowen:192    ||    CHINESE: 玭 — 珠也。从玉比聲。宋弘云：“淮水中出玭珠。”玭，珠之有聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A pearl. Formed from 玉, with 比 indicating the sound. Song Hong says: “玭 pearls occur in the Huai River.” The transmitted final clause literally describes 玭 as a “sounding pearl”; Duan Yucai instead argues for a reading referring to a kind of shellfish. [Textual interpretation disputed.]
+
+KEY: shuowen:195    ||    CHINESE: 玟 — 火齊，玫瑰也。一曰石之美者。从玉文聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A precious red or yellow-red mineral material associated with 火齊 and 玫瑰. Another explanation: a fine stone. Formed from 玉, with 文 indicating the sound. [The precise identification and relationship of these historical mineral terms remain uncertain.]
+
+KEY: shuowen:236    ||    CHINESE: 毒 — 厚也。害人之艸，往往而生。从屮从毒。    ||    ENGLISH DRAFT [UNCERTAIN]: Abundance or intensity; the text links the meaning to harmful plants growing prolifically. The received graphic formula says “formed from 屮 and 毒”; Duan instead analyzes 屮 as the plant component and 毒 as the phonetic. [Received graphical formula is self-referential and disputed.]
+
+KEY: shuowen:361    ||    CHINESE: 藄 — 綦月爾也。从艸綦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An edible fern-like plant called 紫藄 or 月爾, identified in a traditional commentary as a purple fern. Formed from 艸, with 綦 indicating the sound. [Duan proposes a substantially different ancient gloss 士夫也; the received text is disputed.]
+
+KEY: shuowen:367    ||    CHINESE: 藑 — 茅，葍也。一名蕣。从艸夐聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A grass-like plant identified as 藑茅, belonging to the 葍 group. Formed from 艸, with 夐 indicating the sound. [The received alternative name 蕣 is challenged by Duan Yucai.]
+
+KEY: shuowen:405    ||    CHINESE: 芐 — 地黃也。从艸下聲。《禮記》“鈃毛：牛、藿；羊、芐；豕、薇。”是。    ||    ENGLISH DRAFT [UNCERTAIN]: The medicinal plant called 地黃 (rehmannia). Formed from 艸, with 下 indicating the sound. The cited ritual food text specifies different herbs served with beef, mutton and pork. [Classical witnesses differ over the precise mutton-herb reading.]
+
+KEY: shuowen:555    ||    CHINESE: 菸 — 鬱也。从艸於聲。一曰𣨙也。    ||    ENGLISH DRAFT [UNCERTAIN]: To wilt, become limp or withered. Formed from 艸, with 於 indicating the sound. Another explanation describes a sickly or languishing condition. [Duan argues that 鬱 in the received text should instead be 𩰪.]
+
+KEY: shuowen:592    ||    CHINESE: 荃 — 芥脃也。从艸全聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A crisp mustard-green preparation; Duan Yucai relates it to finely chopped mustard greens (芥荃). Formed from 艸, with 全 indicating the sound. [Exact preparation uncertain.]
+
+KEY: shuowen:593    ||    CHINESE: 䔯 — 韭鬱也。从艸酤聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Preserved chives. Formed from 艸, with 酤 indicating the sound.
+
+KEY: shuowen:597    ||    CHINESE: 𧆈 — 煎茱萸。从艸𩕺聲。漢津：會稽獻𧆈一斗。    ||    ENGLISH DRAFT [UNCERTAIN]: A seasoning or food preparation made by cooking 茱萸, the aromatic fruit of edible prickly ash. Formed from 艸, with 𩕺 indicating the sound. The text records a Han-era requirement for Kuaiji to present one dou of it. [The received attribution 漢津 is likely corrupt for 漢律.]
+
+KEY: shuowen:601    ||    CHINESE: 𦭮 — 以艸補缺。从艸㐁聲。讀若陸。或以爲綴。一曰約空也。    ||    ENGLISH DRAFT [UNCERTAIN]: To fill a gap with plants. Formed from 艸, with 㐁 indicating the sound. Read like 陸. Some take it as 綴, to join; another explanation: to bind across an opening.
+
+KEY: shuowen:727    ||    CHINESE: 牛 — 大牲也。牛，件也；件，事理也。象角頭三、封㞑之形。凡牛之屬皆从牛。    ||    ENGLISH DRAFT [UNCERTAIN]: Cattle, a major animal for sacrifice and agricultural work. The text offers an early interpretive association with 件, or the ordering of affairs, and describes a form depicting horns, head and body. All characters in the 牛 category are formed from 牛. [Duan argues that some transmitted explanatory wording is a later interpolation.]
+
+KEY: shuowen:786    ||    CHINESE: 噲 — 咽也。从口會聲。讀若快。一曰嚵，噲也。    ||    ENGLISH DRAFT [UNCERTAIN]: The throat, where breath and voice converge. Formed from 口, with 會 indicating the sound. Read like 快. Another explanation relates it to voracious or greedy eating. [The transmitted wording of the alternative gloss differs between editions.]
+
+KEY: shuowen:809    ||    CHINESE: 嚵 — 小𠻜也。从口毚聲。一曰喙也。    ||    ENGLISH DRAFT [UNCERTAIN]: To sip a little. Formed from 口, with 毚 indicating the sound. Another explanation: a mouth or beak.
+
+KEY: shuowen:823    ||    CHINESE: 呬 — 東夷謂息爲呬。从口四聲。《詩》曰：“犬夷呬矣。”    ||    ENGLISH DRAFT [UNCERTAIN]: To breathe or rest, called 呬 in a regional eastern dialect. Formed from 口, with 四 indicating the sound. The cited Odes line uses an alternative written tradition. [Duan argues that 東夷 should read 東齊 and that the transmitted Odes characters differ.]
+
+KEY: shuowen:852    ||    CHINESE: 𡂢 — 聲𡂢𡂢也。从口䲷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A repeated loud calling or shouted invocation, written 𡂢𡂢. Formed from 口, with 䲷 indicating the sound. [The exact historical phonetic form and transmitted graph are disputed.]
+
+KEY: shuowen:901    ||    CHINESE: 嗙 — 謌聲。嗙喻也。从口㫄聲。司馬相如說，淮南宋蔡舞嗙喻也。    ||    ENGLISH DRAFT [UNCERTAIN]: A singing sound, 嗙喻. Formed from 口, with 㫄 indicating the sound. Sima Xiangru explains it as the 嗙喻 accompaniment to dances of Huainan, Song and Cai.
+
+KEY: shuowen:971    ||    CHINESE: 𤕦 — 亂也。从爻、工、交、吅。一曰窒𤕦。讀若禳。    ||    ENGLISH DRAFT [UNCERTAIN]: Disorder. Formed from 爻, 工, 交 and 吅. Another explanation: obstruction, 窒𤕦. Read like 禳.
+
+KEY: shuowen:974    ||    CHINESE: 單 — 大也。从吅、𠦆，吅亦聲。闕。    ||    ENGLISH DRAFT [UNCERTAIN]: Great or loud, perhaps originally referring to loud speech. Formed from 吅 and 𠦆, with 吅 also indicating the sound; the remaining graphical explanation is missing. [Duan proposes that the received gloss 大也 omitted 言, but the Chinese working text preserves it.]
+
+KEY: shuowen:990    ||    CHINESE: 趁 — 𧾍也。从走㐱聲。讀若塵。    ||    ENGLISH DRAFT [UNCERTAIN]: A manner of moving with difficulty or making slow progress (in a paired expression with 𧾍). Formed from 走, with 㐱 indicating the sound. Read like 塵. [Duan rejects the later common sense “to pursue” as a gloss of the original usage.]
+
+KEY: shuowen:991    ||    CHINESE: 𧾍 — 趁也。从走亶聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A manner of moving with difficulty or making slow progress, paired with 趁. Formed from 走, with 亶 indicating the sound. [Duan argues the two entries originally formed a compound expression.]
+
+KEY: shuowen:992    ||    CHINESE: 趞 — 趞趞也。一曰行皃。从走昔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The manner 趞趞. Another explanation: a manner of walking. Formed from 走, with 昔 indicating the sound.
+
+KEY: shuowen:1028    ||    CHINESE: 趍 — 趨趙，久也。从走多聲。    ||    ENGLISH DRAFT [UNCERTAIN]: In the expression 趨趙: to walk slowly or linger. Formed from 走, with 多 indicating the sound. [The transmitted gloss 久 is disputed; commentary favors 夂, “a slow gait.”]
+
+KEY: shuowen:1033    ||    CHINESE: 䟑 — 趠䟑也。从走龠聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A far-reaching manner of movement, 趠䟑. Formed from 走, with 龠 indicating the sound. [The precise gait is uncertain.]
+
+KEY: shuowen:1052    ||    CHINESE: 䞣 — 距也。从走，㡿省聲。《漢令》曰：“䞣張百人。”    ||    ENGLISH DRAFT [UNCERTAIN]: To brace or tread forcefully, particularly in the Han military expression for drawing a strong crossbow with the feet. Formed from 走, with an abbreviated 㡿 indicating the sound. A Han ordinance mentions a hundred crossbow-drawers. [Duan discusses conflicting readings 䞣張 and 蹶張 and competing glyph analyses.]
+
+KEY: shuowen:1083    ||    CHINESE: 啙 — 窳也。闕。    ||    ENGLISH DRAFT [UNCERTAIN]: Weak or defective. The explanation is missing.
+
+KEY: shuowen:1099    ||    CHINESE: 邎 — 行邎徑也。从辵䌛聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To travel along a path or shortcut. Formed from 辵, with 䌛 indicating the sound. [Duan questions the received wording 行邎徑 and favors 行徑 or 行由徑.]
+
+KEY: shuowen:1118    ||    CHINESE: 逪 — 迹逪也。从辵昔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To cross or move obliquely, especially in alternating or intersecting paths. Formed from 辵, with 昔 indicating the sound. [Duan argues that the received 迹逪 should instead read 䢒逪.]
+
+KEY: shuowen:1145    ||    CHINESE: 邐 — 行邐邐也。从辵麗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To walk in a winding or continuous course, described as 邐邐. Formed from 辵, with 麗 indicating the sound. [The precise descriptive sense is uncertain.]
+
+KEY: shuowen:1167    ||    CHINESE: 連 — 員連也。从辵从車。    ||    ENGLISH DRAFT [UNCERTAIN]: Originally, a carriage drawn or pulled along by a person, related to the old form of 輦; later, things joined in an unbroken sequence. Formed from 辵 and 車. [Duan argues the transmitted gloss 員連 is corrupt for 負車.]
+
+KEY: shuowen:1180    ||    CHINESE: 邋 — 搚也。从辵巤聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To compress, fold or draw together. Formed from 辵, with 巤 indicating the sound.
+
+KEY: shuowen:1192    ||    CHINESE: 䢌 — 前頡也。从辵巿聲。賈侍中說：一讀若㭘，又若郅。    ||    ENGLISH DRAFT [UNCERTAIN]: To move forward with the face or head thrust out, as in a particular way of running or moving. Formed from 辵, with 巿 indicating the sound. Palace Attendant Jia offers readings like 㭘 or 郅. [Duan discusses a competing graph and the gloss 䢡走也.]
+
+KEY: shuowen:1230    ||    CHINESE: 彼 — 往，有所加也。从彳皮聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To go, with something added. Formed from 彳, with 皮 indicating the sound. [The gloss is uncertain.]
+
+KEY: shuowen:1245    ||    CHINESE: 㣙 — 行㣙㣙也。从彳由聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To walk calmly or on level ground, in the repeated expression 㣙㣙. Formed from 彳, with 由 indicating the sound. [Duan identifies this as an interpretation of an obscure reduplicated form.]
+
+KEY: shuowen:1281    ||    CHINESE: 齜 — 齒相齗也。一曰開口見齒之皃。从齒，柴省聲。讀若柴。    ||    ENGLISH DRAFT [UNCERTAIN]: Teeth that are uneven or set against one another; another explanation is the appearance of bared teeth. Formed from 齒, with an abbreviated 柴 indicating the sound. Read like 柴. [Duan proposes 齘 in place of transmitted 齗.]
+
+KEY: shuowen:1285    ||    CHINESE: 齺 — 齒搚也。一曰齰也。一曰馬口中糜也。从齒芻聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Teeth pressed or crowded together, or biting. Another explanation concerns a hard object in a horse’s mouth. Formed from 齒, with 芻 indicating the sound. [The transmitted clause 馬口中糜 is disputed.]
+
+KEY: shuowen:1322    ||    CHINESE: 牙 — 牡齒也。象上下相錯之形。凡牙之屬皆从牙。    ||    ENGLISH DRAFT [UNCERTAIN]: Large back teeth (molars). The graph is said to depict upper and lower teeth interlocking. All characters in the 牙 category are formed from 牙. [Duan argues that received 牡齒 is a corruption of 壯齒, “large/strong teeth,” not a reference to male teeth.]
+
+KEY: shuowen:1323    ||    CHINESE: 𤘌 — 武牙也。从牙从奇，奇亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A projecting canine tooth, or a fang conspicuously standing out. Formed from 牙 and 奇; 奇 also indicates the sound. [Duan argues received 武牙 originally read 虎牙.]
+
+KEY: shuowen:1380    ||    CHINESE: 跇 — 述也。从足丗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To pass over, leap beyond or traverse. Formed from 足, with 丗 indicating the sound. [Duan proposes reading the received gloss 述 as a corrupted graph 𨒋.]
+
+KEY: shuowen:1389    ||    CHINESE: 躩 — 足躩如也。从足矍聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To move one’s feet in a careful, shifting or ceremonially constrained manner. Formed from 足, with 矍 indicating the sound. [The precise movement described by 躩如 remains context-dependent.]
+
+KEY: shuowen:1417    ||    CHINESE: 疋 — 足也。上象腓腸，下从止。《弟子職》曰：“問疋何止。”古文以爲《詩·大疋》字。亦以爲足字。或曰胥字。一曰疋，記也。凡疋之屬皆从疋。    ||    ENGLISH DRAFT [UNCERTAIN]: The foot or lower leg; the upper part is said to depict the calf, and the lower part derives from 止. The Duties of Disciples asks where to place the feet of the bedding. The graph was also borrowed for 雅, “elegant” or the title of the Major Odes, and for 胥; another sense is “to record.” All characters in this category are formed from 疋. [Duan says the transmitted title 大疋 is a corruption of 大雅.]
+
+KEY: shuowen:1441    ||    CHINESE: 𢆉 — 㨖也。从干。入一爲干，入二爲𢆉。讀若能。言稍甚也。    ||    ENGLISH DRAFT [UNCERTAIN]: To pierce or strike further into something than the related graph 干; its form is explained as entering through two strokes rather than one. Read like 飪. [The received gloss 㨖 and reading 若能 require textual correction in Duan’s analysis.]
+
+KEY: shuowen:1467    ||    CHINESE: 𠦫 — 詞之𠦫矣。从十咠聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Speech brought together or harmonized, associated with the older wording of an Odes line later transmitted with 輯. Formed from 十, with 咠 indicating the sound. [Duan proposes textual corrections to the received gloss 詞之𠦫矣.]
+
+KEY: shuowen:1515    ||    CHINESE: 詧 — 言微親詧也。从言，察省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To scrutinize the subtle particulars of speech closely. Formed from 言, with abbreviated 察 indicating the sound. [The wording of the gloss is uncertain.]
+
+KEY: shuowen:1531    ||    CHINESE: 誎 — 餔旋促也。从言束聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An urgent summons to return, 餔旋促. Formed from 言, with 束 indicating the sound. [The gloss is textually difficult and uncertain.]
+
+KEY: shuowen:1557    ||    CHINESE: 詷 — 共也。一曰譀也。从言同聲。《周書》曰：“在夏后之詷。”    ||    ENGLISH DRAFT [UNCERTAIN]: Shared or in common; another explanation is excessive or boastful speech. Formed from 言, with 同 indicating the sound. The Documents cites its use in an early Zhou passage. [Duan documents significant textual variants in the cited phrase.]
+
+KEY: shuowen:1581    ||    CHINESE: 謯 — 謯，娽也。从言虘聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 謯 means 娽, apparently attentive or repeated speech. Formed from 言, with 虘 indicating the sound. [The rare cross-gloss is uncertain.]
+
+KEY: shuowen:1596    ||    CHINESE: 謺 — 謺讘也。从言執聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The expression 謺讘, apparently repeated or whispered speech. Formed from 言, with 執 indicating the sound. [The descriptive sense is uncertain.]
+
+KEY: shuowen:1597    ||    CHINESE: 謰 — 謰謱也。从言連聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Entangled, contentious or over-complicated speech, as in the paired expression 謰謱. Formed from 言, with 連 indicating the sound.
+
+KEY: shuowen:1598    ||    CHINESE: 謱 — 謰謱也。从言婁聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Entangled, contentious or over-complicated speech, as in the paired expression 謰謱. Formed from 言, with 婁 indicating the sound.
+
+KEY: shuowen:1600    ||    CHINESE: 謲 — 相怒使也。从言參聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To order one another angrily. Formed from 言, with 參 indicating the sound.
+
+KEY: shuowen:1611    ||    CHINESE: 詛 — 詶也。从言且聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To curse or invoke against, 詶. Formed from 言, with 且 indicating the sound. [The cross-gloss is uncertain.]
+
+KEY: shuowen:1612    ||    CHINESE: 䛆 — 詶也。从言由聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A speech-act cross-referenced by the obscure graph 詶; possibly ritual invocation or cursing. Formed from 言, with 由 indicating the sound. [Duan suggests a relation to a blessing/invocation graph 祝䄂, but this does not settle the meaning.]
+
+KEY: shuowen:1644    ||    CHINESE: 詪 — 眼戾也。从言𥃩聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Difficult, harsh or awkward speech. Formed from 言, with 𥃩 indicating the sound. [The transmitted gloss 眼戾 contrasts with the dictionary interpretation 難語貌.]
+
+KEY: shuowen:1666    ||    CHINESE: 訏 — 詭譌也。从言于聲。一曰訏，𧪰。齊、楚謂信曰訏。    ||    ENGLISH DRAFT [UNCERTAIN]: Deceptive or distorted speech. Formed from 言, with 于 indicating the sound. Another explanation concerns an exclamation; in a regional usage it means “great” or “large.” [Duan proposes 大 in place of received 信.]
+
+KEY: shuowen:1669    ||    CHINESE: 謵 — 言謵讋也。从言習聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Faltering or fearful speech, 謵讋. Formed from 言, with 習 indicating the sound. [The exact descriptive sense is uncertain.]
+
+KEY: shuowen:1670    ||    CHINESE: 䛩 — 相毀也。从言亞聲。一曰畏亞。    ||    ENGLISH DRAFT [UNCERTAIN]: To defame one another. Formed from 言, with 亞 indicating the sound. Another explanation: fear or submission, 畏亞. [The final expression is uncertain.]
+
+KEY: shuowen:1723    ||    CHINESE: 𧩮 — 小也。誘也。从言叜聲。《禮記》曰：“足以𧩮聞。”    ||    ENGLISH DRAFT [UNCERTAIN]: Small; to entice. Formed from 言, with 叜 indicating the sound. The Record of Rites says: “Enough to entice one's hearing.”
+
+KEY: shuowen:1751    ||    CHINESE: 奐 — 取奐也。一曰大也。从廾，夐省。    ||    ENGLISH DRAFT [UNCERTAIN]: Large, spacious or splendid; an alternative sense related to taking or seizing is reported but remains obscure. Formed from 廾 and an abbreviated 夐. [Duan states that the first gloss 取奐 is not understood.]
+
+KEY: shuowen:1776    ||    CHINESE: 𦥑 — 叉手也。从纟、纠。凡𦥑之屬皆从𦥑。    ||    ENGLISH DRAFT [UNCERTAIN]: Hands crossed or placed facing each other, their fingers directed inward. All characters in the 𦥑 category are formed from 𦥑. [The digital source has corrupt simplified graph components 纟 and 纠, so no literal component analysis should be asserted.]
+
+KEY: shuowen:1810    ||    CHINESE: 𩎑 — 車衡三束也。曲轅𩎈縛，直轅𨏉縛。从革爨聲。讀若《論語》“鑽燧”之“鑽”。    ||    ENGLISH DRAFT [UNCERTAIN]: The leather bindings fitted to a carriage pole or crossbar. The received text distinguishes bent and straight shafts. Formed from 革, with 爨 indicating the sound; pronounced like 鑽 in the Analects. [Duan argues the received numeral three should be five, and that the technical descriptions are damaged.]
+
+KEY: shuowen:1815    ||    CHINESE: 𩎍 — 著掖鞥也。从革顯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Leather harness straps that pass beneath or near a horse’s flanks. Formed from 革, with 顯 indicating the sound. [Duan argues both the anatomical term and the cross-referenced strap-name in the received text are corrupted.]
+
+KEY: shuowen:1817    ||    CHINESE: 䩶 — 驂具也。从革𧈪聲。讀若騁蜃。    ||    ENGLISH DRAFT [UNCERTAIN]: Harness equipment for a side horse in a team. Formed from 革, with 𧈪 indicating the sound. The text gives readings resembling 騁 and 蜃. [Duan finds the second pronunciation clause corrupt.]
+
+KEY: shuowen:1821    ||    CHINESE: 䩒 — 輨内環靼也。从革于聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A leather loop or strap fitted within a carriage axle cap. Formed from 革, with 于 indicating the sound. [Duan questions the transmitted first component-name 輨.]
+
+KEY: shuowen:1832    ||    CHINESE: 靲 — 鞮也。从革今聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A leather shoe or strap, related to 鞮 or 鞻. Formed from 革, with 今 indicating the sound. [Duan suspects the entry may be a later insertion into Shuowen.]
+
+KEY: shuowen:1859    ||    CHINESE: 䰜 — 㽁也。古文亦鬲字。象孰飪五味气上出也。凡䰜之屬皆从𩰲。    ||    ENGLISH DRAFT [UNCERTAIN]: A vessel for cooking, also an archaic form of 鬲. It depicts cooking vapors rising from the vessel. All characters in the 䰜 category are formed from the same cooking-vessel graph. [Duan considers the transmitted initial 㽁 gloss an interpolation.]
+
+KEY: shuowen:1864    ||    CHINESE: 𩱫 — 鼎實。惟葦及蒲。陳畱謂䭈爲𩱫。从𩰲速聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The vegetable ingredients placed in a cooking cauldron, such as bamboo shoots and cattail shoots; in Chenliu dialect it could refer to a rice-based stew or thick porridge. Formed from 𩰲, with 速 indicating the sound. [Duan regards the transmitted 葦 (“reeds”) as a variant of 筍 (“bamboo shoots”), and the source gloss is damaged.]
+
+KEY: shuowen:1870    ||    CHINESE: 䰞 — 孚也。从𩰲者聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To boil or cook food in a vessel. Formed from 𩰲, with 者 indicating the sound. [Duan suggests that the transmitted gloss 孚 is corrupt and should refer to cooking (𩰱).]
+
+KEY: shuowen:1881    ||    CHINESE: 谻 — 相踦之也。从丮𧮫聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To prop, grasp or pull against something, in the sense of 掎 (“to hold back or pull”). Formed from 丮, with 𧮫 indicating the sound. [Duan corrects the transmitted 踦 to 掎.]
+
+KEY: shuowen:1907    ||    CHINESE: 𠭯 — 又卑也。从又虘聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To reach down and take something by hand; by extension, to retrieve something from mud or a ditch. Formed from 又, with 虘 indicating the sound. [Duan corrects the received 又卑, comparing the character 叉 and an older variant.]
+
+KEY: shuowen:1914    ||    CHINESE: 𠬢 — 滑也。《詩》云：“𠬢兮達兮。”从又、屮。一曰取也。    ||    ENGLISH DRAFT [UNCERTAIN]: Moving freely or smoothly, as in an old Odes expression for coming and going; another meaning is “to take.” Formed from 又 and 屮. [Duan argues for alternative source characters in the Odes quotation.]
+
+KEY: shuowen:1948    ||    CHINESE: 殳 — 以杸殊人也。《禮》：“殳以積竹，八觚，長丈二尺，建於兵車，車旅賁以先驅。”从又几聲。凡殳之屬皆从殳。    ||    ENGLISH DRAFT [UNCERTAIN]: A staff-like weapon used to strike or keep an opponent at a distance, traditionally a long, many-sided bamboo pole carried on a military carriage; its name was associated with separating people. Formed from 又, with 几 indicating the sound. All characters in the 殳 category are formed from 殳. [Duan questions received wording and cites weapon dimensions from Zhouli.]
+
+KEY: shuowen:1954    ||    CHINESE: 𣪌 — 繇擊也。从殳豆聲。古文祋如此。    ||    ENGLISH DRAFT [UNCERTAIN]: To strike someone or something from a distance. Formed from 殳, with 豆 indicating the sound. [Duan treats the received “ancient form of 祋” as a corruption of 投 and distinguishes this from the hand-radical character.]
+
+KEY: shuowen:1955    ||    CHINESE: 𣫐 — 縣物𣪐擊。从殳𠃬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To strike a suspended object. Formed from 殳, with 𠃬 indicating the sound. [The action described by 𣪐 is uncertain.]
+
+KEY: shuowen:1970    ||    CHINESE: 𠘧 — 鳥之短羽飛𠘧𠘧也。象形。凡𠘧之屬皆从𠘧。讀若殊。    ||    ENGLISH DRAFT [UNCERTAIN]: A short-feathered bird flying in the manner 𠘧𠘧. A pictograph. All characters in the 𠘧 category are formed from 𠘧. Read like 殊. [The precise flight description is uncertain.]
+
+KEY: shuowen:1977    ||    CHINESE: 專 — 六寸簿也。从寸叀聲。一曰專，紡專。    ||    ENGLISH DRAFT [UNCERTAIN]: A narrow writing tablet used for recording an official’s notes; the transmitted text describes it as six cun long. Formed from 寸, with 叀 indicating the sound. Another meaning is a spindle whorl used in spinning. [Duan argues the tablet was a 笏 and queries the transmitted length.]
+
+KEY: shuowen:1986    ||    CHINESE: 𤮪 — 羽獵韋絝。从㼱灷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Leather trousers for hunting with feathered banners. Formed from 㼱, with 灷 indicating the sound.
+
+KEY: shuowen:1994    ||    CHINESE: 敀 — 迮也。从攴白聲。《周書》曰：“常敀常任。”    ||    ENGLISH DRAFT [UNCERTAIN]: To cause to rise or press into action. Formed from 攴, with 白 indicating the sound. The quotation from the Documents has a graphic loan apparently corresponding to an official rank/title, “the regular senior officials.” [The received reading differs from the transmitted 尚書.]
+
+KEY: shuowen:2006    ||    CHINESE: 攽 — 分也。从攴分聲。《周書》曰：“乃惟孺子攽。”亦讀與彬同。    ||    ENGLISH DRAFT [UNCERTAIN]: To divide or distribute. Formed from 攴, with 分 indicating the sound. The Documents quotation writes a form that corresponds to 頒 in later editions. Also pronounced like 彬. [The quoted sentence requires textual collation before translation.]
+
+KEY: shuowen:2007    ||    CHINESE: 𢽎 — 止也。从攴旱聲。《周書》曰：“𢽎我于艱。”    ||    ENGLISH DRAFT [UNCERTAIN]: To fend off, restrain or defend against something. Formed from 攴, with 旱 indicating the sound. The Documents quotation uses this character for later 扞, “protect or defend me in difficulties.” [The received quotation needs collation.]
+
+KEY: shuowen:2048    ||    CHINESE: 𠩺 — 坼也。从攴从厂。厂之性坼，果孰有味亦坼。故謂之𠩺，从未聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To split. Formed from 攴 and 厂. 厂 has a splitting nature; ripe, flavorful fruit also splits, hence called 𠩺. 未 indicates the sound. [The explanation involving 厂 is uncertain.]
+
+KEY: shuowen:2052    ||    CHINESE: 㪙 — 研治也。从攴果聲。舜女弟名㪙首。    ||    ENGLISH DRAFT [UNCERTAIN]: To grind and work. Formed from 攴, with 果 indicating the sound. Shun's younger sister was named 㪙首.
+
+KEY: shuowen:2063    ||    CHINESE: 𢿲 — 䚫田也。从攴堯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To work fields, glossed 䚫田. Formed from 攴, with 堯 indicating the sound. [The action expressed by the rare gloss 䚫 is uncertain.]
+
+KEY: shuowen:2082    ||    CHINESE: 爾 — 麗爾，猶靡麗也。从冂从㸚，其孔㸚，尒聲。此與爽同意。    ||    ENGLISH DRAFT [UNCERTAIN]: 麗爾: like elaborate beauty. Formed from 冂 and 㸚, its openings 㸚; 尒 indicates the sound. This shares the underlying idea of 爽. [The clause about the openings is uncertain.]
+
+KEY: shuowen:2087    ||    CHINESE: 𡙋 — 大視也。从大、𡕥。讀若齤。    ||    ENGLISH DRAFT [UNCERTAIN]: To look broadly or intently. Formed from 大 and 𡕥. Read like 齤.
+
+KEY: shuowen:2088    ||    CHINESE: 目 — 人眼。象形。重童子也。凡目之屬皆从目。    ||    ENGLISH DRAFT [UNCERTAIN]: A human eye. A pictograph, with a doubled pupil. All characters in the 目 category are formed from 目.
+
+KEY: shuowen:2090    ||    CHINESE: 𥌡 — 兒初生瞥者。从目瞏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A newborn infant whose eyes glance sideways. Formed from 目, with 瞏 indicating the sound. [The precise eye condition is uncertain.]
+
+KEY: shuowen:2096    ||    CHINESE: 𥌗 — 目㫄薄緻宀宀也。从目𦤝聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A thin, closely fitted covering at the eye's edge. Formed from 目, with 𦤝 indicating the sound. [The descriptive 宀宀 is uncertain.]
+
+KEY: shuowen:2101    ||    CHINESE: 瞒 — 平目也。从目㒼聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Level or narrowed eyes. Formed from 目, with 㒼 indicating the sound. [The exact sense of 平目 is uncertain.]
+
+KEY: shuowen:2103    ||    CHINESE: 矕 — 目矕矕也。从目䜌聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes described as 矕矕, apparently looking intently. Formed from 目, with 䜌 indicating the sound. [The descriptive sense is uncertain.]
+
+KEY: shuowen:2109    ||    CHINESE: 矔 — 目多精也。从目雚聲。益州謂瞋目曰矔。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes with much brightness or large pupils. Formed from 目, with 雚 indicating the sound. Yizhou calls staring with wide eyes 矔.
+
+KEY: shuowen:2110    ||    CHINESE: 瞵 — 目精也。从目粦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The pupil or brightness of the eye. Formed from 目, with 粦 indicating the sound.
+
+KEY: shuowen:2112    ||    CHINESE: 眊 — 目少精也。从目毛聲。《虞書》耄字从此。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes with little brightness or weak pupils. Formed from 目, with 毛 indicating the sound. The Book of Yu's character 耄 is formed from this.
+
+KEY: shuowen:2119    ||    CHINESE: 睌 — 睌䁂，目視皃。从目免聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 睌䁂: the appearance of looking. Formed from 目, with 免 indicating the sound. [The compound is not further explained.]
+
+KEY: shuowen:2120    ||    CHINESE: 眂 — 眂皃。从目氏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of looking, described as 眂. Formed from 目, with 氏 indicating the sound. [The source provides no further descriptive sense.]
+
+KEY: shuowen:2134    ||    CHINESE: 眔 — 目相及也。从目，从隶省。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes reaching one another. Formed from 目 and abbreviated 隶.
+
+KEY: shuowen:2135    ||    CHINESE: 睽 — 目不相聽也。从目癸聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes not heeding one another. Formed from 目, with 癸 indicating the sound.
+
+KEY: shuowen:2141    ||    CHINESE: 𥇜 — 謹鈍目也。从目𦎫聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Cautious, dull eyes. Formed from 目, with 𦎫 indicating the sound. [The combination 謹鈍 is uncertain.]
+
+KEY: shuowen:2172    ||    CHINESE: 眵 — 目傷眥也。从目多聲。一曰瞢兜。    ||    ENGLISH DRAFT [UNCERTAIN]: An injury at the corner of the eye. Formed from 目, with 多 indicating the sound. Another explanation: 瞢兜. [The final descriptive expression is unexplained.]
+
+KEY: shuowen:2174    ||    CHINESE: 䀗 — 涓目也。从目夬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A streaming or weeping eye. Formed from 目, with 夬 indicating the sound. [The exact force of 涓目 is uncertain.]
+
+KEY: shuowen:2184    ||    CHINESE: 矇 — 童矇也。一曰不明也。从目蒙聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Blindness, 童矇. Another explanation: not clear. Formed from 目, with 蒙 indicating the sound.
+
+KEY: shuowen:2190    ||    CHINESE: 瞽 — 目但有眹也。从目鼓聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes having only their outline. Formed from 目, with 鼓 indicating the sound. [The anatomical sense of 眹 is uncertain.]
+
+KEY: shuowen:2194    ||    CHINESE: 𥄗 — 捾目也。从目、㕚。    ||    ENGLISH DRAFT [UNCERTAIN]: To scoop or dig at an eye. Formed from 目 and 㕚. [The gloss 捾目 is uncertain.]
+
+KEY: shuowen:2208    ||    CHINESE: 𥆞 — 目圍也。从䀠、纾。讀若書卷之卷。古文以爲醜字。    ||    ENGLISH DRAFT [UNCERTAIN]: To turn or move one’s gaze back, as when looking around. Formed from 䀠 and an additional graph; pronounced like 卷 in 書卷. Ancient writing also used it for 靦. [The transmitted component 纾 and variant 醜 conflict with Duan’s reconstruction.]
+
+KEY: shuowen:2216    ||    CHINESE: 𦤝 — 宮不見也。闕。    ||    ENGLISH DRAFT [UNCERTAIN]: A palace or chamber not seen. The explanation is missing. [The recorded gloss 宮不見 is difficult.]
+
+KEY: shuowen:2220    ||    CHINESE: 者 — 別事詞也。从𪞶纺聲。纺，古文旅字。    ||    ENGLISH DRAFT [UNCERTAIN]: A grammatical particle used to distinguish or specify a subject or matter. Formed from 𪞶, with an ancient form of 旅 serving as phonetic. [The transmitted graph 纺 is corrupted; Duan points to 𣥐 as the older phonetic.]
+
+KEY: shuowen:2221    ||    CHINESE: 㿧 — 詞也。从𪞶𢏚聲。𢏚與疇同。《虞書》：“帝曰：𤾊咨。”    ||    ENGLISH DRAFT [UNCERTAIN]: An interrogative word meaning “who?” or “which person?”, represented by a graph corresponding to 疇. Formed with 𢏚 as phonetic. The cited Documents dialogue asks whom to consult. [The received “詞也” omits the question gloss, which Duan supplies from parallel texts.]
+
+KEY: shuowen:2223    ||    CHINESE: 百 — 十十也。从一、𪞶。數，十百爲一貫。相章也。    ||    ENGLISH DRAFT [UNCERTAIN]: One hundred: ten groups of ten. Formed from 一 and an upper white-like component. The traditional graphic explanation connects counting and a complete string of units. [The remainder of the transmitted explanation has suffered textual corruption.]
+
+KEY: shuowen:2247    ||    CHINESE: 𦐧 — 羽之𦐧風。亦古諸侯也。一曰射師。从羽幵聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An old word associated with wings rising or beating against wind; also the name 羿 of an ancient lord or skilled archer. Formed from 羽, with 幵 indicating the sound. [Duan distinguishes at least two figures named 羿 and proposes a different reading for the wing phrase.]
+
+KEY: shuowen:2254    ||    CHINESE: 翜 — 捷也。飛之疾也。从羽夾聲。讀若瀒。一曰俠也。    ||    ENGLISH DRAFT [UNCERTAIN]: Nimble: rapid flight. Formed from 羽, with 夾 indicating the sound. Read like 瀒. Another explanation: to flank or assist, 俠.
+
+KEY: shuowen:2262    ||    CHINESE: 䍿 — 樂舞。以羽纣自翳其首，以祀星辰也。从羽王聲。讀若皇。    ||    ENGLISH DRAFT [UNCERTAIN]: A musical dance: feathers are bound to cover the head in sacrifice to the stars. Formed from 羽, with 王 indicating the sound. Read like 皇. [The source's 纣 is unusual.]
+
+KEY: shuowen:2280    ||    CHINESE: 雉 — 有十四種：盧諸雉，喬雉，鳪雉，鷩雉，秩秩海雉，翟山雉，翰雉，卓雉，伊洛而南曰翬，江淮而南曰搖，南方曰𢏚，東方曰甾，北方曰稀，西方曰蹲。从隹矢聲。    ||    ENGLISH DRAFT [UNCERTAIN]: There are fourteen kinds: 盧諸雉, 喬雉, 鳪雉, 鷩雉, 秩秩海雉, 翟山雉, 翰雉 and 卓雉; south of the Yi and Luo, 翬; south of the Yangtze and Huai, 搖; in the south, 𢏚; east, 甾; north, 稀; west, 蹲. Formed from 隹, with 矢 indicating the sound.
+
+KEY: shuowen:2290    ||    CHINESE: 鳽 — 石鳥。一名雝𪆫。一曰精𠛱。从隹幵聲。《春秋傳》：“秦有士鳽 。”    ||    ENGLISH DRAFT [UNCERTAIN]: A stone bird, also called 雝𪆫. Another name is 精𠛱. Formed from 隹, with 幵 indicating the sound. The Spring and Autumn commentary says: “Qin had Shi Jian.”
+
+KEY: shuowen:2297    ||    CHINESE: 雇 — 九雇。農桑候鳥，扈民不婬者也。从隹戶聲。春雇，鳻盾；夏雇，竊玄；秋雇，竊藍；冬雇，竊黃；𣗥雇，竊丹；行雇，唶唶；宵雇，嘖嘖；桑雇，竊脂；老雇，鷃也。    ||    ENGLISH DRAFT [UNCERTAIN]: The nine 雇 birds mark farming and silkworm seasons, guarding the people against excess. Formed from 隹, with 戶 indicating the sound. Spring 雇 is 鳻盾; summer, 竊玄; autumn, 竊藍; winter, 竊黃; thorn 雇, 竊丹; traveling 雇, 唶唶; night 雇, 嘖嘖; mulberry 雇, 竊脂; old 雇, 鷃.
+
+KEY: shuowen:2302    ||    CHINESE: 𩀼 — 繳𩀼也。从隹㪔聲。一曰飛𩀼也。    ||    ENGLISH DRAFT [UNCERTAIN]: The action 繳𩀼, apparently shooting with a corded arrow. Formed from 隹, with 㪔 indicating the sound. Another explanation: the flight described as 飛𩀼. [The descriptive words are uncertain.]
+
+KEY: shuowen:2331    ||    CHINESE: 羒 — 牂羊也。从羊分聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A 牂 sheep. Formed from 羊, with 分 indicating the sound.
+
+KEY: shuowen:2341    ||    CHINESE: 䍴 — 羊相𦎸也。从羊委聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Sheep pressing against one another. Formed from 羊, with 委 indicating the sound. [The action 𦎸 is uncertain.]
+
+KEY: shuowen:2342    ||    CHINESE: 𦎸 — 䍴𦎸也。从羊責聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The action 䍴𦎸, sheep pressing together. Formed from 羊, with 責 indicating the sound. [The exact action is uncertain.]
+
+KEY: shuowen:2344    ||    CHINESE: 𦎣 — 羣羊相𦎸也。一曰黑羊。从羊垔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A flock of sheep pressing against one another. Another explanation: a black sheep. Formed from 羊, with 垔 indicating the sound.
+
+KEY: shuowen:2345    ||    CHINESE: 𦍧 — 羊名。蹏皮可以割桼。从羊此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The name of a sheep whose hoof skin can cut lacquer. Formed from 羊, with 此 indicating the sound.
+
+KEY: shuowen:2350    ||    CHINESE: 羼 — 羊相厠也。从羴在尸下。尸，屋也。一曰相出前也。    ||    ENGLISH DRAFT [UNCERTAIN]: Sheep mingling together. From 羴 beneath 尸; 尸 means a house. Another explanation: coming forward ahead of one another.
+
+KEY: shuowen:2360    ||    CHINESE: 鳳 — 神鳥也。天老曰：“鳳之象也，鴻前麐後，蛇頸魚尾，鸛顙鴛思，龍文虎背，燕頷雞喙，五色備舉。出於東方君子之國，翺翔四海之外，過崐崘，飲砥柱，濯羽弱水，莫宿風穴。見則天下大安寕。”从鳥凡聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A divine bird. Tianlao said: “Its front is a wild goose's, rear a unicorn's, neck a snake's, tail a fish's; forehead a stork's, cheeks a mandarin duck's; dragon pattern, tiger back, swallow jaw, chicken beak, all five colors complete. It emerges from the eastern country of gentlemen, soars beyond the four seas, passes Kunlun, drinks at Dizhu, washes its feathers in Weak Water, and roosts at dusk in Wind Cave. When it appears, all under heaven enjoys great peace.” Formed from 鳥, with 凡 indicating the sound.
+
+KEY: shuowen:2427    ||    CHINESE: 鴇 — 鳥也。肉出尺𦛹。从鳥𠤏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A bird whose flesh protrudes a foot at the breast. Formed from 鳥, with 𠤏 indicating the sound. [The phrase 肉出尺𦛹 is uncertain.]
+
+KEY: shuowen:2467    ||    CHINESE: 鶾 — 雉肥鶾音者也。从鳥倝聲。魯郊以丹雞祝曰：“以斯鶾音赤羽，去魯侯之咎。”    ||    ENGLISH DRAFT [UNCERTAIN]: A plump pheasant with a 鶾 voice. Formed from 鳥, with 倝 indicating the sound. At Lu's suburban sacrifice a red chicken is invoked: “With this 鶾 voice and red feathers, remove the lord of Lu's fault.” [The precise vocal description is uncertain.]
+
+KEY: shuowen:2478    ||    CHINESE: 烏 — 孝鳥也。象形。孔子曰：“烏，𥃳呼也。”取其助气，故以爲烏呼。凡烏之屬皆从烏。    ||    ENGLISH DRAFT [UNCERTAIN]: A filial bird. A pictograph. Confucius said: “烏 is 𥃳呼.” Taking its assistance in vocal breath, it is used in 烏呼, an exclamation. All graphs in the 烏 group contain 烏. [The quoted gloss is difficult.]
+
+KEY: shuowen:2480    ||    CHINESE: 焉 — 焉鳥，黃色，出於江淮。象形。凡字：朋者，羽蟲之屬；烏者，日中之禽；舄者，知太歲之所在；燕者，請子之𠋫，作巢避戊己。所䝿者故皆象形。焉亦是也。    ||    ENGLISH DRAFT [UNCERTAIN]: The yellow 焉 bird, found along the Yangtze and Huai. A pictograph. As for these graphs: 朋 belongs to feathered creatures; 烏 is the bird in the sun; 舄 knows the whereabouts of the Grand Year; 燕 marks the season for seeking offspring and builds nests avoiding wu and ji. Because these are esteemed, all are pictographs. 焉 is so too.
+
+KEY: shuowen:2482    ||    CHINESE: 畢 — 田罔也。从𠦒，象畢形。微也。或曰：甶聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A hunting net. From 𠦒, depicting its shape. Fine or small. Some say 甶 supplies the sound.
+
+KEY: shuowen:2483    ||    CHINESE: 𨤝 — 棄除也。从廾推𠦒棄釆也。官溥說：似米而非米者，矢字。    ||    ENGLISH DRAFT [UNCERTAIN]: To discard and remove. From 廾 pushing 𠦒 to discard 釆. Guan Pu explains: what resembles rice but is not rice is the character 矢. [The final identification is uncertain.]
+
+KEY: shuowen:2494    ||    CHINESE: 叀 — 專小謹也。从幺省；屮，財見也；屮亦聲。凡叀之屬皆从叀。    ||    ENGLISH DRAFT [UNCERTAIN]: Single-minded, minute and cautious. Formed from abbreviated 幺, with 屮 means just appearing, and also indicating the sound. All graphs in the 叀 group contain 叀.
+
+KEY: shuowen:2496    ||    CHINESE: 疐 — 礙不行也。从叀，引而止之也。叀者，如叀馬之鼻。从此與牽同意。    ||    ENGLISH DRAFT [UNCERTAIN]: Obstructed and unable to proceed. From 叀, pulling and stopping something; 叀 is like restraining a horse's nose. This shares the idea of 牽.
+
+KEY: shuowen:2517    ||    CHINESE: 㕢 — 𣦼探堅意也。从𣦼从貝。貝，堅寶也。讀若概。    ||    ENGLISH DRAFT [UNCERTAIN]: The intention of probing something hard. From 𣦼 and 貝; 貝 is a hard treasure. Read like 概. [The opening phrase 𣦼探堅 is uncertain.]
+
+KEY: shuowen:2520    ||    CHINESE: 歺 — 𠛱骨之殘也。从半冎。凡歺之屬皆从歺。讀若櫱岸之櫱。    ||    ENGLISH DRAFT [UNCERTAIN]: The remains of split bones. From half of 冎. All graphs in the 歺 group contain 歺. Read like 櫱 in 櫱岸.
+
+KEY: shuowen:2549    ||    CHINESE: 殖 — 脂膏久殖也。从歺直聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Fat and grease left a long time, apparently decaying. Formed from 歺, with 直 indicating the sound. [The precise sense of 久殖 is uncertain.]
+
+KEY: shuowen:2555    ||    CHINESE: 𣣌 — 戰見血曰傷；亂或爲惽；死而復生爲𣣌。从死次聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Seeing blood in battle is called injury; derangement may be called unconsciousness; dying and returning to life is 𣣌. Formed from 死, with 次 indicating the sound.
+
+KEY: shuowen:2556    ||    CHINESE: 冎 — 剔人肉置其骨也。象形。頭隆骨也。凡冎之屬皆从冎。    ||    ENGLISH DRAFT [UNCERTAIN]: To strip off a person's flesh and leave the bones. A pictograph, with the projecting head-bone. All graphs in the 冎 group contain 冎.
+
+KEY: shuowen:2582    ||    CHINESE: 骫 — 骨耑骫奊也。从骨丸聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A curved or crooked bone-end, 骫奊. Formed from 骨, with 丸 indicating the sound.
+
+KEY: shuowen:2590    ||    CHINESE: 肫 — 面頯也。从肉屯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The cheek region of the face. Formed from 肉, with 屯 indicating the sound.
+
+KEY: shuowen:2618    ||    CHINESE: 臑 — 臂羊矢也。从肉需聲。讀若襦。    ||    ENGLISH DRAFT [UNCERTAIN]: The arm's 羊矢 bone, apparently the upper arm. Formed from 肉, with 需 indicating the sound. Read like 襦. [The anatomical phrase is uncertain.]
+
+KEY: shuowen:2620    ||    CHINESE: 𪗇 — 𦚚𪗇也。从肉齊聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The navel, 𦚚𪗇. Formed from 肉, with 齊 indicating the sound.
+
+KEY: shuowen:2638    ||    CHINESE: 膻 — 肉膻也。从肉亶聲。《詩》曰：“膻裼暴虎。”    ||    ENGLISH DRAFT [UNCERTAIN]: Flesh bare or exposed. Formed from 肉, with 亶 indicating the sound. The Odes says: “Baring the chest to fight a tiger.”
+
+KEY: shuowen:2655    ||    CHINESE: 䏖 — 瘢也。从肉引聲。一曰遽也。    ||    ENGLISH DRAFT [UNCERTAIN]: A scar. Formed from 肉, with 引 indicating the sound. Another explanation: sudden or urgent, 遽. [The alternate gloss is uncertain.]
+
+KEY: shuowen:2667    ||    CHINESE: 胡 — 牛𩔞垂也。从肉古聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The flesh hanging from a cow's neck. Formed from 肉, with 古 indicating the sound.
+
+KEY: shuowen:2681    ||    CHINESE: 膴 — 無骨腊也。楊雄說：鳥腊也。从肉無聲。《周禮》有膴判。讀若謨。    ||    ENGLISH DRAFT [UNCERTAIN]: Boneless dried meat. Yang Xiong explains: dried bird meat. Formed from 肉, with 無 indicating the sound. The Rites of Zhou has 膴判. Read like 謨.
+
+KEY: shuowen:2683    ||    CHINESE: 腒 — 北方謂鳥腊曰腒。从肉居聲。傳曰：堯如腊，舜如腒。    ||    ENGLISH DRAFT [UNCERTAIN]: In the north, dried bird meat is called 腒. Formed from 肉, with 居 indicating the sound. A tradition says: “Yao was like dried beast meat; Shun like dried bird meat.”
+
+KEY: shuowen:2685    ||    CHINESE: 䐹 — 乾魚尾䐹䐹也。从肉肅聲。《周禮》有“腒䐹”。    ||    ENGLISH DRAFT [UNCERTAIN]: Dried fish with tails described as 䐹䐹. Formed from 肉, with 肅 indicating the sound. The Rites of Zhou has “腒䐹.” [The exact tail description is uncertain.]
+
+KEY: shuowen:2696    ||    CHINESE: 䐝 — 觷也。从肉𧴪聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The action or material 觷, perhaps working hard tissue. Formed from 肉, with 𧴪 indicating the sound. [The rare cross-gloss is unresolved.]
+
+KEY: shuowen:2698    ||    CHINESE: 膜 — 肉閒胲膜也。从肉莫聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Membranes between flesh. Formed from 肉, with 莫 indicating the sound. [The anatomical expression 胲膜 is uncertain.]
+
+KEY: shuowen:2718    ||    CHINESE: 𦟀 — 或曰：嘼名，象形。闕。    ||    ENGLISH DRAFT [UNCERTAIN]: Some say it is the name of an animal and pictographic. The explanation is missing.
+
+KEY: shuowen:2722    ||    CHINESE: 肎 — 骨閒肉肎肎箸也。从肉，从冎省。一曰骨無肉也。    ||    ENGLISH DRAFT [UNCERTAIN]: Flesh attached closely between bones. From 肉 and abbreviated 冎. Another explanation: bone without flesh.
+
+KEY: shuowen:2744    ||    CHINESE: 則 — 等畫物也。从刀从貝。貝，古之物貨也。    ||    ENGLISH DRAFT [UNCERTAIN]: To grade and mark out things. From 刀 and 貝; 貝 was the wealth of antiquity.
+
+KEY: shuowen:2768    ||    CHINESE: 劃 — 錐刀曰劃。从刀从畫，畫亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An awl-knife is called 劃. Formed from 刀 and 畫, with 畫 also indicating the sound.
+
+KEY: shuowen:2769    ||    CHINESE: 剈 — 挑取也。从刀肙聲。一曰窐也。    ||    ENGLISH DRAFT [UNCERTAIN]: To pick out and take. Formed from 刀, with 肙 indicating the sound. Another explanation: a hollow, 窐.
+
+KEY: shuowen:2773    ||    CHINESE: 刮 — 掊把也。从刀𠯑聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To scrape or gather with the hand. Formed from 刀, with 𠯑 indicating the sound. [The expression 掊把 is uncertain.]
+
+KEY: shuowen:2781    ||    CHINESE: 劖 — 斷也。从刀毚聲。一曰剽也，釗也。    ||    ENGLISH DRAFT [UNCERTAIN]: To sever. Formed from 刀, with 毚 indicating the sound. Another explanation: to cut or shave, 剽 and 釗.
+
+KEY: shuowen:2799    ||    CHINESE: 刹 — 柱也。从刀，未詳。殺省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A pillar. Its formation from 刀 is unexplained. Abbreviated 殺 supplies the sound.
+
+KEY: shuowen:2804    ||    CHINESE: 𠜵 — 齘𠜵，刮也。从㓞夬聲。一曰𠜵，畫堅也。    ||    ENGLISH DRAFT [UNCERTAIN]: 齘𠜵: to scrape. Formed from 㓞, with 夬 indicating the sound. Another explanation: to score something hard.
+
+KEY: shuowen:2807    ||    CHINESE: 𠲱 — 枝𠲱也。从丯各聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The expression 枝𠲱, apparently branching or interlaced growth. Formed from 丯, with 各 indicating the sound. [The descriptive sense is uncertain.]
+
+KEY: shuowen:2812    ||    CHINESE: 𦓯 — 冊又（段注作卌㕚），可以劃麥，河内用之。从耒圭聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An implement described as 冊又 (Duan's commentary has 卌㕚), usable for raking wheat, used in Henei. Formed from 耒, with 圭 indicating the sound. [The recorded description is difficult.]
+
+KEY: shuowen:2814    ||    CHINESE: 耡 — 商人七十而耡。耡，耤稅也。从耒助聲。《周禮》曰：“以興耡利萌。”    ||    ENGLISH DRAFT [UNCERTAIN]: Under the Shang, the 耡 system involved seventy mu of fields; 耡 denotes a field-tax arrangement. Formed from 耒, with 助 indicating the sound. The Rites of Zhou says: “By promoting 耡, benefit the people.”
+
+KEY: shuowen:2816    ||    CHINESE: 䚭 — 揮角皃。从角雚聲。梁𨻳縣有䚭亭，又讀若𦄑。    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of waving horns. Formed from 角, with 雚 indicating the sound. Liang's 𨻳 county has a 䚭 station. Also pronounced like 𦄑.
+
+KEY: shuowen:2838    ||    CHINESE: 觜 — 鴟舊頭上角觜也。一曰觜觿也。从角此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The horn-like tufts on a 鴟舊 bird's head. Another explanation: 觜觿. Formed from 角, with 此 indicating the sound. [The alternate term is unexplained.]
+
+KEY: shuowen:2841    ||    CHINESE: 觵 — 兕牛角可以飲者也。从角黃聲。其狀觵觵，故謂之觵。    ||    ENGLISH DRAFT [UNCERTAIN]: A rhinoceros or ox horn from which one can drink. Formed from 角, with 黃 indicating the sound. Its shape is 觵觵, hence its name. [The descriptive repetition is not further explained.]
+
+KEY: shuowen:2852    ||    CHINESE: 觳 — 盛觵卮也。一曰射具。从角㱿聲。讀若斛。    ||    ENGLISH DRAFT [UNCERTAIN]: To hold drinking vessels, 觵 and 卮. Another explanation: shooting equipment. Formed from 角, with 㱿 indicating the sound. Read like 斛.
+
+KEY: shuowen:2872    ||    CHINESE: 篆 — 引書也。从竹彖聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Drawn-out writing. Formed from 竹, with 彖 indicating the sound.
+
+KEY: shuowen:2883    ||    CHINESE: 篰 — 㒼爰也。从竹部聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The object 㒼爰, apparently a bamboo basket or container. Formed from 竹, with 部 indicating the sound. [The rare gloss is unresolved.]
+
+KEY: shuowen:2884    ||    CHINESE: 等 — 齊簡也。从竹从寺。寺，官曹之等平也。    ||    ENGLISH DRAFT [UNCERTAIN]: To make bamboo slips even. From 竹 and 寺; 寺 expresses the graded equality of government offices.
+
+KEY: shuowen:2895    ||    CHINESE: 笮 — 迫也。在瓦之下，棼上。从竹乍聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Pressed tightly, situated beneath roof tiles and above the rafters. Formed from 竹, with 乍 indicating the sound.
+
+KEY: shuowen:2916    ||    CHINESE: 箸 — 飯攲也。从竹者聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An implement for lifting rice. Formed from 竹, with 者 indicating the sound. [The gloss 飯攲 is uncertain.]
+
+KEY: shuowen:2920    ||    CHINESE: 篝 — 笿也。可熏衣。从竹冓聲。宋楚謂竹篝牆以居也。    ||    ENGLISH DRAFT [UNCERTAIN]: A basket frame, 笿, usable for perfuming clothes. Formed from 竹, with 冓 indicating the sound. In Song and Chu, a bamboo frame used as an enclosure for dwelling is called 篝.
+
+KEY: shuowen:2924    ||    CHINESE: 籫 — 竹器也。从竹贊聲。讀若纂。一曰叢。    ||    ENGLISH DRAFT [UNCERTAIN]: A bamboo implement. Formed from 竹, with 贊 indicating the sound. Read like 纂. Another explanation: a cluster.
+
+KEY: shuowen:2942    ||    CHINESE: 𥮒 — 蔽絮簀也。从竹沾聲。讀若錢。    ||    ENGLISH DRAFT [UNCERTAIN]: A mat covering padding. Formed from 竹, with 沾 indicating the sound. Read like 錢.
+
+KEY: shuowen:2945    ||    CHINESE: 䉴 — 袌也。从竹襄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A carrying basket or wrapping container, 袌. Formed from 竹, with 襄 indicating the sound. [The exact object is uncertain.]
+
+KEY: shuowen:2955    ||    CHINESE: 箱 — 大車牝服也。从竹相聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The receiving compartment of a large cart. Formed from 竹, with 相 indicating the sound. [The vehicle term 牝服 is uncertain.]
+
+KEY: shuowen:2965    ||    CHINESE: 䇬 — 栙雙也。从竹朱聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The object 栙雙, apparently a bamboo sail or frame. Formed from 竹, with 朱 indicating the sound. [The rare gloss is uncertain.]
+
+KEY: shuowen:2970    ||    CHINESE: 𥴫 — 㮄也。从竹殿聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A board or placard. Formed from 竹, with 殿 indicating the sound.
+
+KEY: shuowen:2978    ||    CHINESE: 筒 — 通簫也。从竹同聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A through-pipe flute. Formed from 竹, with 同 indicating the sound.
+
+KEY: shuowen:2984    ||    CHINESE: 筑 — 以竹曲五弦之樂也。从竹从𢀜。𢀜，持之也。竹亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A five-stringed musical instrument with bent bamboo. From 竹 and 𢀜; 𢀜 means to hold it. 竹 also supplies the sound.
+
+KEY: shuowen:2986    ||    CHINESE: 箛 — 吹鞭也。从竹孤聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A blowing tube called 吹鞭. Formed from 竹, with 孤 indicating the sound. [The exact instrument is uncertain.]
+
+KEY: shuowen:2994    ||    CHINESE: 篽 — 禁苑也。从竹御聲。《春秋傳》曰：“澤之目篽。”    ||    ENGLISH DRAFT [UNCERTAIN]: A restricted park. Formed from 竹, with 御 indicating the sound. The Spring and Autumn commentary says: “The marsh's 目篽.” [The quoted expression is uncertain.]
+
+KEY: shuowen:3009    ||    CHINESE: 畀 — 相付與之。約在閣上也。从丌甶聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To hand and give to one another; a binding placed on a stand. Formed from 丌, with 甶 indicating the sound. [The clause 約在閣上 is uncertain.]
+
+KEY: shuowen:3013    ||    CHINESE: 差 — 貳也。差不相值也。从左从𠂹。    ||    ENGLISH DRAFT [UNCERTAIN]: A second or difference: differing things do not match. From 左 and 𠂹.
+
+KEY: shuowen:3018    ||    CHINESE: 㠭 — 極巧視之也。从四工。凡㠭之屬皆从㠭。    ||    ENGLISH DRAFT [UNCERTAIN]: To display something with the utmost skill. From four 工. All graphs in the 㠭 group contain 㠭. [The action 極巧視之 is uncertain.]
+
+KEY: shuowen:3026    ||    CHINESE: 甚 — 尤安樂也。从甘，从匹耦也。    ||    ENGLISH DRAFT [UNCERTAIN]: Especially peaceful and happy. From 甘 and a matched pair, 匹耦.
+
+KEY: shuowen:3041    ||    CHINESE: 可 — 𦘫也。从口丂，丂亦聲。凡可之屬皆从可。    ||    ENGLISH DRAFT [UNCERTAIN]: The quality 𦘫, apparently agreeable or permissible. Formed from 口 and 丂, with 丂 also indicating the sound. All graphs in the 可 group contain 可. [The rare cross-gloss is unresolved.]
+
+KEY: shuowen:3046    ||    CHINESE: 兮 — 語所稽也。从丂，八象气越亏也。凡兮之屬皆从兮。    ||    ENGLISH DRAFT [UNCERTAIN]: A pause in speech. From 丂; 八 depicts breath passing beyond 亏. All graphs in the 兮 group contain 兮.
+
+KEY: shuowen:3049    ||    CHINESE: 乎 — 語之餘也。从兮，象聲上越揚之形也。    ||    ENGLISH DRAFT [UNCERTAIN]: A remainder of speech. From 兮, depicting sound rising and carrying upward.
+
+KEY: shuowen:3062    ||    CHINESE: 壴 — 陳樂立而上見也。从屮从豆。凡壴之屬皆从壴。    ||    ENGLISH DRAFT [UNCERTAIN]: Music set out upright and visible above. From 屮 and 豆. All graphs in the 壴 group contain 壴.
+
+KEY: shuowen:3064    ||    CHINESE: 𧒕 — 夜戒守鼓也。从壴蚤聲。《禮》：昬鼓四通爲大鼓，夜半三通爲戒晨，旦明五通爲發明。讀若戚。    ||    ENGLISH DRAFT [UNCERTAIN]: The night-watch drum. Formed from 壴, with 蚤 indicating the sound. The Rites: four rounds at dusk are the great drum; three at midnight announce the coming morning; five at daybreak announce daylight. Read like 戚.
+
+KEY: shuowen:3067    ||    CHINESE: 鼓 — 郭也。春分之音，萬物郭皮甲而出，故謂之鼓。从壴，支象其手擊之也。《周禮》六鼓：靁鼓八面，靈鼓六面，路鼓四面，鼖鼓、臯鼓、晉鼓皆兩面。凡鼓之屬皆从鼓。    ||    ENGLISH DRAFT [UNCERTAIN]: To expand outward. The sound of the spring equinox: the myriad things break through their skins and shells and emerge, hence called 鼓. From 壴; 支 depicts the hand striking it. The Rites of Zhou has six drums: 靁鼓, eight faces; 靈鼓, six; 路鼓, four; 鼖鼓, 臯鼓 and 晉鼓, each two. All graphs in the 鼓 group contain 鼓.
+
+KEY: shuowen:3079    ||    CHINESE: 𧰙 — 㡮也，訖事之樂也。从豈幾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The quality 㡮: music on completing affairs. Formed from 豈, with 幾 indicating the sound. [The rare cross-gloss is unresolved.]
+
+KEY: shuowen:3084    ||    CHINESE: 𧯡 — 豆飴也。从豆夗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The food 豆飴, apparently bean malt-sugar. Formed from 豆, with 夗 indicating the sound. [The gloss is uncertain.]
+
+KEY: shuowen:3088    ||    CHINESE: 豐 — 豆之豐滿者也。从豆，象形。一曰《鄉飲酒》有豐侯者。凡豐之屬皆从豐。    ||    ENGLISH DRAFT [UNCERTAIN]: A 豆 vessel filled abundantly. From 豆; pictographic. Another explanation: the district drinking rite has a 豐侯 object. All graphs in the 豐 group contain 豐.
+
+KEY: shuowen:3121    ||    CHINESE: 贙 — 分別也。从虤對爭貝。讀若迴。    ||    ENGLISH DRAFT [UNCERTAIN]: To divide or distinguish. From 虤 facing each other and contending over 貝. Read like 迴.
+
+KEY: shuowen:3137    ||    CHINESE: 醯 — 酸也。作醯以𩱙以酒。从𩱙、酒並省，从皿。皿，器也。    ||    ENGLISH DRAFT [UNCERTAIN]: Sour. Vinegar is made using 𩱙 and wine. From abbreviated 𩱙 and 酒, and from 皿; 皿 is a vessel. [The ingredient 𩱙 is not further explained.]
+
+KEY: shuowen:3158    ||    CHINESE: 𧗕 — 腫血也。从血，䢉省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Swollen or pooled blood. Formed from 血, with abbreviated 䢉 indicating the sound.
+
+KEY: shuowen:3159    ||    CHINESE: 𧖺 — 血醢也。从血䏙聲。《禮記》有𧖺醢，以牛乾脯、粱、𥶶、鹽、酒也。    ||    ENGLISH DRAFT [UNCERTAIN]: Blood sauce. Formed from 血, with 䏙 indicating the sound. The Record of Rites has 𧖺醢, made with dried beef, fine grain, 𥶶, salt and wine.
+
+KEY: shuowen:3168    ||    CHINESE: 主 — 鐙中火主也。从纹，象形。从丶，丶亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The flame-core in a lamp. From 纹, pictographic, and from 丶, which also supplies the sound. [The unusual recorded component 纹 is preserved.]
+
+KEY: shuowen:3171    ||    CHINESE: 雘 — 善丹也。从丹蒦聲。《周書》曰：“惟其𢾅丹雘。”讀若隺。    ||    ENGLISH DRAFT [UNCERTAIN]: Good cinnabar pigment. Formed from 丹, with 蒦 indicating the sound. The Book of Zhou says: “Only the preparation of red pigment.” Read like 隺.
+
+KEY: shuowen:3173    ||    CHINESE: 青 — 東方色也。木生火，从生、丹。丹青之信言象然。凡青之屬皆从青。    ||    ENGLISH DRAFT [UNCERTAIN]: The color of the east. Wood produces fire, hence from 生 and 丹. The steadfastness of cinnabar and blue-green is expressed by this form. All graphs in the 青 group contain 青. [The phrase 丹青之信言象然 is uncertain.]
+
+KEY: shuowen:3182    ||    CHINESE: 旣 — 小食也。从皀旡聲。《論語》曰：“不使勝食旣。”    ||    ENGLISH DRAFT [UNCERTAIN]: To eat a little. Formed from 皀, with 旡 indicating the sound. The Analects says: “He did not allow it to exceed the staple food.” [The quoted wording is difficult.]
+
+KEY: shuowen:3185    ||    CHINESE: 𩰪 — 芳艸也。十葉爲貫，百廾貫築以煑之爲𩰪。从𦥑、冂、缶、鬯；彡，其飾也。一曰𩰪鬯，百艸之華，遠方𩰪人所貢芳艸，合釀之以降神。𩰪，今𩰪林郡也。    ||    ENGLISH DRAFT [UNCERTAIN]: A fragrant herb. Ten leaves make one string; a hundred and twenty strings are pounded and boiled to make 𩰪. From 𦥑, 冂, 缶 and 鬯; 彡 is its ornament. Another explanation: 𩰪鬯 is the essence of the hundred herbs; fragrant herbs sent as tribute by the distant 𩰪 people are brewed together to bring down spirits. 𩰪 is now Yulin commandery.
+
+KEY: shuowen:3186    ||    CHINESE: 爵 — 禮器也。象爵之形，中有鬯酒，又持之也。所以飲。器象爵者，取其鳴節節足足也。    ||    ENGLISH DRAFT [UNCERTAIN]: A ritual vessel. It depicts the vessel, containing fragrant wine and held by 又, for drinking. Its bird-like form is chosen because the bird calls rhythmically, 節節足足.
+
+KEY: shuowen:3189    ||    CHINESE: 食 — 一米也。从皀亼聲。或說亼皀也。凡食之屬皆从食。    ||    ENGLISH DRAFT [UNCERTAIN]: A portion of rice. Formed from 皀, with 亼 indicating the sound. Another account: 亼 and 皀 combined. All graphs in the 食 group contain 食.
+
+KEY: shuowen:3196    ||    CHINESE: 𩟴 — 熬稻粻䅣也。从食𢿱聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Roasted rice grain, 粻䅣. Formed from 食, with 𢿱 indicating the sound. [The food term is uncertain.]
+
+KEY: shuowen:3213    ||    CHINESE: 䭑 — 嘰也。从食兼聲。讀若風溓溓。一曰廉潔也。    ||    ENGLISH DRAFT [UNCERTAIN]: To eat a little. Formed from 食, with 兼 indicating the sound. Read like 溓溓 in “the wind 溓溓.” Another explanation: incorruptible and pure.
+
+KEY: shuowen:3231    ||    CHINESE: 餀 — 食臭也。从食艾聲。《爾雅》曰：“餀謂之喙。”    ||    ENGLISH DRAFT [UNCERTAIN]: The smell of spoiled food. Formed from 食, with 艾 indicating the sound. The Erya says: “餀 is called 喙.”
+
+KEY: shuowen:3242    ||    CHINESE: 𩚬 — 飢也。从食戹聲。讀若楚人言恚人。    ||    ENGLISH DRAFT [UNCERTAIN]: Hunger. Formed from 食, with 戹 indicating the sound. Read like the Chu expression for being angry with someone.
+
+KEY: shuowen:3249    ||    CHINESE: 𩜁 — 馬食穀多，气流四下也。从食夌聲。    ||    ENGLISH DRAFT [UNCERTAIN]: When a horse eats much grain, its qi flows down on all sides. Formed from 食, with 夌 indicating the sound. [The physiological description is uncertain.]
+
+KEY: shuowen:3258    ||    CHINESE: 舍 — 市居曰舍。从亼、屮，象屋也。口象築也。    ||    ENGLISH DRAFT [UNCERTAIN]: A dwelling in a market is called 舍. From 亼 and 屮, depicting a house; 口 depicts its built foundation.
+
+KEY: shuowen:3261    ||    CHINESE: 䢈 — 日月合宿从辰。从會从辰，辰亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The sun and moon sharing a lodge and following the celestial station. Formed from 會 and 辰, with 辰 also indicating the sound. [The clause 合宿从辰 is uncertain.]
+
+KEY: shuowen:3270    ||    CHINESE: 缶 — 瓦器。所以盛酒𤖅。秦人鼓之以節謌。象形。凡缶之屬皆从缶。    ||    ENGLISH DRAFT [UNCERTAIN]: An earthenware vessel for holding wine and other liquid. People of Qin beat it to mark the rhythm of songs. A pictograph. All graphs in the 缶 group contain 缶. [The word 𤖅 in the liquid description is uncertain.]
+
+KEY: shuowen:3271    ||    CHINESE: 䍍 — 未燒瓦器也。从缶𣪊聲。读若筩莩。    ||    ENGLISH DRAFT [UNCERTAIN]: An unfired earthenware vessel. Formed from 缶, with 𣪊 indicating the sound. Read like 莩 in 筩莩. [The recorded pronunciation phrase is unusual.]
+
+KEY: shuowen:3296    ||    CHINESE: 矦 — 春饗所䠶矦也。从人；从厂，象張布；矢在其下。天子䠶熊虎豹，服猛也；諸矦䠶熊豕虎；大夫射麋，麋，惑也；士射鹿豕，爲田除害也。其祝曰：“毋若不寕矦，不朝于王所，故伉而䠶汝也。”    ||    ENGLISH DRAFT [UNCERTAIN]: The target shot at in the spring banquet. From 人 and 厂, depicting stretched cloth, with 矢 below. The Son of Heaven shoots bear, tiger and leopard targets, subduing ferocity; lords shoot bear, pig and tiger; grandees shoot deer, 麋 suggesting confusion; scholars shoot deer and pig, removing harm from the fields. The invocation says: “Do not be like an unruly lord who will not attend the king's court; therefore we oppose and shoot you.”
+
+KEY: shuowen:3332    ||    CHINESE: 𥏳 — 《詩》曰：“不𥏳不來。”从來矣聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The Odes says: “Neither 𥏳 nor coming.” Formed from 來, with 矣 indicating the sound. The precise sense of 𥏳 here is uncertain.
+
+KEY: shuowen:3349    ||    CHINESE: 夌 — 越也。从夊从𡴆。𡴆，高也。一曰夌约也。    ||    ENGLISH DRAFT [UNCERTAIN]: To pass beyond. Formed from 夊 and 𡴆; 𡴆 means high. Another explanation: 夌约, constriction; this phrase is uncertain.
+
+KEY: shuowen:3395    ||    CHINESE: 椉 — 覆也。从入、桀。桀，黠也。軍法曰乘。    ||    ENGLISH DRAFT [UNCERTAIN]: To cover. Formed from 入 and 桀; 桀 means cunning. In military regulations it is called 乘. The connection is uncertain.
+
+KEY: shuowen:3421    ||    CHINESE: 桏 —  级椐木也。从木邛聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A tree described as 级椐; the plant name is uncertain. Formed from 木, with 邛 indicating the sound.
+
+KEY: shuowen:3433    ||    CHINESE: 棪 — 遬其也。从木炎聲。讀若三年導服之導。    ||    ENGLISH DRAFT [UNCERTAIN]: The 遬其 tree. Formed from 木, with 炎 indicating the sound. Read like 導 in 三年導服, referring to three years of mourning dress; the phrase is uncertain.
+
+KEY: shuowen:3511    ||    CHINESE: 枒 — 木也。从木牙聲。一曰車𨊾會也。    ||    ENGLISH DRAFT [UNCERTAIN]: A kind of palm-like tree whose fruits hang at the top; another sense refers to the joining of the curved wooden rim of a chariot wheel. Formed from 木, with 牙 indicating the sound. [Precise historical botanical identification is not certain.]
+
+KEY: shuowen:3514    ||    CHINESE: 梂 — 櫟實。一曰𨯳首。从木求聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The clustered or cup-like seed casing of certain trees, traditionally described as the fruit of 櫟. Another explanation: the wooden head or handle of a boring implement. Formed from 木, with 求 indicating the sound. [The botanical and tool identifications vary among commentaries.]
+
+KEY: shuowen:3526    ||    CHINESE: 梗 — 山枌榆。有朿，莢可爲蕪夷者。从木更聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A spiny variety of mountain elm whose seed pods can be processed to make 蕪夷, a traditional aromatic medicinal preparation. Formed from 木, with 更 indicating the sound. [Commentaries differ over the exact elm species.]
+
+KEY: shuowen:3564    ||    CHINESE: 䯂 — 眾盛也。从木驫聲。《逸周書》曰：“疑沮事。”闕。    ||    ENGLISH DRAFT [UNCERTAIN]: Numerous and flourishing. Formed from 木, with 驫 indicating the sound. In a quotation from the Lost Documents of Zhou, the graph may refer to accumulating doubts that impede affairs. [Duan regards the final 闕 as a later addition and disputes parts of the transmitted quotation.]
+
+KEY: shuowen:3600    ||    CHINESE: 㮝 — 角械也。从木卻聲。一曰木下白也。    ||    ENGLISH DRAFT [UNCERTAIN]: A horn-shaped implement. Formed from 木, with 卻 indicating the sound. Another explanation: the white part beneath wood. Both descriptions are uncertain.
+
+KEY: shuowen:3671    ||    CHINESE: 㭒 — 臿也。从木㠯聲。一曰徙土輂，齊人語也。    ||    ENGLISH DRAFT [UNCERTAIN]: A digging tool, spade or shovel. Formed from 木, with 㠯 indicating the sound. Another use in the Qi dialect refers to an implement for moving earth, potentially a soil-carrying tray or barrow. [The source’s 纪 is corrupt, and Duan suggests rearranging the alternative-gloss wording.]
+
+KEY: shuowen:3678    ||    CHINESE: 𣒃 — 穜樓也。一曰燒麥柃𣒃。从木役聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A seed drill. Another explanation: the implement 柃𣒃 used in roasting wheat. Formed from 木, with 役 indicating the sound; the second implement is uncertain.
+
+KEY: shuowen:3685    ||    CHINESE: 㮐 — 木參交以枝炊䉛者也。从木省聲。讀若驪駕。    ||    ENGLISH DRAFT [UNCERTAIN]: Three crossing timbers supporting a cooking basket. Formed from 木, with 省 indicating the sound. Read like 驪駕; the reading instruction is uncertain.
+
+KEY: shuowen:3739    ||    CHINESE: 栙 — 栙雙也。从木夅聲。讀若鴻。    ||    ENGLISH DRAFT [UNCERTAIN]: 栙雙; the object denoted is uncertain. Formed from 木, with 夅 indicating the sound. Read like 鴻.
+
+KEY: shuowen:3785    ||    CHINESE: 𣡌 — 伐木餘也。从木獻聲。《商書》曰：“若顚木之有纫𣡌。”    ||    ENGLISH DRAFT [UNCERTAIN]: What remains after a tree is felled. Formed from 木, with 獻 indicating the sound. The Book of Shang says: “Like a fallen tree having 纫𣡌”; the phrase describing remaining shoots or roots is uncertain.
+
+KEY: shuowen:3805    ||    CHINESE: 櫪 — 櫪㯕，椑指也。从木歴聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 櫪㯕, defined as 椑指; the object is uncertain. Formed from 木, with 歴 indicating the sound.
+
+KEY: shuowen:3806    ||    CHINESE: 㯕 — 櫪㯕也。从木斯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 櫪㯕; the object is uncertain. Formed from 木, with 斯 indicating the sound.
+
+KEY: shuowen:3831    ||    CHINESE: 𣞤 — 豐也。从林；𡘲。或說規模字。从大、𠦜，數之積也；林者，木之多也。𠦜與庶同意。《商書》曰：“庶草繁無。”    ||    ENGLISH DRAFT [UNCERTAIN]: Abundant. Formed from 林 and 𡘲. Some explain it as the graph for 規模, “scale”: formed from 大 and 𠦜, an accumulation in number; 林 means many trees. 𠦜 uses the same principle as 庶. The Book of Shang says: “The many grasses flourish abundantly.” The analysis is uncertain.
+
+KEY: shuowen:3857    ||    CHINESE: 南 — 艸木至南方，有枝任也。从𣎵𢆉聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Plants reaching the south have branches capable of bearing growth. Formed from 𣎵, with 𢆉 indicating the sound; the wording 枝任 is uncertain.
+
+KEY: shuowen:3932    ||    CHINESE: 賮 — 會禮也。从貝纬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A gift at a meeting or parting. Formed from 貝, with 纬 indicating the sound; the precise occasion is uncertain.
+
+KEY: shuowen:3969    ||    CHINESE: 賕 — 以財物枉法相謝也。从貝求聲。一曰戴質也。    ||    ENGLISH DRAFT [UNCERTAIN]: To give property in thanks for bending the law. Formed from 貝, with 求 indicating the sound. Another explanation: 戴質, perhaps presenting a pledge; the phrase is uncertain.
+
+KEY: shuowen:4124    ||    CHINESE: 䣡 — 臨淮徐地。从邑義聲。《春秋傳》曰：“徐䣡楚。”    ||    ENGLISH DRAFT [UNCERTAIN]: A place in Xu, Linhuai. Formed from 邑, with 義 indicating the sound. The Spring and Autumn Commentary says: “Xu 䣡 Chu”; the wording is uncertain.
+
+KEY: shuowen:4168    ||    CHINESE: 𨞰 — 國離邑，民所封鄉也。嗇夫別治。封圻之内六鄉，六鄉治之。从𨛜皀聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Outlying settlements of a state, the townships where people are allotted land. Agricultural officers administer them separately. Within the boundary are six townships, administered as six townships. Formed from 𨛜, with 皀 indicating the sound; the administrative wording is uncertain.
+
+KEY: shuowen:4179    ||    CHINESE: 晤 — 明也。从日吾聲。《詩》曰：“晤辟有摽。”    ||    ENGLISH DRAFT [UNCERTAIN]: Bright. Formed from 日, with 吾 indicating the sound. The Odes says: “Awake, beating the breast” (晤辟有摽); interpretation of the recorded quotation is uncertain.
+
+KEY: shuowen:4203    ||    CHINESE: 曫 — 日旦昏時。从日䜌聲。讀若新城䜌中。    ||    ENGLISH DRAFT [UNCERTAIN]: The time of dawn or dusk; the wording 日旦昏時 is uncertain. Formed from 日, with 䜌 indicating the sound. Read like 䜌 in 新城䜌中.
+
+KEY: shuowen:4232    ||    CHINESE: 暱 — 日近也。从日匿聲。《春秋傳》曰：“私降暱燕。”    ||    ENGLISH DRAFT [UNCERTAIN]: To grow closer daily. Formed from 日, with 匿 indicating the sound. The Spring and Autumn Commentary says: “Privately descending to intimate feasts”; the quoted phrase 私降暱燕 is uncertain.
+
+KEY: shuowen:4268    ||    CHINESE: 旞 — 導車所以載。全羽以爲允。允，進也。从㫃遂聲。    ||    ENGLISH DRAFT [UNCERTAIN]: What a leading chariot carries: whole feathers make its 允; 允 means advancing. Formed from 㫃, with 遂 indicating the sound. The technical term 允 is uncertain.
+
+KEY: shuowen:4325    ||    CHINESE: 圅 — 舌也。象形。舌體𢎘。𢎘从𢎘，𢎘亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A tongue. Pictographic; the tongue’s form is 𢎘. The text further says “𢎘 follows 𢎘,” which also indicates the sound; this repeated analysis is uncertain.
+
+KEY: shuowen:4326    ||    CHINESE: 㽕 — 木生條也。从𢎘由聲。《商書》曰：“若顚木之有织枿。”古文言由枿。    ||    ENGLISH DRAFT [UNCERTAIN]: A tree putting forth new shoots. Formed from 𢎘, with 由 indicating the sound. The Book of Shang says: “Like a fallen tree putting forth fresh shoots.” The transmitted graph sequence in this digital file (织枿) is probably corrupt; comparative witnesses have alternative new-shoots graphs.
+
+KEY: shuowen:4392    ||    CHINESE: 穖 — 禾穖也。从禾幾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The 穖 of grain, perhaps its awns; the self-referential gloss is uncertain. Formed from 禾, with 幾 indicating the sound.
+
+KEY: shuowen:4406    ||    CHINESE: 𥝖 — 𥞸也。从禾气聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Defined as 𥞸, apparently a kind or preparation of grain; the precise gloss is uncertain. Formed from 禾, with 气 indicating the sound.
+
+KEY: shuowen:4418    ||    CHINESE: 秧 — 禾若秧穰也。从禾央聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Grain stalks or straw, described as 禾若秧穰; the wording is uncertain. Formed from 禾, with 央 indicating the sound.
+
+KEY: shuowen:4468    ||    CHINESE: 糪 — 炊，米者謂之糪。从米辟聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A rice preparation made by cooking, called 糪; the recorded wording 炊，米者 is incomplete. Formed from 米, with 辟 indicating the sound.
+
+KEY: shuowen:4509    ||    CHINESE: 𣏟 — 葩之總名也。𣏟之爲言微也，微纖爲功。象形。凡𣏟之屬皆从𣏟。    ||    ENGLISH DRAFT [UNCERTAIN]: A general name for flowers. The word 𣏟 conveys fineness: fine fibers accomplish the work. Pictographic. All characters in this group are formed from 𣏟. The connection between flowers and fibers in the recorded text is uncertain.
+
+KEY: shuowen:4517    ||    CHINESE: 敊 — 配鹽幽尗也。从尗支聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To mix salt with beans and keep them in darkness, apparently for fermentation; the wording is uncertain. Formed from 尗, with 支 indicating the sound.
+
+KEY: shuowen:4570    ||    CHINESE: 𡫛 — 𦤝𦤝，不見也。一曰𦤝𦤝，不見省人。从宀𦤝聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 𦤝𦤝, not seen. Another explanation: 𦤝𦤝, not seeing or attending to people. Formed from 宀, with 𦤝 indicating the sound. The repeated gloss is uncertain.
+
+KEY: shuowen:4582    ||    CHINESE: 寑 — 臥也。从宀钅聲鲞。    ||    ENGLISH DRAFT [UNCERTAIN]: To lie down. Formed from 宀, with 钅 recorded as indicating the sound; the trailing 鲞 in the source is unexplained and the analysis uncertain.
+
+KEY: shuowen:4591    ||    CHINESE: 寠 — 無禮居也。从宀婁聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To dwell without ritual furnishings. Formed from 宀, with 婁 indicating the sound; the meaning of 無禮居 is uncertain.
+
+KEY: shuowen:4604    ||    CHINESE: 宙 — 舟輿所極覆也。从宀由聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The utmost covering of boats and carriages. Formed from 宀, with 由 indicating the sound; the exact sense of 所極覆 is uncertain.
+
+KEY: shuowen:4699    ||    CHINESE: 𤺊 — 散聲。从疒斯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A dispersed or broken voice; the gloss 散聲 is uncertain. Formed from 疒, with 斯 indicating the sound.
+
+KEY: shuowen:4740    ||    CHINESE: 𤼒 — 創裂也。一曰疾𤼒。从疒巂聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A wound splitting open. Another explanation: 疾𤼒, an ailment; this gloss is uncertain. Formed from 疒, with 巂 indicating the sound.
+
+KEY: shuowen:4754    ||    CHINESE: 痬 — 脈痬也。从疒易聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A vessel ailment, 脈痬; the self-referential gloss is uncertain. Formed from 疒, with 易 indicating the sound.
+
+KEY: shuowen:4760    ||    CHINESE: 㿄 — 劇聲也。从疒殹聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A severe or intense sound; the gloss 劇聲 is uncertain. Formed from 疒, with 殹 indicating the sound.
+
+KEY: shuowen:4790    ||    CHINESE: 㒼 — 平也。从廿，五行之數，二十分爲一辰。㒳，㒼平也。讀若蠻。    ||    ENGLISH DRAFT [UNCERTAIN]: Even or level. Formed from 廿, the number of the five phases; twenty divisions make one 辰. 㒳 conveys evenness. Read like 蠻. The numerical explanation is uncertain.
+
+KEY: shuowen:4886    ||    CHINESE: 𢅼 — 𡎰地，以巾𢵢之。从巾夒聲。讀若水溫㬮也。一曰箸也。    ||    ENGLISH DRAFT [UNCERTAIN]: To smooth or wipe a freshly plastered surface with cloth, as a skilled plasterer would. Formed from 巾, with a phonetic graph transmitted as 夒. Another sense: to apply or affix something. [The headword, phonetic graph and rare pronunciation gloss have a complex textual history.]
+
+KEY: shuowen:5037    ||    CHINESE: 儃 — 儃何也。从人亶聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The rare expression 儃何, perhaps referring to circling, lingering or turning about. Formed from 人, with 亶 indicating the sound. [Duan says the received gloss is unexplained and proposes a possible connection with 儃佪 in classical poetry.]
+
+KEY: shuowen:5069    ||    CHINESE: 俒 — 完也。《逸周書》曰：“朕實不明，以俒伯父。”从人从完。    ||    ENGLISH DRAFT [UNCERTAIN]: To be complete or whole. In the quoted Lost Book of Zhou passage the character appears to be a loan meaning “to trouble or inconvenience”: “I have lacked understanding and have troubled my uncle.” Formed from 人 and 完. [Textual variants and the original line’s context remain uncertain.]
+
+KEY: shuowen:5122    ||    CHINESE: 𠊬 — 徼𠊬受屈也。从人卻聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 徼𠊬, to suffer constraint or wrong. Formed from 人, with 卻 indicating the sound; the precise expression is uncertain.
+
+KEY: shuowen:5146    ||    CHINESE: 僂 — 尫也。从人婁聲。周公韈僂，或言背僂。    ||    ENGLISH DRAFT [UNCERTAIN]: Crooked or deformed. Formed from 人, with 婁 indicating the sound. The text says the Duke of Zhou was 韈僂; some explain this as a bent back. The phrase 韈僂 is uncertain.
+
+KEY: shuowen:5156    ||    CHINESE: 僔 — 聚也。从人尊聲。《詩》曰：“僔沓背僧。”    ||    ENGLISH DRAFT [UNCERTAIN]: To gather. Formed from 人, with 尊 indicating the sound. The Odes says: “Gathering and crowding, hating behind the back” (僔沓背僧); the recorded wording is uncertain.
+
+KEY: shuowen:5206    ||    CHINESE: 毖 — 愼也。从比必聲。《周書》曰：“無毖于卹。”    ||    ENGLISH DRAFT [UNCERTAIN]: Careful. Formed from 比, with 必 indicating the sound. The Book of Zhou says: “Do not be cautious only about what causes distress”; the quotation 無毖于卹 is uncertain.
+
+KEY: shuowen:5272    ||    CHINESE: 衧 — 諸𧘚也。从衣于聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The garment 諸𧘚; its precise form is uncertain. Formed from 衣, with 于 indicating the sound.
+
+KEY: shuowen:5289    ||    CHINESE: 𧜣 — 短衣也。从衣鳥聲。《春秋傳》曰：“有空𧜣。”    ||    ENGLISH DRAFT [UNCERTAIN]: A short garment. Formed from 衣, with 鳥 indicating the sound. The Spring and Autumn Commentary says: “There was a hollow 𧜣”; the quoted phrase is uncertain.
+
+KEY: shuowen:5355    ||    CHINESE: 耇 — 老人面凍黎若垢。从老省，句聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An old person’s face dark and mottled as if dirty; the wording 凍黎 is uncertain. Formed from abbreviated 老, with 句 indicating the sound.
+
+KEY: shuowen:5384    ||    CHINESE: 𡱂 — 髀也。从尸下丌居几。    ||    ENGLISH DRAFT [UNCERTAIN]: The thigh. Formed beneath 尸, with 丌 resting on 几; the graphical wording is uncertain.
+
+KEY: shuowen:5389    ||    CHINESE: 𡰫 — 柔皮也。从申尸之後。尸或从又。    ||    ENGLISH DRAFT [UNCERTAIN]: To soften hide. Formed by extending behind 尸; some forms use 又 for 尸. The graphical explanation is uncertain.
+
+KEY: shuowen:5400    ||    CHINESE: 尺 — 十寸也。人手卻十分動脈爲寸口。十寸爲尺。尺，所以指尺䂓榘事也。从尸从乙。乙，所識也。周制，寸、尺、咫、尋、常、仞諸度量，皆以人之體爲法。凡尺之屬皆从尺。    ||    ENGLISH DRAFT [UNCERTAIN]: Ten cun. On the human hand, the moving pulse ten divisions back forms the cun-opening; ten cun make one chi. Chi is used to indicate measures and regulate affairs. Formed from 尸 and 乙; 乙 is the marker. Under Zhou, cun, chi, zhi, xun, chang, ren and other measures all took the human body as their standard. All characters in this group are formed from 尺. The anatomical wording is uncertain.
+
+KEY: shuowen:5423    ||    CHINESE: 服 — 用也。一曰車右騑，所以舟旋。从舟𠬝聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To use. Another explanation: the right-hand outrunner horse of a carriage, enabling it to turn. Formed from 舟, with 𠬝 indicating the sound. The wording 所以舟旋 is uncertain.
+
+KEY: shuowen:5465    ||    CHINESE: 覰 — 拘覰，未致密也。从見虘聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 拘覰, not yet close or thorough. Formed from 見, with 虘 indicating the sound. The precise descriptive phrase is uncertain.
+
+KEY: shuowen:5466    ||    CHINESE: 覭 — 小見也。从見冥聲。《爾雅》曰：“覭髳，弗離。”    ||    ENGLISH DRAFT [UNCERTAIN]: To see only a little. Formed from 見, with 冥 indicating the sound. The Erya says: “覭髳, not separated”; the quoted expression is uncertain.
+
+KEY: shuowen:5496    ||    CHINESE: 䨳 — 見雨而比息。从覞从雨。讀若欷。    ||    ENGLISH DRAFT [UNCERTAIN]: Seeing rain and together coming to rest; the phrase 比息 is uncertain. Formed from 覞 and 雨. Read like 欷.
+
+KEY: shuowen:5497    ||    CHINESE: 欠 — 張口气悟也。象气从人上出之形。凡欠之屬皆从欠。    ||    ENGLISH DRAFT [UNCERTAIN]: Opening the mouth and releasing breath; the wording 气悟 is uncertain. Depicts breath rising out of a person. All characters in this group are formed from 欠.
+
+KEY: shuowen:5537    ||    CHINESE: 敫 — 所，謌也。从欠，噭省聲。讀若叫呼之叫。    ||    ENGLISH DRAFT [UNCERTAIN]: Singing; the preceding 所 in the recorded gloss is uncertain. Formed from 欠, with abbreviated 噭 indicating the sound. Read like 叫 in 叫呼.
+
+KEY: shuowen:5542    ||    CHINESE: 𣤿 — 昆干，不可知也。从欠鰥聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 昆干, said to be unknowable; the descriptive phrase is uncertain. Formed from 欠, with 鰥 indicating the sound.
+
+KEY: shuowen:5554    ||    CHINESE: 㰶 — 蹴鼻也。从欠咎聲。讀若《爾雅》曰“麔豭短脰”。    ||    ENGLISH DRAFT [UNCERTAIN]: To wrinkle or contract the nose. Formed from 欠, with 咎 indicating the sound. The reading is referred to the Erya phrase “麔豭短脰,” “the 麔 boar has a short neck”; the precise reading reference is uncertain.
+
+KEY: shuowen:5556    ||    CHINESE: 欪 — 咄欪，無慙。一曰無腸意。从欠出聲。讀若卉。    ||    ENGLISH DRAFT [UNCERTAIN]: 咄欪, shameless. Another explanation: without inward feeling, 無腸意; the phrase is uncertain. Formed from 欠, with 出 indicating the sound. Read like 卉.
+
+KEY: shuowen:5596    ||    CHINESE: 顩 — 𪙊皃。从頁僉聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An appearance described as 𪙊, perhaps a gaping or uneven mouth; the gloss is uncertain. Formed from 頁, with 僉 indicating the sound.
+
+KEY: shuowen:5599    ||    CHINESE: 䫟 — 面色顚䫟皃。从頁員聲。讀若隕。    ||    ENGLISH DRAFT [UNCERTAIN]: A downcast facial appearance, 顚䫟; the phrase is uncertain. Formed from 頁, with 員 indicating the sound. Read like 隕.
+
+KEY: shuowen:5610    ||    CHINESE: 𩒳 — 昧前也。从頁𡿯聲。讀若昧。    ||    ENGLISH DRAFT [UNCERTAIN]: Obscured in front, 昧前; the gloss is uncertain. Formed from 頁, with 𡿯 indicating the sound. Read like 昧.
+
+KEY: shuowen:5612    ||    CHINESE: 𩔀 — 頭蔽𩔀也。从頁㒸聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The head covered, 𩔀; the repeated gloss is uncertain. Formed from 頁, with 㒸 indicating the sound.
+
+KEY: shuowen:5613    ||    CHINESE: 頑 — 㮯頭也。从頁元聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A solid, rounded head, 㮯頭; the precise description is uncertain. Formed from 頁, with 元 indicating the sound.
+
+KEY: shuowen:5641    ||    CHINESE: 顅 — 頭鬢少髮也。从頁肩聲。《周禮》：“數目顅脰。”    ||    ENGLISH DRAFT [UNCERTAIN]: Little hair on the head and temples. Formed from 頁, with 肩 indicating the sound. The Rites of Zhou says: “Many eyes and a 顅 neck”; the quoted phrase is uncertain.
+
+KEY: shuowen:5651    ||    CHINESE: 顑 — 飯不飽，面黃起行也。从頁咸聲。讀若戇。    ||    ENGLISH DRAFT [UNCERTAIN]: Not getting enough food, with a yellow face and lines appearing; the wording 起行 is uncertain. Formed from 頁, with 咸 indicating the sound. Read like 戇.
+
+KEY: shuowen:5652    ||    CHINESE: 顲 — 面䫲顲皃。从頁𤎭聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The face gaunt or discolored, 䫲顲; the precise expression is uncertain. Formed from 頁, with 𤎭 indicating the sound.
+
+KEY: shuowen:5658    ||    CHINESE: 䫒 — 繫頭殟也。从頁昏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The head constricted and faint, 繫頭殟; the gloss is uncertain. Formed from 頁, with 昏 indicating the sound.
+
+KEY: shuowen:5663    ||    CHINESE: 𩔊 — 選具也。从二頁。    ||    ENGLISH DRAFT [UNCERTAIN]: To select and equip, 選具; the gloss is uncertain. Formed from two 頁.
+
+KEY: shuowen:5748    ||    CHINESE: 卩 — 瑞信也。守國者用玉卪，守都鄙者用角卪，使山邦者用虎卪，士邦者用人卪，澤邦者用龍卪，門關者用符卪，貨賄用璽卪，道路用旌卪。象相合之形。凡卪之屬皆从卪。    ||    ENGLISH DRAFT [UNCERTAIN]: A credential of authority. State guardians use jade tallies; guardians of towns and border districts, horn tallies; envoys to mountain states, tiger tallies; those to 士邦 states, human tallies; those to marsh states, dragon tallies; gate and pass officials, matching tallies; trade, seal tallies; roads, banner tallies. Depicts matching halves. All characters in the 卪 group follow 卪. The category 士邦 is uncertain.
+
+KEY: shuowen:5801    ||    CHINESE: 𩴪 — 鬼俗也。从鬼幾聲。《淮南傳》曰：“吳人鬼，越人𩴪。”    ||    ENGLISH DRAFT [UNCERTAIN]: Ghost-related customs. Formed from 鬼, with 幾 indicating the sound. The Huainan Commentary says: “The people of Wu are 鬼; the people of Yue, 𩴪.” The distinction in this quotation is uncertain.
+
+KEY: shuowen:5833    ||    CHINESE: 崵 — 崵山，在遼西。从山昜聲。一曰嵎鐵崵谷也。    ||    ENGLISH DRAFT [UNCERTAIN]: Mount Yang in Liaoxi. Formed from 山, with 昜 indicating the sound. Another explanation: 嵎鐵崵谷, a valley location whose precise wording is uncertain.
+
+KEY: shuowen:5847    ||    CHINESE: 嶞 — 山之墮墮者。从山，从憜省聲。讀若相推落之憜。    ||    ENGLISH DRAFT [UNCERTAIN]: Mountains lying low, 墮墮; the precise appearance is uncertain. Formed from 山, with abbreviated 憜 indicating the sound. Read like 憜 in pushing one another down.
+
+KEY: shuowen:5892    ||    CHINESE: 广 — 因广爲屋，象對剌高屋之形。凡广之屬皆从广。讀若儼然之儼。    ||    ENGLISH DRAFT [UNCERTAIN]: Making a dwelling against a shelter, depicting a tall building facing and projecting outward; the graphical wording is uncertain. All characters in this group are formed from 广. Read like 儼 in 儼然.
+
+KEY: shuowen:5911    ||    CHINESE: 庾 — 水槽倉也。从广臾聲。一曰倉無屋者。    ||    ENGLISH DRAFT [UNCERTAIN]: A granary by a water trough or channel; the phrase 水槽倉 is uncertain. Formed from 广, with 臾 indicating the sound. Another explanation: a granary without a roof.
+
+KEY: shuowen:5930    ||    CHINESE: 廔 — 屋麗廔也。从广婁聲。一曰穜也。    ||    ENGLISH DRAFT [UNCERTAIN]: A building’s open latticework, 麗廔. Formed from 广, with 婁 indicating the sound. Another explanation: to plant, 穜; this alternative is uncertain.
+
+KEY: shuowen:5938    ||    CHINESE: 㡿 — 郤屋也。从广屰聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To open up or set a building back, 郤屋; the precise gloss is uncertain. Formed from 广, with 屰 indicating the sound.
+
+KEY: shuowen:5955    ||    CHINESE: 厲 — 旱石也。从厂，蠆省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A dry stone, 旱石; the recorded gloss is uncertain. Formed from 厂, with abbreviated 蠆 indicating the sound.
+
+KEY: shuowen:5976    ||    CHINESE: 䎠 — 丸之孰也。从丸而聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The cooking or ripening of a ball-shaped thing. Formed from 丸, with 而 indicating the sound; the gloss 丸之孰 is uncertain.
+
+KEY: shuowen:6012    ||    CHINESE: 硩 — 上摘巖空青、珊瑚墮之。从石折聲。《周禮》有硩蔟氏。    ||    ENGLISH DRAFT [UNCERTAIN]: To pick 空青 mineral and coral from a cliff above and dislodge them; the recorded activity is uncertain. Formed from 石, with 折 indicating the sound. The Rites of Zhou has the 硩蔟 officer.
+
+KEY: shuowen:6038    ||    CHINESE: 長 — 久遠也。从兀从匕。兀者，高遠意也。久則變化。亾聲。纼者，倒亾也。凡長之屬皆从長。    ||    ENGLISH DRAFT [UNCERTAIN]: Long in time or distance. Formed from 兀 and 匕; 兀 conveys height and distance. Over time things change. 亾 indicates the sound; 纼 is inverted 亾. All characters in this group are formed from 長. The recorded identification of 纼 is uncertain.
+
+KEY: shuowen:6041    ||    CHINESE: 镻 — 蛇惡毒長也。从長失聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A snake’s virulent poison extending; the wording 惡毒長 is uncertain. Formed from 長, with 失 indicating the sound.
+
+KEY: shuowen:6047    ||    CHINESE: 豕 — 彘也。竭其尾，故謂之豕。象毛足而後有尾。讀與豨同。(桉：今丗字，誤以豕爲彘，以彘爲豕。何以明之？爲啄琢从豕，蟸从彘。皆取其聲，以是明之。)凡豕之屬皆从豕。    ||    ENGLISH DRAFT [UNCERTAIN]: A pig, 彘. Its tail ends, hence called 豕; the phrase 竭其尾 is uncertain. Depicts hair, feet and a tail behind. Pronounced the same as 豨. Note: contemporary writing wrongly uses 豕 for 彘 and 彘 for 豕. How is this clear? 啄 and 琢 follow 豕, while 蟸 follows 彘; all take their sounds from these, making the distinction clear. All characters in this group are formed from 豕.
+
+KEY: shuowen:6090    ||    CHINESE: 貜 —  纱玃也。从豸矍聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 纱玃, perhaps a large ape; the recorded animal name is uncertain. Formed from 豸, with 矍 indicating the sound.
+
+KEY: shuowen:6133    ||    CHINESE: 驠 — 馬白州也。从馬燕聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A horse with a white rear, written 州 in the recorded gloss; that wording is uncertain. Formed from 馬, with 燕 indicating the sound.
+
+KEY: shuowen:6202    ||    CHINESE: 駔 — 牡馬也。从馬且聲。一曰馬蹲駔也。    ||    ENGLISH DRAFT [UNCERTAIN]: A male horse. Formed from 馬, with 且 indicating the sound. Alternatively, a horse being stout and powerful.
+
+KEY: shuowen:6207    ||    CHINESE: 䮤 — 苑名。一曰馬白頟。从馬隺聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The name of a pasture enclosure. Alternatively, a horse with a white forehead. Formed from 馬, with 隺 indicating the sound.
+
+KEY: shuowen:6211    ||    CHINESE: 駃 — 駃騠，馬父驘子也。从馬夬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 駃騠, an offspring with a horse father and a mule connection expressed by 驘子 in the source; the parentage wording is uncertain. Formed from 馬, with 夬 indicating the sound.
+
+KEY: shuowen:6227    ||    CHINESE: 𡦳 — 解𢊁屬。从𢊁孝聲。闕。    ||    ENGLISH DRAFT [UNCERTAIN]: A kind of 解𢊁. Formed from 𢊁, with 孝 indicating the sound. Further explanation is lacking.
+
+KEY: shuowen:6229    ||    CHINESE: 灋 — 刑也。平之如水，从水；𢊁，所以觸不直者；去之，从去。    ||    ENGLISH DRAFT [UNCERTAIN]: Punishment or law. Impartial like water, hence 水; 𢊁 is what strikes the dishonest; to remove them, hence 去.
+
+KEY: shuowen:6230    ||    CHINESE: 鹿 — 獸也。象頭角四足之形。鳥鹿足相似，从匕。凡鹿之屬皆从鹿。    ||    ENGLISH DRAFT [UNCERTAIN]: A beast. It depicts its head, antlers, and four feet. Birds' and deer's feet resemble one another, hence 匕. All characters in this group are formed from 鹿.
+
+KEY: shuowen:6254    ||    CHINESE: 麗 — 旅行也。鹿之性，見食急則必旅行。从鹿丽聲。《禮》：麗皮納聘。蓋鹿皮也。    ||    ENGLISH DRAFT [UNCERTAIN]: To travel in a group. It is deer's nature, when urgently seeking food, always to move in groups. Formed from 鹿, with 丽 indicating the sound. The Rites has 'paired skins presented as betrothal gifts,' probably deerskins.
+
+KEY: shuowen:6256    ||    CHINESE: 麤 — 行超遠也。从三鹿。凡麤之屬皆从麤。    ||    ENGLISH DRAFT [UNCERTAIN]: To travel far, beyond others. Formed from three 鹿. All characters in this group are formed from 麤.
+
+KEY: shuowen:6261    ||    CHINESE: 𣬎 — 獸也。似牲牲。从㲋夬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A beast resembling 牲牲. Formed from 㲋, with 夬 indicating the sound.
+
+KEY: shuowen:6269    ||    CHINESE: 犬 — 狗之有縣蹏者也。象形。孔子曰：“視犬之字如畫狗也。”凡犬之屬皆从犬。    ||    ENGLISH DRAFT [UNCERTAIN]: A dog with a hanging dewclaw. A pictograph. Confucius says: 'Looking at the character 犬 is like a picture of a dog.' All characters in this group are formed from 犬.
+
+KEY: shuowen:6270    ||    CHINESE: 狗 — 孔子曰：“狗，叩也。叩气吠以守。”从犬句聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Confucius says: '狗 means to strike or knock: it expels breath in barking to guard.' Formed from 犬, with 句 indicating the sound.
+
+KEY: shuowen:6274    ||    CHINESE: 獪 — 狡獪也。从犬會聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The cunning expressed by 狡獪. Formed from 犬, with 會 indicating the sound.
+
+KEY: shuowen:6284    ||    CHINESE: 默 — 犬暫逐人也。从犬黑聲。讀若墨。    ||    ENGLISH DRAFT [UNCERTAIN]: A dog briefly chasing a person. Formed from 犬, with 黑 indicating the sound. Read like 墨.
+
+KEY: shuowen:6290    ||    CHINESE: 獿 — 獿㺒也。从犬、夒。    ||    ENGLISH DRAFT [UNCERTAIN]: The barking condition expressed by 獿㺒. Formed from 犬 and 夒.
+
+KEY: shuowen:6291    ||    CHINESE: 㺒 — 犬獿獿咳吠也。从犬翏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A dog barking with repeated harsh sounds. Formed from 犬, with 翏 indicating the sound.
+
+KEY: shuowen:6292    ||    CHINESE: 㺑 — 犬容頭進也。从犬參聲。一曰賊疾也。    ||    ENGLISH DRAFT [UNCERTAIN]: A dog pushing its head forward. Formed from 犬, with 參 indicating the sound. Alternatively, swift and harmful.
+
+KEY: shuowen:6310    ||    CHINESE: 猜 — 恨賊也。从犬青聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Resentful malice. Formed from 犬, with 青 indicating the sound.
+
+KEY: shuowen:6317    ||    CHINESE: 狟 — 犬行也。从犬亘聲。《周禮》曰：“尚狟狟。”    ||    ENGLISH DRAFT [UNCERTAIN]: A dog walking. Formed from 犬, with 亘 indicating the sound. The Rites of Zhou says: 'Esteeming steady movement,' expressed by 狟狟.
+
+KEY: shuowen:6318    ||    CHINESE: 犻 — 過弗取也。从犬巿聲。讀若孛。    ||    ENGLISH DRAFT [UNCERTAIN]: To pass without taking. Formed from 犬, with 巿 indicating the sound. Read like 孛.
+
+KEY: shuowen:6321    ||    CHINESE: 犮 — 走犬皃。从犬而丿之。曳其足，則剌犮也。    ||    ENGLISH DRAFT [UNCERTAIN]: A running dog's appearance. Formed from 犬 with 丿 across it. Pulling its foot makes it stumble or splay, as in 剌犮.
+
+KEY: shuowen:6332    ||    CHINESE: 獻 — 宗廟犬名羹獻。犬肥者以獻之。从犬鬳聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The temple dog is named 羹獻; fat dogs are presented as offerings. Formed from 犬, with 鬳 indicating the sound.
+
+KEY: shuowen:6333    ||    CHINESE: 𤜵 — 獟犬也。从犬幵聲。一曰逐虎犬也。    ||    ENGLISH DRAFT [UNCERTAIN]: A fierce dog, 獟. Formed from 犬, with 幵 indicating the sound. Alternatively, a dog that pursues tigers.
+
+KEY: shuowen:6334    ||    CHINESE: 獟 — 𤜵犬也。从犬堯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A fierce dog, 𤜵. Formed from 犬, with 堯 indicating the sound.
+
+KEY: shuowen:6339    ||    CHINESE: 狻 — 狻麑，如虦貓，食虎豹者。从犬夋聲。見《爾雅》。    ||    ENGLISH DRAFT [UNCERTAIN]: 狻麑, like a 虦貓, eating tigers and leopards. Formed from 犬, with 夋 indicating the sound. See the Erya.
+
+KEY: shuowen:6348    ||    CHINESE: 狐 — 䄏獸也。鬼所乘之。有三徳：其色中和，小前大後，死則丘首。从犬瓜聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An uncanny beast ridden by ghosts. It has three virtues: its coloring is balanced; small in front and large behind; when dying it turns its head toward its home mound. Formed from 犬, with 瓜 indicating the sound.
+
+KEY: shuowen:6357    ||    CHINESE: 㺇 — 司空也。从㹜𦣞聲。復說獄司空。    ||    ENGLISH DRAFT [UNCERTAIN]: The minister of works, 司空. Formed from 㹜, with 𦣞 indicating the sound. Another explanation refers to the prison's 司空; the wording is compressed and uncertain.
+
+KEY: shuowen:6358    ||    CHINESE: 獄 — 确也。从㹜从言。二犬，所以守也。    ||    ENGLISH DRAFT [UNCERTAIN]: Firm or certain. Formed from 㹜 and 言. The two dogs are for guarding.
+
+KEY: shuowen:6365    ||    CHINESE: 𪕚 — 竹鼠也。如大。从鼠，畱省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A bamboo rat, described incompletely as 'like large.' Formed from 鼠, with abbreviated 畱 indicating the sound.
+
+KEY: shuowen:6370    ||    CHINESE: 鼩 — 精鼩鼠也。从鼠句聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The mouse called 精鼩. Formed from 鼠, with 句 indicating the sound.
+
+KEY: shuowen:6374    ||    CHINESE: 䶂 — 胡地風鼠。从鼠勺聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A wind-mouse of Hu territory. Formed from 鼠, with 勺 indicating the sound.
+
+KEY: shuowen:6376    ||    CHINESE: 𪕊 — 鼠，似雞，鼠尾。从鼠此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A mouse-like creature resembling a chicken, with a mouse's tail. Formed from 鼠, with 此 indicating the sound.
+
+KEY: shuowen:6378    ||    CHINESE: 𪕮 — 斬𪕮鼠。黑身，白腰若帶；手有長白毛，似握版之狀；類蝯蜼之屬。从鼠胡聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The 斬𪕮 mouse: black-bodied, white-waisted like a belt; long white hair on its hands resembles holding a tablet. Like the 蝯 and 蜼 kinds. Formed from 鼠, with 胡 indicating the sound.
+
+KEY: shuowen:6379    ||    CHINESE: 能 — 熊屬。足似鹿。从肉㠯聲。能獸堅中，故稱賢能；而彊壯，稱能傑也。凡能之屬皆从能。    ||    ENGLISH DRAFT [UNCERTAIN]: A kind of bear, with feet like a deer's. Formed from 肉, with 㠯 indicating the sound. Because this beast is firm within, the capable are called 賢能; because it is strong, the outstanding are called 能傑. All characters in this group are formed from 能.
+
+KEY: shuowen:6387    ||    CHINESE: 焌 — 然火也。从火夋聲。《周禮》曰：“遂䶴其焌。”焌火在前，以焞焯龜。    ||    ENGLISH DRAFT [UNCERTAIN]: To kindle fire. Formed from 火, with 夋 indicating the sound. The Rites of Zhou says: 'Then blow on its kindled fire.' The kindled fire is placed in front, and the heated implement scorches the divination turtle.
+
+KEY: shuowen:6394    ||    CHINESE: 炪 — 火光也。从火出聲。《商書》曰：“予亦炪謀。”讀若巧拙之拙。    ||    ENGLISH DRAFT [UNCERTAIN]: Firelight. Formed from 火, with 出 indicating the sound. The Book of Shang says: 'I too have 炪 plans,' the quoted sense being uncertain. Read like 拙 in 巧拙.
+
+KEY: shuowen:6402    ||    CHINESE: 熮 — 火皃。从火翏聲。《逸周書》曰：“味辛而不熮。”    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of fire. Formed from 火, with 翏 indicating the sound. The Lost Book of Zhou says: 'Its taste is acrid but not scorching.'
+
+KEY: shuowen:6409    ||    CHINESE: 烄 — 交木然也。从火交聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Crossed pieces of wood burning. Formed from 火, with 交 indicating the sound.
+
+KEY: shuowen:6414    ||    CHINESE: 𤉧 — 交灼木也。从火，教省聲。讀若狡。    ||    ENGLISH DRAFT [UNCERTAIN]: Wood crossed and burning together. Formed from 火, with abbreviated 教 indicating the sound. Read like 狡.
+
+KEY: shuowen:6424    ||    CHINESE: 烘 — 尞也。从火共聲。《詩》曰：“卭烘于煁。”    ||    ENGLISH DRAFT [UNCERTAIN]: To burn or roast. Formed from 火, with 共 indicating the sound. The Odes says: 'Alas, roasting over the stove.'
+
+KEY: shuowen:6438    ||    CHINESE: 㷉 — 从上案下也。从𡰥；又持火，以尉申繒也。    ||    ENGLISH DRAFT [UNCERTAIN]: To press downward from above. Formed from 𡰥, with 又 holding fire, to press and stretch silk fabric.
+
+KEY: shuowen:6450    ||    CHINESE: 熑 — 火煣車網絕也。从火兼聲。《周禮》曰：“煣牙，外不熑。”    ||    ENGLISH DRAFT [UNCERTAIN]: A break occurring when fire bends a carriage's rim or framework; the source records 車網, making the technical wording uncertain. Formed from 火, with 兼 indicating the sound. The Rites of Zhou says: 'When bending the rim, let the outside not crack.'
+
+KEY: shuowen:6452    ||    CHINESE: 𤐫 — 火飛也。从火，纳與𠨧同意。    ||    ENGLISH DRAFT [UNCERTAIN]: Fire flying upward. Formed from 火; the source says 纳 has the same conception as 𠨧, an obscure component explanation.
+
+KEY: shuowen:6459    ||    CHINESE: 𤈥 — 望火皃。从火皀聲。讀若馰顙之馰。    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of looking toward a fire. Formed from 火, with 皀 indicating the sound. Read like 馰 in 馰顙.
+
+KEY: shuowen:6463    ||    CHINESE: 焯 — 明也。从火卓聲。《周書》曰：“焯見三有俊心。”    ||    ENGLISH DRAFT [UNCERTAIN]: Bright. Formed from 火, with 卓 indicating the sound. The Book of Zhou says: 'Clearly perceive the minds of the worthy men of the three realms.'
+
+KEY: shuowen:6467    ||    CHINESE: 熠 — 盛光也。从火習聲。《詩》曰：“熠熠宵行。”    ||    ENGLISH DRAFT [UNCERTAIN]: Brilliant light. Formed from 火, with 習 indicating the sound. The Odes says: 'Glittering things move at night.'
+
+KEY: shuowen:6475    ||    CHINESE: 爓 — 火門也。从火閻聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A fire's opening or gate, according to the recorded 火門 gloss. Formed from 火, with 閻 indicating the sound.
+
+KEY: shuowen:6491    ||    CHINESE: 爝 — 苣火，祓也。从火爵聲。呂不韋曰：湯得伊尹，爝以爟火，釁以犧豭。    ||    ENGLISH DRAFT [UNCERTAIN]: A reed torch, for purification. Formed from 火, with 爵 indicating the sound. Lü Buwei says: when Tang obtained Yi Yin, he purified him with raised torch-fire and anointed him with a sacrificial boar's blood.
+
+KEY: shuowen:6492    ||    CHINESE: 熭 — 暴乾火也。从火彗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To dry by exposure and fire. Formed from 火, with 彗 indicating the sound.
+
+KEY: shuowen:6503    ||    CHINESE: 𤎭 — 㑴火也。从炎㐭聲。讀若桑葚之葚。    ||    ENGLISH DRAFT [UNCERTAIN]: Encroaching fire. Formed from 炎, with 㐭 indicating the sound. Read like 葚 in 桑葚.
+
+KEY: shuowen:6507    ||    CHINESE: 粦 — 兵死及牛馬之血爲粦。粦，鬼火也。从炎、舛。    ||    ENGLISH DRAFT [UNCERTAIN]: The blood of those killed in battle and of cattle and horses becomes 粦, ghost-fire. Formed from 炎 and 舛.
+
+KEY: shuowen:6510    ||    CHINESE: 䵳 — 沃黑色。从黑會聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A glossy or deep black color, perhaps, as expressed by 沃黑. Formed from 黑, with 會 indicating the sound.
+
+KEY: shuowen:6512    ||    CHINESE: 黶 — 申黑也。从黑厭聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Extended blackness, according to the recorded 申黑 gloss; the precise sense is uncertain. Formed from 黑, with 厭 indicating the sound.
+
+KEY: shuowen:6515    ||    CHINESE: 𪒹 — 雖皙而黑也。从黑箴聲。古人名𪒹字皙。    ||    ENGLISH DRAFT [UNCERTAIN]: Although fair, also dark. Formed from 黑, with 箴 indicating the sound. An ancient person named 𪒹 had the courtesy name 皙, 'fair.'
+
+KEY: shuowen:6522    ||    CHINESE: 黚 — 淺黃黑也。从黑甘聲。讀若染繒中束緅黚。    ||    ENGLISH DRAFT [UNCERTAIN]: Pale yellow-black. Formed from 黑, with 甘 indicating the sound. Read like 黚 in the obscure dyeing phrase 染繒中束緅黚.
+
+KEY: shuowen:6524    ||    CHINESE: 𪑲 — 黑有文也。从黑冤聲。讀若飴𧯡字。    ||    ENGLISH DRAFT [UNCERTAIN]: Black with markings. Formed from 黑, with 冤 indicating the sound. Read like the character 𧯡 in 飴𧯡; the reference is obscure.
+
+KEY: shuowen:6525    ||    CHINESE: 䵵 — 黃黑而白也。从黑算聲。一曰短黑。讀若以芥爲齏，名曰芥荃也。    ||    ENGLISH DRAFT [UNCERTAIN]: Yellow-black and white. Formed from 黑, with 算 indicating the sound. Alternatively, short and black. Read like 荃, the name for mustard made into a relish.
+
+KEY: shuowen:6526    ||    CHINESE: 䵤 — 黑皴也。从黑幵聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Black and chapped. Formed from 黑, with 幵 indicating the sound.
+
+KEY: shuowen:6527    ||    CHINESE: 黠 — 堅黑也。从黑吉聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Firmly black. Formed from 黑, with 吉 indicating the sound.
+
+KEY: shuowen:6531    ||    CHINESE: 黷 — 握持垢也。从黑賣聲。《易》曰：“再三黷。”    ||    ENGLISH DRAFT [UNCERTAIN]: To grasp and hold filth. Formed from 黑, with 賣 indicating the sound. The Changes says: 'Repeatedly, a second and third time, is profanation.'
+
+KEY: shuowen:6535    ||    CHINESE: 𪒀 — 𪒀𡜜，下哂。从黑般聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 𪒀𡜜 means to smile downward or derisively, perhaps. Formed from 黑, with 般 indicating the sound.
+
+KEY: shuowen:6539    ||    CHINESE: 𪑩 — 𪑍謂之垽。垽，滓也。从黑，殿省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The source says 𪑍 is called 垽; 垽 means sediment. Formed from 黑, with abbreviated 殿 indicating the sound.
+
+KEY: shuowen:6543    ||    CHINESE: 𪒠 — 𪒠者忘而息也。从黑敢聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To forget and rest. Formed from 黑, with 敢 indicating the sound.
+
+KEY: shuowen:6552    ||    CHINESE: 爒 — 炙也。从炙尞聲。讀若𤒅燎。    ||    ENGLISH DRAFT [UNCERTAIN]: To roast. Formed from 炙, with 尞 indicating the sound. Read like 燎 in 𤒅燎.
+
+KEY: shuowen:6558    ||    CHINESE: 浾 — 䞓，棠棗之汁，或从水。    ||    ENGLISH DRAFT [UNCERTAIN]: Red, 䞓; the juice of 棠 and jujube fruits. An alternative form uses 水.
+
+KEY: shuowen:6564    ||    CHINESE: 大 — 天大，地大，人亦大。故大象人形。古文大(他達切)也。凡大之屬皆从大。    ||    ENGLISH DRAFT [UNCERTAIN]: Heaven is great, earth is great, and people too are great; hence 大 depicts a person. The source records ancient-script 大 with the fanqie reading 他達. All characters in this group are formed from 大.
+
+KEY: shuowen:6567    ||    CHINESE: 奄 — 覆也。大有餘也。又，欠也。从大从申。申，展也。    ||    ENGLISH DRAFT [UNCERTAIN]: To cover; having a great surplus. Also, lacking. Formed from 大 and 申. 申 means to extend.
+
+KEY: shuowen:6569    ||    CHINESE: 𡘍 — 奢𡘍也。从大亘聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The extravagance expressed by 奢𡘍. Formed from 大, with 亘 indicating the sound.
+
+KEY: shuowen:6571    ||    CHINESE: 奯 — 空大也。从大歲聲。讀若《詩》“施罟泧泧”。    ||    ENGLISH DRAFT [UNCERTAIN]: Vast and empty. Formed from 大, with 歲 indicating the sound. Read like 泧 in the Odes' 'Set the nets across the flow.'
+
+KEY: shuowen:6572    ||    CHINESE: 𢧜 — 大也。从大𢧄聲。讀若《詩》“𢧜𢧜大猷”。    ||    ENGLISH DRAFT [UNCERTAIN]: Great. Formed from 大, with 𢧄 indicating the sound. Read like 𢧜 in the Odes' 'Great and ample are the plans.'
+
+KEY: shuowen:6577    ||    CHINESE: 𡗼 — 瞋大也。从大此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Eyes wide with anger, according to the recorded 瞋大 gloss. Formed from 大, with 此 indicating the sound.
+
+KEY: shuowen:6583    ||    CHINESE: 㚒 — 盜竊褱物也。从亦，有所持。俗謂蔽人俾夾是也。弘農陝字从此。    ||    ENGLISH DRAFT [UNCERTAIN]: To steal and conceal something against the body. Formed from 亦 holding something. The popular expression for concealing it from others by tucking it at one's side refers to this. 陝 in 弘農 is formed from this.
+
+KEY: shuowen:6601    ||    CHINESE: 尬 — 𡰉𡯗也。从尣介聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Being 𡰉𡯗, awkward or impeded. Formed from 尣, with 介 indicating the sound.
+
+KEY: shuowen:6605    ||    CHINESE: 㝼 — 股㝼也。从尣于聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A bent or impaired thigh. Formed from 尣, with 于 indicating the sound.
+
+KEY: shuowen:6608    ||    CHINESE: 㚃 — 壹㚃也。从凶从壺。不得泄，凶也。《易》曰：“天地壹㚃。”    ||    ENGLISH DRAFT [UNCERTAIN]: The mingling expressed by 壹㚃. Formed from 凶 and 壺: being unable to escape is 凶. The Changes says: 'Heaven and earth mingle as one.'
+
+KEY: shuowen:6611    ||    CHINESE: 㚔 — 所以驚人也。从大从𢆉。一曰大聲也。凡㚔之屬皆从㚔。一曰讀若瓠。一曰俗語以盜不止爲㚔，㚔讀若籋。    ||    ENGLISH DRAFT [UNCERTAIN]: Something used to startle people. Formed from 大 and 𢆉. Another explanation: a loud sound. All characters in this group are formed from 㚔. Another reading is like 瓠. Another explanation: in popular speech, persistent thieving is called 㚔, read like 籋.
+
+KEY: shuowen:6624    ||    CHINESE: 曓 — 疾有所趣也。从日出𠦍廾之。    ||    ENGLISH DRAFT [UNCERTAIN]: To hurry toward something. Formed from 日, 出, and 𠦍, with 廾 supporting it.
+
+KEY: shuowen:6627    ||    CHINESE: 皋 — 气皐白之進也。从𠦍从白。《禮》：祝曰臯，登謌曰奏。故臯奏皆从夲。《周禮》曰：“詔來鼓皐舞。”皐，告之也。    ||    ENGLISH DRAFT [UNCERTAIN]: The advance of white vapor. Formed from 𠦍 and 白. In ritual, the invoker says 臯; ascending to sing is called 奏. Thus both 臯 and 奏 are formed from 夲. The Rites of Zhou says: 'Call them to come, drum, and perform the 皐 dance.' 皐 means to announce to them.
+
+KEY: shuowen:6631    ||    CHINESE: 昦 — 春爲昦天，元气昦昦。从日、夰，夰亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: In spring, heaven is called 昦天; the primal vapor is expansive. Formed from 日 and 夰; 夰 also indicates the sound.
+
+KEY: shuowen:6638    ||    CHINESE: 耎 — 稍前大也。从亣而聲。讀若畏偄。    ||    ENGLISH DRAFT [UNCERTAIN]: Somewhat larger toward the front. Formed from 亣, with 而 indicating the sound. Read like 偄 in 畏偄.
+
+KEY: shuowen:6640    ||    CHINESE: 𡚤 — 壯大也。从三大三目。二目爲𥆞，三目爲𡚤，益大也。一曰迫也。讀若《易》虙羲氏。《詩》曰：“不醉而怒謂之𡚤。”    ||    ENGLISH DRAFT [UNCERTAIN]: Robust and large. Formed from three 大 and three 目. Two eyes make 𥆞; three make 𡚤, indicating still greater size. Another explanation: to press. Read like 虙 in the Changes' 虙羲氏. The Odes says: 'Anger without drunkenness is called 𡚤.'
+
+KEY: shuowen:6664    ||    CHINESE: 𤾕 — 廢，一偏下也。从竝白聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Collapsed, with one side lower. Formed from 竝, with 白 indicating the sound.
+
+KEY: shuowen:6668    ||    CHINESE: 思 — 容也。从心囟聲。凡思之屬皆从思。    ||    ENGLISH DRAFT [UNCERTAIN]: To contain or accommodate. Formed from 心, with 囟 indicating the sound. All characters in the 思 group are formed from 思.
+
+KEY: shuowen:6718    ||    CHINESE: 憖 — 問也。謹敬也。从心猌聲。一曰說也。一曰甘也。《春秋傳》曰：“昊天不憖。”又曰：“兩君之士皆未憖。”    ||    ENGLISH DRAFT [UNCERTAIN]: To ask; to be cautious and respectful. Formed from 心, with 猌 indicating the sound. Alternatively, pleased; alternatively, willing. The Spring and Autumn Commentary says: 'Vast Heaven does not show kindness'; also: 'The officers of both rulers were not yet willing.'
+
+KEY: shuowen:6720    ||    CHINESE: 悈 — 飾也。从心戒聲。《司馬法》曰：“有虞氏悈於中國。”    ||    ENGLISH DRAFT [UNCERTAIN]: To adorn. Formed from 心, with 戒 indicating the sound. The Methods of the Sima says: 'The lord of Yu ordered and adorned the central states.'
+
+KEY: shuowen:6736    ||    CHINESE: 憀 — 憀然也。从心翏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Being 憀然, apparently dispirited. Formed from 心, with 翏 indicating the sound.
+
+KEY: shuowen:6749    ||    CHINESE: 𥲅 — 𥲅箸也。从心钇聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To deliberate, as in 𥲅箸. Formed from 心, with 钇 indicating the sound.
+
+KEY: shuowen:6750    ||    CHINESE: 怞 — 朗也。从心由聲。《詩》曰：“憂心且怞。”    ||    ENGLISH DRAFT [UNCERTAIN]: Clear or bright. Formed from 心, with 由 indicating the sound. The Odes says: 'My troubled heart is also 怞.'
+
+KEY: shuowen:6752    ||    CHINESE: 忞 — 彊也。从心文聲。《周書》曰：“在受德忞。”讀若旻。    ||    ENGLISH DRAFT [UNCERTAIN]: Strong. Formed from 心, with 文 indicating the sound. The Book of Zhou says: 'In Shou's virtue he exerted himself.' Read like 旻.
+
+KEY: shuowen:6767    ||    CHINESE: 懽 — 喜𠭥也。从心雚聲。《爾雅》曰：“懽懽愮愮，憂無告也。”    ||    ENGLISH DRAFT [UNCERTAIN]: Joyful delight. Formed from 心, with 雚 indicating the sound. The Erya says: '懽懽愮愮 means being distressed with no one to tell.'
+
+KEY: shuowen:6773    ||    CHINESE: 㦌 — 精戇也。从心毳聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Single-minded and blunt, perhaps. Formed from 心, with 毳 indicating the sound.
+
+KEY: shuowen:6774    ||    CHINESE: 𢘁 — 疾利口也。从心从冊。《詩》曰：“相時𢘁民。”    ||    ENGLISH DRAFT [UNCERTAIN]: Quick and glib of tongue. From 心 and 冊. The Odes says: 'Observe these 𢘁 people.'
+
+KEY: shuowen:6783    ||    CHINESE: 恁 — 下齎也。从心任聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To provide supplies to those below, perhaps. Formed from 心, with 任 indicating the sound.
+
+KEY: shuowen:6787    ||    CHINESE: 悆 — 忘也。嘾也。从心余聲。《周書》曰：“有疾不悆。”悆，喜也。    ||    ENGLISH DRAFT [UNCERTAIN]: To forget; to crave. Formed from 心, with 余 indicating the sound. The Book of Zhou says: 'He was ill and not 悆.' 悆 means happy.
+
+KEY: shuowen:6789    ||    CHINESE: 憪 — 愉也。从心閒聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Relaxed. Formed from 心, with 閒 indicating the sound.
+
+KEY: shuowen:6790    ||    CHINESE: 愉 — 薄也。从心俞聲。《論語》曰：“私覿，愉愉如也。”    ||    ENGLISH DRAFT [UNCERTAIN]: Thin or slight. Formed from 心, with 俞 indicating the sound. The Analects says: 'At the private audience he was relaxed and agreeable.'
+
+KEY: shuowen:6919    ||    CHINESE: 惎 — 毒也。从心其聲。《周書》曰：“來就惎惎。”    ||    ENGLISH DRAFT [UNCERTAIN]: Malice or malicious intent. Formed from 心, with 其 indicating the sound. The Documents quotation uses a repetitive expression involving 惎, but the wording is damaged. [Duan notes the received quotation differs substantially from its parallel in the Qin Oath.]
+
+KEY: shuowen:6932    ||    CHINESE: 憬 — 覺寤也。从心景聲。《詩》曰：“憬彼淮夷。”    ||    ENGLISH DRAFT [UNCERTAIN]: To awaken or come to understanding. Formed from 心, with 景 indicating the sound. The Odes quotation involves the Huai peoples, but the transmitted poetic graph differs from the Mao recension. [Duan suggests this entry may be a later addition.]
+
+KEY: shuowen:6934    ||    CHINESE: 悱 — 口悱悱也。从心非聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The mouth struggling to express something. Formed from 心, with 非 indicating the sound.
+
+KEY: shuowen:7045    ||    CHINESE: 沭 — 水。出青州浸。从水术聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The Shu River, recorded as a major watercourse of Qingzhou. Duan reconstructs an omitted source description locating it in the old Dongguan region, flowing south toward the Si River. Formed from 水, with 术 indicating the sound. [The received source location is truncated.]
+
+KEY: shuowen:7073    ||    CHINESE: 湳 — 西河美稷𠈃東北水。从水南聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The old Nan River, a stream recorded as rising near Meiji in Xihe Commandery, northeast of a fortified settlement, and flowing toward the Yellow River. Formed from 水, with 南 indicating the sound. [The exact modern watercourse remains unidentified.]
+
+KEY: shuowen:7093    ||    CHINESE: 洍 — 水也。从水𦣞聲。《詩》曰：“江有洍。”    ||    ENGLISH DRAFT [UNCERTAIN]: The name of a watercourse. Formed from 水, with 𦣞 indicating the sound. The Odes quotation uses 洍 as a textual variant of 汜 in “The river has a tributary channel.” [Duan considers the cited form a loan, not a definition of the river’s location.]
+
+KEY: shuowen:7120    ||    CHINESE: 𤃴 — 礙流也。从水薉聲。《詩》云：“施罟𤃴𤃴。”    ||    ENGLISH DRAFT [UNCERTAIN]: The turbulent, splashing movement of water where nets hinder but do not stop its flow. Formed from 水, with 薉 indicating the sound. The Odes describes fishing nets set amid rushing water. [Duan argues the true headword and poem variant are 濊 rather than the transmitted 𤃴.]
+
+KEY: shuowen:7156    ||    CHINESE: 湁 — 湁湒，𩰾也。从水拾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 湁湒 means boiling or bubbling, as in 𩰾. Formed from 水, with 拾 indicating the sound.
+
+KEY: shuowen:7167    ||    CHINESE: 潣 — 水流浼浼皃。从水閔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of water flowing broadly and gently. Formed from 水, with 閔 indicating the sound.
+
+KEY: shuowen:7177    ||    CHINESE: 潯 — 㫄深也。从水尋聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Depth beside the bank. Formed from 水, with 尋 indicating the sound.
+
+KEY: shuowen:7190    ||    CHINESE: 沴 — 水不利也。从水㐱聲。《五行傳》曰：“若其沴作。”    ||    ENGLISH DRAFT [UNCERTAIN]: Water failing to flow properly. Formed from 水, with 㐱 indicating the sound. The Commentary on the Five Phases says: 'When its harmful influence arises.'
+
+KEY: shuowen:7206    ||    CHINESE: 氿 — 水厓枯土也。从水九聲。《爾雅》曰：“水醮曰氿。”    ||    ENGLISH DRAFT [UNCERTAIN]: Dried earth at a riverbank. Formed from 水, with 九 indicating the sound. The Erya says: 'Land dried by receding water is called 氿.'
+
+KEY: shuowen:7215    ||    CHINESE: 濘 — 滎濘也。从水寕聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 滎濘, apparently shallow, lingering water. Formed from 水, with 寕 indicating the sound.
+
+KEY: shuowen:7233    ||    CHINESE: 𤅩 — 水濡而乾也。从水𪄿聲。《詩》曰：“𤅩其乾矣。”    ||    ENGLISH DRAFT [UNCERTAIN]: Wetted with water and then dried. Formed from 水, with 𪄿 indicating the sound. The Odes says: 'It has dried.'
+
+KEY: shuowen:7240    ||    CHINESE: 㳻 — 所以𢹬水也。从水昔聲。《漢律》曰：“及其門首洒㳻。”    ||    ENGLISH DRAFT [UNCERTAIN]: Something used to block water. Formed from 水, with 昔 indicating the sound. The Han Statutes says: 'And at the entrance to its gate, 洒㳻.' The quoted technical wording is unclear.
+
+KEY: shuowen:7251    ||    CHINESE: 潛 — 涉水也。一曰藏也。一曰漢水爲潛。从水朁聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To pass through water. Alternatively, to hide; alternatively, the 漢 water is called 潛. Formed from 水, with 朁 indicating the sound.
+
+KEY: shuowen:7268    ||    CHINESE: 瀑 — 疾雨也。一曰沫也。一曰瀑，資也。从水暴聲。《詩》曰：“終風且瀑。”    ||    ENGLISH DRAFT [UNCERTAIN]: Driving rain. Alternatively, foam; alternatively, 瀑 means to supply. Formed from 水, with 暴 indicating the sound. The Odes says: 'Wind all day and driving rain.'
+
+KEY: shuowen:7271    ||    CHINESE: 澬 — 久雨涔資也。一曰水名。从水資聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Long rain accumulating water. Alternatively, a river's name. Formed from 水, with 資 indicating the sound.
+
+KEY: shuowen:7281    ||    CHINESE: 沈 — 陵上滈水也。从水冘聲。一曰濁黕也。    ||    ENGLISH DRAFT [UNCERTAIN]: Water from prolonged rain on a hill, apparently. Formed from 水, with 冘 indicating the sound. Alternatively, turbid and dark.
+
+KEY: shuowen:7284    ||    CHINESE: 𣹢 — 水澤多也。从水圅聲。《詩》曰：“僭始旣𣹢。”    ||    ENGLISH DRAFT [UNCERTAIN]: Abundant water or moisture. Formed from 水, with 圅 indicating the sound. The Odes says: 'Falsehood at its beginning has already spread abundantly.'
+
+KEY: shuowen:7296    ||    CHINESE: 溓 — 薄水也。一曰中絕小水。从水兼聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Shallow water. Alternatively, a small stream interrupted in the middle. Formed from 水, with 兼 indicating the sound.
+
+KEY: shuowen:7311    ||    CHINESE: 浼 — 汙也。从水免聲。《詩》曰：“河水浼浼。”《孟子》曰：“汝安能浼我？”    ||    ENGLISH DRAFT [UNCERTAIN]: To soil. Formed from 水, with 免 indicating the sound. The Odes says: 'The 河's waters flow broadly.' Mencius says: “How could you soil me?”
+
+KEY: shuowen:7317    ||    CHINESE: 沑 — 水吏也。又，溫也。从水丑聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The source's phrase 水吏 is unclear, perhaps water thickening; also, warm. Formed from 水, with 丑 indicating the sound.
+
+KEY: shuowen:7318    ||    CHINESE: 瀵 — 水浸也。从水糞聲。《爾雅》曰：“瀵，大出尾下。”    ||    ENGLISH DRAFT [UNCERTAIN]: Water seeping through. Formed from 水, with 糞 indicating the sound. The Erya says: 'A 瀵 emerges greatly beneath the tail,' an obscure description of a spring.
+
+KEY: shuowen:7321    ||    CHINESE: 瀎 — 拭滅皃。从水蔑聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of wiping away. Formed from 水, with 蔑 indicating the sound.
+
+KEY: shuowen:7322    ||    CHINESE: 泧 — 瀎泧也。从水戉聲。讀若椒樧之樧。    ||    ENGLISH DRAFT [UNCERTAIN]: The wiping expressed by 瀎泧. Formed from 水, with 戉 indicating the sound. Read like 樧 in 椒樧.
+
+KEY: shuowen:7332    ||    CHINESE: 㶕 — 浙也。从水簡聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To rinse or drain. Formed from 水, with 簡 indicating the sound.
+
+KEY: shuowen:7343    ||    CHINESE: 澱 — 滓滋也。从水殿聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Sediment or dregs. Formed from 水, with 殿 indicating the sound.
+
+KEY: shuowen:7352    ||    CHINESE: 𤖅 — 酢𤖅也。从水，將省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A sour sauce, apparently, as in 酢𤖅. Formed from 水, with abbreviated 將 indicating the sound.
+
+KEY: shuowen:7367    ||    CHINESE: 𤀤 — 飲歃也。一曰吮也。从水算聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To sip blood in an oath. Alternatively, to suck. Formed from 水, with 算 indicating the sound.
+
+KEY: shuowen:7379    ||    CHINESE: 淳 — 渌也。从水𦎫聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To filter, as in 渌. Formed from 水, with 𦎫 indicating the sound.
+
+KEY: shuowen:7392    ||    CHINESE: 灒 — 汙灑也。一曰水中人。从水贊聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To splash and soil. Alternatively, a person in water. Formed from 水, with 贊 indicating the sound.
+
+KEY: shuowen:7400    ||    CHINESE: 湅 — 㶕也。从水柬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To rinse or drain, as in 㶕. Formed from 水, with 柬 indicating the sound.
+
+KEY: shuowen:7405    ||    CHINESE: 漕 — 水轉穀也。一曰人之所乘及船也。从水曹聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To transport grain by water. Alternatively, what people ride, including boats. Formed from 水, with 曹 indicating the sound.
+
+KEY: shuowen:7431    ||    CHINESE: 浹 — 洽也。从也。从水夾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To moisten thoroughly. The source adds the incomplete phrase 'formed from.' Formed from 水, with 夾 indicating the sound.
+
+KEY: shuowen:7438    ||    CHINESE: 瀕 — 水厓。人所賓附，頻蹙不前而止。从頁从涉。凡頻之屬皆从頻。    ||    ENGLISH DRAFT [UNCERTAIN]: A riverbank, where people draw close, frowning and shrinking back, stopping without advancing. Formed from 頁 and 涉. All characters in the 頻 group are formed from 頻.
+
+KEY: shuowen:7443    ||    CHINESE: 川 — 貫穿通流水也。《虞書》曰：“濬く巜，距川。”言深く巜之水會爲川也。凡川之屬皆从川。    ||    ENGLISH DRAFT [UNCERTAIN]: Water flowing through a continuous channel. The Book of Yu says: 'Deepen the く and 巜, leading them to the rivers.' This means deepening these waters so that they join to form rivers. All characters in this group are formed from 川.
+
+KEY: shuowen:7444    ||    CHINESE: 坙 — 水脈也。从川在一下。一，地也。壬省聲。一曰水冥坙也。    ||    ENGLISH DRAFT [UNCERTAIN]: An underground water vein. Formed from 川 beneath 一. 一 is the earth. Abbreviated 壬 indicates the sound. Alternatively, water moving unseen along its courses.
+
+KEY: shuowen:7445    ||    CHINESE: 巟 — 水廣也。从川亡聲。《易》曰：“包巟用馮河。”    ||    ENGLISH DRAFT [UNCERTAIN]: Broad waters. Formed from 川, with 亡 indicating the sound. The Changes says: 'Embrace the waste and use crossing the river on foot.'
+
+KEY: shuowen:7475    ||    CHINESE: 𠗲 — 仌出也。从仌朕聲。《詩》曰：“納于𠗲陰。”    ||    ENGLISH DRAFT [UNCERTAIN]: Ice brought out. Formed from 仌, with 朕 indicating the sound. The Odes says: 'Put it into the icehouse.'
+
+KEY: shuowen:7484    ||    CHINESE: 冹 — 一之日㓖冹。从仌犮聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 'In the first month, the wind is cold,' expressed by 㓖冹. Formed from 仌, with 犮 indicating the sound.
+
+KEY: shuowen:7494    ||    CHINESE: 䨮 — 凝雨，說物者。从雨彗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Congealed rain that delights things. Formed from 雨, with 彗 indicating the sound.
+
+KEY: shuowen:7495    ||    CHINESE: 霄 — 雨䨘爲霄。从雨肖聲。齊語也。    ||    ENGLISH DRAFT [UNCERTAIN]: Falling sleet is called 霄. Formed from 雨, with 肖 indicating the sound. This is Qi speech.
+
+KEY: shuowen:7524    ||    CHINESE: 霜 — 喪也。成物者。从雨相聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To destroy, while bringing things to completion. Formed from 雨, with 相 indicating the sound.
+
+KEY: shuowen:7545    ||    CHINESE: 鰨 — 虛鰨也。从魚𦐇聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The fish called 虛鰨. Formed from 魚, with 𦐇 indicating the sound.
+
+KEY: shuowen:7550    ||    CHINESE: 鮪 — 鮥也。《周禮》：“春獻王鮪。”从魚有聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The 鮥 fish. The Rites of Zhou says: 'In spring present the king-fish 鮪.' Formed from 魚, with 有 indicating the sound.
+
+KEY: shuowen:7553    ||    CHINESE: 鮥 — 叔鮪也。从魚各聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A younger or smaller 鮪. Formed from 魚, with 各 indicating the sound.
+
+KEY: shuowen:7580    ||    CHINESE: 鱨 — 揚也。从魚嘗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The 揚 fish. Formed from 魚, with 嘗 indicating the sound.
+
+KEY: shuowen:7582    ||    CHINESE: 鯢 — 剌魚也。从魚兒聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A fish with spines. Formed from 魚, with 兒 indicating the sound.
+
+KEY: shuowen:7616    ||    CHINESE: 䲔 — 海大魚也。从魚畺聲。《春秋傳》曰：“取其䲔鯢。”    ||    ENGLISH DRAFT [UNCERTAIN]: A great sea fish. Formed from 魚, with 畺 indicating the sound. The Spring and Autumn Commentary says: 'Take its 䲔鯢, the great ones.'
+
+KEY: shuowen:7620    ||    CHINESE: 鱢 — 鮏臭也。从魚喿聲。《周禮》曰：“膳膏鱢。”    ||    ENGLISH DRAFT [UNCERTAIN]: A rank, fishy smell. Formed from 魚, with 喿 indicating the sound. The Rites of Zhou says: 'For the meal, use the rank-smelling fat.'
+
+KEY: shuowen:7621    ||    CHINESE: 鮨 — 魚䏽醬也。出蜀中。从魚旨聲。一曰鮪魚名。    ||    ENGLISH DRAFT [UNCERTAIN]: A minced-fish sauce, produced in Shu. Formed from 魚, with 旨 indicating the sound. Alternatively, the name of a 鮪 fish.
+
+KEY: shuowen:7628    ||    CHINESE: 鯦 — 當互也。从魚咎聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 當互. Formed from 魚, with 咎 indicating the sound.
+
+KEY: shuowen:7631    ||    CHINESE: 鮚 — 蚌也。从魚吉聲。漢律：會稽郡獻鮚𤖕。    ||    ENGLISH DRAFT [UNCERTAIN]: A clam. Formed from 魚, with 吉 indicating the sound. The Han Statutes stipulate that 會稽 commandery present 鮚𤖕, apparently a clam sauce.
+
+KEY: shuowen:7635    ||    CHINESE: 鯛 — 骨耑脃也。从魚周聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The ends of bones being brittle, perhaps. Formed from 魚, with 周 indicating the sound.
+
+KEY: shuowen:7636    ||    CHINESE: 𩷹 — 烝然𩷹𩷹。从魚卓聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The teeming appearance expressed by 烝然𩷹𩷹. Formed from 魚, with 卓 indicating the sound.
+
+KEY: shuowen:7637    ||    CHINESE: 鮁 — 鱣鮪鮁鮁。从魚犮聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The lively movement of 鱣 and 鮪 fish, expressed by 鮁鮁. Formed from 魚, with 犮 indicating the sound.
+
+KEY: shuowen:7652    ||    CHINESE: 䶬 — 龍耆𦟝上䶬䶬。从龍幵聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The projecting ridges on a dragon's back, apparently. Formed from 龍, with 幵 indicating the sound.
+
+KEY: shuowen:7678    ||    CHINESE: 鹹 — 銜也。北方味也。从鹵咸聲。    ||    ENGLISH DRAFT [UNCERTAIN]: That which is held in the mouth; the flavor associated with the north. Formed from 鹵, with 咸 indicating the sound.
+
+KEY: shuowen:7692    ||    CHINESE: 門 — 聞也。从二戶。象形。凡門之屬皆从門。    ||    ENGLISH DRAFT [UNCERTAIN]: To hear, by a sound gloss. Formed from two 戶; a pictograph. All characters in this group are formed from 門.
+
+KEY: shuowen:7705    ||    CHINESE: 闍 — 闉闍也。从門者聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The gate structure expressed by 闉闍. Formed from 門, with 者 indicating the sound.
+
+KEY: shuowen:7725    ||    CHINESE: 𨷱 — 開閉門利也。从門繇聲。一曰縷十紘也。    ||    ENGLISH DRAFT [UNCERTAIN]: A gate opening and closing smoothly. Formed from 門, with 繇 indicating the sound. Alternatively, ten strands of thread, expressed by 縷十紘; the technical wording is uncertain.
+
+KEY: shuowen:7734    ||    CHINESE: 𨷲 — 關下牡也。从門龠聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The male peg below a gate-bar. Formed from 門, with 龠 indicating the sound.
+
+KEY: shuowen:7741    ||    CHINESE: 𨳌 — 登也。从門、𠄟。𠄟，古文下字。讀若軍敶之敶。    ||    ENGLISH DRAFT [UNCERTAIN]: To ascend. Formed from 門 and 𠄟. 𠄟 is ancient-script 下. Read like 敶 in 軍敶, 'army formation.'
+
+KEY: shuowen:7752    ||    CHINESE: 閥 — 閥閱，自序也。从門伐聲。義當通用伐。    ||    ENGLISH DRAFT [UNCERTAIN]: 閥閱 means to recount one's own merits. Formed from 門, with 伐 indicating the sound. In this sense 伐 should be used interchangeably.
+
+KEY: shuowen:7778    ||    CHINESE: 𦘍 — 吳楚之外，凡無耳者謂之𦘍。言若斷耳爲盟。从耳闋聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Beyond Wu and Chu, anyone without ears is called 𦘍, spoken as though the ears had been cut off for a covenant. Formed from 耳, with 闋 indicating the sound.
+
+KEY: shuowen:7782    ||    CHINESE: 𦗕 — 乘輿金馬耳也。从耳麻聲。讀若渳水。一曰若《月令》靡草之靡。    ||    ENGLISH DRAFT [UNCERTAIN]: The ears of the golden horse on the imperial carriage, apparently. Formed from 耳, with 麻 indicating the sound. Read like 渳 in 渳水; alternatively, like 靡 in the Monthly Ordinances' 靡草.
+
+KEY: shuowen:7783    ||    CHINESE: 耹 — 《國語》曰：“回禄信於耹遂。”闕。    ||    ENGLISH DRAFT [UNCERTAIN]: The Discourses of the States says: 'Huilu lodged at 耹遂.' The explanation is lacking.
+
+KEY: shuowen:7787    ||    CHINESE: 𦣞 — 𩔞也。象形。凡𦣞之屬皆从𦣞。    ||    ENGLISH DRAFT [UNCERTAIN]: The jaw or chin, as in 𩔞. A pictograph. All characters in this group are formed from 𦣞.
+
+KEY: shuowen:7796    ||    CHINESE: 揱 — 人臂皃。从手削聲。《周禮》曰：“輻欲其揱。”    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance of a person's arm. Formed from 手, with 削 indicating the sound. The Rites of Zhou says: 'The spokes should have that tapering shape.'
+
+KEY: shuowen:7800    ||    CHINESE: 揖 — 攘也。从手咠聲。一曰手箸胷曰揖。    ||    ENGLISH DRAFT [UNCERTAIN]: To push aside or extend. Formed from 手, with 咠 indicating the sound. Alternatively, placing the hands against the chest is called 揖.
+
+KEY: shuowen:7807    ||    CHINESE: 㧬 — 𢹬也。从手𢀜聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To push or block. Formed from 手, with 𢀜 indicating the sound.
+
+KEY: shuowen:7821    ||    CHINESE: 揲 — 閱持也。从手枼聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To count while holding. Formed from 手, with 枼 indicating the sound.
+
+KEY: shuowen:7826    ||    CHINESE: 搏 — 索持也。一曰至也。从手尃聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To seek and seize. Alternatively, to reach. Formed from 手, with 尃 indicating the sound.
+
+KEY: shuowen:7831    ||    CHINESE: 挾 — 俾持也。从手夾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To hold at one's side, apparently. Formed from 手, with 夾 indicating the sound.
+
+KEY: shuowen:7863    ||    CHINESE: 揃 — 搣也。从手前聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To pluck or tear away. Formed from 手, with 前 indicating the sound.
+
+KEY: shuowen:7864    ||    CHINESE: 搣 — 㧗也。从手烕聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To seize or pluck, as in 㧗. Formed from 手, with 烕 indicating the sound.
+
+KEY: shuowen:7865    ||    CHINESE: 㧗 — 捽也。从手此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To seize, as in 捽. Formed from 手, with 此 indicating the sound.
+
+KEY: shuowen:7894    ||    CHINESE: 撓 — 擾也。从手堯聲。一曰捄也。    ||    ENGLISH DRAFT [UNCERTAIN]: To disturb. Formed from 手, with 堯 indicating the sound. Alternatively, to gather or rescue, as in 捄.
+
+KEY: shuowen:7896    ||    CHINESE: 挶 — 𢧢持也。从手局聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To brace and hold, as in 𢧢持. Formed from 手, with 局 indicating the sound.
+
+KEY: shuowen:7897    ||    CHINESE: 据 — 𢧢挶也。从手居聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To brace and support, as in 𢧢挶. Formed from 手, with 居 indicating the sound.
+
+KEY: shuowen:7899    ||    CHINESE: 摘 — 拓果樹實也。从手啻聲。一曰指近之也。    ||    ENGLISH DRAFT [UNCERTAIN]: To pick fruit from a tree. Formed from 手, with 啻 indicating the sound. Alternatively, to point and bring it close.
+
+KEY: shuowen:7908    ||    CHINESE: 𤸪 — 引縱曰𤸪。从手，瘛省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Pulling and releasing is called 𤸪. Formed from 手, with abbreviated 瘛 indicating the sound.
+
+KEY: shuowen:7909    ||    CHINESE: 㧘 — 積也。《詩》曰：“助我舉㧘。”搣頰㫄也。从手此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To accumulate. The Odes says: 'Help me raise and gather it.' Also, to pluck at the side of the cheek. Formed from 手, with 此 indicating the sound.
+
+KEY: shuowen:7915    ||    CHINESE: 掔 — 固也。从手臤聲。讀若《詩》“赤舃掔掔”。    ||    ENGLISH DRAFT [UNCERTAIN]: Firm. Formed from 手, with 臤 indicating the sound. Read like 掔 in the Odes' 'Red shoes, sturdy and fine.'
+
+KEY: shuowen:7922    ||    CHINESE: 抍 — 上舉也。从手升聲。《易》曰：“抍馬，壯，吉。”    ||    ENGLISH DRAFT [UNCERTAIN]: To lift upward. Formed from 手, with 升 indicating the sound. The Changes says: 'Raise the horse; strong, auspicious.' The quoted wording is uncertain.
+
+KEY: shuowen:7931    ||    CHINESE: 搫 — 搫擭，不正也。从手般聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 搫擭 means not straight or regular. Formed from 手, with 般 indicating the sound.
+
+KEY: shuowen:7932    ||    CHINESE: 擭 — 搫擭也。一曰布擭也，一曰握也。从手蒦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The irregular movement expressed by 搫擭. Alternatively, to spread out and seize; alternatively, to grasp. Formed from 手, with 蒦 indicating the sound.
+
+KEY: shuowen:7935    ||    CHINESE: 揆 — 葵也。从手癸聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To measure or estimate, glossed by 葵. Formed from 手, with 癸 indicating the sound.
+
+KEY: shuowen:7952    ||    CHINESE: 摍 — 蹴引也。从手宿聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To press or kick and pull, perhaps. Formed from 手, with 宿 indicating the sound.
+
+KEY: shuowen:7962    ||    CHINESE: 㩃 — 拔取也。南楚語。从手寒聲。《楚詞》曰：“朝㩃批之木蘭。”    ||    ENGLISH DRAFT [UNCERTAIN]: To pluck out and take; southern Chu speech. Formed from 手, with 寒 indicating the sound. The Songs of Chu says: 'In the morning, pluck the magnolia of 批,' apparently; the quotation is obscure.
+
+KEY: shuowen:7979    ||    CHINESE: 抲 — 抲撝也。从手可聲。《周書》曰：“盡執，抲。”    ||    ENGLISH DRAFT [UNCERTAIN]: The action expressed by 抲撝, apparently directing with the hand. Formed from 手, with 可 indicating the sound. The Book of Zhou says: 'Seize them all; 抲.' The final command is uncertain.
+
+KEY: shuowen:7983    ||    CHINESE: 扐 — 《易》筮，再扐而後卦。从手力聲。    ||    ENGLISH DRAFT [UNCERTAIN]: In divination with the Changes, yarrow stalks are placed between the fingers twice before a hexagram is formed. Formed from 手, with 力 indicating the sound.
+
+KEY: shuowen:7990    ||    CHINESE: 捄 — 盛土於梩中也。一曰擾也。《詩》曰：“捄之陾陾。”从手求聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To fill a 梩 basket with earth. Alternatively, to disturb. The Odes says: 'They filled it in multitudes.' Formed from 手, with 求 indicating the sound.
+
+KEY: shuowen:7996    ||    CHINESE: 揟 — 取水沮也。从手胥聲。武威有揟次縣。    ||    ENGLISH DRAFT [UNCERTAIN]: To take water that is turbid, perhaps. Formed from 手, with 胥 indicating the sound. There is a 揟次 county in 武威.
+
+KEY: shuowen:8005    ||    CHINESE: 抨 — 撣也。从手平聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To beat or flick. Formed from 手, with 平 indicating the sound.
+
+KEY: shuowen:8020    ||    CHINESE: 摬 — 中擊也。从手竟聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To strike the middle or strike home. Formed from 手, with 竟 indicating the sound.
+
+KEY: shuowen:8023    ||    CHINESE: 抌 — 深擊也。从手冘聲。讀若告言不正曰抌。    ||    ENGLISH DRAFT [UNCERTAIN]: To strike deeply. Formed from 手, with 冘 indicating the sound. Read like 抌, the term for reporting words incorrectly.
+
+KEY: shuowen:8031    ||    CHINESE: 挂 — 畫也。从手圭聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To mark or delineate. Formed from 手, with 圭 indicating the sound.
+
+KEY: shuowen:8033    ||    CHINESE: 捈 — 臥引也。从手余聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To pull horizontally while lying down. Formed from 手, with 余 indicating the sound.
+
+KEY: shuowen:8050    ||    CHINESE: 掍 — 同也。从手昆聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The same; to unite. Formed from 手, with 昆 indicating the sound.
+
+KEY: shuowen:8051    ||    CHINESE: 𢯱 — 眾意也。一曰求也。从手叜聲。《詩》曰：“束矢其𢯱。”    ||    ENGLISH DRAFT [UNCERTAIN]: The idea of a multitude. Alternatively, to seek. Formed from 手, with 叜 indicating the sound. The Odes says: 'The bundled arrows are numerous.'
+
+KEY: shuowen:8073    ||    CHINESE: 姞 — 黃帝之後百䱔姓，后稷妃家也。从女吉聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A surname among the Yellow Emperor's descendants, in the obscure source wording 百䱔姓; the clan of Houji's wife. Formed from 女, with 吉 indicating the sound.
+
+KEY: shuowen:8075    ||    CHINESE: 姚 — 虞舜居姚虛，因以爲姓。从女兆聲。或爲姚，嬈也。《史篇》以爲：姚，易也。    ||    ENGLISH DRAFT [UNCERTAIN]: Shun of Yu lived at 姚虛 and accordingly took it as his surname. Formed from 女, with 兆 indicating the sound. Alternatively, 姚 means enchanting. The Scribe's Primer takes 姚 to mean easy or changeable.
+
+KEY: shuowen:8080    ||    CHINESE: 𡚽 — 人姓也。从女丑聲。《商書》曰：“無有作𡚽。”    ||    ENGLISH DRAFT [UNCERTAIN]: A person's surname. Formed from 女, with 丑 indicating the sound. The Book of Shang says: 'Do not engage in 𡚽,' apparently disgraceful conduct.
+
+KEY: shuowen:8096    ||    CHINESE: 𡢎 — 生子齊均也。从女从生，免聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Bearing children evenly or equally, apparently. Formed from 女 and 生, with 免 indicating the sound.
+
+KEY: shuowen:8097    ||    CHINESE: 嫛 — 婗也。从女殹聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 婗, apparently a newborn's state. Formed from 女, with 殹 indicating the sound.
+
+KEY: shuowen:8098    ||    CHINESE: 婗 — 嫛婗也。从女兒聲。一曰婦人惡皃。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 嫛婗, apparently a newborn's state. Formed from 女, with 兒 indicating the sound. Alternatively, a woman's ugly appearance.
+
+KEY: shuowen:8110    ||    CHINESE: 媦 — 楚人謂女弟曰媦。从女胃聲。《公羊傳》曰：“楚王之妻媦。”    ||    ENGLISH DRAFT [UNCERTAIN]: People of Chu call a younger sister 媦. Formed from 女, with 胃 indicating the sound. The Gongyang Commentary says: 'The king of Chu's 妻媦,' apparently his wife and younger sister.
+
+KEY: shuowen:8113    ||    CHINESE: 姨 — 妻之女弟同出爲姨。从女夷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A wife's younger sister, born of the same parents, is called 姨. Formed from 女, with 夷 indicating the sound.
+
+KEY: shuowen:8123    ||    CHINESE: 媊 — 甘氏《星經》曰：“太白上公，妻曰女媊。女媊居南斗，食厲，天下祭之。曰明星。”从女前聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Master Gan's Classic of the Stars says: 'Taibai is the high duke; his wife is called 女媊. 女媊 resides at the Southern Dipper, feeds on harmful spirits, and is sacrificed to throughout the world. She is called the Bright Star.' Formed from 女, with 前 indicating the sound.
+
+KEY: shuowen:8130    ||    CHINESE: 𡡓 — 女字也。《楚詞》曰：“女𡡓之嬋媛。”賈侍中說：楚人謂姊爲𡡓。从女須聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A woman's name. The Songs of Chu says: 'Nü Xu clung to me in concern.' Palace Attendant Jia explains: people of Chu call an elder sister 𡡓. Formed from 女, with 須 indicating the sound.
+
+KEY: shuowen:8142    ||    CHINESE: 始 — 女之初也。从女台聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A woman's beginning. Formed from 女, with 台 indicating the sound.
+
+KEY: shuowen:8144    ||    CHINESE: 嫵 — 𡡾也。从女無聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Graceful, as in 𡡾. Formed from 女, with 無 indicating the sound.
+
+KEY: shuowen:8146    ||    CHINESE: 㜅 — 𡡾也。从女畜聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Graceful, as in 𡡾. Formed from 女, with 畜 indicating the sound.
+
+KEY: shuowen:8156    ||    CHINESE: 媌 — 目裏好也。从女苗聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Beautiful within the eyes, apparently. Formed from 女, with 苗 indicating the sound.
+
+KEY: shuowen:8169    ||    CHINESE: 嫇 — 嬰嫇也。从女冥聲。一曰嫇嫇，小人皃。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 嬰嫇, apparently childlike. Formed from 女, with 冥 indicating the sound. Alternatively, 嫇嫇 is the appearance of a small person.
+
+KEY: shuowen:8171    ||    CHINESE: 嬛 — 材緊也。从女瞏聲。《春秋傳》曰：“嬛嬛在疚。”    ||    ENGLISH DRAFT [UNCERTAIN]: Quick and able. Formed from 女, with 瞏 indicating the sound. The Spring and Autumn Commentary says: 'All alone in sorrow.'
+
+KEY: shuowen:8174    ||    CHINESE: 婐 — 㛂也。一曰女侍曰婐。讀若騧，或若委。从女果聲。孟軻曰：“舜爲天子，二女婐。”    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 㛂, apparently pliant. Alternatively, a female attendant is called 婐. Read like 騧, or like 委. Formed from 女, with 果 indicating the sound. Meng Ke says: 'Shun was Son of Heaven, and the two women attended him.'
+
+KEY: shuowen:8175    ||    CHINESE: 㛂 — 婐㛂也。一曰弱也。从女𠂬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 婐㛂, apparently pliant. Alternatively, weak. Formed from 女, with 𠂬 indicating the sound.
+
+KEY: shuowen:8177    ||    CHINESE: 𡝫 — 妗也。从女沾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 妗, perhaps smiling. Formed from 女, with 沾 indicating the sound.
+
+KEY: shuowen:8178    ||    CHINESE: 妗 — 𡝫妗也。一曰善笑皃。从女今聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 𡝫妗, perhaps smiling. Alternatively, an appearance of smiling readily. Formed from 女, with 今 indicating the sound.
+
+KEY: shuowen:8187    ||    CHINESE: 嫢 — 媞也。从女規聲。讀若癸。秦晉謂細爲嫢。    ||    ENGLISH DRAFT [UNCERTAIN]: The quality expressed by 媞, apparently fine or delicate. Formed from 女, with 規 indicating the sound. Read like 癸. In Qin and Jin, fineness is called 嫢.
+
+KEY: shuowen:8189    ||    CHINESE: 婺 — 不繇也。从女敄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Not following. Formed from 女, with 敄 indicating the sound.
+
+KEY: shuowen:8199    ||    CHINESE: 𡟰 — 宴𡟰也。从女冤聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 宴𡟰, apparently composed and gentle. Formed from 女, with 冤 indicating the sound.
+
+KEY: shuowen:8200    ||    CHINESE: 媕 — 女有心媕媕也。从女弇聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A woman harboring thoughts in an uncertain or hesitant manner. Formed from 女, with 弇 indicating the sound.
+
+KEY: shuowen:8201    ||    CHINESE: 媣 — 諟也。从女染聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Correct or attentive, as in 諟. Formed from 女, with 染 indicating the sound.
+
+KEY: shuowen:8208    ||    CHINESE: 𡠗 — 至也。从女執聲。《周書》曰：“大命不𡠗。”讀若摯同。一曰《虞書》雉𡠗。    ||    ENGLISH DRAFT [UNCERTAIN]: To arrive. Formed from 女, with 執 indicating the sound. The Book of Zhou says: 'The great mandate does not arrive again.' Read like 摯. Another explanation cites 雉𡠗 in the Book of Yu.
+
+KEY: shuowen:8217    ||    CHINESE: 姕 — 婦人小物也。从女此聲。《詩》曰：“屢舞姕姕。”    ||    ENGLISH DRAFT [UNCERTAIN]: A woman's small or petty manner, apparently. Formed from 女, with 此 indicating the sound. The Odes says: 'Repeatedly dancing in a fluttering manner.'
+
+KEY: shuowen:8218    ||    CHINESE: 妓 — 婦人小物也。从女支聲。讀若跂行。    ||    ENGLISH DRAFT [UNCERTAIN]: A woman's small or petty manner, apparently. Formed from 女, with 支 indicating the sound. Read like 跂 in 跂行.
+
+KEY: shuowen:8234    ||    CHINESE: 𡝩 — 巧也。一曰女子笑皃。《詩》曰：“桃之𡝩𡝩。”从女芺聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Clever or charming. Alternatively, a woman's smiling appearance. The Odes says: 'The peach tree is young and flourishing.' Formed from 女, with 芺 indicating the sound.
+
+KEY: shuowen:8237    ||    CHINESE: 嫪 — 婟也。从女翏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Attached or reluctant to part, as in 婟. Formed from 女, with 翏 indicating the sound.
+
+KEY: shuowen:8238    ||    CHINESE: 婟 — 嫪也。从女固聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Attached or reluctant to part, as in 嫪. Formed from 女, with 固 indicating the sound.
+
+KEY: shuowen:8240    ||    CHINESE: 㜘 — 嬌也。从女虘聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Proud or pampered. Formed from 女, with 虘 indicating the sound.
+
+KEY: shuowen:8255    ||    CHINESE: 㜝 — 含怒也。一曰難知也。从女酓聲。《詩》曰：“碩大且㜝。”    ||    ENGLISH DRAFT [UNCERTAIN]: To harbor anger. Alternatively, hard to understand. Formed from 女, with 酓 indicating the sound. The Odes says: 'Large and imposing, and also 㜝.'
+
+KEY: shuowen:8257    ||    CHINESE: 姸 — 技也。一曰不省録事。一曰難侵也。一曰惠也。一曰安也。 从女幵聲。讀若研。    ||    ENGLISH DRAFT [UNCERTAIN]: Skillful. Alternatively, not examining or recording affairs; alternatively, hard to encroach upon; alternatively, kind or intelligent; alternatively, peaceful. Formed from 女, with 幵 indicating the sound. Read like 研.
+
+KEY: shuowen:8259    ||    CHINESE: 𨻤 — 不𡡾，前却𨻤𨻤也。从女陝聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Not graceful: the back-and-forth movement expressed by 𨻤𨻤. Formed from 女, with 陝 indicating the sound.
+
+KEY: shuowen:8260    ||    CHINESE: 妜 — 鼻目閒皃。讀若煙火炔炔。从女，決省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The appearance between nose and eyes. Read like 炔 in 煙火炔炔, 'smoke and fire blazing.' Formed from 女, with abbreviated 決 indicating the sound.
+
+KEY: shuowen:8266    ||    CHINESE: 㛗 — 訬疾也。从女𡋲聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Restless and quick. Formed from 女, with 𡋲 indicating the sound.
+
+KEY: shuowen:8282    ||    CHINESE: 娎 — 娎㛍也。从女折聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 娎㛍, apparently pleased or satisfied. Formed from 女, with 折 indicating the sound.
+
+KEY: shuowen:8283    ||    CHINESE: 㛍 — 得志㛍㛍。一曰㛍息也，一曰少气也。从女夾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The satisfied appearance of attaining one's wishes. Alternatively, 㛍息, breathing; alternatively, short of breath. Formed from 女, with 夾 indicating the sound.
+
+KEY: shuowen:8284    ||    CHINESE: 嬈 — 苛也。一曰擾、戲弄也，一曰嬥也。从女堯聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Harsh or troublesome. Alternatively, to disturb, play, or tease; alternatively, the quality expressed by 嬥. Formed from 女, with 堯 indicating the sound.
+
+KEY: shuowen:8286    ||    CHINESE: 姍 — 誹也。一曰翼便也。从女，𠛹省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To disparage. Alternatively, the phrase 翼便, perhaps deft movement. Formed from 女, with abbreviated 𠛹 indicating the sound.
+
+KEY: shuowen:8288    ||    CHINESE: 𡠜 — 𡠜母，都醜也。从女莫聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 𡠜母 means altogether ugly. Formed from 女, with 莫 indicating the sound.
+
+KEY: shuowen:8293    ||    CHINESE: 㛪 — 誣挐也。从女奄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To slander and embroil. Formed from 女, with 奄 indicating the sound.
+
+KEY: shuowen:8297    ||    CHINESE: 姘 — 除也。漢律：“齊人予妻婢姦曰姘。”从女幷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To remove. The Han Statutes says: 'People of Qi call illicit relations with a wife or maidservant 姘,' apparently; the wording 予妻婢 is uncertain. Formed from 女, with 幷 indicating the sound.
+
+KEY: shuowen:8299    ||    CHINESE: 姅 — 婦人汚也。从女半聲。漢律：“見姅變，不得侍祠。”    ||    ENGLISH DRAFT [UNCERTAIN]: A woman's discharge. Formed from 女, with 半 indicating the sound. The Han Statutes says: 'One who has experienced a 姅 change may not attend the sacrifice.'
+
+KEY: shuowen:8300    ||    CHINESE: 娗 — 女出病也。从女廷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A woman's childbirth ailment, apparently. Formed from 女, with 廷 indicating the sound.
+
+KEY: shuowen:8314    ||    CHINESE: 毋 — 止之也。从女，有奸之者。凡毋之屬皆从毋。    ||    ENGLISH DRAFT [UNCERTAIN]: To stop or forbid it. Formed from 女 with something violating her. All characters in this group are formed from 毋.
+
+KEY: shuowen:8318    ||    CHINESE: 丿 — 右戾也。象左引之形。凡丿之屬皆从丿。    ||    ENGLISH DRAFT [UNCERTAIN]: Turning to the right. It depicts drawing toward the left. All characters in this group are formed from 丿.
+
+KEY: shuowen:8320    ||    CHINESE: 弗 — 撟也。从丿从乀，从韋省。    ||    ENGLISH DRAFT [UNCERTAIN]: To straighten or correct. Formed from 丿, 乀, and abbreviated 韋.
+
+KEY: shuowen:8322    ||    CHINESE: 𠂆 — 抴也。明也。象抴引之形。凡𠂆之屬皆从𠂆。虒字从此。    ||    ENGLISH DRAFT [UNCERTAIN]: To draw or pull; bright or manifest. It depicts drawing and pulling. All characters in this group are formed from 𠂆. 虒 is formed from this.
+
+KEY: shuowen:8326    ||    CHINESE: 氏 — 巴蜀山名岸脅之㫄箸欲落𡐦者曰氏，氏崩，聞數百里。象形，乀聲。凡氏之屬皆从氏。楊雄賦：響若氏隤。    ||    ENGLISH DRAFT [UNCERTAIN]: In the mountains of Ba and Shu, something attached to the side of a cliff and about to fall is called 氏; when it collapses, it can be heard for hundreds of li. A pictograph, with 乀 indicating the sound. All characters in this group are formed from 氏. Yang Xiong's rhapsody says: 'Resounding like a 氏 collapsing.'
+
+KEY: shuowen:8353    ||    CHINESE: 㦰 — 絕也。一曰田器。从从持戈。古文讀若咸。讀若《詩》云“攕攕女手”。    ||    ENGLISH DRAFT [UNCERTAIN]: To cut off. Alternatively, an agricultural implement. Formed from 从 holding 戈. The ancient form is read like 咸. Read like 攕 in the Odes' 'Slender and beautiful are your hands.'
+
+KEY: shuowen:8360    ||    CHINESE: 我 — 施身自謂也。或說我，頃頓也。从戈从𠄒。𠄒，或說古垂字。一曰古殺字。凡我之屬皆从我。    ||    ENGLISH DRAFT [UNCERTAIN]: A self-designation applied to oneself. Some explain 我 as bowing or nodding. Formed from 戈 and 𠄒. Some say 𠄒 is ancient 垂; another explanation says it is ancient 殺. All characters in this group are formed from 我.
+
+KEY: shuowen:8363    ||    CHINESE: 𠄌 — 鉤識也。从反亅。讀若捕鳥罬。    ||    ENGLISH DRAFT [UNCERTAIN]: A hooked mark. Formed from reversed 亅. Read like 罬, a bird-catching device.
+
+KEY: shuowen:8364    ||    CHINESE: 珡 — 禁也。神農所作。洞越。練朱五弦，周加二弦。象形。凡珡之屬皆从珡。    ||    ENGLISH DRAFT [UNCERTAIN]: To restrain, by a sound gloss. Made by Shennong. Hollow, with openings; five red-dyed silk strings, to which Zhou added two. A pictograph. All characters in this group are formed from 珡.
+
+KEY: shuowen:8374    ||    CHINESE: 匃 — 气也。逯安說：亡人爲匄。    ||    ENGLISH DRAFT [UNCERTAIN]: Breath or vapor. Lu An says: a fugitive is called 匄.
+
+KEY: shuowen:8375    ||    CHINESE: 匸 — 衺徯，有所俠藏也。从乚，上有一覆之。凡匸之屬皆从匸。讀與傒同。    ||    ENGLISH DRAFT [UNCERTAIN]: Slanting and enclosing, with something held hidden inside. Formed from 乚 with 一 covering it above. All characters in this group are formed from 匸. Pronounced the same as 傒.
+
+KEY: shuowen:8376    ||    CHINESE: 區 — 踦區，藏匿也。从品在匸中。品，眾也。    ||    ENGLISH DRAFT [UNCERTAIN]: 踦區 means to conceal. Formed from 品 within 匸. 品 means a multitude.
+
+KEY: shuowen:8377    ||    CHINESE: 匿 — 亡也。从匸若聲。讀如羊騶箠。    ||    ENGLISH DRAFT [UNCERTAIN]: To disappear or hide. Formed from 匸, with 若 indicating the sound. Read like 箠 in 羊騶箠; the reference is obscure.
+
+KEY: shuowen:8381    ||    CHINESE: 匹 — 四丈也。从八、匸。八揲一匹，八亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Four zhang. Formed from 八 and 匸: eight folds make one 匹. 八 also indicates the sound.
+
+KEY: shuowen:8385    ||    CHINESE: 匡 — 飲器，筥也。从匚㞷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A drinking vessel; a basket. Formed from 匚, with 㞷 indicating the sound.
+
+KEY: shuowen:8407    ||    CHINESE: 𤳊 — 㠷也。从甾并聲。杜林以爲竹筥，楊雄以爲蒲器。讀若軿。    ||    ENGLISH DRAFT [UNCERTAIN]: A 㠷 basket. Formed from 甾, with 并 indicating the sound. Du Lin takes it as a bamboo basket; Yang Xiong as a rush vessel. Read like 軿.
+
+KEY: shuowen:8408    ||    CHINESE: 𧇄 — 𦉈也。从甾虍聲。讀若盧同。    ||    ENGLISH DRAFT [UNCERTAIN]: A 𦉈 vessel. Formed from 甾, with 虍 indicating the sound. Read like 盧.
+
+KEY: shuowen:8426    ||    CHINESE: 甓 — 瓴甓也。从瓦辟聲。《詩》曰：“中唐有甓。”    ||    ENGLISH DRAFT [UNCERTAIN]: The brick or tile called 瓴甓. Formed from 瓦, with 辟 indicating the sound. The Odes says: 'The courtyard path has bricks.'
+
+KEY: shuowen:8431    ||    CHINESE: 𤬯 — 治橐榦也。从瓦今聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To work on the shaft of a bellows, apparently. Formed from 瓦, with 今 indicating the sound.
+
+KEY: shuowen:8438    ||    CHINESE: 弭 — 弓無緣，可以解轡紛者。从弓耳聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A bow without binding, whose end can untangle bridle cords. Formed from 弓, with 耳 indicating the sound.
+
+KEY: shuowen:8440    ||    CHINESE: 弧 — 木弓也。从弓瓜聲。一曰往體寡，來體多曰弧。    ||    ENGLISH DRAFT [UNCERTAIN]: A wooden bow. Formed from 弓, with 瓜 indicating the sound. Alternatively, a bow with little outward curve and much inward curve is called 弧.
+
+KEY: shuowen:8455    ||    CHINESE: 弢 — 弓衣也。从弓从𠬢。𠬢，垂飾，與𡔷同意。    ||    ENGLISH DRAFT [UNCERTAIN]: A bow cover. Formed from 弓 and 𠬢. 𠬢 is a hanging ornament, with the same conception as 𡔷.
+
+KEY: shuowen:8465    ||    CHINESE: 弦 — 弓弦也。从弓，象絲軫之形。凡弦之屬皆从弦。    ||    ENGLISH DRAFT [UNCERTAIN]: A bowstring. Formed from 弓, depicting silk twisted together. All characters in this group are formed from 弦.
+
+KEY: shuowen:8466    ||    CHINESE: 盭 — 弻戾也。从弦省，从盩。讀若戾。    ||    ENGLISH DRAFT [UNCERTAIN]: Crooked or perverse, as in 弻戾. Formed from abbreviated 弦 and 盩. Read like 戾.
+
+KEY: shuowen:8468    ||    CHINESE: 𤣨 — 不成，遂急戾也。从弦省，曷聲。讀若瘞葬。    ||    ENGLISH DRAFT [UNCERTAIN]: Not completed, thus tightly twisted, apparently. Formed from abbreviated 弦, with 曷 indicating the sound. Read like 瘞 in 瘞葬, 'bury.'
+
+KEY: shuowen:8471    ||    CHINESE: 緜 — 聮微也。从系从帛。    ||    ENGLISH DRAFT [UNCERTAIN]: Connected finely. Formed from 系 and 帛.
+
+KEY: shuowen:8485    ||    CHINESE: 絓 — 繭滓絓頭也。一曰以囊絮練也。从糸圭聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Cocoon waste, the tangled ends. Alternatively, silk floss refined in a bag. Formed from 糸, with 圭 indicating the sound.
+
+KEY: shuowen:8503    ||    CHINESE: 紡 — 網絲也。从糸方聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To spin silk thread. Formed from 糸, with 方 indicating the sound. [The transmitted 網絲 and other recensions conflict; Duan reconstructs 紡絲也.]
+
+KEY: shuowen:8513    ||    CHINESE: 繎 — 絲勞也。从糸然聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Silk thread worn or entangled through handling. Formed from 糸, with 然 indicating the sound. [Duan proposes that 勞 may be an error for 縈, “entwined”.]
+
+KEY: shuowen:8518    ||    CHINESE: 緢 — 旄絲也。从糸苗聲。《周書》曰：“惟緢有稽。”    ||    ENGLISH DRAFT [UNCERTAIN]: Fine tail hairs from a yak or similar bovine, used like silk for ornaments. Formed from 糸, with 苗 indicating the sound. The Documents quotation uses an old graph in a passage about exact scrutiny. [The transmitted 旄 and quotation differ from Duan’s proposed 氂 and another textual reading.]
+
+KEY: shuowen:8520    ||    CHINESE: 繙 — 冕也。从糸番聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Tangled or disordered silk, in a rare old expression. Formed from 糸, with 番 indicating the sound. [The received 冕 (“ceremonial cap”) is disputed; Duan reconstructs an older expression meaning disorder.]
+
+KEY: shuowen:8546    ||    CHINESE: 終 — 絿絲也。从糸冬聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To tighten or finish silk, as in 絿絲; the phrase is uncertain. Formed from 糸, with 冬 indicating the sound.
+
+KEY: shuowen:8552    ||    CHINESE: 縠 — 細縛也。从糸𣪊聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Fine binding, as recorded in 細縛; the technical sense is uncertain. Formed from 糸, with 𣪊 indicating the sound.
+
+KEY: shuowen:8560    ||    CHINESE: 綮 — 㨖繒也。一曰幑幟，信也，有齒。从糸𢼄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Pierced silk fabric, apparently. Alternatively, a small banner, a sign or token, with notches. Formed from 糸, with 𢼄 indicating the sound.
+
+KEY: shuowen:8568    ||    CHINESE: 絹 — 繒如麥䅌。从糸肙聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Silk fabric resembling wheat stalks. Formed from 糸, with 肙 indicating the sound.
+
+KEY: shuowen:8576    ||    CHINESE: 綰 — 惡也，絳也。从糸官聲。一曰綃也。讀若雞卵。    ||    ENGLISH DRAFT [UNCERTAIN]: Inferior; crimson. Formed from 糸, with 官 indicating the sound. Alternatively, raw silk. Read like 卵 in 雞卵.
+
+KEY: shuowen:8585    ||    CHINESE: 綥 — 帛蒼艾色。从糸𢌿聲。《詩》：“縞衣綥巾。”未嫁女所服。一曰不借綥。    ||    ENGLISH DRAFT [UNCERTAIN]: Silk of a gray-green mugwort color. Formed from 糸, with 𢌿 indicating the sound. The Odes says: 'White silk clothes and a 綥 kerchief,' worn by an unmarried woman. Another explanation gives 不借綥, an obscure phrase.
+
+KEY: shuowen:8589    ||    CHINESE: 𦃖 — 帛騅色也。从糸剡聲。《詩》曰：“毳衣如𦃖。”    ||    ENGLISH DRAFT [UNCERTAIN]: Silk of a dapple-gray color. Formed from 糸, with 剡 indicating the sound. The Odes says: 'Feather-patterned clothes like 𦃖.'
+
+KEY: shuowen:8593    ||    CHINESE: 繻 — 繒采色。从糸需聲。讀若《易》“繻有衣”。    ||    ENGLISH DRAFT [UNCERTAIN]: The colors of silk fabric. Formed from 糸, with 需 indicating the sound. Read like 繻 in the Changes' '繻 has clothes,' an uncertain quotation.
+
+KEY: shuowen:8596    ||    CHINESE: 紘 — 冠卷也。从糸厷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A cap's cord or rolled edging. Formed from 糸, with 厷 indicating the sound.
+
+KEY: shuowen:8599    ||    CHINESE: 紻 — 纓卷也。从糸央聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The rolled part of a cap cord, apparently. Formed from 糸, with 央 indicating the sound.
+
+KEY: shuowen:8621    ||    CHINESE: 繜 — 薉貉中，女子無絝，以帛爲脛空，用絮補核，名曰繜衣，狀如襜褕。从糸尊聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Among the 薉 and 貉, women have no leggings, but use silk for hollow leg-coverings, with floss padding the center, called 繜 clothing, shaped like a 襜褕 robe. Formed from 糸, with 尊 indicating the sound.
+
+KEY: shuowen:8628    ||    CHINESE: 纕 — 援臂也。从糸襄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To bind or support the arm. Formed from 糸, with 襄 indicating the sound.
+
+KEY: shuowen:8629    ||    CHINESE: 纗 — 維綱，中繩。从糸巂聲。讀若畫，或讀若維。    ||    ENGLISH DRAFT [UNCERTAIN]: To fasten the main rope; a central cord. Formed from 糸, with 巂 indicating the sound. Read like 畫, or like 維.
+
+KEY: shuowen:8630    ||    CHINESE: 綱 — 維紘繩也。从糸岡聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A principal cord for fastening. Formed from 糸, with 岡 indicating the sound.
+
+KEY: shuowen:8639    ||    CHINESE: 緛 — 衣戚也。从糸耎聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A garment's gathering or shrinkage. Formed from 糸, with 耎 indicating the sound.
+
+KEY: shuowen:8648    ||    CHINESE: 徽 — 衺幅也。一曰三糾繩也。从糸，微省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A slanting strip of cloth. Alternatively, a cord twisted from three strands. Formed from 糸, with abbreviated 微 indicating the sound.
+
+KEY: shuowen:8652    ||    CHINESE: 䋫 — 䊸未縈繩。一曰急弦之聲。从糸爭聲。讀若旌。    ||    ENGLISH DRAFT [UNCERTAIN]: Thread not yet wound into a cord, apparently. Alternatively, the sound of a taut string. Formed from 糸, with 爭 indicating the sound. Read like 旌.
+
+KEY: shuowen:8654    ||    CHINESE: 絇 — 纑繩絇也。从糸句聲。讀若鳩。    ||    ENGLISH DRAFT [UNCERTAIN]: A loop of hemp cord, apparently. Formed from 糸, with 句 indicating the sound. Read like 鳩.
+
+KEY: shuowen:8661    ||    CHINESE: 絥 — 車絥也。从糸伏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The carriage fitting called 絥; its precise identity is not explained. Formed from 糸, with 伏 indicating the sound.
+
+KEY: shuowen:8663    ||    CHINESE: 綊 — 䋊綊也。从糸夾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The horse ornament called 䋊綊. Formed from 糸, with 夾 indicating the sound.
+
+KEY: shuowen:8670    ||    CHINESE: 𦅨 — 絆前兩足也。从糸須聲。漢令：蠻夷卒有𦅨。    ||    ENGLISH DRAFT [UNCERTAIN]: To hobble the two forelegs. Formed from 糸, with 須 indicating the sound. A Han ordinance says: 'Man and Yi soldiers have 𦅨,' apparently fetters.
+
+KEY: shuowen:8679    ||    CHINESE: 絠 — 彈彄也。从糸有聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A pellet-bow's string loop. Formed from 糸, with 有 indicating the sound.
+
+KEY: shuowen:8688    ||    CHINESE: 䋈 — 絜緼也。一曰敝絮。从糸奴聲。《易》曰：“需有衣䋈。”    ||    ENGLISH DRAFT [UNCERTAIN]: To bind wadding together. Alternatively, worn silk floss. Formed from 糸, with 奴 indicating the sound. The Changes says: 'There is need for clothing and wadding.'
+
+KEY: shuowen:8689    ||    CHINESE: 繫 — 繫𦃇也。一曰惡絮。从糸毄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 繫𦃇, perhaps rough, tangled floss. Alternatively, poor silk floss. Formed from 糸, with 毄 indicating the sound.
+
+KEY: shuowen:8690    ||    CHINESE: 𦃇 — 繫𦃇也。一曰維也。从糸虒聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 繫𦃇, perhaps rough, tangled floss. Alternatively, to fasten. Formed from 糸, with 虒 indicating the sound.
+
+KEY: shuowen:8702    ||    CHINESE: 緦 — 十五升布也。一曰兩麻一絲布也。从糸思聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Cloth of fifteen sheng. Alternatively, cloth of two hemp threads to one silk thread. Formed from 糸, with 思 indicating the sound.
+
+KEY: shuowen:8704    ||    CHINESE: 緰 — 緰貲，布也。从糸俞聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 緰貲, a kind of cloth. Formed from 糸, with 俞 indicating the sound.
+
+KEY: shuowen:8714    ||    CHINESE: 縕 — 紼也。从糸𥁕聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Tangled fibers or cords, as in 紼. Formed from 糸, with 𥁕 indicating the sound.
+
+KEY: shuowen:8717    ||    CHINESE: 紕 — 氐人𦇧也。讀若《禹貢》玭珠。从糸比聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The Di people's woolen cloth. Read like 玭 in the Tribute of Yu's 玭珠. Formed from 糸, with 比 indicating the sound.
+
+KEY: shuowen:8721    ||    CHINESE: 彝 — 宗廟常器也。从糸；糸，綦也。廾持米，器中寶也。彑聲。此與爵相似。《周禮》：“六彝：雞彝、鳥彝、黃彝、虎彝、蟲彝、斝彝。以待祼將之禮。”    ||    ENGLISH DRAFT [UNCERTAIN]: A regular vessel of the ancestral temple. Formed from 糸, meaning a cord; 廾 holds 米, a treasure within the vessel. 彑 indicates the sound. This resembles 爵. The Rites of Zhou says: 'The six 彝 vessels: chicken, bird, yellow, tiger, insect, and jia vessels, for the libation rites.'
+
+KEY: shuowen:8731    ||    CHINESE: 素 — 白緻繒也。从糸、𠂹，取其澤也。凡素之屬皆从素。    ||    ENGLISH DRAFT [UNCERTAIN]: White, closely woven silk. Formed from 糸 and 𠂹, taking its luster. All characters in this group are formed from 素.
+
+KEY: shuowen:8735    ||    CHINESE: 繛 — 𦅻也。从素卓聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 𦅻, apparently ample or relaxed. Formed from 素, with 卓 indicating the sound.
+
+KEY: shuowen:8736    ||    CHINESE: 𦅻 — 繛也。从素，爰省。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 繛, apparently ample or relaxed. Formed from 素 and abbreviated 爰.
+
+KEY: shuowen:8739    ||    CHINESE: 𢇅 — 織絹从糸貫杼也。从絲省，卝聲。    ||    ENGLISH DRAFT [UNCERTAIN]: In weaving silk, 糸, the threads, pass through 杼, the shuttle. Formed from abbreviated 絲, with 卝 indicating the sound.
+
+KEY: shuowen:8757    ||    CHINESE: 虺 — 虺以注鳴。《詩》曰：“胡爲纵蜥。”从虫兀聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The 虺 makes a sustained call, perhaps. The Odes says: 'Why become 纵蜥,' as the source records this uncertain quotation. Formed from 虫, with 兀 indicating the sound.
+
+KEY: shuowen:8761    ||    CHINESE: 蚖 — 榮蚖，蛇醫，以注鳴者。从虫元聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 榮蚖, the 'snake healer,' which makes a sustained call, perhaps. Formed from 虫, with 元 indicating the sound.
+
+KEY: shuowen:8767    ||    CHINESE: 蝚 — 蛭蝚，至掌也。从虫柔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 蛭蝚 is the creature called 至掌. Formed from 虫, with 柔 indicating the sound.
+
+KEY: shuowen:8768    ||    CHINESE: 蛣 — 蛣䖦，蝎也。从虫吉聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 蛣䖦 is the creature called 蝎. Formed from 虫, with 吉 indicating the sound.
+
+KEY: shuowen:8771    ||    CHINESE: 蛵 — 丁蛵，負勞也。从虫巠聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 丁蛵 is the creature called 負勞. Formed from 虫, with 巠 indicating the sound.
+
+KEY: shuowen:8779    ||    CHINESE: 𧓉 — 𧓉𧕐也。从虫齊聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 𧓉𧕐. Formed from 虫, with 齊 indicating the sound.
+
+KEY: shuowen:8784    ||    CHINESE: 蠲 — 馬蠲也。从虫、目，益聲。纽，象形。《明堂月令》曰：“腐艸爲蠲。”    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 馬蠲. Formed from 虫 and 目, with 益 indicating the sound. The source adds 纽 and 'a pictograph,' an obscure phrase. The Bright Hall's Monthly Ordinances says: 'Rotting grass becomes 蠲.'
+
+KEY: shuowen:8791    ||    CHINESE: 蛾 — 羅也。从虫我聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 羅. Formed from 虫, with 我 indicating the sound.
+
+KEY: shuowen:8797    ||    CHINESE: 𧒾 — 𧒾蠰，不過也。从虫當聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 𧒾蠰 is the creature called 不過. Formed from 虫, with 當 indicating the sound.
+
+KEY: shuowen:8804    ||    CHINESE: 䗐 — 蛄䗐，强芈也。从虫施聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 蛄䗐 is the creature called 强芈. Formed from 虫, with 施 indicating the sound.
+
+KEY: shuowen:8805    ||    CHINESE: 蛅 — 蛅斯，墨也。从虫占聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 蛅斯 is the creature called 墨. Formed from 虫, with 占 indicating the sound.
+
+KEY: shuowen:8806    ||    CHINESE: 蜆 — 縊女也。从虫見聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 縊女. Formed from 虫, with 見 indicating the sound.
+
+KEY: shuowen:8808    ||    CHINESE: 𧍕 — 渠䖼。一曰天社。从虫却聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 渠䖼. Alternatively, 天社. Formed from 虫, with 却 indicating the sound.
+
+KEY: shuowen:8810    ||    CHINESE: 蠃 — 蜾蠃也。从虫𣎆聲。一曰虒蝓。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 蜾蠃. Formed from 虫, with 𣎆 indicating the sound. Alternatively, 虒蝓.
+
+KEY: shuowen:8837    ||    CHINESE: 蜉 — 商何也。从虫寽聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 商何. Formed from 虫, with 寽 indicating the sound.
+
+KEY: shuowen:8848    ||    CHINESE: 蝁 — 镻也。从虫亞聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The creature called 镻; its identity is unclear. Formed from 虫, with 亞 indicating the sound.
+
+KEY: shuowen:8857    ||    CHINESE: 𧊧 — 蜃屬。有三，皆生於海。千歲化爲𧊧，秦謂之牡厲。又云百歲燕所化。魁𧊧，一名復累，老服翼所化。从虫合聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A kind of 蜃; there are three, all born in the sea. At a thousand years it transforms into 𧊧, called 牡厲 in Qin. Another account says it is a swallow transformed at a hundred years. 魁𧊧, also named 復累, is transformed from an old bat. Formed from 虫, with 合 indicating the sound.
+
+KEY: shuowen:8858    ||    CHINESE: 螷 — 階也。脩爲螷，圜爲蠇。从虫、庳。    ||    ENGLISH DRAFT [UNCERTAIN]: A shellfish called 階. The elongated one is 螷; the round one is 蠇. Formed from 虫 and 庳.
+
+KEY: shuowen:8863    ||    CHINESE: 蜎 — 蜎也。从虫肙聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 蜎, apparently curled or wriggling. Formed from 虫, with 肙 indicating the sound.
+
+KEY: shuowen:8864    ||    CHINESE: 蟺 — 夗蟺也。从虫亶聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 夗蟺, apparently coiled or winding. Formed from 虫, with 亶 indicating the sound.
+
+KEY: shuowen:8865    ||    CHINESE: 𧍘 — 𧍘蟉也。从虫幽聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The winding condition expressed by 𧍘蟉. Formed from 虫, with 幽 indicating the sound.
+
+KEY: shuowen:8866    ||    CHINESE: 蟉 — 𧍘蟉也。从虫翏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The winding condition expressed by 𧍘蟉. Formed from 虫, with 翏 indicating the sound.
+
+KEY: shuowen:8883    ||    CHINESE: 蚼 — 北方肓蚼犬，食人。从虫句聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The northern 肓蚼 dog, which eats people. Formed from 虫, with 句 indicating the sound.
+
+KEY: shuowen:8927    ||    CHINESE: 𧔨 — 蟲食艸根者。从蟲，象其形。吏抵冒取民財則生。    ||    ENGLISH DRAFT [UNCERTAIN]: A creature that eats grass roots. Formed from 蟲, depicting its shape. It appears when officials act brazenly and take the people's wealth.
+
+KEY: shuowen:8931    ||    CHINESE: 蠱 — 腹中蟲也。《春秋傳》曰：“皿蟲爲蠱。”“晦淫之所生也。”臬桀死之鬼亦爲蠱。从蟲从皿。皿，物之用也。    ||    ENGLISH DRAFT [UNCERTAIN]: Creatures in the abdomen. The Spring and Autumn Commentary says: 'Creatures in a vessel make 蠱'; 'It arises from darkness and licentiousness.' The ghosts of those who die impaled or violently also become 蠱, apparently. Formed from 蟲 and 皿. 皿 is a vessel for use.
+
+KEY: shuowen:8946    ||    CHINESE: 䬒 — 颼飂也。从風叜聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 颼飂, apparently wind blowing. Formed from 風, with 叜 indicating the sound.
+
+KEY: shuowen:8956    ||    CHINESE: 鼀 — 圥鼀，詹諸也。其鳴詹諸，其皮鼀鼀，其行圥圥。从黽从圥，圥亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 圥鼀 is the creature called 詹諸. Its call sounds 詹諸, its skin is bumpy, and its movement hopping. Formed from 黽 and 圥; 圥 also indicates the sound.
+
+KEY: shuowen:8957    ||    CHINESE: 𪓿 — 𪓰𪓿，詹諸也。《詩》曰：“得此𪓰𪓿。”言其行𪓿𪓿。从黽爾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 𪓰𪓿, the creature called 詹諸. The Odes says: 'Obtain this 𪓰𪓿,' referring to its movement. Formed from 黽, with 爾 indicating the sound.
+
+KEY: shuowen:8970    ||    CHINESE: 恒 — 常也。从心从舟，在二之閒上下。心以舟施，恆也。    ||    ENGLISH DRAFT [UNCERTAIN]: Constant. Formed from 心 and 舟 between the upper and lower strokes of 二. The heart moves by means of a boat: this is constancy, apparently.
+
+KEY: shuowen:8971    ||    CHINESE: 亘 — 求亘也。从二从囘。囘，古文回，象亘回形。上下，所求物也。    ||    ENGLISH DRAFT [UNCERTAIN]: To seek throughout. Formed from 二 and 囘. 囘 is ancient-script 回, depicting circling all around. Above and below are the things sought.
+
+KEY: shuowen:8977    ||    CHINESE: 垓 — 兼垓八極地也。《國語》曰：“天子居九垓之田。”从土亥聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The lands encompassing the eight extremities. The Discourses of the States says: 'The Son of Heaven dwells in the lands of the nine regions.' Formed from 土, with 亥 indicating the sound.
+
+KEY: shuowen:8990    ||    CHINESE: 坴 — 土塊坴坴也。从土圥聲。讀若逐。一曰坴梁。    ||    ENGLISH DRAFT [UNCERTAIN]: Earth in clods. Formed from 土, with 圥 indicating the sound. Read like 逐. Another explanation gives 坴梁.
+
+KEY: shuowen:8997    ||    CHINESE: 坺 — 治也。一曰臿土謂之坺。《詩》曰：“武王載坺。”一曰塵皃。从土犮聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To put in order. Alternatively, shoveling earth is called 坺. The Odes says: 'King Wu then set to work.' Alternatively, the appearance of dust. Formed from 土, with 犮 indicating the sound.
+
+KEY: shuowen:9008    ||    CHINESE: 堀 — 突也。《詩》曰：“蜉蝣堀閱。”从土，屈省聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To protrude or emerge. The Odes says: 'The mayfly emerges from its hole.' Formed from 土, with abbreviated 屈 indicating the sound.
+
+KEY: shuowen:9010    ||    CHINESE: 垜 — 堂塾也。从土朵聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A side chamber of a hall. Formed from 土, with 朵 indicating the sound.
+
+KEY: shuowen:9011    ||    CHINESE: 坫 — 屏也。从土占聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A screen or barrier. Formed from 土, with 占 indicating the sound.
+
+KEY: shuowen:9018    ||    CHINESE: 墼 — 瓴適也。一曰未燒也。从土毄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A kind of tile or brick, expressed by 瓴適. Alternatively, not yet fired. Formed from 土, with 毄 indicating the sound.
+
+KEY: shuowen:9029    ||    CHINESE: 封 — 爵諸矦之土也。从之从土从寸，守其制度也。公侯，百里；伯，七十里；子男，五十里。    ||    ENGLISH DRAFT [UNCERTAIN]: Land granted by rank to feudal lords. Formed from 之, 土, and 寸, preserving its prescribed measures: dukes and marquises, one hundred li; earls, seventy li; viscounts and barons, fifty li.
+
+KEY: shuowen:9032    ||    CHINESE: 垸 — 以桼和灰而䰍也。从土完聲。一曰補垸。    ||    ENGLISH DRAFT [UNCERTAIN]: To mix lacquer with ash and coat something. Formed from 土, with 完 indicating the sound. Alternatively, to mend or patch.
+
+KEY: shuowen:9053    ||    CHINESE: 埐 — 地也。从土练聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Ground. Formed from 土, with 练 indicating the sound.
+
+KEY: shuowen:9056    ||    CHINESE: 培 — 培敦。土田山川也。从土咅聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 培敦 refers to land, fields, mountains, and rivers; the precise phrase is obscure. Formed from 土, with 咅 indicating the sound.
+
+KEY: shuowen:9062    ||    CHINESE: 垑 — 恃也。从土多聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To rely on. Formed from 土, with 多 indicating the sound.
+
+KEY: shuowen:9086    ||    CHINESE: 㙪 — 天陰塵也。《詩》曰：“㙪㙪其陰。”从土壹聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The sky being overcast and dusty. The Odes says: 'Darkly overcast.' Formed from 土, with 壹 indicating the sound.
+
+KEY: shuowen:9090    ||    CHINESE: 埍 — 徒隸所居也。一曰女牢。一曰亭部。从土肙聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Where penal bondservants reside. Alternatively, a women's prison; alternatively, a pavilion's district. Formed from 土, with 肙 indicating the sound.
+
+KEY: shuowen:9091    ||    CHINESE: 𧷎 — 囚突出也。从土㕢聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A prisoner breaking out. Formed from 土, with 㕢 indicating the sound.
+
+KEY: shuowen:9093    ||    CHINESE: 堋 — 喪葬下土也。从土朋聲。《春秋傳》曰：“朝而堋。”《禮》謂之封，《周官》謂之窆。《虞書》曰：“堋淫于家。”    ||    ENGLISH DRAFT [UNCERTAIN]: To lower a burial into the earth. Formed from 土, with 朋 indicating the sound. The Spring and Autumn Commentary says: 'In the morning they lowered the coffin.' The Rites calls this 封; the Offices of Zhou, 窆. The Book of Yu says: '堋淫 in the household,' an obscure quotation.
+
+KEY: shuowen:9094    ||    CHINESE: 垗 — 畔也。爲四畤界，祭其中。《周禮》曰：“垗五帝於四郊。”从土兆聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A boundary: marking off the four sacrificial precincts and sacrificing within them. The Rites of Zhou says: 'Mark out precincts for the Five Emperors in the four suburbs.' Formed from 土, with 兆 indicating the sound.
+
+KEY: shuowen:9127    ||    CHINESE: 𤲬 — 城下田也。一曰𤲬，郤也。从田耎聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Fields below a city wall. Alternatively, 𤲬 means a gap or retreat. Formed from 田, with 耎 indicating the sound.
+
+KEY: shuowen:9128    ||    CHINESE: 疇 — 耕治之田也。从田，象耕屈之形。    ||    ENGLISH DRAFT [UNCERTAIN]: A field worked by plowing. Formed from 田, depicting the bent movement of plowing.
+
+KEY: shuowen:9130    ||    CHINESE: 畬 — 三歲治田也。《易》曰：“不葘，畬田。”从田余聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A field cultivated for three years. The Changes says: 'Without first breaking ground, cultivate the third-year field.' Formed from 田, with 余 indicating the sound.
+
+KEY: shuowen:9131    ||    CHINESE: 㽥 — 和田也。从田柔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Soft or workable fields. Formed from 田, with 柔 indicating the sound.
+
+KEY: shuowen:9133    ||    CHINESE: 㽨 — 殘田也。《詩》曰：“天方薦㽨。”从田差聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A remaining piece of field. The Odes says: 'Heaven is now repeatedly destroying.' Formed from 田, with 差 indicating the sound.
+
+KEY: shuowen:9144    ||    CHINESE: 畤 — 天地五帝所基址，祭地。从田寺聲。右扶風有五畤。好畤、鄜畤，皆黃帝時祭。或曰秦文公立也。    ||    ENGLISH DRAFT [UNCERTAIN]: A place founded for Heaven, Earth, and the Five Emperors; sacrificial ground. Formed from 田, with 寺 indicating the sound. There are five 畤 in 右扶風. 好畤 and 鄜畤 were both sites of sacrifice in the Yellow Emperor's time; some say Duke Wen of Qin established them.
+
+KEY: shuowen:9151    ||    CHINESE: 畜 — 田畜也。《淮南子》曰：“玄田爲畜。”    ||    ENGLISH DRAFT [UNCERTAIN]: To store or raise produce in fields. The Huainanzi says: '玄 and 田 make 畜.'
+
+KEY: shuowen:9157    ||    CHINESE: 䵌 — 赤黃也。一曰輕易人䵌姁也。从黃夾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Red-yellow. Alternatively, slighting people, as in 䵌姁. Formed from 黃, with 夾 indicating the sound.
+
+KEY: shuowen:9165    ||    CHINESE: 力 — 筋也。象人筋之形。治功曰力，能圉大災。凡力之屬皆从力。    ||    ENGLISH DRAFT [UNCERTAIN]: Sinew. It depicts a person's sinews. Productive effort is called 力, able to ward off great disasters. All characters in this group are formed from 力.
+
+KEY: shuowen:9185    ||    CHINESE: 勨 — 繇緩也。从力象聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Labor service being relaxed. Formed from 力, with 象 indicating the sound.
+
+KEY: shuowen:9189    ||    CHINESE: 勞 — 劇也。从力，熒省。熒，火燒冂，用力者勞。    ||    ENGLISH DRAFT [UNCERTAIN]: Strenuous. Formed from 力 and abbreviated 熒. 熒 is fire burning a covering; one using strength is weary.
+
+KEY: shuowen:9213    ||    CHINESE: 金 — 五色金也。黃爲之長。久薶不生衣，百鍊不輕，从革不違。西方之行。生於土，从土；左右注，象金在土中形；今聲。凡金之屬皆从金。    ||    ENGLISH DRAFT [UNCERTAIN]: The metals of five colors, yellow foremost. Long buried, it grows no coating; refined a hundred times, it loses no weight; when worked and changed, it does not resist. The phase associated with the west. Born in earth, hence 土; the dots on either side depict metal in earth. 今 indicates the sound. All characters in this group are formed from 金.
+
+KEY: shuowen:9235    ||    CHINESE: 釘 — 鍊鉼黃金。从金丁聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Refined gold formed into cakes. Formed from 金, with 丁 indicating the sound.
+
+KEY: shuowen:9239    ||    CHINESE: 鋏 — 可以持冶器鑄鎔者。从金夾聲。讀若漁人莢魚之莢。一曰若挾持。    ||    ENGLISH DRAFT [UNCERTAIN]: Something used to hold casting tools while casting and molding. Formed from 金, with 夾 indicating the sound. Read like 莢 in the fisherman's 莢魚; alternatively, like 挾 in 挾持.
+
+KEY: shuowen:9241    ||    CHINESE: 鋌 — 銅𨮯樸也。从金廷聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An unworked lump of copper or 𨮯 metal. Formed from 金, with 廷 indicating the sound.
+
+KEY: shuowen:9242    ||    CHINESE: 䥵 — 𨮯文也。从金曉聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The pattern of 𨮯 metal. Formed from 金, with 曉 indicating the sound.
+
+KEY: shuowen:9244    ||    CHINESE: 鉹 — 曲鉹也。从金多聲。一曰鬵鼎，讀若𢴨。一曰《詩》云“侈兮哆兮”。    ||    ENGLISH DRAFT [UNCERTAIN]: The object called 曲鉹. Formed from 金, with 多 indicating the sound. Alternatively, a 鬵 cooking vessel, read like 𢴨. Another explanation cites the Odes: 'Large and gaping.'
+
+KEY: shuowen:9249    ||    CHINESE: 䥙 — 陽䥙也。从金隊聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The object called 陽䥙. Formed from 金, with 隊 indicating the sound.
+
+KEY: shuowen:9257    ||    CHINESE: 𨰠 — 銼𨰠也。从金羸聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The vessel called 銼𨰠. Formed from 金, with 羸 indicating the sound.
+
+KEY: shuowen:9263    ||    CHINESE: 鐎 — 鐎斗也。从金焦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The vessel called 鐎斗. Formed from 金, with 焦 indicating the sound.
+
+KEY: shuowen:9270    ||    CHINESE: 鑯 — 𨮯器也。一曰鑴也。从金韱聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A vessel or implement of 𨮯 metal. Alternatively, 鑴. Formed from 金, with 韱 indicating the sound.
+
+KEY: shuowen:9275    ||    CHINESE: 鏟 — 鏶也。一曰平𨮯。从金産聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A metal sheet. Alternatively, flat 𨮯 metal. Formed from 金, with 産 indicating the sound.
+
+KEY: shuowen:9282    ||    CHINESE: 䥏 — 鉏䥏也。从金御聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The implement called 鉏䥏. Formed from 金, with 御 indicating the sound.
+
+KEY: shuowen:9283    ||    CHINESE: 錡 — 鉏䥏也。从金奇聲。江淮之閒謂釜曰錡。    ||    ENGLISH DRAFT [UNCERTAIN]: The implement called 鉏䥏. Formed from 金, with 奇 indicating the sound. Between the 江 and 淮, a cauldron is called 錡.
+
+KEY: shuowen:9284    ||    CHINESE: 鍤 — 郭衣鍼也。从金臿聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A needle for sewing garment edging, apparently. Formed from 金, with 臿 indicating the sound.
+
+KEY: shuowen:9285    ||    CHINESE: 鉥 — 綦鍼也。从金术聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A needle for cords. Formed from 金, with 术 indicating the sound.
+
+KEY: shuowen:9288    ||    CHINESE: 鎩 — 鈹有鐸也。从金殺聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A 鈹 with a 鐸 fitting; the exact weapon detail is uncertain. Formed from 金, with 殺 indicating the sound.
+
+KEY: shuowen:9290    ||    CHINESE: 銎 — 斤釜穿也。从金𢀜聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The opening in an axe or 釜 implement. Formed from 金, with 𢀜 indicating the sound.
+
+KEY: shuowen:9291    ||    CHINESE: 鈭 — 鈭錍，釜也。从金此聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 鈭錍, an axe-like implement called 釜 in the source. Formed from 金, with 此 indicating the sound.
+
+KEY: shuowen:9292    ||    CHINESE: 錍 — 鈭錍也。从金卑聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The implement called 鈭錍. Formed from 金, with 卑 indicating the sound.
+
+KEY: shuowen:9298    ||    CHINESE: 䤥 — 臿屬。从金危聲。一曰瑩𨮯也。讀若跛行。    ||    ENGLISH DRAFT [UNCERTAIN]: A kind of spade. Formed from 金, with 危 indicating the sound. Alternatively, to polish 𨮯 metal. Read like 跛 in 跛行.
+
+KEY: shuowen:9310    ||    CHINESE: 鉊 — 大𨮯也。从金召聲。鎌謂之鉊，張徹說。    ||    ENGLISH DRAFT [UNCERTAIN]: A metal implement, possibly an awl or sickle, with a regional designation 鉊. Formed from 金, with 召 indicating the sound. [Duan notes disagreement among 方言, 廣雅 and the received text over the precise implement.]
+
+KEY: shuowen:9326    ||    CHINESE: 銖 — 權十分黍之重也。从金朱聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A zhū, an ancient unit of weight equivalent in one Han-era standard to 100 millet grains (24 zhū to one liǎng). Formed from 金, with 朱 indicating the sound. [The transmitted “ten parts of millet” is defective; Duan reconstructs 十絫黍.]
+
+KEY: shuowen:9332    ||    CHINESE: 鈀 — 兵車也。一曰𨮯也。《司馬法》：“晨夜内鈀車。”从金巴聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A military carriage, according to one gloss; alternatively, a metal tool. The Methods of the Sima mentions bringing in 鈀 carriages. Formed from 金, with 巴 indicating the sound. [The quotation does not survive in the extant Sima Fa, and other sources describe a metal bladed implement.]
+
+KEY: shuowen:9338    ||    CHINESE: 鑮 — 大鐘，湻于之屬，所以應鐘磬也。堵以二，金樂則鼓鏄應之。从金薄聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A large, separately suspended musical bell that responds to sets of bells and stone chimes, likened to a 錞于. Formed from 金, with 薄 indicating the sound. [The passage on the number of bell-and-chime sets contains transmitted errors; Duan proposes a reconstruction.]
+
+KEY: shuowen:9345    ||    CHINESE: 鏓 — 鎗鍃也。一曰大鑿，平木者。从金悤聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A resonant clang or clash, as of a bell. Alternatively, a large chisel used to cut into timber. Formed from 金, with 悤 indicating the sound. [Duan disputes the transmitted 平木者 and reconstructs 中木, “boring into wood”.]
+
+KEY: shuowen:9363    ||    CHINESE: 𨩀 — 矢。金鏃翦羽謂之鏃。从金矦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An arrow with a metal head and trimmed fletching, described in traditional arrow typology. Formed from 金, with 矦 indicating the sound. [Duan argues this entry is absent from the earlier Xiao Xu edition and that the received explanatory headword 鏃 is corrupt.]
+
+KEY: shuowen:9371    ||    CHINESE: 銴 — 車樘結也。一曰銅生五色也。从金折聲。讀若誓。    ||    ENGLISH DRAFT [UNCERTAIN]: A metal joint or fastening associated with the bracing of a carriage frame; alternatively, the multicolored patina that develops on bronze. Formed from 金, with 折 indicating the sound. Pronounced like 誓. [The exact form of the carriage fixture remains unknown.]
+
+KEY: shuowen:9372    ||    CHINESE: 釳 — 乘輿馬頭上防𨥊。插以翟尾、𨮯翮，象角。所以防綱羅𨥊去之。从金气聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A horn-like metal anti-entanglement fitting on an imperial carriage horse, decorated with pheasant-tail feathers to deflect nets or dangling gear. Formed from 金, with 气 indicating the sound. [Sources differ on whether the fitting sat on the horse’s head or near the front of the carriage pole.]
+
+KEY: shuowen:9387    ||    CHINESE: 鎎 — 怒戰也。从金氣聲。《春秋傳》曰：“諸矦敵王所鎎。”    ||    ENGLISH DRAFT [UNCERTAIN]: To fight in anger. Formed from 金, with 氣 indicating the sound. The Spring and Autumn Commentary says: 'The feudal lords opposed what the king angrily fought against,' approximately; the quotation is obscure.
+
+KEY: shuowen:9399    ||    CHINESE: 錉 — 業也。賈人占錉。从金昏聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An occupation or business; merchants assess 錉, apparently their business affairs. Formed from 金, with 昏 indicating the sound.
+
+KEY: shuowen:9401    ||    CHINESE: 鎕 — 鎕銻，火齊。从金唐聲。    ||    ENGLISH DRAFT [UNCERTAIN]: 鎕銻 is the substance called 火齊. Formed from 金, with 唐 indicating the sound.
+
+KEY: shuowen:9402    ||    CHINESE: 銻 — 鎕銻也。从金弟聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The substance called 鎕銻. Formed from 金, with 弟 indicating the sound.
+
+KEY: shuowen:9403    ||    CHINESE: 鈋 — 吪圜也。从金化聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Rounded or transformed into a circle, apparently. Formed from 金, with 化 indicating the sound.
+
+KEY: shuowen:9409    ||    CHINESE: 錗 — 側意。从金委聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The sense of being at the side. Formed from 金, with 委 indicating the sound.
+
+KEY: shuowen:9426    ||    CHINESE: 𧇿 — 且往也。从且豦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To go for the time being. Formed from 且, with 豦 indicating the sound.
+
+KEY: shuowen:9440    ||    CHINESE: 新 — 取木也。从斤𣓀聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To take wood. Formed from 斤, with 𣓀 indicating the sound.
+
+KEY: shuowen:9444    ||    CHINESE: 斝 — 玉爵也。夏曰琖，殷曰斝，周曰爵。从吅从斗，冂象形。與爵同意。或說斝受六斗。    ||    ENGLISH DRAFT [UNCERTAIN]: A jade 爵 vessel. Xia called it 琖, Yin 斝, and Zhou 爵. Formed from 吅 and 斗, with 冂 depicting its shape; the same conception as 爵. Some say a 斝 holds six dou.
+
+KEY: shuowen:9447    ||    CHINESE: 斡 — 蠡柄也。从斗倝聲。楊雄、杜林說：皆以爲軺車輪斡。    ||    ENGLISH DRAFT [UNCERTAIN]: The handle of a gourd ladle. Formed from 斗, with 倝 indicating the sound. Yang Xiong and Du Lin both explain it as the 斡 of a light carriage's wheel.
+
+KEY: shuowen:9457    ||    CHINESE: 𣂀 — 斛㫄有𣂀。从斗𠩓聲。一曰突也。一曰利也。《尔疋》曰：“𣂀謂之疀。”古田器也。    ||    ENGLISH DRAFT [UNCERTAIN]: A hu measure has a 𣂀 at its side. Formed from 斗, with 𠩓 indicating the sound. Alternatively, projecting; alternatively, sharp. The Erya says: '𣂀 is called 疀,' an ancient agricultural implement.
+
+KEY: shuowen:9459    ||    CHINESE: 矛 — 酋矛也。建於兵車，長二丈。象形。凡矛之屬皆从矛。    ||    ENGLISH DRAFT [UNCERTAIN]: The 酋 spear, erected on a war carriage, two zhang long. A pictograph. All characters in this group are formed from 矛.
+
+KEY: shuowen:9467    ||    CHINESE: 輜 — 軿車前，衣車後也。从車甾聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A screened carriage at the front, a covered carriage at the rear, according to the source's compressed description. Formed from 車, with 甾 indicating the sound.
+
+KEY: shuowen:9479    ||    CHINESE: 輯 — 車和輯也。从車咠聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A carriage being harmoniously assembled. Formed from 車, with 咠 indicating the sound.
+
+KEY: shuowen:9484    ||    CHINESE: 䡈 — 車騎上曲銅也。从車爻聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A curved bronze fitting above the carriage's 騎 component; its precise position is unclear. Formed from 車, with 爻 indicating the sound.
+
+KEY: shuowen:9486    ||    CHINESE: 轛 — 車橫軨也。从車對聲。《周禮》曰：“參分軹圍，去一以爲轛圍。”    ||    ENGLISH DRAFT [UNCERTAIN]: A carriage's crosswise railing. Formed from 車, with 對 indicating the sound. The Rites of Zhou says: 'Divide the 軹 circumference into three; remove one to obtain the 轛 circumference.'
+
+KEY: shuowen:9489    ||    CHINESE: 䡅 — 車約䡅也。从車川聲。《周禮》曰：“孤乘夏䡅。”一曰下棺車曰䡅。    ||    ENGLISH DRAFT [UNCERTAIN]: A carriage's binding or ornament, apparently. Formed from 車, with 川 indicating the sound. The Rites of Zhou says: “A senior dignitary (孤) rides a 夏䡅 carriage.” Alternatively, a carriage for lowering a coffin is called 䡅.
+
+KEY: shuowen:9490    ||    CHINESE: 轖 — 車籍交錯也。从車嗇聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A carriage's interlaced framework. Formed from 車, with 嗇 indicating the sound.
+
+KEY: shuowen:9499    ||    CHINESE: 輮 — 車軔也。从車柔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A carriage's stopping block, according to the recorded 車軔 gloss. Formed from 車, with 柔 indicating the sound.
+
+KEY: shuowen:9500    ||    CHINESE: 𨍶 — 車輮規也。一曰一輪車。从車，熒省聲。讀若煢。    ||    ENGLISH DRAFT [UNCERTAIN]: A carriage-wheel shaping circle or frame, apparently. Alternatively, a one-wheeled carriage. Formed from 車, with abbreviated 熒 indicating the sound. Read like 煢.
+
+KEY: shuowen:9503    ||    CHINESE: 軝 — 長轂之軝也，以朱約之。从車氏聲。《詩》曰：“約軝錯衡。”    ||    ENGLISH DRAFT [UNCERTAIN]: The end or covering of a long hub, bound in red. Formed from 車, with 氏 indicating the sound. The Odes says: 'Bound hubs and decorated crossbars.'
+
+KEY: shuowen:9512    ||    CHINESE: 䡞 — 直轅車纩也。从車具聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The 纩 fitting of a straight-shafted carriage; the technical term is unclear. Formed from 車, with 具 indicating the sound.
+
+KEY: shuowen:9518    ||    CHINESE: 軜 — 驂馬内轡繫軾前者。从車内聲。《詩》曰：“𣵽以𧥎軜。”    ||    ENGLISH DRAFT [UNCERTAIN]: The inner reins of the outside horses, fastened before the carriage crossbar. Formed from 車, with 内 indicating the sound. The Odes says: 'Moisten it to 𧥎 the inner reins,' as the obscure source quotation records.
+
+KEY: shuowen:9537    ||    CHINESE: 䡩 — 車䡩𨥺也。从車眞聲。讀若《論語》“鏗尔，舍瑟而作”。又讀若掔。    ||    ENGLISH DRAFT [UNCERTAIN]: The carriage fitting or sound called 䡩𨥺; the technical sense is unclear. Formed from 車, with 眞 indicating the sound. Read like 鏗 in the Analects' 'With a clang he set aside his zither and rose'; also read like 掔.
+
+KEY: shuowen:9546    ||    CHINESE: 軵 — 反推車，令有所付也。从車从付。讀若胥。    ||    ENGLISH DRAFT [UNCERTAIN]: To push a carriage backward so that it reaches a place of delivery. Formed from 車 and 付. Read like 胥.
+
+KEY: shuowen:9548    ||    CHINESE: 輇 — 蕃車下庳輪也。一曰無輻也。从車全聲。讀若饌。    ||    ENGLISH DRAFT [UNCERTAIN]: The low wheel beneath a screened carriage. Alternatively, a wheel without spokes. Formed from 車, with 全 indicating the sound. Read like 饌.
+
+KEY: shuowen:9552    ||    CHINESE: 轒 — 淮陽名車穹隆轒。从車賁聲。    ||    ENGLISH DRAFT [UNCERTAIN]: In 淮陽, a carriage's arched top is called 轒. Formed from 車, with 賁 indicating the sound.
+
+KEY: shuowen:9553    ||    CHINESE: 䡝 — 大車後壓也。从車宛聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A weight at the rear of a large carriage. Formed from 車, with 宛 indicating the sound.
+
+KEY: shuowen:9555    ||    CHINESE: 𨌅 — 連車也。一曰却車抵堂爲𨌅。从車，差省聲。讀若遟。    ||    ENGLISH DRAFT [UNCERTAIN]: Linked carriages. Alternatively, backing a carriage against the hall is called 𨌅. Formed from 車, with abbreviated 差 indicating the sound. Read like 遟.
+
+KEY: shuowen:9559    ||    CHINESE: 轘 — 車裂人也。从車瞏聲。《春秋傳》曰：“轘諸栗門。”    ||    ENGLISH DRAFT [UNCERTAIN]: To tear a person apart with carriages. Formed from 車, with 瞏 indicating the sound. The Spring and Autumn Commentary says: 'Tear them apart with carriages at the Li gate.'
+
+KEY: shuowen:9560    ||    CHINESE: 斬 — 𢧵也。从車从斤。斬法車裂也。    ||    ENGLISH DRAFT [UNCERTAIN]: To sever. Formed from 車 and 斤. The punishment of 斬 is tearing apart by carriages.
+
+KEY: shuowen:9578    ||    CHINESE: 陂 — 阪也。一曰沱也。从𨸏皮聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A slope. Alternatively, a spreading branch of water. Formed from 𨸏, with 皮 indicating the sound.
+
+KEY: shuowen:9588    ||    CHINESE: 𨻌 — 磊也。从𨸏𠂹聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Stones piled up. Formed from 𨸏, with 𠂹 indicating the sound.
+
+KEY: shuowen:9595    ||    CHINESE: 陷 — 高下也。一曰陊也。从𨸏从臽，臽亦聲。    ||    ENGLISH DRAFT [UNCERTAIN]: To descend from high to low. Alternatively, to fall. Formed from 𨸏 and 臽; 臽 also indicates the sound.
+
+KEY: shuowen:9597    ||    CHINESE: 䧢 — 𢼮也。从𨸏區聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The condition expressed by 𢼮; its sense is unclear. Formed from 𨸏, with 區 indicating the sound.
+
+KEY: shuowen:9604    ||    CHINESE: 隓 — 敗城𨸏曰隓。从𨸏𢀡聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A collapsed city wall or mound is called 隓. Formed from 𨸏, with 𢀡 indicating the sound.
+
+KEY: shuowen:9607    ||    CHINESE: 阬 — 門也。从𨸏亢聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A gate, according to the recorded 門 gloss. Formed from 𨸏, with 亢 indicating the sound.
+
+KEY: shuowen:9610    ||    CHINESE: 隄 — 唐也。从𨸏是聲。    ||    ENGLISH DRAFT [UNCERTAIN]: An embankment, 唐. Formed from 𨸏, with 是 indicating the sound.
+
+KEY: shuowen:9623    ||    CHINESE: 𠳋 — 𦥳商，小塊也。从𨸏从臾。    ||    ENGLISH DRAFT [UNCERTAIN]: 𦥳商, a small clod. Formed from 𨸏 and 臾.
+
+KEY: shuowen:9624    ||    CHINESE: 𨼬 — 水衡官、谷也。从𨸏解聲。一曰小谿。    ||    ENGLISH DRAFT [UNCERTAIN]: A Water Administration official; also, a valley, as the source's compressed wording records. Formed from 𨸏, with 解 indicating the sound. Alternatively, a small stream.
+
+KEY: shuowen:9631    ||    CHINESE: 隃 — 北陵西隃，鴈門是也。从𨸏俞聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The western pass of the northern hills: 雁門. Formed from 𨸏, with 俞 indicating the sound.
+
+KEY: shuowen:9660    ||    CHINESE: 陙 — 水𨸏也。从𨸏辰聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A hill by water. Formed from 𨸏, with 辰 indicating the sound.
+
+KEY: shuowen:9661    ||    CHINESE: 䧖 — 水𨸏也。从𨸏戔聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A hill by water. Formed from 𨸏, with 戔 indicating the sound.
+
+KEY: shuowen:9672    ||    CHINESE: 宁 — 辨積物也。象形。凡宁之屬皆从宁。    ||    ENGLISH DRAFT [UNCERTAIN]: To sort and accumulate things. A pictograph. All characters in this group are formed from 宁.
+
+KEY: shuowen:9673    ||    CHINESE: 𤲑 — 㡒也。所以載盛米。从宁从甾。甾，缶也。    ||    ENGLISH DRAFT [UNCERTAIN]: A 㡒 container, used to carry and hold rice. Formed from 宁 and 甾. 甾 is a jar.
+
+KEY: shuowen:9682    ||    CHINESE: 馗 — 九達道也。似龜背，故謂之馗。馗，高也。从九从首。    ||    ENGLISH DRAFT [UNCERTAIN]: A road accessible in nine directions. Resembling a turtle's back, it is therefore called 馗. 馗 means high. Formed from 九 and 首.
+
+KEY: shuowen:9690    ||    CHINESE: 嘼 — 㹌也。象耳、頭、足厹地之形。古文嘼，下从厹。凡嘼之屬皆从嘼。    ||    ENGLISH DRAFT [UNCERTAIN]: Livestock, as in 㹌. It depicts ears, head, and feet treading the ground. Ancient-script 嘼 has 厹 below. All characters in this group are formed from 嘼.
+
+KEY: shuowen:9692    ||    CHINESE: 甲 — 東方之孟，陽气萌動，从木戴孚甲之象。一曰人頭宐爲甲，甲象人頭。凡甲之屬皆从甲。    ||    ENGLISH DRAFT [UNCERTAIN]: The first of the eastern series, when yang vital energy begins to sprout and stir. It depicts 木, wood, wearing 孚甲, a seed casing. Alternatively, the human head should be 甲, and 甲 depicts a head. All characters in this group are formed from 甲.
+
+KEY: shuowen:9695    ||    CHINESE: 亂 — 治也。从乙，乙，治之也；从𤔔。    ||    ENGLISH DRAFT [UNCERTAIN]: To put in order. Formed from 乙, which orders it, and 𤔔.
+
+KEY: shuowen:9699    ||    CHINESE: 戊 — 中宮也。象六甲五龍相拘絞也。戊承丁，象人脅。凡戊之屬皆从戊。    ||    ENGLISH DRAFT [UNCERTAIN]: The central palace. It depicts the six 甲 and five dragons entwined and gripping one another. 戊 follows 丁 and depicts a person's ribs. All characters in this group are formed from 戊.
+
+KEY: shuowen:9702    ||    CHINESE: 巹 — 謹身有所承也。从己、丞。讀若《詩》云“赤舄己己”。    ||    ENGLISH DRAFT [UNCERTAIN]: To conduct oneself carefully while receiving something. Formed from 己 and 丞. Read like 己 in the Odes' 'Red shoes, steady and dignified.'
+
+KEY: shuowen:9705    ||    CHINESE: 𢃳 — 𢱧擊也。从巴、帚，闕。    ||    ENGLISH DRAFT [UNCERTAIN]: To strike backhanded. Formed from 巴 and 帚; further explanation is lacking.
+
+KEY: shuowen:9706    ||    CHINESE: 庚 — 位西方，象秋時萬物庚庚有實也。庚承己，象人𪗇。凡庚之屬皆从庚。    ||    ENGLISH DRAFT [UNCERTAIN]: Its position is in the west, depicting all things in autumn firm and substantial. 庚 follows 己 and depicts a person's 𪗇, apparently the navel. All characters in this group are formed from 庚.
+
+KEY: shuowen:9712    ||    CHINESE: 辭 — 訟也。从𤔔，𤔔猶理辜也。𤔔，理也。    ||    ENGLISH DRAFT [UNCERTAIN]: To litigate. Formed from 𤔔, which is like adjudicating offenses. 𤔔 means to put in order.
+
+KEY: shuowen:9715    ||    CHINESE: 壬 — 位北方也。陰極陽生，故《易》曰：“龍戰于野。”戰者，接也。象人褢妊之形。承亥壬以子，生之敘也。與巫同意。壬承辛，象人脛。脛，任體也。凡壬之屬皆从壬。    ||    ENGLISH DRAFT [UNCERTAIN]: Its position is in the north. Yin reaches its utmost and yang is born; thus the Changes says: 'Dragons fight in the fields.' Fighting means joining. It depicts a person carrying a pregnancy. Following 亥, 壬 is succeeded by 子, the sequence of birth. The same conception as 巫. 壬 follows 辛 and depicts a person's shins, which support the body. All characters in this group are formed from 壬.
+
+KEY: shuowen:9717    ||    CHINESE: 子 — 十一月，陽气動，萬物滋，人以爲偁。象形。凡子之屬皆从子。(李陽冰曰：“子在襁緥中，足併也。”)    ||    ENGLISH DRAFT [UNCERTAIN]: In the eleventh month yang vital energy moves and all things increase; people use this term for it. A pictograph. All characters in this group are formed from 子. Li Yangbing says: 'A child in swaddling clothes, with feet together.'
+
+KEY: shuowen:9721    ||    CHINESE: 㝅 — 乳也。从子𣪊聲。一曰㝅瞀也。    ||    ENGLISH DRAFT [UNCERTAIN]: To bear or nurse a child. Formed from 子, with 𣪊 indicating the sound. Alternatively, the condition expressed by 㝅瞀.
+
+KEY: shuowen:9723    ||    CHINESE: 孺 — 乳子也。一曰輸也，輸尚小也。从子需聲。    ||    ENGLISH DRAFT [UNCERTAIN]: A nursing child. Alternatively, 輸, explained as still small. Formed from 子, with 需 indicating the sound.
+
+KEY: shuowen:9732    ||    CHINESE: 了 — 尦也。从子無臂。象形。凡了之屬皆从了。    ||    ENGLISH DRAFT [UNCERTAIN]: Bent or intertwined, as in 尦. Formed from 子 without arms; a pictograph. All characters in this group are formed from 了.
+
+KEY: shuowen:9741    ||    CHINESE: 丑 — 紐也。十二月，萬物動，用事。象手之形。時加丑，亦舉手時也。凡丑之屬皆从丑。    ||    ENGLISH DRAFT [UNCERTAIN]: A bond or knot. In the twelfth month all things stir and begin their work. It depicts a hand. When the time reaches 丑, it is also time to raise the hands. All characters in this group are formed from 丑.
+
+KEY: shuowen:9744    ||    CHINESE: 寅 — 髕也。正月，陽气動，去黃泉，欲上出，陰尚彊，象宀不達，髕寅於下也。凡寅之屬皆从寅。    ||    ENGLISH DRAFT [UNCERTAIN]: Constrained, as in 髕. In the first month yang vital energy stirs and leaves the Yellow Springs, wanting to emerge upward; yin remains strong. It depicts being unable to pass through 宀, constrained below. All characters in this group are formed from 寅.
+
+KEY: shuowen:9746    ||    CHINESE: 辰 — 震也。三月，陽气動，靁電振，民農時也。物皆生，从乙、匕，象芒達；厂，聲也。辰，房星，天時也。从二，二，古文上字。凡辰之屬皆从辰。    ||    ENGLISH DRAFT [UNCERTAIN]: To shake. In the third month yang vital energy stirs, thunder and lightning shake, and it is the people's farming season. All things grow: 乙 and 匕 depict shoots coming through; 厂 indicates the sound. 辰 is the 房 star, a heavenly seasonal marker. Includes 二, ancient-script 上. All characters in this group are formed from 辰.
+
+KEY: shuowen:9749    ||    CHINESE: 㠯 — 用也。从反巳。賈侍中說：巳，意巳實也。象形。    ||    ENGLISH DRAFT [UNCERTAIN]: To use. Formed from reversed 巳. Palace Attendant Jia says: 巳 conveys already full or substantial. A pictograph.
+
+KEY: shuowen:9750    ||    CHINESE: 午 — 啎也。五月，陰气午逆陽。冒地而出。此予矢同意。凡午之屬皆从午。    ||    ENGLISH DRAFT [UNCERTAIN]: To oppose. In the fifth month yin vital energy opposes yang and emerges through the earth. The same conception as 予 and 矢. All characters in this group are formed from 午.
+
+KEY: shuowen:9753    ||    CHINESE: 申 — 神也。七月，陰气成，體自申束。从臼，自持也。吏臣（段注“臣”作“以” ）餔時聽事，申旦政也。凡申之屬皆从申。    ||    ENGLISH DRAFT [UNCERTAIN]: Divine or spiritual. In the seventh month yin vital energy takes form, and bodies draw in and constrain themselves. Formed from 臼, holding itself. Officials hear business at the afternoon meal and renew the morning's governance; the source records 吏臣, with Duan's note changing 臣 to 以. All characters in this group are formed from 申.
+
+KEY: shuowen:9755    ||    CHINESE: 㬰 — 束縛捽抴爲臾。从申从乙。    ||    ENGLISH DRAFT [UNCERTAIN]: Being bound, seized, and dragged is called 臾. Formed from 申 and 乙.
+
+KEY: shuowen:9759    ||    CHINESE: 𨢊 — 𥶶生衣也。从酉冡聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Fermenting grain growing a coating. Formed from 酉, with 冡 indicating the sound.
+
+KEY: shuowen:9778    ||    CHINESE: 𨣨 — 泛齊，行酒也。从酉監聲。    ||    ENGLISH DRAFT [UNCERTAIN]: The floating fermentation grade, 泛齊; wine in use or circulation, as recorded by 行酒. Formed from 酉, with 監 indicating the sound.
+
+KEY: shuowen:9779    ||    CHINESE: 䤗 — 酒味淫也。从酉，竷省聲。讀若《春秋傳》曰“美而豔”。    ||    ENGLISH DRAFT [UNCERTAIN]: Wine flavor being excessive or rich. Formed from 酉, with abbreviated 竷 indicating the sound. Read like 豔 in the Spring and Autumn Commentary's 'Beautiful and alluring.'
+
+KEY: shuowen:9805    ||    CHINESE: 醫 — 治病工也。殹，惡姿也；醫之性然。得酒而使，从酉。王育說。一曰殹，病聲。酒所以治病也。《周禮》有醫酒。古者巫彭初作醫。    ||    ENGLISH DRAFT [UNCERTAIN]: A craftsman who treats illness. 殹 is an unpleasant appearance, such being the nature of medical treatment. Receiving wine for use, it includes 酉: Wang Yu's explanation. Alternatively, 殹 is the sound of illness, and wine is what treats illness. The Rites of Zhou has medicinal wine. In antiquity Wu Peng first practiced medicine.
+
+KEY: shuowen:9806    ||    CHINESE: 莤 — 禮祭，束茅，加于祼圭，而灌鬯酒，是爲莤。象神歆之也。一曰莤，榼上塞也。从酉从艸。《春秋傳》曰：“尔貢包茅不入，王祭不供，無以莤酒。”    ||    ENGLISH DRAFT [UNCERTAIN]: In sacrificial ritual, bundling thatch, placing it on the libation tablet, and pouring aromatic wine is 莤. It represents the spirit accepting it. Alternatively, a stopper on a wine vessel. Formed from 酉 and 艸. The Spring and Autumn Commentary says: 'Your tribute of bundled thatch does not arrive, the king's sacrifice is not supplied, and there is nothing with which to strain the wine.'
+
+KEY: shuowen:9814    ||    CHINESE: 𨡓 — 盬也。从肉从酉，酒以和𨡓也；爿聲。    ||    ENGLISH DRAFT [UNCERTAIN]: Salted sauce, as in 盬. Formed from 肉 and 酉, since wine blends 𨡓, the sauce; 爿 indicates the sound.
+
+KEY: shuowen:9830    ||    CHINESE: 酋 — 繹酒也。从酉，水半見於上。《禮》有“大酋”，掌酒官也。凡酋之屬皆从酋。    ||    ENGLISH DRAFT [UNCERTAIN]: Wine drawn out or aged, as expressed by 繹酒. Formed from 酉, with water half visible above. The Rites has a 'Great 酋,' the official in charge of wine. All characters in this group are formed from 酋.
+
+KEY: shuowen:9833    ||    CHINESE: 亥 — 荄也。十月，微陽起，接盛陰。从二，二，古文上字。一人男，一人女也。从乙，象褢子咳咳之形。《春秋傳》曰：“亥有二首六身。”凡亥之屬皆从亥。    ||    ENGLISH DRAFT [UNCERTAIN]: A root. In the tenth month faint yang arises and joins abundant yin. Formed from 二, ancient-script 上. One person is male and one female. Includes 乙, depicting carrying a child, with its condition described as 咳咳; the precise sense of 咳咳 is uncertain. The Spring and Autumn Commentary says: '亥 has two heads and six bodies.' All characters in this group are formed from 亥.

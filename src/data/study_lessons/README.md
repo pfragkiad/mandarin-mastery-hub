@@ -87,14 +87,14 @@ frontend: `ReviewSetItem` in `src/lib/lessons.ts`, labelled notes in
 headings/notes that only repeat their examples/functions. The new three-line
 pattern contract and legacy fallbacks still follow the migration report above.
 
-## Official numbering compatibility
+## Current official HSK identities
 
-The canonical `hsk3-2025` packages retain their original version-bound HSK serials.
-Vocabulary now displays the current official serials. `syllabusIndexForReference`
-in `src/lib/lessons.ts` resolves lesson and curriculum references through each
-word's explicit `studyMetadata.numberingRevision.previousId`; exact headwords and
-record UUIDs stay required. Unknown numbering revisions fail closed. Curriculum
-placements and flashcard pools use the same resolver. The active Python lesson
-importer validates through `scripts/hsk_numbering.py`'s read-only legacy view.
-Source packages, lesson/question/placement IDs and progress identities stay exact.
-See the [numbering migration](../../../reports/hsk-level1-5-official-numbering-migration.md).
+Every runtime lesson, curriculum placement and vocabulary source reference uses
+current official HSK IDs directly. `syllabusIndexForReference` reads `hsk_index`;
+there is no historical-ID compatibility layer in the app. Lesson, question,
+placement and saved-progress identities remain stable. Historical numbering
+and source citations live only under importer-only inputs and reports.
+
+Audit with `node scripts/reconcile-hsk-app-references.mjs --check` and
+`python scripts/reconcile-lesson-hsk-labels.py --check`. See the
+[complete reference audit](../../../reports/hsk-current-app-references.md).

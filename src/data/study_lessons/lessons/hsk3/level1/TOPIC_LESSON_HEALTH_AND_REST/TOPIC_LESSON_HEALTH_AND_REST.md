@@ -154,9 +154,9 @@ Are you going to see a doctor?
 
 - 休息 (xiūxi) — rest [HSK entry 246]
 
-- 医生 (yīshēng) — doctor [HSK entry 256]
+- 医生 (yīshēng) — doctor [HSK entry 260]
 
-- 医院 (yīyuàn) — hospital [HSK entry 257]
+- 医院 (yīyuàn) — hospital [HSK entry 261]
 
 ## Optional vocabulary recall quiz
 

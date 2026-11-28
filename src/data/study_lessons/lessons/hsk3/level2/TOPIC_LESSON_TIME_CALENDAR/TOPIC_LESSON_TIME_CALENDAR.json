@@ -605,7 +605,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 480
+              "entry_id": 479
             }
           ],
           "primary_topic_id": "time-calendar",
@@ -1100,7 +1100,7 @@
           431,
           462,
           471,
-          480,
+          479,
           492
         ]
       }

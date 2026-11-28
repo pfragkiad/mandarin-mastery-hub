@@ -142,11 +142,11 @@ How many people are in your family?
 
 - 爸爸 (bàba) — father [HSK entry 3]
 
-- 弟弟 (dìdi) — younger brother [HSK entry 32]
+- 弟弟 (dìdi) — younger brother [HSK entry 31]
 
 - 儿子 (érzi) — son [HSK entry 48]
 
-- 哥哥 (gēge) — older brother [HSK entry 59]
+- 哥哥 (gēge) — older brother [HSK entry 58]
 
 - 孩子 (háizi) — child [HSK entry 68]
 

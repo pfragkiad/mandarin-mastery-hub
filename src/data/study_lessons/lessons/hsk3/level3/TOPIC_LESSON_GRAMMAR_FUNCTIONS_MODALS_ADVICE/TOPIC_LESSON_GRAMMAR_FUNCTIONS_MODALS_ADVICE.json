@@ -1,0 +1,1550 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-necessity-advice-certainty",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Necessity, Advice & Certainty",
+    "subtitle": "Necessity, advice, certainty, and purpose",
+    "description": "Give advice, state obligations, express certainty or reality, and explain who or what an action is for.",
+    "slug": "necessity-advice-certainty"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "modals",
+      "advice",
+      "purpose"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Express obligation and advice: 必须, 得 (děi), 该, 应该, 需要, 不用, and 最好.",
+    "Express certainty, frequency, and reality: 一定, 当然, 其实, 一般, 几乎, 总, and 可.",
+    "Express purpose and beneficiaries with 为 and 为了."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "乎": "Characters:乎",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "保": "Characters:保",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "健": "Characters:健",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "六": "Characters:六",
+    "兴": "Characters:兴",
+    "其": "Characters:其",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "准": "Characters:准",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "刷": "Characters:刷",
+    "前": "Characters:前",
+    "办": "Characters:办",
+    "医": "Characters:医",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "发": "Characters:发",
+    "只": "Characters:只",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "咱": "Characters:咱",
+    "啊": "Characters:啊",
+    "啡": "Characters:啡",
+    "喝": "Characters:喝",
+    "四": "Characters:四",
+    "在": "Characters:在",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "坚": "Characters:坚",
+    "备": "Characters:备",
+    "复": "Characters:复",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "定": "Characters:定",
+    "实": "Characters:实",
+    "家": "Characters:家",
+    "宾": "Characters:宾",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "岁": "Characters:岁",
+    "工": "Characters:工",
+    "己": "Characters:己",
+    "已": "Characters:已",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "平": "Characters:平",
+    "年": "Characters:年",
+    "床": "Characters:床",
+    "应": "Characters:应",
+    "康": "Characters:康",
+    "当": "Characters:当",
+    "录": "Characters:录",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "必": "Characters:必",
+    "忘": "Characters:忘",
+    "忙": "Characters:忙",
+    "怎": "Characters:怎",
+    "总": "Characters:总",
+    "息": "Characters:息",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "把": "Characters:把",
+    "护": "Characters:护",
+    "担": "Characters:担",
+    "拾": "Characters:拾",
+    "持": "Characters:持",
+    "提": "Characters:提",
+    "收": "Characters:收",
+    "放": "Characters:放",
+    "文": "Characters:文",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "春": "Characters:春",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "更": "Characters:更",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "末": "Characters:末",
+    "机": "Characters:机",
+    "杂": "Characters:杂",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "查": "Characters:查",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "检": "Characters:检",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "洗": "Characters:洗",
+    "点": "Characters:点",
+    "炼": "Characters:炼",
+    "烧": "Characters:烧",
+    "然": "Characters:然",
+    "照": "Characters:照",
+    "爸": "Characters:爸",
+    "牙": "Characters:牙",
+    "物": "Characters:物",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "甜": "Characters:甜",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "睡": "Characters:睡",
+    "知": "Characters:知",
+    "礼": "Characters:礼",
+    "神": "Characters:神",
+    "空": "Characters:空",
+    "穿": "Characters:穿",
+    "等": "Characters:等",
+    "精": "Characters:精",
+    "累": "Characters:累",
+    "练": "Characters:练",
+    "经": "Characters:经",
+    "继": "Characters:继",
+    "续": "Characters:续",
+    "考": "Characters:考",
+    "自": "Characters:自",
+    "般": "Characters:般",
+    "行": "Characters:行",
+    "衣": "Characters:衣",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "让": "Characters:让",
+    "试": "Characters:试",
+    "话": "Characters:话",
+    "该": "Characters:该",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "赛": "Characters:赛",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "身": "Characters:身",
+    "车": "Characters:车",
+    "轻": "Characters:轻",
+    "较": "Characters:较",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "迟": "Characters:迟",
+    "道": "Characters:道",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钟": "Characters:钟",
+    "锻": "Characters:锻",
+    "问": "Characters:问",
+    "闹": "Characters:闹",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "需": "Characters:需",
+    "面": "Characters:面",
+    "音": "Characters:音",
+    "须": "Characters:须",
+    "顾": "Characters:顾",
+    "题": "Characters:题",
+    "风": "Characters:风",
+    "馆": "Characters:馆",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Modal verbs, advisory adverbs, and purpose coverbs for clear everyday reasoning.",
+      "focus": "Note 得 read děi (\"must / have to\"), 不用 (\"no need to\"), and 为了 (\"in order to\")."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0525",
+          "hanzi": "必须",
+          "pinyin": "bìxū",
+          "meaning_en": "must; have to",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0525-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你必须去吗？",
+              "pinyin": "nǐ bìxū qù ma?",
+              "english": "Do you have to go?",
+              "teaching_note": "Short everyday spoken use of 必须."
+            },
+            {
+              "id": "ex-0525-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生必须上课。",
+              "pinyin": "xuéshēng bìxū shàngkè.",
+              "english": "Students must attend class.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 525
+            }
+          ]
+        },
+        {
+          "id": "w-0543",
+          "hanzi": "不用",
+          "pinyin": "búyòng",
+          "meaning_en": "need not; no need to",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0543-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你不用等我。",
+              "pinyin": "nǐ búyòng děng wǒ.",
+              "english": "You don't need to wait for me.",
+              "teaching_note": "Short everyday spoken use of 不用."
+            },
+            {
+              "id": "ex-0543-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "明天不用上班。",
+              "pinyin": "míngtiān búyòng shàngbān.",
+              "english": "There is no need to work tomorrow.",
+              "teaching_note": "Simple descriptive or narrative use of 不用."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 543
+            }
+          ]
+        },
+        {
+          "id": "w-0581",
+          "hanzi": "当然",
+          "pinyin": "dāngrán",
+          "meaning_en": "of course",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0581-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "当然可以！",
+              "pinyin": "dāngrán kěyǐ!",
+              "english": "Of course you can!",
+              "teaching_note": "Short everyday spoken use of 当然."
+            },
+            {
+              "id": "ex-0581-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他当然知道这件事。",
+              "pinyin": "tā dāngrán zhīdào zhè jiàn shì.",
+              "english": "Of course he knows about this matter.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 581
+            }
+          ]
+        },
+        {
+          "id": "w-0587",
+          "hanzi": "得",
+          "pinyin": "děi",
+          "meaning_en": "must; have to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0587-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我得走了！",
+              "pinyin": "wǒ děi zǒu le!",
+              "english": "I have to go!",
+              "teaching_note": "得 (děi) expresses necessity; contrast lexical 得 (dé, ID 583) and particle 得 (de, Level 2)."
+            },
+            {
+              "id": "ex-0587-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "明天我得早点起床。",
+              "pinyin": "míngtiān wǒ děi zǎo diǎn qǐchuáng.",
+              "english": "I have to get up early tomorrow.",
+              "teaching_note": "得 (děi) expresses necessity; contrast lexical 得 (dé, ID 583) and particle 得 (de, Level 2)."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 587
+            }
+          ]
+        },
+        {
+          "id": "w-0635",
+          "hanzi": "该",
+          "pinyin": "gāi",
+          "meaning_en": "should; ought to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0635-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我该走了。",
+              "pinyin": "wǒ gāi zǒu le.",
+              "english": "I should go now.",
+              "teaching_note": "Short everyday spoken use of 该."
+            },
+            {
+              "id": "ex-0635-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "现在该上课了。",
+              "pinyin": "xiànzài gāi shàngkè le.",
+              "english": "It's time for class now.",
+              "teaching_note": "Simple descriptive or narrative use of 该."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 635
+            }
+          ]
+        },
+        {
+          "id": "w-0687",
+          "hanzi": "几乎",
+          "pinyin": "jīhū",
+          "meaning_en": "almost; nearly",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0687-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我几乎忘了！",
+              "pinyin": "wǒ jīhū wàng le!",
+              "english": "I almost forgot!",
+              "teaching_note": "Short everyday spoken use of 几乎."
+            },
+            {
+              "id": "ex-0687-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他几乎每天都锻炼。",
+              "pinyin": "tā jīhū měi tiān dōu duànliàn.",
+              "english": "He exercises almost every day.",
+              "teaching_note": "Simple descriptive or narrative use of 几乎."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 687
+            }
+          ]
+        },
+        {
+          "id": "w-0797",
+          "hanzi": "其实",
+          "pinyin": "qíshí",
+          "meaning_en": "actually; in fact",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0797-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "其实我也不知道。",
+              "pinyin": "qíshí wǒ yě bù zhīdào.",
+              "english": "Actually, I don't know either.",
+              "teaching_note": "Short everyday spoken use of 其实."
+            },
+            {
+              "id": "ex-0797-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他看起来很年轻，其实已经四十岁了。",
+              "pinyin": "tā kàn qǐlái hěn niánqīng, qíshí yǐjīng sì shí suì le.",
+              "english": "He looks young, but he's actually forty already.",
+              "teaching_note": "Simple descriptive or narrative use of 其实."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 797
+            }
+          ]
+        },
+        {
+          "id": "w-0876",
+          "hanzi": "为",
+          "pinyin": "wèi",
+          "meaning_en": "for; on behalf of; for the sake of",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0876-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我为你高兴！",
+              "pinyin": "wǒ wèi nǐ gāoxìng!",
+              "english": "I'm happy for you!",
+              "teaching_note": "Short everyday spoken use of 为."
+            },
+            {
+              "id": "ex-0876-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大家为比赛做了准备。",
+              "pinyin": "dàjiā wèi bǐsài zuò le zhǔnbèi.",
+              "english": "Everyone made preparations for the match.",
+              "teaching_note": "Simple descriptive or narrative use of 为."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 876
+            }
+          ]
+        },
+        {
+          "id": "w-0877",
+          "hanzi": "为了",
+          "pinyin": "wèile",
+          "meaning_en": "in order to",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0877-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "为了考试，我要复习。",
+              "pinyin": "wèile kǎoshì, wǒ yào fùxí.",
+              "english": "I need to review for the exam.",
+              "teaching_note": "Short everyday spoken use of 为了."
+            },
+            {
+              "id": "ex-0877-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "为了身体健康，他每天锻炼。",
+              "pinyin": "wèile shēntǐ jiànkāng, tā měi tiān duànliàn.",
+              "english": "He exercises every day for his health.",
+              "teaching_note": "Simple descriptive or narrative use of 为了."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 877
+            }
+          ]
+        },
+        {
+          "id": "w-0912",
+          "hanzi": "需要",
+          "pinyin": "xūyào",
+          "meaning_en": "need; require",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0912-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你需要帮忙吗？",
+              "pinyin": "nǐ xūyào bāngmáng ma?",
+              "english": "Do you need help?",
+              "teaching_note": "Short everyday spoken use of 需要."
+            },
+            {
+              "id": "ex-0912-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学习汉语需要多练习。",
+              "pinyin": "xuéxí Hànyǔ xūyào duō liànxí.",
+              "english": "Learning Chinese requires lots of practice.",
+              "teaching_note": "Simple descriptive or narrative use of 需要."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 912
+            }
+          ]
+        },
+        {
+          "id": "w-0922",
+          "hanzi": "一般",
+          "pinyin": "yìbān",
+          "meaning_en": "generally; ordinary",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0922-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我一般七点起床。",
+              "pinyin": "wǒ yìbān qī diǎn qǐchuáng.",
+              "english": "I usually get up at seven.",
+              "teaching_note": "Short everyday spoken use of 一般."
+            },
+            {
+              "id": "ex-0922-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "一般来说，春天的天气比较好。",
+              "pinyin": "yìbān lái shuō, chūntiān de tiānqì bǐjiào hǎo.",
+              "english": "Generally speaking, the weather is nicer in spring.",
+              "teaching_note": "Simple descriptive or narrative use of 一般."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 922
+            }
+          ]
+        },
+        {
+          "id": "w-0924",
+          "hanzi": "一定",
+          "pinyin": "yídìng",
+          "meaning_en": "certainly; definitely",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0924-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你一定要来啊！",
+              "pinyin": "nǐ yídìng yào lái a!",
+              "english": "You must come!",
+              "teaching_note": "Short everyday spoken use of 一定."
+            },
+            {
+              "id": "ex-0924-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "明天他一定会来。",
+              "pinyin": "míngtiān tā yídìng huì lái.",
+              "english": "He will definitely come tomorrow.",
+              "teaching_note": "Simple descriptive or narrative use of 一定."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 924
+            }
+          ]
+        },
+        {
+          "id": "w-0939",
+          "hanzi": "应该",
+          "pinyin": "yīnggāi",
+          "meaning_en": "should; ought to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0939-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你应该早点睡。",
+              "pinyin": "nǐ yīnggāi zǎo diǎn shuì.",
+              "english": "You should go to bed earlier.",
+              "teaching_note": "Short everyday spoken use of 应该."
+            },
+            {
+              "id": "ex-0939-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "生病的时候应该多休息。",
+              "pinyin": "shēngbìng de shíhou yīnggāi duō xiūxi.",
+              "english": "You should rest more when you're ill.",
+              "teaching_note": "Simple descriptive or narrative use of 应该."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 939
+            }
+          ]
+        },
+        {
+          "id": "w-0993",
+          "hanzi": "总",
+          "pinyin": "zǒng",
+          "meaning_en": "always; in total; overall",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "verb",
+            "adjective"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0993-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你怎么总不说话？",
+              "pinyin": "nǐ zěnme zǒng bù shuōhuà?",
+              "english": "Why do you never speak?",
+              "teaching_note": "总 can express always/general scope; it overlaps 总是 but is a distinct entry."
+            },
+            {
+              "id": "ex-0993-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他总在放学后看书。",
+              "pinyin": "tā zǒng zài fàngxué hòu kàn shū.",
+              "english": "He always reads after school.",
+              "teaching_note": "总 can express always/general scope; it overlaps 总是 but is a distinct entry."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 993
+            }
+          ]
+        },
+        {
+          "id": "w-0996",
+          "hanzi": "最好",
+          "pinyin": "zuìhǎo",
+          "meaning_en": "had better; best",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0996-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你最好先休息。",
+              "pinyin": "nǐ zuìhǎo xiān xiūxi.",
+              "english": "You'd better rest first.",
+              "teaching_note": "Short everyday spoken use of 最好."
+            },
+            {
+              "id": "ex-0996-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨天最好坐车去学校。",
+              "pinyin": "xià yǔ tiān zuìhǎo zuò chē qù xuéxiào.",
+              "english": "It's best to take a car to school on rainy days.",
+              "teaching_note": "Simple descriptive or narrative use of 最好."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 996
+            }
+          ]
+        },
+        {
+          "id": "w-0015",
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "meaning_en": "do not want; don't",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "modal-verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0015-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我不要这个。",
+              "pinyin": "wǒ bú yào zhège.",
+              "english": "I don't want this one.",
+              "teaching_note": "不要 directly rejects an offered object; in some contexts it can sound firm."
+            },
+            {
+              "id": "ex-0015-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请不要在这里吃东西。",
+              "pinyin": "qǐng búyào zài zhèlǐ chī dōngxi.",
+              "english": "Please don't eat here.",
+              "teaching_note": "Short everyday instruction or request using 不要; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 15
+            }
+          ]
+        },
+        {
+          "id": "w-0030",
+          "hanzi": "的",
+          "pinyin": "de",
+          "meaning_en": "possessive particle",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0030-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的书。",
+              "pinyin": "zhè shì wǒ de shū.",
+              "english": "This is my book.",
+              "teaching_note": "的 links the possessor 我 to the noun 书."
+            },
+            {
+              "id": "ex-0030-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "爸爸的车在那边。",
+              "pinyin": "bàba de chē zài nàbiān.",
+              "english": "Dad's car is over there.",
+              "teaching_note": "Family or daily-life description using 的 without advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 30
+            }
+          ]
+        },
+        {
+          "id": "w-0122",
+          "hanzi": "没有",
+          "pinyin": "méiyǒu",
+          "meaning_en": "do not have",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0122-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我没有手机。",
+              "pinyin": "wǒ méiyǒu shǒujī.",
+              "english": "I don't have a mobile phone.",
+              "teaching_note": "没有 expresses non-possession; it is not combined with 不."
+            },
+            {
+              "id": "ex-0122-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天下午没有课。",
+              "pinyin": "jīntiān xiàwǔ méiyǒu kè.",
+              "english": "There is no class this afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 没有 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 122
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 必须 (bìxū)",
+        "explanation": "必须 (bìxū) means “must; have to” (adverb).",
+        "example_id": "ex-0525-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 不用 (búyòng)",
+        "explanation": "不用 (búyòng) means “need not; no need to” (adverb).",
+        "example_id": "ex-0543-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0525-1",
+      "ex-0543-1",
+      "ex-0581-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What two weekend or daily habits does the passage recommend for staying healthy?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Resting early each day and going out for walks on weekends when free.",
+          "explanation": "The second paragraph says 每天最好早点儿休息，周末有空时多出去走走."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 为了 and 最好 or 必须.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "为了准时到机场，我们明天早上必须六点起床，最好提前叫车。",
+          "explanation": "Use 为了 for purpose and 必须/最好 for necessity/advice."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which expression means \"no need to / don’t have to\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "必须",
+              "pinyin": "bìxū",
+              "meaning_en": "must"
+            },
+            {
+              "id": "b",
+              "hanzi": "不用",
+              "pinyin": "búyòng",
+              "meaning_en": "need not"
+            },
+            {
+              "id": "c",
+              "hanzi": "一定",
+              "pinyin": "yídìng",
+              "meaning_en": "certainly"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "不用 means no need to."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word introduces a goal (\"in order to\")?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "为了",
+              "pinyin": "wèile",
+              "meaning_en": "in order to"
+            },
+            {
+              "id": "b",
+              "hanzi": "其实",
+              "pinyin": "qíshí",
+              "meaning_en": "actually"
+            },
+            {
+              "id": "c",
+              "hanzi": "几乎",
+              "pinyin": "jīhū",
+              "meaning_en": "almost"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "为了 means in order to."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which adverb means \"actually / in fact\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "当然",
+              "pinyin": "dāngrán",
+              "meaning_en": "of course"
+            },
+            {
+              "id": "b",
+              "hanzi": "其实",
+              "pinyin": "qíshí",
+              "meaning_en": "actually"
+            },
+            {
+              "id": "c",
+              "hanzi": "一般",
+              "pinyin": "yìbān",
+              "meaning_en": "generally"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "其实 means actually or in fact."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Preparing for a Trip Together",
+        "context_en": "Two friends discuss what they must prepare and what they don’t need to bring.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "明天八点出发，咱们今天必须把行李收拾好，还得早点儿睡。",
+            "pinyin": "Míngtiān bā diǎn chūfā, zánmen jīntiān bìxū bǎ xíngli shōushi hǎo, hái děi zǎodiǎnr shuì.",
+            "english": "We leave at eight tomorrow, so today we must pack our luggage and also have to sleep early."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "当然！不过我觉得不用带太多衣服，最好只带轻便的。",
+            "pinyin": "Dāngrán! Búguò wǒ juéde búyòng dài tài duō yīfu, zuìhǎo zhǐ dài qīngbiàn de.",
+            "english": "Of course! Though I think we don’t need to bring too many clothes—it’s best to only bring light ones."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "其实那边的宾馆一般都有洗衣机，我们需要带的也就是牙刷和护照。",
+            "pinyin": "Qíshí nàbiān de bīnguǎn yìbān dōu yǒu xǐyījī, wǒmen xūyào dài de yě jiùshì yáshuā hé hùzhào.",
+            "english": "Actually hotels there generally have washing machines, so what we need to bring is really just toothbrushes and passports."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "为了明天不迟到，咱们应该定两个闹钟，这样一定没问题！",
+            "pinyin": "Wèile míngtiān bù chídào, zánmen yīnggāi dìng liǎng ge nàozhōng, zhèyàng yídìng méi wèntí!",
+            "english": "In order not to be late tomorrow, we should set two alarms—that way there will definitely be no problem!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Stating purpose with 为了",
+          "explanation_en": "Place 为了 (wèile) + goal/purpose at the start of a sentence before the action.",
+          "pattern_hanzi": "为了 + <Goal> + ， + <Subject> + <Action>",
+          "pattern_pinyin": "wèile + <Goal> + , + <Subject> + <Action>",
+          "pattern_pseudo_translation": "in order to + <Goal> + , + <Subject> + <Action>",
+          "examples": [
+            {
+              "hanzi": "为了提高汉语水平，她每天坚持读课文。",
+              "pinyin": "Wèile tígāo Hànyǔ shuǐpíng, tā měitiān jiānchí dú kèwén.",
+              "english": "In order to improve her Chinese level, she reads the lesson text every day."
+            },
+            {
+              "hanzi": "为了身体健康，我们应该多锻炼。",
+              "pinyin": "Wèile shēntǐ jiànkāng, wǒmen yīnggāi duō duànliàn.",
+              "english": "For physical health, we should exercise more."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Giving strong advice with 最好",
+          "explanation_en": "Place 最好 (zuìhǎo, \"had better\") before the verb phrase to give helpful advice.",
+          "pattern_hanzi": "<Subject> + 最好 + <Verb Phrase>",
+          "pattern_pinyin": "<Subject> + zuìhǎo + <Verb Phrase>",
+          "pattern_pseudo_translation": "<Subject> + had better + <Verb Phrase>",
+          "examples": [
+            {
+              "hanzi": "外面风很大，你最好穿件大衣。",
+              "pinyin": "Wàimiàn fēng hěn dà, nǐ zuìhǎo chuān jiàn dàyī.",
+              "english": "It’s very windy outside—you’d better put on a coat."
+            },
+            {
+              "hanzi": "发烧的时候最好去医院检查一下。",
+              "pinyin": "Fāshāo de shíhou zuìhǎo qù yīyuàn jiǎnchá yíxià.",
+              "english": "When you have a fever, you’d better go to the hospital for a checkup."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Express obligation, lack of need, and general habits.",
+        "model": {
+          "hanzi": "这件事你不用担心，我一定帮你办好。",
+          "pinyin": "Zhè jiàn shì nǐ búyòng dānxīn, wǒ yídìng bāng nǐ bàn hǎo.",
+          "english": "You don’t need to worry about this—I’ll definitely get it done for you."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say it’s already 11 p.m. and we ought to sleep.",
+            "model_answer": {
+              "hanzi": "已经十一点了，咱们该睡觉了。",
+              "pinyin": "Yǐjīng shíyī diǎn le, zánmen gāi shuìjiào le.",
+              "english": "It’s already eleven o’clock; we ought to go to sleep."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say he almost never drinks coffee at night.",
+            "model_answer": {
+              "hanzi": "他晚上几乎从不喝咖啡。",
+              "pinyin": "Tā wǎnshang jīhū cóngbù hē kāfēi.",
+              "english": "He almost never drinks coffee at night."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this gift was bought for Mom.",
+            "model_answer": {
+              "hanzi": "这件礼物是为妈妈买的。",
+              "pinyin": "Zhè jiàn lǐwù shì wèi māma mǎi de.",
+              "english": "This gift was bought for Mom."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Good Habits for Busy Days",
+        "paragraphs": [
+          {
+            "hanzi": "工作再忙，我们也必须照顾好自己的身体。其实，保持健康一般不需要太复杂的办法。",
+            "pinyin": "Gōngzuò zài máng, wǒmen yě bìxū zhàogù hǎo zìjǐ de shēntǐ. Qíshí, bǎochí jiànkāng yìbān bù xūyào tài fùzá de bànfǎ.",
+            "english": "No matter how busy work is, we must take good care of our own health. Actually, staying healthy generally doesn’t require overly complicated methods."
+          },
+          {
+            "hanzi": "每天最好早点儿休息，周末有空时多出去走走。为了让自己更有精神，平时也该多喝水，少吃太甜的东西。",
+            "pinyin": "Měitiān zuìhǎo zǎodiǎnr xiūxi, zhōumò yǒukòng shí duō chūqù zǒuzou. Wèile ràng zìjǐ gèng yǒu jīngshen, píngshí yě gāi duō hē shuǐ, shǎo chī tài tián de dōngxi.",
+            "english": "Every day it’s best to rest a bit early, and on weekends go out for walks when free. In order to have more energy, you should normally drink more water and eat fewer overly sweet things."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What does staying healthy generally NOT require according to the passage?",
+            "answer_en": "Overly complicated methods."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What should you do to have more energy?",
+            "answer_en": "Drink more water and eat fewer overly sweet things."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Give advice to a friend who is tired using 最好, 应该, or 不用.",
+          "model_answer": {
+            "hanzi": "你今天太累了，晚上不用继续工作了，最好早点儿睡觉。",
+            "pinyin": "Nǐ jīntiān tài lèi le, wǎnshang búyòng jìxù gōngzuò le, zuìhǎo zǎodiǎnr shuìjiào.",
+            "english": "You’re too tired today—you don’t need to keep working tonight; you’d better go to sleep early."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain a goal of yours using 为了.",
+          "model_answer": {
+            "hanzi": "为了学好中文，我每天坚持听录音和写汉字。",
+            "pinyin": "Wèile xuéhǎo Zhōngwén, wǒ měitiān jiānchí tīng lùyīn hé xiě Hànzì.",
+            "english": "In order to learn Chinese well, I stick to listening to recordings and writing characters every day."
+          }
+        }
+      ],
+      "common_pitfall": "The negative of 必须 / 得 (\"must\") is 不用 (\"need not / don’t have to\"), NOT *不得 (*bù děi) or *不必须.",
+      "pronunciation_focus": "一定 (yídìng) changes 一 to rising yí before fourth-tone dìng; 得 meaning \"have to\" is read děi (third tone).",
+      "review": {
+        "can_do": [
+          "Express obligation and advice with 必须, 得, 应该, and 最好.",
+          "Use 不用 for \"no need to\".",
+          "State purpose and beneficiaries with 为了 and 为."
+        ],
+        "entry_ids": [
+          525,
+          543,
+          581,
+          587,
+          635,
+          687,
+          797,
+          876,
+          877,
+          912,
+          922,
+          924,
+          939,
+          993,
+          996
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-necessity-advice-certainty--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Stating purpose with 为了",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Giving strong advice with 最好",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say it’s already 11 p.m. and we ought to sleep.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say he almost never drinks coffee at night.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this gift was bought for Mom.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What does staying healthy generally NOT require according to the passage?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What should you do to have more energy?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Give advice to a friend who is tired using 最好, 应该, or 不用.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Explain a goal of yours using 为了.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which expression means \"no need to / don’t have ",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word introduces a goal (\"in order to\")?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-necessity-advice-certainty--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which adverb means \"actually / in fact\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-necessity-advice-certainty--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-necessity-advice-certainty--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

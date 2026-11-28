@@ -142,7 +142,7 @@ class Level5AudioCompatibilityTests(unittest.TestCase):
 
     def test_revised_source_keeps_the_original_recording_identities(self):
         manifest = audio.load_manifest()
-        self.assertEqual(manifest['handoff']['file'], 'hsk3_level5_1.0.6.json')
+        self.assertEqual(manifest['handoff']['file'], 'hsk3_level5_1.0.7.json')
         self.assertEqual(manifest['previousHandoff']['file'], 'hsk3_level5_1.0.0.json')
         self.assertTrue(any(row['file'] == 'hsk3_level5_1.0.5.json' for row in manifest['previousCompatibleHandoffs']))
         vocabulary = audio.base.vocabulary_store.read_vocabulary()

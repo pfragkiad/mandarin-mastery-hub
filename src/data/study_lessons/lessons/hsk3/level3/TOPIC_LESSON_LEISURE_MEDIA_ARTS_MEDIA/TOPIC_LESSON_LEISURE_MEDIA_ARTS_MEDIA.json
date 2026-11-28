@@ -1,0 +1,1478 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-music-festivals-media",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Music, Festivals, News & Photos",
+    "subtitle": "Music, festivals, news, cameras, and photos",
+    "description": "Talk about performances, music, evening parties, festivals, newspapers, news, stories, and taking photos.",
+    "slug": "music-festivals-media"
+  },
+  "classification": {
+    "primary_topic_id": "leisure-media",
+    "topic_ids": [
+      "leisure-media"
+    ],
+    "tags": [
+      "media",
+      "festivals",
+      "photography"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "media-literature",
+    "subtopic_ids": [
+      "media-literature",
+      "arts-entertainment"
+    ]
+  },
+  "learning_objectives": [
+    "Talk about performances and celebrations: 表演, 节目, 晚会, 音乐, 节, 节日, and 过节.",
+    "Discuss news, stories, and media: 报纸, 新闻, and 故事.",
+    "Talk about photography with 相机, 照相, 拍照, and 照片."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "举": "Characters:举",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "也": "Characters:也",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "二": "Characters:二",
+    "于": "Characters:于",
+    "五": "Characters:五",
+    "些": "Characters:些",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "份": "Characters:份",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "关": "Characters:关",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "加": "Characters:加",
+    "动": "Characters:动",
+    "区": "Characters:区",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "参": "Characters:参",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "叔": "Characters:叔",
+    "台": "Characters:台",
+    "吃": "Characters:吃",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "哪": "Characters:哪",
+    "唱": "Characters:唱",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "定": "Characters:定",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "当": "Characters:当",
+    "彩": "Characters:彩",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "念": "Characters:念",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "报": "Characters:报",
+    "拍": "Characters:拍",
+    "故": "Characters:故",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "旁": "Characters:旁",
+    "既": "Characters:既",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "春": "Characters:春",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "机": "Characters:机",
+    "条": "Characters:条",
+    "校": "Characters:校",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "正": "Characters:正",
+    "段": "Characters:段",
+    "每": "Characters:每",
+    "活": "Characters:活",
+    "游": "Characters:游",
+    "演": "Characters:演",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "照": "Characters:照",
+    "爷": "Characters:爷",
+    "爸": "Characters:爸",
+    "片": "Characters:片",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "留": "Characters:留",
+    "登": "Characters:登",
+    "的": "Characters:的",
+    "目": "Characters:目",
+    "相": "Characters:相",
+    "看": "Characters:看",
+    "社": "Characters:社",
+    "秋": "Characters:秋",
+    "第": "Characters:第",
+    "等": "Characters:等",
+    "精": "Characters:精",
+    "纸": "Characters:纸",
+    "给": "Characters:给",
+    "网": "Characters:网",
+    "聚": "Characters:聚",
+    "能": "Characters:能",
+    "舞": "Characters:舞",
+    "节": "Characters:节",
+    "茶": "Characters:茶",
+    "表": "Characters:表",
+    "要": "Characters:要",
+    "视": "Characters:视",
+    "讲": "Characters:讲",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "趣": "Characters:趣",
+    "跳": "Characters:跳",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "间": "Characters:间",
+    "闹": "Characters:闹",
+    "闻": "Characters:闻",
+    "院": "Characters:院",
+    "静": "Characters:静",
+    "音": "Characters:音",
+    "饭": "Characters:饭"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Arts, entertainment, festivals, journalism, and photography vocabulary.",
+      "focus": "Use 过节 for celebrating a holiday, and 拍照 / 照相 for taking photos (separable verbs)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0516",
+          "hanzi": "报纸",
+          "pinyin": "bàozhǐ",
+          "meaning_en": "newspaper",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0516-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你看报纸吗？",
+              "pinyin": "nǐ kàn bàozhǐ ma?",
+              "english": "Do you read newspapers?",
+              "teaching_note": "Short everyday spoken use of 报纸."
+            },
+            {
+              "id": "ex-0516-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爷爷每天早上看报纸。",
+              "pinyin": "yéye měi tiān zǎoshang kàn bàozhǐ.",
+              "english": "Grandpa reads the newspaper every morning.",
+              "teaching_note": "Simple descriptive or narrative use of 报纸."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 516
+            }
+          ]
+        },
+        {
+          "id": "w-0530",
+          "hanzi": "表演",
+          "pinyin": "biǎoyǎn",
+          "meaning_en": "perform; performance",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0530-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会表演吗？",
+              "pinyin": "nǐ huì biǎoyǎn ma?",
+              "english": "Can you perform?",
+              "teaching_note": "Short everyday spoken use of 表演."
+            },
+            {
+              "id": "ex-0530-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们正在表演。",
+              "pinyin": "háizimen zhèngzài biǎoyǎn.",
+              "english": "The children are performing.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 530
+            }
+          ]
+        },
+        {
+          "id": "w-0650",
+          "hanzi": "故事",
+          "pinyin": "gùshi",
+          "meaning_en": "story",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0650-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "讲个故事吧！",
+              "pinyin": "jiǎng gè gùshi ba!",
+              "english": "Tell me a story!",
+              "teaching_note": "Short everyday spoken use of 故事."
+            },
+            {
+              "id": "ex-0650-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爷爷常给孩子讲故事。",
+              "pinyin": "yéye cháng gěi háizi jiǎng gùshi.",
+              "english": "Grandpa often tells stories to the children.",
+              "teaching_note": "Simple descriptive or narrative use of 故事."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 650
+            }
+          ]
+        },
+        {
+          "id": "w-0659",
+          "hanzi": "过节",
+          "pinyin": "guòjié",
+          "meaning_en": "celebrate a festival",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0659-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你们怎么过节？",
+              "pinyin": "nǐmen zěnme guòjié?",
+              "english": "How do you celebrate festivals?",
+              "teaching_note": "Short everyday spoken use of 过节."
+            },
+            {
+              "id": "ex-0659-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "过节时我们一家人一起吃饭。",
+              "pinyin": "guòjié shí wǒmen yì jiā rén yìqǐ chīfàn.",
+              "english": "During festivals, our family eats together.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 659
+            }
+          ]
+        },
+        {
+          "id": "w-0708",
+          "hanzi": "节",
+          "pinyin": "jié",
+          "meaning_en": "festival; section; classifier",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0708-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你今天有几节课？",
+              "pinyin": "nǐ jīntiān yǒu jǐ jié kè?",
+              "english": "How many classes do you have today?",
+              "teaching_note": "节 (jié) counts class periods."
+            },
+            {
+              "id": "ex-0708-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上午的第一节课八点开始。",
+              "pinyin": "shàngwǔ de dì-yī jié kè bā diǎn kāishǐ.",
+              "english": "The first class of the morning starts at eight.",
+              "teaching_note": "节 (jié) is the classifier for a class period."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 708
+            }
+          ]
+        },
+        {
+          "id": "w-0709",
+          "hanzi": "节目",
+          "pinyin": "jiémù",
+          "meaning_en": "program; show",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0709-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "晚上有什么节目？",
+              "pinyin": "wǎnshang yǒu shénme jiémù?",
+              "english": "What shows are on tonight?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0709-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "电视上有一个好看的节目。",
+              "pinyin": "diànshì shàng yǒu yí ge hǎokàn de jiémù.",
+              "english": "There is an interesting show on TV.",
+              "teaching_note": "Simple descriptive or narrative use of 节目."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 709
+            }
+          ]
+        },
+        {
+          "id": "w-0710",
+          "hanzi": "节日",
+          "pinyin": "jiérì",
+          "meaning_en": "holiday; festival",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0710-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是什么节日？",
+              "pinyin": "zhè shì shénme jiérì?",
+              "english": "What festival is this?",
+              "teaching_note": "Short everyday spoken use of 节日."
+            },
+            {
+              "id": "ex-0710-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "过年是中国的重要节日。",
+              "pinyin": "guònián shì Zhōngguó de zhòngyào jiérì.",
+              "english": "The New Year celebration is an important festival in China.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 710
+            }
+          ]
+        },
+        {
+          "id": "w-0791",
+          "hanzi": "拍照",
+          "pinyin": "pāizhào",
+          "meaning_en": "take a photo",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0791-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "帮我拍照吧。",
+              "pinyin": "bāng wǒ pāizhào ba.",
+              "english": "Take a photo for me!",
+              "teaching_note": "Short everyday spoken use of 拍照."
+            },
+            {
+              "id": "ex-0791-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "游客们在公园里拍照。",
+              "pinyin": "yóukèmen zài gōngyuán lǐ pāizhào.",
+              "english": "Tourists are taking photos in the park.",
+              "teaching_note": "Simple descriptive or narrative use of 拍照."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 791
+            }
+          ]
+        },
+        {
+          "id": "w-0870",
+          "hanzi": "晚会",
+          "pinyin": "wǎnhuì",
+          "meaning_en": "evening party; evening event",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0870-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你参加晚会吗？",
+              "pinyin": "nǐ cānjiā wǎnhuì ma?",
+              "english": "Are you going to the evening party?",
+              "teaching_note": "Short everyday spoken use of 晚会."
+            },
+            {
+              "id": "ex-0870-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校周五晚上有晚会。",
+              "pinyin": "xuéxiào zhōu wǔ wǎnshang yǒu wǎnhuì.",
+              "english": "The school has an evening party on Friday.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 870
+            }
+          ]
+        },
+        {
+          "id": "w-0895",
+          "hanzi": "相机",
+          "pinyin": "xiàngjī",
+          "meaning_en": "camera",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0895-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你带相机了吗？",
+              "pinyin": "nǐ dài xiàngjī le ma?",
+              "english": "Did you bring your camera?",
+              "teaching_note": "Short everyday spoken use of 相机."
+            },
+            {
+              "id": "ex-0895-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "游客用相机拍照。",
+              "pinyin": "yóukè yòng xiàngjī pāizhào.",
+              "english": "The tourist takes photos with a camera.",
+              "teaching_note": "Simple descriptive or narrative use of 相机."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 895
+            }
+          ]
+        },
+        {
+          "id": "w-0904",
+          "hanzi": "新闻",
+          "pinyin": "xīnwén",
+          "meaning_en": "news",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0904-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你看新闻了吗？",
+              "pinyin": "nǐ kàn xīnwén le ma?",
+              "english": "Did you watch the news?",
+              "teaching_note": "Short everyday spoken use of 新闻."
+            },
+            {
+              "id": "ex-0904-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸每天早上看新闻。",
+              "pinyin": "bàba měi tiān zǎoshang kàn xīnwén.",
+              "english": "Dad watches the news every morning.",
+              "teaching_note": "Simple descriptive or narrative use of 新闻."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 904
+            }
+          ]
+        },
+        {
+          "id": "w-0935",
+          "hanzi": "音乐",
+          "pinyin": "yīnyuè",
+          "meaning_en": "music",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0935-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢什么音乐？",
+              "pinyin": "nǐ xǐhuan shénme yīnyuè?",
+              "english": "What music do you like?",
+              "teaching_note": "Short everyday spoken use of 音乐."
+            },
+            {
+              "id": "ex-0935-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天晚上听音乐。",
+              "pinyin": "tā měi tiān wǎnshang tīng yīnyuè.",
+              "english": "He listens to music every evening.",
+              "teaching_note": "Simple descriptive or narrative use of 音乐."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 935
+            }
+          ]
+        },
+        {
+          "id": "w-0972",
+          "hanzi": "照片",
+          "pinyin": "zhàopiàn",
+          "meaning_en": "photograph; photo",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0972-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我看看照片。",
+              "pinyin": "gěi wǒ kàn kàn zhàopiàn.",
+              "english": "Show me the photos!",
+              "teaching_note": "Short everyday spoken use of 照片."
+            },
+            {
+              "id": "ex-0972-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "房间里有一张照片。",
+              "pinyin": "fángjiān lǐ yǒu yì zhāng zhàopiàn.",
+              "english": "There is a photo in the room.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 972
+            }
+          ]
+        },
+        {
+          "id": "w-0973",
+          "hanzi": "照相",
+          "pinyin": "zhàoxiàng",
+          "meaning_en": "take a photograph",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "media-literature",
+          "subtopic_ids": [
+            "media-literature"
+          ],
+          "examples": [
+            {
+              "id": "ex-0973-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一起照相吧！",
+              "pinyin": "yìqǐ zhàoxiàng ba!",
+              "english": "Let's take a photo together!",
+              "teaching_note": "Short everyday spoken use of 照相."
+            },
+            {
+              "id": "ex-0973-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "游客在公园里照相。",
+              "pinyin": "yóukè zài gōngyuán lǐ zhàoxiàng.",
+              "english": "Tourists are taking pictures in the park.",
+              "teaching_note": "Simple descriptive or narrative use of 照相."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 973
+            }
+          ]
+        },
+        {
+          "id": "w-0018",
+          "hanzi": "唱",
+          "pinyin": "chàng",
+          "meaning_en": "sing",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media",
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0018-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她会唱中文歌。",
+              "pinyin": "tā huì chàng Zhōngwén gē.",
+              "english": "She can sing songs in Chinese.",
+              "teaching_note": "会 marks learned ability; 中文歌 means songs sung in Chinese."
+            },
+            {
+              "id": "ex-0018-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们在唱歌。",
+              "pinyin": "xuéshēngmen zài chàng gē.",
+              "english": "The students are singing.",
+              "teaching_note": "School or study context showing 唱 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 18
+            }
+          ]
+        },
+        {
+          "id": "w-0037",
+          "hanzi": "电影",
+          "pinyin": "diànyǐng",
+          "meaning_en": "film",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0037-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天晚上看电影吗？",
+              "pinyin": "jīntiān wǎnshang kàn diànyǐng ma?",
+              "english": "Shall we watch a movie tonight?",
+              "teaching_note": "Daily time or schedule context illustrating 电影 in a straightforward sentence."
+            },
+            {
+              "id": "ex-0037-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "电影院今天有新电影。",
+              "pinyin": "diànyǐngyuàn jīntiān yǒu xīn diànyǐng.",
+              "english": "There is a new movie at the cinema today.",
+              "teaching_note": "Natural cinema listing; 新电影 means a new movie, with no advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 37
+            }
+          ]
+        },
+        {
+          "id": "w-0038",
+          "hanzi": "电影院",
+          "pinyin": "diànyǐngyuàn",
+          "meaning_en": "cinema",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media",
+            "places-directions"
+          ],
+          "primary_subtopic_id": "arts-entertainment",
+          "subtopic_ids": [
+            "arts-entertainment"
+          ],
+          "examples": [
+            {
+              "id": "ex-0038-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "电影院在学校旁边。",
+              "pinyin": "diànyǐngyuàn zài xuéxiào pángbiān.",
+              "english": "The cinema is next to the school.",
+              "teaching_note": "旁边 means “beside” and functions as a location word after 学校."
+            },
+            {
+              "id": "ex-0038-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "电影院晚上八点有电影。",
+              "pinyin": "diànyǐngyuàn wǎnshang bā diǎn yǒu diànyǐng.",
+              "english": "The cinema has a movie at eight tonight.",
+              "teaching_note": "Daily time or schedule context illustrating 电影院 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 38
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 报纸 (bàozhǐ)",
+        "explanation": "报纸 (bàozhǐ) means “newspaper” (noun).",
+        "example_id": "ex-0516-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 表演 (biǎoyǎn)",
+        "explanation": "表演 (biǎoyǎn) means “perform; performance” (verb).",
+        "example_id": "ex-0530-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0516-1",
+      "ex-0530-1",
+      "ex-0650-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What did Uncle Zhang use his new camera for at the Mid-Autumn party?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He took many photos for everyone.",
+          "explanation": "The second paragraph says 用他的新相机给大家拍了不少照片."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 节日 or 晚会 and 拍照 or 照片.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "过节的时候我们学校办了一场晚会，我用相机拍了很多照片。",
+          "explanation": "Combine festival/show and photography terms."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"newspaper\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "新闻",
+              "pinyin": "xīnwén",
+              "meaning_en": "news"
+            },
+            {
+              "id": "b",
+              "hanzi": "报纸",
+              "pinyin": "bàozhǐ",
+              "meaning_en": "newspaper"
+            },
+            {
+              "id": "c",
+              "hanzi": "故事",
+              "pinyin": "gùshi",
+              "meaning_en": "story"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "报纸 means newspaper."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"camera\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "相机",
+              "pinyin": "xiàngjī",
+              "meaning_en": "camera"
+            },
+            {
+              "id": "b",
+              "hanzi": "照片",
+              "pinyin": "zhàopiàn",
+              "meaning_en": "photo"
+            },
+            {
+              "id": "c",
+              "hanzi": "节目",
+              "pinyin": "jiémù",
+              "meaning_en": "program / show"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "相机 means camera."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"music\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "表演",
+              "pinyin": "biǎoyǎn",
+              "meaning_en": "perform"
+            },
+            {
+              "id": "b",
+              "hanzi": "晚会",
+              "pinyin": "wǎnhuì",
+              "meaning_en": "evening party"
+            },
+            {
+              "id": "c",
+              "hanzi": "音乐",
+              "pinyin": "yīnyuè",
+              "meaning_en": "music"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "音乐 means music."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "At the Mid-Autumn Evening Party",
+        "context_en": "Two friends talk about a campus festival show and taking photos.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今晚学校有个中秋晚会，听说有很多精彩的节目！",
+            "pinyin": "Jīnwǎn xuéxiào yǒu ge Zhōngqiū wǎnhuì, tīngshuō yǒu hěn duō jīngcǎi de jiémù!",
+            "english": "Tonight the school has a Mid-Autumn evening party—I heard there are lots of wonderful acts!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，我们班还要表演一段音乐节目呢。你带相机了吗？",
+            "pinyin": "Duì, wǒmen bān hái yào biǎoyǎn yí duàn yīnyuè jiémù ne. Nǐ dài xiàngjī le ma?",
+            "english": "Yes, our class is even performing a music act. Did you bring your camera?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "带了！过节的时候大家一起拍照留念，多有意思。",
+            "pinyin": "Dài le! Guòjié de shíhou dàjiā yìqǐ pāizhào liúniàn, duō yǒu yìsi.",
+            "english": "I did! Taking photos together during the festival as a keepsake is so meaningful."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "明天校报的新闻里说不定还会登我们的照片呢！",
+            "pinyin": "Míngtiān xiàobào de xīnwén lǐ shuōbudìng hái huì dēng wǒmen de zhàopiàn ne!",
+            "english": "Maybe tomorrow’s school newspaper news will even print our photos!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Taking photos with 拍照 / 照相",
+          "explanation_en": "Both 拍照 (pāizhào) and 照相 (zhàoxiàng) mean \"take a photo\"; place 给 + person before them to say who you photograph.",
+          "pattern_hanzi": "给 + <Person> + 拍照 / 照相",
+          "pattern_pinyin": "gěi + <Person> + pāizhào / zhàoxiàng",
+          "pattern_pseudo_translation": "for + <Person> + take photo",
+          "examples": [
+            {
+              "hanzi": "能帮我们大家拍张照吗？",
+              "pinyin": "Néng bāng wǒmen dàjiā pāi zhāng zhào ma?",
+              "english": "Could you help take a photo for all of us?"
+            },
+            {
+              "hanzi": "游客们喜欢在公园里照相。",
+              "pinyin": "Yóukèmen xǐhuan zài gōngyuán lǐ zhàoxiàng.",
+              "english": "Tourists like taking photos in the park."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Celebrating a festival with 过节",
+          "explanation_en": "过节 (guòjié) means to celebrate or spend a holiday/festival.",
+          "pattern_hanzi": "<People> + 在一起 + 过节",
+          "pattern_pinyin": "<People> + zài yìqǐ + guòjié",
+          "pattern_pseudo_translation": "<People> + together + celebrate festival",
+          "examples": [
+            {
+              "hanzi": "每年春节，一家人都聚在一起过节。",
+              "pinyin": "Měi nián Chūnjié, yì jiā rén dōu jù zài yìqǐ guòjié.",
+              "english": "Every Spring Festival, the whole family gathers together to celebrate."
+            },
+            {
+              "hanzi": "你们国家有哪些重要的节日？",
+              "pinyin": "Nǐmen guójiā yǒu nǎxiē zhòngyào de jiérì?",
+              "english": "What important festivals does your country have?"
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about news, stories, music, and performances.",
+        "model": {
+          "hanzi": "爷爷每天早上都一边喝茶一边看报纸。",
+          "pinyin": "Yéye měitiān zǎoshang dōu yìbiān hē chá yìbiān kàn bàozhǐ.",
+          "english": "Grandpa reads the newspaper while drinking tea every morning."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you like listening to quiet music.",
+            "model_answer": {
+              "hanzi": "我喜欢听安静的音乐。",
+              "pinyin": "Wǒ xǐhuan tīng ānjìng de yīnyuè.",
+              "english": "I like listening to quiet music."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you read an interesting piece of news today.",
+            "model_answer": {
+              "hanzi": "今天我在网上看到一条有趣的新闻。",
+              "pinyin": "Jīntiān wǒ zài wǎngshàng kàndào yì tiáo yǒuqù de xīnwén.",
+              "english": "Today I saw an interesting piece of news online."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say the children performed a short story on stage.",
+            "model_answer": {
+              "hanzi": "孩子们在台上表演了一个小故事。",
+              "pinyin": "Háizimen zài tái shàng biǎoyǎn le yí ge xiǎo gùshi.",
+              "english": "The children performed a short story on stage."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Remembering a Festival Evening",
+        "paragraphs": [
+          {
+            "hanzi": "去年中秋节，社区举办了一场热闹的晚会。台上既有唱歌、跳舞等音乐节目，也有小朋友表演的有趣故事。",
+            "pinyin": "Qùnián Zhōngqiūjié, shèqū jǔbàn le yì chǎng rènào de wǎnhuì. Táishàng jì yǒu chànggē, tiàowǔ děng yīnyuè jiémù, yě yǒu xiǎo péngyou biǎoyǎn de yǒuqù gùshi.",
+            "english": "Last Mid-Autumn Festival, the community held a lively evening party. On stage there were both music acts like singing and dancing, and fun stories performed by children."
+          },
+          {
+            "hanzi": "张叔叔用他的新相机给大家拍了不少照片。第二天，当地报纸还发了一条关于这次过节活动的新闻。",
+            "pinyin": "Zhāng shūshu yòng tā de xīn xiàngjī gěi dàjiā pāi le bùshǎo zhàopiàn. Dì-èr tiān, dāngdì bàozhǐ hái fā le yì tiáo guānyú zhè cì guòjié huódòng de xīnwén.",
+            "english": "Uncle Zhang used his new camera to take quite a few photos for everyone. The next day, the local newspaper even published a news piece about this festival event."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What kinds of performances were on stage at the evening party?",
+            "answer_en": "Music acts like singing and dancing, and stories performed by children."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What appeared in the local newspaper the next day?",
+            "answer_en": "A news piece about the festival event."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Talk about your favorite festival and how you celebrate it using 节日 and 过节.",
+          "model_answer": {
+            "hanzi": "我最喜欢的节日是春节，过节时家人会一起吃饭、看晚会。",
+            "pinyin": "Wǒ zuì xǐhuan de jiérì shì Chūnjié, guòjié shí jiārén huì yìqǐ chīfàn, kàn wǎnhuì.",
+            "english": "My favorite festival is Spring Festival; during the holiday my family eats together and watches the evening gala."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say whether you read newspapers/news or like taking photos.",
+          "model_answer": {
+            "hanzi": "我每天看新闻，出去玩儿时也喜欢用相机拍照。",
+            "pinyin": "Wǒ měitiān kàn xīnwén, chūqù wánr shí yě xǐhuan yòng xiàngjī pāizhào.",
+            "english": "I read the news every day, and when I go out I also like taking photos with a camera."
+          }
+        }
+      ],
+      "common_pitfall": "报纸 is the physical newspaper (\"a sheet of newspaper\": 一份报纸), while 新闻 is the news content (\"a news story\": 一条新闻).",
+      "pronunciation_focus": "故事 (gùshi) and 报纸 (bàozhǐ) contrast neutral-tone shi with third-tone zhǐ; 拍照 (pāizhào) moves from flat pāi to falling zhào.",
+      "review": {
+        "can_do": [
+          "Talk about shows, music, and festivals.",
+          "Distinguish 报纸 and 新闻.",
+          "Use 相机, 拍照, 照相, and 照片."
+        ],
+        "entry_ids": [
+          516,
+          530,
+          650,
+          659,
+          708,
+          709,
+          710,
+          791,
+          870,
+          895,
+          904,
+          935,
+          972,
+          973
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-music-festivals-media--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Taking photos with 拍照 / 照相",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-music-festivals-media--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Celebrating a festival with 过节",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you like listening to quiet music.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-music-festivals-media--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you read an interesting piece of news today.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-music-festivals-media--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the children performed a short story on stage.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What kinds of performances were on stage at the evening party?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-music-festivals-media--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What appeared in the local newspaper the next day?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Talk about your favorite festival and how you celebrate it using 节日 and 过节.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-music-festivals-media--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say whether you read newspapers/news or like taking photos.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-music-festivals-media--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-music-festivals-media--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"newspaper\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-music-festivals-media--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"camera\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-music-festivals-media--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"music\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-music-festivals-media--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-music-festivals-media--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

@@ -1,0 +1,1331 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-sports-matches-games",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Sports, Matches & Games",
+    "subtitle": "Matches, gyms, tennis, badminton, and hobbies",
+    "description": "Talk about sports, matches, scoring points, gyms, tennis, badminton, games, zoos, and personal interests.",
+    "slug": "sports-matches-games"
+  },
+  "classification": {
+    "primary_topic_id": "leisure-media",
+    "topic_ids": [
+      "leisure-media"
+    ],
+    "tags": [
+      "sports",
+      "hobbies",
+      "games"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "sports-recreation",
+    "subtopic_ids": [
+      "sports-recreation"
+    ]
+  },
+  "learning_objectives": [
+    "Name sports and venues: 体育, 体育馆, 球场, 网球, 羽毛球, and 运动会.",
+    "Talk about competitions and scoring: 比赛 and 得分.",
+    "Discuss hobbies and recreation: 兴趣, 游戏, and 动物园."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "举": "Characters:举",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "了": "Characters:了",
+    "五": "Characters:五",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "兴": "Characters:兴",
+    "分": "Characters:分",
+    "到": "Characters:到",
+    "加": "Characters:加",
+    "动": "Characters:动",
+    "午": "Characters:午",
+    "厉": "Characters:厉",
+    "去": "Characters:去",
+    "参": "Characters:参",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "合": "Characters:合",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "员": "Characters:员",
+    "周": "Characters:周",
+    "味": "Characters:味",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "季": "Characters:季",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "害": "Characters:害",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "工": "Characters:工",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "弟": "Characters:弟",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "总": "Characters:总",
+    "感": "Characters:感",
+    "戏": "Characters:戏",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "排": "Characters:排",
+    "放": "Characters:放",
+    "新": "Characters:新",
+    "旁": "Characters:旁",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "毛": "Characters:毛",
+    "没": "Characters:没",
+    "游": "Characters:游",
+    "火": "Characters:火",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "熊": "Characters:熊",
+    "爸": "Characters:爸",
+    "物": "Characters:物",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "球": "Characters:球",
+    "生": "Characters:生",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "秋": "Characters:秋",
+    "空": "Characters:空",
+    "第": "Characters:第",
+    "篮": "Characters:篮",
+    "练": "Characters:练",
+    "网": "Characters:网",
+    "羽": "Characters:羽",
+    "育": "Characters:育",
+    "能": "Characters:能",
+    "虽": "Characters:虽",
+    "行": "Characters:行",
+    "西": "Characters:西",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "赛": "Characters:赛",
+    "起": "Characters:起",
+    "趣": "Characters:趣",
+    "足": "Characters:足",
+    "踢": "Characters:踢",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "运": "Characters:运",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "配": "Characters:配",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "非": "Characters:非",
+    "音": "Characters:音",
+    "馆": "Characters:馆",
+    "高": "Characters:高",
+    "鸟": "Characters:鸟"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Sports, matches, recreation venues, and personal interests.",
+      "focus": "Use 打 for racquet/hand ball sports (打网球, 打羽毛球) and 对……感兴趣 / 有兴趣 for interests."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0522",
+          "hanzi": "比赛",
+          "pinyin": "bǐsài",
+          "meaning_en": "competition; match; compete",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0522-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你参加比赛吗？",
+              "pinyin": "nǐ cānjiā bǐsài ma?",
+              "english": "Are you entering the competition?",
+              "teaching_note": "Short everyday spoken use of 比赛."
+            },
+            {
+              "id": "ex-0522-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校明天有篮球比赛。",
+              "pinyin": "xuéxiào míngtiān yǒu lánqiú bǐsài.",
+              "english": "The school has a basketball match tomorrow.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 522
+            }
+          ]
+        },
+        {
+          "id": "w-0585",
+          "hanzi": "得分",
+          "pinyin": "défēn",
+          "meaning_en": "score; points scored",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0585-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他得分了吗？",
+              "pinyin": "tā défēn le ma?",
+              "english": "Did he score?",
+              "teaching_note": "Short everyday spoken use of 得分."
+            },
+            {
+              "id": "ex-0585-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这次比赛他得分最多。",
+              "pinyin": "zhè cì bǐsài tā défēn zuì duō.",
+              "english": "He scored the most points in this match.",
+              "teaching_note": "Simple descriptive or narrative use of 得分."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 585
+            }
+          ]
+        },
+        {
+          "id": "w-0604",
+          "hanzi": "动物园",
+          "pinyin": "dòngwùyuán",
+          "meaning_en": "zoo",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media",
+            "animals-weather"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0604-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "周末去动物园吧！",
+              "pinyin": "zhōumò qù dòngwùyuán ba!",
+              "english": "Let's go to the zoo this weekend!",
+              "teaching_note": "Short everyday spoken use of 动物园."
+            },
+            {
+              "id": "ex-0604-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "动物园里有大熊猫和鸟。",
+              "pinyin": "dòngwùyuán lǐ yǒu dàxióngmāo hé niǎo.",
+              "english": "The zoo has giant pandas and birds.",
+              "teaching_note": "Simple descriptive or narrative use of 动物园."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 604
+            }
+          ]
+        },
+        {
+          "id": "w-0811",
+          "hanzi": "球场",
+          "pinyin": "qiúchǎng",
+          "meaning_en": "ball court; sports field",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0811-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "球场在哪儿？",
+              "pinyin": "qiúchǎng zài nǎr?",
+              "english": "Where is the sports field?",
+              "teaching_note": "Short everyday spoken use of 球场."
+            },
+            {
+              "id": "ex-0811-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们在球场上踢足球。",
+              "pinyin": "háizimen zài qiúchǎng shàng tī zúqiú.",
+              "english": "The children are playing soccer on the field.",
+              "teaching_note": "Simple descriptive or narrative use of 球场."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 811
+            }
+          ]
+        },
+        {
+          "id": "w-0853",
+          "hanzi": "体育",
+          "pinyin": "tǐyù",
+          "meaning_en": "physical education; sports",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0853-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天有体育课吗？",
+              "pinyin": "jīntiān yǒu tǐyù kè ma?",
+              "english": "Do we have PE today?",
+              "teaching_note": "Short everyday spoken use of 体育."
+            },
+            {
+              "id": "ex-0853-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们喜欢上体育课。",
+              "pinyin": "xuéshēngmen xǐhuan shàng tǐyù kè.",
+              "english": "The students like PE class.",
+              "teaching_note": "Simple descriptive or narrative use of 体育."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 853
+            }
+          ]
+        },
+        {
+          "id": "w-0854",
+          "hanzi": "体育馆",
+          "pinyin": "tǐyùguǎn",
+          "meaning_en": "gymnasium; sports hall",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0854-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "体育馆在哪儿？",
+              "pinyin": "tǐyùguǎn zài nǎr?",
+              "english": "Where is the gym?",
+              "teaching_note": "Short everyday spoken use of 体育馆."
+            },
+            {
+              "id": "ex-0854-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "比赛明天在体育馆开始。",
+              "pinyin": "bǐsài míngtiān zài tǐyùguǎn kāishǐ.",
+              "english": "The match starts tomorrow at the gym.",
+              "teaching_note": "Simple descriptive or narrative use of 体育馆."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 854
+            }
+          ]
+        },
+        {
+          "id": "w-0872",
+          "hanzi": "网球",
+          "pinyin": "wǎngqiú",
+          "meaning_en": "tennis",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0872-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会打网球吗？",
+              "pinyin": "nǐ huì dǎ wǎngqiú ma?",
+              "english": "Can you play tennis?",
+              "teaching_note": "Short everyday spoken use of 网球."
+            },
+            {
+              "id": "ex-0872-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们每周末打网球。",
+              "pinyin": "tāmen měi zhōumò dǎ wǎngqiú.",
+              "english": "They play tennis every weekend.",
+              "teaching_note": "Simple descriptive or narrative use of 网球."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 872
+            }
+          ]
+        },
+        {
+          "id": "w-0910",
+          "hanzi": "兴趣",
+          "pinyin": "xìngqù",
+          "meaning_en": "interest; hobby",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0910-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有什么兴趣？",
+              "pinyin": "nǐ yǒu shénme xìngqù?",
+              "english": "What are your interests?",
+              "teaching_note": "Short everyday spoken use of 兴趣."
+            },
+            {
+              "id": "ex-0910-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她对中国音乐很有兴趣。",
+              "pinyin": "tā duì Zhōngguó yīnyuè hěn yǒu xìngqù.",
+              "english": "She is interested in Chinese music.",
+              "teaching_note": "Simple descriptive or narrative use of 兴趣."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 910
+            }
+          ]
+        },
+        {
+          "id": "w-0945",
+          "hanzi": "游戏",
+          "pinyin": "yóuxì",
+          "meaning_en": "game",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0945-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们玩个游戏吧。",
+              "pinyin": "wǒmen wán gè yóuxì ba.",
+              "english": "Let's play a game!",
+              "teaching_note": "Short everyday spoken use of 游戏."
+            },
+            {
+              "id": "ex-0945-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们放学后玩游戏。",
+              "pinyin": "háizimen fàngxué hòu wán yóuxì.",
+              "english": "The children play games after school.",
+              "teaching_note": "Simple descriptive or narrative use of 游戏."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 945
+            }
+          ]
+        },
+        {
+          "id": "w-0950",
+          "hanzi": "羽毛球",
+          "pinyin": "yǔmáoqiú",
+          "meaning_en": "badminton",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0950-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会打羽毛球吗？",
+              "pinyin": "nǐ huì dǎ yǔmáoqiú ma?",
+              "english": "Can you play badminton?",
+              "teaching_note": "Short everyday spoken use of 羽毛球."
+            },
+            {
+              "id": "ex-0950-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们周末在公园打羽毛球。",
+              "pinyin": "wǒmen zhōumò zài gōngyuán dǎ yǔmáoqiú.",
+              "english": "We play badminton in the park on weekends.",
+              "teaching_note": "Simple descriptive or narrative use of 羽毛球."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 950
+            }
+          ]
+        },
+        {
+          "id": "w-0960",
+          "hanzi": "运动会",
+          "pinyin": "yùndònghuì",
+          "meaning_en": "sports meet",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media",
+            "health-wellbeing"
+          ],
+          "primary_subtopic_id": "sports-recreation",
+          "subtopic_ids": [
+            "sports-recreation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0960-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你参加运动会吗？",
+              "pinyin": "nǐ cānjiā yùndònghuì ma?",
+              "english": "Are you joining the sports meet?",
+              "teaching_note": "Short everyday spoken use of 运动会."
+            },
+            {
+              "id": "ex-0960-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校下周有运动会。",
+              "pinyin": "xuéxiào xià zhōu yǒu yùndònghuì.",
+              "english": "The school has a sports meet next week.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 960
+            }
+          ]
+        },
+        {
+          "id": "w-0039",
+          "hanzi": "店",
+          "pinyin": "diàn",
+          "meaning_en": "shop",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "examples": [
+            {
+              "id": "ex-0039-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "那家店很小。",
+              "pinyin": "nà jiā diàn hěn xiǎo.",
+              "english": "That shop is small.",
+              "teaching_note": "家 can classify a shop or commercial establishment; 很小 describes its size."
+            },
+            {
+              "id": "ex-0039-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店早上九点开门。",
+              "pinyin": "zhè jiā diàn zǎoshang jiǔ diǎn kāimén.",
+              "english": "This shop opens at nine in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 店 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 39
+            }
+          ]
+        },
+        {
+          "id": "w-0058",
+          "hanzi": "哥哥",
+          "pinyin": "gēge",
+          "meaning_en": "older brother",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "family-relationships",
+          "topic_ids": [
+            "family-relationships",
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0058-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我哥哥在工作。",
+              "pinyin": "wǒ gēge zài gōngzuò.",
+              "english": "My older brother is working.",
+              "teaching_note": "在 before a verb marks ongoing activity; the brother is working now."
+            },
+            {
+              "id": "ex-0058-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "哥哥每天坐火车上班。",
+              "pinyin": "gēge měitiān zuò huǒchē shàngbān.",
+              "english": "The older brother takes the train to work every day.",
+              "teaching_note": "Family or daily-life description using 哥哥 without advanced grammar."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 58
+            }
+          ]
+        },
+        {
+          "id": "w-0075",
+          "hanzi": "好玩儿",
+          "pinyin": "hǎowánr",
+          "meaning_en": "fun",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "leisure-media",
+          "topic_ids": [
+            "leisure-media"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0075-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "这里真好玩儿！",
+              "pinyin": "zhèlǐ zhēn hǎowánr!",
+              "english": "It's really fun here!",
+              "teaching_note": "Short beginner-level description illustrating 好玩儿 in context."
+            },
+            {
+              "id": "ex-0075-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“这里有很多好玩儿的东西。”小朋友说。",
+              "pinyin": "“zhèlǐ yǒu hěn duō hǎowánr de dōngxi.” xiǎopéngyǒu shuō.",
+              "english": "“There are lots of fun things here,” the child said.",
+              "teaching_note": "The original spoken form fits naturally in quoted dialogue."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 75
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 比赛 (bǐsài)",
+        "explanation": "比赛 (bǐsài) means “competition; match; compete” (verb).",
+        "example_id": "ex-0522-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 得分 (défēn)",
+        "explanation": "得分 (défēn) means “score; points scored” (verb).",
+        "example_id": "ex-0585-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0522-1",
+      "ex-0585-1",
+      "ex-0604-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What happened in the afternoon of the school sports meet?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "There were fun games (趣味游戏).",
+          "explanation": "The passage says 下午还有趣味游戏."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about sports or hobbies using 羽毛球/网球 and 有兴趣.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我对网球很有兴趣，周末常常去球场练习。",
+          "explanation": "Use 对……有兴趣 and a sport/venue."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"badminton\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "网球",
+              "pinyin": "wǎngqiú",
+              "meaning_en": "tennis"
+            },
+            {
+              "id": "b",
+              "hanzi": "羽毛球",
+              "pinyin": "yǔmáoqiú",
+              "meaning_en": "badminton"
+            },
+            {
+              "id": "c",
+              "hanzi": "游戏",
+              "pinyin": "yóuxì",
+              "meaning_en": "game"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "羽毛球 literally means feather-ball (badminton)."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"gymnasium / sports hall\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "体育馆",
+              "pinyin": "tǐyùguǎn",
+              "meaning_en": "gymnasium"
+            },
+            {
+              "id": "b",
+              "hanzi": "动物园",
+              "pinyin": "dòngwùyuán",
+              "meaning_en": "zoo"
+            },
+            {
+              "id": "c",
+              "hanzi": "球场",
+              "pinyin": "qiúchǎng",
+              "meaning_en": "ball court"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "体育馆 is a gymnasium or sports hall."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"score / points\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "比赛",
+              "pinyin": "bǐsài",
+              "meaning_en": "match"
+            },
+            {
+              "id": "b",
+              "hanzi": "兴趣",
+              "pinyin": "xìngqù",
+              "meaning_en": "interest"
+            },
+            {
+              "id": "c",
+              "hanzi": "得分",
+              "pinyin": "défēn",
+              "meaning_en": "score"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "得分 means score or points scored."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "After-Work Badminton",
+        "context_en": "Two friends make plans to play badminton at the gym and talk about a school sports meet.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "下班以后咱们去体育馆打羽毛球吧？",
+            "pinyin": "Xiàbān yǐhòu zánmen qù tǐyùguǎn dǎ yǔmáoqiú ba?",
+            "english": "After work shall we go to the gym to play badminton?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊！不过我最近也对网球很有兴趣，球场那边空着吗？",
+            "pinyin": "Hǎo a! Búguò wǒ zuìjìn yě duì wǎngqiú hěn yǒu xìngqù, qiúchǎng nàbiān kōng zhe ma?",
+            "english": "Sure! Though lately I’m also interested in tennis—is the court over there free?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "今天下午学校正在开运动会，球场可能有比赛。",
+            "pinyin": "Jīntiān xiàwǔ xuéxiào zhèngzài kāi yùndònghuì, qiúchǎng kěnéng yǒu bǐsài.",
+            "english": "The school is holding a sports meet this afternoon, so there might be a match on the court."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "那咱们先去看比赛，看看哪个班得分最高！",
+            "pinyin": "Nà zánmen xiān qù kàn bǐsài, kànkan nǎge bān défēn zuì gāo!",
+            "english": "Then let’s go watch the match first and see which class scores the highest!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Playing racquet and ball sports with 打",
+          "explanation_en": "Use 打 (dǎ) for sports played with hands or racquets (打羽毛球, 打网球).",
+          "pattern_hanzi": "去 + <Venue> + 打 + 羽毛球 / 网球",
+          "pattern_pinyin": "qù + <Venue> + dǎ + yǔmáoqiú / wǎngqiú",
+          "pattern_pseudo_translation": "go + <Venue> + hit/play + badminton / tennis",
+          "examples": [
+            {
+              "hanzi": "我每个星期六都和爸爸去球场打网球。",
+              "pinyin": "Wǒ měi ge xīngqīliù dōu hé bàba qù qiúchǎng dǎ wǎngqiú.",
+              "english": "Every Saturday I go to the court with my dad to play tennis."
+            },
+            {
+              "hanzi": "她在大学时打羽毛球非常厉害。",
+              "pinyin": "Tā zài dàxué shí dǎ yǔmáoqiú fēicháng lìhai.",
+              "english": "She was very good at playing badminton in university."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Expressing interest with 有兴趣",
+          "explanation_en": "Say 对 + topic + 有兴趣 (or 没兴趣) to express what interests you.",
+          "pattern_hanzi": "<Subject> + 对 + <Topic> + 很 + 有兴趣",
+          "pattern_pinyin": "<Subject> + duì + <Topic> + hěn + yǒu xìngqù",
+          "pattern_pseudo_translation": "<Subject> + toward + <Topic> + very + have interest",
+          "examples": [
+            {
+              "hanzi": "弟弟对体育比赛一直很有兴趣。",
+              "pinyin": "Dìdi duì tǐyù bǐsài yìzhí hěn yǒu xìngqù.",
+              "english": "My younger brother has always been very interested in sports matches."
+            },
+            {
+              "hanzi": "你对这个新游戏有兴趣吗？",
+              "pinyin": "Nǐ duì zhège xīn yóuxì yǒu xìngqù ma?",
+              "english": "Are you interested in this new game?"
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about sports meets, games, and weekend recreation.",
+        "model": {
+          "hanzi": "运动会上，我们班的运动员得分最多。",
+          "pinyin": "Yùndònghuì shàng, wǒmen bān de yùndòngyuán défēn zuì duō.",
+          "english": "At the sports meet, our class’s athletes scored the most points."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you like playing fun games with friends.",
+            "model_answer": {
+              "hanzi": "周末我喜欢和朋友一起玩儿有趣的游戏。",
+              "pinyin": "Zhōumò wǒ xǐhuan hé péngyou yìqǐ wánr yǒuqù de yóuxì.",
+              "english": "On weekends I like playing fun games with friends."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say the students went to the zoo on Friday.",
+            "model_answer": {
+              "hanzi": "星期五同学们一起去动物园玩儿了。",
+              "pinyin": "Xīngqīwǔ tóngxuémen yìqǐ qù dòngwùyuán wánr le.",
+              "english": "On Friday the classmates went to the zoo together."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say there is a basketball match in the gym tonight.",
+            "model_answer": {
+              "hanzi": "今天晚上体育馆里有一场篮球比赛。",
+              "pinyin": "Jīntiān wǎnshang tǐyùguǎn lǐ yǒu yì chǎng lánqiú bǐsài.",
+              "english": "Tonight there is a basketball match in the gym."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "School Sports Meet",
+        "paragraphs": [
+          {
+            "hanzi": "上星期五，我们学校举行了秋季运动会。早上八点，同学们都来到体育馆和旁边的球场。",
+            "pinyin": "Shàng xīngqīwǔ, wǒmen xuéxiào jǔxíng le qiūjì yùndònghuì. Zǎoshang bā diǎn, tóngxuémen dōu láidào tǐyùguǎn hé pángbiān de qiúchǎng.",
+            "english": "Last Friday, our school held the autumn sports meet. At 8 a.m., the students all came to the gym and the court beside it."
+          },
+          {
+            "hanzi": "上午有羽毛球和网球比赛，下午还有趣味游戏。我们班的同学配合得很好，最后总得分排在第一名！",
+            "pinyin": "Shàngwǔ yǒu yǔmáoqiú hé wǎngqiú bǐsài, xiàwǔ hái yǒu qùwèi yóuxì. Wǒmen bān de tóngxué pèihé de hěn hǎo, zuìhòu zǒng défēn pái zài dì-yī míng!",
+            "english": "In the morning there were badminton and tennis matches, and in the afternoon fun games. Our classmates worked together well, and in the end our total score ranked first!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What matches were held in the morning?",
+            "answer_en": "Badminton and tennis matches."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "How did the narrator’s class place in the total score?",
+            "answer_en": "First place."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say what sport or game you have an interest in using 有兴趣.",
+          "model_answer": {
+            "hanzi": "我对打羽毛球很有兴趣，每周都会去体育馆打一次。",
+            "pinyin": "Wǒ duì dǎ yǔmáoqiú hěn yǒu xìngqù, měi zhōu dōu huì qù tǐyùguǎn dǎ yí cì.",
+            "english": "I’m very interested in playing badminton and go to the gym once a week."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Talk about a match or sports event you watched or joined.",
+          "model_answer": {
+            "hanzi": "去年秋天我参加了学校的网球比赛，虽然没得第一，但是很开心。",
+            "pinyin": "Qùnián qiūtiān wǒ cānjiā le xuéxiào de wǎngqiú bǐsài, suīrán méi dé dì-yī, dànshì hěn kāixīn.",
+            "english": "Last autumn I joined the school tennis match; although I didn’t win first place, I was very happy."
+          }
+        }
+      ],
+      "common_pitfall": "Say 对……有兴趣 (or 对……感兴趣), using the preposition 对 before the thing you are interested in.",
+      "pronunciation_focus": "羽毛球 (yǔmáoqiú) moves from third tone to second tone to second tone; 体育馆 (tǐyùguǎn) has third + fourth + third.",
+      "review": {
+        "can_do": [
+          "Name sports, courts, and gyms.",
+          "Talk about matches, scores, and sports meets.",
+          "Express personal interests with 有兴趣."
+        ],
+        "entry_ids": [
+          522,
+          585,
+          604,
+          811,
+          853,
+          854,
+          872,
+          910,
+          945,
+          950,
+          960
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-sports-matches-games--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Playing racquet and ball sports with 打",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-sports-matches-games--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Expressing interest with 有兴趣",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you like playing fun games with friends.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-sports-matches-games--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the students went to the zoo on Friday.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-sports-matches-games--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there is a basketball match in the gym tonight.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What matches were held in the morning?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-sports-matches-games--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: How did the narrator’s class place in the total score?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Say what sport or game you have an interest in using 有兴趣.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-sports-matches-games--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Talk about a match or sports event you watched or joined.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-sports-matches-games--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-sports-matches-games--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"badminton\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-sports-matches-games--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"gymnasium / sports hall\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-sports-matches-games--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"score / points\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-sports-matches-games--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-sports-matches-games--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 18
+}

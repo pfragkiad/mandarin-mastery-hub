@@ -1,0 +1,1285 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-mountains-rivers-nature",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Mountains, Rivers & Nature",
+    "subtitle": "Mountains, rivers, sea, trees, sun, moon, and environment",
+    "description": "Describe natural landscapes, plants, the sun and moon, and caring for the environment.",
+    "slug": "mountains-rivers-nature"
+  },
+  "classification": {
+    "primary_topic_id": "animals-weather",
+    "topic_ids": [
+      "animals-weather"
+    ],
+    "tags": [
+      "nature",
+      "landscapes",
+      "ecology"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "nature-ecology",
+    "subtopic_ids": [
+      "nature-ecology"
+    ]
+  },
+  "learning_objectives": [
+    "Name landforms and water: 山, 河, and 海.",
+    "Name plants and celestial bodies: 草, 草地, 树, 开花, 太阳, and 月亮.",
+    "Talk about nature conservation with 环境."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "也": "Characters:也",
+    "乡": "Characters:乡",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "亮": "Characters:亮",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "保": "Characters:保",
+    "候": "Characters:候",
+    "傍": "Characters:傍",
+    "儿": "Characters:儿",
+    "光": "Characters:光",
+    "净": "Characters:净",
+    "出": "Characters:出",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "力": "Characters:力",
+    "努": "Characters:努",
+    "升": "Characters:升",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "发": "Characters:发",
+    "变": "Characters:变",
+    "口": "Characters:口",
+    "只": "Characters:只",
+    "叶": "Characters:叶",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "喜": "Characters:喜",
+    "圆": "Characters:圆",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "境": "Characters:境",
+    "夏": "Characters:夏",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "山": "Characters:山",
+    "市": "Characters:市",
+    "常": "Characters:常",
+    "干": "Characters:干",
+    "年": "Characters:年",
+    "座": "Characters:座",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "快": "Characters:快",
+    "想": "Characters:想",
+    "慢": "Characters:慢",
+    "我": "Characters:我",
+    "护": "Characters:护",
+    "散": "Characters:散",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "春": "Characters:春",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "暖": "Characters:暖",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "末": "Characters:末",
+    "村": "Characters:村",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "枝": "Characters:枝",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "棵": "Characters:棵",
+    "欢": "Characters:欢",
+    "步": "Characters:步",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "河": "Characters:河",
+    "油": "Characters:油",
+    "洋": "Characters:洋",
+    "流": "Characters:流",
+    "海": "Characters:海",
+    "清": "Characters:清",
+    "游": "Characters:游",
+    "澈": "Characters:澈",
+    "热": "Characters:热",
+    "然": "Characters:然",
+    "爬": "Characters:爬",
+    "爱": "Characters:爱",
+    "片": "Characters:片",
+    "特": "Characters:特",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "环": "Characters:环",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "种": "Characters:种",
+    "绿": "Characters:绿",
+    "自": "Characters:自",
+    "色": "Characters:色",
+    "花": "Characters:花",
+    "草": "Characters:草",
+    "落": "Characters:落",
+    "蓝": "Characters:蓝",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "请": "Characters:请",
+    "起": "Characters:起",
+    "越": "Characters:越",
+    "路": "Characters:路",
+    "踩": "Characters:踩",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "野": "Characters:野",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "闪": "Characters:闪",
+    "阳": "Characters:阳",
+    "雪": "Characters:雪",
+    "露": "Characters:露",
+    "静": "Characters:静",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "高": "Characters:高",
+    "鱼": "Characters:鱼"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Nature and ecology vocabulary for outdoor scenery, plants, and the environment.",
+      "focus": "Use 保护环境 for protecting the environment and 爬山 for hiking/climbing mountains."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0547",
+          "hanzi": "草",
+          "pinyin": "cǎo",
+          "meaning_en": "grass",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0547-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里的草真好看！",
+              "pinyin": "zhèlǐ de cǎo zhēn hǎokàn!",
+              "english": "The grass here looks really nice!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0547-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "春天草长得很快。",
+              "pinyin": "chūntiān cǎo zhǎng de hěn kuài.",
+              "english": "Grass grows quickly in spring.",
+              "teaching_note": "Simple descriptive or narrative use of 草."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 547
+            }
+          ]
+        },
+        {
+          "id": "w-0548",
+          "hanzi": "草地",
+          "pinyin": "cǎodì",
+          "meaning_en": "lawn; grassland",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0548-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别坐在草地上。",
+              "pinyin": "bié zuò zài cǎodì shàng.",
+              "english": "Don't sit on the grass.",
+              "teaching_note": "Short everyday spoken use of 草地."
+            },
+            {
+              "id": "ex-0548-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们在草地上玩。",
+              "pinyin": "háizimen zài cǎodì shàng wán.",
+              "english": "The children are playing on the lawn.",
+              "teaching_note": "Simple descriptive or narrative use of 草地."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 548
+            }
+          ]
+        },
+        {
+          "id": "w-0661",
+          "hanzi": "海",
+          "pinyin": "hǎi",
+          "meaning_en": "sea; ocean",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0661-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢大海吗？",
+              "pinyin": "nǐ xǐhuan dà hǎi ma?",
+              "english": "Do you like the sea?",
+              "teaching_note": "Short everyday spoken use of 海."
+            },
+            {
+              "id": "ex-0661-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "夏天很多游客去海边。",
+              "pinyin": "xiàtiān hěn duō yóukè qù hǎi biān.",
+              "english": "Many tourists go to the seaside in summer.",
+              "teaching_note": "Simple descriptive or narrative use of 海."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 661
+            }
+          ]
+        },
+        {
+          "id": "w-0668",
+          "hanzi": "河",
+          "pinyin": "hé",
+          "meaning_en": "river",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0668-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "河里有鱼吗？",
+              "pinyin": "hé lǐ yǒu yú ma?",
+              "english": "Are there fish in the river?",
+              "teaching_note": "Short everyday spoken use of 河."
+            },
+            {
+              "id": "ex-0668-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这条河很长。",
+              "pinyin": "zhè tiáo hé hěn cháng.",
+              "english": "This river is very long.",
+              "teaching_note": "Simple descriptive or narrative use of 河."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 668
+            }
+          ]
+        },
+        {
+          "id": "w-0679",
+          "hanzi": "环境",
+          "pinyin": "huánjìng",
+          "meaning_en": "environment; surroundings",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather",
+            "society-government-law"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0679-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里的环境很好。",
+              "pinyin": "zhèlǐ de huánjìng hěn hǎo.",
+              "english": "The surroundings here are very nice.",
+              "teaching_note": "Short everyday spoken use of 环境."
+            },
+            {
+              "id": "ex-0679-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校的环境很安静。",
+              "pinyin": "xuéxiào de huánjìng hěn ānjìng.",
+              "english": "The school environment is very quiet.",
+              "teaching_note": "Simple descriptive or narrative use of 环境."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 679
+            }
+          ]
+        },
+        {
+          "id": "w-0726",
+          "hanzi": "开花",
+          "pinyin": "kāihuā",
+          "meaning_en": "bloom; flower (verb)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0726-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "学校的树开花了！",
+              "pinyin": "xuéxiào de shù kāihuā le!",
+              "english": "The trees at school are blooming!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0726-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "春天到了，路边的树开始开花了。",
+              "pinyin": "chūntiān dào le, lùbiān de shù kāishǐ kāihuā le.",
+              "english": "Spring came, and the trees along the road began to bloom.",
+              "teaching_note": "Simple descriptive or narrative use of 开花."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 726
+            }
+          ]
+        },
+        {
+          "id": "w-0823",
+          "hanzi": "山",
+          "pinyin": "shān",
+          "meaning_en": "mountain",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0823-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们去爬山吧。",
+              "pinyin": "wǒmen qù pá shān ba.",
+              "english": "Let's go hiking!",
+              "teaching_note": "Short everyday spoken use of 山."
+            },
+            {
+              "id": "ex-0823-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "那边的山很高。",
+              "pinyin": "nàbiān de shān hěn gāo.",
+              "english": "The mountain over there is very high.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 823
+            }
+          ]
+        },
+        {
+          "id": "w-0842",
+          "hanzi": "树",
+          "pinyin": "shù",
+          "meaning_en": "tree",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0842-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这些树真高！",
+              "pinyin": "zhèxiē shù zhēn gāo!",
+              "english": "These trees are really tall!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0842-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校门口有很多树。",
+              "pinyin": "xuéxiào ménkǒu yǒu hěn duō shù.",
+              "english": "There are many trees at the school entrance.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 842
+            }
+          ]
+        },
+        {
+          "id": "w-0849",
+          "hanzi": "太阳",
+          "pinyin": "tàiyáng",
+          "meaning_en": "sun",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0849-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "太阳出来了！",
+              "pinyin": "tàiyáng chūlái le!",
+              "english": "The sun is out!",
+              "teaching_note": "Short everyday spoken use of 太阳."
+            },
+            {
+              "id": "ex-0849-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "早上太阳从东方出来。",
+              "pinyin": "zǎoshang tàiyáng cóng dōngfāng chūlái.",
+              "english": "In the morning, the sun comes out in the east.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 849
+            }
+          ]
+        },
+        {
+          "id": "w-0958",
+          "hanzi": "月亮",
+          "pinyin": "yuèliang",
+          "meaning_en": "moon",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "nature-ecology",
+          "subtopic_ids": [
+            "nature-ecology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0958-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "晚上月亮真好看！",
+              "pinyin": "wǎnshang yuèliang zhēn hǎokàn!",
+              "english": "The moon looks beautiful tonight!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0958-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "晚上天上有一个大月亮。",
+              "pinyin": "wǎnshang tiān shàng yǒu yí ge dà yuèliang.",
+              "english": "There is a big moon in the sky tonight.",
+              "teaching_note": "Simple descriptive or narrative use of 月亮."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 958
+            }
+          ]
+        },
+        {
+          "id": "w-0119",
+          "hanzi": "猫",
+          "pinyin": "māo",
+          "meaning_en": "cat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0119-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一只猫。",
+              "pinyin": "wǒ yǒu yì zhī māo.",
+              "english": "I have a cat.",
+              "teaching_note": "只 is the common animal classifier when counting cats."
+            },
+            {
+              "id": "ex-0119-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这只猫喜欢睡觉。",
+              "pinyin": "zhè zhī māo xǐhuan shuìjiào.",
+              "english": "This cat likes sleeping.",
+              "teaching_note": "Short beginner-level description illustrating 猫 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 119
+            }
+          ]
+        },
+        {
+          "id": "w-0169",
+          "hanzi": "热",
+          "pinyin": "rè",
+          "meaning_en": "hot",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather",
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0169-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天太热了。",
+              "pinyin": "jīntiān tài rè le.",
+              "english": "It is too hot today.",
+              "teaching_note": "太热了 expresses more heat than desired or expected."
+            },
+            {
+              "id": "ex-0169-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午的天气很热。",
+              "pinyin": "xiàwǔ de tiānqì hěn rè.",
+              "english": "The weather is very hot in the afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 热 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 169
+            }
+          ]
+        },
+        {
+          "id": "w-0251",
+          "hanzi": "雪",
+          "pinyin": "xuě",
+          "meaning_en": "snow",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0251-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "地上有雪。",
+              "pinyin": "dìshang yǒu xuě.",
+              "english": "There's snow on the ground.",
+              "teaching_note": "地上有雪 states that there is snow on the ground, not merely that it is winter."
+            },
+            {
+              "id": "ex-0251-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天的雪很大。",
+              "pinyin": "jīntiān de xuě hěn dà.",
+              "english": "There's a lot of snow today.",
+              "teaching_note": "Short beginner-level description illustrating 雪 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 251
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 草 (cǎo)",
+        "explanation": "草 (cǎo) means “grass” (noun).",
+        "example_id": "ex-0547-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 草地 (cǎodì)",
+        "explanation": "草地 (cǎodì) means “lawn; grassland” (noun).",
+        "example_id": "ex-0548-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0547-1",
+      "ex-0548-1",
+      "ex-0661-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "How do the villagers treat their natural environment?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "They all take great care of the natural environment.",
+          "explanation": "The passage concludes with 大家都很爱护这里的自然环境."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences describing a mountain or seaside scene using 山/海 and 太阳 or 月亮.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "傍晚我们在海边散步，太阳慢慢落下，月亮升起来了。",
+          "explanation": "Use nature nouns naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"environment\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "草地",
+              "pinyin": "cǎodì",
+              "meaning_en": "lawn"
+            },
+            {
+              "id": "b",
+              "hanzi": "环境",
+              "pinyin": "huánjìng",
+              "meaning_en": "environment"
+            },
+            {
+              "id": "c",
+              "hanzi": "月亮",
+              "pinyin": "yuèliang",
+              "meaning_en": "moon"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "环境 means environment or surroundings."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to bloom / flower\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "开花",
+              "pinyin": "kāihuā",
+              "meaning_en": "bloom"
+            },
+            {
+              "id": "b",
+              "hanzi": "太阳",
+              "pinyin": "tàiyáng",
+              "meaning_en": "sun"
+            },
+            {
+              "id": "c",
+              "hanzi": "河",
+              "pinyin": "hé",
+              "meaning_en": "river"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "开花 means to bloom."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"sea / ocean\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "河",
+              "pinyin": "hé",
+              "meaning_en": "river"
+            },
+            {
+              "id": "b",
+              "hanzi": "山",
+              "pinyin": "shān",
+              "meaning_en": "mountain"
+            },
+            {
+              "id": "c",
+              "hanzi": "海",
+              "pinyin": "hǎi",
+              "meaning_en": "sea"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "海 means sea or ocean."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "A View from the Mountain",
+        "context_en": "Two friends hike up a hill and enjoy the scenery at sunset.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你看山下那条河，一直流到东边的大海里。",
+            "pinyin": "Nǐ kàn shānxià nà tiáo hé, yìzhí liú dào dōngbiān de dà hǎi lǐ.",
+            "english": "Look at that river below the mountain—it flows all the way into the sea in the east."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "这里的环境真好！山上有树，还有一大片绿色的草地。",
+            "pinyin": "Zhèlǐ de huánjìng zhēn hǎo! Shānshàng yǒu shù, hái yǒu yí dà piàn lǜsè de cǎodì.",
+            "english": "The environment here is wonderful! There are trees on the mountain and a huge green lawn."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "春天的时候，路边的树还会开花呢。",
+            "pinyin": "Chūntiān de shíhou, lùbiān de shù hái huì kāihuā ne.",
+            "english": "In spring, the trees along the road even bloom!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "太阳快下山了，一会儿月亮就要出来了。",
+            "pinyin": "Tàiyáng kuài xiàshān le, yíhuìr yuèliang jiù yào chūlái le.",
+            "english": "The sun is about to set behind the mountains, and soon the moon will come out."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Protecting the environment",
+          "explanation_en": "环境 (huánjìng) refers to both the natural environment and living surroundings; pair it with 保护 (protect) or 好.",
+          "pattern_hanzi": "<Place> + 的 + 环境 + 很 + 好 / 干净",
+          "pattern_pinyin": "<Place> + de + huánjìng + hěn + hǎo / gānjìng",
+          "pattern_pseudo_translation": "<Place> + ’s + environment + very + good / clean",
+          "examples": [
+            {
+              "hanzi": "这片海边的环境非常干净。",
+              "pinyin": "Zhè piàn hǎibiān de huánjìng fēicháng gānjìng.",
+              "english": "The environment at this seaside is very clean."
+            },
+            {
+              "hanzi": "大家一起努力，这里的环境变得越来越好了。",
+              "pinyin": "Dàjiā yìqǐ nǔlì, zhèlǐ de huánjìng biàn de yuèláiyuè hǎo le.",
+              "english": "Everyone worked hard together, and the environment here became better and better."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Counting trees, rivers, and grass",
+          "explanation_en": "Use 棵 (kē) for trees, 条 (tiáo) for rivers, and 座 (zuò) for mountains.",
+          "pattern_hanzi": "一 + 座山 / 条河 / 棵树",
+          "pattern_pinyin": "yí + zuò shān / tiáo hé / kē shù",
+          "pattern_pseudo_translation": "one + mountain / river / tree",
+          "examples": [
+            {
+              "hanzi": "河边种着很多高大的树。",
+              "pinyin": "Hébiān zhòng zhe hěn duō gāodà de shù.",
+              "english": "Many tall trees are planted along the river."
+            },
+            {
+              "hanzi": "周末我们去爬那座山吧。",
+              "pinyin": "Zhōumò wǒmen qù pá nà zuò shān ba.",
+              "english": "Let’s go climb that mountain this weekend."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe natural scenes with sun, moon, plants, and water.",
+        "model": {
+          "hanzi": "太阳出来了，草地上的露水闪闪发光。",
+          "pinyin": "Tàiyáng chūlái le, cǎodì shàng de lùshuǐ shǎnshǎn fāguāng.",
+          "english": "The sun came out, and the dew on the grass sparkled."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say tonight’s moon is very round and bright.",
+            "model_answer": {
+              "hanzi": "今晚的月亮又圆又亮。",
+              "pinyin": "Jīnwǎn de yuèliang yòu yuán yòu liàng.",
+              "english": "Tonight’s moon is both round and bright."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say don’t step on the grass.",
+            "model_answer": {
+              "hanzi": "请爱护小草，不要踩草地。",
+              "pinyin": "Qǐng àihù xiǎocǎo, búyào cǎi cǎodì.",
+              "english": "Please care for the grass and don’t step on the lawn."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say you want to go see the sea in summer.",
+            "model_answer": {
+              "hanzi": "夏天我想去海边看大海。",
+              "pinyin": "Xiàtiān wǒ xiǎng qù hǎibiān kàn dàhǎi.",
+              "english": "In summer I want to go to the beach to see the sea."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Green Mountains and Clear Water",
+        "paragraphs": [
+          {
+            "hanzi": "我的家乡有山有水，村子前面是一条清澈的小河，后面是一座绿油油的大山。",
+            "pinyin": "Wǒ de jiāxiāng yǒu shān yǒu shuǐ, cūnzi qiánmiàn shì yì tiáo qīngchè de xiǎo hé, hòumiàn shì yí zuò lǜyóuyóu de dà shān.",
+            "english": "My hometown has mountains and water: in front of the village is a clear little river, and behind is a lush green mountain."
+          },
+          {
+            "hanzi": "每年春天，树枝上长出新叶，草地上的野花也开花了。大家都很爱护这里的自然环境。",
+            "pinyin": "Měi nián chūntiān, shùzhī shàng zhǎng chū xīn yè, cǎodì shàng de yěhuā yě kāihuā le. Dàjiā dōu hěn àihù zhèlǐ de zìrán huánjìng.",
+            "english": "Every spring, new leaves grow on the tree branches, and the wildflowers on the meadow bloom too. Everyone takes great care of the natural environment here."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What is in front of and behind the village?",
+            "answer_en": "A clear little river in front, and a green mountain behind."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What happens in spring in the village?",
+            "answer_en": "New leaves grow on the trees and wildflowers bloom on the meadow."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe a natural place you visited using 山, 河, 海, or 草地.",
+          "model_answer": {
+            "hanzi": "我去过一个海边城市，那里的海很蓝，环境也特别好。",
+            "pinyin": "Wǒ qù guò yí ge hǎibiān chéngshì, nàlǐ de hǎi hěn lán, huánjìng yě tèbié hǎo.",
+            "english": "I’ve been to a seaside city; the sea there is very blue and the environment is great."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say what you like about spring nature using 树 and 开花.",
+          "model_answer": {
+            "hanzi": "春天太阳暖洋洋的，很多树都开花了，非常好看。",
+            "pinyin": "Chūntiān tàiyáng nuǎnyángyáng de, hěn duō shù dōu kāihuā le, fēicháng hǎokàn.",
+            "english": "In spring the sun is warm and many trees bloom—it’s very pretty."
+          }
+        }
+      ],
+      "common_pitfall": "开花 is a separable verb (\"to bloom / blossom\"): say 花开了 (\"the flowers bloomed\") or 树开花了 (\"the trees bloomed\"), not *开花花.",
+      "pronunciation_focus": "月亮 (yuèliang) ends with neutral-tone liang; 环境 (huánjìng) moves from second tone to fourth tone.",
+      "review": {
+        "can_do": [
+          "Name landforms and water: 山, 河, 海.",
+          "Name plants and sky: 草, 草地, 树, 开花, 太阳, 月亮.",
+          "Talk about protecting the environment."
+        ],
+        "entry_ids": [
+          547,
+          548,
+          661,
+          668,
+          679,
+          726,
+          823,
+          842,
+          849,
+          958
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-mountains-rivers-nature--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Protecting the environment",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Counting trees, rivers, and grass",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say tonight’s moon is very round and bright.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say don’t step on the grass.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you want to go see the sea in summer.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What is in front of and behind the village?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What happens in spring in the village?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe a natural place you visited using 山, 河, 海, or 草地.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say what you like about spring nature using 树 and 开花.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"environment\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to bloom / flower\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-mountains-rivers-nature--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"sea / ocean\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-mountains-rivers-nature--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-mountains-rivers-nature--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 16
+}

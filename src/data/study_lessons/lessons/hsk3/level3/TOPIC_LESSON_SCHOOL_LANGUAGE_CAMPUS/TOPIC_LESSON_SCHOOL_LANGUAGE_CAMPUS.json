@@ -1,0 +1,1574 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-campus-and-grades",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Campus, Grades & Studying Abroad",
+    "subtitle": "School grades, subjects, libraries, and studying abroad",
+    "description": "Talk about school life, classes, grades, subjects like math and history, libraries, and studying abroad.",
+    "slug": "campus-and-grades"
+  },
+  "classification": {
+    "primary_topic_id": "school-language",
+    "topic_ids": [
+      "school-language"
+    ],
+    "tags": [
+      "campus",
+      "subjects",
+      "study-abroad"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Talk about school levels and organization: 初中, 年级, 班级, 校园, 校长, and 名单.",
+    "Discuss subjects, grades, and places: 数学, 历史, 外语, 语言, 成绩, 黑板, and 图书馆.",
+    "Talk about finishing school and studying abroad using 放学, 留学, and 留学生."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "且": "Characters:且",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "二": "Characters:二",
+    "亮": "Characters:亮",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "你": "Characters:你",
+    "儿": "Characters:儿",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "写": "Characters:写",
+    "几": "Characters:几",
+    "初": "Characters:初",
+    "前": "Characters:前",
+    "力": "Characters:力",
+    "努": "Characters:努",
+    "化": "Characters:化",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "单": "Characters:单",
+    "历": "Characters:历",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "史": "Characters:史",
+    "各": "Characters:各",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哪": "Characters:哪",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "四": "Characters:四",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "堂": "Characters:堂",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "始": "Characters:始",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "布": "Characters:布",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "并": "Characters:并",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "忙": "Characters:忙",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "成": "Characters:成",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "把": "Characters:把",
+    "提": "Characters:提",
+    "放": "Characters:放",
+    "故": "Characters:故",
+    "数": "Characters:数",
+    "文": "Characters:文",
+    "料": "Characters:料",
+    "新": "Characters:新",
+    "早": "Characters:早",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "来": "Characters:来",
+    "板": "Characters:板",
+    "查": "Characters:查",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "桥": "Characters:桥",
+    "梁": "Characters:梁",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "步": "Characters:步",
+    "每": "Characters:每",
+    "汉": "Characters:汉",
+    "漂": "Characters:漂",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "留": "Characters:留",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "知": "Characters:知",
+    "礼": "Characters:礼",
+    "秋": "Characters:秋",
+    "种": "Characters:种",
+    "算": "Characters:算",
+    "级": "Characters:级",
+    "练": "Characters:练",
+    "给": "Characters:给",
+    "绩": "Characters:绩",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "而": "Characters:而",
+    "自": "Characters:自",
+    "要": "Characters:要",
+    "解": "Characters:解",
+    "言": "Characters:言",
+    "讲": "Characters:讲",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "资": "Characters:资",
+    "迎": "Characters:迎",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "道": "Characters:道",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "错": "Characters:错",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "闹": "Characters:闹",
+    "非": "Characters:非",
+    "馆": "Characters:馆",
+    "高": "Characters:高",
+    "黑": "Characters:黑"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Campus life, academic subjects, school roles, and international study.",
+      "focus": "Use 留学 for studying abroad and 放学 for finishing the school day."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0507",
+          "hanzi": "班级",
+          "pinyin": "bānjí",
+          "meaning_en": "class; class group",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0507-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在哪个班级？",
+              "pinyin": "nǐ zài nǎge bānjí?",
+              "english": "Which class are you in?",
+              "teaching_note": "Short everyday spoken use of 班级."
+            },
+            {
+              "id": "ex-0507-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们班级有三十名学生。",
+              "pinyin": "wǒmen bānjí yǒu sān shí míng xuéshēng.",
+              "english": "Our class has thirty students.",
+              "teaching_note": "Simple descriptive or narrative use of 班级."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 507
+            }
+          ]
+        },
+        {
+          "id": "w-0559",
+          "hanzi": "成绩",
+          "pinyin": "chéngjì",
+          "meaning_en": "grades; results",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0559-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "考试成绩怎么样？",
+              "pinyin": "kǎoshì chéngjì zěnmeyàng?",
+              "english": "How were your exam results?",
+              "teaching_note": "Short everyday spoken use of 成绩."
+            },
+            {
+              "id": "ex-0559-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的汉语成绩很好。",
+              "pinyin": "tā de Hànyǔ chéngjì hěn hǎo.",
+              "english": "His Chinese grades are very good.",
+              "teaching_note": "Simple descriptive or narrative use of 成绩."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 559
+            }
+          ]
+        },
+        {
+          "id": "w-0565",
+          "hanzi": "初中",
+          "pinyin": "chūzhōng",
+          "meaning_en": "junior middle school",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0565-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在哪儿上初中？",
+              "pinyin": "nǐ zài nǎr shàng chūzhōng?",
+              "english": "Where do you attend middle school?",
+              "teaching_note": "Short everyday spoken use of 初中."
+            },
+            {
+              "id": "ex-0565-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妹妹明年要上初中。",
+              "pinyin": "mèimei míngnián yào shàng chūzhōng.",
+              "english": "My younger sister will start junior middle school next year.",
+              "teaching_note": "Simple descriptive or narrative use of 初中."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 565
+            }
+          ]
+        },
+        {
+          "id": "w-0627",
+          "hanzi": "放学",
+          "pinyin": "fàngxué",
+          "meaning_en": "finish school for the day",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0627-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "几点放学？",
+              "pinyin": "jǐ diǎn fàngxué?",
+              "english": "What time does school finish?",
+              "teaching_note": "Short everyday spoken use of 放学."
+            },
+            {
+              "id": "ex-0627-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "小学生下午三点放学。",
+              "pinyin": "xiǎoxuéshēng xiàwǔ sān diǎn fàngxué.",
+              "english": "Primary school students finish at three in the afternoon.",
+              "teaching_note": "Simple descriptive or narrative use of 放学."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 627
+            }
+          ]
+        },
+        {
+          "id": "w-0669",
+          "hanzi": "黑板",
+          "pinyin": "hēibǎn",
+          "meaning_en": "blackboard",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0669-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "黑板上写了什么？",
+              "pinyin": "hēibǎn shàng xiě le shénme?",
+              "english": "What's written on the blackboard?",
+              "teaching_note": "Short everyday spoken use of 黑板."
+            },
+            {
+              "id": "ex-0669-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师在黑板上写汉字。",
+              "pinyin": "lǎoshī zài hēibǎn shàng xiě Hànzì.",
+              "english": "The teacher writes Chinese characters on the blackboard.",
+              "teaching_note": "Simple descriptive or narrative use of 黑板."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 669
+            }
+          ]
+        },
+        {
+          "id": "w-0749",
+          "hanzi": "历史",
+          "pinyin": "lìshǐ",
+          "meaning_en": "history",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0749-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢历史吗？",
+              "pinyin": "nǐ xǐhuan lìshǐ ma?",
+              "english": "Do you like history?",
+              "teaching_note": "Short everyday spoken use of 历史."
+            },
+            {
+              "id": "ex-0749-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我想了解中国的历史。",
+              "pinyin": "wǒ xiǎng liǎojiě Zhōngguó de lìshǐ.",
+              "english": "I want to learn about Chinese history.",
+              "teaching_note": "Simple descriptive or narrative use of 历史."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 749
+            }
+          ]
+        },
+        {
+          "id": "w-0759",
+          "hanzi": "留学",
+          "pinyin": "liúxué",
+          "meaning_en": "study abroad",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0759-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想去留学吗？",
+              "pinyin": "nǐ xiǎng qù liúxué ma?",
+              "english": "Do you want to study abroad?",
+              "teaching_note": "Short everyday spoken use of 留学."
+            },
+            {
+              "id": "ex-0759-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她明年去中国留学。",
+              "pinyin": "tā míngnián qù Zhōngguó liúxué.",
+              "english": "She will study abroad in China next year.",
+              "teaching_note": "Simple descriptive or narrative use of 留学."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 759
+            }
+          ]
+        },
+        {
+          "id": "w-0760",
+          "hanzi": "留学生",
+          "pinyin": "liúxuéshēng",
+          "meaning_en": "international student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0760-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他是留学生吗？",
+              "pinyin": "tā shì liúxuéshēng ma?",
+              "english": "Is he an international student?",
+              "teaching_note": "Short everyday spoken use of 留学生."
+            },
+            {
+              "id": "ex-0760-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校有很多外国留学生。",
+              "pinyin": "xuéxiào yǒu hěn duō wàiguó liúxuéshēng.",
+              "english": "The school has many international students.",
+              "teaching_note": "Simple descriptive or narrative use of 留学生."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 760
+            }
+          ]
+        },
+        {
+          "id": "w-0771",
+          "hanzi": "名单",
+          "pinyin": "míngdān",
+          "meaning_en": "name list; roster",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0771-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的名字在名单上吗？",
+              "pinyin": "nǐ de míngzi zài míngdān shàng ma?",
+              "english": "Is your name on the list?",
+              "teaching_note": "Short everyday spoken use of 名单."
+            },
+            {
+              "id": "ex-0771-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师正在看学生名单。",
+              "pinyin": "lǎoshī zhèngzài kàn xuéshēng míngdān.",
+              "english": "The teacher is looking at the class roster.",
+              "teaching_note": "Simple descriptive or narrative use of 名单."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 771
+            }
+          ]
+        },
+        {
+          "id": "w-0783",
+          "hanzi": "年级",
+          "pinyin": "niánjí",
+          "meaning_en": "school grade; year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0783-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你上几年级？",
+              "pinyin": "nǐ shàng jǐ niánjí?",
+              "english": "What grade are you in?",
+              "teaching_note": "Short everyday spoken use of 年级."
+            },
+            {
+              "id": "ex-0783-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妹妹今年上三年级。",
+              "pinyin": "mèimei jīnnián shàng sān niánjí.",
+              "english": "My younger sister is in third grade this year.",
+              "teaching_note": "Simple descriptive or narrative use of 年级."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 783
+            }
+          ]
+        },
+        {
+          "id": "w-0843",
+          "hanzi": "数学",
+          "pinyin": "shùxué",
+          "meaning_en": "mathematics",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "science-technology"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0843-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢数学吗？",
+              "pinyin": "nǐ xǐhuan shùxué ma?",
+              "english": "Do you like math?",
+              "teaching_note": "Short everyday spoken use of 数学."
+            },
+            {
+              "id": "ex-0843-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生今天上午有数学课。",
+              "pinyin": "xuéshēng jīntiān shàngwǔ yǒu shùxué kè.",
+              "english": "The students have a math lesson this morning.",
+              "teaching_note": "Simple descriptive or narrative use of 数学."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 843
+            }
+          ]
+        },
+        {
+          "id": "w-0863",
+          "hanzi": "图书馆",
+          "pinyin": "túshūguǎn",
+          "meaning_en": "library",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0863-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们去图书馆吧。",
+              "pinyin": "wǒmen qù túshūguǎn ba.",
+              "english": "Let's go to the library!",
+              "teaching_note": "Short everyday spoken use of 图书馆."
+            },
+            {
+              "id": "ex-0863-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "图书馆里有很多中文书。",
+              "pinyin": "túshūguǎn lǐ yǒu hěn duō Zhōngwén shū.",
+              "english": "There are many Chinese books in the library.",
+              "teaching_note": "Simple descriptive or narrative use of 图书馆."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 863
+            }
+          ]
+        },
+        {
+          "id": "w-0867",
+          "hanzi": "外语",
+          "pinyin": "wàiyǔ",
+          "meaning_en": "foreign language",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0867-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你学什么外语？",
+              "pinyin": "nǐ xué shénme wàiyǔ?",
+              "english": "Which foreign language are you studying?",
+              "teaching_note": "Short everyday spoken use of 外语."
+            },
+            {
+              "id": "ex-0867-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校里有三种外语课。",
+              "pinyin": "xuéxiào lǐ yǒu sān zhǒng wàiyǔ kè.",
+              "english": "There are three kinds of foreign-language classes at school.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 867
+            }
+          ]
+        },
+        {
+          "id": "w-0899",
+          "hanzi": "校园",
+          "pinyin": "xiàoyuán",
+          "meaning_en": "school campus",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0899-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "校园真漂亮！",
+              "pinyin": "xiàoyuán zhēn piàoliang!",
+              "english": "The campus is beautiful!",
+              "teaching_note": "Short everyday spoken use of 校园."
+            },
+            {
+              "id": "ex-0899-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "秋天，校园里的树非常漂亮。",
+              "pinyin": "qiūtiān, xiàoyuán lǐ de shù fēicháng piàoliang.",
+              "english": "In autumn, the trees on campus are especially beautiful.",
+              "teaching_note": "Simple descriptive or narrative use of 校园."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 899
+            }
+          ]
+        },
+        {
+          "id": "w-0900",
+          "hanzi": "校长",
+          "pinyin": "xiàozhǎng",
+          "meaning_en": "school principal; headmaster",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0900-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "校长来了！",
+              "pinyin": "xiàozhǎng lái le!",
+              "english": "The principal is here!",
+              "teaching_note": "Short everyday spoken use of 校长."
+            },
+            {
+              "id": "ex-0900-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "校长今天给学生讲故事。",
+              "pinyin": "xiàozhǎng jīntiān gěi xuéshēng jiǎng gùshi.",
+              "english": "The principal told the students stories today.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 900
+            }
+          ]
+        },
+        {
+          "id": "w-0915",
+          "hanzi": "学期",
+          "pinyin": "xuéqī",
+          "meaning_en": "school term; semester",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0915-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个学期忙吗？",
+              "pinyin": "zhège xuéqī máng ma?",
+              "english": "Are you busy this semester?",
+              "teaching_note": "Short everyday spoken use of 学期."
+            },
+            {
+              "id": "ex-0915-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个学期我们学了很多新词。",
+              "pinyin": "zhège xuéqī wǒmen xué le hěn duō xīn cí.",
+              "english": "We learned many new words this semester.",
+              "teaching_note": "Simple descriptive or narrative use of 学期."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 915
+            }
+          ]
+        },
+        {
+          "id": "w-0952",
+          "hanzi": "语言",
+          "pinyin": "yǔyán",
+          "meaning_en": "language",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0952-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会几种语言？",
+              "pinyin": "nǐ huì jǐ zhǒng yǔyán?",
+              "english": "How many languages do you speak?",
+              "teaching_note": "Short everyday spoken use of 语言."
+            },
+            {
+              "id": "ex-0952-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "汉语是一种重要的语言。",
+              "pinyin": "Hànyǔ shì yì zhǒng zhòngyào de yǔyán.",
+              "english": "Chinese is an important language.",
+              "teaching_note": "Simple descriptive or narrative use of 语言."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 952
+            }
+          ]
+        },
+        {
+          "id": "w-0027",
+          "hanzi": "大学",
+          "pinyin": "dàxué",
+          "meaning_en": "university",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0027-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在大学学习中文。",
+              "pinyin": "wǒ zài dàxué xuéxí Zhōngwén.",
+              "english": "I study Chinese at university.",
+              "teaching_note": "大学 is the institution; 在 + place gives the location of the study activity."
+            },
+            {
+              "id": "ex-0027-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大学里有很多学生。",
+              "pinyin": "dàxué lǐ yǒu hěn duō xuéshēng.",
+              "english": "There are many students at the university.",
+              "teaching_note": "School or study context showing 大学 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 27
+            }
+          ]
+        },
+        {
+          "id": "w-0028",
+          "hanzi": "大学生",
+          "pinyin": "dàxuéshēng",
+          "meaning_en": "university student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0028-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是大学生。",
+              "pinyin": "tā shì dàxuéshēng.",
+              "english": "She is a university student.",
+              "teaching_note": "大学生 refers to a university-level student, not an elementary-school pupil."
+            },
+            {
+              "id": "ex-0028-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "大学生也可以在这里读书。",
+              "pinyin": "dàxuéshēng yě kěyǐ zài zhèlǐ dúshū.",
+              "english": "University students can also study here.",
+              "teaching_note": "School or study context showing 大学生 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 28
+            }
+          ]
+        },
+        {
+          "id": "w-0293",
+          "hanzi": "中学生",
+          "pinyin": "zhōngxuéshēng",
+          "meaning_en": "middle school student",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "people-identity"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0293-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是中学生。",
+              "pinyin": "tā shì zhōngxuéshēng.",
+              "english": "She is a middle school student.",
+              "teaching_note": "中学生 is a secondary-school student, distinct from 小学生 and 大学生."
+            },
+            {
+              "id": "ex-0293-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "中学生上午八点上课。",
+              "pinyin": "zhōngxuéshēng shàngwǔ bā diǎn shàngkè.",
+              "english": "Middle school students have class at eight in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 中学生 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 293
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 班级 (bānjí)",
+        "explanation": "班级 (bānjí) means “class; class group” (noun).",
+        "example_id": "ex-0507-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 成绩 (chéngjì)",
+        "explanation": "成绩 (chéngjì) means “grades; results” (noun).",
+        "example_id": "ex-0559-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0507-1",
+      "ex-0559-1",
+      "ex-0565-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Where did many students go after school ended at 4:30 p.m.?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "They went to the library to read.",
+          "explanation": "The passage states 放学以后，不少同学去图书馆看书."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about your school or study experience using 学期, 成绩, or 图书馆.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这学期我常去图书馆学习，数学成绩进步了不少。",
+          "explanation": "Combine 学期, 图书馆, and 成绩 naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"grades / academic results\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "成绩",
+              "pinyin": "chéngjì",
+              "meaning_en": "grades"
+            },
+            {
+              "id": "b",
+              "hanzi": "名单",
+              "pinyin": "míngdān",
+              "meaning_en": "name list"
+            },
+            {
+              "id": "c",
+              "hanzi": "年级",
+              "pinyin": "niánjí",
+              "meaning_en": "grade level"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "成绩 means grades or results."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"library\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "校园",
+              "pinyin": "xiàoyuán",
+              "meaning_en": "campus"
+            },
+            {
+              "id": "b",
+              "hanzi": "图书馆",
+              "pinyin": "túshūguǎn",
+              "meaning_en": "library"
+            },
+            {
+              "id": "c",
+              "hanzi": "黑板",
+              "pinyin": "hēibǎn",
+              "meaning_en": "blackboard"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "图书馆 is library."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which verb means \"finish school for the day\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "放学",
+              "pinyin": "fàngxué",
+              "meaning_en": "finish school"
+            },
+            {
+              "id": "b",
+              "hanzi": "留学",
+              "pinyin": "liúxué",
+              "meaning_en": "study abroad"
+            },
+            {
+              "id": "c",
+              "hanzi": "班级",
+              "pinyin": "bānjí",
+              "meaning_en": "class"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "放学 means finishing the school day."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "After Class in the Library",
+        "context_en": "Two students talk about their semester grades and an international student in their class.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "放学以后，咱们去图书馆看看吧？",
+            "pinyin": "Fàngxué yǐhòu, zánmen qù túshūguǎn kànkan ba?",
+            "english": "After school ends, let’s go check out the library?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊，我还要查一下数学和历史的资料。",
+            "pinyin": "Hǎo a, wǒ hái yào chá yíxià shùxué hé lìshǐ de zīliào.",
+            "english": "Sure, I also need to look up some math and history materials."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "对了，这学期我们班级新来了一位留学生。",
+            "pinyin": "Duìle, zhè xuéqī wǒmen bānjí xīn lái le yí wèi liúxuéshēng.",
+            "english": "By the way, an international student newly joined our class this semester."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我知道，他外语很好，而且上次考试成绩也很不错！",
+            "pinyin": "Wǒ zhīdào, tā wàiyǔ hěn hǎo, érqiě shàng cì kǎoshì chéngjì yě hěn búcuò!",
+            "english": "I know—his foreign language is great, and his exam grades last time were really good too!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Talking about school grades and semesters",
+          "explanation_en": "Combine 年级 (niánjí, grade level) or 学期 (xuéqī, semester) with 成绩 (chéngjì, grades/results).",
+          "pattern_hanzi": "这 + 学期 / 年级 + 的 + 成绩",
+          "pattern_pinyin": "zhè + xuéqī / niánjí + de + chéngjì",
+          "pattern_pseudo_translation": "this + semester / grade + ’s + grades",
+          "examples": [
+            {
+              "hanzi": "这学期我的数学成绩提高了很多。",
+              "pinyin": "Zhè xuéqī wǒ de shùxué chéngjì tígāo le hěn duō.",
+              "english": "My math grades improved a lot this semester."
+            },
+            {
+              "hanzi": "她现在上初中二年级。",
+              "pinyin": "Tā xiànzài shàng chūzhōng èr niánjí.",
+              "english": "She is in the second year of junior middle school now."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Going abroad to study",
+          "explanation_en": "Use 去 + country + 留学 (liúxué) for going abroad to study.",
+          "pattern_hanzi": "去 + <Country> + 留学",
+          "pattern_pinyin": "qù + <Country> + liúxué",
+          "pattern_pseudo_translation": "go to + <Country> + study abroad",
+          "examples": [
+            {
+              "hanzi": "明年他打算去中国留学。",
+              "pinyin": "Míngnián tā dǎsuàn qù Zhōngguó liúxué.",
+              "english": "Next year he plans to go to China to study abroad."
+            },
+            {
+              "hanzi": "校园里有很多来自各国的留学生。",
+              "pinyin": "Xiàoyuán lǐ yǒu hěn duō láizì gè guó de liúxuéshēng.",
+              "english": "On campus there are many international students from various countries."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about classes, teachers, and campus locations.",
+        "model": {
+          "hanzi": "校长在校园里欢迎新来的同学。",
+          "pinyin": "Xiàozhǎng zài xiàoyuán lǐ huānyíng xīn lái de tóngxué.",
+          "english": "The principal welcomed the newly arrived students on campus."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say the teacher wrote the name list on the blackboard.",
+            "model_answer": {
+              "hanzi": "老师把名单写在了黑板上。",
+              "pinyin": "Lǎoshī bǎ míngdān xiě zài le hēibǎn shàng.",
+              "english": "The teacher wrote the name list on the blackboard."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say learning a foreign language is very interesting.",
+            "model_answer": {
+              "hanzi": "学习一门外语很有意思。",
+              "pinyin": "Xuéxí yì mén wàiyǔ hěn yǒu yìsi.",
+              "english": "Learning a foreign language is very interesting."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say language is an important bridge for culture.",
+            "model_answer": {
+              "hanzi": "语言是了解文化的重要桥梁。",
+              "pinyin": "Yǔyán shì liǎojiě wénhuà de zhòngyào qiáoliáng.",
+              "english": "Language is an important bridge for understanding culture."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "New Semester on Campus",
+        "paragraphs": [
+          {
+            "hanzi": "新学期开始了，校园里非常热闹。早上，校长在礼堂欢迎新同学，并公布了各年级的班级名单。",
+            "pinyin": "Xīn xuéqī kāishǐ le, xiàoyuán lǐ fēicháng rènào. Zǎoshang, xiàozhǎng zài lǐtáng huānyíng xīn tóngxué, bìng gōngbù le gè niánjí de bānjí míngdān.",
+            "english": "The new semester has begun, and the campus is very lively. In the morning, the principal welcomed new students in the auditorium and announced the class rosters for each grade."
+          },
+          {
+            "hanzi": "下午四点半放学以后，不少同学去图书馆看书，还有几位留学生在黑板前练习写汉字。",
+            "pinyin": "Xiàwǔ sì diǎn bàn fàngxué yǐhòu, bùshǎo tóngxué qù túshūguǎn kànshū, hái yǒu jǐ wèi liúxuéshēng zài hēibǎn qián liànxí xiě Hànzì.",
+            "english": "After school ended at 4:30 p.m., quite a few students went to the library to read, and several international students practiced writing Chinese characters in front of the blackboard."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What did the principal announce in the morning?",
+            "answer_en": "The class rosters (名单) for each grade."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What did the international students do after school?",
+            "answer_en": "They practiced writing Chinese characters in front of the blackboard."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say what subjects you like and what you do after school.",
+          "model_answer": {
+            "hanzi": "我喜欢历史和外语，放学后常去图书馆看书。",
+            "pinyin": "Wǒ xǐhuan lìshǐ hé wàiyǔ, fàngxué hòu cháng qù túshūguǎn kànshū.",
+            "english": "I like history and foreign languages, and after school I often go to the library to read."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Talk about studying abroad or an international student you know.",
+          "model_answer": {
+            "hanzi": "我有一个朋友是留学生，他每天都很努力学习语言。",
+            "pinyin": "Wǒ yǒu yí ge péngyou shì liúxuéshēng, tā měitiān dōu hěn nǔlì xuéxí yǔyán.",
+            "english": "I have a friend who is an international student; he studies languages hard every day."
+          }
+        }
+      ],
+      "common_pitfall": "放学 means finishing school for the day (like 下班 for work); finishing a single class is 下课.",
+      "pronunciation_focus": "图书馆 (túshūguǎn) has rising tú, flat shū, and low third-tone guǎn; 留学 (liúxué) is two rising second tones.",
+      "review": {
+        "can_do": [
+          "Name school grades, classes, and campus places.",
+          "Talk about subjects like 数学, 历史, and 外语.",
+          "Discuss studying abroad with 留学."
+        ],
+        "entry_ids": [
+          507,
+          559,
+          565,
+          627,
+          669,
+          749,
+          759,
+          760,
+          771,
+          783,
+          843,
+          863,
+          867,
+          899,
+          900,
+          915,
+          952
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-campus-and-grades--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Talking about school grades and semesters",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-campus-and-grades--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Going abroad to study",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the teacher wrote the name list on the blackboard.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-campus-and-grades--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say learning a foreign language is very interesting.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-campus-and-grades--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say language is an important bridge for culture.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What did the principal announce in the morning?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-campus-and-grades--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What did the international students do after school?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Say what subjects you like and what you do after school.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-campus-and-grades--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Talk about studying abroad or an international student you know.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-campus-and-grades--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-campus-and-grades--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"grades / academic results\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-campus-and-grades--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"library\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-campus-and-grades--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"finish school for the day\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-campus-and-grades--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-campus-and-grades--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

@@ -216,7 +216,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 451
+              "entry_id": 450
             }
           ],
           "primary_topic_id": "science-technology",
@@ -262,7 +262,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 35
+              "entry_id": 34
             }
           ],
           "primary_topic_id": "science-technology",
@@ -307,7 +307,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 36
+              "entry_id": 35
             }
           ],
           "primary_topic_id": "science-technology",
@@ -633,7 +633,7 @@
         ],
         "entry_ids": [
           428,
-          451
+          450
         ]
       }
     }

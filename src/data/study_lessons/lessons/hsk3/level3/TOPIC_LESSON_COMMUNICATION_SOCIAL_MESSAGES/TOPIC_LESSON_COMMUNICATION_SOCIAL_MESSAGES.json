@@ -1,0 +1,1360 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-letters-emails-attention",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Letters, Emails & Paying Attention",
+    "subtitle": "Sending emails, receiving letters, and paying attention",
+    "description": "Learn to send and receive messages, talk about sounds and hearsay, and give reminders.",
+    "slug": "letters-emails-attention"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social"
+    ],
+    "tags": [
+      "emails",
+      "messages",
+      "reminders"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Send and receive messages using 发, 收到, 信, 邮件, and 邮箱.",
+    "Report hearsay and trust with 听说 and 相信.",
+    "Give reminders and confirm plans using 小心, 注意, and 行."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "信": "Characters:信",
+    "候": "Characters:候",
+    "假": "Characters:假",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "全": "Characters:全",
+    "兰": "Characters:兰",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "出": "Characters:出",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "动": "Characters:动",
+    "午": "Characters:午",
+    "却": "Characters:却",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "叫": "Characters:叫",
+    "吃": "Characters:吃",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "哥": "Characters:哥",
+    "喂": "Characters:喂",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "址": "Characters:址",
+    "声": "Characters:声",
+    "外": "Characters:外",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "完": "Characters:完",
+    "家": "Characters:家",
+    "寄": "Characters:寄",
+    "对": "Characters:对",
+    "封": "Characters:封",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "差": "Characters:差",
+    "已": "Characters:已",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "店": "Characters:店",
+    "弄": "Characters:弄",
+    "很": "Characters:很",
+    "心": "Characters:心",
+    "忙": "Characters:忙",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "惯": "Characters:惯",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "感": "Characters:感",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "才": "Characters:才",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "换": "Characters:换",
+    "排": "Characters:排",
+    "提": "Characters:提",
+    "搬": "Characters:搬",
+    "收": "Characters:收",
+    "放": "Characters:放",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "查": "Characters:查",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "梯": "Characters:梯",
+    "楼": "Characters:楼",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "注": "Characters:注",
+    "滑": "Characters:滑",
+    "灯": "Characters:灯",
+    "点": "Characters:点",
+    "物": "Characters:物",
+    "特": "Characters:特",
+    "猫": "Characters:猫",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "的": "Characters:的",
+    "相": "Characters:相",
+    "看": "Characters:看",
+    "礼": "Characters:礼",
+    "等": "Characters:等",
+    "箱": "Characters:箱",
+    "糕": "Characters:糕",
+    "红": "Characters:红",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "绿": "Characters:绿",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "蛋": "Characters:蛋",
+    "行": "Characters:行",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "话": "Characters:话",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "路": "Characters:路",
+    "身": "Characters:身",
+    "车": "Characters:车",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "邮": "Characters:邮",
+    "都": "Characters:都",
+    "醒": "Characters:醒",
+    "里": "Characters:里",
+    "银": "Characters:银",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "雨": "Characters:雨",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "音": "Characters:音",
+    "题": "Characters:题",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "马": "Characters:马"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Communication verbs and nouns for written messages, voices, and everyday warnings.",
+      "focus": "Use 发 for sending and 收到 for receiving; use 注意 / 小心 for careful reminders."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0614",
+          "hanzi": "发",
+          "pinyin": "fā",
+          "meaning_en": "send; issue; emit",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0614-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我发个邮件吧。",
+              "pinyin": "gěi wǒ fā gè yóujiàn ba.",
+              "english": "Send me an email, please.",
+              "teaching_note": "Short everyday spoken use of 发."
+            },
+            {
+              "id": "ex-0614-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师给学生发了邮件。",
+              "pinyin": "lǎoshī gěi xuéshēng fā le yóujiàn.",
+              "english": "The teacher sent the students an email.",
+              "teaching_note": "Simple descriptive or narrative use of 发."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 614
+            }
+          ]
+        },
+        {
+          "id": "w-0830",
+          "hanzi": "声",
+          "pinyin": "shēng",
+          "meaning_en": "sound; voice; classifier for sound",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "classifier"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0830-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我听见一声猫叫。",
+              "pinyin": "wǒ tīngjiàn yì shēng māo jiào.",
+              "english": "I heard a cat meow.",
+              "teaching_note": "Short everyday spoken use of 声."
+            },
+            {
+              "id": "ex-0830-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子叫了一声妈妈。",
+              "pinyin": "háizi jiào le yì shēng māma.",
+              "english": "The child called out for Mom.",
+              "teaching_note": "Simple descriptive or narrative use of 声."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 830
+            }
+          ]
+        },
+        {
+          "id": "w-0831",
+          "hanzi": "声音",
+          "pinyin": "shēngyīn",
+          "meaning_en": "sound; voice",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0831-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "声音太大了！",
+              "pinyin": "shēngyīn tài dà le!",
+              "english": "The sound is too loud!",
+              "teaching_note": "Short everyday spoken use of 声音."
+            },
+            {
+              "id": "ex-0831-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她的声音很好听。",
+              "pinyin": "tā de shēngyīn hěn hǎotīng.",
+              "english": "Her voice sounds very nice.",
+              "teaching_note": "Simple descriptive or narrative use of 声音."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 831
+            }
+          ]
+        },
+        {
+          "id": "w-0837",
+          "hanzi": "收到",
+          "pinyin": "shōudào",
+          "meaning_en": "receive; get",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0837-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你收到邮件了吗？",
+              "pinyin": "nǐ shōudào yóujiàn le ma?",
+              "english": "Did you receive the email?",
+              "teaching_note": "Short everyday spoken use of 收到."
+            },
+            {
+              "id": "ex-0837-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她收到了朋友的礼物。",
+              "pinyin": "tā shōudào le péngyou de lǐwù.",
+              "english": "She received a gift from a friend.",
+              "teaching_note": "Simple descriptive or narrative use of 收到."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 837
+            }
+          ]
+        },
+        {
+          "id": "w-0857",
+          "hanzi": "听说",
+          "pinyin": "tīngshuō",
+          "meaning_en": "hear that; it is said",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0857-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "听说你要搬家？",
+              "pinyin": "tīngshuō nǐ yào bānjiā?",
+              "english": "I heard you're moving.",
+              "teaching_note": "Short everyday spoken use of 听说."
+            },
+            {
+              "id": "ex-0857-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "听说这家饭馆很好吃。",
+              "pinyin": "tīngshuō zhè jiā fànguǎn hěn hǎochī.",
+              "english": "I've heard the food at this restaurant is delicious.",
+              "teaching_note": "Simple descriptive or narrative use of 听说."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 857
+            }
+          ]
+        },
+        {
+          "id": "w-0891",
+          "hanzi": "相信",
+          "pinyin": "xiāngxìn",
+          "meaning_en": "believe; trust",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0891-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我相信你！",
+              "pinyin": "wǒ xiāngxìn nǐ!",
+              "english": "I believe you!",
+              "teaching_note": "Short everyday spoken use of 相信."
+            },
+            {
+              "id": "ex-0891-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大家都相信他的话。",
+              "pinyin": "dàjiā dōu xiāngxìn tā dehuà.",
+              "english": "Everyone believes what he says.",
+              "teaching_note": "Simple descriptive or narrative use of 相信."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 891
+            }
+          ]
+        },
+        {
+          "id": "w-0898",
+          "hanzi": "小心",
+          "pinyin": "xiǎoxīn",
+          "meaning_en": "be careful",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adjective"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0898-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "小心！有车！",
+              "pinyin": "xiǎoxīn! yǒu chē!",
+              "english": "Careful! There's a car!",
+              "teaching_note": "Short everyday spoken use of 小心."
+            },
+            {
+              "id": "ex-0898-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨天走路要小心。",
+              "pinyin": "xià yǔ tiān zǒulù yào xiǎoxīn.",
+              "english": "Be careful walking on rainy days.",
+              "teaching_note": "Simple descriptive or narrative use of 小心."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 898
+            }
+          ]
+        },
+        {
+          "id": "w-0906",
+          "hanzi": "信",
+          "pinyin": "xìn",
+          "meaning_en": "letter; message; trust",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0906-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你收到我的信了吗？",
+              "pinyin": "nǐ shōudào wǒ de xìn le ma?",
+              "english": "Did you receive my letter?",
+              "teaching_note": "Short everyday spoken use of 信."
+            },
+            {
+              "id": "ex-0906-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她给朋友写了一封信。",
+              "pinyin": "tā gěi péngyou xiě le yì fēng xìn.",
+              "english": "She wrote a letter to her friend.",
+              "teaching_note": "Simple descriptive or narrative use of 信."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 906
+            }
+          ]
+        },
+        {
+          "id": "w-0908",
+          "hanzi": "行",
+          "pinyin": "xíng",
+          "meaning_en": "okay; work; acceptable",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adjective"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0908-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这样行吗？",
+              "pinyin": "zhèyàng xíng ma?",
+              "english": "Is this okay?",
+              "teaching_note": "行 (xíng) means okay, feasible, or to work; 银行 (yínháng) uses a different reading."
+            },
+            {
+              "id": "ex-0908-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“这个办法行，我们就这样做。”他说。",
+              "pinyin": "“zhège bànfǎ xíng, wǒmen jiù zhèyàng zuò.” tā shuō.",
+              "english": "“This approach works. Let’s do it this way,” he said.",
+              "teaching_note": "Quoted speech in a written narrative frame. 行 (xíng) means okay, feasible, or to work; 银行 (yínháng) uses a different reading."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 908
+            }
+          ]
+        },
+        {
+          "id": "w-0942",
+          "hanzi": "邮件",
+          "pinyin": "yóujiàn",
+          "meaning_en": "email; mail",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0942-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我发邮件吧。",
+              "pinyin": "gěi wǒ fā yóujiàn ba.",
+              "english": "Send me an email, please.",
+              "teaching_note": "Short everyday spoken use of 邮件."
+            },
+            {
+              "id": "ex-0942-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师昨天发了一封邮件。",
+              "pinyin": "lǎoshī zuótiān fā le yì fēng yóujiàn.",
+              "english": "The teacher sent an email yesterday.",
+              "teaching_note": "Simple descriptive or narrative use of 邮件."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 942
+            }
+          ]
+        },
+        {
+          "id": "w-0943",
+          "hanzi": "邮箱",
+          "pinyin": "yóuxiāng",
+          "meaning_en": "email inbox; email address",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0943-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的邮箱是什么？",
+              "pinyin": "nǐ de yóuxiāng shì shénme?",
+              "english": "What's your email address?",
+              "teaching_note": "Short everyday spoken use of 邮箱."
+            },
+            {
+              "id": "ex-0943-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请把问题发到我的邮箱。",
+              "pinyin": "qǐng bǎ wèntí fā dào wǒ de yóuxiāng.",
+              "english": "Please send the questions to my email address.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 943
+            }
+          ]
+        },
+        {
+          "id": "w-0989",
+          "hanzi": "注意",
+          "pinyin": "zhùyì",
+          "meaning_en": "pay attention; be careful",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0989-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "注意安全！",
+              "pinyin": "zhùyì ānquán!",
+              "english": "Stay safe!",
+              "teaching_note": "Short everyday spoken use of 注意."
+            },
+            {
+              "id": "ex-0989-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "过马路时要注意红绿灯。",
+              "pinyin": "guò mǎlù shí yào zhùyì hóng-lǜdēng.",
+              "english": "Pay attention to traffic lights when crossing the street.",
+              "teaching_note": "Simple descriptive or narrative use of 注意."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 989
+            }
+          ]
+        },
+        {
+          "id": "w-0045",
+          "hanzi": "对不起",
+          "pinyin": "duìbuqǐ",
+          "meaning_en": "sorry",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0045-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "对不起，我来晚了。",
+              "pinyin": "duìbuqǐ, wǒ lái wǎn le.",
+              "english": "Sorry, I came late.",
+              "teaching_note": "对不起 is an apology; 来晚了 means arriving late, with 了 indicating the completed situation."
+            },
+            {
+              "id": "ex-0045-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“对不起，我没有看见你。”她说。",
+              "pinyin": "“duìbuqǐ, wǒ méiyǒu kànjiàn nǐ.” tā shuō.",
+              "english": "\"I'm sorry, I didn't see you,\" she said.",
+              "teaching_note": "Written dialogue: 对不起 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 45
+            }
+          ]
+        },
+        {
+          "id": "w-0218",
+          "hanzi": "喂",
+          "pinyin": "wèi",
+          "meaning_en": "hello (on phone)",
+          "primary_pos_id": "interjection",
+          "pos_ids": [
+            "interjection"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0218-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "喂，你好！",
+              "pinyin": "wéi, nǐ hǎo!",
+              "english": "Hello!",
+              "teaching_note": "喂 is used to answer the telephone and is commonly pronounced wéi in that context, though wèi is also listed."
+            },
+            {
+              "id": "ex-0218-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“喂，你好，我想找老师。”她说。",
+              "pinyin": "“wéi, nǐ hǎo, wǒ xiǎng zhǎo lǎoshī.” tā shuō.",
+              "english": "\"Hello, I’d like to speak to the teacher,\" she said.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 218
+            }
+          ]
+        },
+        {
+          "id": "w-0272",
+          "hanzi": "在",
+          "pinyin": "zài",
+          "meaning_en": "at; in",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition",
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0272-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在家。",
+              "pinyin": "wǒ zài jiā.",
+              "english": "I am at home.",
+              "teaching_note": "在 + location states where the speaker is, not what they are doing."
+            },
+            {
+              "id": "ex-0272-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们在学校上课。",
+              "pinyin": "wǒmen zài xuéxiào shàngkè.",
+              "english": "We have class at school.",
+              "teaching_note": "School or study context showing 在 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 272
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 发 (fā)",
+        "explanation": "发 (fā) means “send; issue; emit” (verb).",
+        "example_id": "ex-0614-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 声 (shēng)",
+        "explanation": "声 (shēng) means “sound; voice; classifier for sound” (noun).",
+        "example_id": "ex-0830-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0614-1",
+      "ex-0830-1",
+      "ex-0831-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why was Xiao Lan moved by the letter?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Her old classmate wrote to remind her to take care of her health at her new job.",
+          "explanation": "The classmate heard she changed jobs and reminded her 要注意身体."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences: one saying you sent an email, and one using 听说.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我上午给你发了一封邮件。听说你明天要出差，路上小心！",
+          "explanation": "Use 发邮件 and 听说 naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"email inbox / email address\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "邮件",
+              "pinyin": "yóujiàn",
+              "meaning_en": "email message"
+            },
+            {
+              "id": "b",
+              "hanzi": "邮箱",
+              "pinyin": "yóuxiāng",
+              "meaning_en": "email inbox / address"
+            },
+            {
+              "id": "c",
+              "hanzi": "信",
+              "pinyin": "xìn",
+              "meaning_en": "letter"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "邮箱 refers to the mailbox/inbox or email address."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to receive\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "收到",
+              "pinyin": "shōudào",
+              "meaning_en": "receive"
+            },
+            {
+              "id": "b",
+              "hanzi": "相信",
+              "pinyin": "xiāngxìn",
+              "meaning_en": "believe"
+            },
+            {
+              "id": "c",
+              "hanzi": "听说",
+              "pinyin": "tīngshuō",
+              "meaning_en": "hear that"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "收到 means to receive."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"to be careful\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "行",
+              "pinyin": "xíng",
+              "meaning_en": "okay"
+            },
+            {
+              "id": "b",
+              "hanzi": "小心",
+              "pinyin": "xiǎoxīn",
+              "meaning_en": "be careful"
+            },
+            {
+              "id": "c",
+              "hanzi": "声音",
+              "pinyin": "shēngyīn",
+              "meaning_en": "sound / voice"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "小心 means to be careful."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Checking Email",
+        "context_en": "Two colleagues check whether an important email has arrived.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "我刚才给你发了一封邮件，你收到了吗？",
+            "pinyin": "Wǒ gāngcái gěi nǐ fā le yì fēng yóujiàn, nǐ shōudào le ma?",
+            "english": "I just sent you an email—did you receive it?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "等一下，我看看邮箱……收到了！不过声音怎么这么小？",
+            "pinyin": "Děng yíxià, wǒ kànkan yóuxiāng… shōudào le! Búguò shēngyīn zěnme zhème xiǎo?",
+            "english": "Wait a moment, let me check my inbox… Got it! Though why is the audio so quiet?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "听说这个文件有点儿问题，你注意看后面的说明。",
+            "pinyin": "Tīngshuō zhège wénjiàn yǒudiǎnr wèntí, nǐ zhùyì kàn hòumiàn de shuōmíng.",
+            "english": "I heard there’s a slight issue with this file—pay attention to the instructions at the end."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "行，我相信很快就能弄好，你放心吧。",
+            "pinyin": "Xíng, wǒ xiāngxìn hěn kuài jiù néng nòng hǎo, nǐ fàngxīn ba.",
+            "english": "Okay, I’m sure we can sort it out soon—don’t worry."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Sending and receiving messages",
+          "explanation_en": "Use 给 + recipient + 发 + message to send, and 收到 + message to confirm receipt.",
+          "pattern_hanzi": "给 + <Recipient> + 发 + 邮件 / 信",
+          "pattern_pinyin": "gěi + <Recipient> + fā + yóujiàn / xìn",
+          "pattern_pseudo_translation": "to + <Recipient> + send + email / letter",
+          "examples": [
+            {
+              "hanzi": "请把你的邮箱地址发给我。",
+              "pinyin": "Qǐng bǎ nǐ de yóuxiāng dìzhǐ fā gěi wǒ.",
+              "english": "Please send your email address to me."
+            },
+            {
+              "hanzi": "昨天我收到了哥哥寄来的一封信。",
+              "pinyin": "Zuótiān wǒ shōudào le gēge jì lái de yì fēng xìn.",
+              "english": "Yesterday I received a letter sent by my older brother."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Reporting what you heard with 听说",
+          "explanation_en": "Place 听说 (tīngshuō) at the start of a clause to introduce something you heard from others.",
+          "pattern_hanzi": "听说 + <Clause>",
+          "pattern_pinyin": "tīngshuō + <Clause>",
+          "pattern_pseudo_translation": "heard that + <Clause>",
+          "examples": [
+            {
+              "hanzi": "听说下周学校要放假两天。",
+              "pinyin": "Tīngshuō xià zhōu xuéxiào yào fàngjià liǎng tiān.",
+              "english": "I heard the school will have two days off next week."
+            },
+            {
+              "hanzi": "我听说那家店的蛋糕特别好吃。",
+              "pinyin": "Wǒ tīngshuō nà jiā diàn de dàngāo tèbié hǎochī.",
+              "english": "I heard that shop’s cake is especially delicious."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Practice emails, warnings, and agreeing.",
+        "model": {
+          "hanzi": "我已经把作业发到老师的邮箱里了。",
+          "pinyin": "Wǒ yǐjīng bǎ zuòyè fā dào lǎoshī de yóuxiāng lǐ le.",
+          "english": "I have already sent the homework to the teacher’s email inbox."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Remind someone to be careful on the stairs.",
+            "model_answer": {
+              "hanzi": "走楼梯的时候请小心。",
+              "pinyin": "Zǒu lóutī de shíhou qǐng xiǎoxīn.",
+              "english": "Please be careful when walking on the stairs."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you believe what your friend said.",
+            "model_answer": {
+              "hanzi": "我相信我朋友说的话。",
+              "pinyin": "Wǒ xiāngxìn wǒ péngyou shuō de huà.",
+              "english": "I believe what my friend said."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say the sound outside is too loud.",
+            "model_answer": {
+              "hanzi": "外面的声音太大了，我听不见。",
+              "pinyin": "Wàimiàn de shēngyīn tài dà le, wǒ tīng bu jiàn.",
+              "english": "The noise outside is too loud; I can’t hear."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Letter from Afar",
+        "paragraphs": [
+          {
+            "hanzi": "现在大家习惯用手机发邮件，很少写信了。不过上个月，小兰却收到了一封老同学写来的信。",
+            "pinyin": "Xiànzài dàjiā xíguàn yòng shǒujī fā yóujiàn, hěn shǎo xiě xìn le. Búguò shàng ge yuè, Xiǎo Lán què shōudào le yì fēng lǎo tóngxué xiě lái de xìn.",
+            "english": "Nowadays everyone is used to sending emails by phone and rarely writes letters. However, last month Xiao Lan received a letter from an old classmate."
+          },
+          {
+            "hanzi": "信里说她听说小兰换了新工作，提醒她工作再忙也要注意身体。小兰看完非常感动。",
+            "pinyin": "Xìn lǐ shuō tā tīngshuō Xiǎo Lán huàn le xīn gōngzuò, tíxǐng tā gōngzuò zài máng yě yào zhùyì shēntǐ. Xiǎo Lán kàn wán fēicháng gǎndòng.",
+            "english": "The letter said she heard Xiao Lan changed to a new job, reminding her to take care of her health no matter how busy work gets. Xiao Lan was deeply moved after reading it."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What did Xiao Lan receive last month?",
+            "answer_en": "A letter written by an old classmate."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What did the classmate remind Xiao Lan to pay attention to?",
+            "answer_en": "Her health (注意身体), even when busy with her new job."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Confirm that you received an email and say it is okay.",
+          "model_answer": {
+            "hanzi": "你的邮件我收到了，时间安排很行，没问题。",
+            "pinyin": "Nǐ de yóujiàn wǒ shōudào le, shíjiān ānpái hěn xíng, méi wèntí.",
+            "english": "I received your email; the schedule works fine, no problem."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Give a friend a reminder using 注意 or 小心.",
+          "model_answer": {
+            "hanzi": "刚下过雨，路很滑，走路要小心一点儿。",
+            "pinyin": "Gāng xià guò yǔ, lù hěn huá, zǒulù yào xiǎoxīn yìdiǎnr.",
+            "english": "It just rained and the road is slippery—be a little careful when walking."
+          }
+        }
+      ],
+      "common_pitfall": "邮箱 is the email inbox or email address, while 邮件 is the email message itself. Say 查邮箱 (\"check inbox\") and 发邮件 (\"send an email\").",
+      "pronunciation_focus": "声音 (shēngyīn) has two high flat first tones; 注意 (zhùyì) has two sharp fourth tones.",
+      "review": {
+        "can_do": [
+          "Send and receive letters or emails.",
+          "Report hearsay with 听说.",
+          "Give reminders with 小心 and 注意."
+        ],
+        "entry_ids": [
+          614,
+          830,
+          831,
+          837,
+          857,
+          891,
+          898,
+          906,
+          908,
+          942,
+          943,
+          989
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-letters-emails-attention--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Sending and receiving messages",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-letters-emails-attention--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Reporting what you heard with 听说",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Remind someone to be careful on the stairs.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-letters-emails-attention--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you believe what your friend said.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-letters-emails-attention--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the sound outside is too loud.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What did Xiao Lan receive last month?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-letters-emails-attention--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What did the classmate remind Xiao Lan to pay attention to?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Confirm that you received an email and say it is okay.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-letters-emails-attention--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Give a friend a reminder using 注意 or 小心.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-letters-emails-attention--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-letters-emails-attention--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"email inbox / email address\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-letters-emails-attention--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to receive\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-letters-emails-attention--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"to be careful\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-letters-emails-attention--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-letters-emails-attention--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 18
+}

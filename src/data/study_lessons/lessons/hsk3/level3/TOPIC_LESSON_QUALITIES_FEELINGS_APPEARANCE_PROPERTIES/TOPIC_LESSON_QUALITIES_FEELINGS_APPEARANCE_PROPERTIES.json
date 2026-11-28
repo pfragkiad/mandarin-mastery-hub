@@ -1,0 +1,1682 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-appearance-and-comparison",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Appearance, Colors & Comparisons",
+    "subtitle": "Height, size, age, colors, cleanliness, and comparisons",
+    "description": "Describe physical appearance, size, colors, cleanliness, quietness, and compare similarities or differences.",
+    "slug": "appearance-and-comparison"
+  },
+  "classification": {
+    "primary_topic_id": "qualities-feelings",
+    "topic_ids": [
+      "qualities-feelings"
+    ],
+    "tags": [
+      "appearance",
+      "colors",
+      "comparisons"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "physical-properties",
+    "subtopic_ids": [
+      "physical-properties"
+    ]
+  },
+  "learning_objectives": [
+    "Describe appearance and physical properties: 矮, 短, 胖, 瘦, 老, 年轻, 旧, 大小, 干净, 脏, 蓝, and 黄色.",
+    "Describe quietness and degree: 安静, 比较, and 更.",
+    "Compare things using 一样, 不同, and 差不多."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "专": "Characters:专",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "京": "Characters:京",
+    "亮": "Characters:亮",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "但": "Characters:但",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "儿": "Characters:儿",
+    "兴": "Characters:兴",
+    "冬": "Characters:冬",
+    "冷": "Characters:冷",
+    "净": "Characters:净",
+    "几": "Characters:几",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "北": "Characters:北",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "双": "Characters:双",
+    "发": "Characters:发",
+    "只": "Characters:只",
+    "合": "Characters:合",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "和": "Characters:和",
+    "哥": "Characters:哥",
+    "喜": "Characters:喜",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "堂": "Characters:堂",
+    "墙": "Characters:墙",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "头": "Characters:头",
+    "套": "Characters:套",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "宜": "Characters:宜",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "宿": "Characters:宿",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "差": "Characters:差",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "幅": "Characters:幅",
+    "干": "Characters:干",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "式": "Characters:式",
+    "弟": "Characters:弟",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "怎": "Characters:怎",
+    "总": "Characters:总",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "打": "Characters:打",
+    "扫": "Characters:扫",
+    "把": "Characters:把",
+    "拾": "Characters:拾",
+    "挂": "Characters:挂",
+    "换": "Characters:换",
+    "擦": "Characters:擦",
+    "收": "Characters:收",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "旧": "Characters:旧",
+    "是": "Characters:是",
+    "暖": "Characters:暖",
+    "更": "Characters:更",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "朵": "Characters:朵",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "板": "Characters:板",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "桌": "Characters:桌",
+    "棵": "Characters:棵",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "海": "Characters:海",
+    "淡": "Characters:淡",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "版": "Characters:版",
+    "狗": "Characters:狗",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "画": "Characters:画",
+    "瘦": "Characters:瘦",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "短": "Characters:短",
+    "矮": "Characters:矮",
+    "租": "Characters:租",
+    "穿": "Characters:穿",
+    "管": "Characters:管",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "网": "Characters:网",
+    "老": "Characters:老",
+    "聊": "Characters:聊",
+    "胖": "Characters:胖",
+    "脏": "Characters:脏",
+    "腿": "Characters:腿",
+    "舍": "Characters:舍",
+    "色": "Characters:色",
+    "花": "Characters:花",
+    "菜": "Characters:菜",
+    "蓝": "Characters:蓝",
+    "衣": "Characters:衣",
+    "衫": "Characters:衫",
+    "衬": "Characters:衬",
+    "被": "Characters:被",
+    "裙": "Characters:裙",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "览": "Characters:览",
+    "觉": "Characters:觉",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "跟": "Characters:跟",
+    "路": "Characters:路",
+    "轻": "Characters:轻",
+    "较": "Characters:较",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "适": "Characters:适",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "长": "Characters:长",
+    "间": "Characters:间",
+    "闹": "Characters:闹",
+    "阅": "Characters:阅",
+    "雨": "Characters:雨",
+    "静": "Characters:静",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "鞋": "Characters:鞋",
+    "颜": "Characters:颜",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "高": "Characters:高",
+    "黄": "Characters:黄"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Observable properties, colors, and comparison words.",
+      "focus": "Use 跟 / 和……一样 for \"the same as\" and 差不多 for \"almost / about the same\"."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0502",
+          "hanzi": "矮",
+          "pinyin": "ǎi",
+          "meaning_en": "short (in height)",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0502-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他比我矮。",
+              "pinyin": "tā bǐ wǒ ǎi.",
+              "english": "He is shorter than me.",
+              "teaching_note": "Short everyday spoken use of 矮."
+            },
+            {
+              "id": "ex-0502-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "弟弟的个子比较矮。",
+              "pinyin": "dìdi de gèzi bǐjiào ǎi.",
+              "english": "My younger brother is relatively short.",
+              "teaching_note": "Simple descriptive or narrative use of 矮."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 502
+            }
+          ]
+        },
+        {
+          "id": "w-0504",
+          "hanzi": "安静",
+          "pinyin": "ānjìng",
+          "meaning_en": "quiet",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0504-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里很安静。",
+              "pinyin": "zhèlǐ hěn ānjìng.",
+              "english": "It's quiet here.",
+              "teaching_note": "Short everyday spoken use of 安静."
+            },
+            {
+              "id": "ex-0504-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "图书馆里很安静。",
+              "pinyin": "túshūguǎn lǐ hěn ānjìng.",
+              "english": "The library is very quiet.",
+              "teaching_note": "Simple descriptive or narrative use of 安静."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 504
+            }
+          ]
+        },
+        {
+          "id": "w-0520",
+          "hanzi": "比较",
+          "pinyin": "bǐjiào",
+          "meaning_en": "relatively; compare",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0520-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天比较冷。",
+              "pinyin": "jīntiān bǐjiào lěng.",
+              "english": "It's rather cold today.",
+              "teaching_note": "Short everyday spoken use of 比较."
+            },
+            {
+              "id": "ex-0520-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆的菜比较便宜。",
+              "pinyin": "zhè jiā fànguǎn de cài bǐjiào piányi.",
+              "english": "The dishes at this restaurant are relatively inexpensive.",
+              "teaching_note": "Simple descriptive or narrative use of 比较."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 520
+            }
+          ]
+        },
+        {
+          "id": "w-0541",
+          "hanzi": "不同",
+          "pinyin": "bù tóng",
+          "meaning_en": "different; not the same",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0541-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们买了不同的书。",
+              "pinyin": "wǒmen mǎi le bù tóng de shū.",
+              "english": "We bought different books.",
+              "teaching_note": "Short everyday spoken use of 不同."
+            },
+            {
+              "id": "ex-0541-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这两件衣服的颜色不同。",
+              "pinyin": "zhè liǎng jiàn yīfu de yánsè bù tóng.",
+              "english": "These two pieces of clothing are different colors.",
+              "teaching_note": "Simple descriptive or narrative use of 不同."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 541
+            }
+          ]
+        },
+        {
+          "id": "w-0552",
+          "hanzi": "差不多",
+          "pinyin": "chàbuduō",
+          "meaning_en": "almost; approximately",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0552-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们差不多到了。",
+              "pinyin": "wǒmen chàbuduō dào le.",
+              "english": "We're almost there.",
+              "teaching_note": "Short everyday spoken use of 差不多."
+            },
+            {
+              "id": "ex-0552-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这两个孩子差不多高。",
+              "pinyin": "zhè liǎng gè háizi chàbuduō gāo.",
+              "english": "The two children are about the same height.",
+              "teaching_note": "Simple descriptive or narrative use of 差不多."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 552
+            }
+          ]
+        },
+        {
+          "id": "w-0575",
+          "hanzi": "大小",
+          "pinyin": "dàxiǎo",
+          "meaning_en": "size; dimensions",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0575-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个大小合适吗？",
+              "pinyin": "zhège dàxiǎo héshì ma?",
+              "english": "Is this size suitable?",
+              "teaching_note": "Short everyday spoken use of 大小."
+            },
+            {
+              "id": "ex-0575-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这两间房子的大小不同。",
+              "pinyin": "zhè liǎng jiān fángzi de dàxiǎo bù tóng.",
+              "english": "These two houses are different sizes.",
+              "teaching_note": "Simple descriptive or narrative use of 大小."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 575
+            }
+          ]
+        },
+        {
+          "id": "w-0605",
+          "hanzi": "短",
+          "pinyin": "duǎn",
+          "meaning_en": "short (length)",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0605-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条路很短。",
+              "pinyin": "zhè tiáo lù hěn duǎn.",
+              "english": "This road is short.",
+              "teaching_note": "Short everyday spoken use of 短."
+            },
+            {
+              "id": "ex-0605-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的头发比以前短了。",
+              "pinyin": "tā de tóufa bǐ yǐqián duǎn le.",
+              "english": "His hair is shorter than before.",
+              "teaching_note": "Simple descriptive or narrative use of 短."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 605
+            }
+          ]
+        },
+        {
+          "id": "w-0636",
+          "hanzi": "干净",
+          "pinyin": "gānjìng",
+          "meaning_en": "clean",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0636-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "房间很干净！",
+              "pinyin": "fángjiān hěn gānjìng!",
+              "english": "The room is very clean!",
+              "teaching_note": "Short everyday spoken use of 干净."
+            },
+            {
+              "id": "ex-0636-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "教室打扫得很干净。",
+              "pinyin": "jiàoshì dǎsǎo de hěn gānjìng.",
+              "english": "The classroom has been cleaned thoroughly.",
+              "teaching_note": "Simple descriptive or narrative use of 干净."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 636
+            }
+          ]
+        },
+        {
+          "id": "w-0646",
+          "hanzi": "更",
+          "pinyin": "gèng",
+          "meaning_en": "even more; more",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0646-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天更冷了。",
+              "pinyin": "jīntiān gèng lěng le.",
+              "english": "It's even colder today.",
+              "teaching_note": "Short everyday spoken use of 更."
+            },
+            {
+              "id": "ex-0646-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "坐高铁更方便。",
+              "pinyin": "zuò gāotiě gèng fāngbiàn.",
+              "english": "Taking high-speed rail is more convenient.",
+              "teaching_note": "Simple descriptive or narrative use of 更."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 646
+            }
+          ]
+        },
+        {
+          "id": "w-0681",
+          "hanzi": "黄色",
+          "pinyin": "huángsè",
+          "meaning_en": "yellow; yellow color",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0681-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我要黄色的。",
+              "pinyin": "wǒ yào huángsè de.",
+              "english": "I want the yellow one.",
+              "teaching_note": "Short everyday spoken use of 黄色."
+            },
+            {
+              "id": "ex-0681-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她买了一件黄色的衬衫。",
+              "pinyin": "tā mǎi le yí jiàn huángsè de chènshān.",
+              "english": "She bought a yellow shirt.",
+              "teaching_note": "Simple descriptive or narrative use of 黄色."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 681
+            }
+          ]
+        },
+        {
+          "id": "w-0721",
+          "hanzi": "旧",
+          "pinyin": "jiù",
+          "meaning_en": "old; used",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0721-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是旧书吗？",
+              "pinyin": "zhè shì jiù shū ma?",
+              "english": "Is this a used book?",
+              "teaching_note": "Short everyday spoken use of 旧."
+            },
+            {
+              "id": "ex-0721-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他把旧衣服给了别人。",
+              "pinyin": "tā bǎ jiù yīfu gěi le biérén.",
+              "english": "He gave his old clothes to someone else.",
+              "teaching_note": "Simple descriptive or narrative use of 旧."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 721
+            }
+          ]
+        },
+        {
+          "id": "w-0744",
+          "hanzi": "蓝",
+          "pinyin": "lán",
+          "meaning_en": "blue",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0744-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我要蓝的。",
+              "pinyin": "wǒ yào lán de.",
+              "english": "I want the blue one.",
+              "teaching_note": "Short everyday spoken use of 蓝."
+            },
+            {
+              "id": "ex-0744-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她今天穿着蓝裙子。",
+              "pinyin": "tā jīntiān chuān zhe lán qúnzi.",
+              "english": "She is wearing a blue skirt today.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 744
+            }
+          ]
+        },
+        {
+          "id": "w-0745",
+          "hanzi": "老",
+          "pinyin": "lǎo",
+          "meaning_en": "old; aged; longstanding",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "prefix",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0745-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这只狗老了吗？",
+              "pinyin": "zhè zhǐ gǒu lǎo le ma?",
+              "english": "Has this dog gotten old?",
+              "teaching_note": "Short everyday spoken use of 老."
+            },
+            {
+              "id": "ex-0745-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "那边的树已经很老了。",
+              "pinyin": "nàbiān de shù yǐjīng hěn lǎo le.",
+              "english": "The tree over there is already very old.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 745
+            }
+          ]
+        },
+        {
+          "id": "w-0784",
+          "hanzi": "年轻",
+          "pinyin": "niánqīng",
+          "meaning_en": "young",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0784-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他还很年轻。",
+              "pinyin": "tā hái hěn niánqīng.",
+              "english": "He's still very young.",
+              "teaching_note": "Short everyday spoken use of 年轻."
+            },
+            {
+              "id": "ex-0784-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "年轻人喜欢在网上聊天。",
+              "pinyin": "niánqīng rén xǐhuan zài wǎngshang liáotiān.",
+              "english": "Young people like chatting online.",
+              "teaching_note": "Simple descriptive or narrative use of 年轻."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 784
+            }
+          ]
+        },
+        {
+          "id": "w-0793",
+          "hanzi": "胖",
+          "pinyin": "pàng",
+          "meaning_en": "fat; overweight",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0793-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我是不是胖了？",
+              "pinyin": "wǒ shì bu shì pàng le?",
+              "english": "Have I gained weight?",
+              "teaching_note": "Short everyday spoken use of 胖."
+            },
+            {
+              "id": "ex-0793-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这只猫有点胖。",
+              "pinyin": "zhè zhǐ māo yǒudiǎn pàng.",
+              "english": "This cat is rather fat.",
+              "teaching_note": "Simple descriptive or narrative use of 胖."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 793
+            }
+          ]
+        },
+        {
+          "id": "w-0840",
+          "hanzi": "瘦",
+          "pinyin": "shòu",
+          "meaning_en": "thin; slim",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0840-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你怎么瘦了？",
+              "pinyin": "nǐ zěnme shòu le?",
+              "english": "How did you get thinner?",
+              "teaching_note": "Short everyday spoken use of 瘦."
+            },
+            {
+              "id": "ex-0840-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这只狗有点瘦。",
+              "pinyin": "zhè zhǐ gǒu yǒudiǎn shòu.",
+              "english": "This dog is a little thin.",
+              "teaching_note": "Simple descriptive or narrative use of 瘦."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 840
+            }
+          ]
+        },
+        {
+          "id": "w-0927",
+          "hanzi": "一样",
+          "pinyin": "yíyàng",
+          "meaning_en": "the same; alike",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0927-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们的一样吗？",
+              "pinyin": "wǒmen de yíyàng ma?",
+              "english": "Are ours the same?",
+              "teaching_note": "Short everyday spoken use of 一样."
+            },
+            {
+              "id": "ex-0927-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这两件衣服的颜色一样。",
+              "pinyin": "zhè liǎng jiàn yīfu de yánsè yíyàng.",
+              "english": "These two items of clothing are the same color.",
+              "teaching_note": "Simple descriptive or narrative use of 一样."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 927
+            }
+          ]
+        },
+        {
+          "id": "w-0963",
+          "hanzi": "脏",
+          "pinyin": "zāng",
+          "meaning_en": "dirty",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "physical-properties",
+          "subtopic_ids": [
+            "physical-properties"
+          ],
+          "examples": [
+            {
+              "id": "ex-0963-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "衣服脏了！",
+              "pinyin": "yīfu zāng le!",
+              "english": "My clothes are dirty!",
+              "teaching_note": "Short everyday spoken use of 脏."
+            },
+            {
+              "id": "ex-0963-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨以后路上很脏。",
+              "pinyin": "xià yǔ yǐhòu lùshang hěn zāng.",
+              "english": "The road is dirty after the rain.",
+              "teaching_note": "Simple descriptive or narrative use of 脏."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 963
+            }
+          ]
+        },
+        {
+          "id": "w-0044",
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning_en": "correct; toward",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "preposition",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0044-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我说得对吗？",
+              "pinyin": "wǒ shuō de duì ma?",
+              "english": "Am I right?",
+              "teaching_note": "Short beginner-level description illustrating 对 in context."
+            },
+            {
+              "id": "ex-0044-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "老师说：“对，是这样。”",
+              "pinyin": "lǎoshī shuō: “duì, shì zhèyàng.”",
+              "english": "The teacher said, \"Yes, that's right.\"",
+              "teaching_note": "Written dialogue: 对 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 44
+            }
+          ]
+        },
+        {
+          "id": "w-0046",
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning_en": "many; much",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "pronoun",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0046-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有很多人。",
+              "pinyin": "zhèlǐ yǒu hěn duō rén.",
+              "english": "There are many people here.",
+              "teaching_note": "很多 directly modifies 人 to express a large number of people."
+            },
+            {
+              "id": "ex-0046-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午来的人很多。",
+              "pinyin": "xiàwǔ lái de rén hěn duō.",
+              "english": "There are many people coming this afternoon.",
+              "teaching_note": "Daily time or schedule context illustrating 多 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 46
+            }
+          ]
+        },
+        {
+          "id": "w-0057",
+          "hanzi": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning_en": "happy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0057-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "见到你很高兴。",
+              "pinyin": "jiàndào nǐ hěn gāoxìng.",
+              "english": "Nice to meet you.",
+              "teaching_note": "见到你很高兴 is a conventional greeting on meeting someone."
+            },
+            {
+              "id": "ex-0057-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们今天非常高兴。",
+              "pinyin": "xuéshēngmen jīntiān fēicháng gāoxìng.",
+              "english": "The students are very happy today.",
+              "teaching_note": "School or study context showing 高兴 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 57
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 矮 (ǎi)",
+        "explanation": "矮 (ǎi) means “short (in height)” (adjective).",
+        "example_id": "ex-0502-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 安静 (ānjìng)",
+        "explanation": "安静 (ānjìng) means “quiet” (adjective).",
+        "example_id": "ex-0504-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0502-1",
+      "ex-0504-1",
+      "ex-0520-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Who likes coming to the new reading room after class?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Both young students and older teachers.",
+          "explanation": "The passage says 不管年轻的学生还是老教师，都喜欢来这里看书."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences comparing two things using 一样 or 不同 and 更.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这两件衣服的样式差不多，但蓝色的那件更干净好看。",
+          "explanation": "Use 差不多/一样/不同 with 更."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which adjective means \"short (in height)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "短",
+              "pinyin": "duǎn",
+              "meaning_en": "short in length"
+            },
+            {
+              "id": "b",
+              "hanzi": "矮",
+              "pinyin": "ǎi",
+              "meaning_en": "short in height"
+            },
+            {
+              "id": "c",
+              "hanzi": "瘦",
+              "pinyin": "shòu",
+              "meaning_en": "slim"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "矮 describes vertical height."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which adjective means \"clean\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "干净",
+              "pinyin": "gānjìng",
+              "meaning_en": "clean"
+            },
+            {
+              "id": "b",
+              "hanzi": "脏",
+              "pinyin": "zāng",
+              "meaning_en": "dirty"
+            },
+            {
+              "id": "c",
+              "hanzi": "安静",
+              "pinyin": "ānjìng",
+              "meaning_en": "quiet"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "干净 means clean."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which phrase means \"almost / roughly the same\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "不同",
+              "pinyin": "bù tóng",
+              "meaning_en": "different"
+            },
+            {
+              "id": "b",
+              "hanzi": "差不多",
+              "pinyin": "chàbuduō",
+              "meaning_en": "almost / about the same"
+            },
+            {
+              "id": "c",
+              "hanzi": "一样",
+              "pinyin": "yíyàng",
+              "meaning_en": "the same"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "差不多 means almost or approximately the same."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Comparing Old and New Apartments",
+        "context_en": "Two friends compare their old dorm room with a newly rented room.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你新租的房间和以前那个大小差不多吗？",
+            "pinyin": "Nǐ xīn zū de fángjiān hé yǐqián nàge dàxiǎo chàbuduō ma?",
+            "english": "Is the size of your newly rented room about the same as the old one?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "大小差不多，不过新房间更干净，也更安静。",
+            "pinyin": "Dàxiǎo chàbuduō, búguò xīn fángjiān gèng gānjìng, yě gèng ānjìng.",
+            "english": "About the same size, though the new room is cleaner and quieter."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "墙是什么颜色的？还是蓝的吗？",
+            "pinyin": "Qiáng shì shénme yánsè de? Háishi lán de ma?",
+            "english": "What color are the walls? Still blue?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "这次不同了，是淡黄色的，看起来比较亮堂。",
+            "pinyin": "Zhè cì bù tóng le, shì dàn huángsè de, kàn qǐlái bǐjiào liàngtang.",
+            "english": "It’s different this time—light yellow, so it looks fairly bright."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Comparing sameness with 跟 / 和……一样",
+          "explanation_en": "Use A + 跟 / 和 + B + 一样 (+ adj) to say two things are the same; negate with 不一样.",
+          "pattern_hanzi": "<A> + 和 + <B> + 一样 + (<Adjective>)",
+          "pattern_pinyin": "<A> + hé + <B> + yíyàng + (<Adjective>)",
+          "pattern_pseudo_translation": "<A> + and + <B> + same + (<Adjective>)",
+          "examples": [
+            {
+              "hanzi": "这双鞋的颜色和那双不一样。",
+              "pinyin": "Zhè shuāng xié de yánsè hé nà shuāng bù yíyàng.",
+              "english": "The color of this pair of shoes is not the same as that pair."
+            },
+            {
+              "hanzi": "弟弟现在长得和哥哥一样高了。",
+              "pinyin": "Dìdi xiànzài zhǎng de hé gēge yíyàng gāo le.",
+              "english": "The younger brother has now grown as tall as his older brother."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Intensifying with 比较 and 更",
+          "explanation_en": "比较 (bǐjiào) means \"fairly / relatively\"; 更 (gèng) means \"even more\" (often in comparisons).",
+          "pattern_hanzi": "<Subject> + 比较 / 更 + <Adjective>",
+          "pattern_pinyin": "<Subject> + bǐjiào / gèng + <Adjective>",
+          "pattern_pseudo_translation": "<Subject> + relatively / even more + <Adjective>",
+          "examples": [
+            {
+              "hanzi": "她比去年瘦了一点儿，看起来更年轻了。",
+              "pinyin": "Tā bǐ qùnián shòu le yìdiǎnr, kàn qǐlái gèng niánqīng le.",
+              "english": "She is a bit slimmer than last year and looks even younger."
+            },
+            {
+              "hanzi": "这件旧外套比较短，换那件长的吧。",
+              "pinyin": "Zhè jiàn jiù wàitào bǐjiào duǎn, huàn nà jiàn cháng de ba.",
+              "english": "This old jacket is relatively short—switch to that long one."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe physical traits, cleanliness, and colors.",
+        "model": {
+          "hanzi": "那只小狗有点儿胖，腿也短短的。",
+          "pinyin": "Nà zhī xiǎo gǒu yǒudiǎnr pàng, tuǐ yě duǎnduǎn de.",
+          "english": "That little dog is a bit chubby, and its legs are short too."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say the children’s clothes got dirty from playing.",
+            "model_answer": {
+              "hanzi": "孩子们玩儿得衣服都脏了。",
+              "pinyin": "Háizimen wánr de yīfu dōu zāng le.",
+              "english": "The children played until their clothes got dirty."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say that tree isn’t tall—it is quite short.",
+            "model_answer": {
+              "hanzi": "那棵树不高，比较矮。",
+              "pinyin": "Nà kē shù bù gāo, bǐjiào ǎi.",
+              "english": "That tree isn’t tall—it’s fairly short."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this old book is different from the new edition.",
+            "model_answer": {
+              "hanzi": "这本旧书和新版有很多不同。",
+              "pinyin": "Zhè běn jiù shū hé xīn bǎn yǒu hěn duō bù tóng.",
+              "english": "This old book has many differences from the new edition."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Clean and Quiet Reading Room",
+        "paragraphs": [
+          {
+            "hanzi": "学校新开了一间阅览室，里面非常安静，桌子和地板总是擦得很干净。墙上挂着几幅蓝天和黄色花朵的画。",
+            "pinyin": "Xuéxiào xīn kāi le yì jiān yuèlǎnshì, lǐmiàn fēicháng ānjìng, zhuōzi hé dìbǎn zǒngshì cā de hěn gānjìng. Qiángshàng guà zhe jǐ fú lántiān hé huángsè huāduǒ de huà.",
+            "english": "The school newly opened a reading room; inside it is very quiet, and the tables and floor are always wiped clean. Paintings of blue skies and yellow flowers hang on the wall."
+          },
+          {
+            "hanzi": "每天下课以后，不管年轻的学生还是老教师，都喜欢来这里看书。大家觉得这里比宿舍更适合专心学习。",
+            "pinyin": "Měitiān xiàkè yǐhòu, bùguǎn niánqīng de xuéshēng háishi lǎo jiàoshī, dōu xǐhuan lái zhèlǐ kànshū. Dàjiā juéde zhèlǐ bǐ sùshè gèng shìhé zhuānxīn xuéxí.",
+            "english": "Every day after class, both young students and older teachers like coming here to read. Everyone feels it is even more suitable for focused study than the dorm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What paintings hang on the wall of the reading room?",
+            "answer_en": "Paintings of blue skies and yellow flowers."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Why do people prefer studying there over the dorm?",
+            "answer_en": "Because it is quieter, clean, and better suited for focused study."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Compare two seasons, rooms, or cities using 一样, 不同, or 更.",
+          "model_answer": {
+            "hanzi": "上海和北京不一样，上海冬天更暖和，不过两个城市都很热闹。",
+            "pinyin": "Shànghǎi hé Běijīng bù yíyàng, Shànghǎi dōngtiān gèng nuǎnhuo, búguò liǎng ge chéngshì dōu hěn rènào.",
+            "english": "Shanghai and Beijing are not the same; Shanghai is warmer in winter, though both cities are lively."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe a room or object using 干净, 大小, and a color.",
+          "model_answer": {
+            "hanzi": "我的房间大小刚刚好，被子是蓝色的，每天都收拾得很干净。",
+            "pinyin": "Wǒ de fángjiān dàxiǎo gānggāng hǎo, bèizi shì lán sè de, měitiān dōu shōushi de hěn gānjìng.",
+            "english": "My room is just the right size, my quilt is blue, and I tidy it clean every day."
+          }
+        }
+      ],
+      "common_pitfall": "矮 (ǎi) is for height of people/trees/buildings; 短 (duǎn) is for length of objects, hair, or time. Never say *短人 for a short person.",
+      "pronunciation_focus": "安静 (ānjìng) moves from flat ān to falling jìng; 差不多 (chàbuduō) has fourth + neutral + first.",
+      "review": {
+        "can_do": [
+          "Describe height, length, build, age, and cleanliness.",
+          "Name colors like 蓝 and 黄色.",
+          "Compare things with 一样, 不同, 差不多, 比较, and 更."
+        ],
+        "entry_ids": [
+          502,
+          504,
+          520,
+          541,
+          552,
+          575,
+          605,
+          636,
+          646,
+          681,
+          721,
+          744,
+          745,
+          784,
+          793,
+          840,
+          927,
+          963
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-appearance-and-comparison--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Comparing sameness with 跟 / 和……一样",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-appearance-and-comparison--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Intensifying with 比较 and 更",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the children’s clothes got dirty from playing.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-appearance-and-comparison--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say that tree isn’t tall—it is quite short.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-appearance-and-comparison--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this old book is different from the new edition.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What paintings hang on the wall of the reading room?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-appearance-and-comparison--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Why do people prefer studying there over the dorm?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Compare two seasons, rooms, or cities using 一样, 不同, or 更.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-appearance-and-comparison--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe a room or object using 干净, 大小, and a color.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-appearance-and-comparison--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-appearance-and-comparison--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which adjective means \"short (in height)\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-appearance-and-comparison--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which adjective means \"clean\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-appearance-and-comparison--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which phrase means \"almost / roughly the same\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-appearance-and-comparison--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-appearance-and-comparison--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { LessonPage } from './lesson-page';
 import { lessonSummaries, loadLesson } from '@/lib/lessons';
+import { readProgress } from '@/lib/lesson-progress';
 
 const router = vi.hoisted(() => ({ navigate: vi.fn() }));
 vi.mock('@tanstack/react-router', () => ({
@@ -111,7 +112,7 @@ describe('LessonPage', () => {
       });
       unmount();
     }
-    expect(total).toBe(92 + 43 + 11);
+    expect(total).toBe(92 + 70 + 43 + 11);
   }, 60_000);
 
   it('the pseudo-translation keeps <slots> visible and fixed Mandarin bold', async () => {
@@ -265,7 +266,7 @@ describe('LessonPage', () => {
     render(<LessonPage lesson={lesson} priority={undefined} onPriority={() => {}}/>);
     fireEvent.click(screen.getByRole('button', { name: 'Complete lesson' }));
     expect(router.navigate).toHaveBeenCalledWith({ to: '/lessons' });
-    expect(localStorage.getItem('lesson_progress_v1')).toContain('"completed":true');
+    expect(readProgress()[lesson.summary.id]?.completed).toBe(true);
   });
 
   it('lesson titles carry no Draft pill', async () => {

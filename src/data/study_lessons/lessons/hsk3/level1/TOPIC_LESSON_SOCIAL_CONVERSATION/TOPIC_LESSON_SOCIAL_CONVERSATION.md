@@ -164,7 +164,7 @@ Do not answer 谢谢 (xièxie) with 没关系 (méi guānxi) as your default. �
 
 - 谢谢 (xièxie) — thank you [HSK entry 241]
 
-- 再见 (zàijiàn) — goodbye [HSK entry 272]
+- 再见 (zàijiàn) — goodbye [HSK entry 271]
 
 - 事 (shì) — matter; thing [HSK entry 187]
 

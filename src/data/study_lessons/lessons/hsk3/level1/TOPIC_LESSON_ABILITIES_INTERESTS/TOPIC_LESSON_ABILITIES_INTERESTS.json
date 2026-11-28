@@ -594,7 +594,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 37
+              "entry_id": 36
             }
           ],
           "primary_subtopic_id": "media-literature",
@@ -639,7 +639,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 38
+              "entry_id": 37
             }
           ],
           "primary_subtopic_id": "arts-entertainment",
@@ -685,7 +685,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 39
+              "entry_id": 38
             }
           ],
           "primary_subtopic_id": "arts-entertainment",
@@ -731,7 +731,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 58
+              "entry_id": 59
             }
           ],
           "primary_subtopic_id": "arts-entertainment",
@@ -1092,9 +1092,9 @@
           233,
           252,
           18,
+          37,
           38,
-          39,
-          58
+          59
         ]
       }
     }

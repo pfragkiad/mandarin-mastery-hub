@@ -1,0 +1,1430 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-weather-seasons-animals",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Weather, Seasons & Animals",
+    "subtitle": "Four seasons, wind, cool breezes, and animals",
+    "description": "Talk about the four seasons, windy and cool weather, and animals such as pandas, horses, cows, and sheep.",
+    "slug": "weather-seasons-animals"
+  },
+  "classification": {
+    "primary_topic_id": "animals-weather",
+    "topic_ids": [
+      "animals-weather"
+    ],
+    "tags": [
+      "seasons",
+      "weather",
+      "animals"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "weather-climate",
+    "subtopic_ids": [
+      "weather-climate",
+      "animals-wildlife"
+    ]
+  },
+  "learning_objectives": [
+    "Name the four seasons together: 四季, 春天, 夏天, 秋天, and 冬天.",
+    "Describe wind and cool air with 风, 刮, and 凉快.",
+    "Name animals: 动物, 大熊猫, 马, 牛, and 羊."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "且": "Characters:且",
+    "两": "Characters:两",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "了": "Characters:了",
+    "京": "Characters:京",
+    "亮": "Characters:亮",
+    "仅": "Characters:仅",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "住": "Characters:住",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "六": "Characters:六",
+    "关": "Characters:关",
+    "养": "Characters:养",
+    "农": "Characters:农",
+    "冬": "Characters:冬",
+    "冷": "Characters:冷",
+    "凉": "Characters:凉",
+    "分": "Characters:分",
+    "别": "Characters:别",
+    "刮": "Characters:刮",
+    "到": "Characters:到",
+    "动": "Characters:动",
+    "北": "Characters:北",
+    "午": "Characters:午",
+    "原": "Characters:原",
+    "去": "Characters:去",
+    "变": "Characters:变",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "合": "Characters:合",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "吸": "Characters:吸",
+    "吹": "Characters:吹",
+    "呀": "Characters:呀",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哪": "Characters:哪",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "嘛": "Characters:嘛",
+    "四": "Characters:四",
+    "因": "Characters:因",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "处": "Characters:处",
+    "夏": "Characters:夏",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "季": "Characters:季",
+    "学": "Characters:学",
+    "宝": "Characters:宝",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "山": "Characters:山",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "引": "Characters:引",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "微": "Characters:微",
+    "快": "Characters:快",
+    "想": "Characters:想",
+    "慢": "Characters:慢",
+    "成": "Characters:成",
+    "我": "Characters:我",
+    "户": "Characters:户",
+    "把": "Characters:把",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "春": "Characters:春",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "暖": "Characters:暖",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "末": "Characters:末",
+    "村": "Characters:村",
+    "来": "Characters:来",
+    "欢": "Characters:欢",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "没": "Characters:没",
+    "海": "Characters:海",
+    "游": "Characters:游",
+    "漂": "Characters:漂",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "熊": "Characters:熊",
+    "爱": "Characters:爱",
+    "爸": "Characters:爸",
+    "牛": "Characters:牛",
+    "物": "Characters:物",
+    "特": "Characters:特",
+    "狗": "Characters:狗",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "神": "Characters:神",
+    "秋": "Characters:秋",
+    "窗": "Characters:窗",
+    "竹": "Characters:竹",
+    "算": "Characters:算",
+    "精": "Characters:精",
+    "羊": "Characters:羊",
+    "美": "Characters:美",
+    "老": "Characters:老",
+    "而": "Characters:而",
+    "能": "Characters:能",
+    "舒": "Characters:舒",
+    "节": "Characters:节",
+    "花": "Characters:花",
+    "草": "Characters:草",
+    "见": "Characters:见",
+    "走": "Characters:走",
+    "较": "Characters:较",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "适": "Characters:适",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "雨": "Characters:雨",
+    "雪": "Characters:雪",
+    "非": "Characters:非",
+    "面": "Characters:面",
+    "风": "Characters:风",
+    "食": "Characters:食",
+    "饭": "Characters:饭",
+    "马": "Characters:马",
+    "骑": "Characters:骑"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Weather, seasonal change, and animal vocabulary.",
+      "focus": "Use 刮风 for wind blowing and 凉快 for pleasantly cool weather (especially in autumn or evening)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0568",
+          "hanzi": "春天",
+          "pinyin": "chūntiān",
+          "meaning_en": "spring",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0568-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "春天来了！",
+              "pinyin": "chūntiān lái le!",
+              "english": "Spring has arrived!",
+              "teaching_note": "Short everyday spoken use of 春天."
+            },
+            {
+              "id": "ex-0568-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "春天的天气很舒服。",
+              "pinyin": "chūntiān de tiānqì hěn shūfu.",
+              "english": "Spring weather is very pleasant.",
+              "teaching_note": "Simple descriptive or narrative use of 春天."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 568
+            }
+          ]
+        },
+        {
+          "id": "w-0576",
+          "hanzi": "大熊猫",
+          "pinyin": "dàxióngmāo",
+          "meaning_en": "giant panda",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0576-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你见过大熊猫吗？",
+              "pinyin": "nǐ jiàn guo dàxióngmāo ma?",
+              "english": "Have you seen a giant panda?",
+              "teaching_note": "Short everyday spoken use of 大熊猫."
+            },
+            {
+              "id": "ex-0576-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "动物园里有两只大熊猫。",
+              "pinyin": "dòngwùyuán lǐ yǒu liǎng zhī dàxióngmāo.",
+              "english": "There are two giant pandas at the zoo.",
+              "teaching_note": "Simple descriptive or narrative use of 大熊猫."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 576
+            }
+          ]
+        },
+        {
+          "id": "w-0601",
+          "hanzi": "冬天",
+          "pinyin": "dōngtiān",
+          "meaning_en": "winter",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0601-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "冬天真冷啊！",
+              "pinyin": "dōngtiān zhēn lěng a!",
+              "english": "Winter is so cold!",
+              "teaching_note": "Short everyday spoken use of 冬天."
+            },
+            {
+              "id": "ex-0601-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "北方的冬天常常下雪。",
+              "pinyin": "běifāng de dōngtiān chángcháng xià xuě.",
+              "english": "It often snows in northern winters.",
+              "teaching_note": "Simple descriptive or narrative use of 冬天."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 601
+            }
+          ]
+        },
+        {
+          "id": "w-0603",
+          "hanzi": "动物",
+          "pinyin": "dòngwù",
+          "meaning_en": "animal",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0603-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢动物吗？",
+              "pinyin": "nǐ xǐhuan dòngwù ma?",
+              "english": "Do you like animals?",
+              "teaching_note": "Short everyday spoken use of 动物."
+            },
+            {
+              "id": "ex-0603-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "很多动物喜欢住在山里。",
+              "pinyin": "hěn duō dòngwù xǐhuan zhù zài shān lǐ.",
+              "english": "Many animals like living in the mountains.",
+              "teaching_note": "Simple descriptive or narrative use of 动物."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 603
+            }
+          ]
+        },
+        {
+          "id": "w-0629",
+          "hanzi": "风",
+          "pinyin": "fēng",
+          "meaning_en": "wind",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0629-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "风好大啊！",
+              "pinyin": "fēng hǎo dà a!",
+              "english": "The wind is so strong!",
+              "teaching_note": "Short everyday spoken use of 风."
+            },
+            {
+              "id": "ex-0629-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "秋天常常刮风。",
+              "pinyin": "qiūtiān chángcháng guā fēng.",
+              "english": "It's often windy in autumn.",
+              "teaching_note": "Simple descriptive or narrative use of 风."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 629
+            }
+          ]
+        },
+        {
+          "id": "w-0651",
+          "hanzi": "刮",
+          "pinyin": "guā",
+          "meaning_en": "blow (of wind); scrape",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0651-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "外面刮风了。",
+              "pinyin": "wàimiàn guā fēng le.",
+              "english": "It's windy outside.",
+              "teaching_note": "Short everyday spoken use of 刮."
+            },
+            {
+              "id": "ex-0651-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天刮大风了。",
+              "pinyin": "jīntiān guā dà fēng le.",
+              "english": "There is a strong wind today.",
+              "teaching_note": "Simple descriptive or narrative use of 刮."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 651
+            }
+          ]
+        },
+        {
+          "id": "w-0753",
+          "hanzi": "凉快",
+          "pinyin": "liángkuai",
+          "meaning_en": "pleasantly cool",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0753-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天真凉快！",
+              "pinyin": "jīntiān zhēn liángkuai!",
+              "english": "It's pleasantly cool today!",
+              "teaching_note": "Short everyday spoken use of 凉快."
+            },
+            {
+              "id": "ex-0753-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "秋天晚上比较凉快。",
+              "pinyin": "qiūtiān wǎnshang bǐjiào liángkuai.",
+              "english": "Autumn evenings are relatively cool.",
+              "teaching_note": "Simple descriptive or narrative use of 凉快."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 753
+            }
+          ]
+        },
+        {
+          "id": "w-0764",
+          "hanzi": "马",
+          "pinyin": "mǎ",
+          "meaning_en": "horse",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0764-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会骑马吗？",
+              "pinyin": "nǐ huì qí mǎ ma?",
+              "english": "Can you ride a horse?",
+              "teaching_note": "Short everyday spoken use of 马."
+            },
+            {
+              "id": "ex-0764-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "动物园里有马。",
+              "pinyin": "dòngwùyuán lǐ yǒu mǎ.",
+              "english": "There are horses in the zoo.",
+              "teaching_note": "Simple descriptive or narrative use of 马."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 764
+            }
+          ]
+        },
+        {
+          "id": "w-0785",
+          "hanzi": "牛",
+          "pinyin": "niú",
+          "meaning_en": "cow; cattle",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "adjective"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0785-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你见过牛吗？",
+              "pinyin": "nǐ jiàn guo niú ma?",
+              "english": "Have you seen a cow?",
+              "teaching_note": "Short everyday spoken use of 牛."
+            },
+            {
+              "id": "ex-0785-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "山上有很多牛。",
+              "pinyin": "shān shàng yǒu hěn duō niú.",
+              "english": "There are many cows on the mountain.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 785
+            }
+          ]
+        },
+        {
+          "id": "w-0810",
+          "hanzi": "秋天",
+          "pinyin": "qiūtiān",
+          "meaning_en": "autumn; fall",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0810-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "秋天真舒服！",
+              "pinyin": "qiūtiān zhēn shūfu!",
+              "english": "Autumn is lovely!",
+              "teaching_note": "Short everyday spoken use of 秋天."
+            },
+            {
+              "id": "ex-0810-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "秋天天气开始变冷。",
+              "pinyin": "qiūtiān tiānqì kāishǐ biàn lěng.",
+              "english": "The weather starts getting colder in autumn.",
+              "teaching_note": "Simple descriptive or narrative use of 秋天."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 810
+            }
+          ]
+        },
+        {
+          "id": "w-0848",
+          "hanzi": "四季",
+          "pinyin": "sìjì",
+          "meaning_en": "four seasons",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0848-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "四季里你最喜欢哪一季？",
+              "pinyin": "sìjì lǐ nǐ zuì xǐhuan nǎ yí jì?",
+              "english": "Which of the four seasons do you like best?",
+              "teaching_note": "Short everyday spoken use of 四季."
+            },
+            {
+              "id": "ex-0848-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这里四季都很漂亮。",
+              "pinyin": "zhèlǐ sìjì dōu hěn piàoliang.",
+              "english": "It’s beautiful here in all four seasons.",
+              "teaching_note": "Simple descriptive or narrative use of 四季."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 848
+            }
+          ]
+        },
+        {
+          "id": "w-0889",
+          "hanzi": "夏天",
+          "pinyin": "xiàtiān",
+          "meaning_en": "summer",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0889-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "夏天太热了！",
+              "pinyin": "xiàtiān tài rè le!",
+              "english": "Summer is too hot!",
+              "teaching_note": "Short everyday spoken use of 夏天."
+            },
+            {
+              "id": "ex-0889-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "夏天我们常去海边玩。",
+              "pinyin": "xiàtiān wǒmen cháng qù hǎi biān wán.",
+              "english": "In summer, we often go to the seaside.",
+              "teaching_note": "Simple descriptive or narrative use of 夏天."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 889
+            }
+          ]
+        },
+        {
+          "id": "w-0918",
+          "hanzi": "羊",
+          "pinyin": "yáng",
+          "meaning_en": "sheep; goat",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0918-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你见过羊吗？",
+              "pinyin": "nǐ jiàn guo yáng ma?",
+              "english": "Have you seen a sheep?",
+              "teaching_note": "Short everyday spoken use of 羊."
+            },
+            {
+              "id": "ex-0918-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "山上有很多羊。",
+              "pinyin": "shān shàng yǒu hěn duō yáng.",
+              "english": "There are many sheep on the mountain.",
+              "teaching_note": "Simple descriptive or narrative use of 羊."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 918
+            }
+          ]
+        },
+        {
+          "id": "w-0064",
+          "hanzi": "狗",
+          "pinyin": "gǒu",
+          "meaning_en": "dog",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0064-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这只狗很小。",
+              "pinyin": "zhè zhī gǒu hěn xiǎo.",
+              "english": "This dog is very small.",
+              "teaching_note": "Short beginner-level description illustrating 狗 in context."
+            },
+            {
+              "id": "ex-0064-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有两只狗。",
+              "pinyin": "zhèlǐ yǒu liǎng zhī gǒu.",
+              "english": "There are two dogs here.",
+              "teaching_note": "Short beginner-level description illustrating 狗 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 64
+            }
+          ]
+        },
+        {
+          "id": "w-0227",
+          "hanzi": "下班",
+          "pinyin": "xiàbān",
+          "meaning_en": "finish work",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "work-jobs",
+          "topic_ids": [
+            "work-jobs",
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0227-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我爸爸六点下班。",
+              "pinyin": "wǒ bàba liù diǎn xiàbān.",
+              "english": "My father finishes work at six.",
+              "teaching_note": "下班 means finish the workday or leave work, here at six."
+            },
+            {
+              "id": "ex-0227-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下班后，我们去饭店吃饭。",
+              "pinyin": "xiàbān hòu, wǒmen qù fàndiàn chī fàn.",
+              "english": "After work, we go to a restaurant to eat.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 下班."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 227
+            }
+          ]
+        },
+        {
+          "id": "w-0267",
+          "hanzi": "雨",
+          "pinyin": "yǔ",
+          "meaning_en": "rain",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "weather-climate",
+          "subtopic_ids": [
+            "weather-climate"
+          ],
+          "examples": [
+            {
+              "id": "ex-0267-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天雨很大。",
+              "pinyin": "jīntiān yǔ hěn dà.",
+              "english": "It's raining heavily today.",
+              "teaching_note": "雨很大 describes heavy rain; 大 can describe rain intensity."
+            },
+            {
+              "id": "ex-0267-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "昨天下午下了很大的雨。",
+              "pinyin": "zuótiān xiàwǔ xià le hěn dà de yǔ.",
+              "english": "It rained heavily yesterday afternoon.",
+              "teaching_note": "The adjective describes the intensity of the rain."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 267
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 春天 (chūntiān)",
+        "explanation": "春天 (chūntiān) means “spring” (noun).",
+        "example_id": "ex-0568-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 大熊猫 (dàxióngmāo)",
+        "explanation": "大熊猫 (dàxióngmāo) means “giant panda” (noun).",
+        "example_id": "ex-0576-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0568-1",
+      "ex-0576-1",
+      "ex-0601-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What is Chengdu’s weather like in spring according to the passage?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Not too hot yet, with a gentle cool breeze.",
+          "explanation": "The passage says 春天的成都还不算太热，微风吹来非常凉快."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about your favorite season and an animal using 秋天/春天 and 凉快 or 大熊猫.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我最喜欢秋天，因为天气很凉快，适合去动物园看大熊猫。",
+          "explanation": "Combine season, weather, and animal vocabulary."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"pleasantly cool\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "凉快",
+              "pinyin": "liángkuai",
+              "meaning_en": "pleasantly cool"
+            },
+            {
+              "id": "b",
+              "hanzi": "刮",
+              "pinyin": "guā",
+              "meaning_en": "blow"
+            },
+            {
+              "id": "c",
+              "hanzi": "四季",
+              "pinyin": "sìjì",
+              "meaning_en": "four seasons"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "凉快 means pleasantly cool."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb pairs with 风 to mean \"the wind blows\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "吹/刮",
+              "pinyin": "guā",
+              "meaning_en": "blow"
+            },
+            {
+              "id": "b",
+              "hanzi": "养",
+              "pinyin": "yǎng",
+              "meaning_en": "raise"
+            },
+            {
+              "id": "c",
+              "hanzi": "骑",
+              "pinyin": "qí",
+              "meaning_en": "ride"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "刮风 means the wind blows."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"giant panda\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "动物",
+              "pinyin": "dòngwù",
+              "meaning_en": "animal"
+            },
+            {
+              "id": "b",
+              "hanzi": "大熊猫",
+              "pinyin": "dàxióngmāo",
+              "meaning_en": "giant panda"
+            },
+            {
+              "id": "c",
+              "hanzi": "牛",
+              "pinyin": "niú",
+              "meaning_en": "cow"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "大熊猫 means giant panda."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Four Seasons at the Zoo and Park",
+        "context_en": "Two friends talk about the weather and going to see giant pandas.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天刮风了，比昨天凉快多了！",
+            "pinyin": "Jīntiān guā fēng le, bǐ zuótiān liángkuai duō le!",
+            "english": "It’s windy today—much cooler than yesterday!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是啊，秋天到了嘛。我们这儿四季分明，春天暖和，夏天热，秋天凉快，冬天冷。",
+            "pinyin": "Shì a, qiūtiān dào le ma. Wǒmen zhèr sìjì fēn míng, chūntiān nuǎnhuo, xiàtiān rè, qiūtiān liángkuai, dōngtiān lěng.",
+            "english": "Yes, autumn has arrived! Our four seasons are distinct here: warm spring, hot summer, cool autumn, and cold winter."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "这么凉快的天气，周末咱们去动物园看大熊猫吧？",
+            "pinyin": "Zhème liángkuai de tiānqì, zhōumò zánmen qù dòngwùyuán kàn dàxióngmāo ba?",
+            "english": "With weather this cool, shall we go to the zoo this weekend to see the giant pandas?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好呀，我还想看看草原上的马、牛和羊呢！",
+            "pinyin": "Hǎo ya, wǒ hái xiǎng kànkan cǎoyuán shàng de mǎ, niú hé yáng ne!",
+            "english": "Sure, and I’d also love to see horses, cows, and sheep on the grasslands!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Talking about wind with 刮风",
+          "explanation_en": "刮 (guā) pairs with 风 (fēng) as 刮风 (\"the wind blows\"); modifiers like 大 go between 刮 and 风.",
+          "pattern_hanzi": "刮 + (大) + 风 + 了",
+          "pattern_pinyin": "guā + (dà) + fēng + le",
+          "pattern_pseudo_translation": "blow + (big) + wind + (change)",
+          "examples": [
+            {
+              "hanzi": "外面刮大风了，快把窗户关上。",
+              "pinyin": "Wàimiàn guā dà fēng le, kuài bǎ chuānghu guān shàng.",
+              "english": "It’s blowing a strong wind outside—hurry and close the window."
+            },
+            {
+              "hanzi": "冬天北方常常刮北风。",
+              "pinyin": "Dōngtiān běifāng chángcháng guā běifēng.",
+              "english": "In winter, a north wind often blows in northern China."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Comparing seasons",
+          "explanation_en": "Use 春天 / 夏天 / 秋天 / 冬天 + 比 + season + adj to compare seasonal weather.",
+          "pattern_hanzi": "<Season A> + 比 + <Season B> + <Adjective>",
+          "pattern_pinyin": "<Season A> + bǐ + <Season B> + <Adjective>",
+          "pattern_pseudo_translation": "<Season A> + compared to + <Season B> + <Adjective>",
+          "examples": [
+            {
+              "hanzi": "秋天比夏天凉快得多。",
+              "pinyin": "Qiūtiān bǐ xiàtiān liángkuai de duō.",
+              "english": "Autumn is much cooler than summer."
+            },
+            {
+              "hanzi": "我老家的冬天没有北京那么冷。",
+              "pinyin": "Wǒ lǎojiā de dōngtiān méiyǒu Běijīng nàme lěng.",
+              "english": "Winter in my hometown is not as cold as in Beijing."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe seasonal weather and animals.",
+        "model": {
+          "hanzi": "我最喜欢的动物是可爱的大熊猫。",
+          "pinyin": "Wǒ zuì xǐhuan de dòngwù shì kě’ài de dàxióngmāo.",
+          "english": "My favorite animal is the cute giant panda."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say flowers bloom everywhere in spring.",
+            "model_answer": {
+              "hanzi": "春天的时候，公园里到处开花。",
+              "pinyin": "Chūntiān de shíhou, gōngyuán lǐ dàochù kāihuā.",
+              "english": "In spring, flowers bloom everywhere in the park."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say there are many cows and sheep on the grass.",
+            "model_answer": {
+              "hanzi": "草地上有很多牛和羊。",
+              "pinyin": "Cǎodì shàng yǒu hěn duō niú hé yáng.",
+              "english": "There are many cows and sheep on the grassland."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say he learned to ride a horse last summer.",
+            "model_answer": {
+              "hanzi": "去年夏天他学会了骑马。",
+              "pinyin": "Qùnián xiàtiān tā xuéhuì le qí mǎ.",
+              "english": "Last summer he learned to ride a horse."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Visiting the Giant Pandas",
+        "paragraphs": [
+          {
+            "hanzi": "成都不仅美食多，而且能看到国宝大熊猫。春天的成都还不算太热，微风吹来非常凉快。",
+            "pinyin": "Chéngdū bùjǐn měishí duō, érqiě néng kàndào guóbǎo dàxióngmāo. Chūntiān de Chéngdū hái bú suàn tài rè, wēifēng chuī lái fēicháng liángkuai.",
+            "english": "Chengdu not only has lots of good food, you can also see the national treasure giant pandas. Chengdu in spring is not too hot yet, and the gentle breeze feels very cool."
+          },
+          {
+            "hanzi": "早上动物们最有精神，大熊猫一边吃竹子一边慢慢地走来走去，吸引了好多游客。",
+            "pinyin": "Zǎoshang dòngwùmen zuì yǒu jīngshen, dàxióngmāo yìbiān chī zhúzi yìbiān mànmàn de zǒu lái zǒu qù, xīyǐn le hǎoduō yóukè.",
+            "english": "In the morning the animals have the most energy; the giant pandas eat bamboo while walking slowly around, attracting lots of tourists."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "When do the animals have the most energy?",
+            "answer_en": "In the morning."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What are the giant pandas doing while walking around?",
+            "answer_en": "Eating bamboo."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Compare two seasons in your hometown using 春天, 夏天, 秋天, 冬天, or 凉快.",
+          "model_answer": {
+            "hanzi": "我们那儿夏天很热，但是秋天特别凉快，是我最喜欢的季节。",
+            "pinyin": "Wǒmen nàr xiàtiān hěn rè, dànshì qiūtiān tèbié liángkuai, shì wǒ zuì xǐhuan de jìjié.",
+            "english": "Summer is very hot where I live, but autumn is especially cool—it’s my favorite season."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Name an animal you like or have seen at a zoo or farm.",
+          "model_answer": {
+            "hanzi": "我在动物园见过大熊猫，还在农村见过马和羊。",
+            "pinyin": "Wǒ zài dòngwùyuán jiàn guò dàxióngmāo, hái zài nóngcūn jiàn guò mǎ hé yáng.",
+            "english": "I’ve seen giant pandas at the zoo, and horses and sheep in the countryside."
+          }
+        }
+      ],
+      "common_pitfall": "Use 凉快 (liángkuai) for pleasantly cool weather or breeze (秋天很凉快), whereas 冷 (lěng) means uncomfortably cold.",
+      "pronunciation_focus": "凉快 (liángkuai) has a neutral tone on kuai; 大熊猫 (dàxióngmāo) moves from fourth to second to first tone.",
+      "review": {
+        "can_do": [
+          "Name all four seasons and 四季.",
+          "Describe wind and cool weather.",
+          "Name animals like 大熊猫, 马, 牛, and 羊."
+        ],
+        "entry_ids": [
+          568,
+          576,
+          601,
+          603,
+          629,
+          651,
+          753,
+          764,
+          785,
+          810,
+          848,
+          889,
+          918
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-weather-seasons-animals--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Talking about wind with 刮风",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-weather-seasons-animals--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Comparing seasons",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say flowers bloom everywhere in spring.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-weather-seasons-animals--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there are many cows and sheep on the grass.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-weather-seasons-animals--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say he learned to ride a horse last summer.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: When do the animals have the most energy?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-weather-seasons-animals--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What are the giant pandas doing while walking around?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Compare two seasons in your hometown using 春天, 夏天, 秋天, 冬天, or 凉快.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-weather-seasons-animals--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Name an animal you like or have seen at a zoo or farm.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-weather-seasons-animals--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-weather-seasons-animals--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"pleasantly cool\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-weather-seasons-animals--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb pairs with 风 to mean \"the wind blows\"",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-weather-seasons-animals--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"giant panda\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-weather-seasons-animals--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-weather-seasons-animals--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 18
+}

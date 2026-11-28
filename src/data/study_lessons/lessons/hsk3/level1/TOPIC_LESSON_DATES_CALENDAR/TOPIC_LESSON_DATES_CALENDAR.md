@@ -144,9 +144,9 @@ Do not reverse the English month/day order: 十号五月 is not a normal calenda
 
 - 今天 (jīntiān) — today [HSK entry 94]
 
-- 明年 (míngnián) — next year [HSK entry 128]
+- 明年 (míngnián) — next year [HSK entry 129]
 
-- 明天 (míngtiān) — tomorrow [HSK entry 129]
+- 明天 (míngtiān) — tomorrow [HSK entry 130]
 
 - 年 (nián) — year [HSK entry 149]
 

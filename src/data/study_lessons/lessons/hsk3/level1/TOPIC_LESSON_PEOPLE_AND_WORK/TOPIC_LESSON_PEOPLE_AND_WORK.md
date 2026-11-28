@@ -138,7 +138,7 @@ In an introduction, 我是 (wǒ shì) identifies a person or role; 我叫 (wǒ j
 
 ## Reference word bank (details on vocabulary cards)
 
-- 名字 (míngzi) — name [HSK entry 130]
+- 名字 (míngzi) — name [HSK entry 128]
 
 - 男 (nán) — male [HSK entry 142]
 
@@ -150,13 +150,13 @@ In an introduction, 我是 (wǒ shì) identifies a person or role; 我叫 (wǒ j
 
 - 先生 (xiānsheng) — Mr.; sir [HSK entry 231]
 
-- 公司 (gōngsī) — company [HSK entry 62]
+- 公司 (gōngsī) — company [HSK entry 63]
 
-- 工作 (gōngzuò) — work; job [HSK entry 63]
+- 工作 (gōngzuò) — work; job [HSK entry 62]
 
 - 上班 (shàngbān) — go to work [HSK entry 176]
 
-- 下班 (xiàbān) — finish work [HSK entry 228]
+- 下班 (xiàbān) — finish work [HSK entry 227]
 
 ## Optional vocabulary recall quiz
 

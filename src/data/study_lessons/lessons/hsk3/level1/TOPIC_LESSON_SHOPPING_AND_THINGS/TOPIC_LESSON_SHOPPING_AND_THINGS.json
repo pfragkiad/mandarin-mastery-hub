@@ -246,7 +246,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 34
+              "entry_id": 39
             }
           ],
           "primary_subtopic_id": "shopping-commerce",
@@ -703,7 +703,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 35
+              "entry_id": 34
             }
           ],
           "primary_subtopic_id": null,
@@ -748,7 +748,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 36
+              "entry_id": 35
             }
           ],
           "primary_subtopic_id": "digital-technology",
@@ -931,7 +931,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 255
+              "entry_id": 259
             }
           ],
           "primary_subtopic_id": "clothing-accessories",
@@ -976,7 +976,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 260
+              "entry_id": 262
             }
           ],
           "primary_subtopic_id": "home-household",
@@ -1328,7 +1328,7 @@
           "Talk about buying and selling everyday items."
         ],
         "entry_ids": [
-          34,
+          39,
           65,
           105,
           116,
@@ -1338,10 +1338,10 @@
           174,
           268,
           9,
-          36,
+          35,
           189,
-          255,
-          260,
+          259,
+          262,
           295
         ]
       }

@@ -1,0 +1,1750 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-everyday-actions-chores",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Everyday Actions & Chores",
+    "subtitle": "Cleaning, carrying, brushing, closing, and daily habits",
+    "description": "Describe everyday physical actions, household chores, routines, and using or sharing objects.",
+    "slug": "everyday-actions-chores"
+  },
+  "classification": {
+    "primary_topic_id": "daily-actions",
+    "topic_ids": [
+      "daily-actions"
+    ],
+    "tags": [
+      "chores",
+      "routines",
+      "actions"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "physical-actions",
+    "subtopic_ids": [
+      "physical-actions",
+      "everyday-routines"
+    ]
+  },
+  "learning_objectives": [
+    "Describe chores and hygiene: 打扫, 扫, 刷, 洗澡, 起, and 习惯.",
+    "Talk about handling objects: 搬, 带, 放, 关, 丢, 查, 分开, 养, and 用.",
+    "Describe physical movements: 爬, 跳, and 站."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "丢": "Characters:丢",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "伞": "Characters:伞",
+    "但": "Characters:但",
+    "体": "Characters:体",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "健": "Characters:健",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "六": "Characters:六",
+    "关": "Characters:关",
+    "典": "Characters:典",
+    "养": "Characters:养",
+    "再": "Characters:再",
+    "准": "Characters:准",
+    "出": "Characters:出",
+    "分": "Characters:分",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "刷": "Characters:刷",
+    "前": "Characters:前",
+    "匙": "Characters:匙",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "卡": "Characters:卡",
+    "厅": "Characters:厅",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "口": "Characters:口",
+    "只": "Characters:只",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "台": "Characters:台",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "圾": "Characters:圾",
+    "坐": "Characters:坐",
+    "垃": "Characters:垃",
+    "备": "Characters:备",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "屋": "Characters:屋",
+    "山": "Characters:山",
+    "岁": "Characters:岁",
+    "己": "Characters:己",
+    "已": "Characters:已",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "干": "Characters:干",
+    "年": "Characters:年",
+    "床": "Characters:床",
+    "康": "Characters:康",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "往": "Characters:往",
+    "忘": "Characters:忘",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "惯": "Characters:惯",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "扫": "Characters:扫",
+    "把": "Characters:把",
+    "护": "Characters:护",
+    "报": "Characters:报",
+    "拿": "Characters:拿",
+    "掉": "Characters:掉",
+    "搬": "Characters:搬",
+    "放": "Characters:放",
+    "教": "Characters:教",
+    "散": "Characters:散",
+    "旁": "Characters:旁",
+    "旧": "Characters:旧",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "杯": "Characters:杯",
+    "架": "Characters:架",
+    "查": "Characters:查",
+    "树": "Characters:树",
+    "桌": "Characters:桌",
+    "楼": "Characters:楼",
+    "正": "Characters:正",
+    "步": "Characters:步",
+    "每": "Characters:每",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "洗": "Characters:洗",
+    "澡": "Characters:澡",
+    "灯": "Characters:灯",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "照": "Characters:照",
+    "爬": "Characters:爬",
+    "爱": "Characters:爱",
+    "爷": "Characters:爷",
+    "爸": "Characters:爸",
+    "牙": "Characters:牙",
+    "狗": "Characters:狗",
+    "猫": "Characters:猫",
+    "瓶": "Characters:瓶",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "盒": "Characters:盒",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "离": "Characters:离",
+    "站": "Characters:站",
+    "等": "Characters:等",
+    "纸": "Characters:纸",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "者": "Characters:者",
+    "能": "Characters:能",
+    "脑": "Characters:脑",
+    "脸": "Characters:脸",
+    "自": "Characters:自",
+    "草": "Characters:草",
+    "行": "Characters:行",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "让": "Characters:让",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "负": "Characters:负",
+    "责": "Characters:责",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "跑": "Characters:跑",
+    "跳": "Characters:跳",
+    "身": "Characters:身",
+    "边": "Characters:边",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钥": "Characters:钥",
+    "银": "Characters:银",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "阳": "Characters:阳",
+    "附": "Characters:附",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "非": "Characters:非",
+    "题": "Characters:题",
+    "饭": "Characters:饭",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Action verbs for physical movement, chores, routines, and handling everyday things.",
+      "focus": "Use 习惯 both as a verb (\"be used to\") and a noun (\"habit\"), and place objects after 把 with 放 or 搬."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0508",
+          "hanzi": "搬",
+          "pinyin": "bān",
+          "meaning_en": "move; carry",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0508-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "帮我搬一下桌子。",
+              "pinyin": "bāng wǒ bān yíxià zhuōzi.",
+              "english": "Help me move the table.",
+              "teaching_note": "Short everyday spoken use of 搬."
+            },
+            {
+              "id": "ex-0508-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们正在搬桌子。",
+              "pinyin": "tāmen zhèngzài bān zhuōzi.",
+              "english": "They are moving the table.",
+              "teaching_note": "Simple descriptive or narrative use of 搬."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 508
+            }
+          ]
+        },
+        {
+          "id": "w-0550",
+          "hanzi": "查",
+          "pinyin": "chá",
+          "meaning_en": "check; look up; investigate",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0550-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "帮我查一下吧。",
+              "pinyin": "bāng wǒ chá yíxià ba.",
+              "english": "Could you look it up for me?",
+              "teaching_note": "Short everyday spoken use of 查."
+            },
+            {
+              "id": "ex-0550-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师正在查学生的名字。",
+              "pinyin": "lǎoshī zhèngzài chá xuéshēng de míngzi.",
+              "english": "The teacher is checking the students' names.",
+              "teaching_note": "Simple descriptive or narrative use of 查."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 550
+            }
+          ]
+        },
+        {
+          "id": "w-0571",
+          "hanzi": "打扫",
+          "pinyin": "dǎsǎo",
+          "meaning_en": "clean; sweep",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ],
+          "examples": [
+            {
+              "id": "ex-0571-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一起打扫吧。",
+              "pinyin": "yìqǐ dǎsǎo ba.",
+              "english": "Let's clean up together.",
+              "teaching_note": "Short everyday spoken use of 打扫."
+            },
+            {
+              "id": "ex-0571-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们放学后打扫教室。",
+              "pinyin": "xuéshēngmen fàngxué hòu dǎsǎo jiàoshì.",
+              "english": "The students clean the classroom after school.",
+              "teaching_note": "Simple descriptive or narrative use of 打扫."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 571
+            }
+          ]
+        },
+        {
+          "id": "w-0578",
+          "hanzi": "带",
+          "pinyin": "dài",
+          "meaning_en": "bring; take along",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0578-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你带手机了吗？",
+              "pinyin": "nǐ dài shǒujī le ma?",
+              "english": "Did you bring your phone?",
+              "teaching_note": "Short everyday spoken use of 带."
+            },
+            {
+              "id": "ex-0578-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "出门时请带上护照。",
+              "pinyin": "chūmén shí qǐng dài shàng hùzhào.",
+              "english": "Please take your passport when going out.",
+              "teaching_note": "Simple descriptive or narrative use of 带."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 578
+            }
+          ]
+        },
+        {
+          "id": "w-0596",
+          "hanzi": "丢",
+          "pinyin": "diū",
+          "meaning_en": "lose; misplace",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0596-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我把手机丢了！",
+              "pinyin": "wǒ bǎ shǒujī diū le!",
+              "english": "I've lost my phone!",
+              "teaching_note": "Short everyday spoken use of 丢."
+            },
+            {
+              "id": "ex-0596-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他昨天丢了一张银行卡。",
+              "pinyin": "tā zuótiān diū le yì zhāng yínhángkǎ.",
+              "english": "He lost a bank card yesterday.",
+              "teaching_note": "Simple descriptive or narrative use of 丢."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 596
+            }
+          ]
+        },
+        {
+          "id": "w-0624",
+          "hanzi": "放",
+          "pinyin": "fàng",
+          "meaning_en": "put; place",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0624-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "把书放这里吧。",
+              "pinyin": "bǎ shū fàng zhèlǐ ba.",
+              "english": "Put the book here.",
+              "teaching_note": "Short everyday spoken use of 放."
+            },
+            {
+              "id": "ex-0624-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她把杯子放在桌子上。",
+              "pinyin": "tā bǎ bēizi fàng zài zhuōzi shàng.",
+              "english": "She put the cup on the table.",
+              "teaching_note": "Simple descriptive or narrative use of 放."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 624
+            }
+          ]
+        },
+        {
+          "id": "w-0628",
+          "hanzi": "分开",
+          "pinyin": "fēnkāi",
+          "meaning_en": "separate; split apart",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0628-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别分开走！",
+              "pinyin": "bié fēnkāi zǒu!",
+              "english": "Don't go separately!",
+              "teaching_note": "Short everyday spoken use of 分开."
+            },
+            {
+              "id": "ex-0628-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师让两个学生分开坐。",
+              "pinyin": "lǎoshī ràng liǎng gè xuéshēng fēnkāi zuò.",
+              "english": "The teacher asked the two students to sit separately.",
+              "teaching_note": "Simple descriptive or narrative use of 分开."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 628
+            }
+          ]
+        },
+        {
+          "id": "w-0640",
+          "hanzi": "干",
+          "pinyin": "gàn",
+          "meaning_en": "do; work; carry out",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0640-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你在干什么？",
+              "pinyin": "nǐ zài gàn shénme?",
+              "english": "What are you doing?",
+              "teaching_note": "Short everyday spoken use of 干."
+            },
+            {
+              "id": "ex-0640-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大家都在干自己的事。",
+              "pinyin": "dàjiā dōu zài gàn zìjǐ de shì.",
+              "english": "Everyone is doing their own thing.",
+              "teaching_note": "Simple descriptive or narrative use of 干."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 640
+            }
+          ]
+        },
+        {
+          "id": "w-0652",
+          "hanzi": "关",
+          "pinyin": "guān",
+          "meaning_en": "close; turn off",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0652-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请关门。",
+              "pinyin": "qǐng guān mén.",
+              "english": "Please close the door.",
+              "teaching_note": "Short everyday spoken use of 关."
+            },
+            {
+              "id": "ex-0652-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "离开教室时要关灯。",
+              "pinyin": "líkāi jiàoshì shí yào guān dēng.",
+              "english": "Turn off the lights when leaving the classroom.",
+              "teaching_note": "Simple descriptive or narrative use of 关."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 652
+            }
+          ]
+        },
+        {
+          "id": "w-0789",
+          "hanzi": "爬",
+          "pinyin": "pá",
+          "meaning_en": "climb; crawl",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0789-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会爬山吗？",
+              "pinyin": "nǐ huì pá shān ma?",
+              "english": "Can you climb mountains?",
+              "teaching_note": "Short everyday spoken use of 爬."
+            },
+            {
+              "id": "ex-0789-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子正在往树上爬。",
+              "pinyin": "háizi zhèngzài wǎng shù shàng pá.",
+              "english": "The child is climbing a tree.",
+              "teaching_note": "Simple descriptive or narrative use of 爬."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 789
+            }
+          ]
+        },
+        {
+          "id": "w-0801",
+          "hanzi": "起",
+          "pinyin": "qǐ",
+          "meaning_en": "rise; get up; start",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "classifier"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ],
+          "examples": [
+            {
+              "id": "ex-0801-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "快起来！",
+              "pinyin": "kuài qǐlái!",
+              "english": "Get up quickly!",
+              "teaching_note": "Short everyday spoken use of 起."
+            },
+            {
+              "id": "ex-0801-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他听见妈妈叫他，就起来了。",
+              "pinyin": "tā tīngjiàn māma jiào tā, jiù qǐlái le.",
+              "english": "He got up when he heard Mom call him.",
+              "teaching_note": "Simple descriptive or narrative use of 起."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 801
+            }
+          ]
+        },
+        {
+          "id": "w-0821",
+          "hanzi": "扫",
+          "pinyin": "sǎo",
+          "meaning_en": "sweep",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0821-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "帮我扫一下地。",
+              "pinyin": "bāng wǒ sǎo yíxià dì.",
+              "english": "Help me sweep the floor.",
+              "teaching_note": "Short everyday spoken use of 扫."
+            },
+            {
+              "id": "ex-0821-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸在扫房间的地。",
+              "pinyin": "bàba zài sǎo fángjiān de dì.",
+              "english": "Dad is sweeping the floor.",
+              "teaching_note": "Simple descriptive or narrative use of 扫."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 821
+            }
+          ]
+        },
+        {
+          "id": "w-0844",
+          "hanzi": "刷",
+          "pinyin": "shuā",
+          "meaning_en": "brush; scrub",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0844-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "先刷牙吧。",
+              "pinyin": "xiān shuā yá ba.",
+              "english": "Brush your teeth first!",
+              "teaching_note": "Short everyday spoken use of 刷."
+            },
+            {
+              "id": "ex-0844-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天早上刷牙洗脸。",
+              "pinyin": "tā měi tiān zǎoshang shuā yá xǐ liǎn.",
+              "english": "He brushes his teeth and washes his face every morning.",
+              "teaching_note": "Simple descriptive or narrative use of 刷."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 844
+            }
+          ]
+        },
+        {
+          "id": "w-0856",
+          "hanzi": "跳",
+          "pinyin": "tiào",
+          "meaning_en": "jump",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0856-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你能跳这么高吗？",
+              "pinyin": "nǐ néng tiào zhème gāo ma?",
+              "english": "Can you jump that high?",
+              "teaching_note": "Short everyday spoken use of 跳."
+            },
+            {
+              "id": "ex-0856-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们在草地上跳来跳去。",
+              "pinyin": "háizimen zài cǎodì shàng tiào lái tiào qù.",
+              "english": "The children are jumping around on the grass.",
+              "teaching_note": "Simple descriptive or narrative use of 跳."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 856
+            }
+          ]
+        },
+        {
+          "id": "w-0885",
+          "hanzi": "习惯",
+          "pinyin": "xíguàn",
+          "meaning_en": "habit; be accustomed to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ],
+          "examples": [
+            {
+              "id": "ex-0885-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你习惯这里了吗？",
+              "pinyin": "nǐ xíguàn zhèlǐ le ma?",
+              "english": "Have you gotten used to living here?",
+              "teaching_note": "Short everyday spoken use of 习惯."
+            },
+            {
+              "id": "ex-0885-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他有每天早起的习惯。",
+              "pinyin": "tā yǒu měi tiān zǎo qǐ de xíguàn.",
+              "english": "He has a habit of getting up early every day.",
+              "teaching_note": "Simple descriptive or narrative use of 习惯."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 885
+            }
+          ]
+        },
+        {
+          "id": "w-0887",
+          "hanzi": "洗澡",
+          "pinyin": "xǐzǎo",
+          "meaning_en": "take a shower; bathe",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "everyday-routines",
+          "subtopic_ids": [
+            "everyday-routines"
+          ],
+          "examples": [
+            {
+              "id": "ex-0887-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我先去洗澡。",
+              "pinyin": "wǒ xiān qù xǐzǎo.",
+              "english": "I'm going to take a shower first.",
+              "teaching_note": "Short everyday spoken use of 洗澡."
+            },
+            {
+              "id": "ex-0887-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天晚上洗澡。",
+              "pinyin": "tā měi tiān wǎnshang xǐzǎo.",
+              "english": "He showers every evening.",
+              "teaching_note": "Simple descriptive or narrative use of 洗澡."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 887
+            }
+          ]
+        },
+        {
+          "id": "w-0919",
+          "hanzi": "养",
+          "pinyin": "yǎng",
+          "meaning_en": "raise; keep (animals); nurture",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0919-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你养猫吗？",
+              "pinyin": "nǐ yǎng māo ma?",
+              "english": "Do you keep a cat?",
+              "teaching_note": "Short everyday spoken use of 养."
+            },
+            {
+              "id": "ex-0919-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们家养了两只狗。",
+              "pinyin": "tāmen jiā yǎng le liǎng zhī gǒu.",
+              "english": "Their family keeps two dogs.",
+              "teaching_note": "Simple descriptive or narrative use of 养."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 919
+            }
+          ]
+        },
+        {
+          "id": "w-0941",
+          "hanzi": "用",
+          "pinyin": "yòng",
+          "meaning_en": "use; employ",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0941-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个怎么用？",
+              "pinyin": "zhège zěnme yòng?",
+              "english": "How do you use this?",
+              "teaching_note": "Short everyday spoken use of 用."
+            },
+            {
+              "id": "ex-0941-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生用电脑学习汉语。",
+              "pinyin": "xuéshēng yòng diànnǎo xuéxí Hànyǔ.",
+              "english": "The student uses a computer to learn Chinese.",
+              "teaching_note": "Simple descriptive or narrative use of 用."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 941
+            }
+          ]
+        },
+        {
+          "id": "w-0966",
+          "hanzi": "站",
+          "pinyin": "zhàn",
+          "meaning_en": "stand; stand up",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0966-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你站这儿吧。",
+              "pinyin": "nǐ zhàn zhèr ba.",
+              "english": "Stand here!",
+              "teaching_note": "站 means stand here; Level 2 站 (ID 486) refers to a station."
+            },
+            {
+              "id": "ex-0966-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生们站在教室门口。",
+              "pinyin": "xuéshēngmen zhàn zài jiàoshì ménkǒu.",
+              "english": "The students are standing at the classroom entrance.",
+              "teaching_note": "站 means stand here; Level 2 站 (ID 486) refers to a station."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 966
+            }
+          ]
+        },
+        {
+          "id": "w-0061",
+          "hanzi": "给",
+          "pinyin": "gěi",
+          "meaning_en": "give; for",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0061-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "可以给我一点儿水吗？",
+              "pinyin": "kěyǐ gěi wǒ yìdiǎnr shuǐ ma?",
+              "english": "Could you give me a little water?",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-0061-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "老师给我们一本书。",
+              "pinyin": "lǎoshī gěi wǒmen yì běn shū.",
+              "english": "The teacher gives us a book.",
+              "teaching_note": "School or study context showing 给 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 61
+            }
+          ]
+        },
+        {
+          "id": "w-0088",
+          "hanzi": "见",
+          "pinyin": "jiàn",
+          "meaning_en": "see; meet",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0088-1",
+              "style": "conversational",
+              "register": "informal",
+              "hanzi": "明天见！",
+              "pinyin": "míngtiān jiàn!",
+              "english": "See you tomorrow!",
+              "teaching_note": "明天见 is a short, common parting expression meaning “see you tomorrow.”"
+            },
+            {
+              "id": "ex-0088-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "“星期一见！”她说。",
+              "pinyin": "“xīngqīyī jiàn!” tā shuō.",
+              "english": "\"See you on Monday!\" she said.",
+              "teaching_note": "Written dialogue: 见 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 88
+            }
+          ]
+        },
+        {
+          "id": "w-0091",
+          "hanzi": "叫",
+          "pinyin": "jiào",
+          "meaning_en": "be called; call",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions",
+            "communication-social"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0091-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你叫什么名字？",
+              "pinyin": "nǐ jiào shénme míngzi?",
+              "english": "What is your name?",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-0091-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "孩子们叫她妈妈。",
+              "pinyin": "háizimen jiào tā māma.",
+              "english": "The children call her Mom.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 91
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 搬 (bān)",
+        "explanation": "搬 (bān) means “move; carry” (verb).",
+        "example_id": "ex-0508-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 查 (chá)",
+        "explanation": "查 (chá) means “check; look up; investigate” (verb).",
+        "example_id": "ex-0550-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0508-1",
+      "ex-0550-1",
+      "ex-0571-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What does Grandpa do right after getting up at 6:30?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He stands on the balcony for a bit, then brushes his teeth and washes his face.",
+          "explanation": "The passage says 先在阳台站一会儿，再刷牙洗脸."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about your daily routine or chores using 习惯 and 打扫 or 带.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我习惯周末打扫屋子，出门时也会带着水瓶子。",
+          "explanation": "Use 习惯 and 打扫/带 naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to sweep / clean\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "打扫",
+              "pinyin": "dǎsǎo",
+              "meaning_en": "clean / sweep"
+            },
+            {
+              "id": "b",
+              "hanzi": "洗澡",
+              "pinyin": "xǐzǎo",
+              "meaning_en": "take a shower"
+            },
+            {
+              "id": "c",
+              "hanzi": "分开",
+              "pinyin": "fēnkāi",
+              "meaning_en": "separate"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "打扫 means to clean or sweep."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to raise / keep (pets)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "爬",
+              "pinyin": "pá",
+              "meaning_en": "climb"
+            },
+            {
+              "id": "b",
+              "hanzi": "养",
+              "pinyin": "yǎng",
+              "meaning_en": "raise / keep"
+            },
+            {
+              "id": "c",
+              "hanzi": "搬",
+              "pinyin": "bān",
+              "meaning_en": "move / carry"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "养 means to raise or keep animals/plants."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which verb means \"to lose / throw away\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "丢",
+              "pinyin": "diū",
+              "meaning_en": "lose / throw away"
+            },
+            {
+              "id": "b",
+              "hanzi": "关",
+              "pinyin": "guān",
+              "meaning_en": "close"
+            },
+            {
+              "id": "c",
+              "hanzi": "站",
+              "pinyin": "zhàn",
+              "meaning_en": "stand"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "丢 means lose or throw away."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Weekend Housework",
+        "context_en": "Two roommates divide up chores before guests arrive.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "客人下午就到了，咱们先把屋子打扫一下吧！",
+            "pinyin": "Kèrén xiàwǔ jiù dào le, zánmen xiān bǎ wūzi dǎsǎo yíxià ba!",
+            "english": "The guests arrive this afternoon—let’s clean the room first!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没问题，我负责扫地，你把桌子上的书搬到书架上放好。",
+            "pinyin": "Méi wèntí, wǒ fùzé sǎodì, nǐ bǎ zhuōzi shàng de shū bān dào shūjià shàng fàng hǎo.",
+            "english": "No problem, I’ll sweep the floor, and you move the books on the table onto the bookshelf."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "好，别忘了把旧报纸和纸盒分开，等会儿拿去楼下丢掉。",
+            "pinyin": "Hǎo, bié wàng le bǎ jiù bàozhǐ hé zhǐhé fēnkāi, děnghuìr ná qù lóuxià diū diào.",
+            "english": "Okay, don’t forget to separate the old newspapers and cardboard boxes to throw away downstairs in a bit."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "打扫完我再去洗个澡，然后咱们就准备做饭！",
+            "pinyin": "Dǎsǎo wán wǒ zài qù xǐ ge zǎo, ránhòu zánmen jiù zhǔnbèi zuòfàn!",
+            "english": "After cleaning I’ll go take a shower, and then we’ll get ready to cook!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Being used to something with 习惯",
+          "explanation_en": "Use 习惯 (xíguàn) before a verb or noun to mean \"be accustomed to\", or as a noun for \"habit\".",
+          "pattern_hanzi": "<Subject> + 习惯 + <Verb / Noun>",
+          "pattern_pinyin": "<Subject> + xíguàn + <Verb / Noun>",
+          "pattern_pseudo_translation": "<Subject> + is used to + <Verb / Noun>",
+          "examples": [
+            {
+              "hanzi": "我已经习惯每天早上七点起床了。",
+              "pinyin": "Wǒ yǐjīng xíguàn měitiān zǎoshang qī diǎn qǐchuáng le.",
+              "english": "I am already used to getting up at 7 a.m. every day."
+            },
+            {
+              "hanzi": "晚上刷牙是一个好习惯。",
+              "pinyin": "Wǎnshang shuāyá shì yí ge hǎo xíguàn.",
+              "english": "Brushing your teeth at night is a good habit."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Putting or moving something somewhere",
+          "explanation_en": "Combine 把 + object + 放 / 搬 + 在 / 到 + location.",
+          "pattern_hanzi": "把 + <Object> + 放在 / 搬到 + <Location>",
+          "pattern_pinyin": "bǎ + <Object> + fàng zài / bān dào + <Location>",
+          "pattern_pseudo_translation": "take + <Object> + put at / move to + <Location>",
+          "examples": [
+            {
+              "hanzi": "请把雨伞放在门旁边。",
+              "pinyin": "Qǐng bǎ yǔsǎn fàng zài mén pángbiān.",
+              "english": "Please put the umbrella beside the door."
+            },
+            {
+              "hanzi": "我们一起把那张桌子搬到客厅里。",
+              "pinyin": "Wǒmen yìqǐ bǎ nà zhāng zhuōzi bān dào kètīng lǐ.",
+              "english": "Let’s move that table into the living room together."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe everyday actions, chores, and physical movements.",
+        "model": {
+          "hanzi": "出门以前，别忘了关灯和关门。",
+          "pinyin": "Chūmén yǐqián, bié wàng le guān dēng hé guān mén.",
+          "english": "Before going out, don’t forget to turn off the light and close the door."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you raised a cute puppy at home.",
+            "model_answer": {
+              "hanzi": "我在家里养了一只可爱的小狗。",
+              "pinyin": "Wǒ zài jiālǐ yǎng le yì zhī kě’ài de xiǎo gǒu.",
+              "english": "I raised a cute puppy at home."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you need to look up a word in the dictionary.",
+            "model_answer": {
+              "hanzi": "我用词典查了一下那个词。",
+              "pinyin": "Wǒ yòng cídiǎn chá le yíxià nàge cí.",
+              "english": "I looked up that word using the dictionary."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say the children are jumping and climbing on the lawn.",
+            "model_answer": {
+              "hanzi": "孩子们在草地上跑来跑去，又爬又跳。",
+              "pinyin": "Háizimen zài cǎodì shàng pǎo lái pǎo qù, yòu pá yòu tiào.",
+              "english": "The children ran around on the lawn, climbing and jumping."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Grandpa’s Morning Routine",
+        "paragraphs": [
+          {
+            "hanzi": "爷爷今年七十多岁了，但是身体非常健康。他每天早上六点半准时起来，先在阳台站一会儿，再刷牙洗脸。",
+            "pinyin": "Yéye jīnnián qīshí duō suì le, dànshì shēntǐ fēicháng jiànkāng. Tā měitiān zǎoshang liù diǎn bàn zhǔnshí qǐlái, xiān zài yángtái zhàn yíhuìr, zài shuāyá xǐliǎn.",
+            "english": "Grandpa is over seventy this year, yet his body is very healthy. Every morning at 6:30 sharp he gets up, stands on the balcony for a moment, and then brushes his teeth and washes his face."
+          },
+          {
+            "hanzi": "早饭以后，他习惯带着小狗去附近散步，有时候还会爬爬小山，或者帮家里打扫院子。",
+            "pinyin": "Zǎofàn yǐhòu, tā xíguàn dài zhe xiǎo gǒu qù fùjìn sànbù, yǒu shíhou hái huì pápa xiǎoshān, huòzhě bāng jiālǐ dǎsǎo yuànzi.",
+            "english": "After breakfast, he is used to taking his dog for a walk nearby, and sometimes climbs the small hill or helps sweep the courtyard at home."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What time does Grandpa get up every morning?",
+            "answer_en": "At 6:30 sharp."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What does he do after breakfast?",
+            "answer_en": "He takes his dog for a walk nearby, and sometimes climbs a small hill or helps clean the courtyard."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe one good daily habit you have using 习惯.",
+          "model_answer": {
+            "hanzi": "我习惯每天晚上睡前看半个小时书。",
+            "pinyin": "Wǒ xíguàn měitiān wǎnshang shuìqián kàn bàn ge xiǎoshí shū.",
+            "english": "I am used to reading for half an hour before bed every night."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say what chores you do at home using 打扫, 扫, or 搬.",
+          "model_answer": {
+            "hanzi": "周末我会打扫自己的屋子，还会把垃圾拿出去丢掉。",
+            "pinyin": "Zhōumò wǒ huì dǎsǎo zìjǐ de wūzi, hái huì bǎ lājī ná chūqù diū diào.",
+            "english": "On weekends I clean my own room and take the trash out to throw away."
+          }
+        }
+      ],
+      "common_pitfall": "丢 (diū) means both \"lose / misplace\" (丢了钥匙) and \"throw away\" (丢垃圾). Context makes the meaning clear.",
+      "pronunciation_focus": "打扫 (dǎsǎo) has two consecutive third tones, so 打 shifts to a rising second tone (dásǎo) in speech; 洗澡 (xǐzǎo) likewise shifts to xízǎo.",
+      "review": {
+        "can_do": [
+          "Describe chores like 打扫, 扫, and 搬.",
+          "Talk about habits and routines with 习惯 and 洗澡.",
+          "Use action verbs like 爬, 跳, 站, 放, and 关."
+        ],
+        "entry_ids": [
+          508,
+          550,
+          571,
+          578,
+          596,
+          624,
+          628,
+          640,
+          652,
+          789,
+          801,
+          821,
+          844,
+          856,
+          885,
+          887,
+          919,
+          941,
+          966
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-everyday-actions-chores--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Being used to something with 习惯",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-everyday-actions-chores--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Putting or moving something somewhere",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you raised a cute puppy at home.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-everyday-actions-chores--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you need to look up a word in the dictionary.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-everyday-actions-chores--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the children are jumping and climbing on the lawn.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What time does Grandpa get up every morning?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-everyday-actions-chores--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What does he do after breakfast?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe one good daily habit you have using 习惯.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-everyday-actions-chores--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say what chores you do at home using 打扫, 扫, or 搬.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-everyday-actions-chores--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-everyday-actions-chores--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to sweep / clean\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-everyday-actions-chores--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to raise / keep (pets)\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-everyday-actions-chores--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to lose / throw away\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-everyday-actions-chores--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-everyday-actions-chores--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

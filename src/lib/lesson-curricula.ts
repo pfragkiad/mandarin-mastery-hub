@@ -42,7 +42,7 @@ export type Course = { id: string; title: string; shortTitle?: string; kind: str
  *  title stays everywhere else; only the course drawer's heading swaps to this on phones.
  *  Presentation-only — the manifests keep their recorded titles untouched. */
 const COURSE_SHORT_TITLES: Record<string, string> = {
-  'hsk3-2025': 'HSK 3.0 · Levels 1–2',
+  'hsk3-2025': 'HSK 3.0 · Levels 1–3',
   'conversational-mandarin': 'Conversational Mandarin',
 };
 

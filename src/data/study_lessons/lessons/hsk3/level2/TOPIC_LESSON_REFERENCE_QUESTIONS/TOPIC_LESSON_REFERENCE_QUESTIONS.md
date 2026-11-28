@@ -146,7 +146,7 @@ Do not translate 这么 (zhème) and 这样 (zhèyàng) as identical in every co
 
 - 那样 (nàyàng) — like that; that kind of [HSK entry 407]
 
-- 为什么 (wèi shénme) — why; for what reason [HSK entry 454]
+- 为什么 (wèi shénme) — why; for what reason [HSK entry 453]
 
 - 这么 (zhème) — so; this; to such a degree [HSK entry 488]
 

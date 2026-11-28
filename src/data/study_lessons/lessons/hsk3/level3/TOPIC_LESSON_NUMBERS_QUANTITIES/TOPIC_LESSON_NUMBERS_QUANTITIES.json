@@ -1,0 +1,1767 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-classifiers-and-units",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Measure Words, Weights & Totals",
+    "subtitle": "Measure words, weights, prices, and totals",
+    "description": "Use everyday classifiers, weights, lengths, coin units, approximations, and totals accurately.",
+    "slug": "classifiers-and-units"
+  },
+  "classification": {
+    "primary_topic_id": "numbers-quantities",
+    "topic_ids": [
+      "numbers-quantities"
+    ],
+    "tags": [
+      "classifiers",
+      "measurements",
+      "quantities"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Use action and text classifiers: 遍, 段, 句, 页, 张, 封, and 种.",
+    "Use physical and money units: 公斤, 斤, 米, 层, 辆, 双, 角, and 毛.",
+    "Express totals and ranges with 一共, 大概, 好多, 以上, and 以下."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "五": "Characters:五",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "住": "Characters:住",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "信": "Characters:信",
+    "候": "Characters:候",
+    "停": "Characters:停",
+    "儿": "Characters:儿",
+    "元": "Characters:元",
+    "公": "Characters:公",
+    "共": "Characters:共",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "分": "Characters:分",
+    "到": "Characters:到",
+    "加": "Characters:加",
+    "包": "Characters:包",
+    "十": "Characters:十",
+    "半": "Characters:半",
+    "参": "Characters:参",
+    "友": "Characters:友",
+    "双": "Characters:双",
+    "口": "Characters:口",
+    "句": "Characters:句",
+    "可": "Characters:可",
+    "号": "Characters:号",
+    "名": "Characters:名",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "喜": "Characters:喜",
+    "四": "Characters:四",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "块": "Characters:块",
+    "复": "Characters:复",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "宜": "Characters:宜",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "寄": "Characters:寄",
+    "封": "Characters:封",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "层": "Characters:层",
+    "岁": "Characters:岁",
+    "师": "Characters:师",
+    "店": "Characters:店",
+    "张": "Characters:张",
+    "影": "Characters:影",
+    "惯": "Characters:惯",
+    "我": "Characters:我",
+    "所": "Characters:所",
+    "才": "Characters:才",
+    "把": "Characters:把",
+    "搬": "Characters:搬",
+    "收": "Characters:收",
+    "教": "Characters:教",
+    "整": "Characters:整",
+    "文": "Characters:文",
+    "斤": "Characters:斤",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "栋": "Characters:栋",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "梯": "Characters:梯",
+    "楼": "Characters:楼",
+    "概": "Characters:概",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "段": "Characters:段",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "毛": "Characters:毛",
+    "汉": "Characters:汉",
+    "汽": "Characters:汽",
+    "没": "Characters:没",
+    "点": "Characters:点",
+    "照": "Characters:照",
+    "片": "Characters:片",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "理": "Characters:理",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "百": "Characters:百",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "码": "Characters:码",
+    "票": "Characters:票",
+    "种": "Characters:种",
+    "第": "Characters:第",
+    "箱": "Characters:箱",
+    "篇": "Characters:篇",
+    "米": "Characters:米",
+    "纸": "Characters:纸",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "色": "Characters:色",
+    "花": "Characters:花",
+    "苹": "Characters:苹",
+    "蕉": "Characters:蕉",
+    "行": "Characters:行",
+    "装": "Characters:装",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "角": "Characters:角",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "赛": "Characters:赛",
+    "车": "Characters:车",
+    "辆": "Characters:辆",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "遍": "Characters:遍",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "钟": "Characters:钟",
+    "钱": "Characters:钱",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "面": "Characters:面",
+    "鞋": "Characters:鞋",
+    "页": "Characters:页",
+    "题": "Characters:题",
+    "颜": "Characters:颜",
+    "香": "Characters:香"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Classifiers, measurement units, and quantity expressions in HSK 3.",
+      "focus": "Distinguish 遍 (complete repetition from start to finish) from 次, and use 以上 / 以下 after a number."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0529",
+          "hanzi": "遍",
+          "pinyin": "biàn",
+          "meaning_en": "time (of an action); repetition",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0529-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "再说一遍，好吗？",
+              "pinyin": "zài shuō yí biàn, hǎo ma?",
+              "english": "Say it one more time, okay?",
+              "teaching_note": "Short everyday spoken use of 遍."
+            },
+            {
+              "id": "ex-0529-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我把课文读了三遍。",
+              "pinyin": "wǒ bǎ kèwén dú le sān biàn.",
+              "english": "I read the lesson text three times.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 529
+            }
+          ]
+        },
+        {
+          "id": "w-0549",
+          "hanzi": "层",
+          "pinyin": "céng",
+          "meaning_en": "floor; layer; classifier",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0549-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你住在几层？",
+              "pinyin": "nǐ zhù zài jǐ céng?",
+              "english": "Which floor do you live on?",
+              "teaching_note": "Short everyday spoken use of 层."
+            },
+            {
+              "id": "ex-0549-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "教室在三层。",
+              "pinyin": "jiàoshì zài sān céng.",
+              "english": "The classroom is on the third floor.",
+              "teaching_note": "Simple descriptive or narrative use of 层."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 549
+            }
+          ]
+        },
+        {
+          "id": "w-0573",
+          "hanzi": "大概",
+          "pinyin": "dàgài",
+          "meaning_en": "probably; roughly",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb",
+            "noun"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0573-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他大概十点来。",
+              "pinyin": "tā dàgài shí diǎn lái.",
+              "english": "He'll probably come at ten.",
+              "teaching_note": "Short everyday spoken use of 大概."
+            },
+            {
+              "id": "ex-0573-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这里大概有二十个人。",
+              "pinyin": "zhèlǐ dàgài yǒu èr shí gè rén.",
+              "english": "There are roughly twenty people here.",
+              "teaching_note": "Simple descriptive or narrative use of 大概."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 573
+            }
+          ]
+        },
+        {
+          "id": "w-0607",
+          "hanzi": "段",
+          "pinyin": "duàn",
+          "meaning_en": "section; passage; measure word",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0607-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "再读一段吧。",
+              "pinyin": "zài dú yí duàn ba.",
+              "english": "Read another passage.",
+              "teaching_note": "Short everyday spoken use of 段."
+            },
+            {
+              "id": "ex-0607-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请读下面这段课文。",
+              "pinyin": "qǐng dú xiàmiàn zhè duàn kèwén.",
+              "english": "Please read the following passage of text.",
+              "teaching_note": "Simple descriptive or narrative use of 段."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 607
+            }
+          ]
+        },
+        {
+          "id": "w-0630",
+          "hanzi": "封",
+          "pinyin": "fēng",
+          "meaning_en": "classifier for letters; envelope",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "verb"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0630-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我收到一封信。",
+              "pinyin": "wǒ shōudào yì fēng xìn.",
+              "english": "I received a letter.",
+              "teaching_note": "Short everyday spoken use of 封."
+            },
+            {
+              "id": "ex-0630-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他给妈妈写了一封信。",
+              "pinyin": "tā gěi māma xiě le yì fēng xìn.",
+              "english": "He wrote his mother a letter.",
+              "teaching_note": "Simple descriptive or narrative use of 封."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 630
+            }
+          ]
+        },
+        {
+          "id": "w-0648",
+          "hanzi": "公斤",
+          "pinyin": "gōngjīn",
+          "meaning_en": "kilogram",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0648-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "苹果一公斤多少钱？",
+              "pinyin": "píngguǒ yì gōngjīn duōshao qián?",
+              "english": "How much is a kilo of apples?",
+              "teaching_note": "Short everyday spoken use of 公斤."
+            },
+            {
+              "id": "ex-0648-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他买了两公斤苹果。",
+              "pinyin": "tā mǎi le liǎng gōngjīn píngguǒ.",
+              "english": "He bought two kilograms of apples.",
+              "teaching_note": "Simple descriptive or narrative use of 公斤."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 648
+            }
+          ]
+        },
+        {
+          "id": "w-0663",
+          "hanzi": "好多",
+          "pinyin": "hǎoduō",
+          "meaning_en": "many; a lot",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0663-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里有好多书！",
+              "pinyin": "zhèlǐ yǒu hǎoduō shū!",
+              "english": "There are so many books here!",
+              "teaching_note": "Short everyday spoken use of 好多."
+            },
+            {
+              "id": "ex-0663-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公园里有好多孩子在玩。",
+              "pinyin": "gōngyuán lǐ yǒu hǎoduō háizi zài wán.",
+              "english": "There are many children playing in the park.",
+              "teaching_note": "Simple descriptive or narrative use of 好多."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 663
+            }
+          ]
+        },
+        {
+          "id": "w-0666",
+          "hanzi": "号码",
+          "pinyin": "hàomǎ",
+          "meaning_en": "number; identifying number",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0666-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的电话号码是多少？",
+              "pinyin": "nǐ de diànhuà hàomǎ shì duōshao?",
+              "english": "What's your phone number?",
+              "teaching_note": "Short everyday spoken use of 号码."
+            },
+            {
+              "id": "ex-0666-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请把号码写在这里。",
+              "pinyin": "qǐng bǎ hàomǎ xiě zài zhèlǐ.",
+              "english": "Please write the number here.",
+              "teaching_note": "Simple descriptive or narrative use of 号码."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 666
+            }
+          ]
+        },
+        {
+          "id": "w-0704",
+          "hanzi": "角",
+          "pinyin": "jiǎo",
+          "meaning_en": "one tenth of a yuan; corner; angle",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0704-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一元是十角。",
+              "pinyin": "yì yuán shì shí jiǎo.",
+              "english": "One yuan is ten jiao.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0704-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这本书五元五角。",
+              "pinyin": "zhè běn shū wǔ yuán wǔ jiǎo.",
+              "english": "This book costs five yuan and five jiao.",
+              "teaching_note": "Simple descriptive or narrative use of 角."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 704
+            }
+          ]
+        },
+        {
+          "id": "w-0716",
+          "hanzi": "斤",
+          "pinyin": "jīn",
+          "meaning_en": "jin; 500 grams (weight unit)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0716-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "苹果一斤多少钱？",
+              "pinyin": "píngguǒ yì jīn duōshao qián?",
+              "english": "How much is a jin of apples?",
+              "teaching_note": "Short everyday spoken use of 斤."
+            },
+            {
+              "id": "ex-0716-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他买了两斤苹果。",
+              "pinyin": "tā mǎi le liǎng jīn píngguǒ.",
+              "english": "He bought one kilogram of apples.",
+              "teaching_note": "Simple descriptive or narrative use of 斤."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 716
+            }
+          ]
+        },
+        {
+          "id": "w-0722",
+          "hanzi": "句",
+          "pinyin": "jù",
+          "meaning_en": "sentence; clause (classifier)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0722-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "再说一句吧。",
+              "pinyin": "zài shuō yí jù ba.",
+              "english": "Say one more sentence.",
+              "teaching_note": "Short everyday spoken use of 句."
+            },
+            {
+              "id": "ex-0722-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师写了一句汉语。",
+              "pinyin": "lǎoshī xiě le yí jù Hànyǔ.",
+              "english": "The teacher wrote a sentence in Chinese.",
+              "teaching_note": "Simple descriptive or narrative use of 句."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 722
+            }
+          ]
+        },
+        {
+          "id": "w-0754",
+          "hanzi": "辆",
+          "pinyin": "liàng",
+          "meaning_en": "classifier for vehicles",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0754-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有几辆车？",
+              "pinyin": "nǐ yǒu jǐ liàng chē?",
+              "english": "How many cars do you have?",
+              "teaching_note": "Short everyday spoken use of 辆."
+            },
+            {
+              "id": "ex-0754-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校门口有三辆汽车。",
+              "pinyin": "xuéxiào ménkǒu yǒu sān liàng qìchē.",
+              "english": "There are three cars at the school entrance.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 754
+            }
+          ]
+        },
+        {
+          "id": "w-0768",
+          "hanzi": "毛",
+          "pinyin": "máo",
+          "meaning_en": "mao; 0.1 yuan",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "noun"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0768-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "五毛钱一个。",
+              "pinyin": "wǔ máo qián yí ge.",
+              "english": "Five mao each.",
+              "teaching_note": "Short everyday spoken use of 毛."
+            },
+            {
+              "id": "ex-0768-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“苹果一斤两块五毛。”她说。",
+              "pinyin": "“píngguǒ yì jīn liǎng kuài wǔ máo.” tā shuō.",
+              "english": "“The apples are 2.50 yuan per jin,” she said.",
+              "teaching_note": "Quoted speech in a written narrative frame."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 768
+            }
+          ]
+        },
+        {
+          "id": "w-0769",
+          "hanzi": "米",
+          "pinyin": "mǐ",
+          "meaning_en": "rice; meter (unit)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities",
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0769-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你要买米吗？",
+              "pinyin": "nǐ yào mǎi mǐ ma?",
+              "english": "Do you need to buy rice?",
+              "teaching_note": "Short everyday spoken use of 米."
+            },
+            {
+              "id": "ex-0769-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们买了三公斤米。",
+              "pinyin": "tāmen mǎi le sān gōngjīn mǐ.",
+              "english": "They bought three kilograms of rice.",
+              "teaching_note": "Simple descriptive or narrative use of 米."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 769
+            }
+          ]
+        },
+        {
+          "id": "w-0845",
+          "hanzi": "双",
+          "pinyin": "shuāng",
+          "meaning_en": "pair; two (classifier for pairs)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0845-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我买了一双鞋。",
+              "pinyin": "wǒ mǎi le yì shuāng xié.",
+              "english": "I bought a pair of shoes.",
+              "teaching_note": "Short everyday spoken use of 双."
+            },
+            {
+              "id": "ex-0845-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐有两双新鞋。",
+              "pinyin": "jiějie yǒu liǎng shuāng xīn xié.",
+              "english": "My older sister has two pairs of new shoes.",
+              "teaching_note": "Simple descriptive or narrative use of 双."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 845
+            }
+          ]
+        },
+        {
+          "id": "w-0921",
+          "hanzi": "页",
+          "pinyin": "yè",
+          "meaning_en": "page; leaf of paper",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0921-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请看第五页。",
+              "pinyin": "qǐng kàn dì wǔ yè.",
+              "english": "Please look at page five.",
+              "teaching_note": "Short everyday spoken use of 页."
+            },
+            {
+              "id": "ex-0921-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这本书一共有三百页。",
+              "pinyin": "zhè běn shū yígòng yǒu sān bǎi yè.",
+              "english": "This book has 300 pages altogether.",
+              "teaching_note": "Simple descriptive or narrative use of 页."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 921
+            }
+          ]
+        },
+        {
+          "id": "w-0925",
+          "hanzi": "一共",
+          "pinyin": "yígòng",
+          "meaning_en": "altogether; in total",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0925-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一共多少钱？",
+              "pinyin": "yígòng duōshao qián?",
+              "english": "How much is it altogether?",
+              "teaching_note": "Short everyday spoken use of 一共."
+            },
+            {
+              "id": "ex-0925-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "班里一共有二十名学生。",
+              "pinyin": "bān lǐ yígòng yǒu èr shí míng xuéshēng.",
+              "english": "There are twenty students in the class in total.",
+              "teaching_note": "Simple descriptive or narrative use of 一共."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 925
+            }
+          ]
+        },
+        {
+          "id": "w-0931",
+          "hanzi": "以上",
+          "pinyin": "yǐshàng",
+          "meaning_en": "above; more than",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0931-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个电影，十岁以上才能看吗？",
+              "pinyin": "zhège diànyǐng, shí suì yǐshàng cái néng kàn ma?",
+              "english": "Do you have to be at least ten to watch this movie?",
+              "teaching_note": "Short everyday spoken use of 以上."
+            },
+            {
+              "id": "ex-0931-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "十岁以上的孩子可以参加比赛。",
+              "pinyin": "shí suì yǐshàng de háizi kěyǐ cānjiā bǐsài.",
+              "english": "Children over ten may enter the competition.",
+              "teaching_note": "Simple descriptive or narrative use of 以上."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 931
+            }
+          ]
+        },
+        {
+          "id": "w-0934",
+          "hanzi": "以下",
+          "pinyin": "yǐxià",
+          "meaning_en": "below; under; less than",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0934-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "五岁以下的孩子可以进来吗？",
+              "pinyin": "wǔ suì yǐxià de háizi kěyǐ jìnlái ma?",
+              "english": "May children under five come in?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0934-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "以下是今天的问题。",
+              "pinyin": "yǐxià shì jīntiān de wèntí.",
+              "english": "Here are today’s questions.",
+              "teaching_note": "Simple descriptive or narrative use of 以下."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 934
+            }
+          ]
+        },
+        {
+          "id": "w-0967",
+          "hanzi": "张",
+          "pinyin": "zhāng",
+          "meaning_en": "sheet; piece; classifier for flat objects",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "verb",
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0967-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我一张纸。",
+              "pinyin": "gěi wǒ yì zhāng zhǐ.",
+              "english": "Give me a sheet of paper.",
+              "teaching_note": "Short everyday spoken use of 张."
+            },
+            {
+              "id": "ex-0967-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上有三张照片。",
+              "pinyin": "zhuōzi shàng yǒu sān zhāng zhàopiàn.",
+              "english": "There are three photos on the table.",
+              "teaching_note": "Simple descriptive or narrative use of 张."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 967
+            }
+          ]
+        },
+        {
+          "id": "w-0984",
+          "hanzi": "种",
+          "pinyin": "zhǒng",
+          "meaning_en": "kind; type; species (classifier)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0984-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢哪种？",
+              "pinyin": "nǐ xǐhuan nǎ zhǒng?",
+              "english": "Which kind do you like?",
+              "teaching_note": "种 (zhǒng) means kind/type; the verb 种 (zhòng) means to plant."
+            },
+            {
+              "id": "ex-0984-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "商店里有三种颜色的书包。",
+              "pinyin": "shāngdiàn lǐ yǒu sān zhǒng yánsè de shūbāo.",
+              "english": "The shop has schoolbags in three colors.",
+              "teaching_note": "种 (zhǒng) means kind/type; the verb 种 (zhòng) means to plant."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 984
+            }
+          ]
+        },
+        {
+          "id": "w-0006",
+          "hanzi": "百",
+          "pinyin": "bǎi",
+          "meaning_en": "hundred",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0006-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里有一百个人。",
+              "pinyin": "zhèlǐ yǒu yì bǎi ge rén.",
+              "english": "There are a hundred people here.",
+              "teaching_note": "一百 means one hundred; 个 is the general classifier for people here."
+            },
+            {
+              "id": "ex-0006-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家书店有一百本中文书。",
+              "pinyin": "zhè jiā shūdiàn yǒu yì bǎi běn Zhōngwén shū.",
+              "english": "This bookstore has one hundred books in Chinese.",
+              "teaching_note": "School or study context showing 百 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 6
+            }
+          ]
+        },
+        {
+          "id": "w-0010",
+          "hanzi": "本",
+          "pinyin": "běn",
+          "meaning_en": "measure word for books",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0010-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我买了两本书。",
+              "pinyin": "wǒ mǎi le liǎng běn shū.",
+              "english": "I bought two books.",
+              "teaching_note": "本 is the standard classifier for books; 两 normally precedes classifiers rather than 二."
+            },
+            {
+              "id": "ex-0010-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生每人有一本书。",
+              "pinyin": "xuéshēng měi rén yǒu yì běn shū.",
+              "english": "Every student has one book.",
+              "teaching_note": "School or study context showing 本 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 10
+            }
+          ]
+        },
+        {
+          "id": "w-0060",
+          "hanzi": "个",
+          "pinyin": "gè",
+          "meaning_en": "general measure word",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0060-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一个朋友。",
+              "pinyin": "wǒ yǒu yí ge péngyou.",
+              "english": "I have a friend.",
+              "teaching_note": "个 is the common classifier for 朋友; 一 is normally pronounced yí before this neutral-tone 个."
+            },
+            {
+              "id": "ex-0060-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个班有二十个学生。",
+              "pinyin": "zhège bān yǒu èr shí gè xuéshēng.",
+              "english": "There are twenty students in this class.",
+              "teaching_note": "School or study context showing 个 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 60
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 遍 (biàn)",
+        "explanation": "遍 (biàn) means “time (of an action); repetition” (classifier).",
+        "example_id": "ex-0529-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 层 (céng)",
+        "explanation": "层 (céng) means “floor; layer; classifier” (classifier).",
+        "example_id": "ex-0549-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0529-1",
+      "ex-0549-1",
+      "ex-0573-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why did carrying the bicycle and shoes upstairs take about half an hour?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Because the new home is on the fourth floor and has no elevator.",
+          "explanation": "The passage notes 新家在四层，没有电梯."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write one sentence using 遍 and one using 一共 or 大概.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这篇课文我读了三遍，大概用了二十分钟。",
+          "explanation": "Use 遍 for complete readings and 大概/一共 for estimates or totals."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which classifier is used for vehicles like cars or bicycles?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "辆",
+              "pinyin": "liàng",
+              "meaning_en": "classifier for vehicles"
+            },
+            {
+              "id": "b",
+              "hanzi": "双",
+              "pinyin": "shuāng",
+              "meaning_en": "pair"
+            },
+            {
+              "id": "c",
+              "hanzi": "封",
+              "pinyin": "fēng",
+              "meaning_en": "classifier for letters"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "辆 is the classifier for wheeled vehicles."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"kilogram\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "斤",
+              "pinyin": "jīn",
+              "meaning_en": "500 grams"
+            },
+            {
+              "id": "b",
+              "hanzi": "公斤",
+              "pinyin": "gōngjīn",
+              "meaning_en": "kilogram"
+            },
+            {
+              "id": "c",
+              "hanzi": "米",
+              "pinyin": "mǐ",
+              "meaning_en": "meter"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "公斤 is 1 kilogram (2 斤)."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"altogether / in total\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "大概",
+              "pinyin": "dàgài",
+              "meaning_en": "roughly"
+            },
+            {
+              "id": "b",
+              "hanzi": "一共",
+              "pinyin": "yígòng",
+              "meaning_en": "altogether"
+            },
+            {
+              "id": "c",
+              "hanzi": "好多",
+              "pinyin": "hǎoduō",
+              "meaning_en": "many"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "一共 gives the total."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Buying Fruit and Shoes",
+        "context_en": "Xiao Fang buys apples at a market stall and asks about the total price.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "请问，这种苹果多少钱一斤？",
+            "pinyin": "Qǐngwèn, zhè zhǒng píngguǒ duōshao qián yì jīn?",
+            "english": "Excuse me, how much per half-kilogram is this kind of apple?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "五块五毛一斤，买两公斤以上还可以便宜一点儿。",
+            "pinyin": "Wǔ kuài wǔ máo yì jīn, mǎi liǎng gōngjīn yǐshàng hái kěyǐ piányi yìdiǎnr.",
+            "english": "Five yuan fifty jiao per jin; if you buy two kilograms or more, it’s a bit cheaper."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那给我来两公斤吧。一共多少钱？",
+            "pinyin": "Nà gěi wǒ lái liǎng gōngjīn ba. Yígòng duōshao qián?",
+            "english": "Then give me two kilograms. How much is it in total?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "两公斤就是四斤，一共二十块钱！",
+            "pinyin": "Liǎng gōngjīn jiùshì sì jīn, yígòng èrshí kuài qián!",
+            "english": "Two kilograms is four jin, so twenty yuan altogether!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Ranges with 以上 and 以下",
+          "explanation_en": "Place 以上 (or more / above) or 以下 (or less / below) directly after a number + unit.",
+          "pattern_hanzi": "<Number + Unit> + 以上 / 以下",
+          "pattern_pinyin": "<Number + Unit> + yǐshàng / yǐxià",
+          "pattern_pseudo_translation": "<Number + Unit> + above / below",
+          "examples": [
+            {
+              "hanzi": "一米二以下的小朋友不用买票。",
+              "pinyin": "Yì mǐ èr yǐxià de xiǎo péngyou búyòng mǎi piào.",
+              "english": "Children 1.2 meters and under do not need to buy a ticket."
+            },
+            {
+              "hanzi": "每天看三十页以上的书是个好习惯。",
+              "pinyin": "Měitiān kàn sānshí yè yǐshàng de shū shì ge hǎo xíguàn.",
+              "english": "Reading 30 or more pages of a book every day is a good habit."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Complete repetitions with 遍",
+          "explanation_en": "Use 遍 (biàn) after a verb to count reading, watching, or doing something from start to finish.",
+          "pattern_hanzi": "<Verb> + 了 + <Number> + 遍",
+          "pattern_pinyin": "<Verb> + le + <Number> + biàn",
+          "pattern_pseudo_translation": "<Verb> + (completed) + <Number> + complete times",
+          "examples": [
+            {
+              "hanzi": "这段话我读了三遍才明白。",
+              "pinyin": "Zhè duàn huà wǒ dú le sān biàn cái míngbai.",
+              "english": "I read this passage three times before understanding it."
+            },
+            {
+              "hanzi": "那句话他重复了两遍。",
+              "pinyin": "Nà jù huà tā chóngfù le liǎng biàn.",
+              "english": "He repeated that sentence twice."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Use the right classifier or unit for each noun.",
+        "model": {
+          "hanzi": "我住在这栋楼的五层，楼下停着一辆自行车。",
+          "pinyin": "Wǒ zhù zài zhè dòng lóu de wǔ céng, lóuxià tíng zhe yí liàng zìxíngchē.",
+          "english": "I live on the fifth floor of this building, and a bicycle is parked downstairs."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you bought a new pair of shoes.",
+            "model_answer": {
+              "hanzi": "我买了一双新鞋。",
+              "pinyin": "Wǒ mǎi le yì shuāng xīn xié.",
+              "english": "I bought a new pair of shoes."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Ask for someone’s phone number.",
+            "model_answer": {
+              "hanzi": "请问，你的电话号码是多少？",
+              "pinyin": "Qǐngwèn, nǐ de diànhuà hàomǎ shì duōshao?",
+              "english": "Excuse me, what is your phone number?"
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say there are roughly thirty students in the room.",
+            "model_answer": {
+              "hanzi": "教室里大概有三十个学生。",
+              "pinyin": "Jiàoshì lǐ dàgài yǒu sānshí ge xuéshēng.",
+              "english": "There are roughly thirty students in the classroom."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Packing for a Move",
+        "paragraphs": [
+          {
+            "hanzi": "周末搬家的时候，家里有好多东西要整理。我们一共装了十几个大箱子，还寄出了两封信和几张照片。",
+            "pinyin": "Zhōumò bānjiā de shíhou, jiālǐ yǒu hǎoduō dōngxi yào zhěnglǐ. Wǒmen yígòng zhuāng le shí jǐ ge dà xiāngzi, hái jì chū le liǎng fēng xìn hé jǐ zhāng zhàopiàn.",
+            "english": "When moving house on the weekend, there were lots of things at home to organize. Altogether we packed over ten big boxes, and also mailed out two letters and several photos."
+          },
+          {
+            "hanzi": "新家在四层，没有电梯，所以搬一辆自行车和几双鞋上楼大概花了半个小时。",
+            "pinyin": "Xīn jiā zài sì céng, méiyǒu diàntī, suǒyǐ bān yí liàng zìxíngchē hé jǐ shuāng xié shànglóu dàgài huā le bàn ge xiǎoshí.",
+            "english": "The new home is on the fourth floor without an elevator, so carrying a bicycle and several pairs of shoes upstairs took roughly half an hour."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "How many big boxes did they pack altogether?",
+            "answer_en": "Over ten big boxes (十几个大箱子)."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Which floor is the new home on?",
+            "answer_en": "The fourth floor (四层)."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Ask the price per jin or kilogram and ask for the total.",
+          "model_answer": {
+            "hanzi": "这种香蕉多少钱一斤？我要两斤，一共多少钱？",
+            "pinyin": "Zhè zhǒng xiāngjiāo duōshao qián yì jīn? Wǒ yào liǎng jīn, yígòng duōshao qián?",
+            "english": "How much per jin is this kind of banana? I want two jin—how much altogether?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Use 遍, 句, or 页 to talk about reading.",
+          "model_answer": {
+            "hanzi": "今天我看了二十页书，把重点句子读了两遍。",
+            "pinyin": "Jīntiān wǒ kàn le èrshí yè shū, bǎ zhòngdiǎn jùzi dú le liǎng biàn.",
+            "english": "Today I read 20 pages of a book and read the key sentences twice."
+          }
+        }
+      ],
+      "common_pitfall": "1 公斤 = 2 斤 (500 grams per 斤). In speech, 毛 is common for 0.1 yuan (五毛), while 角 is used on price tags and formal receipts.",
+      "pronunciation_focus": "一共 (yígòng) changes 一 to rising yí before fourth-tone gòng; 好多 (hǎoduō) keeps a low third tone on hǎo.",
+      "review": {
+        "can_do": [
+          "Use classifiers like 辆, 双, 张, 封, 段, 句, 页, and 遍.",
+          "Compare 公斤 and 斤, 角 and 毛.",
+          "Express totals and bounds with 一共, 大概, 以上, and 以下."
+        ],
+        "entry_ids": [
+          529,
+          549,
+          573,
+          607,
+          630,
+          648,
+          663,
+          666,
+          704,
+          716,
+          722,
+          754,
+          768,
+          769,
+          845,
+          921,
+          925,
+          931,
+          934,
+          967,
+          984
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-classifiers-and-units--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Ranges with 以上 and 以下",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-classifiers-and-units--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Complete repetitions with 遍",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you bought a new pair of shoes.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-classifiers-and-units--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Ask for someone’s phone number.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-classifiers-and-units--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there are roughly thirty students in the room.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: How many big boxes did they pack altogether?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-classifiers-and-units--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Which floor is the new home on?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Ask the price per jin or kilogram and ask for the total.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-classifiers-and-units--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Use 遍, 句, or 页 to talk about reading.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-classifiers-and-units--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-classifiers-and-units--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which classifier is used for vehicles like cars ",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-classifiers-and-units--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"kilogram\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-classifiers-and-units--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"altogether / in total\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-classifiers-and-units--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-classifiers-and-units--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

@@ -140,7 +140,7 @@ He is writing characters right now.
 
 - 都 (dōu) — all; both [HSK entry 41]
 
-- 非常 (fēicháng) — extremely [HSK entry 53]
+- 非常 (fēicháng) — extremely [HSK entry 54]
 
 - 还 (hái) — still; also [HSK entry 67]
 
@@ -154,7 +154,7 @@ He is writing characters right now.
 
 - 再 (zài) — again [HSK entry 270]
 
-- 在 (zài) — at; in [HSK entry 271]
+- 在 (zài) — at; in [HSK entry 272]
 
 - 真 (zhēn) — really [HSK entry 285]
 

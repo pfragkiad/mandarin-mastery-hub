@@ -1,0 +1,16 @@
+{
+  "schema_version": "hsk-current-app-references/1.0.0",
+  "vocabulary_entries": 5400,
+  "lessons": 100,
+  "lesson_word_references": 1179,
+  "lesson_readings_and_pos_match": true,
+  "lesson_meanings_and_examples_match": true,
+  "curriculum_placements": 98,
+  "manifest_lessons": 21,
+  "neutral_audio_bindings": 12,
+  "current_official_identities_only": true,
+  "historical_hsk_fields_in_app": 0,
+  "lesson_compatibility_mapping": false,
+  "uuids_examples_readings_and_audio_preserved": true,
+  "offline_history": "importer/data/hsk-app-reference-history/removed-runtime-metadata.json"
+}

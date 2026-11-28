@@ -166,7 +166,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 130
+              "entry_id": 128
             }
           ],
           "primary_subtopic_id": null,
@@ -427,7 +427,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 62
+              "entry_id": 63
             }
           ],
           "primary_subtopic_id": null,
@@ -471,7 +471,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 63
+              "entry_id": 62
             }
           ],
           "pos_note": "Can be the verb work or the noun work/job.",
@@ -559,7 +559,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 228
+              "entry_id": 227
             }
           ],
           "primary_subtopic_id": null,
@@ -864,14 +864,14 @@
           "Understand when someone goes to work or finishes."
         ],
         "entry_ids": [
-          130,
+          128,
           152,
           155,
           231,
-          62,
           63,
+          62,
           176,
-          228
+          227
         ]
       }
     }

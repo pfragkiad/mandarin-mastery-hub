@@ -148,13 +148,13 @@ It is a small cat.
 
 - 他 (tā) — he [HSK entry 200]
 
-- 它 (tā) — it [HSK entry 201]
+- 它 (tā) — it [HSK entry 202]
 
-- 她 (tā) — she [HSK entry 202]
+- 她 (tā) — she [HSK entry 204]
 
-- 他们 (tāmen) — they (male/mixed) [HSK entry 203]
+- 他们 (tāmen) — they (male/mixed) [HSK entry 201]
 
-- 它们 (tāmen) — they (nonhuman) [HSK entry 204]
+- 它们 (tāmen) — they (nonhuman) [HSK entry 203]
 
 - 她们 (tāmen) — they (female) [HSK entry 205]
 

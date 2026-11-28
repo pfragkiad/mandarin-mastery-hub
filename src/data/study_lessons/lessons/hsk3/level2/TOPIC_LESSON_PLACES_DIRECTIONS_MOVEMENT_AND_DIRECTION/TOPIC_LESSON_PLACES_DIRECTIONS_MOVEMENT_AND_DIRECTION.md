@@ -162,9 +162,9 @@ Do not choose 来 (lái) or 去 (qù) solely from English “come” and “go.�
 
 - 进 (jìn) — to enter; to go in [HSK entry 370]
 
-- 进来 (jìnlái) — to come in [HSK entry 372]
+- 进来 (jìnlái) — to come in [HSK entry 371]
 
-- 进去 (jìnqù) — to go in [HSK entry 373]
+- 进去 (jìnqù) — to go in [HSK entry 372]
 
 - 上来 (shànglái) — to come up [HSK entry 425]
 

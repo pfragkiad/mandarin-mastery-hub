@@ -1,0 +1,1525 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-conditions-and-conjunctions",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Conditions, Reasons & Conjunctions",
+    "subtitle": "Conditions, \"not only… but also\", choices, and examples",
+    "description": "Connect complex clauses using 不但……而且, 如果……的话, 只要, 只有, 或者, 可是, 根据, and 比如.",
+    "slug": "conditions-and-conjunctions"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "conjunctions",
+      "clauses",
+      "conditions"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Link ideas with 不但……而且, 可是, 然后, and 直到.",
+    "Express conditions with 如果……的话, 只要, and 只有.",
+    "Give alternatives and examples with 或, 或者, 根据, and 比如."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "且": "Characters:且",
+    "业": "Characters:业",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "事": "Characters:事",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "使": "Characters:使",
+    "便": "Characters:便",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "公": "Characters:公",
+    "兴": "Characters:兴",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "净": "Characters:净",
+    "出": "Characters:出",
+    "利": "Characters:利",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "务": "Characters:务",
+    "助": "Characters:助",
+    "医": "Characters:医",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "博": "Characters:博",
+    "即": "Characters:即",
+    "厅": "Characters:厅",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "口": "Characters:口",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "合": "Characters:合",
+    "后": "Characters:后",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呀": "Characters:呀",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "咱": "Characters:咱",
+    "唱": "Characters:唱",
+    "商": "Characters:商",
+    "啡": "Characters:啡",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "园": "Characters:园",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "块": "Characters:块",
+    "坚": "Characters:坚",
+    "复": "Characters:复",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "如": "Characters:如",
+    "学": "Characters:学",
+    "安": "Characters:安",
+    "完": "Characters:完",
+    "定": "Characters:定",
+    "宜": "Characters:宜",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "就": "Characters:就",
+    "山": "Characters:山",
+    "工": "Characters:工",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "干": "Characters:干",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "影": "Characters:影",
+    "往": "Characters:往",
+    "待": "Characters:待",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忘": "Characters:忘",
+    "怎": "Characters:怎",
+    "息": "Characters:息",
+    "情": "Characters:情",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "愿": "Characters:愿",
+    "成": "Characters:成",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "才": "Characters:才",
+    "把": "Characters:把",
+    "报": "Characters:报",
+    "持": "Characters:持",
+    "据": "Characters:据",
+    "故": "Characters:故",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "景": "Characters:景",
+    "晴": "Characters:晴",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "松": "Characters:松",
+    "果": "Characters:果",
+    "枯": "Characters:枯",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "根": "Characters:根",
+    "楚": "Characters:楚",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汁": "Characters:汁",
+    "求": "Characters:求",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "流": "Characters:流",
+    "清": "Characters:清",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "然": "Characters:然",
+    "燥": "Characters:燥",
+    "爬": "Characters:爬",
+    "爱": "Characters:爱",
+    "物": "Characters:物",
+    "特": "Characters:特",
+    "瓜": "Characters:瓜",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "睡": "Characters:睡",
+    "知": "Characters:知",
+    "空": "Characters:空",
+    "笔": "Characters:笔",
+    "累": "Characters:累",
+    "练": "Characters:练",
+    "经": "Characters:经",
+    "结": "Characters:结",
+    "绩": "Characters:绩",
+    "美": "Characters:美",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "者": "Characters:者",
+    "而": "Characters:而",
+    "聪": "Characters:聪",
+    "背": "Characters:背",
+    "能": "Characters:能",
+    "脑": "Characters:脑",
+    "自": "Characters:自",
+    "舞": "Characters:舞",
+    "英": "Characters:英",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "蕉": "Characters:蕉",
+    "行": "Characters:行",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "认": "Characters:认",
+    "讲": "Characters:讲",
+    "试": "Characters:试",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "越": "Characters:越",
+    "趣": "Characters:趣",
+    "跟": "Characters:跟",
+    "路": "Characters:路",
+    "跳": "Characters:跳",
+    "车": "Characters:车",
+    "轻": "Characters:轻",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "通": "Characters:通",
+    "道": "Characters:道",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "静": "Characters:静",
+    "非": "Characters:非",
+    "音": "Characters:音",
+    "顶": "Characters:顶",
+    "预": "Characters:预",
+    "风": "Characters:风",
+    "餐": "Characters:餐",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "香": "Characters:香",
+    "验": "Characters:验",
+    "鲜": "Characters:鲜"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Core clause connectors and conditional markers that build multi-clause Mandarin.",
+      "focus": "Contrast 只要……就 (\"as long as\") with 只有……才 (\"only if\"), and use 或者 (not 还是) for \"or\" in statements."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0521",
+          "hanzi": "比如",
+          "pinyin": "bǐrú",
+          "meaning_en": "for example; such as",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0521-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "比如什么？",
+              "pinyin": "bǐrú shénme?",
+              "english": "For example, what?",
+              "teaching_note": "Short everyday spoken use of 比如."
+            },
+            {
+              "id": "ex-0521-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我喜欢水果，比如苹果和香蕉。",
+              "pinyin": "wǒ xǐhuan shuǐguǒ, bǐrú píngguǒ hé xiāngjiāo.",
+              "english": "I like fruit, such as apples and bananas.",
+              "teaching_note": "Simple descriptive or narrative use of 比如."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 521
+            }
+          ]
+        },
+        {
+          "id": "w-0538",
+          "hanzi": "不但",
+          "pinyin": "búdàn",
+          "meaning_en": "not only",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0538-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他不但会唱歌，还会跳舞。",
+              "pinyin": "tā búdàn huì chàng gē, hái huì tiàowǔ.",
+              "english": "He can not only sing but also dance.",
+              "teaching_note": "不但 normally combines with 还 or 而且 to express not only…but also."
+            },
+            {
+              "id": "ex-0538-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个地方不但安静，而且很干净。",
+              "pinyin": "zhège dìfang búdàn ānjìng, érqiě hěn gānjìng.",
+              "english": "This place is not only quiet but also very clean.",
+              "teaching_note": "Written descriptive contrast: 不但…而且… links two positive properties, alongside the conversational 不但…还… example."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 538
+            }
+          ]
+        },
+        {
+          "id": "w-0586",
+          "hanzi": "的话",
+          "pinyin": "dehuà",
+          "meaning_en": "if; in that case",
+          "primary_pos_id": "particle",
+          "pos_ids": [
+            "particle"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0586-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "累的话，就休息吧。",
+              "pinyin": "lèi dehuà, jiù xiūxi ba.",
+              "english": "If you're tired, take a break.",
+              "teaching_note": "Short everyday spoken use of 的话."
+            },
+            {
+              "id": "ex-0586-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下雨的话，我们就在家。",
+              "pinyin": "xià yǔ dehuà, wǒmen jiù zài jiā.",
+              "english": "If it rains, we'll stay at home.",
+              "teaching_note": "Simple descriptive or narrative use of 的话."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 586
+            }
+          ]
+        },
+        {
+          "id": "w-0611",
+          "hanzi": "而且",
+          "pinyin": "érqiě",
+          "meaning_en": "moreover; and also",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0611-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他会唱歌，而且会跳舞。",
+              "pinyin": "tā huì chàng gē, érqiě huì tiàowǔ.",
+              "english": "He can sing and also dance.",
+              "teaching_note": "Short everyday spoken use of 而且."
+            },
+            {
+              "id": "ex-0611-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭店便宜，而且很好吃。",
+              "pinyin": "zhè jiā fàndiàn piányi, érqiě hěn hǎochī.",
+              "english": "This restaurant is inexpensive, and the food is delicious.",
+              "teaching_note": "Simple descriptive or narrative use of 而且."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 611
+            }
+          ]
+        },
+        {
+          "id": "w-0645",
+          "hanzi": "根据",
+          "pinyin": "gēnjù",
+          "meaning_en": "according to; based on",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition",
+            "noun"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0645-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "根据地图，我们往东走。",
+              "pinyin": "gēnjù dìtú, wǒmen wǎng dōng zǒu.",
+              "english": "According to the map, we go east.",
+              "teaching_note": "Short everyday spoken use of 根据."
+            },
+            {
+              "id": "ex-0645-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "根据老师的要求，学生每天要复习课文。",
+              "pinyin": "gēnjù lǎoshī de yāoqiú, xuéshēng měitiān yào fùxí kèwén.",
+              "english": "As required by their teacher, the students must review the lesson text every day.",
+              "teaching_note": "Simple descriptive or narrative use of 根据."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 645
+            }
+          ]
+        },
+        {
+          "id": "w-0685",
+          "hanzi": "或",
+          "pinyin": "huò",
+          "meaning_en": "or (in statements)",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction",
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0685-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "坐车或走路都可以。",
+              "pinyin": "zuò chē huò zǒulù dōu kěyǐ.",
+              "english": "Either taking a car or walking is fine.",
+              "teaching_note": "Short everyday spoken use of 或."
+            },
+            {
+              "id": "ex-0685-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生可以用笔或电脑写作业。",
+              "pinyin": "xuéshēng kěyǐ yòng bǐ huò diànnǎo xiě zuòyè.",
+              "english": "Students can use a pen or a computer for their homework.",
+              "teaching_note": "Simple descriptive or narrative use of 或."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 685
+            }
+          ]
+        },
+        {
+          "id": "w-0686",
+          "hanzi": "或者",
+          "pinyin": "huòzhě",
+          "meaning_en": "or; alternatively",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0686-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "要茶或者咖啡？",
+              "pinyin": "yào chá huòzhě kāfēi?",
+              "english": "Tea or coffee?",
+              "teaching_note": "Short everyday spoken use of 或者."
+            },
+            {
+              "id": "ex-0686-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "周末我们可以看电影或者去公园。",
+              "pinyin": "zhōumò wǒmen kěyǐ kàn diànyǐng huòzhě qù gōngyuán.",
+              "english": "On weekends, we can watch a movie or go to the park.",
+              "teaching_note": "Simple descriptive or narrative use of 或者."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 686
+            }
+          ]
+        },
+        {
+          "id": "w-0731",
+          "hanzi": "可",
+          "pinyin": "kě",
+          "meaning_en": "can; may; indeed",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction",
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0731-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这样可不行。",
+              "pinyin": "zhèyàng kě bùxíng.",
+              "english": "This really won't do.",
+              "teaching_note": "Short everyday spoken use of 可."
+            },
+            {
+              "id": "ex-0731-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“这件事可不能忘。”老师说。",
+              "pinyin": "“zhè jiàn shì kě bù néng wàng.” lǎoshī shuō.",
+              "english": "“You really mustn’t forget this,” the teacher said.",
+              "teaching_note": "Quoted speech in a written narrative frame."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 731
+            }
+          ]
+        },
+        {
+          "id": "w-0733",
+          "hanzi": "可是",
+          "pinyin": "kěshì",
+          "meaning_en": "but; however",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0733-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想去，可是没有时间。",
+              "pinyin": "wǒ xiǎng qù, kěshì méiyǒu shíjiān.",
+              "english": "I want to go, but I don't have time.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0733-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他很累，可是还在工作。",
+              "pinyin": "tā hěn lèi, kěshì hái zài gōngzuò.",
+              "english": "He is tired, but he is still working.",
+              "teaching_note": "Simple descriptive or narrative use of 可是."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 733
+            }
+          ]
+        },
+        {
+          "id": "w-0813",
+          "hanzi": "然后",
+          "pinyin": "ránhòu",
+          "meaning_en": "then; afterwards",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0813-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "先吃饭，然后走。",
+              "pinyin": "xiān chī fàn, ránhòu zǒu.",
+              "english": "Let's eat first, then go.",
+              "teaching_note": "Short everyday spoken use of 然后."
+            },
+            {
+              "id": "ex-0813-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他做完作业，然后去睡觉。",
+              "pinyin": "tā zuò wán zuòyè, ránhòu qù shuìjiào.",
+              "english": "He finished his homework, then went to bed.",
+              "teaching_note": "Simple descriptive or narrative use of 然后."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 813
+            }
+          ]
+        },
+        {
+          "id": "w-0819",
+          "hanzi": "如果",
+          "pinyin": "rúguǒ",
+          "meaning_en": "if; in case",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0819-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "如果下雨呢？",
+              "pinyin": "rúguǒ xià yǔ ne?",
+              "english": "What if it rains?",
+              "teaching_note": "Short everyday spoken use of 如果."
+            },
+            {
+              "id": "ex-0819-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "如果明天天气好，我们就去公园。",
+              "pinyin": "rúguǒ míngtiān tiānqì hǎo, wǒmen jiù qù gōngyuán.",
+              "english": "If the weather is good tomorrow, we'll go to the park.",
+              "teaching_note": "Simple descriptive or narrative use of 如果."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 819
+            }
+          ]
+        },
+        {
+          "id": "w-0974",
+          "hanzi": "直到",
+          "pinyin": "zhídào",
+          "meaning_en": "until; up to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0974-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "直到今天我才知道。",
+              "pinyin": "zhídào jīntiān wǒ cái zhīdào.",
+              "english": "I only found out today.",
+              "teaching_note": "直到 introduces the time or point at which a situation continues."
+            },
+            {
+              "id": "ex-0974-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他一直在医院，直到昨天才回家。",
+              "pinyin": "tā yìzhí zài yīyuàn, zhídào zuótiān cái huí jiā.",
+              "english": "He stayed at the hospital and did not return home until yesterday.",
+              "teaching_note": "直到 introduces the time or point at which a situation continues."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 974
+            }
+          ]
+        },
+        {
+          "id": "w-0978",
+          "hanzi": "只要",
+          "pinyin": "zhǐyào",
+          "meaning_en": "as long as; provided that",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0978-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "只要你来就好！",
+              "pinyin": "zhǐyào nǐ lái jiù hǎo!",
+              "english": "It's fine as long as you come!",
+              "teaching_note": "Short everyday spoken use of 只要."
+            },
+            {
+              "id": "ex-0978-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "只要每天练习，就能学好汉语。",
+              "pinyin": "zhǐyào měi tiān liànxí, jiù néng xué hǎo Hànyǔ.",
+              "english": "As long as you practice daily, you can learn Chinese well.",
+              "teaching_note": "Simple descriptive or narrative use of 只要."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 978
+            }
+          ]
+        },
+        {
+          "id": "w-0979",
+          "hanzi": "只有",
+          "pinyin": "zhǐyǒu",
+          "meaning_en": "only; only if; there is only",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0979-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我只有十块钱。",
+              "pinyin": "wǒ zhǐyǒu shí kuài qián.",
+              "english": "I only have ten yuan.",
+              "teaching_note": "Short everyday spoken use of 只有."
+            },
+            {
+              "id": "ex-0979-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这里只有一家商店。",
+              "pinyin": "zhèlǐ zhǐyǒu yì jiā shāngdiàn.",
+              "english": "There is only one shop here.",
+              "teaching_note": "Simple descriptive or narrative use of 只有."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 979
+            }
+          ]
+        },
+        {
+          "id": "w-0067",
+          "hanzi": "还",
+          "pinyin": "hái",
+          "meaning_en": "still; also",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0067-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他还在学校。",
+              "pinyin": "tā hái zài xuéxiào.",
+              "english": "He is still at school.",
+              "teaching_note": "还 means “still,” showing that the school situation continues."
+            },
+            {
+              "id": "ex-0067-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店还没有开门。",
+              "pinyin": "zhè jiā diàn hái méiyǒu kāimén.",
+              "english": "This shop hasn't opened yet.",
+              "teaching_note": "Short beginner-level description illustrating 还 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 67
+            }
+          ]
+        },
+        {
+          "id": "w-0253",
+          "hanzi": "也",
+          "pinyin": "yě",
+          "meaning_en": "also",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0253-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我也喜欢茶。",
+              "pinyin": "wǒ yě xǐhuan chá.",
+              "english": "I also like tea.",
+              "teaching_note": "也 means also; it normally appears before the verb or adjective predicate."
+            },
+            {
+              "id": "ex-0253-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生也可以在这里看书。",
+              "pinyin": "xuéshēng yě kěyǐ zài zhèlǐ kàn shū.",
+              "english": "Students can also read books here.",
+              "teaching_note": "School or study context showing 也 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 253
+            }
+          ]
+        },
+        {
+          "id": "w-0286",
+          "hanzi": "正在",
+          "pinyin": "zhèngzài",
+          "meaning_en": "currently; in progress",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0286-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我正在看书。",
+              "pinyin": "wǒ zhèngzài kàn shū.",
+              "english": "I am reading a book right now.",
+              "teaching_note": "正在 makes the ongoing action explicit: reading right now."
+            },
+            {
+              "id": "ex-0286-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们正在上课。",
+              "pinyin": "xuéshēngmen zhèngzài shàngkè.",
+              "english": "The students are having class right now.",
+              "teaching_note": "School or study context showing 正在 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 286
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 比如 (bǐrú)",
+        "explanation": "比如 (bǐrú) means “for example; such as” (verb).",
+        "example_id": "ex-0521-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 不但 (búdàn)",
+        "explanation": "不但 (búdàn) means “not only” (conjunction).",
+        "example_id": "ex-0538-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0521-1",
+      "ex-0538-1",
+      "ex-0586-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "According to many teachers’ experience in the reading, what is the best teacher?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Interest (兴趣).",
+          "explanation": "The passage states 根据很多老师的经验，兴趣是最好的老师."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences: one using 不但……而且 and one using 如果……的话 or 只要……就.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这门课不但有用，而且老师讲得很清楚。只要认真复习，考试就一定能通过。",
+          "explanation": "Use 不但……而且 and 只要……就."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which conjunction pair means \"only if…, only then…\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "只要……就",
+              "pinyin": "zhǐyào…jiù",
+              "meaning_en": "as long as…then"
+            },
+            {
+              "id": "b",
+              "hanzi": "只有……才",
+              "pinyin": "zhǐyǒu…cái",
+              "meaning_en": "only if…only then"
+            },
+            {
+              "id": "c",
+              "hanzi": "不但……而且",
+              "pinyin": "búdàn…érqiě",
+              "meaning_en": "not only…but also"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "只有……才 expresses a necessary condition."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"for example / such as\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "根据",
+              "pinyin": "gēnjù",
+              "meaning_en": "according to"
+            },
+            {
+              "id": "b",
+              "hanzi": "比如",
+              "pinyin": "bǐrú",
+              "meaning_en": "for example"
+            },
+            {
+              "id": "c",
+              "hanzi": "然后",
+              "pinyin": "ránhòu",
+              "meaning_en": "then"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "比如 introduces examples."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"or\" in a statement?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "或者",
+              "pinyin": "huòzhě",
+              "meaning_en": "or (statement)"
+            },
+            {
+              "id": "b",
+              "hanzi": "可是",
+              "pinyin": "kěshì",
+              "meaning_en": "but"
+            },
+            {
+              "id": "c",
+              "hanzi": "直到",
+              "pinyin": "zhídào",
+              "meaning_en": "until"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "或者 is used for \"or\" in statements."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Deciding on a Weekend Plan",
+        "context_en": "Two friends weigh conditions and alternatives for a Saturday outing.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "如果明天不下雨的话，咱们去爬山吧，可是要是下雨怎么办？",
+            "pinyin": "Rúguǒ míngtiān bú xià yǔ dehuà, zánmen qù páshān ba, kěshì yàoshi xià yǔ zěnme bàn?",
+            "english": "If it doesn’t rain tomorrow, let’s go hiking—but what if it rains?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "根据天气预报，明天是晴天。而且即使下雨，咱们也可以去博物馆或者看电影。",
+            "pinyin": "Gēnjù tiānqì yùbào, míngtiān shì qíngtiān. Érqiě jíshǐ xià yǔ, zánmen yě kěyǐ qù bówùguǎn huòzhě kàn diànyǐng.",
+            "english": "According to the weather forecast, tomorrow is sunny. And even if it rains, we can go to a museum or watch a movie."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "山顶风景不但很美，而且空气也特别新鲜！",
+            "pinyin": "Shāndǐng fēngjǐng búdàn hěn měi, érqiě kōngqì yě tèbié xīnxiān!",
+            "english": "The scenery at the mountaintop is not only beautiful, but the air is also especially fresh!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对呀，只要明天早点儿出门，咱们就能在山顶多待一会儿，直到下午再下山。",
+            "pinyin": "Duì ya, zhǐyào míngtiān zǎodiǎnr chūmén, zánmen jiù néng zài shāndǐng duō dāi yíhuìr, zhídào xiàwǔ zài xiàshān.",
+            "english": "Right—as long as we leave early tomorrow, we can stay longer at the top and not come down until afternoon."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Not only… but also with 不但……而且",
+          "explanation_en": "Use 不但……而且 (búdàn… érqiě) to add a stronger or second positive/negative point.",
+          "pattern_hanzi": "<Subject> + 不但 + <Clause A> + ，而且 + <Clause B>",
+          "pattern_pinyin": "<Subject> + búdàn + <Clause A> + , érqiě + <Clause B>",
+          "pattern_pseudo_translation": "<Subject> + not only + <Clause A> + , but also + <Clause B>",
+          "examples": [
+            {
+              "hanzi": "这家餐厅不但菜好吃，而且服务也很热情。",
+              "pinyin": "Zhè jiā cāntīng búdàn cài hǎochī, érqiě fúwù yě hěn rèqíng.",
+              "english": "This restaurant not only has delicious food, but the service is also warm."
+            },
+            {
+              "hanzi": "他不但会说英语，而且汉语也说得很流利。",
+              "pinyin": "Tā búdàn huì shuō Yīngyǔ, érqiě Hànyǔ yě shuō de hěn liúlì.",
+              "english": "He can not only speak English, but also speaks Chinese very fluently."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "只要……就 vs. 只有……才",
+          "explanation_en": "只要……就 (\"as long as…, then…\") gives a sufficient condition; 只有……才 (\"only if…, only then…\") gives a necessary condition.",
+          "pattern_hanzi": "只要 + <Condition> + ，就 + <Result>  /  只有 + <Condition> + ，才 + <Result>",
+          "pattern_pinyin": "zhǐyào + <Condition> + , jiù + <Result>  /  zhǐyǒu + <Condition> + , cái + <Result>",
+          "pattern_pseudo_translation": "as long as + <Condition> + , then + <Result>  /  only if + <Condition> + , only then + <Result>",
+          "examples": [
+            {
+              "hanzi": "只要每天练习，你的发音就会越来越好。",
+              "pinyin": "Zhǐyào měitiān liànxí, nǐ de fāyīn jiù huì yuèláiyuè hǎo.",
+              "english": "As long as you practice every day, your pronunciation will get better and better."
+            },
+            {
+              "hanzi": "只有认真复习，才能考出好成绩。",
+              "pinyin": "Zhǐyǒu rènzhēn fùxí, cái néng kǎochū hǎo chéngjì.",
+              "english": "Only if you review seriously can you get good exam grades."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Connect clauses with conditions, examples, and time limits.",
+        "model": {
+          "hanzi": "如果你有空的话，咱们先吃饭，然后再去看电影。",
+          "pinyin": "Rúguǒ nǐ yǒukòng dehuà, zánmen xiān chīfàn, ránhòu zài qù kàn diànyǐng.",
+          "english": "If you have time, let’s eat first and then go see a movie."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Give two examples of healthy fruit using 比如.",
+            "model_answer": {
+              "hanzi": "我喜欢吃很多水果，比如西瓜和香蕉。",
+              "pinyin": "Wǒ xǐhuan chī hěn duō shuǐguǒ, bǐrú xīguā hé xiāngjiāo.",
+              "english": "I like eating many fruits, such as watermelon and bananas."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say he kept working until 9 p.m.",
+            "model_answer": {
+              "hanzi": "他一直工作到晚上九点，直到做完才回家。",
+              "pinyin": "Tā yìzhí gōngzuò dào wǎnshang jiǔ diǎn, zhídào zuò wán cái huí jiā.",
+              "english": "He kept working until 9 p.m. and didn’t go home until he finished."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say you can choose tea or juice.",
+            "model_answer": {
+              "hanzi": "你可以喝茶或喝果汁。",
+              "pinyin": "Nǐ kěyǐ hē chá huò hē guǒzhī.",
+              "english": "You can drink tea or drink juice."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Learning Through Hobbies",
+        "paragraphs": [
+          {
+            "hanzi": "学习外语的方法有很多，比如看电影、听音乐或者读故事。根据很多老师的经验，兴趣是最好的老师。",
+            "pinyin": "Xuéxí wàiyǔ de fāngfǎ yǒu hěn duō, bǐrú kàn diànyǐng, tīng yīnyuè huòzhě dú gùshi. Gēnjù hěn duō lǎoshī de jīngyàn, xìngqù shì zuì hǎo de lǎoshī.",
+            "english": "There are many methods for learning a foreign language, such as watching movies, listening to music, or reading stories. According to many teachers’ experience, interest is the best teacher."
+          },
+          {
+            "hanzi": "如果只背课本的话，学习可能有点儿枯燥；可是只要把学习跟自己的爱好结合起来，学起来就会轻松得多。",
+            "pinyin": "Rúguǒ zhǐ bèi kèběn dehuà, xuéxí kěnéng yǒudiǎnr kūzào; kěshì zhǐyào bǎ xuéxí gēn zìjǐ de àihào jiéhé qǐlái, xué qǐlái jiù huì qīngsōng de duō.",
+            "english": "If you only memorize the textbook, studying can be a bit dry; however, as long as you combine study with your own hobbies, learning becomes much easier."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What examples of language-learning methods are given?",
+            "answer_en": "Watching movies, listening to music, or reading stories."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What makes studying much easier according to the passage?",
+            "answer_en": "Combining study with your own hobbies."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe a city, restaurant, or friend using 不但……而且.",
+          "model_answer": {
+            "hanzi": "我的朋友不但聪明，而且非常愿意帮助别人。",
+            "pinyin": "Wǒ de péngyou búdàn cōngmíng, érqiě fēicháng yuànyì bāngzhù biérén.",
+            "english": "My friend is not only clever, but also very willing to help others."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "State a condition for success using 只要……就 or 只有……才.",
+          "model_answer": {
+            "hanzi": "只有每天坚持练习，才能把口语说流利。",
+            "pinyin": "Zhǐyǒu měitiān jiānchí liànxí, cái néng bǎ kǒuyǔ shuō liúlì.",
+            "english": "Only if you keep practicing every day can you speak fluently."
+          }
+        }
+      ],
+      "common_pitfall": "Use 或者 (or 或) for \"or\" in statements (\"tea or coffee\"), and 还是 for \"or\" in questions (\"tea or coffee?\").",
+      "pronunciation_focus": "不但 (búdàn) changes 不 to rising bú before fourth-tone dàn; 而且 (érqiě) pairs rising ér with third-tone qiě.",
+      "review": {
+        "can_do": [
+          "Connect clauses with 不但……而且, 可是, and 然后.",
+          "Express conditions with 如果……的话, 只要, and 只有.",
+          "Use 或者, 比如, 根据, and 直到."
+        ],
+        "entry_ids": [
+          521,
+          538,
+          586,
+          611,
+          645,
+          685,
+          686,
+          731,
+          733,
+          813,
+          819,
+          974,
+          978,
+          979
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-conditions-and-conjunctions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Not only… but also with 不但……而且",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: 只要……就 vs. 只有……才",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Give two examples of healthy fruit using 比如.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say he kept working until 9 p.m.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you can choose tea or juice.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What examples of language-learning methods are given?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What makes studying much easier according to the passage?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe a city, restaurant, or friend using 不但……而且.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: State a condition for success using 只要……就 or 只有……才.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which conjunction pair means \"only if…, only the",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"for example / such as\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-conditions-and-conjunctions--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"or\" in a statement?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-conditions-and-conjunctions--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-conditions-and-conjunctions--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

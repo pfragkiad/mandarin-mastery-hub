@@ -1,0 +1,1092 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-devices-and-websites",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Devices, Websites & E-Books",
+    "subtitle": "Powering devices on and off, headphones, websites, and e-books",
+    "description": "Talk about electricity, turning devices on and off, listening with headphones, reading e-books, and visiting websites.",
+    "slug": "devices-and-websites"
+  },
+  "classification": {
+    "primary_topic_id": "science-technology",
+    "topic_ids": [
+      "science-technology"
+    ],
+    "tags": [
+      "devices",
+      "ebooks",
+      "websites"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "digital-technology",
+    "subtopic_ids": [
+      "digital-technology",
+      "engineering-devices"
+    ]
+  },
+  "learning_objectives": [
+    "Talk about battery and electricity with 电.",
+    "Turn devices on and off using 开机 and 关机.",
+    "Discuss digital reading and browsing with 电子书, 耳机, and 网站."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "充": "Characters:充",
+    "先": "Characters:先",
+    "公": "Characters:公",
+    "关": "Characters:关",
+    "再": "Characters:再",
+    "准": "Characters:准",
+    "出": "Characters:出",
+    "刚": "Characters:刚",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "办": "Characters:办",
+    "半": "Characters:半",
+    "吃": "Characters:吃",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "喜": "Characters:喜",
+    "因": "Characters:因",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "声": "Characters:声",
+    "备": "Characters:备",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "完": "Characters:完",
+    "宝": "Characters:宝",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "带": "Characters:带",
+    "常": "Characters:常",
+    "开": "Characters:开",
+    "录": "Characters:录",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "必": "Characters:必",
+    "快": "Characters:快",
+    "息": "Characters:息",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "戴": "Characters:戴",
+    "房": "Characters:房",
+    "手": "Characters:手",
+    "才": "Characters:才",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "掉": "Characters:掉",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "更": "Characters:更",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "源": "Characters:源",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "知": "Characters:知",
+    "突": "Characters:突",
+    "站": "Characters:站",
+    "网": "Characters:网",
+    "考": "Characters:考",
+    "耳": "Characters:耳",
+    "脑": "Characters:脑",
+    "苹": "Characters:苹",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "资": "Characters:资",
+    "起": "Characters:起",
+    "轻": "Characters:轻",
+    "载": "Characters:载",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "道": "Characters:道",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "错": "Characters:错",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "音": "Characters:音",
+    "须": "Characters:须",
+    "飞": "Characters:飞",
+    "馆": "Characters:馆",
+    "马": "Characters:马"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Core HSK 3 technology vocabulary for everyday digital devices and online reading.",
+      "focus": "Use 开机 / 关机 for turning devices on or off, and 没电了 when a battery runs out."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0593",
+          "hanzi": "电",
+          "pinyin": "diàn",
+          "meaning_en": "electricity",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology"
+          ],
+          "primary_subtopic_id": "engineering-devices",
+          "subtopic_ids": [
+            "engineering-devices"
+          ],
+          "examples": [
+            {
+              "id": "ex-0593-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "家里有电吗？",
+              "pinyin": "jiā lǐ yǒu diàn ma?",
+              "english": "Is there electricity at home?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0593-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "电脑没有电了。",
+              "pinyin": "diànnǎo méiyǒu diàn le.",
+              "english": "The computer has run out of power.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 593
+            }
+          ]
+        },
+        {
+          "id": "w-0595",
+          "hanzi": "电子书",
+          "pinyin": "diànzǐshū",
+          "meaning_en": "e-book",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology",
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0595-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你看电子书吗？",
+              "pinyin": "nǐ kàn diànzǐshū ma?",
+              "english": "Do you read e-books?",
+              "teaching_note": "Short everyday spoken use of 电子书."
+            },
+            {
+              "id": "ex-0595-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她喜欢在手机上看电子书。",
+              "pinyin": "tā xǐhuan zài shǒujī shàng kàn diànzǐshū.",
+              "english": "She likes reading e-books on her phone.",
+              "teaching_note": "Simple descriptive or narrative use of 电子书."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 595
+            }
+          ]
+        },
+        {
+          "id": "w-0613",
+          "hanzi": "耳机",
+          "pinyin": "ěrjī",
+          "meaning_en": "headphones; earphones",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0613-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的耳机呢？",
+              "pinyin": "wǒ de ěrjī ne?",
+              "english": "Where are my earphones?",
+              "teaching_note": "Short everyday spoken use of 耳机."
+            },
+            {
+              "id": "ex-0613-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他用耳机听音乐。",
+              "pinyin": "tā yòng ěrjī tīng yīnyuè.",
+              "english": "He listens to music using earphones.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 613
+            }
+          ]
+        },
+        {
+          "id": "w-0653",
+          "hanzi": "关机",
+          "pinyin": "guānjī",
+          "meaning_en": "turn off a device",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0653-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "手机关机了。",
+              "pinyin": "shǒujī guānjī le.",
+              "english": "The phone is switched off.",
+              "teaching_note": "Short everyday spoken use of 关机."
+            },
+            {
+              "id": "ex-0653-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "考试时手机必须关机。",
+              "pinyin": "kǎoshì shí shǒujī bìxū guānjī.",
+              "english": "Mobile phones must be turned off during exams.",
+              "teaching_note": "Simple descriptive or narrative use of 关机."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 653
+            }
+          ]
+        },
+        {
+          "id": "w-0728",
+          "hanzi": "开机",
+          "pinyin": "kāijī",
+          "meaning_en": "turn on a device",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0728-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "电脑开机了吗？",
+              "pinyin": "diànnǎo kāijī le ma?",
+              "english": "Is the computer on?",
+              "teaching_note": "Short everyday spoken use of 开机."
+            },
+            {
+              "id": "ex-0728-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上课前请先开机。",
+              "pinyin": "shàngkè qián qǐng xiān kāijī.",
+              "english": "Please turn on the computer before class.",
+              "teaching_note": "Simple descriptive or narrative use of 开机."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 728
+            }
+          ]
+        },
+        {
+          "id": "w-0873",
+          "hanzi": "网站",
+          "pinyin": "wǎngzhàn",
+          "meaning_en": "website",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology",
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0873-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你知道这个网站吗？",
+              "pinyin": "nǐ zhīdào zhège wǎngzhàn ma?",
+              "english": "Do you know this website?",
+              "teaching_note": "Short everyday spoken use of 网站."
+            },
+            {
+              "id": "ex-0873-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生在网站上学习汉语。",
+              "pinyin": "xuéshēng zài wǎngzhàn shàng xuéxí Hànyǔ.",
+              "english": "The students study Chinese on a website.",
+              "teaching_note": "Simple descriptive or narrative use of 网站."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 873
+            }
+          ]
+        },
+        {
+          "id": "w-0052",
+          "hanzi": "房间",
+          "pinyin": "fángjiān",
+          "meaning_en": "room",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects",
+            "places-directions"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0052-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我的房间很小。",
+              "pinyin": "wǒ de fángjiān hěn xiǎo.",
+              "english": "My room is small.",
+              "teaching_note": "房间 is a room; 很小 describes its physical size."
+            },
+            {
+              "id": "ex-0052-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有三个大房间。",
+              "pinyin": "xuéxiào lǐ yǒu sān gè dà fángjiān.",
+              "english": "There are three large rooms at the school.",
+              "teaching_note": "School or study context showing 房间 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 52
+            }
+          ]
+        },
+        {
+          "id": "w-0189",
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "meaning_en": "mobile phone",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology",
+            "communication-social",
+            "home-objects"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0189-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的手机。",
+              "pinyin": "zhè shì wǒ de shǒujī.",
+              "english": "This is my mobile phone.",
+              "teaching_note": "手机 is a mobile phone; 这 points to the device being identified."
+            },
+            {
+              "id": "ex-0189-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "上课的时候请不要玩手机。",
+              "pinyin": "shàngkè de shíhou qǐng búyào wán shǒujī.",
+              "english": "Please don't play with your phone during class.",
+              "teaching_note": "Short everyday instruction or request using 手机; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 189
+            }
+          ]
+        },
+        {
+          "id": "w-0255",
+          "hanzi": "一半",
+          "pinyin": "yíbàn",
+          "meaning_en": "half",
+          "primary_pos_id": "numeral",
+          "pos_ids": [
+            "numeral",
+            "quantifier"
+          ],
+          "primary_topic_id": "numbers-quantities",
+          "topic_ids": [
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0255-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个苹果我吃了一半。",
+              "pinyin": "zhège píngguǒ wǒ chī le yíbàn.",
+              "english": "I ate half of this apple.",
+              "teaching_note": "The apple is introduced as the topic; 一半 states that half was eaten."
+            },
+            {
+              "id": "ex-0255-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天有一半的学生没有来上课。",
+              "pinyin": "jīntiān yǒu yíbàn de xuésheng méiyǒu lái shàngkè.",
+              "english": "Half the students didn’t come to class today.",
+              "teaching_note": "The fraction describes the share of students who missed class."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 255
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 电 (diàn)",
+        "explanation": "电 (diàn) means “electricity” (noun).",
+        "example_id": "ex-0593-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 电子书 (diànzǐshū)",
+        "explanation": "电子书 (diànzǐshū) means “e-book” (noun).",
+        "example_id": "ex-0595-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0593-1",
+      "ex-0595-1",
+      "ex-0613-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "According to the passage, why should you turn off your phone early at night?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "So that you can sleep better.",
+          "explanation": "The passage says 这样睡得更好."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write one sentence using 电子书 or 网站 and one using 关机 or 开机.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我在这个网站下载了一本电子书，看完就关机休息。",
+          "explanation": "Use 网站/电子书 for digital content and 关机/开机 for device power."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to power off a device\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "开机",
+              "pinyin": "kāijī",
+              "meaning_en": "turn on a device"
+            },
+            {
+              "id": "b",
+              "hanzi": "关机",
+              "pinyin": "guānjī",
+              "meaning_en": "turn off a device"
+            },
+            {
+              "id": "c",
+              "hanzi": "电",
+              "pinyin": "diàn",
+              "meaning_en": "electricity"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "关机 means turning a device off."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"headphones\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "耳机",
+              "pinyin": "ěrjī",
+              "meaning_en": "headphones"
+            },
+            {
+              "id": "b",
+              "hanzi": "网站",
+              "pinyin": "wǎngzhàn",
+              "meaning_en": "website"
+            },
+            {
+              "id": "c",
+              "hanzi": "电子书",
+              "pinyin": "diànzǐshū",
+              "meaning_en": "e-book"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "耳机 means earphones or headphones."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"website\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "电子书",
+              "pinyin": "diànzǐshū",
+              "meaning_en": "e-book"
+            },
+            {
+              "id": "b",
+              "hanzi": "网站",
+              "pinyin": "wǎngzhàn",
+              "meaning_en": "website"
+            },
+            {
+              "id": "c",
+              "hanzi": "开机",
+              "pinyin": "kāijī",
+              "meaning_en": "turn on"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "网站 means website."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Reading an E-Book on the Train",
+        "context_en": "Linlin asks her friend about the headphones and e-book he is using.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你戴着耳机在听什么呢？",
+            "pinyin": "Nǐ dài zhe ěrjī zài tīng shénme ne?",
+            "english": "What are you listening to with your headphones?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我在听一本电子书的录音，这个网站上的资源很多。",
+            "pinyin": "Wǒ zài tīng yì běn diànzǐshū de lùyīn, zhège wǎngzhàn shàng de zīyuán hěn duō.",
+            "english": "I’m listening to the audio of an e-book; this website has lots of resources."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "真不错！我的手机刚才没电关机了，正准备充电呢。",
+            "pinyin": "Zhēn búcuò! Wǒ de shǒujī gāngcái méi diàn guānjī le, zhèng zhǔnbèi chōngdiàn ne.",
+            "english": "Nice! My phone just ran out of battery and shut off, so I’m about to charge it."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "充一会儿再开机吧，我有充电宝。",
+            "pinyin": "Chōng yíhuìr zài kāijī ba, wǒ yǒu chōngdiànbǎo.",
+            "english": "Charge it for a bit before turning it back on—I have a power bank."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Saying a device has no power",
+          "explanation_en": "Use 没电了 (méi diàn le) after a device name to say its battery is dead or there is no electricity.",
+          "pattern_hanzi": "<Device> + 没电了",
+          "pattern_pinyin": "<Device> + méi diàn le",
+          "pattern_pseudo_translation": "<Device> + has no electricity (now)",
+          "examples": [
+            {
+              "hanzi": "我的耳机没电了，听不见声音。",
+              "pinyin": "Wǒ de ěrjī méi diàn le, tīng bu jiàn shēngyīn.",
+              "english": "My headphones ran out of battery; I can’t hear any sound."
+            },
+            {
+              "hanzi": "电脑突然没电关机了。",
+              "pinyin": "Diànnǎo tūrán méi diàn guānjī le.",
+              "english": "The computer suddenly ran out of power and shut off."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Turning a device on or off",
+          "explanation_en": "开机 (kāijī) and 关机 (guānjī) mean powering a device on or off; they usually stand without a separate object.",
+          "pattern_hanzi": "把 + <Device> + 开机 / 关机",
+          "pattern_pinyin": "bǎ + <Device> + kāijī / guānjī",
+          "pattern_pseudo_translation": "take + <Device> + power on / power off",
+          "examples": [
+            {
+              "hanzi": "请把手机关机，电影马上开始了。",
+              "pinyin": "Qǐng bǎ shǒujī guānjī, diànyǐng mǎshàng kāishǐ le.",
+              "english": "Please turn off your phone; the movie is about to start."
+            },
+            {
+              "hanzi": "我早上到办公室以后才开机。",
+              "pinyin": "Wǒ zǎoshang dào bàngōngshì yǐhòu cái kāijī.",
+              "english": "I only turn on my computer after arriving at the office in the morning."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about digital reading, headphones, and websites.",
+        "model": {
+          "hanzi": "我喜欢在这个网站上看电子书。",
+          "pinyin": "Wǒ xǐhuan zài zhège wǎngzhàn shàng kàn diànzǐshū.",
+          "english": "I like reading e-books on this website."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you wear headphones when studying in the library.",
+            "model_answer": {
+              "hanzi": "我在图书馆学习的时候会戴耳机。",
+              "pinyin": "Wǒ zài túshūguǎn xuéxí de shíhou huì dài ěrjī.",
+              "english": "I wear headphones when studying in the library."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say the plane is about to take off, so please power off.",
+            "model_answer": {
+              "hanzi": "飞机要起飞了，请大家关机。",
+              "pinyin": "Fēijī yào qǐfēi le, qǐng dàjiā guānjī.",
+              "english": "The plane is about to take off; please power off your devices."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this website is very useful for learning Chinese.",
+            "model_answer": {
+              "hanzi": "这个网站对学汉语很有用。",
+              "pinyin": "Zhège wǎngzhàn duì xué Hànyǔ hěn yǒuyòng.",
+              "english": "This website is very useful for learning Chinese."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Digital Study Habits",
+        "paragraphs": [
+          {
+            "hanzi": "现在很多学生喜欢用电脑或手机看电子书，因为带起来很轻，找词也很快。",
+            "pinyin": "Xiànzài hěn duō xuéshēng xǐhuan yòng diànnǎo huò shǒujī kàn diànzǐshū, yīnwèi dài qǐlái hěn qīng, zhǎo cí yě hěn kuài.",
+            "english": "Nowadays many students like using a computer or phone to read e-books, because they are light to carry and quick for looking up words."
+          },
+          {
+            "hanzi": "不过晚上休息以前，最好早点儿把手机关机，这样睡得更好。",
+            "pinyin": "Búguò wǎnshang xiūxi yǐqián, zuìhǎo zǎodiǎnr bǎ shǒujī guānjī, zhèyàng shuì de gèng hǎo.",
+            "english": "However, before resting at night, it is best to turn off your phone a little earlier so you sleep better."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Why do many students like reading e-books?",
+            "answer_en": "Because they are light to carry and quick for looking up words."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What advice does the passage give before sleeping?",
+            "answer_en": "Turn off your phone earlier at night."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say whether you prefer paper books or 电子书, and why.",
+          "model_answer": {
+            "hanzi": "出门的时候我喜欢看电子书，因为很方便。",
+            "pinyin": "Chūmén de shíhou wǒ xǐhuan kàn diànzǐshū, yīnwèi hěn fāngbiàn.",
+            "english": "When going out I like reading e-books because it is very convenient."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain when you use 耳机 or visit a useful 网站.",
+          "model_answer": {
+            "hanzi": "坐地铁的时候我常常戴耳机听音乐。",
+            "pinyin": "Zuò dìtiě de shíhou wǒ chángcháng dài ěrjī tīng yīnyuè.",
+            "english": "When taking the subway I often wear headphones to listen to music."
+          }
+        }
+      ],
+      "common_pitfall": "Do not say *关机手机 (*guānjī shǒujī). Since 机 already means \"device\", say 把手机关机 or 关掉手机.",
+      "pronunciation_focus": "耳机 (ěrjī) starts with the retroflex third-tone ěr followed by high first-tone jī.",
+      "review": {
+        "can_do": [
+          "Say a device is out of battery with 没电了.",
+          "Use 开机 and 关机 naturally.",
+          "Talk about e-books, headphones, and websites."
+        ],
+        "entry_ids": [
+          593,
+          595,
+          613,
+          653,
+          728,
+          873
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-devices-and-websites--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Saying a device has no power",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-devices-and-websites--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Turning a device on or off",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you wear headphones when studying in the library.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-devices-and-websites--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the plane is about to take off, so please power off.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-devices-and-websites--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this website is very useful for learning Chinese.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Why do many students like reading e-books?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-devices-and-websites--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What advice does the passage give before sleeping?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Say whether you prefer paper books or 电子书, and why.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-devices-and-websites--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Explain when you use 耳机 or visit a useful 网站.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-devices-and-websites--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-devices-and-websites--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to power off a device\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-devices-and-websites--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"headphones\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-devices-and-websites--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"website\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-devices-and-websites--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-devices-and-websites--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
+}

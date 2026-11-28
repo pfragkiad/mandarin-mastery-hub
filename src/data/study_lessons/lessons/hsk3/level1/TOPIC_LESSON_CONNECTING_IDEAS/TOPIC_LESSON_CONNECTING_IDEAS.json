@@ -220,7 +220,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 53
+              "entry_id": 54
             }
           ],
           "primary_subtopic_id": null,
@@ -527,7 +527,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 271
+              "entry_id": 272
             }
           ],
           "pos_note": "Three common functions: verb of location (我在家), preposition/coverb introducing a place (我们在学校上课), and progressive adverb before a verb (我在看书). The first two are illustrated here; the primary lexicographic POS remains Verb.",
@@ -927,7 +927,7 @@
           78,
           79,
           253,
-          271,
+          272,
           285,
           286
         ]

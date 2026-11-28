@@ -9,7 +9,7 @@ import { importLevel2 } from './import-hsk-level2.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
-const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.2.json', 'utf8');
+const sourceRaw = readFileSync('importer/hsk/hsk3_level2_1.1.3.json', 'utf8');
 const source = JSON.parse(sourceRaw), topics = read('importer/hsk/hsk3_topics.json');
 const vocabulary = readVocabulary();
 
@@ -25,7 +25,7 @@ function fixture(t, edit = () => {}) {
     const pin = createHash('sha256').update(JSON.stringify(inputs.source)).digest('hex');
     for (const e of inputs.vocabulary.entries.filter(e => e.hskLevel === 2)) e.studyMetadata.sourceSha256 = pin;
   }
-  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.2.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
+  const paths = { sourcePath: join(directory, 'hsk3_level2_1.1.3.json'), topicsPath: join(directory, 'topics.json'), vocabularyPath: join(directory, 'vocabulary.json') };
   for (const key of ['source', 'topics', 'vocabulary']) writeFileSync(paths[`${key}Path`], key === 'source' && JSON.stringify(inputs.source) === JSON.stringify(source) ? sourceRaw : JSON.stringify(inputs[key]));
   return paths;
 }
@@ -60,7 +60,8 @@ test('replaces every legacy example even with matching text, preserving entry ki
     assert.deepEqual(entry.audio, audio);
     assert.equal(entry.examples.length, 2);
     assert.ok(entry.examples.every(ex => !ex.id.startsWith('legacy-') && ex.audio === null));
-    assert.ok(entry.secondarySources.some(s => s.sourceName === 'HSK3_Level2_200_Official_IDs_POS_Examples_Classified.xlsx'));
+    assert.ok(entry.secondarySources.every(s => s.sourceId === String(entry.hsk_index)));
+    assert.ok(!entry.secondarySources.some(s => s.sourceName.endsWith('.xlsx')));
   }
 });
 

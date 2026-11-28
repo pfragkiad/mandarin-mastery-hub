@@ -64,13 +64,13 @@ Level 6 follows [the 1.0.1 handoff](../../../importer/hsk/hsk3_level6_1.0.1.json
 1,800 word records (IDs 3601–5400) and 3,600 examples. The 850 changed official
 serials are reconciled to the PDF currently linked by the official HSK site.
 UUIDs, record order, example IDs/content and all 1,313 original word recordings
-remain exact; 65 reviewed supplemental recordings are added. The full compact level is stored
+remain exact; 78 reviewed/source-screened supplemental recordings are added. The full compact level is stored
 as two ordinary JSON arrays:
 
 | Part | Entries | UTF-8 bytes |
 | --- | ---: | ---: |
-| [level-6-part-1.json](level-6-part-1.json) | 900 | 5,138,154 |
-| [level-6-part-2.json](level-6-part-2.json) | 900 | 5,270,502 |
+| [level-6-part-1.json](level-6-part-1.json) | 900 | 5,002,504 |
+| [level-6-part-2.json](level-6-part-2.json) | 900 | 5,136,351 |
 
 Generate with `node scripts/import-hsk-level6.mjs --write` from the repository
 root; omit `--write` for an audit, and add `--report <path>` to save it. The
@@ -81,17 +81,16 @@ leading U+00AD in example 4491/written is removed from Chinese and pinyin during
 import, with an explicit normalization note; the source file remains unchanged.
 The literal slash in 5257/conversational remains punctuation.
 
-Level 6 has 1,378 word recordings (1,313 original + 65 reviewed); sentence audio remains unattached. Accepted replacement statuses
+Level 6 has 1,391 word recordings (1,313 original + 65 reviewed + 13 source/transcription-screened additions); sentence audio remains unattached. Accepted replacement statuses
 and language-review-needed statuses remain distinct; all entries remain drafts.
 The [font audit](../../../reports/hsk-level6-1.0.0-fonts.json) records public font
 coverage additions. `.gitattributes` preserves the Level 6 part bytes across
 platform checkouts so the audit checksums remain stable.
 
-`studyMetadata.numberingRevision.previousId` retains the earlier official serial
-for each word. Current `hskSource`, source references and `studyMetadata.source`
-point to 1.0.1, while `secondarySources` retains versioned earlier references.
-Repeat imports recognize the exact old/current source checksum and preserve the
-same word's UUID/audio when two official serials swap positions.
+All runtime HSK indices and source references use current official numbers.
+Historical source numbers and prior source citations are retained only in
+[offline reference history](../../../importer/data/hsk-app-reference-history/README.md).
+Reimports preserve UUIDs/audio while keeping historical numbering outside app data.
 
 ## Current Levels 1-5 numbering migration
 
@@ -100,11 +99,11 @@ Level 4 **1.1.2** and Level 5 **1.0.6**. Earlier version descriptions above reco
 the preceding sentence-review releases. The current files update 1,092 official
 indices while preserving every UUID, order, lexical reading and all 2,988 pre-migration word
 recordings. Six POS assignments and the two adverbial 白 examples are corrected.
-`studyMetadata.numberingRevision.previousId` supports exact legacy lesson bindings;
+All lesson and curriculum bindings use current official indices directly;
 `syllabusPinyin` preserves official citation readings separately from recorded speech.
 
-Each entry occupies one compact JSON line. After the supplemental audio import,
-UTF-8 sizes are 1,339,280 / 885,524 / 2,086,082 / 4,284,656 / 7,808,910 bytes for
+Each entry occupies one compact JSON line. After reference cleanup,
+UTF-8 sizes are 1,182,128 / 780,324 / 1,931,468 / 3,971,631 / 7,307,447 bytes for
 Levels 1-5; no split is needed. See the
 [runtime import audit](../../../reports/hsk-level1-5-official-numbering-import.json)
 and [migration report](../../../reports/hsk-level1-5-official-numbering-migration.md).
@@ -122,3 +121,5 @@ catalogue. The neutral-tone sidecar has thirteen exact word recordings, includin
 without a pronunciation match and both non-neutral 呀 candidates remain unattached;
 25 reviewed yán slots replace the old quarantined clip. Repeat imports and both
 official-ID validators preserve these additions and every older attachment.
+
+The [whole-app reference audit](../../../reports/hsk-current-app-references.md) checks all 5,400 words, 100 lessons, curriculum and neutral-audio bindings. No historical HSK IDs are exported to the browser.

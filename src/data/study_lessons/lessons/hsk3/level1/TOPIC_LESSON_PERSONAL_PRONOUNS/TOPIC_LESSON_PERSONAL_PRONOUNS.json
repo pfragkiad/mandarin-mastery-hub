@@ -383,7 +383,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 201
+              "entry_id": 202
             }
           ],
           "primary_subtopic_id": null,
@@ -426,7 +426,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 202
+              "entry_id": 204
             }
           ],
           "primary_subtopic_id": null,
@@ -469,7 +469,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 203
+              "entry_id": 201
             }
           ],
           "primary_subtopic_id": null,
@@ -512,7 +512,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 204
+              "entry_id": 203
             }
           ],
           "primary_subtopic_id": null,
@@ -949,9 +949,9 @@
           146,
           148,
           200,
-          201,
           202,
-          203,
+          204,
+          201,
           221,
           222
         ]

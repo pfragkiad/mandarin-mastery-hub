@@ -1,0 +1,809 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-safety-and-rules",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Staying Safe in Daily Life",
+    "subtitle": "Talking about safety and being safe",
+    "description": "Learn to use 安全 to describe safe places, safe travel, and everyday safety.",
+    "slug": "safety-and-rules"
+  },
+  "classification": {
+    "primary_topic_id": "society-government-law",
+    "topic_ids": [
+      "society-government-law"
+    ],
+    "tags": [
+      "safety",
+      "society",
+      "precautions"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "law-rights",
+    "subtopic_ids": [
+      "law-rights"
+    ]
+  },
+  "learning_objectives": [
+    "Use 安全 as a stative verb/adjective to describe safe situations.",
+    "Use 安全 as a noun in phrases like 注意安全 (\"pay attention to safety\").",
+    "Wish someone a safe trip or confirm that someone arrived safely."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "交": "Characters:交",
+    "亮": "Characters:亮",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "信": "Characters:信",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "全": "Characters:全",
+    "公": "Characters:公",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "区": "Characters:区",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "发": "Characters:发",
+    "只": "Characters:只",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "告": "Characters:告",
+    "和": "Characters:和",
+    "回": "Characters:回",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "声": "Characters:声",
+    "外": "Characters:外",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "定": "Characters:定",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "己": "Characters:己",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "心": "Characters:心",
+    "快": "Characters:快",
+    "息": "Characters:息",
+    "意": "Characters:意",
+    "慢": "Characters:慢",
+    "我": "Characters:我",
+    "才": "Characters:才",
+    "放": "Characters:放",
+    "既": "Characters:既",
+    "日": "Characters:日",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "更": "Characters:更",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "机": "Characters:机",
+    "条": "Characters:条",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "桌": "Characters:桌",
+    "河": "Characters:河",
+    "注": "Characters:注",
+    "泳": "Characters:泳",
+    "消": "Characters:消",
+    "深": "Characters:深",
+    "游": "Characters:游",
+    "灯": "Characters:灯",
+    "点": "Characters:点",
+    "狗": "Characters:狗",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "等": "Characters:等",
+    "红": "Characters:红",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "络": "Characters:络",
+    "绿": "Characters:绿",
+    "网": "Characters:网",
+    "老": "Characters:老",
+    "自": "Characters:自",
+    "舒": "Characters:舒",
+    "苹": "Characters:苹",
+    "落": "Characters:落",
+    "要": "Characters:要",
+    "讲": "Characters:讲",
+    "诉": "Characters:诉",
+    "请": "Characters:请",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "达": "Characters:达",
+    "过": "Characters:过",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "通": "Characters:通",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "降": "Characters:降",
+    "随": "Characters:随",
+    "雨": "Characters:雨",
+    "非": "Characters:非",
+    "飞": "Characters:飞",
+    "马": "Characters:马",
+    "骑": "Characters:骑",
+    "高": "Characters:高",
+    "黑": "Characters:黑"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Focused lesson on 安全 (ānquán), the HSK 3 entry under Society, Government & Law.",
+      "focus": "Use 注意安全 as a common farewell reminder and 很安全 to describe a place or method."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0505",
+          "hanzi": "安全",
+          "pinyin": "ānquán",
+          "meaning_en": "safe; safety",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "society-government-law",
+          "topic_ids": [
+            "society-government-law"
+          ],
+          "primary_subtopic_id": "law-rights",
+          "subtopic_ids": [
+            "law-rights"
+          ],
+          "examples": [
+            {
+              "id": "ex-0505-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条路安全吗？",
+              "pinyin": "zhè tiáo lù ānquán ma?",
+              "english": "Is this road safe?",
+              "teaching_note": "Short everyday spoken use of 安全."
+            },
+            {
+              "id": "ex-0505-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "晚上一个人回家要注意安全。",
+              "pinyin": "wǎnshang yí ge rén huí jiā yào zhùyì ānquán.",
+              "english": "Pay attention to safety when going home alone at night.",
+              "teaching_note": "Simple descriptive or narrative use of 安全."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 505
+            }
+          ]
+        },
+        {
+          "id": "w-0064",
+          "hanzi": "狗",
+          "pinyin": "gǒu",
+          "meaning_en": "dog",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "animals-weather",
+          "topic_ids": [
+            "animals-weather"
+          ],
+          "primary_subtopic_id": "animals-wildlife",
+          "subtopic_ids": [
+            "animals-wildlife"
+          ],
+          "examples": [
+            {
+              "id": "ex-0064-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这只狗很小。",
+              "pinyin": "zhè zhī gǒu hěn xiǎo.",
+              "english": "This dog is very small.",
+              "teaching_note": "Short beginner-level description illustrating 狗 in context."
+            },
+            {
+              "id": "ex-0064-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有两只狗。",
+              "pinyin": "zhèlǐ yǒu liǎng zhī gǒu.",
+              "english": "There are two dogs here.",
+              "teaching_note": "Short beginner-level description illustrating 狗 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 64
+            }
+          ]
+        },
+        {
+          "id": "w-0175",
+          "hanzi": "上",
+          "pinyin": "shàng",
+          "meaning_en": "above; on",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0175-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "书在桌子上。",
+              "pinyin": "shū zài zhuōzi shàng.",
+              "english": "The book is on the table.",
+              "teaching_note": "上 is a positional word meaning on top of or above something."
+            },
+            {
+              "id": "ex-0175-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "桌子上有两个苹果。",
+              "pinyin": "zhuōzi shàng yǒu liǎng ge píngguǒ.",
+              "english": "There are two apples on the table.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 175
+            }
+          ]
+        },
+        {
+          "id": "w-0212",
+          "hanzi": "外",
+          "pinyin": "wài",
+          "meaning_en": "outside",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0212-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他在门外。",
+              "pinyin": "tā zài mén wài.",
+              "english": "He is outside the door.",
+              "teaching_note": "门外 locates someone outside the door; 外 means outside."
+            },
+            {
+              "id": "ex-0212-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在门外等一下。",
+              "pinyin": "qǐng zài ménwài děng yíxià.",
+              "english": "Please wait outside the door for a moment.",
+              "teaching_note": "Short everyday instruction or request using 外; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 212
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 安全 (ānquán)",
+        "explanation": "安全 (ānquán) means “safe; safety” (adjective).",
+        "example_id": "ex-0505-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 狗 (gǒu)",
+        "explanation": "狗 (gǒu) means “dog” (noun).",
+        "example_id": "ex-0064-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0505-1",
+      "ex-0064-1",
+      "ex-0175-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What did the students learn about crossing the street on Safety Day?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "They should watch the traffic lights when crossing the street.",
+          "explanation": "The passage says 过马路要看红绿灯."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write a short reminder to a friend using 注意安全.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "晚上骑车回家一定要注意安全！",
+          "explanation": "Use 注意安全 to remind someone to be careful."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which phrase means \"pay attention to safety\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "注意安全",
+              "pinyin": "zhùyì ānquán",
+              "meaning_en": "pay attention to safety"
+            },
+            {
+              "id": "b",
+              "hanzi": "很安全",
+              "pinyin": "hěn ānquán",
+              "meaning_en": "very safe"
+            },
+            {
+              "id": "c",
+              "hanzi": "安全日",
+              "pinyin": "ānquán rì",
+              "meaning_en": "safety day"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "注意安全 is the standard reminder to stay safe."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "What tone pattern does 安全 have?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "1st + 2nd",
+              "pinyin": "ānquán",
+              "meaning_en": "first tone + second tone"
+            },
+            {
+              "id": "b",
+              "hanzi": "4th + 2nd",
+              "pinyin": "ànquán",
+              "meaning_en": "fourth + second"
+            },
+            {
+              "id": "c",
+              "hanzi": "1st + 4th",
+              "pinyin": "ānquàn",
+              "meaning_en": "first + fourth"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "安 is first tone (ān) and 全 is second tone (quán)."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Heading Home Late",
+        "context_en": "Two friends say goodbye after dinner and remind each other to get home safely.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "天黑了，你一个人骑车回家安全吗？",
+            "pinyin": "Tiān hēi le, nǐ yí ge rén qí chē huí jiā ānquán ma?",
+            "english": "It’s dark—is it safe for you to ride your bike home alone?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "放心吧，这条路晚上灯很亮，非常安全。",
+            "pinyin": "Fàngxīn ba, zhè tiáo lù wǎnshang dēng hěn liàng, fēicháng ānquán.",
+            "english": "Don’t worry, the lights on this road are bright at night—it’s very safe."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那就好，过马路的时候还是要注意安全。",
+            "pinyin": "Nà jiù hǎo, guò mǎlù de shíhou háishi yào zhùyì ānquán.",
+            "english": "That’s good; still, be careful about safety when crossing the street."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好的，我安全到家以后给你发消息。",
+            "pinyin": "Hǎode, wǒ ānquán dào jiā yǐhòu gěi nǐ fā xiāoxi.",
+            "english": "Okay, I’ll send you a message after I get home safely."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Reminding someone to stay safe",
+          "explanation_en": "注意安全 (zhùyì ānquán) is the standard everyday expression for \"be careful / stay safe\".",
+          "pattern_hanzi": "<Activity> + 要注意安全",
+          "pattern_pinyin": "<Activity> + yào zhùyì ānquán",
+          "pattern_pseudo_translation": "<Activity> + need pay attention to safety",
+          "examples": [
+            {
+              "hanzi": "下雨天开车，大家一定要注意安全。",
+              "pinyin": "Xià yǔ tiān kāichē, dàjiā yídìng yào zhùyì ānquán.",
+              "english": "When driving on rainy days, everyone must pay attention to safety."
+            },
+            {
+              "hanzi": "孩子在公园玩儿时，家长要注意安全。",
+              "pinyin": "Háizi zài gōngyuán wánr shí, jiāzhǎng yào zhùyì ānquán.",
+              "english": "When children play in the park, parents should watch out for safety."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Doing something safely",
+          "explanation_en": "Place 安全 before a verb like 到家 or 到达 to mean arriving safely.",
+          "pattern_hanzi": "<Subject> + 安全 + <Verb>",
+          "pattern_pinyin": "<Subject> + ānquán + <Verb>",
+          "pattern_pseudo_translation": "<Subject> + safely + <Verb>",
+          "examples": [
+            {
+              "hanzi": "飞机已经安全降落了。",
+              "pinyin": "Fēijī yǐjīng ānquán jiàngluò le.",
+              "english": "The plane has already landed safely."
+            },
+            {
+              "hanzi": "坐地铁上班既快又安全。",
+              "pinyin": "Zuò dìtiě shàngbān jì kuài yòu ānquán.",
+              "english": "Taking the subway to work is both fast and safe."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Use 安全 as a noun, adjective, and adverb.",
+        "model": {
+          "hanzi": "这个小区晚上很安全。",
+          "pinyin": "Zhège xiǎoqū wǎnshang hěn ānquán.",
+          "english": "This neighborhood is very safe at night."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Remind a friend who is traveling to stay safe.",
+            "model_answer": {
+              "hanzi": "你路上一定要注意安全！",
+              "pinyin": "Nǐ lùshang yídìng yào zhùyì ānquán!",
+              "english": "Be sure to stay safe on the road!"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say everyone arrived home safely.",
+            "model_answer": {
+              "hanzi": "大家都安全到家了。",
+              "pinyin": "Dàjiā dōu ānquán dào jiā le.",
+              "english": "Everyone arrived home safely."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say swimming in a deep river is not safe.",
+            "model_answer": {
+              "hanzi": "在很深的河里游泳不安全。",
+              "pinyin": "Zài hěn shēn de hé lǐ yóuyǒng bù ānquán.",
+              "english": "Swimming in a very deep river is not safe."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "School Safety Day",
+        "paragraphs": [
+          {
+            "hanzi": "今天是学校的“安全日”，老师给大家讲了交通安全和网络安全。",
+            "pinyin": "Jīntiān shì xuéxiào de “Ānquán Rì”, lǎoshī gěi dàjiā jiǎng le jiāotōng ānquán hé wǎngluò ānquán.",
+            "english": "Today is the school’s “Safety Day,” and the teacher talked to everyone about traffic safety and internet safety."
+          },
+          {
+            "hanzi": "同学们学到：过马路要看红绿灯，上网不要随便告诉别人自己的信息，这样才更安全。",
+            "pinyin": "Tóngxuémen xuédào: guò mǎlù yào kàn hóng-lǜdēng, shàngwǎng búyào suíbiàn gàosu biérén zìjǐ de xìnxī, zhèyàng cái gèng ānquán.",
+            "english": "The students learned: watch the traffic lights when crossing the street, and don’t casually tell others your personal information online—that way you’re safer."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What two kinds of safety did the teacher talk about?",
+            "answer_en": "Traffic safety and internet safety."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What should students avoid doing online?",
+            "answer_en": "Casually telling others their personal information."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say goodbye to a friend who is about to ride a bike or drive.",
+          "model_answer": {
+            "hanzi": "路上慢点儿，注意安全，到了告诉我一声。",
+            "pinyin": "Lùshang màn diǎnr, zhùyì ānquán, dào le gàosu wǒ yì shēng.",
+            "english": "Take it slow on the road, stay safe, and let me know when you arrive."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say one place or habit that you think is very safe.",
+          "model_answer": {
+            "hanzi": "坐高铁去别的城市既舒服又安全。",
+            "pinyin": "Zuò gāotiě qù biéde chéngshì jì shūfu yòu ānquán.",
+            "english": "Taking the high-speed train to another city is both comfortable and safe."
+          }
+        }
+      ],
+      "common_pitfall": "Use 很安全 to describe something that is safe; do not say *是安全 without 的.",
+      "pronunciation_focus": "安全 (ānquán) pairs a flat first tone ān with a rising second tone quán.",
+      "review": {
+        "can_do": [
+          "Use 安全 as an adjective, noun, and adverb.",
+          "Remind someone with 注意安全."
+        ],
+        "entry_ids": [
+          505
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-safety-and-rules--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Reminding someone to stay safe",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-safety-and-rules--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Doing something safely",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Remind a friend who is traveling to stay safe.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-safety-and-rules--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say everyone arrived home safely.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-safety-and-rules--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say swimming in a deep river is not safe.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What two kinds of safety did the teacher talk about?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-safety-and-rules--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What should students avoid doing online?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Say goodbye to a friend who is about to ride a bike or drive.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-safety-and-rules--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say one place or habit that you think is very safe.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-safety-and-rules--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-safety-and-rules--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which phrase means \"pay attention to safety\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-safety-and-rules--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: What tone pattern does 安全 have?",
+            "optional": true,
+            "target_id": "recall-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-safety-and-rules--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-safety-and-rules--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 10
+}

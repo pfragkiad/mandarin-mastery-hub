@@ -75,12 +75,12 @@ Validate changed outputs with the relevant data, pronunciation, geometry, and fo
 
 - `import-lessons-v3.4.0.py` — historical deterministic Core/Other Lessons importer (coverage v1.1.5). Checks the backward-compatible general-schema extension, all 65 existing/staged lessons, exact dictionary/catalog bindings, stable progress, and five exact CMX-bound usage notes before `--write`. `--report` records hashes and validation. Requires Python with `jsonschema`; tests: `python scripts/import-lessons-v3.4.0.test.py`.
 
-- `import-lessons-v3.6.1.py` — current four-package importer (Core/HSK v3.6.1, Other Lessons v3.6.0). Audit by default; `--write` copies exact source bytes after validating all 65 lessons, old/new schema compatibility, 574 HSK bindings, catalog references, all existing identities, 146 three-line patterns and both curricula. `--report` records source and per-file hashes. Requires `jsonschema`. Tests: `python scripts/import-lessons-v3.6.1.test.py`.
+- `import-lessons-v3.6.1.py` — historical four-package importer (Core/HSK v3.6.1, Other Lessons v3.6.0). Audit by default; `--write` copies exact source bytes after validating all 65 lessons, old/new schema compatibility, 574 HSK bindings, catalog references, all existing identities, 146 three-line patterns and both curricula. `--report` records source and per-file hashes. Requires `jsonschema`. Tests: `python scripts/import-lessons-v3.6.1.test.py`.
 
 ## Levels 1-5 official-numbering migration tools
 
 - `reconcile-hsk-level1-5-numbering.py --write` / `--check` builds/checks five new versioned handoffs and audio manifests against the preserved official PDF and exact runtime binding ledger.
-- `hsk_numbering.py` supplies the read-only legacy serial view for immutable lesson package validation; never write that compatibility view to vocabulary.
+- `hsk-runtime-references.mjs` keeps historical HSK fields/citations outside all runtime vocabulary exports; offline source identities remain available for UUID-preserving imports.
 - Active `import-hsk-level1.mjs` through `import-hsk-level5.mjs` use source versions 1.7.2 / 1.1.2 / 1.1.3 / 1.1.2 / 1.0.6 and retain UUIDs, order and audio through explicit old/current checksum checks.
 - `build-character-hsk-examples.py` selects exact currently imported handoffs, preventing historical duplicate versions from being mixed into the sidecar.
 
@@ -94,3 +94,10 @@ See the [migration report](../reports/hsk-level1-5-official-numbering-migration.
 - `draft-hsk-level7-pinyin.py --write` / `--check` reproduces the assisted reading overlay, using pinned pypinyin/jieba versions, the recorded HSK lexicon, explicit contextual rules and the shared alignment bridge. `--tools-dir` supports dependencies outside the repo.
 - `hsk-level7-reading-lexicon.mjs` bridges offline drafting/validation to the existing frontend pinyin splitter and syllable inventory; it creates no runtime readings.
 - `validate-hsk-level7.mjs` checks all 5,600 official tuples, complete examples, exact target spans, unique Chinese/English text, shared alignment and compact output size. `--report <path>` saves a reproducible audit. It does not certify native fluency.
+
+## Current app-reference audit
+
+- `reconcile-hsk-app-references.mjs --write` / `--check` audits all current word/lesson/course/manifest/neutral-audio references; `--write` freezes removed metadata offline and strips historical HSK IDs from browser data.
+- `reconcile-lesson-hsk-labels.py --write` / `--check` updates only numeric labels in exported HTML/Markdown, preserving all lesson wording/layout.
+- `import-lessons-hsk3.py` validates the supplied Level 3 source package, normalizes exact source ID/headword/reading tuples offline, validates every combined course placement against current lesson refs, and normalizes companion labels before writing. It never adds an app compatibility map.
+- `hsk-runtime-references.test.mjs` guards preservation of corpus sentence IDs, recordings and language content during HSK metadata cleanup.

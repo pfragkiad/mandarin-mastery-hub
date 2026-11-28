@@ -8,7 +8,7 @@ import { join } from 'node:path';
 import { importLevel5 } from './import-hsk-level5.mjs';
 import { readVocabulary } from './vocabulary-store.mjs';
 
-const sourcePath = 'importer/hsk/hsk3_level5_1.0.6.json';
+const sourcePath = 'importer/hsk/hsk3_level5_1.0.7.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const vocabulary = readVocabulary();
 
@@ -22,7 +22,7 @@ function fixture(t, edit = () => {}, editSource) {
   let inputPath = sourcePath;
   if (editSource) {
     const next = structuredClone(source); editSource(next);
-    inputPath = join(directory, 'hsk3_level5_1.0.6.json');
+    inputPath = join(directory, 'hsk3_level5_1.0.7.json');
     writeFileSync(inputPath, JSON.stringify(next));
   }
   if (editSource) {
@@ -91,7 +91,7 @@ test('reimport retains exact word and sentence recording attachments', t => {
 test('keeps both displayed alternatives and binds the first sourced reading to its exact glyph', t => {
   const { data } = importLevel5(fixture(t));
   for (const [id, style, glyph, reading] of [[2084, 'conversational', '谁', 'shéi'], [2449, 'written', '熟', 'shú']]) {
-    const example = data.entries.find(e => e.studyMetadata?.numberingRevision?.previousId === id).examples.find(ex => ex.style === style);
+    const example = data.entries.find(e => e.hsk_index === id).examples.find(ex => ex.style === style);
     assert.ok(example.pinyinDisplay.includes('/'));
     assert.equal(example.tokens.find(token => token.text === glyph).pinyin, reading);
   }

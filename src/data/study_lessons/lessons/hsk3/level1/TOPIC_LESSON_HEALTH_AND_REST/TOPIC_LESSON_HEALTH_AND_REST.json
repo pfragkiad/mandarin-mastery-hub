@@ -515,7 +515,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 256
+              "entry_id": 260
             }
           ],
           "primary_subtopic_id": null,
@@ -559,7 +559,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 257
+              "entry_id": 261
             }
           ],
           "primary_subtopic_id": null,
@@ -871,7 +871,7 @@
           194,
           195,
           246,
-          257
+          261
         ]
       }
     }

@@ -1,0 +1,1497 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-seasons-holidays-days",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Seasons, Holidays & Days",
+    "subtitle": "Days before and after, seasons, holidays, and weekends",
+    "description": "Talk about relative days and years, the seasons, holidays, workdays, weekends, and time duration.",
+    "slug": "seasons-holidays-days"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar"
+    ],
+    "tags": [
+      "calendar",
+      "seasons",
+      "holidays"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name relative days and years: 前天, 后天, 前年, 后年, 工作日, 周末, and 新年.",
+    "Talk about seasons and breaks using 季, 季节, 假期, and 放假.",
+    "Express time lengths with 半天, 久, and 刻."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "久": "Characters:久",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "九": "Characters:九",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "假": "Characters:假",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "写": "Characters:写",
+    "冬": "Characters:冬",
+    "冷": "Characters:冷",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "分": "Characters:分",
+    "到": "Characters:到",
+    "刻": "Characters:刻",
+    "前": "Characters:前",
+    "动": "Characters:动",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "口": "Characters:口",
+    "只": "Characters:只",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "各": "Characters:各",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哪": "Characters:哪",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "四": "Characters:四",
+    "回": "Characters:回",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "好": "Characters:好",
+    "妹": "Characters:妹",
+    "始": "Characters:始",
+    "字": "Characters:字",
+    "季": "Characters:季",
+    "学": "Characters:学",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "山": "Characters:山",
+    "工": "Characters:工",
+    "常": "Characters:常",
+    "年": "Characters:年",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "快": "Characters:快",
+    "息": "Characters:息",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "才": "Characters:才",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "据": "Characters:据",
+    "放": "Characters:放",
+    "新": "Characters:新",
+    "旅": "Characters:旅",
+    "日": "Characters:日",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "星": "Characters:星",
+    "春": "Characters:春",
+    "是": "Characters:是",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "束": "Characters:束",
+    "来": "Characters:来",
+    "松": "Characters:松",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "根": "Characters:根",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "海": "Characters:海",
+    "游": "Characters:游",
+    "火": "Characters:火",
+    "点": "Characters:点",
+    "爬": "Characters:爬",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "的": "Characters:的",
+    "真": "Characters:真",
+    "秋": "Characters:秋",
+    "等": "Characters:等",
+    "算": "Characters:算",
+    "结": "Characters:结",
+    "美": "Characters:美",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "者": "Characters:者",
+    "能": "Characters:能",
+    "节": "Characters:节",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "议": "Characters:议",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "较": "Characters:较",
+    "过": "Characters:过",
+    "运": "Characters:运",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "附": "Characters:附",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "飞": "Characters:飞",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Calendar periods, holidays, seasons, and time-duration expressions.",
+      "focus": "Contrast 前天 / 后天 (days) with 前年 / 后年 (years), and use 放假 for going on break."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0513",
+          "hanzi": "半天",
+          "pinyin": "bàntiān",
+          "meaning_en": "half a day; a long while",
+          "primary_pos_id": "quantifier",
+          "pos_ids": [
+            "quantifier"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0513-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我等了半天！",
+              "pinyin": "wǒ děng le bàntiān!",
+              "english": "I've been waiting for ages!",
+              "teaching_note": "Short everyday spoken use of 半天."
+            },
+            {
+              "id": "ex-0513-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们上午上了半天课。",
+              "pinyin": "wǒmen shàngwǔ shàng le bàntiān kè.",
+              "english": "We had classes for half a day in the morning.",
+              "teaching_note": "Simple descriptive or narrative use of 半天."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 513
+            }
+          ]
+        },
+        {
+          "id": "w-0625",
+          "hanzi": "放假",
+          "pinyin": "fàngjià",
+          "meaning_en": "have a holiday; be on break",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0625-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们放假了！",
+              "pinyin": "wǒmen fàngjià le!",
+              "english": "Our holiday has started!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0625-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校下周开始放假。",
+              "pinyin": "xuéxiào xià zhōu kāishǐ fàngjià.",
+              "english": "The school break starts next week.",
+              "teaching_note": "Simple descriptive or narrative use of 放假."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 625
+            }
+          ]
+        },
+        {
+          "id": "w-0647",
+          "hanzi": "工作日",
+          "pinyin": "gōngzuòrì",
+          "meaning_en": "working day; weekday",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0647-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "明天是工作日吗？",
+              "pinyin": "míngtiān shì gōngzuòrì ma?",
+              "english": "Is tomorrow a working day?",
+              "teaching_note": "Short everyday spoken use of 工作日."
+            },
+            {
+              "id": "ex-0647-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "工作日这里人比较少。",
+              "pinyin": "gōngzuòrì zhèlǐ rén bǐjiào shǎo.",
+              "english": "There are fewer people here on weekdays.",
+              "teaching_note": "Simple descriptive or narrative use of 工作日."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 647
+            }
+          ]
+        },
+        {
+          "id": "w-0660",
+          "hanzi": "过去",
+          "pinyin": "guòqù",
+          "meaning_en": "the past; former times",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0660-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "过去我住在中国。",
+              "pinyin": "guòqù wǒ zhù zài Zhōngguó.",
+              "english": "I used to live in China.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0660-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "过去这里没有地铁。",
+              "pinyin": "guòqù zhèlǐ méiyǒu dìtiě.",
+              "english": "There used to be no subway here.",
+              "teaching_note": "过去 here means the past (noun), distinct from Level 2 directional verb 过去 (ID 350)."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 660
+            }
+          ]
+        },
+        {
+          "id": "w-0672",
+          "hanzi": "后年",
+          "pinyin": "hòunián",
+          "meaning_en": "the year after next",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0672-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "后年你去哪儿？",
+              "pinyin": "hòunián nǐ qù nǎr?",
+              "english": "Where are you going the year after next?",
+              "teaching_note": "Short everyday spoken use of 后年."
+            },
+            {
+              "id": "ex-0672-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "后年妹妹要上大学。",
+              "pinyin": "hòunián mèimei yào shàng dàxué.",
+              "english": "My younger sister will go to university the year after next.",
+              "teaching_note": "Simple descriptive or narrative use of 后年."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 672
+            }
+          ]
+        },
+        {
+          "id": "w-0673",
+          "hanzi": "后天",
+          "pinyin": "hòutiān",
+          "meaning_en": "the day after tomorrow",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0673-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "后天见！",
+              "pinyin": "hòutiān jiàn!",
+              "english": "See you the day after tomorrow!",
+              "teaching_note": "Short everyday spoken use of 后天."
+            },
+            {
+              "id": "ex-0673-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "后天学校有考试。",
+              "pinyin": "hòutiān xuéxiào yǒu kǎoshì.",
+              "english": "There is an exam at school the day after tomorrow.",
+              "teaching_note": "Simple descriptive or narrative use of 后天."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 673
+            }
+          ]
+        },
+        {
+          "id": "w-0693",
+          "hanzi": "季",
+          "pinyin": "jì",
+          "meaning_en": "season",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0693-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一年有四季。",
+              "pinyin": "yì nián yǒu sìjì.",
+              "english": "There are four seasons in a year.",
+              "teaching_note": "季 is often used in compound words such as 四季 and 季节."
+            },
+            {
+              "id": "ex-0693-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "中国一年有四季。",
+              "pinyin": "Zhōngguó yì nián yǒu sìjì.",
+              "english": "China has four seasons in a year.",
+              "teaching_note": "季 is often used in compound words such as 四季 and 季节."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 693
+            }
+          ]
+        },
+        {
+          "id": "w-0694",
+          "hanzi": "季节",
+          "pinyin": "jìjié",
+          "meaning_en": "season of year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0694-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你最喜欢哪个季节？",
+              "pinyin": "nǐ zuì xǐhuan nǎge jìjié?",
+              "english": "Which season do you like best?",
+              "teaching_note": "Short everyday spoken use of 季节."
+            },
+            {
+              "id": "ex-0694-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "春天是我最喜欢的季节。",
+              "pinyin": "chūntiān shì wǒ zuì xǐhuan de jìjié.",
+              "english": "Spring is my favorite season.",
+              "teaching_note": "Simple descriptive or narrative use of 季节."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 694
+            }
+          ]
+        },
+        {
+          "id": "w-0696",
+          "hanzi": "假期",
+          "pinyin": "jiàqī",
+          "meaning_en": "holiday; vacation",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0696-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "假期你去哪儿？",
+              "pinyin": "jiàqī nǐ qù nǎr?",
+              "english": "Where are you going on holiday?",
+              "teaching_note": "Short everyday spoken use of 假期."
+            },
+            {
+              "id": "ex-0696-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "假期我们有很多时间休息。",
+              "pinyin": "jiàqī wǒmen yǒu hěn duō shíjiān xiūxi.",
+              "english": "During the holiday, we have plenty of time to rest.",
+              "teaching_note": "Simple descriptive or narrative use of 假期."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 696
+            }
+          ]
+        },
+        {
+          "id": "w-0719",
+          "hanzi": "久",
+          "pinyin": "jiǔ",
+          "meaning_en": "long time",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0719-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你等了很久吗？",
+              "pinyin": "nǐ děng le hěn jiǔ ma?",
+              "english": "Did you wait long?",
+              "teaching_note": "Short everyday spoken use of 久."
+            },
+            {
+              "id": "ex-0719-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他在中国住了很久。",
+              "pinyin": "tā zài Zhōngguó zhù le hěn jiǔ.",
+              "english": "He lived in China for a long time.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 719
+            }
+          ]
+        },
+        {
+          "id": "w-0735",
+          "hanzi": "刻",
+          "pinyin": "kè",
+          "meaning_en": "quarter of an hour; a moment (time unit)",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "verb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0735-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "现在九点一刻。",
+              "pinyin": "xiànzài jiǔ diǎn yí kè.",
+              "english": "It's quarter past nine now.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0735-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "飞机下午三点一刻起飞。",
+              "pinyin": "fēijī xiàwǔ sān diǎn yí kè qǐfēi.",
+              "english": "The plane takes off at 3:15 p.m.",
+              "teaching_note": "刻 marks a quarter hour in a departure schedule."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 735
+            }
+          ]
+        },
+        {
+          "id": "w-0805",
+          "hanzi": "前年",
+          "pinyin": "qiánnián",
+          "meaning_en": "the year before last",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0805-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "前年你在哪里？",
+              "pinyin": "qiánnián nǐ zài nǎlǐ?",
+              "english": "Where were you the year before last?",
+              "teaching_note": "Short everyday spoken use of 前年."
+            },
+            {
+              "id": "ex-0805-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "前年我还住在上海。",
+              "pinyin": "qiánnián wǒ hái zhù zài Shànghǎi.",
+              "english": "The year before last, I still lived in Shanghai.",
+              "teaching_note": "Simple descriptive or narrative use of 前年."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 805
+            }
+          ]
+        },
+        {
+          "id": "w-0806",
+          "hanzi": "前天",
+          "pinyin": "qiántiān",
+          "meaning_en": "the day before yesterday",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0806-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "前天你来了吗？",
+              "pinyin": "qiántiān nǐ lái le ma?",
+              "english": "Did you come the day before yesterday?",
+              "teaching_note": "Short everyday spoken use of 前天."
+            },
+            {
+              "id": "ex-0806-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "前天下午下了大雨。",
+              "pinyin": "qiántiān xiàwǔ xià le dà yǔ.",
+              "english": "It rained heavily the afternoon before yesterday.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 806
+            }
+          ]
+        },
+        {
+          "id": "w-0903",
+          "hanzi": "新年",
+          "pinyin": "xīnnián",
+          "meaning_en": "New Year",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0903-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "新年快乐！",
+              "pinyin": "xīnnián kuàilè!",
+              "english": "Happy New Year!",
+              "teaching_note": "Short everyday spoken use of 新年."
+            },
+            {
+              "id": "ex-0903-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "新年我们一家人一起吃饭。",
+              "pinyin": "xīnnián wǒmen yì jiārén yìqǐ chī fàn.",
+              "english": "Our family eats together at New Year.",
+              "teaching_note": "Simple descriptive or narrative use of 新年."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 903
+            }
+          ]
+        },
+        {
+          "id": "w-0986",
+          "hanzi": "周末",
+          "pinyin": "zhōumò",
+          "meaning_en": "weekend",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0986-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "周末有时间吗？",
+              "pinyin": "zhōumò yǒu shíjiān ma?",
+              "english": "Do you have time this weekend?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0986-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们周末常去公园运动。",
+              "pinyin": "wǒmen zhōumò cháng qù gōngyuán yùndòng.",
+              "english": "We often exercise in the park on weekends.",
+              "teaching_note": "Simple descriptive or narrative use of 周末."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 986
+            }
+          ]
+        },
+        {
+          "id": "w-0055",
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "meaning_en": "minute; divide",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar",
+            "numbers-quantities"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0055-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "现在是八点十分。",
+              "pinyin": "xiànzài shì bā diǎn shí fēn.",
+              "english": "It is 8:10 now.",
+              "teaching_note": "八点十分 is 8:10, with 分 marking minutes after the hour."
+            },
+            {
+              "id": "ex-0055-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "下午三点二十分上课。",
+              "pinyin": "xiàwǔ sān diǎn èr shí fēn shàngkè.",
+              "english": "Class starts at 3:20 p.m.",
+              "teaching_note": "Daily time or schedule context illustrating 分 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 55
+            }
+          ]
+        },
+        {
+          "id": "w-0128",
+          "hanzi": "名字",
+          "pinyin": "míngzi",
+          "meaning_en": "name",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "people-identity",
+          "topic_ids": [
+            "people-identity",
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0128-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你的名字是什么？",
+              "pinyin": "nǐ de míngzi shì shénme?",
+              "english": "What is your name?",
+              "teaching_note": "你的名字是什么 is a direct question about someone’s name; 叫什么名字 is another common wording."
+            },
+            {
+              "id": "ex-0128-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请在这里写名字。",
+              "pinyin": "qǐng zài zhèlǐ xiě míngzi.",
+              "english": "Please write your name here.",
+              "teaching_note": "Short everyday instruction or request using 名字; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 128
+            }
+          ]
+        },
+        {
+          "id": "w-0243",
+          "hanzi": "星期",
+          "pinyin": "xīngqī",
+          "meaning_en": "week",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0243-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天是星期三。",
+              "pinyin": "jīntiān shì xīngqī sān.",
+              "english": "Today is Wednesday.",
+              "teaching_note": "星期三 is Wednesday; weekdays are numbered from Monday as one."
+            },
+            {
+              "id": "ex-0243-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个星期有三天汉语课。",
+              "pinyin": "zhège xīngqī yǒu sān tiān Hànyǔ kè.",
+              "english": "We have Chinese classes on three days this week.",
+              "teaching_note": "Daily time or schedule context illustrating 星期 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 243
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 半天 (bàntiān)",
+        "explanation": "半天 (bàntiān) means “half a day; a long while” (quantifier).",
+        "example_id": "ex-0513-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 放假 (fàngjià)",
+        "explanation": "放假 (fàngjià) means “have a holiday; be on break” (verb).",
+        "example_id": "ex-0625-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0513-1",
+      "ex-0625-1",
+      "ex-0647-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "How have weekend habits changed compared with the past in the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Now people can relax every weekend and travel nearby depending on the season.",
+          "explanation": "The second paragraph contrasts modern weekends with the past."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 放假 and 后天 or 周末.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "后天我们学校就放假了，周末我打算回家。",
+          "explanation": "Use 后天/周末 with 放假."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"the day after tomorrow\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "前天",
+              "pinyin": "qiántiān",
+              "meaning_en": "day before yesterday"
+            },
+            {
+              "id": "b",
+              "hanzi": "后天",
+              "pinyin": "hòutiān",
+              "meaning_en": "day after tomorrow"
+            },
+            {
+              "id": "c",
+              "hanzi": "后年",
+              "pinyin": "hòunián",
+              "meaning_en": "year after next"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "后天 means the day after tomorrow."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"quarter of an hour (15 minutes)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "刻",
+              "pinyin": "kè",
+              "meaning_en": "quarter hour"
+            },
+            {
+              "id": "b",
+              "hanzi": "季",
+              "pinyin": "jì",
+              "meaning_en": "season"
+            },
+            {
+              "id": "c",
+              "hanzi": "久",
+              "pinyin": "jiǔ",
+              "meaning_en": "long time"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "刻 means a 15-minute quarter hour."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"weekday / working day\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "周末",
+              "pinyin": "zhōumò",
+              "meaning_en": "weekend"
+            },
+            {
+              "id": "b",
+              "hanzi": "工作日",
+              "pinyin": "gōngzuòrì",
+              "meaning_en": "weekday"
+            },
+            {
+              "id": "c",
+              "hanzi": "假期",
+              "pinyin": "jiàqī",
+              "meaning_en": "holiday"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "工作日 literally means working day."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Holiday Plans",
+        "context_en": "Two friends discuss when school goes on break and how they will spend the holiday.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "后天就放假了，这个假期你有什么打算？",
+            "pinyin": "Hòutiān jiù fàngjià le, zhège jiàqī nǐ yǒu shénme dǎsuàn?",
+            "english": "Break starts the day after tomorrow—what plans do you have for this holiday?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我打算回老家过新年，前年我就在家过的。",
+            "pinyin": "Wǒ dǎsuàn huí lǎojiā guò xīnnián, qiánnián wǒ jiù zài jiā guò de.",
+            "english": "I plan to go back to my hometown for New Year; the year before last I spent it at home."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "真好！不过老家的冬天是不是冷得久一点儿？",
+            "pinyin": "Zhēn hǎo! Búguò lǎojiā de dōngtiān shì bu shì lěng de jiǔ yìdiǎnr?",
+            "english": "Nice! Though isn’t winter in your hometown cold for a bit longer?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "是啊，我最喜欢的季节还是春天。对了，周末三点一刻咱们先见个面吧？",
+            "pinyin": "Shì a, wǒ zuì xǐhuan de jìjié háishi chūntiān. Duìle, zhōumò sān diǎn yí kè zánmen xiān jiàn ge miàn ba?",
+            "english": "Yes, my favorite season is still spring. By the way, shall we meet at 3:15 this weekend first?"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Telling quarter-hours with 刻",
+          "explanation_en": "Use 一刻 (yí kè) for 15 minutes past the hour and 三刻 (sān kè) for 45 minutes past.",
+          "pattern_hanzi": "<Hour> + 点 + 一刻 / 三刻",
+          "pattern_pinyin": "<Hour> + diǎn + yí kè / sān kè",
+          "pattern_pseudo_translation": "<Hour> + o’clock + one quarter / three quarters",
+          "examples": [
+            {
+              "hanzi": "火车八点一刻出发。",
+              "pinyin": "Huǒchē bā diǎn yí kè chūfā.",
+              "english": "The train departs at 8:15."
+            },
+            {
+              "hanzi": "会议九点三刻才结束。",
+              "pinyin": "Huìyì jiǔ diǎn sān kè cái jiéshù.",
+              "english": "The meeting didn’t end until 9:45."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Expressing a long while with 半天 / 久",
+          "explanation_en": "半天 (bàntiān) literally means half a day, and figuratively means \"a long time\" after a verb.",
+          "pattern_hanzi": "<Verb> + 了 + 半天",
+          "pattern_pinyin": "<Verb> + le + bàntiān",
+          "pattern_pseudo_translation": "<Verb> + (completed) + half a day / a long while",
+          "examples": [
+            {
+              "hanzi": "我在门口等了半天，他还没来。",
+              "pinyin": "Wǒ zài ménkǒu děng le bàntiān, tā hái méi lái.",
+              "english": "I waited at the door for ages, and he still hasn’t come."
+            },
+            {
+              "hanzi": "这本书我找了半天也没找到。",
+              "pinyin": "Zhè běn shū wǒ zhǎo le bàntiān yě méi zhǎodào.",
+              "english": "I looked for this book for a long time and still didn’t find it."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Practice talking about relative days, seasons, and holidays.",
+        "model": {
+          "hanzi": "工作日我很忙，周末才有时间休息。",
+          "pinyin": "Gōngzuòrì wǒ hěn máng, zhōumò cái yǒu shíjiān xiūxi.",
+          "english": "On weekdays I am busy; only on weekends do I have time to rest."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you met your friend the day before yesterday.",
+            "model_answer": {
+              "hanzi": "前天我和朋友见面了。",
+              "pinyin": "Qiántiān wǒ hé péngyou jiànmiàn le.",
+              "english": "The day before yesterday I met with my friend."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you plan to travel abroad the year after next.",
+            "model_answer": {
+              "hanzi": "后年我打算去国外旅游。",
+              "pinyin": "Hòunián wǒ dǎsuàn qù guówài lǚyóu.",
+              "english": "The year after next I plan to travel abroad."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say there are four seasons in a year.",
+            "model_answer": {
+              "hanzi": "一年有四个季节，各有各的美。",
+              "pinyin": "Yì nián yǒu sì ge jìjié, gè yǒu gè de měi.",
+              "english": "A year has four seasons, each with its own beauty."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Comparing Past and Present Holidays",
+        "paragraphs": [
+          {
+            "hanzi": "过去，人们在工作日很少有时间出去玩儿，只有到新年或者长假期才能休息几天。",
+            "pinyin": "Guòqù, rénmen zài gōngzuòrì hěn shǎo yǒu shíjiān chūqù wánr, zhǐyǒu dào xīnnián huòzhě cháng jiàqī cái néng xiūxi jǐ tiān.",
+            "english": "In the past, people rarely had time to go out on weekdays, and could only rest for a few days at New Year or during long holidays."
+          },
+          {
+            "hanzi": "现在不一样了，每个周末大家都能放松一下，还可以根据不同的季节去附近旅游。",
+            "pinyin": "Xiànzài bù yíyàng le, měi ge zhōumò dàjiā dōu néng fàngsōng yíxià, hái kěyǐ gēnjù bù tóng de jìjié qù fùjìn lǚyóu.",
+            "english": "Now it is different: every weekend everyone can relax a bit and travel nearby depending on the different seasons."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "When could people rest in the past according to the passage?",
+            "answer_en": "Only at New Year or during long holidays."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What can people do every weekend now?",
+            "answer_en": "Relax and travel nearby depending on the season."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Say what you did 前天 and what you will do 后天.",
+          "model_answer": {
+            "hanzi": "前天我去图书馆学习了，后天我要和家人吃饭。",
+            "pinyin": "Qiántiān wǒ qù túshūguǎn xuéxí le, hòutiān wǒ yào hé jiārén chīfàn.",
+            "english": "The day before yesterday I studied at the library, and the day after tomorrow I’m having dinner with my family."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe your favorite season and what you do during holidays.",
+          "model_answer": {
+            "hanzi": "我最喜欢的季节是秋天，放假的时候我常去爬山。",
+            "pinyin": "Wǒ zuì xǐhuan de jìjié shì qiūtiān, fàngjià de shíhou wǒ cháng qù páshān.",
+            "english": "My favorite season is autumn; during holidays I often go hiking."
+          }
+        }
+      ],
+      "common_pitfall": "放假 is a verb (\"to have a holiday / go on break\"), whereas 假期 is a noun (\"holiday / vacation\"). Say 放假了, not *假期了.",
+      "pronunciation_focus": "季节 (jìjié) moves from fourth tone to second tone; 假期 (jiàqī) moves from fourth tone to first tone.",
+      "review": {
+        "can_do": [
+          "Name relative days and years.",
+          "Tell quarter-hours with 刻.",
+          "Talk about seasons, weekdays, weekends, and holidays."
+        ],
+        "entry_ids": [
+          513,
+          625,
+          647,
+          660,
+          672,
+          673,
+          693,
+          694,
+          696,
+          719,
+          735,
+          805,
+          806,
+          903,
+          986
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-seasons-holidays-days--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Telling quarter-hours with 刻",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-seasons-holidays-days--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Expressing a long while with 半天 / 久",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you met your friend the day before yesterday.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-seasons-holidays-days--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you plan to travel abroad the year after next.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-seasons-holidays-days--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there are four seasons in a year.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: When could people rest in the past according to the passage?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-seasons-holidays-days--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What can people do every weekend now?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Say what you did 前天 and what you will do 后天.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-seasons-holidays-days--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe your favorite season and what you do during holidays.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-seasons-holidays-days--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-seasons-holidays-days--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"the day after tomorrow\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-seasons-holidays-days--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"quarter of an hour (15 minutes",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-seasons-holidays-days--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"weekday / working day\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-seasons-holidays-days--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-seasons-holidays-days--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

@@ -48,13 +48,15 @@ test('imports all 1800 identities and 3600 examples with credits and revision ev
       assert.equal(ex.english, original.english);
       assert.equal(ex.reviewStatus, original.review_status);
       assert.equal(ex.provenance, original.provenance);
-      assert.deepEqual(ex.sourceReference, original.source_reference);
+      const reference = { ...original.source_reference };
+      if (reference.handoff) delete reference.entry_id;
+      assert.deepEqual(ex.sourceReference, original.source_reference ? reference : undefined);
       assert.deepEqual(ex.revision, original.revision);
       assert.equal(ex.tokens.map(t => t.text).join(''), ex.simplified);
       assert.equal(ex.audio, null);
     }
   }
-  const literalSlash = entries.find(e => e.studyMetadata.numberingRevision.previousId === 5257).examples[0];
+  const literalSlash = entries.find(e => e.hsk_index === 5257).examples[0];
   assert.equal(literalSlash.tokens.find(t => t.text === '/').kind, 'punctuation');
   assert.equal(literalSlash.tokens.find(t => t.text === '/').pinyin, null);
   assert.equal(report.output.parts.length, 2);

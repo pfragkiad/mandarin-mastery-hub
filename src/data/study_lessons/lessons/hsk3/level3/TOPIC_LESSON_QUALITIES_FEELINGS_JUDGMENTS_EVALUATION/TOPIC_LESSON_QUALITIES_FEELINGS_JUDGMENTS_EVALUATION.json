@@ -1,0 +1,1733 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-quality-and-difficulty",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Describing Quality & Difficulty",
+    "subtitle": "Easy or hard, suitable, clear, strange, and important",
+    "description": "Evaluate situations and things as easy, difficult, convenient, suitable, clear, famous, useful, or important.",
+    "slug": "quality-and-difficulty"
+  },
+  "classification": {
+    "primary_topic_id": "qualities-feelings",
+    "topic_ids": [
+      "qualities-feelings"
+    ],
+    "tags": [
+      "evaluation",
+      "descriptions",
+      "quality"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "judgments-evaluation",
+    "subtopic_ids": [
+      "judgments-evaluation"
+    ]
+  },
+  "learning_objectives": [
+    "Evaluate difficulty and clarity: 简单, 容易, 难, 清楚, and 差.",
+    "Appraise suitability, value, and fame: 方便, 合适, 有名, 有用, 重要, 可爱, 难看, 难听, and 奇怪.",
+    "Use degree words and traits: 极, 特别, 挺, 聪明, and 认真."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "且": "Characters:且",
+    "业": "Characters:业",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "亮": "Characters:亮",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "件": "Characters:件",
+    "价": "Characters:价",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "做": "Characters:做",
+    "健": "Characters:健",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "其": "Characters:其",
+    "典": "Characters:典",
+    "内": "Characters:内",
+    "写": "Characters:写",
+    "冷": "Characters:冷",
+    "初": "Characters:初",
+    "别": "Characters:别",
+    "办": "Characters:办",
+    "午": "Characters:午",
+    "单": "Characters:单",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "发": "Characters:发",
+    "只": "Characters:只",
+    "叫": "Characters:叫",
+    "可": "Characters:可",
+    "司": "Characters:司",
+    "吃": "Characters:吃",
+    "合": "Characters:合",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "吗": "Characters:吗",
+    "听": "Characters:听",
+    "味": "Characters:味",
+    "喜": "Characters:喜",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "声": "Characters:声",
+    "复": "Characters:复",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "奇": "Characters:奇",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "它": "Characters:它",
+    "完": "Characters:完",
+    "定": "Characters:定",
+    "实": "Characters:实",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "容": "Characters:容",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "差": "Characters:差",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "幅": "Characters:幅",
+    "店": "Characters:店",
+    "康": "Characters:康",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忙": "Characters:忙",
+    "怕": "Characters:怕",
+    "思": "Characters:思",
+    "怪": "Characters:怪",
+    "惠": "Characters:惠",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "所": "Characters:所",
+    "把": "Characters:把",
+    "挺": "Characters:挺",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "既": "Characters:既",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "易": "Characters:易",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "板": "Characters:板",
+    "极": "Characters:极",
+    "查": "Characters:查",
+    "校": "Characters:校",
+    "格": "Characters:格",
+    "桌": "Characters:桌",
+    "楚": "Characters:楚",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "清": "Characters:清",
+    "漂": "Characters:漂",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "然": "Characters:然",
+    "熊": "Characters:熊",
+    "爱": "Characters:爱",
+    "特": "Characters:特",
+    "猫": "Characters:猫",
+    "甚": "Characters:甚",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "画": "Characters:画",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "笑": "Characters:笑",
+    "简": "Characters:简",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "者": "Characters:者",
+    "而": "Characters:而",
+    "聪": "Characters:聪",
+    "肯": "Characters:肯",
+    "至": "Characters:至",
+    "节": "Characters:节",
+    "菜": "Characters:菜",
+    "虽": "Characters:虽",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "认": "Characters:认",
+    "讲": "Characters:讲",
+    "词": "Characters:词",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "过": "Characters:过",
+    "这": "Characters:这",
+    "送": "Characters:送",
+    "适": "Characters:适",
+    "道": "Characters:道",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "铁": "Characters:铁",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "难": "Characters:难",
+    "面": "Characters:面",
+    "音": "Characters:音",
+    "题": "Characters:题",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "首": "Characters:首"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Evaluative adjectives and degree adverbs for judging quality, difficulty, and importance.",
+      "focus": "Use ……极了 for \"extremely\", and 挺……的 for \"quite / rather\"."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0551",
+          "hanzi": "差",
+          "pinyin": "chà",
+          "meaning_en": "poor; bad; differ by",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0551-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我今天考得很差。",
+              "pinyin": "wǒ jīntiān kǎo de hěn chà.",
+              "english": "I did badly on the test today.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0551-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天的天气比昨天差。",
+              "pinyin": "jīntiān de tiānqì bǐ zuótiān chà.",
+              "english": "Today's weather is worse than yesterday's.",
+              "teaching_note": "Simple descriptive or narrative use of 差."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 551
+            }
+          ]
+        },
+        {
+          "id": "w-0570",
+          "hanzi": "聪明",
+          "pinyin": "cōngmíng",
+          "meaning_en": "clever; intelligent",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0570-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你真聪明！",
+              "pinyin": "nǐ zhēn cōngmíng!",
+              "english": "You're so clever!",
+              "teaching_note": "Short everyday spoken use of 聪明."
+            },
+            {
+              "id": "ex-0570-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个孩子很聪明。",
+              "pinyin": "zhège háizi hěn cōngmíng.",
+              "english": "This child is very intelligent.",
+              "teaching_note": "Simple descriptive or narrative use of 聪明."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 570
+            }
+          ]
+        },
+        {
+          "id": "w-0619",
+          "hanzi": "方便",
+          "pinyin": "fāngbiàn",
+          "meaning_en": "convenient",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0619-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这里很方便。",
+              "pinyin": "zhèlǐ hěn fāngbiàn.",
+              "english": "It's convenient here.",
+              "teaching_note": "Short everyday spoken use of 方便."
+            },
+            {
+              "id": "ex-0619-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "坐地铁去公司很方便。",
+              "pinyin": "zuò dìtiě qù gōngsī hěn fāngbiàn.",
+              "english": "It's convenient to take the subway to work.",
+              "teaching_note": "Simple descriptive or narrative use of 方便."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 619
+            }
+          ]
+        },
+        {
+          "id": "w-0667",
+          "hanzi": "合适",
+          "pinyin": "héshì",
+          "meaning_en": "suitable; fitting",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0667-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件衣服合适吗？",
+              "pinyin": "zhè jiàn yīfu héshì ma?",
+              "english": "Does this outfit fit?",
+              "teaching_note": "Short everyday spoken use of 合适."
+            },
+            {
+              "id": "ex-0667-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个时间对大家都合适。",
+              "pinyin": "zhège shíjiān duì dàjiā dōu héshì.",
+              "english": "This time suits everyone.",
+              "teaching_note": "Simple descriptive or narrative use of 合适."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 667
+            }
+          ]
+        },
+        {
+          "id": "w-0690",
+          "hanzi": "极",
+          "pinyin": "jí",
+          "meaning_en": "extremely; very",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0690-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "好极了！",
+              "pinyin": "hǎo jí le!",
+              "english": "That's excellent!",
+              "teaching_note": "Short everyday spoken use of 极."
+            },
+            {
+              "id": "ex-0690-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这件衣服漂亮极了。",
+              "pinyin": "zhè jiàn yīfu piàoliang jí le.",
+              "english": "This outfit is extremely beautiful.",
+              "teaching_note": "Simple descriptive or narrative use of 极."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 690
+            }
+          ]
+        },
+        {
+          "id": "w-0700",
+          "hanzi": "简单",
+          "pinyin": "jiǎndān",
+          "meaning_en": "simple; easy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0700-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个问题很简单。",
+              "pinyin": "zhège wèntí hěn jiǎndān.",
+              "english": "This question is easy.",
+              "teaching_note": "Short everyday spoken use of 简单."
+            },
+            {
+              "id": "ex-0700-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师用了一个简单的方法。",
+              "pinyin": "lǎoshī yòng le yí ge jiǎndān de fāngfǎ.",
+              "english": "The teacher used a simple method.",
+              "teaching_note": "Simple descriptive or narrative use of 简单."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 700
+            }
+          ]
+        },
+        {
+          "id": "w-0732",
+          "hanzi": "可爱",
+          "pinyin": "kě’ài",
+          "meaning_en": "cute; adorable",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0732-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这只猫真可爱！",
+              "pinyin": "zhè zhǐ māo zhēn kě'ài!",
+              "english": "This cat is so cute!",
+              "teaching_note": "Short everyday spoken use of 可爱."
+            },
+            {
+              "id": "ex-0732-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "那个小女孩儿很可爱。",
+              "pinyin": "nàge xiǎo nǚháir hěn kě'ài.",
+              "english": "That little girl is adorable.",
+              "teaching_note": "Simple descriptive or narrative use of 可爱."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 732
+            }
+          ]
+        },
+        {
+          "id": "w-0778",
+          "hanzi": "难",
+          "pinyin": "nán",
+          "meaning_en": "difficult",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0778-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这题很难。",
+              "pinyin": "zhè tí hěn nán.",
+              "english": "This question is difficult.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0778-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个汉字有点难写。",
+              "pinyin": "zhège Hànzì yǒudiǎn nán xiě.",
+              "english": "This Chinese character is a bit hard to write.",
+              "teaching_note": "Simple descriptive or narrative use of 难."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 778
+            }
+          ]
+        },
+        {
+          "id": "w-0780",
+          "hanzi": "难看",
+          "pinyin": "nánkàn",
+          "meaning_en": "ugly; unpleasant to look at",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0780-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件衣服难看吗？",
+              "pinyin": "zhè jiàn yīfu nánkàn ma?",
+              "english": "Does this outfit look bad?",
+              "teaching_note": "Short everyday spoken use of 难看."
+            },
+            {
+              "id": "ex-0780-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他觉得这件衣服很难看。",
+              "pinyin": "tā juéde zhè jiàn yīfu hěn nánkàn.",
+              "english": "He thinks this outfit looks ugly.",
+              "teaching_note": "Simple descriptive or narrative use of 难看."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 780
+            }
+          ]
+        },
+        {
+          "id": "w-0782",
+          "hanzi": "难听",
+          "pinyin": "nántīng",
+          "meaning_en": "unpleasant to hear; sound bad",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0782-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你觉得这歌难听吗？",
+              "pinyin": "nǐ juéde zhè gē nántīng ma?",
+              "english": "Do you think this song sounds bad?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0782-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的声音有点难听。",
+              "pinyin": "tā de shēngyīn yǒudiǎn nántīng.",
+              "english": "His voice sounds a little unpleasant.",
+              "teaching_note": "Simple descriptive or narrative use of 难听."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 782
+            }
+          ]
+        },
+        {
+          "id": "w-0799",
+          "hanzi": "奇怪",
+          "pinyin": "qíguài",
+          "meaning_en": "strange; odd",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0799-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "真奇怪！",
+              "pinyin": "zhēn qíguài!",
+              "english": "That's strange!",
+              "teaching_note": "Short everyday spoken use of 奇怪."
+            },
+            {
+              "id": "ex-0799-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个问题有点奇怪。",
+              "pinyin": "zhège wèntí yǒudiǎn qíguài.",
+              "english": "This question is a bit odd.",
+              "teaching_note": "Simple descriptive or narrative use of 奇怪."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 799
+            }
+          ]
+        },
+        {
+          "id": "w-0807",
+          "hanzi": "清楚",
+          "pinyin": "qīngchu",
+          "meaning_en": "clear; understand clearly",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0807-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你听清楚了吗？",
+              "pinyin": "nǐ tīng qīngchu le ma?",
+              "english": "Did you hear clearly?",
+              "teaching_note": "Short everyday spoken use of 清楚."
+            },
+            {
+              "id": "ex-0807-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师把问题讲得很清楚。",
+              "pinyin": "lǎoshī bǎ wèntí jiǎng de hěn qīngchu.",
+              "english": "The teacher explained the question very clearly.",
+              "teaching_note": "Simple descriptive or narrative use of 清楚."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 807
+            }
+          ]
+        },
+        {
+          "id": "w-0817",
+          "hanzi": "认真",
+          "pinyin": "rènzhēn",
+          "meaning_en": "serious; conscientious",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0817-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你要认真一点儿。",
+              "pinyin": "nǐ yào rènzhēn yìdiǎnr.",
+              "english": "You should be a bit more careful.",
+              "teaching_note": "Short everyday spoken use of 认真."
+            },
+            {
+              "id": "ex-0817-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他认真地做完了作业。",
+              "pinyin": "tā rènzhēn de zuò wán le zuòyè.",
+              "english": "He completed the homework carefully.",
+              "teaching_note": "Simple descriptive or narrative use of 认真."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 817
+            }
+          ]
+        },
+        {
+          "id": "w-0818",
+          "hanzi": "容易",
+          "pinyin": "róngyì",
+          "meaning_en": "easy; not difficult",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0818-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个很容易！",
+              "pinyin": "zhège hěn róngyì!",
+              "english": "This is very easy!",
+              "teaching_note": "Short everyday spoken use of 容易."
+            },
+            {
+              "id": "ex-0818-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个题不难，很容易做。",
+              "pinyin": "zhège tí bù nán, hěn róngyì zuò.",
+              "english": "This problem isn't difficult; it's easy to do.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 818
+            }
+          ]
+        },
+        {
+          "id": "w-0851",
+          "hanzi": "特别",
+          "pinyin": "tèbié",
+          "meaning_en": "especially; special",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0851-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天特别冷！",
+              "pinyin": "jīntiān tèbié lěng!",
+              "english": "It's especially cold today!",
+              "teaching_note": "Short everyday spoken use of 特别."
+            },
+            {
+              "id": "ex-0851-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这是一个特别的日子。",
+              "pinyin": "zhè shì yí ge tèbié de rìzi.",
+              "english": "This is a special day.",
+              "teaching_note": "Simple descriptive or narrative use of 特别."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 851
+            }
+          ]
+        },
+        {
+          "id": "w-0858",
+          "hanzi": "挺",
+          "pinyin": "tǐng",
+          "meaning_en": "quite; rather",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0858-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天挺冷的。",
+              "pinyin": "jīntiān tǐng lěng de.",
+              "english": "It's quite cold today.",
+              "teaching_note": "Short everyday spoken use of 挺."
+            },
+            {
+              "id": "ex-0858-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“这个电影挺有意思的。”她笑着说。",
+              "pinyin": "“zhège diànyǐng tǐng yǒu yìsi de.” tā xiào zhe shuō.",
+              "english": "“This movie is pretty interesting,” she said with a smile.",
+              "teaching_note": "Quoted speech in a written narrative frame."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 858
+            }
+          ]
+        },
+        {
+          "id": "w-0947",
+          "hanzi": "有名",
+          "pinyin": "yǒumíng",
+          "meaning_en": "famous; well known",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0947-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这家饭馆很有名！",
+              "pinyin": "zhè jiā fànguǎn hěn yǒumíng!",
+              "english": "This restaurant is famous!",
+              "teaching_note": "Short everyday spoken use of 有名."
+            },
+            {
+              "id": "ex-0947-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个城市有很多有名的地方。",
+              "pinyin": "zhège chéngshì yǒu hěn duō yǒumíng de dìfang.",
+              "english": "This city has many famous places.",
+              "teaching_note": "Simple descriptive or narrative use of 有名."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 947
+            }
+          ]
+        },
+        {
+          "id": "w-0948",
+          "hanzi": "有用",
+          "pinyin": "yǒuyòng",
+          "meaning_en": "useful",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0948-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这本书真有用！",
+              "pinyin": "zhè běn shū zhēn yǒuyòng!",
+              "english": "This book is really useful!",
+              "teaching_note": "Short everyday spoken use of 有用."
+            },
+            {
+              "id": "ex-0948-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个方法很有用。",
+              "pinyin": "zhège fāngfǎ hěn yǒuyòng.",
+              "english": "This method is very useful.",
+              "teaching_note": "Simple descriptive or narrative use of 有用."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 948
+            }
+          ]
+        },
+        {
+          "id": "w-0985",
+          "hanzi": "重要",
+          "pinyin": "zhòngyào",
+          "meaning_en": "important",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0985-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这件事很重要。",
+              "pinyin": "zhè jiàn shì hěn zhòngyào.",
+              "english": "This is important.",
+              "teaching_note": "Short everyday spoken use of 重要."
+            },
+            {
+              "id": "ex-0985-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "健康对每个人都很重要。",
+              "pinyin": "jiànkāng duì měi gè rén dōu hěn zhòngyào.",
+              "english": "Health is important to everyone.",
+              "teaching_note": "Simple descriptive or narrative use of 重要."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 985
+            }
+          ]
+        },
+        {
+          "id": "w-0025",
+          "hanzi": "大",
+          "pinyin": "dà",
+          "meaning_en": "big",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0025-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个房间很大。",
+              "pinyin": "zhège fángjiān hěn dà.",
+              "english": "This room is big.",
+              "teaching_note": "很 appears naturally before a descriptive adjective such as 大, without necessarily meaning “very.”"
+            },
+            {
+              "id": "ex-0025-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这个大学很大。",
+              "pinyin": "zhège dàxué hěn dà.",
+              "english": "This university is very big.",
+              "teaching_note": "School or study context showing 大 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 25
+            }
+          ]
+        },
+        {
+          "id": "w-0118",
+          "hanzi": "忙",
+          "pinyin": "máng",
+          "meaning_en": "busy",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0118-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我今天很忙。",
+              "pinyin": "wǒ jīntiān hěn máng.",
+              "english": "I am very busy today.",
+              "teaching_note": "忙 is a state adjective; 很忙 is a natural predicate without 是."
+            },
+            {
+              "id": "ex-0118-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "妈妈早上很忙，晚上有时间。",
+              "pinyin": "māma zǎoshang hěn máng, wǎnshang yǒu shíjiān.",
+              "english": "Mom is very busy in the morning but has time in the evening.",
+              "teaching_note": "Daily time or schedule context illustrating 忙 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 118
+            }
+          ]
+        },
+        {
+          "id": "w-0242",
+          "hanzi": "新",
+          "pinyin": "xīn",
+          "meaning_en": "new",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0242-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这是我的新书。",
+              "pinyin": "zhè shì wǒ de xīn shū.",
+              "english": "This is my new book.",
+              "teaching_note": "新 modifies 书 to mean a new book."
+            },
+            {
+              "id": "ex-0242-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家书店有很多新书。",
+              "pinyin": "zhè jiā shūdiàn yǒu hěn duō xīn shū.",
+              "english": "This bookstore has many new books.",
+              "teaching_note": "School or study context showing 新 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 242
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 差 (chà)",
+        "explanation": "差 (chà) means “poor; bad; differ by” (adjective).",
+        "example_id": "ex-0551-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 聪明 (cōngmíng)",
+        "explanation": "聪明 (cōngmíng) means “clever; intelligent” (adjective).",
+        "example_id": "ex-0570-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0551-1",
+      "ex-0570-1",
+      "ex-0619-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "How is the menu at the noodle shop described?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Written crystal clear (写得清清楚楚).",
+          "explanation": "The second paragraph says 菜单写得清清楚楚."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences evaluating something using 挺……的 and 极了 or 重要.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "每天复习生词挺重要的，今天这节课的内容也有用极了。",
+          "explanation": "Use 挺……的, 重要, and 极了."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"suitable / fitting\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "方便",
+              "pinyin": "fāngbiàn",
+              "meaning_en": "convenient"
+            },
+            {
+              "id": "b",
+              "hanzi": "合适",
+              "pinyin": "héshì",
+              "meaning_en": "suitable"
+            },
+            {
+              "id": "c",
+              "hanzi": "清楚",
+              "pinyin": "qīngchu",
+              "meaning_en": "clear"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "合适 means suitable or fitting."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"strange / odd\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "奇怪",
+              "pinyin": "qíguài",
+              "meaning_en": "strange"
+            },
+            {
+              "id": "b",
+              "hanzi": "聪明",
+              "pinyin": "cōngmíng",
+              "meaning_en": "clever"
+            },
+            {
+              "id": "c",
+              "hanzi": "简单",
+              "pinyin": "jiǎndān",
+              "meaning_en": "simple"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "奇怪 means strange or odd."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"conscientious / serious\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "有名",
+              "pinyin": "yǒumíng",
+              "meaning_en": "famous"
+            },
+            {
+              "id": "b",
+              "hanzi": "认真",
+              "pinyin": "rènzhēn",
+              "meaning_en": "conscientious"
+            },
+            {
+              "id": "c",
+              "hanzi": "容易",
+              "pinyin": "róngyì",
+              "meaning_en": "easy"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "认真 means serious or conscientious."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Choosing a Gift and a Course",
+        "context_en": "Two friends evaluate a Chinese course and pick out a suitable gift.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你觉得这门课难不难？我怕太难了学不会。",
+            "pinyin": "Nǐ juéde zhè mén kè nán bu nán? Wǒ pà tài nán le xué bú huì.",
+            "english": "Do you think this course is hard? I’m afraid if it’s too hard I won’t learn it."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "其实挺简单的，老师讲得特别清楚，只要认真学就很容易。",
+            "pinyin": "Qíshí tǐng jiǎndān de, lǎoshī jiǎng de tèbié qīngchu, zhǐyào rènzhēn xué jiù hěn róngyì.",
+            "english": "Actually it’s quite simple; the teacher explains especially clearly—as long as you study seriously, it’s very easy."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那就好！对了，我想买那只可爱的小熊猫送给妹妹，你觉得合适吗？",
+            "pinyin": "Nà jiù hǎo! Duìle, wǒ xiǎng mǎi nà zhī kě’ài de xiǎo xióngmāo sòng gěi mèimei, nǐ juéde héshì ma?",
+            "english": "Good! By the way, I want to buy that cute little panda toy for my younger sister—do you think it’s suitable?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "合适极了！她肯定喜欢。",
+            "pinyin": "Héshì jíle! Tā kěndìng xǐhuan.",
+            "english": "Extremely suitable! She’ll definitely like it."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Saying \"extremely\" with ……极了",
+          "explanation_en": "Place 极了 (jíle) right after an adjective or mental verb to mean \"extremely\".",
+          "pattern_hanzi": "<Subject> + <Adjective> + 极了",
+          "pattern_pinyin": "<Subject> + <Adjective> + jíle",
+          "pattern_pseudo_translation": "<Subject> + <Adjective> + extremely",
+          "examples": [
+            {
+              "hanzi": "今天的天气好极了，不冷也不热。",
+              "pinyin": "Jīntiān de tiānqì hǎo jíle, bù lěng yě bú rè.",
+              "english": "Today’s weather is wonderful—neither cold nor hot."
+            },
+            {
+              "hanzi": "这本词典对初学者来说有用极了。",
+              "pinyin": "Zhè běn cídiǎn duì chūxuézhě lái shuō yǒuyòng jíle.",
+              "english": "This dictionary is extremely useful for beginners."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Softened praise with 挺……的",
+          "explanation_en": "Wrap an adjective in 挺……的 (tǐng … de) to mean \"quite / rather\".",
+          "pattern_hanzi": "<Subject> + 挺 + <Adjective> + 的",
+          "pattern_pinyin": "<Subject> + tǐng + <Adjective> + de",
+          "pattern_pseudo_translation": "<Subject> + quite + <Adjective> + (marker)",
+          "examples": [
+            {
+              "hanzi": "这只小猫挺聪明的，一叫它就过来。",
+              "pinyin": "Zhè zhī xiǎo māo tǐng cōngmíng de, yí jiào tā jiù guòlái.",
+              "english": "This kitten is quite clever—it comes right over as soon as you call it."
+            },
+            {
+              "hanzi": "坐地铁去机场挺方便的。",
+              "pinyin": "Zuò dìtiě qù jīchǎng tǐng fāngbiàn de.",
+              "english": "Taking the subway to the airport is quite convenient."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Evaluate clarity, quality, and strangeness.",
+        "model": {
+          "hanzi": "这个方法很重要，而且特别有用。",
+          "pinyin": "Zhège fāngfǎ hěn zhòngyào, érqiě tèbié yǒuyòng.",
+          "english": "This method is very important, and especially useful."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say that song sounds unpleasant, and that picture looks ugly.",
+            "model_answer": {
+              "hanzi": "那首歌有点儿难听，那幅画也不太好看，甚至有点儿难看。",
+              "pinyin": "Nà shǒu gē yǒudiǎnr nántīng, nà fú huà yě bú tài hǎokàn, shènzhì yǒudiǎnr nánkàn.",
+              "english": "That song sounds a bit unpleasant, and that painting isn’t great—even a bit ugly."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say it is strange that nobody is in the office.",
+            "model_answer": {
+              "hanzi": "真奇怪，办公室里一个人都没有。",
+              "pinyin": "Zhēn qíguài, bàngōngshì lǐ yí ge rén dōu méiyǒu.",
+              "english": "How strange—there isn’t a single person in the office."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say his Chinese pronunciation is not bad at all.",
+            "model_answer": {
+              "hanzi": "他的汉语发音一点儿也不差。",
+              "pinyin": "Tā de Hànyǔ fāyīn yìdiǎnr yě bú chà.",
+              "english": "His Chinese pronunciation is not bad at all."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Famous Small Restaurant",
+        "paragraphs": [
+          {
+            "hanzi": "学校东门外有一家很有名的面馆。店面虽然不大，但味道好极了，价格也很合适。",
+            "pinyin": "Xuéxiào dōngmén wài yǒu yì jiā hěn yǒumíng de miànguǎn. Diànmiàn suīrán bú dà, dàn wèidào hǎo jíle, jiàgé yě hěn héshì.",
+            "english": "Outside the east gate of the school there is a very famous noodle shop. Although the storefront isn’t big, the taste is terrific and the price is very reasonable."
+          },
+          {
+            "hanzi": "老板做事特别认真，菜单写得清清楚楚。大家觉得来这里吃饭既方便又实惠，所以每天中午人都很多。",
+            "pinyin": "Lǎobǎn zuòshì tèbié rènzhēn, càidān xiě de qīngqīngchǔchǔ. Dàjiā juéde lái zhèlǐ chīfàn jì fāngbiàn yòu shíhuì, suǒyǐ měitiān zhōngwǔ rén dōu hěn duō.",
+            "english": "The owner works especially conscientiously, and the menu is written crystal clear. Everyone feels eating here is both convenient and affordable, so it’s crowded every noon."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Where is the famous noodle shop located?",
+            "answer_en": "Outside the east gate of the school."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Why is it crowded every noon?",
+            "answer_en": "Because the food tastes great, the price is reasonable, the owner is conscientious, and eating there is convenient and affordable."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Recommend a book, app, or place using 有用, 方便, or 极了.",
+          "model_answer": {
+            "hanzi": "这本词典有用极了，查生词特别方便。",
+            "pinyin": "Zhè běn cídiǎn yǒuyòng jíle, chá shēngcí tèbié fāngbiàn.",
+            "english": "This dictionary is extremely useful—looking up new words is especially convenient."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe a friend or classmate using 聪明 and 认真.",
+          "model_answer": {
+            "hanzi": "我同桌既聪明又认真，每次作业都写得特别好。",
+            "pinyin": "Wǒ tóngzhuō jì cōngmíng yòu rènzhēn, měi cì zuòyè dōu xiě de tèbié hǎo.",
+            "english": "My deskmate is both clever and conscientious; every homework assignment is written especially well."
+          }
+        }
+      ],
+      "common_pitfall": "难看 (\"ugly / unpleasant to look at\") and 难听 (\"unpleasant to hear\") follow the pattern 难 + verb, just like 难吃 (\"tastes bad\") and 好吃 / 好看 / 好听.",
+      "pronunciation_focus": "清楚 (qīngchu) and 聪明 (cōngming) both often take a light neutral tone on the second syllable in connected speech.",
+      "review": {
+        "can_do": [
+          "Evaluate difficulty, clarity, and suitability.",
+          "Use ……极了 and 挺……的 naturally.",
+          "Form 难看 / 难听 and describe traits like 认真 and 重要."
+        ],
+        "entry_ids": [
+          551,
+          570,
+          619,
+          667,
+          690,
+          700,
+          732,
+          778,
+          780,
+          782,
+          799,
+          807,
+          817,
+          818,
+          851,
+          858,
+          947,
+          948,
+          985
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-quality-and-difficulty--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Saying \"extremely\" with ……极了",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-quality-and-difficulty--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Softened praise with 挺……的",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say that song sounds unpleasant, and that picture looks ugly.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-quality-and-difficulty--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say it is strange that nobody is in the office.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-quality-and-difficulty--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say his Chinese pronunciation is not bad at all.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Where is the famous noodle shop located?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-quality-and-difficulty--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Why is it crowded every noon?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Recommend a book, app, or place using 有用, 方便, or 极了.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-quality-and-difficulty--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe a friend or classmate using 聪明 and 认真.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-quality-and-difficulty--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-quality-and-difficulty--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"suitable / fitting\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-quality-and-difficulty--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"strange / odd\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-quality-and-difficulty--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"conscientious / serious\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-quality-and-difficulty--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-quality-and-difficulty--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

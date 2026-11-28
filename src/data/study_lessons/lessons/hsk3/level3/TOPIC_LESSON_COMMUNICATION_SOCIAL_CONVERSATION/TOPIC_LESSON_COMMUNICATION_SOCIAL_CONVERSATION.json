@@ -1,0 +1,1360 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-chatting-and-helping",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Chatting, Helping & Agreeing",
+    "subtitle": "Welcoming guests, chatting, answering, and agreeing",
+    "description": "Learn to welcome others, chat casually, answer questions, treat friends, and express agreement or refusal.",
+    "slug": "chatting-and-helping"
+  },
+  "classification": {
+    "primary_topic_id": "communication-social",
+    "topic_ids": [
+      "communication-social"
+    ],
+    "tags": [
+      "conversation",
+      "hospitality",
+      "agreement"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Welcome people and offer to treat them with 欢迎 and 请客.",
+    "Talk about chatting and explaining with 聊, 聊天儿, 对话, and 讲.",
+    "Express agreement or refusal using 同意 and 不行."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "久": "Characters:久",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "位": "Characters:位",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "六": "Characters:六",
+    "关": "Characters:关",
+    "写": "Characters:写",
+    "出": "Characters:出",
+    "划": "Characters:划",
+    "别": "Characters:别",
+    "办": "Characters:办",
+    "助": "Characters:助",
+    "化": "Characters:化",
+    "午": "Characters:午",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "变": "Characters:变",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "各": "Characters:各",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "咱": "Characters:咱",
+    "啡": "Characters:啡",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "奶": "Characters:奶",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "定": "Characters:定",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "师": "Characters:师",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "忙": "Characters:忙",
+    "总": "Characters:总",
+    "情": "Characters:情",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "感": "Characters:感",
+    "懂": "Characters:懂",
+    "我": "Characters:我",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "故": "Characters:故",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "来": "Characters:来",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "楚": "Characters:楚",
+    "次": "Characters:次",
+    "欢": "Characters:欢",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "法": "Characters:法",
+    "注": "Characters:注",
+    "清": "Characters:清",
+    "爷": "Characters:爷",
+    "理": "Characters:理",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "真": "Characters:真",
+    "眼": "Characters:眼",
+    "着": "Characters:着",
+    "种": "Characters:种",
+    "空": "Characters:空",
+    "答": "Characters:答",
+    "练": "Characters:练",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "美": "Characters:美",
+    "老": "Characters:老",
+    "耐": "Characters:耐",
+    "聊": "Characters:聊",
+    "能": "Characters:能",
+    "茶": "Characters:茶",
+    "行": "Characters:行",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "计": "Characters:计",
+    "认": "Characters:认",
+    "让": "Characters:让",
+    "讲": "Characters:讲",
+    "识": "Characters:识",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谢": "Characters:谢",
+    "起": "Characters:起",
+    "趣": "Characters:趣",
+    "过": "Characters:过",
+    "迎": "Characters:迎",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "重": "Characters:重",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "闻": "Characters:闻",
+    "雨": "Characters:雨",
+    "非": "Characters:非",
+    "题": "Characters:题",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Conversational verbs for welcoming, chatting, helping, recognizing, and agreeing.",
+      "focus": "Use 聊天儿 for casual chatting and 同意 / 不行 to agree or politely decline."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0514",
+          "hanzi": "帮助",
+          "pinyin": "bāngzhù",
+          "meaning_en": "help; assistance",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0514-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "谢谢你的帮助！",
+              "pinyin": "xièxie nǐ de bāngzhù!",
+              "english": "Thank you for your help!",
+              "teaching_note": "Short everyday spoken use of 帮助."
+            },
+            {
+              "id": "ex-0514-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "朋友的帮助很重要。",
+              "pinyin": "péngyou de bāngzhù hěn zhòngyào.",
+              "english": "Help from friends is important.",
+              "teaching_note": "Simple descriptive or narrative use of 帮助."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 514
+            }
+          ]
+        },
+        {
+          "id": "w-0542",
+          "hanzi": "不行",
+          "pinyin": "bùxíng",
+          "meaning_en": "not okay; cannot",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adjective"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0542-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这样不行！",
+              "pinyin": "zhèyàng bùxíng!",
+              "english": "That won't do!",
+              "teaching_note": "Short everyday spoken use of 不行."
+            },
+            {
+              "id": "ex-0542-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下这么大的雨，出去不行。",
+              "pinyin": "xià zhème dà de yǔ, chūqù bùxíng.",
+              "english": "It is raining so hard that going out is not possible.",
+              "teaching_note": "Simple descriptive or narrative use of 不行."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 542
+            }
+          ]
+        },
+        {
+          "id": "w-0609",
+          "hanzi": "对话",
+          "pinyin": "duìhuà",
+          "meaning_en": "dialogue; converse",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0609-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们练习对话吧。",
+              "pinyin": "wǒmen liànxí duìhuà ba.",
+              "english": "Let's practice dialogue.",
+              "teaching_note": "Short everyday spoken use of 对话."
+            },
+            {
+              "id": "ex-0609-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "两位学生正在练习对话。",
+              "pinyin": "liǎng wèi xuéshēng zhèngzài liànxí duìhuà.",
+              "english": "Two students are practicing a dialogue.",
+              "teaching_note": "Simple descriptive or narrative use of 对话."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 609
+            }
+          ]
+        },
+        {
+          "id": "w-0657",
+          "hanzi": "关注",
+          "pinyin": "guānzhù",
+          "meaning_en": "follow; pay attention to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0657-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你关注新闻吗？",
+              "pinyin": "nǐ guānzhù xīnwén ma?",
+              "english": "Do you follow the news?",
+              "teaching_note": "Short everyday spoken use of 关注."
+            },
+            {
+              "id": "ex-0657-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "很多人关注天气的变化。",
+              "pinyin": "hěn duō rén guānzhù tiānqì de biànhuà.",
+              "english": "Many people pay attention to changes in the weather.",
+              "teaching_note": "Simple descriptive or narrative use of 关注."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 657
+            }
+          ]
+        },
+        {
+          "id": "w-0677",
+          "hanzi": "欢迎",
+          "pinyin": "huānyíng",
+          "meaning_en": "welcome",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0677-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "欢迎来我家！",
+              "pinyin": "huānyíng lái wǒ jiā!",
+              "english": "Welcome to my home!",
+              "teaching_note": "Short everyday spoken use of 欢迎."
+            },
+            {
+              "id": "ex-0677-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师欢迎新学生。",
+              "pinyin": "lǎoshī huānyíng xīn xuéshēng.",
+              "english": "The teacher welcomes the new students.",
+              "teaching_note": "Simple descriptive or narrative use of 欢迎."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 677
+            }
+          ]
+        },
+        {
+          "id": "w-0682",
+          "hanzi": "回答",
+          "pinyin": "huídá",
+          "meaning_en": "answer; respond",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0682-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你能回答吗？",
+              "pinyin": "nǐ néng huídá ma?",
+              "english": "Can you answer?",
+              "teaching_note": "Short everyday spoken use of 回答."
+            },
+            {
+              "id": "ex-0682-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生回答了老师的问题。",
+              "pinyin": "xuéshēng huídá le lǎoshī de wèntí.",
+              "english": "The student answered the teacher's question.",
+              "teaching_note": "Simple descriptive or narrative use of 回答."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 682
+            }
+          ]
+        },
+        {
+          "id": "w-0703",
+          "hanzi": "讲",
+          "pinyin": "jiǎng",
+          "meaning_en": "talk; explain; tell",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0703-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我讲讲吧。",
+              "pinyin": "gěi wǒ jiǎng jiǎng ba.",
+              "english": "Tell me about it.",
+              "teaching_note": "Short everyday spoken use of 讲."
+            },
+            {
+              "id": "ex-0703-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师给学生讲了一个故事。",
+              "pinyin": "lǎoshī gěi xuéshēng jiǎng le yí ge gùshi.",
+              "english": "The teacher told the students a story.",
+              "teaching_note": "Simple descriptive or narrative use of 讲."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 703
+            }
+          ]
+        },
+        {
+          "id": "w-0755",
+          "hanzi": "聊",
+          "pinyin": "liáo",
+          "meaning_en": "chat; talk casually",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0755-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们聊一会儿吧。",
+              "pinyin": "wǒmen liáo yíhuìr ba.",
+              "english": "Let's chat for a while.",
+              "teaching_note": "Short everyday spoken use of 聊."
+            },
+            {
+              "id": "ex-0755-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "下课后同学们在聊天。",
+              "pinyin": "xiàkè hòu tóngxuémen zài liáotiān.",
+              "english": "The students chat after class.",
+              "teaching_note": "Simple descriptive or narrative use of 聊."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 755
+            }
+          ]
+        },
+        {
+          "id": "w-0756",
+          "hanzi": "聊天儿",
+          "pinyin": "liáotiānr",
+          "meaning_en": "chat; have a conversation",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0756-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "想聊天儿吗？",
+              "pinyin": "xiǎng liáotiānr ma?",
+              "english": "Do you want to chat?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0756-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们每天晚上打电话聊天儿。",
+              "pinyin": "tāmen měi tiān wǎnshang dǎ diànhuà liáotiānr.",
+              "english": "They chat on the phone every evening.",
+              "teaching_note": "Simple descriptive or narrative use of 聊天儿."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 756
+            }
+          ]
+        },
+        {
+          "id": "w-0809",
+          "hanzi": "请客",
+          "pinyin": "qǐngkè",
+          "meaning_en": "treat someone; invite and pay",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0809-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天我请客！",
+              "pinyin": "jīntiān wǒ qǐngkè!",
+              "english": "It's my treat today!",
+              "teaching_note": "Short everyday spoken use of 请客."
+            },
+            {
+              "id": "ex-0809-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "经理今天请客吃晚饭。",
+              "pinyin": "jīnglǐ jīntiān qǐngkè chī wǎnfàn.",
+              "english": "The manager is treating everyone to dinner today.",
+              "teaching_note": "Simple descriptive or narrative use of 请客."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 809
+            }
+          ]
+        },
+        {
+          "id": "w-0815",
+          "hanzi": "认得",
+          "pinyin": "rènde",
+          "meaning_en": "recognize; know by sight",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0815-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你认得他吗？",
+              "pinyin": "nǐ rènde tā ma?",
+              "english": "Do you recognize him?",
+              "teaching_note": "Short everyday spoken use of 认得."
+            },
+            {
+              "id": "ex-0815-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我认得这个字，但是不会写。",
+              "pinyin": "wǒ rènde zhège zì, dànshì bù huì xiě.",
+              "english": "I recognize this character but cannot write it.",
+              "teaching_note": "Simple descriptive or narrative use of 认得."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 815
+            }
+          ]
+        },
+        {
+          "id": "w-0860",
+          "hanzi": "同意",
+          "pinyin": "tóngyì",
+          "meaning_en": "agree; consent",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0860-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我同意！",
+              "pinyin": "wǒ tóngyì!",
+              "english": "I agree!",
+              "teaching_note": "Short everyday spoken use of 同意."
+            },
+            {
+              "id": "ex-0860-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师同意了我们的办法。",
+              "pinyin": "lǎoshī tóngyì le wǒmen de bànfǎ.",
+              "english": "The teacher agreed to our approach.",
+              "teaching_note": "Simple descriptive or narrative use of 同意."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 860
+            }
+          ]
+        },
+        {
+          "id": "w-0014",
+          "hanzi": "不客气",
+          "pinyin": "bú kèqi",
+          "meaning_en": "you're welcome",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0014-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "不客气！",
+              "pinyin": "bú kèqi!",
+              "english": "You're welcome!",
+              "teaching_note": "不客气 is a standard spoken response to thanks; the short answer is a complete utterance."
+            },
+            {
+              "id": "ex-0014-2",
+              "style": "written",
+              "register": "written_dialogue",
+              "hanzi": "她说：“不客气。”",
+              "pinyin": "tā shuō: “bú kèqi.”",
+              "english": "She said, \"You're welcome.\"",
+              "teaching_note": "Written dialogue: 不客气 is used naturally in a spoken exchange, rather than forced into formal prose."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 14
+            }
+          ]
+        },
+        {
+          "id": "w-0171",
+          "hanzi": "认识",
+          "pinyin": "rènshi",
+          "meaning_en": "know (someone)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "communication-social",
+          "topic_ids": [
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0171-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我认识这位老师。",
+              "pinyin": "wǒ rènshi zhè wèi lǎoshī.",
+              "english": "I know this teacher.",
+              "teaching_note": "认识 means to know or be acquainted with a person, not just to know a fact."
+            },
+            {
+              "id": "ex-0171-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们都认识这个老师。",
+              "pinyin": "xuéshēngmen dōu rènshi zhège lǎoshī.",
+              "english": "All the students know this teacher.",
+              "teaching_note": "School or study context showing 认识 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 171
+            }
+          ]
+        },
+        {
+          "id": "w-0220",
+          "hanzi": "问题",
+          "pinyin": "wèntí",
+          "meaning_en": "question; problem",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "abstract-concepts",
+          "topic_ids": [
+            "abstract-concepts",
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0220-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我有一个问题。",
+              "pinyin": "wǒ yǒu yí ge wèntí.",
+              "english": "I have a question.",
+              "teaching_note": "Short beginner-level description illustrating 问题 in context."
+            },
+            {
+              "id": "ex-0220-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "有问题可以问老师。",
+              "pinyin": "yǒu wèntí kěyǐ wèn lǎoshī.",
+              "english": "If you have questions, you can ask the teacher.",
+              "teaching_note": "School or study context showing 问题 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 220
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 帮助 (bāngzhù)",
+        "explanation": "帮助 (bāngzhù) means “help; assistance” (verb).",
+        "example_id": "ex-0514-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 不行 (bùxíng)",
+        "explanation": "不行 (bùxíng) means “not okay; cannot” (verb).",
+        "example_id": "ex-0542-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0514-1",
+      "ex-0542-1",
+      "ex-0609-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "How does Xiao Wen help Xiao Mei in the library?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "She patiently helps Xiao Mei answer all kinds of questions.",
+          "explanation": "The passage says 总是耐心地帮助小美回答各种问题."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write a short invitation to a friend using 聊天儿 or 请客.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "周末有空吗？咱们去喝咖啡聊天儿，我请客！",
+          "explanation": "Use 聊天儿 for chatting and 请客 for treating."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to treat someone (pay the bill)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "请客",
+              "pinyin": "qǐngkè",
+              "meaning_en": "treat someone"
+            },
+            {
+              "id": "b",
+              "hanzi": "认得",
+              "pinyin": "rènde",
+              "meaning_en": "recognize"
+            },
+            {
+              "id": "c",
+              "hanzi": "同意",
+              "pinyin": "tóngyì",
+              "meaning_en": "agree"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "请客 means inviting and paying for someone."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to answer / respond\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "欢迎",
+              "pinyin": "huānyíng",
+              "meaning_en": "welcome"
+            },
+            {
+              "id": "b",
+              "hanzi": "回答",
+              "pinyin": "huídá",
+              "meaning_en": "answer"
+            },
+            {
+              "id": "c",
+              "hanzi": "关注",
+              "pinyin": "guānzhù",
+              "meaning_en": "follow / pay attention"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "回答 means to answer or reply."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"to agree / consent\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "不行",
+              "pinyin": "bùxíng",
+              "meaning_en": "not okay"
+            },
+            {
+              "id": "b",
+              "hanzi": "同意",
+              "pinyin": "tóngyì",
+              "meaning_en": "agree"
+            },
+            {
+              "id": "c",
+              "hanzi": "对话",
+              "pinyin": "duìhuà",
+              "meaning_en": "dialogue"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "同意 means to agree."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Catching Up Over Tea",
+        "context_en": "Xiao Gao welcomes an old friend at a teahouse and offers to treat him.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "欢迎欢迎！好久不见，你还是老样子，我一眼就认得你。",
+            "pinyin": "Huānyíng huānyíng! Hǎojiǔ bú jiàn, nǐ háishi lǎo yàngzi, wǒ yì yǎn jiù rènde nǐ.",
+            "english": "Welcome! Long time no see—you still look the same, I recognized you at a glance."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "谢谢！最近一直忙着工作，真想找个时间好好聊天儿。",
+            "pinyin": "Xièxie! Zuìjìn yìzhí máng zhe gōngzuò, zhēn xiǎng zhǎo ge shíjiān hǎohāo liáotiānr.",
+            "english": "Thanks! I’ve been busy with work lately and really wanted time for a good chat."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "今天我请客，你想喝什么茶？别客气！",
+            "pinyin": "Jīntiān wǒ qǐngkè, nǐ xiǎng hē shénme chá? Bié kèqi!",
+            "english": "Today it’s my treat—what tea would you like? Don’t be shy!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "那可不行，上次也是你请的。不过要是你同意，下次一定让我请！",
+            "pinyin": "Nà kě bùxíng, shàng cì yě shì nǐ qǐng de. Búguò yàoshi nǐ tóngyì, xià cì yídìng ràng wǒ qǐng!",
+            "english": "No way, you treated last time too! If you agree, definitely let me treat next time!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Chatting about something",
+          "explanation_en": "Use 和 + person + 聊 + topic (or 聊天儿 without a topic object) to talk about having a casual chat.",
+          "pattern_hanzi": "<Person A> + 和 + <Person B> + 聊 + <Topic>",
+          "pattern_pinyin": "<Person A> + hé + <Person B> + liáo + <Topic>",
+          "pattern_pseudo_translation": "<Person A> + with + <Person B> + chat about + <Topic>",
+          "examples": [
+            {
+              "hanzi": "我们常常在午饭的时候聊电影。",
+              "pinyin": "Wǒmen chángcháng zài wǔfàn de shíhou liáo diànyǐng.",
+              "english": "We often chat about movies during lunch."
+            },
+            {
+              "hanzi": "爷爷喜欢和老朋友在树下聊天儿。",
+              "pinyin": "Yéye xǐhuan hé lǎo péngyou zài shù xià liáotiānr.",
+              "english": "Grandpa likes chatting with old friends under the tree."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Explaining or telling with 讲",
+          "explanation_en": "讲 (jiǎng) means to explain, tell (a story), or speak about a subject.",
+          "pattern_hanzi": "给 + <Listener> + 讲 + <Story / Point>",
+          "pattern_pinyin": "gěi + <Listener> + jiǎng + <Story / Point>",
+          "pattern_pseudo_translation": "for + <Listener> + tell/explain + <Story / Point>",
+          "examples": [
+            {
+              "hanzi": "老师给我们讲了一个有趣的故事。",
+              "pinyin": "Lǎoshī gěi wǒmen jiǎng le yí ge yǒuqù de gùshi.",
+              "english": "The teacher told us an interesting story."
+            },
+            {
+              "hanzi": "这个问题他讲得很清楚，我听懂了。",
+              "pinyin": "Zhège wèntí tā jiǎng de hěn qīngchu, wǒ tīngdǒng le.",
+              "english": "He explained this question very clearly, and I understood."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Practice welcoming, helping, answering, and agreeing.",
+        "model": {
+          "hanzi": "谢谢你回答了我的问题，很有帮助。",
+          "pinyin": "Xièxie nǐ huídá le wǒ de wèntí, hěn yǒu bāngzhù.",
+          "english": "Thank you for answering my question; it was very helpful."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say everyone agreed to the new plan.",
+            "model_answer": {
+              "hanzi": "大家都同意这个新计划。",
+              "pinyin": "Dàjiā dōu tóngyì zhège xīn jìhuà.",
+              "english": "Everyone agreed to this new plan."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you follow the school’s news.",
+            "model_answer": {
+              "hanzi": "我一直很关注学校的新闻。",
+              "pinyin": "Wǒ yìzhí hěn guānzhù xuéxiào de xīnwén.",
+              "english": "I always follow the school’s news."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say that won’t work because it is too late.",
+            "model_answer": {
+              "hanzi": "太晚了，那样做不行。",
+              "pinyin": "Tài wǎn le, nàyàng zuò bùxíng.",
+              "english": "It’s too late; doing it that way won’t work."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Helpful Study Partner",
+        "paragraphs": [
+          {
+            "hanzi": "小美和小文是好朋友，她们每天下午都在图书馆一起练习汉语对话。",
+            "pinyin": "Xiǎo Měi hé Xiǎo Wén shì hǎo péngyou, tāmen měitiān xiàwǔ dōu zài túshūguǎn yìqǐ liànxí Hànyǔ duìhuà.",
+            "english": "Xiao Mei and Xiao Wen are good friends; every afternoon they practice Chinese dialogues together in the library."
+          },
+          {
+            "hanzi": "小文中文很好，总是耐心地帮助小美回答各种问题。小美非常感谢她，说星期六一定要请客喝奶茶。",
+            "pinyin": "Xiǎo Wén Zhōngwén hěn hǎo, zǒngshì nàixīn de bāngzhù Xiǎo Měi huídá gè zhǒng wèntí. Xiǎo Měi fēicháng gǎnxiè tā, shuō xīngqīliù yídìng yào qǐngkè hē nǎichá.",
+            "english": "Xiao Wen’s Chinese is very good, and she always patiently helps Xiao Mei answer all kinds of questions. Xiao Mei is very grateful and says she will definitely treat her to milk tea on Saturday."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What do Xiao Mei and Xiao Wen practice together every afternoon?",
+            "answer_en": "Chinese dialogues in the library."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "How does Xiao Mei plan to thank Xiao Wen on Saturday?",
+            "answer_en": "By treating her to milk tea."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Offer to treat a friend and say why.",
+          "model_answer": {
+            "hanzi": "今天你帮了我这么多，晚上我请客吃饭吧！",
+            "pinyin": "Jīntiān nǐ bāng le wǒ zhème duō, wǎnshang wǒ qǐngkè chīfàn ba!",
+            "english": "You helped me so much today—let me treat you to dinner tonight!"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say who you like chatting with and what you talk about.",
+          "model_answer": {
+            "hanzi": "我喜欢和室友聊天儿，我们常聊学校的事情。",
+            "pinyin": "Wǒ xǐhuan hé shìyǒu liáotiānr, wǒmen cháng liáo xuéxiào de shìqing.",
+            "english": "I like chatting with my roommate; we often talk about school matters."
+          }
+        }
+      ],
+      "common_pitfall": "聊天儿 already contains the object 儿/天 (\"chat\"), so do not put a topic after it (*聊天儿电影 is wrong; say 聊电影 or 聊一聊电影).",
+      "pronunciation_focus": "聊天儿 (liáotiānr) combines rising liáo with flat first-tone tiānr; 同意 (tóngyì) moves from rising tóng to falling yì.",
+      "review": {
+        "can_do": [
+          "Welcome guests and offer to treat them.",
+          "Use 聊 / 聊天儿 and 讲 properly.",
+          "Agree or refuse with 同意 and 不行."
+        ],
+        "entry_ids": [
+          514,
+          542,
+          609,
+          657,
+          677,
+          682,
+          703,
+          755,
+          756,
+          809,
+          815,
+          860
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-chatting-and-helping--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Chatting about something",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-chatting-and-helping--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Explaining or telling with 讲",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say everyone agreed to the new plan.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-chatting-and-helping--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you follow the school’s news.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-chatting-and-helping--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say that won’t work because it is too late.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What do Xiao Mei and Xiao Wen practice together every afternoon?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-chatting-and-helping--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: How does Xiao Mei plan to thank Xiao Wen on Saturday?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Offer to treat a friend and say why.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-chatting-and-helping--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say who you like chatting with and what you talk about.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-chatting-and-helping--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-chatting-and-helping--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to treat someone (pay the bill",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-chatting-and-helping--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to answer / respond\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-chatting-and-helping--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"to agree / consent\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-chatting-and-helping--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-chatting-and-helping--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

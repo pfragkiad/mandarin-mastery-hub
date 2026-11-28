@@ -1,0 +1,1030 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-asking-how-and-others",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Asking How & Talking About Others",
+    "subtitle": "Inclusive \"we\", \"other\", and asking how to handle things",
+    "description": "Learn to include the listener with 咱们, refer to others with 别的 or 其他, and ask what to do.",
+    "slug": "asking-how-and-others"
+  },
+  "classification": {
+    "primary_topic_id": "reference-questions",
+    "topic_ids": [
+      "reference-questions"
+    ],
+    "tags": [
+      "pronouns",
+      "questions",
+      "suggestions"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Include the listener when suggesting plans with 咱们.",
+    "Distinguish 别的 and 其他 when referring to other items or people.",
+    "Ask how to solve a problem with 怎么办 and 怎样."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "东": "Characters:东",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "主": "Characters:主",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "交": "Characters:交",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "伞": "Characters:伞",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "做": "Characters:做",
+    "公": "Characters:公",
+    "兴": "Characters:兴",
+    "其": "Characters:其",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "午": "Characters:午",
+    "博": "Characters:博",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "可": "Characters:可",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "咱": "Characters:咱",
+    "哥": "Characters:哥",
+    "唱": "Characters:唱",
+    "回": "Characters:回",
+    "园": "Characters:园",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "复": "Characters:复",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "如": "Characters:如",
+    "姐": "Characters:姐",
+    "学": "Characters:学",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "山": "Characters:山",
+    "已": "Characters:已",
+    "带": "Characters:带",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忘": "Characters:忘",
+    "怎": "Characters:怎",
+    "急": "Characters:急",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "换": "Characters:换",
+    "改": "Characters:改",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "末": "Characters:末",
+    "机": "Characters:机",
+    "果": "Characters:果",
+    "样": "Characters:样",
+    "歌": "Characters:歌",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "火": "Characters:火",
+    "爬": "Characters:爬",
+    "爷": "Characters:爷",
+    "物": "Characters:物",
+    "王": "Characters:王",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "站": "Characters:站",
+    "笑": "Characters:笑",
+    "答": "Characters:答",
+    "糕": "Characters:糕",
+    "糟": "Characters:糟",
+    "经": "Characters:经",
+    "者": "Characters:者",
+    "脑": "Characters:脑",
+    "色": "Characters:色",
+    "菜": "Characters:菜",
+    "衣": "Characters:衣",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "记": "Characters:记",
+    "该": "Characters:该",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "车": "Characters:车",
+    "过": "Characters:过",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "问": "Characters:问",
+    "附": "Characters:附",
+    "雨": "Characters:雨",
+    "需": "Characters:需",
+    "题": "Characters:题",
+    "颜": "Characters:颜",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Five high-frequency reference and question expressions used constantly in everyday conversation.",
+      "focus": "Use 咱们 when both speaker and listener are included, and 怎么办 when asking what to do about a situation."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0531",
+          "hanzi": "别的",
+          "pinyin": "biéde",
+          "meaning_en": "other; another",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0531-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "有没有别的颜色？",
+              "pinyin": "yǒu méiyǒu biéde yánsè?",
+              "english": "Do you have another color?",
+              "teaching_note": "Short everyday spoken use of 别的."
+            },
+            {
+              "id": "ex-0531-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们还可以用别的办法。",
+              "pinyin": "wǒmen hái kěyǐ yòng biéde bànfǎ.",
+              "english": "We can also use another method.",
+              "teaching_note": "Simple descriptive or narrative use of 别的."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 531
+            }
+          ]
+        },
+        {
+          "id": "w-0798",
+          "hanzi": "其他",
+          "pinyin": "qítā",
+          "meaning_en": "other; others",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0798-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "其他人呢？",
+              "pinyin": "qítā rén ne?",
+              "english": "What about the others?",
+              "teaching_note": "Short everyday spoken use of 其他."
+            },
+            {
+              "id": "ex-0798-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "其他学生已经回家了。",
+              "pinyin": "qítā xuéshēng yǐjīng huí jiā le.",
+              "english": "The other students have already gone home.",
+              "teaching_note": "Simple descriptive or narrative use of 其他."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 798
+            }
+          ]
+        },
+        {
+          "id": "w-0962",
+          "hanzi": "咱们",
+          "pinyin": "zánmen",
+          "meaning_en": "we; us (including listener)",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0962-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "咱们走吧！",
+              "pinyin": "zánmen zǒu ba!",
+              "english": "Let's go!",
+              "teaching_note": "Short everyday spoken use of 咱们."
+            },
+            {
+              "id": "ex-0962-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "“咱们明天一起去公园吧。”爷爷说。",
+              "pinyin": "“zánmen míngtiān yìqǐ qù gōngyuán ba.” yéye shuō.",
+              "english": "“Let’s go to the park together tomorrow,” Grandpa said.",
+              "teaching_note": "Quoted speech in a written narrative frame."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 962
+            }
+          ]
+        },
+        {
+          "id": "w-0964",
+          "hanzi": "怎么办",
+          "pinyin": "zěnme bàn",
+          "meaning_en": "what to do; how to deal with it",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0964-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "现在怎么办？",
+              "pinyin": "xiànzài zěnme bàn?",
+              "english": "What should we do now?",
+              "teaching_note": "Short everyday spoken use of 怎么办."
+            },
+            {
+              "id": "ex-0964-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大家都在想明天下雨了该怎么办。",
+              "pinyin": "dàjiā dōu zài xiǎng míngtiān xià yǔ le gāi zěnme bàn.",
+              "english": "Everyone is wondering what to do if it rains tomorrow.",
+              "teaching_note": "怎么办 introduces the question being considered within the sentence."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 964
+            }
+          ]
+        },
+        {
+          "id": "w-0965",
+          "hanzi": "怎样",
+          "pinyin": "zěnyàng",
+          "meaning_en": "how; in what way",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0965-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想怎样做？",
+              "pinyin": "nǐ xiǎng zěnyàng zuò?",
+              "english": "How do you want to do it?",
+              "teaching_note": "Short everyday spoken use of 怎样."
+            },
+            {
+              "id": "ex-0965-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他正在想怎样回答这个问题。",
+              "pinyin": "tā zhèngzài xiǎng zěnyàng huídá zhège wèntí.",
+              "english": "He is thinking about how to answer this question.",
+              "teaching_note": "Simple descriptive or narrative use of 怎样."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 965
+            }
+          ]
+        },
+        {
+          "id": "w-0146",
+          "hanzi": "你",
+          "pinyin": "nǐ",
+          "meaning_en": "you",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0146-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你好，你是新学生吗？",
+              "pinyin": "nǐ hǎo, nǐ shì xīn xuéshēng ma?",
+              "english": "Hello, are you a new student?",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            },
+            {
+              "id": "ex-0146-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "你可以在这里看书。",
+              "pinyin": "nǐ kěyǐ zài zhèlǐ kàn shū.",
+              "english": "You can read books here.",
+              "teaching_note": "Short beginner-level description illustrating 你 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 146
+            }
+          ]
+        },
+        {
+          "id": "w-0200",
+          "hanzi": "他",
+          "pinyin": "tā",
+          "meaning_en": "he",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0200-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "他是我的哥哥。",
+              "pinyin": "tā shì wǒ de gēge.",
+              "english": "He is my older brother.",
+              "teaching_note": "他 is the third-person pronoun for a male person; 哥哥 is older brother."
+            },
+            {
+              "id": "ex-0200-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "他每天坐火车上班。",
+              "pinyin": "tā měitiān zuò huǒchē shàngbān.",
+              "english": "He takes the train to work every day.",
+              "teaching_note": "Short beginner-level description illustrating 他 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 200
+            }
+          ]
+        },
+        {
+          "id": "w-0204",
+          "hanzi": "她",
+          "pinyin": "tā",
+          "meaning_en": "she",
+          "primary_pos_id": "pronoun",
+          "pos_ids": [
+            "pronoun"
+          ],
+          "primary_topic_id": "reference-questions",
+          "topic_ids": [
+            "reference-questions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0204-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "她是我的姐姐。",
+              "pinyin": "tā shì wǒ de jiějie.",
+              "english": "She is my older sister.",
+              "teaching_note": "她 is the written third-person pronoun for a female person."
+            },
+            {
+              "id": "ex-0204-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "她会说中文，也会唱歌。",
+              "pinyin": "tā huì shuō Zhōngwén, yě huì chàng gē.",
+              "english": "She can speak Chinese and can also sing.",
+              "teaching_note": "School or study context showing 她 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 204
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 别的 (biéde)",
+        "explanation": "别的 (biéde) means “other; another” (pronoun).",
+        "example_id": "ex-0531-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 其他 (qítā)",
+        "explanation": "其他 (qítā) means “other; others” (pronoun).",
+        "example_id": "ex-0798-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0531-1",
+      "ex-0798-1",
+      "ex-0962-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "In the reading passage, why does Xiao Wang ask 怎么办?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He wants to know what they will do if it rains on the weekend.",
+          "explanation": "Xiao Wang asks 要是周末下雨怎么办？"
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write one suggestion using 咱们 and one question using 别的 or 其他.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "咱们换一家饭馆吧，这家没有别的菜了吗？",
+          "explanation": "Combine 咱们 for a shared suggestion with 别的/其他 for alternatives."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which pronoun specifically includes the listener?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "咱们",
+              "pinyin": "zánmen",
+              "meaning_en": "we (inclusive)"
+            },
+            {
+              "id": "b",
+              "hanzi": "别的",
+              "pinyin": "biéde",
+              "meaning_en": "other"
+            },
+            {
+              "id": "c",
+              "hanzi": "其他",
+              "pinyin": "qítā",
+              "meaning_en": "others"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "咱们 includes both the speaker and the listener."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which expression asks \"what should we do?\"",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "怎样",
+              "pinyin": "zěnyàng",
+              "meaning_en": "how"
+            },
+            {
+              "id": "b",
+              "hanzi": "怎么办",
+              "pinyin": "zěnme bàn",
+              "meaning_en": "what to do"
+            },
+            {
+              "id": "c",
+              "hanzi": "别的",
+              "pinyin": "biéde",
+              "meaning_en": "other"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "怎么办 asks for a course of action."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word is a slightly more formal way to say \"other(s)\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "其他",
+              "pinyin": "qítā",
+              "meaning_en": "other / others"
+            },
+            {
+              "id": "b",
+              "hanzi": "咱们",
+              "pinyin": "zánmen",
+              "meaning_en": "we"
+            },
+            {
+              "id": "c",
+              "hanzi": "怎么办",
+              "pinyin": "zěnme bàn",
+              "meaning_en": "what to do"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "其他 means other or others."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Missed the Last Bus",
+        "context_en": "Two friends realize the last bus has already left and decide what to do next.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "糟糕，最后一班车刚开走，咱们怎么办？",
+            "pinyin": "Zāogāo, zuìhòu yì bān chē gāng kāizǒu, zánmen zěnme bàn?",
+            "english": "Oh no, the last bus just left—what should we do?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "别急，咱们看看附近还有没有别的车。",
+            "pinyin": "Bié jí, zánmen kànkan fùjìn hái yǒu méiyǒu biéde chē.",
+            "english": "Don’t worry, let’s check if there are any other buses nearby."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "如果没有其他办法，咱们就打车回去吧。",
+            "pinyin": "Rúguǒ méiyǒu qítā bànfǎ, zánmen jiù dǎchē huíqù ba.",
+            "english": "If there is no other way, let’s take a taxi back."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好主意，你觉得打车怎么样，方便吗？",
+            "pinyin": "Hǎo zhǔyi, nǐ juéde dǎchē zěnmeyàng, fāngbiàn ma?",
+            "english": "Good idea—how do you feel about taking a taxi, is it convenient?"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Asking what to do",
+          "explanation_en": "Add 怎么办 (zěnme bàn) after stating a problem to ask how to deal with it.",
+          "pattern_hanzi": "<Situation> + 怎么办？",
+          "pattern_pinyin": "<Situation> + zěnme bàn?",
+          "pattern_pseudo_translation": "<Situation> + what to do?",
+          "examples": [
+            {
+              "hanzi": "下雨了，我没带伞，怎么办？",
+              "pinyin": "Xià yǔ le, wǒ méi dài sǎn, zěnme bàn?",
+              "english": "It’s raining and I didn’t bring an umbrella—what should I do?"
+            },
+            {
+              "hanzi": "手机没电了，咱们现在怎么办？",
+              "pinyin": "Shǒujī méi diàn le, zánmen xiànzài zěnme bàn?",
+              "english": "My phone ran out of battery—what do we do now?"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Referring to other things with 别的 / 其他",
+          "explanation_en": "Place 别的 or 其他 before a noun to mean \"other\"; 别的 can also stand alone as \"something else\".",
+          "pattern_hanzi": "别的 / 其他 + <Noun>",
+          "pattern_pinyin": "biéde / qítā + <Noun>",
+          "pattern_pseudo_translation": "other + <Noun>",
+          "examples": [
+            {
+              "hanzi": "你还需要买别的东西吗？",
+              "pinyin": "Nǐ hái xūyào mǎi biéde dōngxi ma?",
+              "english": "Do you still need to buy anything else?"
+            },
+            {
+              "hanzi": "其他同学都已经到教室了。",
+              "pinyin": "Qítā tóngxué dōu yǐjīng dào jiàoshì le.",
+              "english": "The other classmates have all already arrived at the classroom."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Practice suggesting plans with 咱们 and asking about alternatives.",
+        "model": {
+          "hanzi": "咱们去看看其他书店吧。",
+          "pinyin": "Zánmen qù kànkan qítā shūdiàn ba.",
+          "english": "Let’s go check out other bookstores."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Ask what to do when you forgot your homework.",
+            "model_answer": {
+              "hanzi": "我忘记带作业了，怎么办？",
+              "pinyin": "Wǒ wàngjì dài zuòyè le, zěnme bàn?",
+              "english": "I forgot to bring my homework—what should I do?"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Ask if there are other colors.",
+            "model_answer": {
+              "hanzi": "这件衣服还有别的颜色吗？",
+              "pinyin": "Zhè jiàn yīfu hái yǒu biéde yánsè ma?",
+              "english": "Does this piece of clothing come in other colors?"
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Ask how to get to the train station in the best way.",
+            "model_answer": {
+              "hanzi": "请问，去火车站怎样走最方便？",
+              "pinyin": "Qǐngwèn, qù huǒchēzhàn zěnyàng zǒu zuì fāngbiàn?",
+              "english": "Excuse me, how is the most convenient way to go to the train station?"
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Planning a Weekend Trip",
+        "paragraphs": [
+          {
+            "hanzi": "小周对朋友说：“周末咱们去爬山吧，你们觉得怎样？”",
+            "pinyin": "Xiǎo Zhōu duì péngyou shuō: “Zhōumò zánmen qù páshān ba, nǐmen juéde zěnyàng?”",
+            "english": "Xiao Zhou said to his friends: “Let’s go hiking this weekend—how does that sound to you?”"
+          },
+          {
+            "hanzi": "大家都很高兴，不过小王问：“要是周末下雨怎么办？”小周笑着说：“那咱们就改去博物馆，或者去别的公园。”",
+            "pinyin": "Dàjiā dōu hěn gāoxìng, búguò Xiǎo Wáng wèn: “Yàoshi zhōumò xià yǔ zěnme bàn?” Xiǎo Zhōu xiào zhe shuō: “Nà zánmen jiù gǎi qù bówùguǎn, huòzhě qù biéde gōngyuán.”",
+            "english": "Everyone was happy, though Xiao Wang asked: “What if it rains on the weekend?” Xiao Zhou smiled and said: “Then we’ll go to a museum instead, or another park.”"
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What does Xiao Zhou suggest doing on the weekend?",
+            "answer_en": "Going hiking together."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What backup plan does Xiao Zhou offer if it rains?",
+            "answer_en": "Going to a museum or another park instead."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Invite a friend to do something together using 咱们 and ask what they think.",
+          "model_answer": {
+            "hanzi": "咱们下午去图书馆复习吧，你觉得怎样？",
+            "pinyin": "Zánmen xiàwǔ qù túshūguǎn fùxí ba, nǐ juéde zěnyàng?",
+            "english": "Let’s go to the library to review this afternoon—how does that sound?"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe a small problem and ask 怎么办.",
+          "model_answer": {
+            "hanzi": "我的电脑打不开了，今天还有作业要交，怎么办？",
+            "pinyin": "Wǒ de diànnǎo dǎ bu kāi le, jīntiān hái yǒu zuòyè yào jiāo, zěnme bàn?",
+            "english": "My computer won’t turn on, and I still have homework due today—what should I do?"
+          }
+        }
+      ],
+      "common_pitfall": "咱们 always includes the listener (\"we = you and I\"), whereas 我们 can exclude the listener (\"we = my group, not you\").",
+      "pronunciation_focus": "咱们 (zánmen) has a rising second tone followed by a light neutral tone; 怎样 (zěnyàng) moves from a low third tone to a falling fourth tone.",
+      "review": {
+        "can_do": [
+          "Use 咱们 to include the listener.",
+          "Contrast 别的 and 其他.",
+          "Ask 怎么办 and 怎样 in practical situations."
+        ],
+        "entry_ids": [
+          531,
+          798,
+          962,
+          964,
+          965
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-asking-how-and-others--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Asking what to do",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-asking-how-and-others--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Referring to other things with 别的 / 其他",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Ask what to do when you forgot your homework.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-asking-how-and-others--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Ask if there are other colors.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-asking-how-and-others--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Ask how to get to the train station in the best way.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What does Xiao Zhou suggest doing on the weekend?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-asking-how-and-others--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What backup plan does Xiao Zhou offer if it rains?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Invite a friend to do something together using 咱们 and ask what they think.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-asking-how-and-others--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe a small problem and ask 怎么办.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-asking-how-and-others--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-asking-how-and-others--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which pronoun specifically includes the listener",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-asking-how-and-others--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which expression asks \"what should we do?\"",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-asking-how-and-others--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word is a slightly more formal way to say ",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-asking-how-and-others--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-asking-how-and-others--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 15
+}

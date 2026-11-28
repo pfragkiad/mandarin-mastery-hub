@@ -1,0 +1,1795 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-sequence-and-frequency",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Sequence, Frequency & Duration",
+    "subtitle": "Just now, right away, sequence, and frequency",
+    "description": "Express when events happen in sequence, how often they occur, and whether something happened just now or finally.",
+    "slug": "sequence-and-frequency"
+  },
+  "classification": {
+    "primary_topic_id": "time-calendar",
+    "topic_ids": [
+      "time-calendar"
+    ],
+    "tags": [
+      "time-adverbs",
+      "sequence",
+      "frequency"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Distinguish 刚, 刚才, and 刚刚 for recent actions.",
+    "Sequence events with 先, 后来, 以前, 以后, 最后, and 结束.",
+    "Express frequency and continuity using 常, 常常, 平时, 一直, 总是, 突然, 马上, and 终于."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "七": "Characters:七",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "久": "Characters:久",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "于": "Characters:于",
+    "京": "Characters:京",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "住": "Characters:住",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "信": "Characters:信",
+    "候": "Characters:候",
+    "借": "Characters:借",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "八": "Characters:八",
+    "关": "Characters:关",
+    "再": "Characters:再",
+    "准": "Characters:准",
+    "几": "Characters:几",
+    "出": "Characters:出",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "化": "Characters:化",
+    "北": "Characters:北",
+    "匙": "Characters:匙",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "卧": "Characters:卧",
+    "厅": "Characters:厅",
+    "原": "Characters:原",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "发": "Characters:发",
+    "变": "Characters:变",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "咱": "Characters:咱",
+    "哪": "Characters:哪",
+    "啊": "Characters:啊",
+    "四": "Characters:四",
+    "回": "Characters:回",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "备": "Characters:备",
+    "外": "Characters:外",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "完": "Characters:完",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "希": "Characters:希",
+    "常": "Characters:常",
+    "平": "Characters:平",
+    "年": "Characters:年",
+    "床": "Characters:床",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "怎": "Characters:怎",
+    "总": "Characters:总",
+    "息": "Characters:息",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "才": "Characters:才",
+    "打": "Characters:打",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "抱": "Characters:抱",
+    "换": "Characters:换",
+    "搬": "Characters:搬",
+    "放": "Characters:放",
+    "故": "Characters:故",
+    "旅": "Characters:旅",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "望": "Characters:望",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "李": "Characters:李",
+    "束": "Characters:束",
+    "来": "Characters:来",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "桌": "Characters:桌",
+    "歉": "Characters:歉",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "海": "Characters:海",
+    "游": "Characters:游",
+    "点": "Characters:点",
+    "炼": "Characters:炼",
+    "然": "Characters:然",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "白": "Characters:白",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "睡": "Characters:睡",
+    "突": "Characters:突",
+    "站": "Characters:站",
+    "笑": "Characters:笑",
+    "笔": "Characters:笔",
+    "等": "Characters:等",
+    "系": "Characters:系",
+    "练": "Characters:练",
+    "终": "Characters:终",
+    "经": "Characters:经",
+    "结": "Characters:结",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "育": "Characters:育",
+    "能": "Characters:能",
+    "菜": "Characters:菜",
+    "行": "Characters:行",
+    "衣": "Characters:衣",
+    "袋": "Characters:袋",
+    "见": "Characters:见",
+    "视": "Characters:视",
+    "记": "Characters:记",
+    "讲": "Characters:讲",
+    "试": "Characters:试",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "赛": "Characters:赛",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "超": "Characters:超",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "较": "Characters:较",
+    "过": "Characters:过",
+    "近": "Characters:近",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "迟": "Characters:迟",
+    "遍": "Characters:遍",
+    "那": "Characters:那",
+    "里": "Characters:里",
+    "重": "Characters:重",
+    "钥": "Characters:钥",
+    "铁": "Characters:铁",
+    "银": "Characters:银",
+    "锻": "Characters:锻",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "马": "Characters:马"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Time adverbs and sequence words that connect events smoothly in narration.",
+      "focus": "Place 刚 right before the verb, while 刚才 is a time noun that can go before the subject."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0540",
+          "hanzi": "不久",
+          "pinyin": "bùjiǔ",
+          "meaning_en": "soon; before long",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0540-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "不久就到了。",
+              "pinyin": "bùjiǔ jiù dào le.",
+              "english": "We'll be there soon.",
+              "teaching_note": "Short everyday spoken use of 不久."
+            },
+            {
+              "id": "ex-0540-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "不久以后，他们又见面了。",
+              "pinyin": "bùjiǔ yǐhòu, tāmen yòu jiànmiàn le.",
+              "english": "Before long, they met again.",
+              "teaching_note": "Simple descriptive or narrative use of 不久."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 540
+            }
+          ]
+        },
+        {
+          "id": "w-0554",
+          "hanzi": "常",
+          "pinyin": "cháng",
+          "meaning_en": "often; frequently",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0554-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我常去那儿。",
+              "pinyin": "wǒ cháng qù nàr.",
+              "english": "I often go there.",
+              "teaching_note": "Short everyday spoken use of 常."
+            },
+            {
+              "id": "ex-0554-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他常在周末看书。",
+              "pinyin": "tā cháng zài zhōumò kàn shū.",
+              "english": "He often reads on weekends.",
+              "teaching_note": "Simple descriptive or narrative use of 常."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 554
+            }
+          ]
+        },
+        {
+          "id": "w-0555",
+          "hanzi": "常常",
+          "pinyin": "chángcháng",
+          "meaning_en": "often; frequently",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0555-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他常常迟到。",
+              "pinyin": "tā chángcháng chídào.",
+              "english": "He is often late.",
+              "teaching_note": "Short everyday spoken use of 常常."
+            },
+            {
+              "id": "ex-0555-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们常常一起吃午饭。",
+              "pinyin": "wǒmen chángcháng yìqǐ chī wǔfàn.",
+              "english": "We often have lunch together.",
+              "teaching_note": "Simple descriptive or narrative use of 常常."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 555
+            }
+          ]
+        },
+        {
+          "id": "w-0561",
+          "hanzi": "迟到",
+          "pinyin": "chídào",
+          "meaning_en": "arrive late; be late",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0561-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别迟到啊！",
+              "pinyin": "bié chídào a!",
+              "english": "Don't be late!",
+              "teaching_note": "Short everyday spoken use of 迟到."
+            },
+            {
+              "id": "ex-0561-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他今天上课迟到了。",
+              "pinyin": "tā jīntiān shàngkè chídào le.",
+              "english": "He was late for class today.",
+              "teaching_note": "Simple descriptive or narrative use of 迟到."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 561
+            }
+          ]
+        },
+        {
+          "id": "w-0641",
+          "hanzi": "刚",
+          "pinyin": "gāng",
+          "meaning_en": "just; just now",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0641-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我刚到家。",
+              "pinyin": "wǒ gāng dào jiā.",
+              "english": "I just got home.",
+              "teaching_note": "Short everyday spoken use of 刚."
+            },
+            {
+              "id": "ex-0641-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他刚开始学汉语。",
+              "pinyin": "tā gāng kāishǐ xué Hànyǔ.",
+              "english": "He has just started learning Chinese.",
+              "teaching_note": "Simple descriptive or narrative use of 刚."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 641
+            }
+          ]
+        },
+        {
+          "id": "w-0642",
+          "hanzi": "刚才",
+          "pinyin": "gāngcái",
+          "meaning_en": "just now; a moment ago",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0642-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你刚才说什么？",
+              "pinyin": "nǐ gāngcái shuō shénme?",
+              "english": "What did you say just now?",
+              "teaching_note": "Short everyday spoken use of 刚才."
+            },
+            {
+              "id": "ex-0642-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "刚才老师给我们讲了一个故事。",
+              "pinyin": "gāngcái lǎoshī gěi wǒmen jiǎng le yí ge gùshi.",
+              "english": "The teacher told us a story just now.",
+              "teaching_note": "Simple descriptive or narrative use of 刚才."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 642
+            }
+          ]
+        },
+        {
+          "id": "w-0643",
+          "hanzi": "刚刚",
+          "pinyin": "gānggāng",
+          "meaning_en": "just now; only a moment ago",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0643-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我刚刚吃过饭。",
+              "pinyin": "wǒ gānggāng chī guo fàn.",
+              "english": "I just ate.",
+              "teaching_note": "Short everyday spoken use of 刚刚."
+            },
+            {
+              "id": "ex-0643-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他刚刚回到家。",
+              "pinyin": "tā gānggāng huí dào jiā.",
+              "english": "He just returned home.",
+              "teaching_note": "Simple descriptive or narrative use of 刚刚."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 643
+            }
+          ]
+        },
+        {
+          "id": "w-0664",
+          "hanzi": "好久",
+          "pinyin": "hǎojiǔ",
+          "meaning_en": "a long time",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0664-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "好久不见！",
+              "pinyin": "hǎojiǔ bújiàn!",
+              "english": "Long time no see!",
+              "teaching_note": "Short everyday spoken use of 好久."
+            },
+            {
+              "id": "ex-0664-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们已经好久没见面了。",
+              "pinyin": "wǒmen yǐjīng hǎojiǔ méi jiànmiàn le.",
+              "english": "We haven't seen each other for a long time.",
+              "teaching_note": "Simple descriptive or narrative use of 好久."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 664
+            }
+          ]
+        },
+        {
+          "id": "w-0671",
+          "hanzi": "后来",
+          "pinyin": "hòulái",
+          "meaning_en": "afterward; later",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0671-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "后来呢？",
+              "pinyin": "hòulái ne?",
+              "english": "And what happened later?",
+              "teaching_note": "Short everyday spoken use of 后来."
+            },
+            {
+              "id": "ex-0671-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "后来他搬到了上海。",
+              "pinyin": "hòulái tā bān dào le Shànghǎi.",
+              "english": "Later, he moved to Shanghai.",
+              "teaching_note": "Simple descriptive or narrative use of 后来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 671
+            }
+          ]
+        },
+        {
+          "id": "w-0712",
+          "hanzi": "结束",
+          "pinyin": "jiéshù",
+          "meaning_en": "end; finish",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0712-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "比赛结束了吗？",
+              "pinyin": "bǐsài jiéshù le ma?",
+              "english": "Has the match finished?",
+              "teaching_note": "Short everyday spoken use of 结束."
+            },
+            {
+              "id": "ex-0712-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "考试下午四点结束。",
+              "pinyin": "kǎoshì xiàwǔ sì diǎn jiéshù.",
+              "english": "The exam ends at four in the afternoon.",
+              "teaching_note": "Simple descriptive or narrative use of 结束."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 712
+            }
+          ]
+        },
+        {
+          "id": "w-0766",
+          "hanzi": "马上",
+          "pinyin": "mǎshàng",
+          "meaning_en": "immediately; right away",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0766-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我马上来！",
+              "pinyin": "wǒ mǎshàng lái!",
+              "english": "I'll be right there!",
+              "teaching_note": "Short everyday spoken use of 马上."
+            },
+            {
+              "id": "ex-0766-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他听见电话就马上回家了。",
+              "pinyin": "tā tīngjiàn diànhuà jiù mǎshàng huí jiā le.",
+              "english": "He went home immediately after hearing the phone.",
+              "teaching_note": "Simple descriptive or narrative use of 马上."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 766
+            }
+          ]
+        },
+        {
+          "id": "w-0795",
+          "hanzi": "平时",
+          "pinyin": "píngshí",
+          "meaning_en": "usually; ordinarily",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0795-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你平时几点起床？",
+              "pinyin": "nǐ píngshí jǐ diǎn qǐchuáng?",
+              "english": "What time do you normally get up?",
+              "teaching_note": "Short everyday spoken use of 平时."
+            },
+            {
+              "id": "ex-0795-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他平时坐地铁上班。",
+              "pinyin": "tā píngshí zuò dìtiě shàngbān.",
+              "english": "He normally takes the subway to work.",
+              "teaching_note": "Simple descriptive or narrative use of 平时."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 795
+            }
+          ]
+        },
+        {
+          "id": "w-0862",
+          "hanzi": "突然",
+          "pinyin": "tūrán",
+          "meaning_en": "suddenly",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0862-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他突然笑了。",
+              "pinyin": "tā tūrán xiào le.",
+              "english": "He suddenly laughed.",
+              "teaching_note": "Short everyday spoken use of 突然."
+            },
+            {
+              "id": "ex-0862-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "外面突然下起雨来。",
+              "pinyin": "wàimiàn tūrán xià qǐ yǔ lái.",
+              "english": "It suddenly started raining outside.",
+              "teaching_note": "Simple descriptive or narrative use of 突然."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 862
+            }
+          ]
+        },
+        {
+          "id": "w-0890",
+          "hanzi": "先",
+          "pinyin": "xiān",
+          "meaning_en": "first; beforehand",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0890-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你先走吧。",
+              "pinyin": "nǐ xiān zǒu ba.",
+              "english": "You go ahead first.",
+              "teaching_note": "Short everyday spoken use of 先."
+            },
+            {
+              "id": "ex-0890-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "先吃饭，然后做作业。",
+              "pinyin": "xiān chī fàn, ránhòu zuò zuòyè.",
+              "english": "Eat first, then do homework.",
+              "teaching_note": "Simple descriptive or narrative use of 先."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 890
+            }
+          ]
+        },
+        {
+          "id": "w-0928",
+          "hanzi": "一直",
+          "pinyin": "yìzhí",
+          "meaning_en": "all along; continuously",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0928-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我一直在等你。",
+              "pinyin": "wǒ yìzhí zài děng nǐ.",
+              "english": "I've been waiting for you all along.",
+              "teaching_note": "Short everyday spoken use of 一直."
+            },
+            {
+              "id": "ex-0928-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他一直住在这个城市。",
+              "pinyin": "tā yìzhí zhù zài zhège chéngshì.",
+              "english": "He has lived in this city all along.",
+              "teaching_note": "Simple descriptive or narrative use of 一直."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 928
+            }
+          ]
+        },
+        {
+          "id": "w-0929",
+          "hanzi": "以后",
+          "pinyin": "yǐhòu",
+          "meaning_en": "after; later",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0929-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "以后再说吧。",
+              "pinyin": "yǐhòu zài shuō ba.",
+              "english": "Let's talk about it later.",
+              "teaching_note": "Short everyday spoken use of 以后."
+            },
+            {
+              "id": "ex-0929-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "以后我想去中国旅游。",
+              "pinyin": "yǐhòu wǒ xiǎng qù Zhōngguó lǚyóu.",
+              "english": "I want to travel to China in the future.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 929
+            }
+          ]
+        },
+        {
+          "id": "w-0930",
+          "hanzi": "以前",
+          "pinyin": "yǐqián",
+          "meaning_en": "before; previously",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0930-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我以前来过。",
+              "pinyin": "wǒ yǐqián lái guo.",
+              "english": "I've been here before.",
+              "teaching_note": "Short everyday spoken use of 以前."
+            },
+            {
+              "id": "ex-0930-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "以前他在这个学校工作。",
+              "pinyin": "yǐqián tā zài zhège xuéxiào gōngzuò.",
+              "english": "He used to work at this school.",
+              "teaching_note": "Simple descriptive or narrative use of 以前."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 930
+            }
+          ]
+        },
+        {
+          "id": "w-0983",
+          "hanzi": "终于",
+          "pinyin": "zhōngyú",
+          "meaning_en": "finally; at last",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0983-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "终于到了！",
+              "pinyin": "zhōngyú dào le!",
+              "english": "We're finally here!",
+              "teaching_note": "Short everyday spoken use of 终于."
+            },
+            {
+              "id": "ex-0983-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他练习了很久，终于学会了。",
+              "pinyin": "tā liànxí le hěn jiǔ, zhōngyú xué huì le.",
+              "english": "He practiced for a long time and finally learned it.",
+              "teaching_note": "Simple descriptive or narrative use of 终于."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 983
+            }
+          ]
+        },
+        {
+          "id": "w-0994",
+          "hanzi": "总是",
+          "pinyin": "zǒngshì",
+          "meaning_en": "always; invariably",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0994-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你怎么总是迟到？",
+              "pinyin": "nǐ zěnme zǒngshì chídào?",
+              "english": "Why are you always late?",
+              "teaching_note": "Short everyday spoken use of 总是."
+            },
+            {
+              "id": "ex-0994-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他总是早上七点起床。",
+              "pinyin": "tā zǒngshì zǎoshang qī diǎn qǐchuáng.",
+              "english": "He always gets up at seven in the morning.",
+              "teaching_note": "Simple descriptive or narrative use of 总是."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 994
+            }
+          ]
+        },
+        {
+          "id": "w-0997",
+          "hanzi": "最后",
+          "pinyin": "zuìhòu",
+          "meaning_en": "last; final",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0997-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "最后一个是谁？",
+              "pinyin": "zuìhòu yí ge shì shéi?",
+              "english": "Who's the last one?",
+              "teaching_note": "Short everyday spoken use of 最后."
+            },
+            {
+              "id": "ex-0997-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "比赛的最后一天是星期日。",
+              "pinyin": "bǐsài de zuìhòu yì tiān shì xīngqīrì.",
+              "english": "The last day of the competition is Sunday.",
+              "teaching_note": "Simple descriptive or narrative use of 最后."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 997
+            }
+          ]
+        },
+        {
+          "id": "w-0998",
+          "hanzi": "最近",
+          "pinyin": "zuìjìn",
+          "meaning_en": "recently; lately",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0998-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你最近怎么样？",
+              "pinyin": "nǐ zuìjìn zěnmeyàng?",
+              "english": "How have you been lately?",
+              "teaching_note": "Short everyday spoken use of 最近."
+            },
+            {
+              "id": "ex-0998-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "最近天气变化很大。",
+              "pinyin": "zuìjìn tiānqì biànhuà hěn dà.",
+              "english": "The weather has changed a lot recently.",
+              "teaching_note": "Simple descriptive or narrative use of 最近."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 998
+            }
+          ]
+        },
+        {
+          "id": "w-0005",
+          "hanzi": "白天",
+          "pinyin": "báitiān",
+          "meaning_en": "daytime",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0005-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我白天上班。",
+              "pinyin": "wǒ báitiān shàngbān.",
+              "english": "I work during the day.",
+              "teaching_note": "白天 contrasts with 晚上 and places the work in daytime hours."
+            },
+            {
+              "id": "ex-0005-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们白天在学校学习。",
+              "pinyin": "xuéshengmen báitiān zài xuéxiào xuéxí.",
+              "english": "The students study at school during the day.",
+              "teaching_note": "The time word comes before the phrase that says where the students study."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 5
+            }
+          ]
+        },
+        {
+          "id": "w-0178",
+          "hanzi": "上午",
+          "pinyin": "shàngwǔ",
+          "meaning_en": "morning",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0178-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我上午有时间。",
+              "pinyin": "wǒ shàngwǔ yǒu shíjiān.",
+              "english": "I have time in the morning.",
+              "teaching_note": "有时间 means have time or be available during the period mentioned."
+            },
+            {
+              "id": "ex-0178-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "上午我们有汉语课。",
+              "pinyin": "shàngwǔ wǒmen yǒu Hànyǔ kè.",
+              "english": "We have Chinese-language class in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 上午 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 178
+            }
+          ]
+        },
+        {
+          "id": "w-0217",
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "meaning_en": "evening",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "time-calendar",
+          "topic_ids": [
+            "time-calendar"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0217-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "晚上我在家看书。",
+              "pinyin": "wǎnshang wǒ zài jiā kàn shū.",
+              "english": "I read at home in the evening.",
+              "teaching_note": "晚上 is evening or night; 在家 gives the location of reading."
+            },
+            {
+              "id": "ex-0217-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "晚上八点我们在家看电视。",
+              "pinyin": "wǎnshang bā diǎn wǒmen zài jiā kàn diànshì.",
+              "english": "We watch TV at home at eight in the evening.",
+              "teaching_note": "Daily time or schedule context illustrating 晚上 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 217
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 不久 (bùjiǔ)",
+        "explanation": "不久 (bùjiǔ) means “soon; before long” (adjective).",
+        "example_id": "ex-0540-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 常 (cháng)",
+        "explanation": "常 (cháng) means “often; frequently” (adverb).",
+        "example_id": "ex-0554-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0540-1",
+      "ex-0554-1",
+      "ex-0555-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why was Xiao Li’s key in his coat pocket?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He had put it there when changing his coat just earlier.",
+          "explanation": "The passage ends with 原来他刚才换大衣的时候放进去了！"
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write a short sequence of two sentences using 刚才 or 刚 and 终于.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我刚才找了半天，终于把笔记本找到了。",
+          "explanation": "Use 刚才/刚 for the recent action and 终于 for the eventual result."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"immediately / right away\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "马上",
+              "pinyin": "mǎshàng",
+              "meaning_en": "right away"
+            },
+            {
+              "id": "b",
+              "hanzi": "好久",
+              "pinyin": "hǎojiǔ",
+              "meaning_en": "a long time"
+            },
+            {
+              "id": "c",
+              "hanzi": "平时",
+              "pinyin": "píngshí",
+              "meaning_en": "usually"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "马上 means immediately."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"finally / at last\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "突然",
+              "pinyin": "tūrán",
+              "meaning_en": "suddenly"
+            },
+            {
+              "id": "b",
+              "hanzi": "终于",
+              "pinyin": "zhōngyú",
+              "meaning_en": "finally"
+            },
+            {
+              "id": "c",
+              "hanzi": "迟到",
+              "pinyin": "chídào",
+              "meaning_en": "arrive late"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "终于 expresses reaching a long-awaited result."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"to end / finish\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "结束",
+              "pinyin": "jiéshù",
+              "meaning_en": "end / finish"
+            },
+            {
+              "id": "b",
+              "hanzi": "一直",
+              "pinyin": "yìzhí",
+              "meaning_en": "all along"
+            },
+            {
+              "id": "c",
+              "hanzi": "不久",
+              "pinyin": "bùjiǔ",
+              "meaning_en": "soon"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "结束 means to end or conclude."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Catching Up After Class",
+        "context_en": "Two classmates talk about why one arrived late and what happened.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你刚才去哪儿了？上课的时候你一直没来。",
+            "pinyin": "Nǐ gāngcái qù nǎr le? Shàngkè de shíhou nǐ yìzhí méi lái.",
+            "english": "Where did you go just now? You weren’t here the whole time during class."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "抱歉，我迟到了。平时我总是很早出门，但今天路上突然下大雨了。",
+            "pinyin": "Bàoqiàn, wǒ chídào le. Píngshí wǒ zǒngshì hěn zǎo chūmén, dàn jīntiān lùshang tūrán xià dà yǔ le.",
+            "english": "Sorry, I was late. Usually I always leave early, but today it suddenly rained heavily on the way."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "没关系，老师刚才也刚讲完重点，一会儿我借你笔记。",
+            "pinyin": "Méiguānxi, lǎoshī gāngcái yě gāng jiǎng wán zhòngdiǎn, yíhuìr wǒ jiè nǐ bǐjì.",
+            "english": "No worries—the teacher also just finished the key points; I’ll lend you my notes in a bit."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "太好了！咱们先去吃饭，吃完以后再看笔记吧。",
+            "pinyin": "Tài hǎo le! Zánmen xiān qù chīfàn, chī wán yǐhòu zài kàn bǐjì ba.",
+            "english": "Great! Let’s eat first, and look at the notes after eating."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "刚 (adverb) vs. 刚才 (time noun)",
+          "explanation_en": "刚才 (gāngcái) can precede or follow the subject and can be negated; 刚 (gāng) is an adverb that goes directly before the verb.",
+          "pattern_hanzi": "刚才 + <Subject> + <Verb>  /  <Subject> + 刚 + <Verb>",
+          "pattern_pinyin": "gāngcái + <Subject> + <Verb>  /  <Subject> + gāng + <Verb>",
+          "pattern_pseudo_translation": "just now + <Subject> + <Verb>  /  <Subject> + just + <Verb>",
+          "examples": [
+            {
+              "hanzi": "刚才谁给你打电话了？",
+              "pinyin": "Gāngcái shéi gěi nǐ dǎ diànhuà le?",
+              "english": "Who called you just now?"
+            },
+            {
+              "hanzi": "我刚到车站，车就开了。",
+              "pinyin": "Wǒ gāng dào chēzhàn, chē jiù kāi le.",
+              "english": "Just as I arrived at the station, the train left."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Before and after with 以前 / 以后",
+          "explanation_en": "Place 以前 (before) or 以后 (after) right after a time word or verb phrase.",
+          "pattern_hanzi": "<Event / Time> + 以前 / 以后",
+          "pattern_pinyin": "<Event / Time> + yǐqián / yǐhòu",
+          "pattern_pseudo_translation": "<Event / Time> + before / after",
+          "examples": [
+            {
+              "hanzi": "来中国以前，他学了一年汉语。",
+              "pinyin": "Lái Zhōngguó yǐqián, tā xué le yì nián Hànyǔ.",
+              "english": "Before coming to China, he studied Chinese for one year."
+            },
+            {
+              "hanzi": "比赛结束以后，大家终于可以休息了。",
+              "pinyin": "Bǐsài jiéshù yǐhòu, dàjiā zhōngyú kěyǐ xiūxi le.",
+              "english": "After the match ended, everyone could finally rest."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Narrate sequences and frequency using time adverbs.",
+        "model": {
+          "hanzi": "最近我常常去体育馆锻炼。",
+          "pinyin": "Zuìjìn wǒ chángcháng qù tǐyùguǎn duànliàn.",
+          "english": "Recently I often go to the gym to work out."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you will reply right away.",
+            "model_answer": {
+              "hanzi": "我马上给你回信。",
+              "pinyin": "Wǒ mǎshàng gěi nǐ huíxìn.",
+              "english": "I will reply to you right away."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say it hasn’t rained for a long time, and you hope it rains soon.",
+            "model_answer": {
+              "hanzi": "好久没下雨了，希望不久以后能下一场雨。",
+              "pinyin": "Hǎojiǔ méi xià yǔ le, xīwàng bùjiǔ yǐhòu néng xià yì chǎng yǔ.",
+              "english": "It hasn’t rained for a long time; I hope it rains soon."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say at first he lived in Beijing, and later moved to Shanghai.",
+            "model_answer": {
+              "hanzi": "以前他住在北京，后来搬到了上海。",
+              "pinyin": "Yǐqián tā zhù zài Běijīng, hòulái bān dào le Shànghǎi.",
+              "english": "Previously he lived in Beijing, and later he moved to Shanghai."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Finally Finding the Key",
+        "paragraphs": [
+          {
+            "hanzi": "昨天下午，小李准备出门的时候，突然发现钥匙不见了。他平时总是把钥匙放在桌子上，今天怎么找不到了？",
+            "pinyin": "Zuótiān xiàwǔ, Xiǎo Lǐ zhǔnbèi chūmén de shíhou, tūrán fāxiàn yàoshi bújiàn le. Tā píngshí zǒngshì bǎ yàoshi fàng zài zhuōzi shàng, jīntiān zěnme zhǎo bú dào le?",
+            "english": "Yesterday afternoon, when Xiao Li was about to go out, he suddenly discovered his key was missing. Usually he always puts his key on the table—why couldn’t he find it today?"
+          },
+          {
+            "hanzi": "他先在客厅找了一遍，后来又去卧室找，最后终于在衣服口袋里找到了。原来他刚才换大衣的时候放进去了！",
+            "pinyin": "Tā xiān zài kètīng zhǎo le yí biàn, hòulái yòu qù wòshì zhǎo, zuìhòu zhōngyú zài yīfu kǒudài lǐ zhǎodào le. Yuánlái tā gāngcái huàn dàyī de shíhou fàng jìnqù le!",
+            "english": "He first searched the living room, later went to search the bedroom, and finally found it in his coat pocket. It turned out he had put it in when changing his coat just earlier!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Where does Xiao Li usually put his key?",
+            "answer_en": "On the table."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Where did he finally find the key?",
+            "answer_en": "In his coat pocket."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe your normal routine using 平时, 总是, and 最近.",
+          "model_answer": {
+            "hanzi": "平时我总是七点起床，不过最近睡得比较晚。",
+            "pinyin": "Píngshí wǒ zǒngshì qī diǎn qǐchuáng, búguò zuìjìn shuì de bǐjiào wǎn.",
+            "english": "Normally I always get up at seven, though recently I have been sleeping rather late."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Tell a short 3-step story using 先, 后来, and 最后.",
+          "model_answer": {
+            "hanzi": "我先去了银行，后来去超市买菜，最后回家做饭。",
+            "pinyin": "Wǒ xiān qù le yínháng, hòulái qù chāoshì mǎi cài, zuìhòu huí jiā zuòfàn.",
+            "english": "First I went to the bank, later I went to the supermarket to buy groceries, and finally I went home to cook."
+          }
+        }
+      ],
+      "common_pitfall": "后来 (\"later, afterward\") only describes past events that have already happened; use 以后 (\"after / in the future\") for future plans.",
+      "pronunciation_focus": "突然 (tūrán) moves from first tone to second tone; 终于 (zhōngyú) also moves from first tone to second tone.",
+      "review": {
+        "can_do": [
+          "Contrast 刚, 刚才, and 刚刚.",
+          "Sequence events with 先, 后来, 以前, 以后, and 最后.",
+          "Use frequency and aspect adverbs like 一直, 总是, and 终于."
+        ],
+        "entry_ids": [
+          540,
+          554,
+          555,
+          561,
+          641,
+          642,
+          643,
+          664,
+          671,
+          712,
+          766,
+          795,
+          862,
+          890,
+          928,
+          929,
+          930,
+          983,
+          994,
+          997,
+          998
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-sequence-and-frequency--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: 刚 (adverb) vs. 刚才 (time noun)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-sequence-and-frequency--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Before and after with 以前 / 以后",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you will reply right away.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-sequence-and-frequency--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say it hasn’t rained for a long time, and you hope it rains soon.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-sequence-and-frequency--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say at first he lived in Beijing, and later moved to Shanghai.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Where does Xiao Li usually put his key?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-sequence-and-frequency--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Where did he finally find the key?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe your normal routine using 平时, 总是, and 最近.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-sequence-and-frequency--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Tell a short 3-step story using 先, 后来, and 最后.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-sequence-and-frequency--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-sequence-and-frequency--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"immediately / right away\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-sequence-and-frequency--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"finally / at last\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-sequence-and-frequency--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"to end / finish\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-sequence-and-frequency--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-sequence-and-frequency--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

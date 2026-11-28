@@ -51,7 +51,9 @@ def build():
     assert supplied['source']['sha256'] == manifest['current_pdf']['sha256']
     index = load('src/data/vocabulary/index.json')
     runtime = [e for part in index['parts'] for e in load('src/data/vocabulary/' + part)]
-    runtime_by_id = {e.get('studyMetadata', {}).get('numberingRevision', {}).get('previousId', e['hsk_index']): e
+    # Historical review identities belong to the offline ledger, never app data.
+    legacy_by_uuid = {e['uuid']: e['legacy_id'] for e in load('importer/data/hsk-level1-5-numbering/legacy-bindings.json')['entries']}
+    runtime_by_id = {legacy_by_uuid[e['id']]: e
                      for e in runtime if e['hskLevel'] in VERSIONS}
     assert len(runtime_by_id) == 3600
     mappings, summary, pinyin, pos, homographs = [], [], [], [], []

@@ -1,0 +1,1612 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-cities-streets-buildings",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Cities, Streets & Buildings",
+    "subtitle": "Cities, neighborhoods, parks, and indoor spaces",
+    "description": "Talk about countries, cities, streets, neighborhoods, parks, and building features like elevators and stairs.",
+    "slug": "cities-streets-buildings"
+  },
+  "classification": {
+    "primary_topic_id": "places-directions",
+    "topic_ids": [
+      "places-directions"
+    ],
+    "tags": [
+      "cities",
+      "buildings",
+      "places"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "geography-places",
+    "subtopic_ids": [
+      "geography-places"
+    ]
+  },
+  "learning_objectives": [
+    "Name geographic and urban places: 世界, 国家, 城市, 市, 外地, 小区, 街, 路边, and 公园.",
+    "Distinguish 地点 (event location) and 地方 (general place/area), plus 地 (ground).",
+    "Name building features: 电梯, 楼梯, 卫生间, 室, and 园."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "万": "Characters:万",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "世": "Characters:世",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "二": "Characters:二",
+    "亮": "Characters:亮",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "住": "Characters:住",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "再": "Characters:再",
+    "净": "Characters:净",
+    "几": "Characters:几",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "动": "Characters:动",
+    "包": "Characters:包",
+    "北": "Characters:北",
+    "区": "Characters:区",
+    "十": "Characters:十",
+    "卫": "Characters:卫",
+    "去": "Characters:去",
+    "友": "Characters:友",
+    "口": "Characters:口",
+    "只": "Characters:只",
+    "各": "Characters:各",
+    "合": "Characters:合",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哥": "Characters:哥",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坏": "Characters:坏",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "境": "Characters:境",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "安": "Characters:安",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "层": "Characters:层",
+    "工": "Characters:工",
+    "市": "Characters:市",
+    "干": "Characters:干",
+    "店": "Characters:店",
+    "座": "Characters:座",
+    "开": "Characters:开",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "教": "Characters:教",
+    "方": "Characters:方",
+    "旁": "Characters:旁",
+    "明": "Characters:明",
+    "是": "Characters:是",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "末": "Characters:末",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "梯": "Characters:梯",
+    "楼": "Characters:楼",
+    "欢": "Characters:欢",
+    "比": "Characters:比",
+    "水": "Characters:水",
+    "活": "Characters:活",
+    "游": "Characters:游",
+    "漂": "Characters:漂",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "然": "Characters:然",
+    "熊": "Characters:熊",
+    "爬": "Characters:爬",
+    "物": "Characters:物",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "环": "Characters:环",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "界": "Characters:界",
+    "百": "Characters:百",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "等": "Characters:等",
+    "育": "Characters:育",
+    "能": "Characters:能",
+    "脏": "Characters:脏",
+    "花": "Characters:花",
+    "虽": "Characters:虽",
+    "行": "Characters:行",
+    "街": "Characters:街",
+    "言": "Characters:言",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "赛": "Characters:赛",
+    "走": "Characters:走",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "转": "Characters:转",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "迎": "Characters:迎",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "适": "Characters:适",
+    "道": "Characters:道",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "闹": "Characters:闹",
+    "附": "Characters:附",
+    "集": "Characters:集",
+    "静": "Characters:静",
+    "面": "Characters:面",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Urban geography, public places, and building facilities.",
+      "focus": "Distinguish 地方 (any place/area) from 地点 (the specific venue/location of a meeting or event)."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0560",
+          "hanzi": "城市",
+          "pinyin": "chéngshì",
+          "meaning_en": "city",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0560-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢这个城市吗？",
+              "pinyin": "nǐ xǐhuan zhège chéngshì ma?",
+              "english": "Do you like this city?",
+              "teaching_note": "Short everyday spoken use of 城市."
+            },
+            {
+              "id": "ex-0560-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个城市有很多公园。",
+              "pinyin": "zhège chéngshì yǒu hěn duō gōngyuán.",
+              "english": "This city has many parks.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 560
+            }
+          ]
+        },
+        {
+          "id": "w-0589",
+          "hanzi": "地",
+          "pinyin": "dì",
+          "meaning_en": "ground; land",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0589-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "地上有水。",
+              "pinyin": "dì shàng yǒu shuǐ.",
+              "english": "There is water on the ground.",
+              "teaching_note": "地 is dì meaning ground; not the Level 2 adverbial particle 地 (de)."
+            },
+            {
+              "id": "ex-0589-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们坐在地上玩。",
+              "pinyin": "háizimen zuò zài dì shàng wán.",
+              "english": "The children sit on the ground and play.",
+              "teaching_note": "地 is dì meaning ground; not the Level 2 adverbial particle 地 (de)."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 589
+            }
+          ]
+        },
+        {
+          "id": "w-0590",
+          "hanzi": "地点",
+          "pinyin": "dìdiǎn",
+          "meaning_en": "place; location (for an event)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0590-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "地点在哪儿？",
+              "pinyin": "dìdiǎn zài nǎr?",
+              "english": "Where is the location?",
+              "teaching_note": "Short everyday spoken use of 地点."
+            },
+            {
+              "id": "ex-0590-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "比赛的地点是学校体育馆。",
+              "pinyin": "bǐsài de dìdiǎn shì xuéxiào tǐyùguǎn.",
+              "english": "The match will take place in the school gym.",
+              "teaching_note": "Simple descriptive or narrative use of 地点."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 590
+            }
+          ]
+        },
+        {
+          "id": "w-0591",
+          "hanzi": "地方",
+          "pinyin": "dìfang",
+          "meaning_en": "place; area",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0591-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是什么地方？",
+              "pinyin": "zhè shì shénme dìfang?",
+              "english": "What place is this?",
+              "teaching_note": "Short everyday spoken use of 地方."
+            },
+            {
+              "id": "ex-0591-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个地方很安静。",
+              "pinyin": "zhège dìfang hěn ānjìng.",
+              "english": "This place is very quiet.",
+              "teaching_note": "Simple descriptive or narrative use of 地方."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 591
+            }
+          ]
+        },
+        {
+          "id": "w-0594",
+          "hanzi": "电梯",
+          "pinyin": "diàntī",
+          "meaning_en": "elevator; lift",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0594-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "电梯在那边。",
+              "pinyin": "diàntī zài nàbiān.",
+              "english": "The elevator is over there.",
+              "teaching_note": "Short everyday spoken use of 电梯."
+            },
+            {
+              "id": "ex-0594-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个楼里有两个电梯。",
+              "pinyin": "zhège lóu lǐ yǒu liǎng ge diàntī.",
+              "english": "There are two elevators in this building.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 594
+            }
+          ]
+        },
+        {
+          "id": "w-0649",
+          "hanzi": "公园",
+          "pinyin": "gōngyuán",
+          "meaning_en": "park",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions",
+            "leisure-media"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0649-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "去公园走走吧！",
+              "pinyin": "qù gōngyuán zǒu zǒu ba!",
+              "english": "Let's take a walk in the park!",
+              "teaching_note": "Short everyday spoken use of 公园."
+            },
+            {
+              "id": "ex-0649-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个公园里有很多树。",
+              "pinyin": "zhège gōngyuán lǐ yǒu hěn duō shù.",
+              "english": "There are many trees in this park.",
+              "teaching_note": "Simple descriptive or narrative use of 公园."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 649
+            }
+          ]
+        },
+        {
+          "id": "w-0658",
+          "hanzi": "国家",
+          "pinyin": "guójiā",
+          "meaning_en": "country; nation",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions",
+            "society-government-law"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0658-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你去过哪个国家？",
+              "pinyin": "nǐ qù guo nǎge guójiā?",
+              "english": "Which countries have you been to?",
+              "teaching_note": "Short everyday spoken use of 国家."
+            },
+            {
+              "id": "ex-0658-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "中国是一个很大的国家。",
+              "pinyin": "Zhōngguó shì yí ge hěn dà de guójiā.",
+              "english": "China is a very large country.",
+              "teaching_note": "Simple descriptive or narrative use of 国家."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 658
+            }
+          ]
+        },
+        {
+          "id": "w-0707",
+          "hanzi": "街",
+          "pinyin": "jiē",
+          "meaning_en": "street",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0707-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这条街人真多！",
+              "pinyin": "zhè tiáo jiē rén zhēn duō!",
+              "english": "There are so many people on this street!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0707-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这条街上有很多商店。",
+              "pinyin": "zhè tiáo jiē shàng yǒu hěn duō shāngdiàn.",
+              "english": "There are many shops on this street.",
+              "teaching_note": "Simple descriptive or narrative use of 街."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 707
+            }
+          ]
+        },
+        {
+          "id": "w-0761",
+          "hanzi": "楼梯",
+          "pinyin": "lóutī",
+          "meaning_en": "stairs; staircase",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0761-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "走楼梯吧。",
+              "pinyin": "zǒu lóutī ba.",
+              "english": "Let's take the stairs.",
+              "teaching_note": "Short everyday spoken use of 楼梯."
+            },
+            {
+              "id": "ex-0761-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "电梯坏了，只能走楼梯。",
+              "pinyin": "diàntī huài le, zhǐ néng zǒu lóutī.",
+              "english": "The elevator is broken, so we must use the stairs.",
+              "teaching_note": "Simple descriptive or narrative use of 楼梯."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 761
+            }
+          ]
+        },
+        {
+          "id": "w-0762",
+          "hanzi": "路边",
+          "pinyin": "lùbiān",
+          "meaning_en": "roadside; side of road",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0762-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "在路边等我。",
+              "pinyin": "zài lùbiān děng wǒ.",
+              "english": "Wait for me by the road.",
+              "teaching_note": "Short everyday spoken use of 路边."
+            },
+            {
+              "id": "ex-0762-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "路边有一家小商店。",
+              "pinyin": "lùbiān yǒu yì jiā xiǎo shāngdiàn.",
+              "english": "There is a small shop by the roadside.",
+              "teaching_note": "Simple descriptive or narrative use of 路边."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 762
+            }
+          ]
+        },
+        {
+          "id": "w-0832",
+          "hanzi": "世界",
+          "pinyin": "shìjiè",
+          "meaning_en": "world",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0832-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "世界真大啊！",
+              "pinyin": "shìjiè zhēn dà a!",
+              "english": "The world is so big!",
+              "teaching_note": "Short everyday spoken use of 世界."
+            },
+            {
+              "id": "ex-0832-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "世界上有很多不同的语言。",
+              "pinyin": "shìjiè shàng yǒu hěn duō bù tóng de yǔyán.",
+              "english": "There are many different languages in the world.",
+              "teaching_note": "Simple descriptive or narrative use of 世界."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 832
+            }
+          ]
+        },
+        {
+          "id": "w-0833",
+          "hanzi": "市",
+          "pinyin": "shì",
+          "meaning_en": "city; municipality",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0833-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你住在哪个市？",
+              "pinyin": "nǐ zhù zài nǎge shì?",
+              "english": "Which city do you live in?",
+              "teaching_note": "Short everyday spoken use of 市."
+            },
+            {
+              "id": "ex-0833-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个市有三百万人。",
+              "pinyin": "zhège shì yǒu sān bǎi wàn rén.",
+              "english": "This city has three million residents.",
+              "teaching_note": "Simple descriptive or narrative use of 市."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 833
+            }
+          ]
+        },
+        {
+          "id": "w-0835",
+          "hanzi": "室",
+          "pinyin": "shì",
+          "meaning_en": "room (as part of compound words)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0835-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是教室，不是办公室。",
+              "pinyin": "zhè shì jiàoshì, bú shì bàngōngshì.",
+              "english": "This is a classroom, not an office.",
+              "teaching_note": "室 is generally a bound component in words for rooms, such as 教室 and 办公室."
+            },
+            {
+              "id": "ex-0835-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个楼里有十间教室。",
+              "pinyin": "zhège lóu lǐ yǒu shí jiān jiàoshì.",
+              "english": "There are ten classrooms in this building.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 835
+            }
+          ]
+        },
+        {
+          "id": "w-0865",
+          "hanzi": "外地",
+          "pinyin": "wàidì",
+          "meaning_en": "another place; out of town",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0865-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你是外地人吗？",
+              "pinyin": "nǐ shì wàidì rén ma?",
+              "english": "Are you from out of town?",
+              "teaching_note": "Short everyday spoken use of 外地."
+            },
+            {
+              "id": "ex-0865-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他从外地来到这里工作。",
+              "pinyin": "tā cóng wàidì lái dào zhèlǐ gōngzuò.",
+              "english": "He came from another place to work here.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 865
+            }
+          ]
+        },
+        {
+          "id": "w-0875",
+          "hanzi": "卫生间",
+          "pinyin": "wèishēngjiān",
+          "meaning_en": "restroom; bathroom",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0875-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "卫生间在哪儿？",
+              "pinyin": "wèishēngjiān zài nǎr?",
+              "english": "Where is the restroom?",
+              "teaching_note": "Short everyday spoken use of 卫生间."
+            },
+            {
+              "id": "ex-0875-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家饭馆的卫生间很干净。",
+              "pinyin": "zhè jiā fànguǎn de wèishēngjiān hěn gānjìng.",
+              "english": "The restroom in this restaurant is very clean.",
+              "teaching_note": "Simple descriptive or narrative use of 卫生间."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 875
+            }
+          ]
+        },
+        {
+          "id": "w-0897",
+          "hanzi": "小区",
+          "pinyin": "xiǎoqū",
+          "meaning_en": "residential community; neighborhood",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0897-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你住哪个小区？",
+              "pinyin": "nǐ zhù nǎge xiǎoqū?",
+              "english": "Which residential complex do you live in?",
+              "teaching_note": "Short everyday spoken use of 小区."
+            },
+            {
+              "id": "ex-0897-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个小区有一个小公园。",
+              "pinyin": "zhège xiǎoqū yǒu yí ge xiǎo gōngyuán.",
+              "english": "There is a small park in this neighborhood.",
+              "teaching_note": "Simple descriptive or narrative use of 小区."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 897
+            }
+          ]
+        },
+        {
+          "id": "w-0955",
+          "hanzi": "园",
+          "pinyin": "yuán",
+          "meaning_en": "garden; park; suffix for grounds",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0955-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喜欢这个花园吗？",
+              "pinyin": "nǐ xǐhuan zhège huāyuán ma?",
+              "english": "Do you like this garden?",
+              "teaching_note": "园 generally appears in compounds such as 花园、公园、校园."
+            },
+            {
+              "id": "ex-0955-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "周末很多孩子去动物园看大熊猫。",
+              "pinyin": "zhōumò hěn duō háizi qù dòngwùyuán kàn dàxióngmāo.",
+              "english": "Many children go to the zoo on weekends to see the giant pandas.",
+              "teaching_note": "园 generally appears in compounds such as 花园、公园、校园."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 955
+            }
+          ]
+        },
+        {
+          "id": "w-0066",
+          "hanzi": "国",
+          "pinyin": "guó",
+          "meaning_en": "country",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "geography-places",
+          "subtopic_ids": [
+            "geography-places"
+          ],
+          "examples": [
+            {
+              "id": "ex-0066-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "中国是一个大国。",
+              "pinyin": "Zhōngguó shì yí ge dàguó.",
+              "english": "China is a large country.",
+              "teaching_note": "大国 means a large or major country; 个 is a general classifier."
+            },
+            {
+              "id": "ex-0066-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我哥哥在外国工作。",
+              "pinyin": "wǒ gēge zài wàiguó gōngzuò.",
+              "english": "My older brother works abroad.",
+              "teaching_note": "外国 (“foreign country/abroad”) is a common compound containing 国."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 66
+            }
+          ]
+        },
+        {
+          "id": "w-0080",
+          "hanzi": "后",
+          "pinyin": "hòu",
+          "meaning_en": "after; behind",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions",
+            "time-calendar"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0080-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我坐在你后边。",
+              "pinyin": "wǒ zuò zài nǐ hòubian.",
+              "english": "I am sitting behind you.",
+              "teaching_note": "后边 is a positional noun meaning behind; 在 + person + 后边 locates the speaker."
+            },
+            {
+              "id": "ex-0080-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们下课后去书店。",
+              "pinyin": "wǒmen xiàkè hòu qù shūdiàn.",
+              "english": "We go to the bookstore after class.",
+              "teaching_note": "School or study context showing 后 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 80
+            }
+          ]
+        },
+        {
+          "id": "w-0110",
+          "hanzi": "里",
+          "pinyin": "lǐ",
+          "meaning_en": "inside",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0110-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "书在包里。",
+              "pinyin": "shū zài bāo lǐ.",
+              "english": "The book is in the bag.",
+              "teaching_note": "里 is a location word, showing that the book is inside the bag."
+            },
+            {
+              "id": "ex-0110-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们在教室里上课。",
+              "pinyin": "xuéshēngmen zài jiàoshì lǐ shàngkè.",
+              "english": "The students are having class in the classroom.",
+              "teaching_note": "School or study context showing 里 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 110
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 城市 (chéngshì)",
+        "explanation": "城市 (chéngshì) means “city” (noun).",
+        "example_id": "ex-0560-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 地 (dì)",
+        "explanation": "地 (dì) means “ground; land” (noun).",
+        "example_id": "ex-0589-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0560-1",
+      "ex-0589-1",
+      "ex-0590-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "How does the inside of the narrator’s neighborhood contrast with the streets outside?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "The streets have heavy traffic, while the neighborhood inside is quiet with a good environment.",
+          "explanation": "The first paragraph contrasts 街道上车来车往 with 小区里面环境很好，也很安静."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 城市 or 小区 and 电梯 or 公园.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "这个城市的公园很多，我们小区旁边就有一个。",
+          "explanation": "Combine urban place nouns naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"elevator\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "楼梯",
+              "pinyin": "lóutī",
+              "meaning_en": "stairs"
+            },
+            {
+              "id": "b",
+              "hanzi": "电梯",
+              "pinyin": "diàntī",
+              "meaning_en": "elevator"
+            },
+            {
+              "id": "c",
+              "hanzi": "卫生间",
+              "pinyin": "wèishēngjiān",
+              "meaning_en": "restroom"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "电梯 means elevator."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"residential neighborhood\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "小区",
+              "pinyin": "xiǎoqū",
+              "meaning_en": "neighborhood"
+            },
+            {
+              "id": "b",
+              "hanzi": "外地",
+              "pinyin": "wàidì",
+              "meaning_en": "out of town"
+            },
+            {
+              "id": "c",
+              "hanzi": "世界",
+              "pinyin": "shìjiè",
+              "meaning_en": "world"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "小区 is a residential community/neighborhood."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"specific venue / location for an event\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "地方",
+              "pinyin": "dìfang",
+              "meaning_en": "general place"
+            },
+            {
+              "id": "b",
+              "hanzi": "地点",
+              "pinyin": "dìdiǎn",
+              "meaning_en": "event location"
+            },
+            {
+              "id": "c",
+              "hanzi": "路边",
+              "pinyin": "lùbiān",
+              "meaning_en": "roadside"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "地点 refers to a specific venue or meeting point."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Showing a Visitor Around",
+        "context_en": "Xiao Chen shows an out-of-town friend around his residential neighborhood.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "欢迎来我们市玩儿！这是我住的小区。",
+            "pinyin": "Huānyíng lái wǒmen shì wánr! Zhè shì wǒ zhù de xiǎoqū.",
+            "english": "Welcome to our city! This is the neighborhood where I live."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "你们这儿真安静，路边还有个漂亮的公园。",
+            "pinyin": "Nǐmen zhèr zhēn ānjìng, lùbiān hái yǒu ge piàoliang de gōngyuán.",
+            "english": "It’s so quiet here, and there’s a pretty park by the roadside too."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "对，我们楼有电梯，不用爬楼梯。对了，你想去卫生间吗？",
+            "pinyin": "Duì, wǒmen lóu yǒu diàntī, búyòng pá lóutī. Duìle, nǐ xiǎng qù wèishēngjiān ma?",
+            "english": "Yes, our building has an elevator, so no need to climb stairs. By the way, do you need the restroom?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好啊，一会儿咱们再去外面那条街转转。",
+            "pinyin": "Hǎo a, yíhuìr zánmen zài qù wàimiàn nà tiáo jiē zhuànzhuan.",
+            "english": "Sure, and later let’s stroll along that street outside."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Using 地方 vs. 地点",
+          "explanation_en": "地方 (dìfang) is any general place or region; 地点 (dìdiǎn) is the designated spot/venue for an event or meeting.",
+          "pattern_hanzi": "开会 / 集合 + 的 + 地点 + 是 + <Place>",
+          "pattern_pinyin": "kāihuì / jíhé + de + dìdiǎn + shì + <Place>",
+          "pattern_pseudo_translation": "meeting / gathering + ’s + venue + is + <Place>",
+          "examples": [
+            {
+              "hanzi": "明天集合的地点在公园门口。",
+              "pinyin": "Míngtiān jíhé de dìdiǎn zài gōngyuán ménkǒu.",
+              "english": "Tomorrow’s meeting location is at the park gate."
+            },
+            {
+              "hanzi": "我去了很多地方，最喜欢这个城市。",
+              "pinyin": "Wǒ qù le hěn duō dìfang, zuì xǐhuan zhège chéngshì.",
+              "english": "I’ve been to many places, and I like this city best."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Taking the elevator vs. climbing stairs",
+          "explanation_en": "Use 坐电梯 (ride the elevator) and 爬楼梯 / 走楼梯 (climb/take the stairs).",
+          "pattern_hanzi": "坐电梯 / 走楼梯 + 上楼 / 下楼",
+          "pattern_pinyin": "zuò diàntī / zǒu lóutī + shànglóu / xiàlóu",
+          "pattern_pseudo_translation": "take elevator / walk stairs + go up / go down",
+          "examples": [
+            {
+              "hanzi": "十层太高了，咱们坐电梯上去吧。",
+              "pinyin": "Shí céng tài gāo le, zánmen zuò diàntī shàngqù ba.",
+              "english": "The tenth floor is too high; let’s take the elevator up."
+            },
+            {
+              "hanzi": "二楼很近，我走楼梯就行。",
+              "pinyin": "Èr lóu hěn jìn, wǒ zǒu lóutī jiù xíng.",
+              "english": "The second floor is close; taking the stairs is fine for me."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about cities, countries, and public spaces.",
+        "model": {
+          "hanzi": "世界各地的游客都喜欢来这座城市。",
+          "pinyin": "Shìjiè gèdì de yóukè dōu xǐhuan lái zhè zuò chéngshì.",
+          "english": "Tourists from all over the world like coming to this city."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say his friend came from out of town.",
+            "model_answer": {
+              "hanzi": "他的朋友是从外地来的。",
+              "pinyin": "Tā de péngyou shì cóng wàidì lái de.",
+              "english": "His friend came from out of town."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say don’t sit on the ground because it is dirty.",
+            "model_answer": {
+              "hanzi": "地上很脏，别坐在地上。",
+              "pinyin": "Dì shàng hěn zāng, bié zuò zài dì shàng.",
+              "english": "The ground is dirty; don’t sit on the ground."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say there are many small shops along the street.",
+            "model_answer": {
+              "hanzi": "这条街的路边有很多小店。",
+              "pinyin": "Zhè tiáo jiē de lùbiān yǒu hěn duō xiǎo diàn.",
+              "english": "There are many small shops along the roadside of this street."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Friendly Neighborhood",
+        "paragraphs": [
+          {
+            "hanzi": "我住在一个很大的城市里，虽然街道上车来车往，但是我们小区里面环境很好，也很安静。",
+            "pinyin": "Wǒ zhù zài yí ge hěn dà de chéngshì lǐ, suīrán jiēdào shàng chē lái chē wǎng, dànshì wǒmen xiǎoqū lǐmiàn huánjìng hěn hǎo, yě hěn ānjìng.",
+            "english": "I live in a very big city; although the streets have heavy traffic, inside our residential neighborhood the environment is great and quiet."
+          },
+          {
+            "hanzi": "小区北门外面就是一个公园，很多外地来的朋友都说这里是个适合生活的好地方。",
+            "pinyin": "Xiǎoqū běimén wàimiàn jiùshì yí ge gōngyuán, hěn duō wàidì lái de péngyou dōu shuō zhèlǐ shì ge shìhé shēnghuó de hǎo dìfang.",
+            "english": "Right outside the north gate of the neighborhood is a park, and many friends from out of town say this is a great place to live."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What is right outside the north gate of the neighborhood?",
+            "answer_en": "A park."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What do friends from out of town say about this neighborhood?",
+            "answer_en": "That it is a good place to live."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe the neighborhood or city where you live.",
+          "model_answer": {
+            "hanzi": "我住的小区附近有一条热闹的街和一个公园，生活很方便。",
+            "pinyin": "Wǒ zhù de xiǎoqū fùjìn yǒu yì tiáo rènào de jiē hé yí ge gōngyuán, shēnghuó hěn fāngbiàn.",
+            "english": "Near my neighborhood there is a lively street and a park, so daily life is convenient."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Ask where the restroom or elevator is in a building.",
+          "model_answer": {
+            "hanzi": "请问，这里的电梯和卫生间在几层？",
+            "pinyin": "Qǐngwèn, zhèlǐ de diàntī hé wèishēngjiān zài jǐ céng?",
+            "english": "Excuse me, which floor are the elevator and restroom on here?"
+          }
+        }
+      ],
+      "common_pitfall": "Use 条 for streets (一条街) and 座 for cities (一座城市). Also remember 卫生间 is the polite everyday word for restroom.",
+      "pronunciation_focus": "城市 (chéngshì) moves from rising chéng to falling shì; 电梯 (diàntī) moves from falling diàn to flat tī.",
+      "review": {
+        "can_do": [
+          "Name cities, countries, neighborhoods, streets, and parks.",
+          "Distinguish 地方 and 地点.",
+          "Ask for elevators, stairs, and restrooms."
+        ],
+        "entry_ids": [
+          560,
+          589,
+          590,
+          591,
+          594,
+          649,
+          658,
+          707,
+          761,
+          762,
+          832,
+          833,
+          835,
+          865,
+          875,
+          897,
+          955
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-cities-streets-buildings--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Using 地方 vs. 地点",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-cities-streets-buildings--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Taking the elevator vs. climbing stairs",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say his friend came from out of town.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-cities-streets-buildings--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say don’t sit on the ground because it is dirty.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-cities-streets-buildings--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there are many small shops along the street.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What is right outside the north gate of the neighborhood?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-cities-streets-buildings--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What do friends from out of town say about this neighborhood?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe the neighborhood or city where you live.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-cities-streets-buildings--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Ask where the restroom or elevator is in a building.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-cities-streets-buildings--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-cities-streets-buildings--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"elevator\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-cities-streets-buildings--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"residential neighborhood\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-cities-streets-buildings--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"specific venue / location for ",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-cities-streets-buildings--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-cities-streets-buildings--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

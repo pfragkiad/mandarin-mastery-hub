@@ -45,7 +45,9 @@ describe('Level 6 imported vocabulary', () => {
         expect(ex.pinyinDisplay).toBe(original.pinyin.replace(/^\u00ad /, ''));
         expect(ex.english).toBe(original.english);
         expect(ex.reviewStatus).toBe(original.review_status);
-        expect(ex.sourceReference).toEqual(original.source_reference);
+        const reference = { ...original.source_reference };
+        if (reference.handoff) delete reference.entry_id;
+        expect(ex.sourceReference).toEqual(original.source_reference ? reference : undefined);
         expect(ex.revision).toEqual(original.revision);
         expect(ex.tokens.map(t => t.text).join('')).toBe(ex.simplified);
         expect(ex.audio).toBeNull();
@@ -73,7 +75,7 @@ describe('Level 6 imported vocabulary', () => {
       expect(entry?.pinyinDisplay).toBe(selected.pinyinDisplay);
       expect(entry?.audio?.url).toContain(`missing-${roundTwoClips[selected.clipId].sha256.slice(0, 16)}`);
     }
-    expect(level6.find(e => e.studyMetadata?.numberingRevision?.previousId === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
+    expect(level6.find(e => e.hsk_index === 4491)?.examples[1]?.importNormalization).toContain('U+00AD');
   });
 
   it('offers the new level in word and sentence pools', () => {

@@ -146,7 +146,7 @@ Do not reverse 来 (lái) and 去 (qù); choose the viewpoint before you speak.
 
 - 到 (dào) — arrive [HSK entry 29]
 
-- 飞机 (fēijī) — airplane [HSK entry 54]
+- 飞机 (fēijī) — airplane [HSK entry 53]
 
 - 回 (huí) — return [HSK entry 81]
 

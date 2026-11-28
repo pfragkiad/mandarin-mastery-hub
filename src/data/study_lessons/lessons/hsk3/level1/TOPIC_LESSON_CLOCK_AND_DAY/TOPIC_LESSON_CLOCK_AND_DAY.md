@@ -158,7 +158,7 @@ Do not confuse 三点 (sān diǎn, 3 o’clock) with 三个小时 (sān ge xiǎo
 
 - 晚上 (wǎnshang) — evening [HSK entry 217]
 
-- 下午 (xiàwǔ) — afternoon [HSK entry 230]
+- 下午 (xiàwǔ) — afternoon [HSK entry 229]
 
 - 现在 (xiànzài) — now [HSK entry 232]
 

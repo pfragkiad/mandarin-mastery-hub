@@ -1,0 +1,1716 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-compass-and-positions",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Compass Directions & Positions",
+    "subtitle": "Compass directions, regions, and relative positions",
+    "description": "Describe compass directions, northern and southern regions, nearby spots, and relative positions.",
+    "slug": "compass-and-positions"
+  },
+  "classification": {
+    "primary_topic_id": "places-directions",
+    "topic_ids": [
+      "places-directions"
+    ],
+    "tags": [
+      "directions",
+      "compass",
+      "positions"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "position-direction",
+    "subtopic_ids": [
+      "position-direction"
+    ]
+  },
+  "learning_objectives": [
+    "Name the four cardinal and four intercardinal directions: 东, 南, 西, 北, 东北, 东南, 西北, 西南.",
+    "Talk about regions and orientation: 北方, 南方, 东方, 西方, and 方向.",
+    "Describe relative location with 中, 中间, 附近, 面前, 到处, and 向."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "于": "Characters:于",
+    "五": "Characters:五",
+    "些": "Characters:些",
+    "交": "Characters:交",
+    "京": "Characters:京",
+    "人": "Characters:人",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "体": "Characters:体",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "候": "Characters:候",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "公": "Characters:公",
+    "冬": "Characters:冬",
+    "冷": "Characters:冷",
+    "出": "Characters:出",
+    "分": "Characters:分",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "化": "Characters:化",
+    "北": "Characters:北",
+    "医": "Characters:医",
+    "南": "Characters:南",
+    "去": "Characters:去",
+    "吃": "Characters:吃",
+    "各": "Characters:各",
+    "同": "Characters:同",
+    "后": "Characters:后",
+    "向": "Characters:向",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "咱": "Characters:咱",
+    "哈": "Characters:哈",
+    "哪": "Characters:哪",
+    "啡": "Characters:啡",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "场": "Characters:场",
+    "坐": "Characters:坐",
+    "城": "Characters:城",
+    "处": "Characters:处",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "它": "Characters:它",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "尔": "Characters:尔",
+    "尝": "Characters:尝",
+    "就": "Characters:就",
+    "局": "Characters:局",
+    "左": "Characters:左",
+    "差": "Characters:差",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "常": "Characters:常",
+    "广": "Characters:广",
+    "店": "Characters:店",
+    "座": "Characters:座",
+    "张": "Characters:张",
+    "往": "Characters:往",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "怎": "Characters:怎",
+    "惯": "Characters:惯",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "故": "Characters:故",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "春": "Characters:春",
+    "是": "Characters:是",
+    "暖": "Characters:暖",
+    "更": "Characters:更",
+    "有": "Characters:有",
+    "本": "Characters:本",
+    "来": "Characters:来",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "棵": "Characters:棵",
+    "椅": "Characters:椅",
+    "楼": "Characters:楼",
+    "欢": "Characters:欢",
+    "气": "Characters:气",
+    "滨": "Characters:滨",
+    "点": "Characters:点",
+    "照": "Characters:照",
+    "特": "Characters:特",
+    "猫": "Characters:猫",
+    "现": "Characters:现",
+    "生": "Characters:生",
+    "百": "Characters:百",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "相": "Characters:相",
+    "看": "Characters:看",
+    "站": "Characters:站",
+    "米": "Characters:米",
+    "美": "Characters:美",
+    "老": "Characters:老",
+    "育": "Characters:育",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "至": "Characters:至",
+    "花": "Characters:花",
+    "行": "Characters:行",
+    "西": "Characters:西",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "谢": "Characters:谢",
+    "走": "Characters:走",
+    "超": "Characters:超",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "远": "Characters:远",
+    "通": "Characters:通",
+    "那": "Characters:那",
+    "邮": "Characters:邮",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钟": "Characters:钟",
+    "铁": "Characters:铁",
+    "银": "Characters:银",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "阳": "Characters:阳",
+    "附": "Characters:附",
+    "院": "Characters:院",
+    "雨": "Characters:雨",
+    "面": "Characters:面",
+    "食": "Characters:食",
+    "饭": "Characters:饭",
+    "饮": "Characters:饮",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Spatial orientation, compass points, and regional terms in HSK 3.",
+      "focus": "Note that Mandarin combines 东/西 before 南/北 for intercardinal directions (东北, 西南), and places 向 before a direction."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0517",
+          "hanzi": "北",
+          "pinyin": "běi",
+          "meaning_en": "north",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0517-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们往北走吧。",
+              "pinyin": "wǒmen wǎng běi zǒu ba.",
+              "english": "Let's go north.",
+              "teaching_note": "Short everyday spoken use of 北."
+            },
+            {
+              "id": "ex-0517-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校的北边有一家医院。",
+              "pinyin": "xuéxiào de běi biān yǒu yì jiā yīyuàn.",
+              "english": "There is a hospital north of the school.",
+              "teaching_note": "Simple descriptive or narrative use of 北."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 517
+            }
+          ]
+        },
+        {
+          "id": "w-0518",
+          "hanzi": "北方",
+          "pinyin": "běifāng",
+          "meaning_en": "the north; northern region",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0518-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你住在北方吗？",
+              "pinyin": "nǐ zhù zài běifāng ma?",
+              "english": "Do you live in the north?",
+              "teaching_note": "Short everyday spoken use of 北方."
+            },
+            {
+              "id": "ex-0518-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "北方的冬天很冷。",
+              "pinyin": "běifāng de dōngtiān hěn lěng.",
+              "english": "Winters in the north are cold.",
+              "teaching_note": "Simple descriptive or narrative use of 北方."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 518
+            }
+          ]
+        },
+        {
+          "id": "w-0582",
+          "hanzi": "到处",
+          "pinyin": "dàochù",
+          "meaning_en": "everywhere",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0582-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "到处都是人！",
+              "pinyin": "dàochù dōu shì rén!",
+              "english": "There are people everywhere!",
+              "teaching_note": "Short everyday spoken use of 到处."
+            },
+            {
+              "id": "ex-0582-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "春天公园里到处都是花。",
+              "pinyin": "chūntiān gōngyuán lǐ dàochù dōu shì huā.",
+              "english": "In spring, there are flowers everywhere in the park.",
+              "teaching_note": "Simple descriptive or narrative use of 到处."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 582
+            }
+          ]
+        },
+        {
+          "id": "w-0597",
+          "hanzi": "东",
+          "pinyin": "dōng",
+          "meaning_en": "east",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0597-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "一直往东走。",
+              "pinyin": "yìzhí wǎng dōng zǒu.",
+              "english": "Keep going east.",
+              "teaching_note": "Short everyday spoken use of 东."
+            },
+            {
+              "id": "ex-0597-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校的东边有一个公园。",
+              "pinyin": "xuéxiào de dōng biān yǒu yí ge gōngyuán.",
+              "english": "There is a park east of the school.",
+              "teaching_note": "Simple descriptive or narrative use of 东."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 597
+            }
+          ]
+        },
+        {
+          "id": "w-0598",
+          "hanzi": "东北",
+          "pinyin": "dōngběi",
+          "meaning_en": "northeast",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0598-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "东北在哪边？",
+              "pinyin": "dōngběi zài nǎ biān?",
+              "english": "Which way is northeast?",
+              "teaching_note": "Short everyday spoken use of 东北."
+            },
+            {
+              "id": "ex-0598-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "那个城市在中国东北。",
+              "pinyin": "nàge chéngshì zài Zhōngguó dōngběi.",
+              "english": "That city is in northeastern China.",
+              "teaching_note": "Simple descriptive or narrative use of 东北."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 598
+            }
+          ]
+        },
+        {
+          "id": "w-0599",
+          "hanzi": "东方",
+          "pinyin": "dōngfāng",
+          "meaning_en": "the East; eastern direction",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0599-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你看，太阳在东方！",
+              "pinyin": "nǐ kàn, tàiyáng zài dōngfāng!",
+              "english": "Look, the sun is in the east!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0599-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "早上，太阳从东方出来。",
+              "pinyin": "zǎoshang, tàiyáng cóng dōngfāng chūlái.",
+              "english": "In the morning, the sun comes out in the east.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 599
+            }
+          ]
+        },
+        {
+          "id": "w-0600",
+          "hanzi": "东南",
+          "pinyin": "dōngnán",
+          "meaning_en": "southeast",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0600-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "东南怎么走？",
+              "pinyin": "dōngnán zěnme zǒu?",
+              "english": "How do we go southeast?",
+              "teaching_note": "Short everyday spoken use of 东南."
+            },
+            {
+              "id": "ex-0600-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校在城市的东南。",
+              "pinyin": "xuéxiào zài chéngshì de dōngnán.",
+              "english": "The school is in the southeast of the city.",
+              "teaching_note": "Simple descriptive or narrative use of 东南."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 600
+            }
+          ]
+        },
+        {
+          "id": "w-0622",
+          "hanzi": "方向",
+          "pinyin": "fāngxiàng",
+          "meaning_en": "direction",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0622-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "方向对吗？",
+              "pinyin": "fāngxiàng duì ma?",
+              "english": "Is the direction right?",
+              "teaching_note": "Short everyday spoken use of 方向."
+            },
+            {
+              "id": "ex-0622-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请看地图上的方向。",
+              "pinyin": "qǐng kàn dìtú shàng de fāngxiàng.",
+              "english": "Please look at the directions on the map.",
+              "teaching_note": "Simple descriptive or narrative use of 方向."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 622
+            }
+          ]
+        },
+        {
+          "id": "w-0633",
+          "hanzi": "附近",
+          "pinyin": "fùjìn",
+          "meaning_en": "nearby; vicinity",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0633-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "附近有超市吗？",
+              "pinyin": "fùjìn yǒu chāoshì ma?",
+              "english": "Is there a supermarket nearby?",
+              "teaching_note": "Short everyday spoken use of 附近."
+            },
+            {
+              "id": "ex-0633-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校附近有一家饭馆。",
+              "pinyin": "xuéxiào fùjìn yǒu yì jiā fànguǎn.",
+              "english": "There is a restaurant near the school.",
+              "teaching_note": "Simple descriptive or narrative use of 附近."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 633
+            }
+          ]
+        },
+        {
+          "id": "w-0770",
+          "hanzi": "面前",
+          "pinyin": "miànqián",
+          "meaning_en": "in front of; before (a person)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0770-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我就在你面前。",
+              "pinyin": "wǒ jiù zài nǐ miànqián.",
+              "english": "I'm right in front of you.",
+              "teaching_note": "Short everyday spoken use of 面前."
+            },
+            {
+              "id": "ex-0770-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师站在学生面前。",
+              "pinyin": "lǎoshī zhàn zài xuéshēng miànqián.",
+              "english": "The teacher stands in front of the students.",
+              "teaching_note": "Simple descriptive or narrative use of 面前."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 770
+            }
+          ]
+        },
+        {
+          "id": "w-0776",
+          "hanzi": "南",
+          "pinyin": "nán",
+          "meaning_en": "south",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0776-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "往南走吧。",
+              "pinyin": "wǎng nán zǒu ba.",
+              "english": "Let's go south.",
+              "teaching_note": "Short everyday spoken use of 南."
+            },
+            {
+              "id": "ex-0776-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公园在学校的南边。",
+              "pinyin": "gōngyuán zài xuéxiào de nán biān.",
+              "english": "The park is south of the school.",
+              "teaching_note": "Simple descriptive or narrative use of 南."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 776
+            }
+          ]
+        },
+        {
+          "id": "w-0777",
+          "hanzi": "南方",
+          "pinyin": "nánfāng",
+          "meaning_en": "southern region; the south",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0777-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你住在南方吗？",
+              "pinyin": "nǐ zhù zài nánfāng ma?",
+              "english": "Do you live in the south?",
+              "teaching_note": "Short everyday spoken use of 南方."
+            },
+            {
+              "id": "ex-0777-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "南方的冬天不太冷。",
+              "pinyin": "nánfāng de dōngtiān bú tài lěng.",
+              "english": "Winter in the south is not very cold.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 777
+            }
+          ]
+        },
+        {
+          "id": "w-0880",
+          "hanzi": "西",
+          "pinyin": "xī",
+          "meaning_en": "west",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0880-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "往西走。",
+              "pinyin": "wǎng xī zǒu.",
+              "english": "Go west.",
+              "teaching_note": "Short everyday spoken use of 西."
+            },
+            {
+              "id": "ex-0880-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "太阳在西边。",
+              "pinyin": "tàiyáng zài xībiān.",
+              "english": "The sun is in the west.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 880
+            }
+          ]
+        },
+        {
+          "id": "w-0881",
+          "hanzi": "西北",
+          "pinyin": "xīběi",
+          "meaning_en": "northwest",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0881-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "西北在哪边？",
+              "pinyin": "xīběi zài nǎ biān?",
+              "english": "Which way is northwest?",
+              "teaching_note": "Short everyday spoken use of 西北."
+            },
+            {
+              "id": "ex-0881-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个城市在中国西北。",
+              "pinyin": "zhège chéngshì zài Zhōngguó xīběi.",
+              "english": "This city is in northwestern China.",
+              "teaching_note": "Simple descriptive or narrative use of 西北."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 881
+            }
+          ]
+        },
+        {
+          "id": "w-0882",
+          "hanzi": "西方",
+          "pinyin": "xīfāng",
+          "meaning_en": "the West; western countries",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0882-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你去过西方国家吗？",
+              "pinyin": "nǐ qù guo xīfāng guójiā ma?",
+              "english": "Have you been to Western countries?",
+              "teaching_note": "Short everyday spoken use of 西方."
+            },
+            {
+              "id": "ex-0882-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "有些西方人喜欢喝咖啡。",
+              "pinyin": "yǒuxiē xīfāng rén xǐhuan hē kāfēi.",
+              "english": "Some people in the West like drinking coffee.",
+              "teaching_note": "Simple descriptive or narrative use of 西方."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 882
+            }
+          ]
+        },
+        {
+          "id": "w-0884",
+          "hanzi": "西南",
+          "pinyin": "xīnán",
+          "meaning_en": "southwest",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0884-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "西南在哪边？",
+              "pinyin": "xīnán zài nǎ biān?",
+              "english": "Which direction is southwest?",
+              "teaching_note": "Short everyday spoken use of 西南."
+            },
+            {
+              "id": "ex-0884-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校在城市的西南。",
+              "pinyin": "xuéxiào zài chéngshì de xīnán.",
+              "english": "The school is in the southwest of the city.",
+              "teaching_note": "Simple descriptive or narrative use of 西南."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 884
+            }
+          ]
+        },
+        {
+          "id": "w-0894",
+          "hanzi": "向",
+          "pinyin": "xiàng",
+          "meaning_en": "toward; facing",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "preposition"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0894-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "向左走吧。",
+              "pinyin": "xiàng zuǒ zǒu ba.",
+              "english": "Go left!",
+              "teaching_note": "Short everyday spoken use of 向."
+            },
+            {
+              "id": "ex-0894-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "大家向老师说了谢谢。",
+              "pinyin": "dàjiā xiàng lǎoshī shuō le xièxie.",
+              "english": "Everyone thanked the teacher.",
+              "teaching_note": "Simple descriptive or narrative use of 向."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 894
+            }
+          ]
+        },
+        {
+          "id": "w-0981",
+          "hanzi": "中",
+          "pinyin": "zhōng",
+          "meaning_en": "middle; center; China (abbreviation)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0981-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "书中有这个字吗？",
+              "pinyin": "shū zhōng yǒu zhège zì ma?",
+              "english": "Does the book contain this character?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0981-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这本书中有很多故事。",
+              "pinyin": "zhè běn shū zhōng yǒu hěn duō gùshi.",
+              "english": "There are many stories in this book.",
+              "teaching_note": "中 denotes within/in the midst of; 中间 is a separate word."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 981
+            }
+          ]
+        },
+        {
+          "id": "w-0982",
+          "hanzi": "中间",
+          "pinyin": "zhōngjiān",
+          "meaning_en": "middle; between",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0982-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "站在中间吧。",
+              "pinyin": "zhàn zài zhōngjiān ba.",
+              "english": "Stand in the middle!",
+              "teaching_note": "Short everyday spoken use of 中间."
+            },
+            {
+              "id": "ex-0982-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "公园在学校和医院中间。",
+              "pinyin": "gōngyuán zài xuéxiào hé yīyuàn zhōngjiān.",
+              "english": "The park is between the school and the hospital.",
+              "teaching_note": "Simple descriptive or narrative use of 中间."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 982
+            }
+          ]
+        },
+        {
+          "id": "w-0011",
+          "hanzi": "边",
+          "pinyin": "biān",
+          "meaning_en": "side; edge",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix",
+            "noun"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0011-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "你来这边坐吧。",
+              "pinyin": "nǐ lái zhèbiān zuò ba.",
+              "english": "Come sit over here.",
+              "teaching_note": "Short beginner-level description illustrating 边 in context."
+            },
+            {
+              "id": "ex-0011-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校在那边。",
+              "pinyin": "xuéxiào zài nàbiān.",
+              "english": "The school is over there.",
+              "teaching_note": "School or study context showing 边 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 11
+            }
+          ]
+        },
+        {
+          "id": "w-0213",
+          "hanzi": "外边",
+          "pinyin": "wàibian",
+          "meaning_en": "outside",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0213-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "外边下雨了。",
+              "pinyin": "wàibian xià yǔ le.",
+              "english": "It is raining outside.",
+              "teaching_note": "外边 means outside; 下雨了 describes the onset or current fact of rain."
+            },
+            {
+              "id": "ex-0213-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校外边有一个超市。",
+              "pinyin": "xuéxiào wàibian yǒu yí ge chāoshì.",
+              "english": "There is a supermarket outside the school.",
+              "teaching_note": "School or study context showing 外边 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 213
+            }
+          ]
+        },
+        {
+          "id": "w-0226",
+          "hanzi": "下",
+          "pinyin": "xià",
+          "meaning_en": "below; down; next",
+          "primary_pos_id": "localizer",
+          "pos_ids": [
+            "localizer",
+            "verb",
+            "classifier"
+          ],
+          "primary_topic_id": "places-directions",
+          "topic_ids": [
+            "places-directions"
+          ],
+          "primary_subtopic_id": "position-direction",
+          "subtopic_ids": [
+            "position-direction"
+          ],
+          "examples": [
+            {
+              "id": "ex-0226-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "猫在桌子下面。",
+              "pinyin": "māo zài zhuōzi xià miàn.",
+              "english": "The cat is under the table.",
+              "teaching_note": "下面 is the full location expression below the table; 在 marks location."
+            },
+            {
+              "id": "ex-0226-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "书在椅子下面。",
+              "pinyin": "shū zài yǐzi xiàmiàn.",
+              "english": "The book is under the chair.",
+              "teaching_note": "The target word appears in the location word for “under.”"
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 226
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 北 (běi)",
+        "explanation": "北 (běi) means “north” (noun).",
+        "example_id": "ex-0517-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 北方 (běifāng)",
+        "explanation": "北方 (běifāng) means “the north; northern region” (noun).",
+        "example_id": "ex-0518-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0517-1",
+      "ex-0518-1",
+      "ex-0582-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What two aspects are mentioned as different between northern and southern China?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Food (diet) and weather.",
+          "explanation": "The first sentence mentions 在饮食、天气上都有一些不同."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences giving directions using 向……走 and 附近 or 中间.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "向北走三分钟，你会看到一家银行，它就在超市和医院中间。",
+          "explanation": "Use 向 + direction + verb and 在……中间."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"northeast\" in Mandarin?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "北东",
+              "pinyin": "běidōng",
+              "meaning_en": "invalid order"
+            },
+            {
+              "id": "b",
+              "hanzi": "东北",
+              "pinyin": "dōngběi",
+              "meaning_en": "northeast"
+            },
+            {
+              "id": "c",
+              "hanzi": "东南",
+              "pinyin": "dōngnán",
+              "meaning_en": "southeast"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "Chinese always orders 东/西 before 南/北: 东北."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"everywhere\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "附近",
+              "pinyin": "fùjìn",
+              "meaning_en": "nearby"
+            },
+            {
+              "id": "b",
+              "hanzi": "到处",
+              "pinyin": "dàochù",
+              "meaning_en": "everywhere"
+            },
+            {
+              "id": "c",
+              "hanzi": "中间",
+              "pinyin": "zhōngjiān",
+              "meaning_en": "middle"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "到处 means everywhere."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"direction\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "方向",
+              "pinyin": "fāngxiàng",
+              "meaning_en": "direction"
+            },
+            {
+              "id": "b",
+              "hanzi": "面前",
+              "pinyin": "miànqián",
+              "meaning_en": "in front of"
+            },
+            {
+              "id": "c",
+              "hanzi": "西方",
+              "pinyin": "xīfāng",
+              "meaning_en": "the West"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "方向 means direction."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Checking Directions on a Map",
+        "context_en": "Two friends look at a map to plan a trip and find a nearby restaurant.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "你看地图，哈尔滨在中国的东北方向，冬天很冷。",
+            "pinyin": "Nǐ kàn dìtú, Hā’ěrbīn zài Zhōngguó de dōngběi fāngxiàng, dōngtiān hěn lěng.",
+            "english": "Look at the map—Harbin is in the northeast direction of China, so winter is very cold."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "对，北方和南方的气候差别很大，西南那边冬天就暖和得多。",
+            "pinyin": "Duì, běifāng hé nánfāng de qìhòu chābié hěn dà, xīnán nàbiān dōngtiān jiù nuǎnhuo de duō.",
+            "english": "Right, the climate in the north and south differs a lot; the southwest is much warmer in winter."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "咱们先别看远的地方了，附近哪儿有吃饭的地方？",
+            "pinyin": "Zánmen xiān bié kàn yuǎn de dìfang le, fùjìn nǎr yǒu chīfàn de dìfang?",
+            "english": "Let’s not look at faraway places for now—where nearby is there a place to eat?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "向东走两百米，就在银行和书店的中间，面前有个小广场。",
+            "pinyin": "Xiàng dōng zǒu liǎng bǎi mǐ, jiù zài yínháng hé shūdiàn de zhōngjiān, miànqián yǒu ge xiǎo guǎngchǎng.",
+            "english": "Walk east 200 meters; it’s right between the bank and the bookstore, with a small square in front."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Facing or moving toward a direction with 向",
+          "explanation_en": "Place 向 (xiàng) + direction/person before the action verb.",
+          "pattern_hanzi": "向 + <Direction> + <Verb>",
+          "pattern_pinyin": "xiàng + <Direction> + <Verb>",
+          "pattern_pseudo_translation": "toward + <Direction> + <Verb>",
+          "examples": [
+            {
+              "hanzi": "出了地铁站以后，向南走五分钟就到了。",
+              "pinyin": "Chū le dìtiězhàn yǐhòu, xiàng nán zǒu wǔ fēnzhōng jiù dào le.",
+              "english": "After exiting the subway station, walk south for five minutes and you’re there."
+            },
+            {
+              "hanzi": "请大家向左边看。",
+              "pinyin": "Qǐng dàjiā xiàng zuǒbiān kàn.",
+              "english": "Please everyone look toward the left."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Between two places with 在……中间",
+          "explanation_en": "Use 在 + A + 和 + B + 中间 to locate something between two landmarks.",
+          "pattern_hanzi": "在 + <Place A> + 和 + <Place B> + 中间",
+          "pattern_pinyin": "zài + <Place A> + hé + <Place B> + zhōngjiān",
+          "pattern_pseudo_translation": "at + <Place A> + and + <Place B> + middle",
+          "examples": [
+            {
+              "hanzi": "邮局在医院和学校中间。",
+              "pinyin": "Yóujú zài yīyuàn hé xuéxiào zhōngjiān.",
+              "english": "The post office is between the hospital and the school."
+            },
+            {
+              "hanzi": "他站在我们中间照了一张相。",
+              "pinyin": "Tā zhàn zài wǒmen zhōngjiān zhào le yì zhāng xiàng.",
+              "english": "He stood in the middle of us and took a photo."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe compass directions, regions, and nearby places.",
+        "model": {
+          "hanzi": "春天的时候，公园里到处都是花。",
+          "pinyin": "Chūntiān de shíhou, gōngyuán lǐ dàochù dōu shì huā.",
+          "english": "In spring, there are flowers everywhere in the park."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say Beijing is in northern China.",
+            "model_answer": {
+              "hanzi": "北京在中国的北方。",
+              "pinyin": "Běijīng zài Zhōngguó de běifāng.",
+              "english": "Beijing is in northern China."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say there is a tall tree right in front of the house.",
+            "model_answer": {
+              "hanzi": "房子面前有一棵大树。",
+              "pinyin": "Fángzi miànqián yǒu yì kē dà shù.",
+              "english": "There is a big tree in front of the house."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this city is in the southeast.",
+            "model_answer": {
+              "hanzi": "这座城市在国家的东南边。",
+              "pinyin": "Zhè zuò chéngshì zài guójiā de dōngnán biān.",
+              "english": "This city is in the southeast of the country."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "North and South",
+        "paragraphs": [
+          {
+            "hanzi": "中国的北方和南方在饮食、天气上都有一些不同。北方人常吃面食，南方人更习惯吃米饭。",
+            "pinyin": "Zhōngguó de běifāng hé nánfāng zài yǐnshí, tiānqì shàng dōu yǒu yìxiē bù tóng. Běifāng rén cháng chī miànshí, nánfāng rén gèng xíguàn chī mǐfàn.",
+            "english": "Northern and southern China have some differences in food and weather. Northerners often eat wheat-based foods, while southerners are more used to eating rice."
+          },
+          {
+            "hanzi": "至于东方和西方文化，也有各自的特点。现在交通方便，到处都能尝到各地的美食。",
+            "pinyin": "Zhìyú dōngfāng hé xīfāng wénhuà, yě yǒu gèzì de tèdiǎn. Xiànzài jiāotōng fāngbiàn, dàochù dōu néng chángdào gèdì de měishí.",
+            "english": "As for Eastern and Western cultures, each has its own features too. Now transportation is convenient, and you can taste regional delicacies everywhere."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What staple food difference is mentioned between northern and southern China?",
+            "answer_en": "Northerners often eat wheat-based foods while southerners are more used to rice."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Why can you taste regional delicacies everywhere now?",
+            "answer_en": "Because transportation is convenient."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Give simple compass directions from your home or school.",
+          "model_answer": {
+            "hanzi": "从我家出门向西走，附近就有一个地铁站。",
+            "pinyin": "Cóng wǒ jiā chūmén xiàng xī zǒu, fùjìn jiù yǒu yí ge dìtiězhàn.",
+            "english": "Walk west out of my home and there is a subway station nearby."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say where two places are relative to each other using 中间 or 附近.",
+          "model_answer": {
+            "hanzi": "图书馆在教学楼和体育馆中间，附近还有一家书店。",
+            "pinyin": "Túshūguǎn zài jiàoxuélóu hé tǐyùguǎn zhōngjiān, fùjìn hái yǒu yì jiā shūdiàn.",
+            "english": "The library is between the classroom building and the gym, and there’s a bookstore nearby."
+          }
+        }
+      ],
+      "common_pitfall": "Chinese puts East/West first in intercardinal directions: 东北 (northeast), 东南 (southeast), 西北 (northwest), 西南 (southwest) — never *北东 or *南西.",
+      "pronunciation_focus": "方向 (fāngxiàng) pairs flat fāng with falling xiàng; 中间 (zhōngjiān) has two high flat first tones.",
+      "review": {
+        "can_do": [
+          "Name all 8 compass directions.",
+          "Contrast 北方, 南方, 东方, and 西方.",
+          "Give directions with 向, 附近, 面前, and 中间."
+        ],
+        "entry_ids": [
+          517,
+          518,
+          582,
+          597,
+          598,
+          599,
+          600,
+          622,
+          633,
+          770,
+          776,
+          777,
+          880,
+          881,
+          882,
+          884,
+          894,
+          981,
+          982
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-compass-and-positions--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Facing or moving toward a direction with 向",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-compass-and-positions--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Between two places with 在……中间",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say Beijing is in northern China.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-compass-and-positions--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there is a tall tree right in front of the house.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-compass-and-positions--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this city is in the southeast.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What staple food difference is mentioned between northern and southern China?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-compass-and-positions--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Why can you taste regional delicacies everywhere now?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Give simple compass directions from your home or school.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-compass-and-positions--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say where two places are relative to each other using 中间 or 附近.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-compass-and-positions--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-compass-and-positions--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"northeast\" in Mandarin?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-compass-and-positions--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"everywhere\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-compass-and-positions--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"direction\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-compass-and-positions--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-compass-and-positions--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 20
+}

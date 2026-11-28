@@ -1,0 +1,1202 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-moving-and-appliances",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Moving House & Home Appliances",
+    "subtitle": "Moving house, rooms, appliances, and gardens",
+    "description": "Talk about moving into a new house or room, household appliances, and relaxing in the living room or garden.",
+    "slug": "moving-and-appliances"
+  },
+  "classification": {
+    "primary_topic_id": "home-objects",
+    "topic_ids": [
+      "home-objects"
+    ],
+    "tags": [
+      "housing",
+      "appliances",
+      "moving"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "home-household",
+    "subtopic_ids": [
+      "home-household"
+    ]
+  },
+  "learning_objectives": [
+    "Talk about homes and moving using 搬家, 房子, 屋子, and 花园.",
+    "Name major household appliances and furniture: 冰箱, 空调, 洗衣机, and 沙发.",
+    "Describe a home’s layout and comfort."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "五": "Characters:五",
+    "亮": "Characters:亮",
+    "什": "Characters:什",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "但": "Characters:但",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "具": "Characters:具",
+    "冬": "Characters:冬",
+    "冰": "Characters:冰",
+    "净": "Characters:净",
+    "几": "Characters:几",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "区": "Characters:区",
+    "医": "Characters:医",
+    "卖": "Characters:卖",
+    "厅": "Characters:厅",
+    "又": "Characters:又",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "叔": "Characters:叔",
+    "台": "Characters:台",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "商": "Characters:商",
+    "喜": "Characters:喜",
+    "器": "Characters:器",
+    "园": "Characters:园",
+    "在": "Characters:在",
+    "坏": "Characters:坏",
+    "坐": "Characters:坐",
+    "堂": "Characters:堂",
+    "夏": "Characters:夏",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "套": "Characters:套",
+    "奶": "Characters:奶",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "客": "Characters:客",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "屋": "Characters:屋",
+    "工": "Characters:工",
+    "差": "Characters:差",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "干": "Characters:干",
+    "年": "Characters:年",
+    "床": "Characters:床",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "张": "Characters:张",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "忙": "Characters:忙",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "我": "Characters:我",
+    "房": "Characters:房",
+    "打": "Characters:打",
+    "扫": "Characters:扫",
+    "把": "Characters:把",
+    "提": "Characters:提",
+    "搬": "Characters:搬",
+    "放": "Characters:放",
+    "新": "Characters:新",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晒": "Characters:晒",
+    "月": "Characters:月",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "机": "Characters:机",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "查": "Characters:查",
+    "校": "Characters:校",
+    "样": "Characters:样",
+    "检": "Characters:检",
+    "楼": "Characters:楼",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "水": "Characters:水",
+    "沙": "Characters:沙",
+    "洗": "Characters:洗",
+    "漂": "Characters:漂",
+    "然": "Characters:然",
+    "爷": "Characters:爷",
+    "牛": "Characters:牛",
+    "特": "Characters:特",
+    "猫": "Characters:猫",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "离": "Characters:离",
+    "空": "Characters:空",
+    "窗": "Characters:窗",
+    "算": "Characters:算",
+    "箱": "Characters:箱",
+    "经": "Characters:经",
+    "能": "Characters:能",
+    "脑": "Characters:脑",
+    "舒": "Characters:舒",
+    "花": "Characters:花",
+    "虽": "Characters:虽",
+    "衣": "Characters:衣",
+    "装": "Characters:装",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "说": "Characters:说",
+    "调": "Characters:调",
+    "较": "Characters:较",
+    "边": "Characters:边",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "错": "Characters:错",
+    "间": "Characters:间",
+    "阳": "Characters:阳",
+    "院": "Characters:院",
+    "鲜": "Characters:鲜",
+    "齐": "Characters:齐"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Household spaces, furniture, and appliances for talking about where you live.",
+      "focus": "Use 搬家 for moving house and 台 as the classifier for appliances like 冰箱, 空调, and 洗衣机."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0509",
+          "hanzi": "搬家",
+          "pinyin": "bānjiā",
+          "meaning_en": "move house",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0509-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你什么时候搬家？",
+              "pinyin": "nǐ shénme shíhou bānjiā?",
+              "english": "When are you moving house?",
+              "teaching_note": "Short everyday spoken use of 搬家."
+            },
+            {
+              "id": "ex-0509-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐下个月要搬家。",
+              "pinyin": "jiějie xià gè yuè yào bānjiā.",
+              "english": "My older sister will move house next month.",
+              "teaching_note": "Simple descriptive or narrative use of 搬家."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 509
+            }
+          ]
+        },
+        {
+          "id": "w-0536",
+          "hanzi": "冰箱",
+          "pinyin": "bīngxiāng",
+          "meaning_en": "refrigerator",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0536-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "牛奶在冰箱里。",
+              "pinyin": "niúnǎi zài bīngxiāng lǐ.",
+              "english": "The milk is in the fridge.",
+              "teaching_note": "Short everyday spoken use of 冰箱."
+            },
+            {
+              "id": "ex-0536-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈把水果放进冰箱。",
+              "pinyin": "māma bǎ shuǐguǒ fàng jìn bīngxiāng.",
+              "english": "Mom puts the fruit into the refrigerator.",
+              "teaching_note": "Simple descriptive or narrative use of 冰箱."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 536
+            }
+          ]
+        },
+        {
+          "id": "w-0623",
+          "hanzi": "房子",
+          "pinyin": "fángzi",
+          "meaning_en": "house; home",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0623-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这是你的房子吗？",
+              "pinyin": "zhè shì nǐ de fángzi ma?",
+              "english": "Is this your house?",
+              "teaching_note": "Short everyday spoken use of 房子."
+            },
+            {
+              "id": "ex-0623-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他们的房子离学校很近。",
+              "pinyin": "tāmen de fángzi lí xuéxiào hěn jìn.",
+              "english": "Their house is near the school.",
+              "teaching_note": "Simple descriptive or narrative use of 房子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 623
+            }
+          ]
+        },
+        {
+          "id": "w-0675",
+          "hanzi": "花园",
+          "pinyin": "huāyuán",
+          "meaning_en": "garden",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0675-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "花园真漂亮！",
+              "pinyin": "huāyuán zhēn piàoliang!",
+              "english": "The garden is beautiful!",
+              "teaching_note": "Short everyday spoken use of 花园."
+            },
+            {
+              "id": "ex-0675-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "花园里有很多花。",
+              "pinyin": "huāyuán lǐ yǒu hěn duō huā.",
+              "english": "There are many flowers in the garden.",
+              "teaching_note": "Simple descriptive or narrative use of 花园."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 675
+            }
+          ]
+        },
+        {
+          "id": "w-0739",
+          "hanzi": "空调",
+          "pinyin": "kōngtiáo",
+          "meaning_en": "air conditioner",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0739-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "空调开了吗？",
+              "pinyin": "kōngtiáo kāi le ma?",
+              "english": "Is the air conditioner on?",
+              "teaching_note": "Short everyday spoken use of 空调."
+            },
+            {
+              "id": "ex-0739-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "夏天房间里常开空调。",
+              "pinyin": "xiàtiān fángjiān lǐ cháng kāi kōngtiáo.",
+              "english": "The air conditioner is often on in the room during summer.",
+              "teaching_note": "Simple descriptive or narrative use of 空调."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 739
+            }
+          ]
+        },
+        {
+          "id": "w-0822",
+          "hanzi": "沙发",
+          "pinyin": "shāfā",
+          "meaning_en": "sofa",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0822-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你坐沙发吧。",
+              "pinyin": "nǐ zuò shāfā ba.",
+              "english": "Have a seat on the sofa.",
+              "teaching_note": "Short everyday spoken use of 沙发."
+            },
+            {
+              "id": "ex-0822-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "屋子里有一个大沙发。",
+              "pinyin": "wūzi lǐ yǒu yí ge dà shāfā.",
+              "english": "There is a large sofa in the room.",
+              "teaching_note": "Simple descriptive or narrative use of 沙发."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 822
+            }
+          ]
+        },
+        {
+          "id": "w-0879",
+          "hanzi": "屋子",
+          "pinyin": "wūzi",
+          "meaning_en": "room; house",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0879-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这间屋子真大！",
+              "pinyin": "zhè jiān wūzi zhēn dà!",
+              "english": "This room is so big!",
+              "teaching_note": "Short everyday spoken use of 屋子."
+            },
+            {
+              "id": "ex-0879-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爷爷住在一间小屋子里。",
+              "pinyin": "yéye zhù zài yì jiān xiǎo wūzi lǐ.",
+              "english": "Grandpa lives in a small house.",
+              "teaching_note": "Simple descriptive or narrative use of 屋子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 879
+            }
+          ]
+        },
+        {
+          "id": "w-0886",
+          "hanzi": "洗衣机",
+          "pinyin": "xǐyījī",
+          "meaning_en": "washing machine",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "home-objects",
+          "topic_ids": [
+            "home-objects",
+            "science-technology"
+          ],
+          "primary_subtopic_id": "home-household",
+          "subtopic_ids": [
+            "home-household"
+          ],
+          "examples": [
+            {
+              "id": "ex-0886-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "洗衣机坏了吗？",
+              "pinyin": "xǐyījī huài le ma?",
+              "english": "Is the washing machine broken?",
+              "teaching_note": "Short everyday spoken use of 洗衣机."
+            },
+            {
+              "id": "ex-0886-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她用洗衣机洗衣服。",
+              "pinyin": "tā yòng xǐyījī xǐ yīfu.",
+              "english": "She uses a washing machine to wash clothes.",
+              "teaching_note": "Simple descriptive or narrative use of 洗衣机."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 886
+            }
+          ]
+        },
+        {
+          "id": "w-0035",
+          "hanzi": "电脑",
+          "pinyin": "diànnǎo",
+          "meaning_en": "computer",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "science-technology",
+          "topic_ids": [
+            "science-technology",
+            "school-language",
+            "work-jobs"
+          ],
+          "primary_subtopic_id": "digital-technology",
+          "subtopic_ids": [
+            "digital-technology"
+          ],
+          "examples": [
+            {
+              "id": "ex-0035-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我在电脑上学习。",
+              "pinyin": "wǒ zài diànnǎo shàng xuéxí.",
+              "english": "I study on the computer.",
+              "teaching_note": "Short beginner-level description illustrating 电脑 in context."
+            },
+            {
+              "id": "ex-0035-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校里有很多电脑。",
+              "pinyin": "xuéxiào lǐ yǒu hěn duō diànnǎo.",
+              "english": "There are many computers at school.",
+              "teaching_note": "School or study context showing 电脑 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 35
+            }
+          ]
+        },
+        {
+          "id": "w-0117",
+          "hanzi": "卖",
+          "pinyin": "mài",
+          "meaning_en": "sell",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "shopping-money",
+          "topic_ids": [
+            "shopping-money"
+          ],
+          "primary_subtopic_id": "shopping-commerce",
+          "subtopic_ids": [
+            "shopping-commerce"
+          ],
+          "examples": [
+            {
+              "id": "ex-0117-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这家店卖水果。",
+              "pinyin": "zhè jiā diàn mài shuǐguǒ.",
+              "english": "This shop sells fruit.",
+              "teaching_note": "卖 is “sell,” in contrast to 买 “buy.”"
+            },
+            {
+              "id": "ex-0117-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学校外边的商店也卖书。",
+              "pinyin": "xuéxiào wàibian de shāngdiàn yě mài shū.",
+              "english": "The shop outside the school also sells books.",
+              "teaching_note": "School or study context showing 卖 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 117
+            }
+          ]
+        },
+        {
+          "id": "w-0260",
+          "hanzi": "医生",
+          "pinyin": "yīshēng",
+          "meaning_en": "doctor",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "health-wellbeing",
+          "topic_ids": [
+            "health-wellbeing",
+            "people-identity",
+            "work-jobs"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0260-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "医生在医院工作。",
+              "pinyin": "yīshēng zài yīyuàn gōngzuò.",
+              "english": "Doctors work in hospitals.",
+              "teaching_note": "医生 is a doctor; 工作 describes their profession’s activity."
+            },
+            {
+              "id": "ex-0260-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家医院有很多医生。",
+              "pinyin": "zhè jiā yīyuàn yǒu hěn duō yīshēng.",
+              "english": "This hospital has many doctors.",
+              "teaching_note": "Short beginner-level description illustrating 医生 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 260
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 搬家 (bānjiā)",
+        "explanation": "搬家 (bānjiā) means “move house” (verb).",
+        "example_id": "ex-0509-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 冰箱 (bīngxiāng)",
+        "explanation": "冰箱 (bīngxiāng) means “refrigerator” (noun).",
+        "example_id": "ex-0536-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0509-1",
+      "ex-0536-1",
+      "ex-0623-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "Why did Uncle Li’s family check the air conditioner and fridge?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Because summer is almost here.",
+          "explanation": "The passage says 夏天快到了，他们还提前检查了空调和冰箱."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about moving into a new home using 搬家 and 冰箱 or 空调.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我们上个月搬家了，新房子里已经装好了空调和冰箱。",
+          "explanation": "Use 搬家 with household appliances."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"washing machine\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "冰箱",
+              "pinyin": "bīngxiāng",
+              "meaning_en": "refrigerator"
+            },
+            {
+              "id": "b",
+              "hanzi": "洗衣机",
+              "pinyin": "xǐyījī",
+              "meaning_en": "washing machine"
+            },
+            {
+              "id": "c",
+              "hanzi": "空调",
+              "pinyin": "kōngtiáo",
+              "meaning_en": "air conditioner"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "洗衣机 literally means clothes-washing machine."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"sofa\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "沙发",
+              "pinyin": "shāfā",
+              "meaning_en": "sofa"
+            },
+            {
+              "id": "b",
+              "hanzi": "屋子",
+              "pinyin": "wūzi",
+              "meaning_en": "room"
+            },
+            {
+              "id": "c",
+              "hanzi": "花园",
+              "pinyin": "huāyuán",
+              "meaning_en": "garden"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "沙发 is sofa."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which verb means \"to move house\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "房子",
+              "pinyin": "fángzi",
+              "meaning_en": "house"
+            },
+            {
+              "id": "b",
+              "hanzi": "搬家",
+              "pinyin": "bānjiā",
+              "meaning_en": "move house"
+            },
+            {
+              "id": "c",
+              "hanzi": "空调",
+              "pinyin": "kōngtiáo",
+              "meaning_en": "air conditioner"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "搬家 means moving to a new home."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Moving Into a New Apartment",
+        "context_en": "Xiao Zhang shows his friend around his new house after moving.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "听说你上周搬家了，新房子怎么样？",
+            "pinyin": "Tīngshuō nǐ shàng zhōu bānjiā le, xīn fángzi zěnmeyàng?",
+            "english": "I heard you moved last week—how is the new house?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "很不错！屋子很大，楼下还有一个小花园。",
+            "pinyin": "Hěn búcuò! Wūzi hěn dà, lóuxià hái yǒu yí ge xiǎo huāyuán.",
+            "english": "Really nice! The rooms are big, and there’s a small garden downstairs."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "家具和电器都买齐了吗？",
+            "pinyin": "Jiājù hé diànqì dōu mǎi qí le ma?",
+            "english": "Have you bought all the furniture and appliances yet?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "差不多了，沙发、冰箱、空调和洗衣机都已经放好了。",
+            "pinyin": "Chàbuduō le, shāfā, bīngxiāng, kōngtiáo hé xǐyījī dōu yǐjīng fàng hǎo le.",
+            "english": "Almost—the sofa, fridge, air conditioner, and washing machine are all already in place."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Counting appliances with 台",
+          "explanation_en": "Use 台 (tái) as the classifier for electrical appliances and machines such as 冰箱, 空调, and 洗衣机.",
+          "pattern_hanzi": "<Number> + 台 + 冰箱 / 空调 / 洗衣机",
+          "pattern_pinyin": "<Number> + tái + bīngxiāng / kōngtiáo / xǐyījī",
+          "pattern_pseudo_translation": "<Number> + unit + fridge / AC / washer",
+          "examples": [
+            {
+              "hanzi": "新屋子里装了两台空调。",
+              "pinyin": "Xīn wūzi lǐ zhuāng le liǎng tái kōngtiáo.",
+              "english": "Two air conditioners were installed in the new room."
+            },
+            {
+              "hanzi": "我家的这台洗衣机用了五年了。",
+              "pinyin": "Wǒ jiā de zhè tái xǐyījī yòng le wǔ nián le.",
+              "english": "This washing machine at our home has been used for five years."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Moving to a new place with 搬家",
+          "explanation_en": "搬家 (bānjiā) means to move house; use 搬到 + place when specifying the new address.",
+          "pattern_hanzi": "<Subject> + 搬家 + 到 + <Place>",
+          "pattern_pinyin": "<Subject> + bānjiā + dào + <Place>",
+          "pattern_pseudo_translation": "<Subject> + move home + to + <Place>",
+          "examples": [
+            {
+              "hanzi": "下个月我们就要搬家到市中心了。",
+              "pinyin": "Xià ge yuè wǒmen jiù yào bānjiā dào shìzhōngxīn le.",
+              "english": "Next month we are moving to the city center."
+            },
+            {
+              "hanzi": "搬家那天，好几个朋友来帮忙。",
+              "pinyin": "Bānjiā nà tiān, hǎo jǐ ge péngyou lái bāngmáng.",
+              "english": "On moving day, several friends came to help."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Describe rooms, furniture, and appliances.",
+        "model": {
+          "hanzi": "奶奶喜欢坐在花园里晒太阳。",
+          "pinyin": "Nǎinai xǐhuan zuò zài huāyuán lǐ shài tàiyáng.",
+          "english": "Grandma likes sitting in the garden to enjoy the sun."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say there is fresh fruit and milk in the refrigerator.",
+            "model_answer": {
+              "hanzi": "冰箱里有新鲜的水果和牛奶。",
+              "pinyin": "Bīngxiāng lǐ yǒu xīnxiān de shuǐguǒ hé niúnǎi.",
+              "english": "There is fresh fruit and milk in the refrigerator."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say the cat likes sleeping on the sofa.",
+            "model_answer": {
+              "hanzi": "小猫喜欢在沙发上睡觉。",
+              "pinyin": "Xiǎo māo xǐhuan zài shāfā shàng shuìjiào.",
+              "english": "The kitten likes sleeping on the sofa."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this house is bright and clean.",
+            "model_answer": {
+              "hanzi": "这套房子又亮堂又干净。",
+              "pinyin": "Zhè tào fángzi yòu liàngtang yòu gānjìng.",
+              "english": "This house is both bright and clean."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Cleaning Up the New Home",
+        "paragraphs": [
+          {
+            "hanzi": "李叔叔一家刚搬进新房子。屋子虽然不算特别大，但是客厅里的沙发很舒服，窗外就能看到小区里的花园。",
+            "pinyin": "Lǐ shūshu yì jiā gāng bān jìn xīn fángzi. Wūzi suīrán bú suàn tèbié dà, dànshì kètīng lǐ de shāfā hěn shūfu, chuāngwài jiù néng kàndào xiǎoqū lǐ de huāyuán.",
+            "english": "Uncle Li’s family just moved into a new house. Although the rooms aren’t huge, the sofa in the living room is very comfortable, and outside the window you can see the neighborhood garden."
+          },
+          {
+            "hanzi": "夏天快到了，他们还提前检查了空调和冰箱，把屋子打扫得干干净净。",
+            "pinyin": "Xiàtiān kuài dào le, tāmen hái tíqián jiǎnchá le kōngtiáo hé bīngxiāng, bǎ wūzi dǎsǎo de gāngānjìngjìng.",
+            "english": "Summer is almost here, so they checked the air conditioner and refrigerator in advance and cleaned the rooms spotless."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What can you see outside the window of Uncle Li’s new home?",
+            "answer_en": "The neighborhood garden (小区里的花园)."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "Which appliances did they check before summer?",
+            "answer_en": "The air conditioner and refrigerator."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe your home or room using 房子, 屋子, or 沙发.",
+          "model_answer": {
+            "hanzi": "我的屋子不大，但放着一张床和一张小沙发，很舒服。",
+            "pinyin": "Wǒ de wūzi bú dà, dàn fàng zhe yì zhāng chuáng hé yì zhāng xiǎo shāfā, hěn shūfu.",
+            "english": "My room isn’t big, but it has a bed and a small sofa—very comfortable."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say which household appliance you use most often.",
+          "model_answer": {
+            "hanzi": "夏天我每天都要开空调，冬天用得比较少。",
+            "pinyin": "Xiàtiān wǒ měitiān dōu yào kāi kōngtiáo, dōngtiān yòng de bǐjiào shǎo.",
+            "english": "In summer I turn on the air conditioner every day, and use it less in winter."
+          }
+        }
+      ],
+      "common_pitfall": "房子 refers to a house/apartment building or unit as a whole, while 屋子 refers to a room (or the interior space of a home).",
+      "pronunciation_focus": "空调 (kōngtiáo) pairs flat kōng with rising tiáo; 洗衣机 (xǐyījī) has third-tone xǐ followed by two flat first tones.",
+      "review": {
+        "can_do": [
+          "Talk about moving house and rooms.",
+          "Name appliances like 冰箱, 空调, and 洗衣机.",
+          "Describe furniture and gardens."
+        ],
+        "entry_ids": [
+          509,
+          536,
+          623,
+          675,
+          739,
+          822,
+          879,
+          886
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-moving-and-appliances--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Counting appliances with 台",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-moving-and-appliances--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Moving to a new place with 搬家",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say there is fresh fruit and milk in the refrigerator.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-moving-and-appliances--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the cat likes sleeping on the sofa.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-moving-and-appliances--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this house is bright and clean.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What can you see outside the window of Uncle Li’s new home?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-moving-and-appliances--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: Which appliances did they check before summer?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe your home or room using 房子, 屋子, or 沙发.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-moving-and-appliances--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say which household appliance you use most often.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-moving-and-appliances--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-moving-and-appliances--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"washing machine\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-moving-and-appliances--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"sofa\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-moving-and-appliances--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to move house\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-moving-and-appliances--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-moving-and-appliances--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 16
+}

@@ -1,0 +1,1601 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-notes-dictionaries-practice",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Notes, Dictionaries & Practice",
+    "subtitle": "Taking notes, using dictionaries, and improving your level",
+    "description": "Talk about study tools, taking notes, reviewing lessons, solving hard problems, and raising your language level.",
+    "slug": "notes-dictionaries-practice"
+  },
+  "classification": {
+    "primary_topic_id": "school-language",
+    "topic_ids": [
+      "school-language"
+    ],
+    "tags": [
+      "studying",
+      "dictionaries",
+      "homework"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Name study tools: 笔记, 笔记本, 词典, 字典, 课本, 课文, and 铅笔.",
+    "Describe study actions: 记, 复习, 练, 练习, and doing 作业.",
+    "Evaluate progress and difficulty with 常用, 常见, 句子, 难题, 水平, and 提高."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "会": "Characters:会",
+    "住": "Characters:住",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "借": "Characters:借",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "光": "Characters:光",
+    "典": "Characters:典",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "出": "Characters:出",
+    "刚": "Characters:刚",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "助": "Characters:助",
+    "口": "Characters:口",
+    "句": "Characters:句",
+    "可": "Characters:可",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "啊": "Characters:啊",
+    "在": "Characters:在",
+    "坚": "Characters:坚",
+    "堂": "Characters:堂",
+    "复": "Characters:复",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "够": "Characters:够",
+    "天": "Characters:天",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "完": "Characters:完",
+    "家": "Characters:家",
+    "尽": "Characters:尽",
+    "师": "Characters:师",
+    "希": "Characters:希",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "平": "Characters:平",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "快": "Characters:快",
+    "怎": "Characters:怎",
+    "想": "Characters:想",
+    "慢": "Characters:慢",
+    "成": "Characters:成",
+    "我": "Characters:我",
+    "或": "Characters:或",
+    "把": "Characters:把",
+    "持": "Characters:持",
+    "提": "Characters:提",
+    "支": "Characters:支",
+    "放": "Characters:放",
+    "教": "Characters:教",
+    "文": "Characters:文",
+    "新": "Characters:新",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "望": "Characters:望",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "查": "Characters:查",
+    "样": "Characters:样",
+    "桌": "Characters:桌",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "法": "Characters:法",
+    "点": "Characters:点",
+    "然": "Characters:然",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "笔": "Characters:笔",
+    "第": "Characters:第",
+    "篇": "Characters:篇",
+    "练": "Characters:练",
+    "给": "Characters:给",
+    "绩": "Characters:绩",
+    "老": "Characters:老",
+    "者": "Characters:者",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "言": "Characters:言",
+    "认": "Characters:认",
+    "记": "Characters:记",
+    "识": "Characters:识",
+    "词": "Characters:词",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "读": "Characters:读",
+    "课": "Characters:课",
+    "边": "Characters:边",
+    "这": "Characters:这",
+    "遇": "Characters:遇",
+    "遍": "Characters:遍",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "铅": "Characters:铅",
+    "问": "Characters:问",
+    "难": "Characters:难",
+    "非": "Characters:非",
+    "题": "Characters:题",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Practical study vocabulary for textbooks, dictionaries, notes, practice, and improvement.",
+      "focus": "Use 复习 for reviewing material and 提高水平 for raising one’s level."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0523",
+          "hanzi": "笔记",
+          "pinyin": "bǐjì",
+          "meaning_en": "notes; written notes",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0523-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你做笔记了吗？",
+              "pinyin": "nǐ zuò bǐjì le ma?",
+              "english": "Did you take notes?",
+              "teaching_note": "Short everyday spoken use of 笔记."
+            },
+            {
+              "id": "ex-0523-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "上课时学生们在做笔记。",
+              "pinyin": "shàngkè shí xuéshēngmen zài zuò bǐjì.",
+              "english": "The students are taking notes during class.",
+              "teaching_note": "Simple descriptive or narrative use of 笔记."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 523
+            }
+          ]
+        },
+        {
+          "id": "w-0524",
+          "hanzi": "笔记本",
+          "pinyin": "bǐjìběn",
+          "meaning_en": "notebook",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0524-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的笔记本呢？",
+              "pinyin": "wǒ de bǐjìběn ne?",
+              "english": "Where's my notebook?",
+              "teaching_note": "Short everyday spoken use of 笔记本."
+            },
+            {
+              "id": "ex-0524-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她在笔记本上写汉字。",
+              "pinyin": "tā zài bǐjìběn shàng xiě Hànzì.",
+              "english": "She writes Chinese characters in her notebook.",
+              "teaching_note": "Simple descriptive or narrative use of 笔记本."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 524
+            }
+          ]
+        },
+        {
+          "id": "w-0556",
+          "hanzi": "常见",
+          "pinyin": "cháng jiàn",
+          "meaning_en": "commonly seen; common",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0556-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个字很常见。",
+              "pinyin": "zhège zì hěn cháng jiàn.",
+              "english": "This character is very common.",
+              "teaching_note": "Short everyday spoken use of 常见."
+            },
+            {
+              "id": "ex-0556-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这是一个常见的问题。",
+              "pinyin": "zhè shì yí ge cháng jiàn de wèntí.",
+              "english": "This is a common question.",
+              "teaching_note": "Simple descriptive or narrative use of 常见."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 556
+            }
+          ]
+        },
+        {
+          "id": "w-0557",
+          "hanzi": "常用",
+          "pinyin": "cháng yòng",
+          "meaning_en": "commonly used",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0557-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个词常用吗？",
+              "pinyin": "zhège cí cháng yòng ma?",
+              "english": "Is this word commonly used?",
+              "teaching_note": "Short everyday spoken use of 常用."
+            },
+            {
+              "id": "ex-0557-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这些都是常用的汉字。",
+              "pinyin": "zhèxiē dōu shì cháng yòng de Hànzì.",
+              "english": "These are all commonly used Chinese characters.",
+              "teaching_note": "Simple descriptive or narrative use of 常用."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 557
+            }
+          ]
+        },
+        {
+          "id": "w-0569",
+          "hanzi": "词典",
+          "pinyin": "cídiǎn",
+          "meaning_en": "dictionary",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0569-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你有词典吗？",
+              "pinyin": "nǐ yǒu cídiǎn ma?",
+              "english": "Do you have a dictionary?",
+              "teaching_note": "Short everyday spoken use of 词典."
+            },
+            {
+              "id": "ex-0569-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生可以用词典查词。",
+              "pinyin": "xuéshēng kěyǐ yòng cídiǎn chá cí.",
+              "english": "Students can look up words in a dictionary.",
+              "teaching_note": "Simple descriptive or narrative use of 词典."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 569
+            }
+          ]
+        },
+        {
+          "id": "w-0634",
+          "hanzi": "复习",
+          "pinyin": "fùxí",
+          "meaning_en": "review; revise for an exam",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0634-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想复习汉语。",
+              "pinyin": "wǒ xiǎng fùxí Hànyǔ.",
+              "english": "I want to review Chinese.",
+              "teaching_note": "Short everyday spoken use of 复习."
+            },
+            {
+              "id": "ex-0634-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生晚上在家复习课文。",
+              "pinyin": "xuéshēng wǎnshang zài jiā fùxí kèwén.",
+              "english": "The student reviews the text at home in the evening.",
+              "teaching_note": "Simple descriptive or narrative use of 复习."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 634
+            }
+          ]
+        },
+        {
+          "id": "w-0692",
+          "hanzi": "记",
+          "pinyin": "jì",
+          "meaning_en": "remember; note down",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0692-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我记不住这个字。",
+              "pinyin": "wǒ jì bú zhù zhège zì.",
+              "english": "I can't remember this character.",
+              "teaching_note": "Short everyday spoken use of 记."
+            },
+            {
+              "id": "ex-0692-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请记下老师说的话。",
+              "pinyin": "qǐng jì xià lǎoshī shuō dehuà.",
+              "english": "Please note down what the teacher says.",
+              "teaching_note": "Simple descriptive or narrative use of 记."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 692
+            }
+          ]
+        },
+        {
+          "id": "w-0723",
+          "hanzi": "句子",
+          "pinyin": "jùzi",
+          "meaning_en": "sentence",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0723-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个句子怎么读？",
+              "pinyin": "zhège jùzi zěnme dú?",
+              "english": "How do you read this sentence?",
+              "teaching_note": "Short everyday spoken use of 句子."
+            },
+            {
+              "id": "ex-0723-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请用这个词写一个句子。",
+              "pinyin": "qǐng yòng zhège cí xiě yí ge jùzi.",
+              "english": "Please write a sentence using this word.",
+              "teaching_note": "Simple descriptive or narrative use of 句子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 723
+            }
+          ]
+        },
+        {
+          "id": "w-0737",
+          "hanzi": "课本",
+          "pinyin": "kèběn",
+          "meaning_en": "textbook",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0737-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "课本在桌子上。",
+              "pinyin": "kèběn zài zhuōzi shàng.",
+              "english": "The textbook is on the table.",
+              "teaching_note": "Short everyday spoken use of 课本."
+            },
+            {
+              "id": "ex-0737-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生上课时要带课本。",
+              "pinyin": "xuéshēng shàngkè shí yào dài kèběn.",
+              "english": "Students must bring their textbooks to class.",
+              "teaching_note": "Simple descriptive or narrative use of 课本."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 737
+            }
+          ]
+        },
+        {
+          "id": "w-0738",
+          "hanzi": "课文",
+          "pinyin": "kèwén",
+          "meaning_en": "lesson text; reading passage",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0738-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天的课文难吗？",
+              "pinyin": "jīntiān de kèwén nán ma?",
+              "english": "Is today's lesson text difficult?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0738-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师正在读课文。",
+              "pinyin": "lǎoshī zhèngzài dú kèwén.",
+              "english": "The teacher is reading the lesson text.",
+              "teaching_note": "Simple descriptive or narrative use of 课文."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 738
+            }
+          ]
+        },
+        {
+          "id": "w-0751",
+          "hanzi": "练",
+          "pinyin": "liàn",
+          "meaning_en": "practice; train",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0751-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "再练一下吧。",
+              "pinyin": "zài liàn yíxià ba.",
+              "english": "Let's practice a bit more.",
+              "teaching_note": "Short everyday spoken use of 练."
+            },
+            {
+              "id": "ex-0751-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生每天练写汉字。",
+              "pinyin": "xuéshēng měi tiān liàn xiě Hànzì.",
+              "english": "The students practice writing Chinese characters daily.",
+              "teaching_note": "Simple descriptive or narrative use of 练."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 751
+            }
+          ]
+        },
+        {
+          "id": "w-0752",
+          "hanzi": "练习",
+          "pinyin": "liànxí",
+          "meaning_en": "practice; exercise",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0752-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我们练习说话吧。",
+              "pinyin": "wǒmen liànxí shuōhuà ba.",
+              "english": "Let's practice speaking.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0752-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "课后可以做一些练习。",
+              "pinyin": "kè hòu kěyǐ zuò yìxiē liànxí.",
+              "english": "You can do some exercises after class.",
+              "teaching_note": "Simple descriptive or narrative use of 练习."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 752
+            }
+          ]
+        },
+        {
+          "id": "w-0781",
+          "hanzi": "难题",
+          "pinyin": "nántí",
+          "meaning_en": "difficult question; hard problem",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0781-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个难题你会做吗？",
+              "pinyin": "zhège nántí nǐ huì zuò ma?",
+              "english": "Can you solve this difficult problem?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0781-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师给学生出了一个难题。",
+              "pinyin": "lǎoshī gěi xuéshēng chū le yí ge nántí.",
+              "english": "The teacher set a difficult problem for the students.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 781
+            }
+          ]
+        },
+        {
+          "id": "w-0804",
+          "hanzi": "铅笔",
+          "pinyin": "qiānbǐ",
+          "meaning_en": "pencil",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0804-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的铅笔可以借我吗？",
+              "pinyin": "nǐ de qiānbǐ kěyǐ jiè wǒ ma?",
+              "english": "Could you lend me your pencil?",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0804-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生用铅笔写汉字。",
+              "pinyin": "xuéshēng yòng qiānbǐ xiě Hànzì.",
+              "english": "The students write Chinese characters with pencils.",
+              "teaching_note": "Simple descriptive or narrative use of 铅笔."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 804
+            }
+          ]
+        },
+        {
+          "id": "w-0846",
+          "hanzi": "水平",
+          "pinyin": "shuǐpíng",
+          "meaning_en": "level; standard; proficiency",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0846-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你的汉语水平怎么样？",
+              "pinyin": "nǐ de Hànyǔ shuǐpíng zěnmeyàng?",
+              "english": "How good is your Chinese?",
+              "teaching_note": "Short everyday spoken use of 水平."
+            },
+            {
+              "id": "ex-0846-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的汉语水平提高了。",
+              "pinyin": "tā de Hànyǔ shuǐpíng tígāo le.",
+              "english": "His Chinese proficiency has improved.",
+              "teaching_note": "Simple descriptive or narrative use of 水平."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 846
+            }
+          ]
+        },
+        {
+          "id": "w-0852",
+          "hanzi": "提高",
+          "pinyin": "tígāo",
+          "meaning_en": "improve; raise",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0852-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想提高汉语水平。",
+              "pinyin": "wǒ xiǎng tígāo Hànyǔ shuǐpíng.",
+              "english": "I want to improve my Chinese.",
+              "teaching_note": "Short everyday spoken use of 提高."
+            },
+            {
+              "id": "ex-0852-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天练习，汉语水平提高了。",
+              "pinyin": "tā měi tiān liànxí, Hànyǔ shuǐpíng tígāo le.",
+              "english": "He practices daily, and his Chinese proficiency has improved.",
+              "teaching_note": "Simple descriptive or narrative use of 提高."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 852
+            }
+          ]
+        },
+        {
+          "id": "w-0992",
+          "hanzi": "字典",
+          "pinyin": "zìdiǎn",
+          "meaning_en": "dictionary",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0992-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "字典借我用一下。",
+              "pinyin": "zìdiǎn jiè wǒ yòng yíxià.",
+              "english": "Let me borrow your dictionary!",
+              "teaching_note": "Short everyday spoken use of 字典."
+            },
+            {
+              "id": "ex-0992-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这本字典有很多常用汉字。",
+              "pinyin": "zhè běn zìdiǎn yǒu hěn duō cháng yòng Hànzì.",
+              "english": "This dictionary contains many common Chinese characters.",
+              "teaching_note": "Simple descriptive or narrative use of 字典."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 992
+            }
+          ]
+        },
+        {
+          "id": "w-0999",
+          "hanzi": "作业",
+          "pinyin": "zuòyè",
+          "meaning_en": "homework; assignment",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0999-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "作业写完了吗？",
+              "pinyin": "zuòyè xiě wán le ma?",
+              "english": "Have you finished the homework?",
+              "teaching_note": "Short everyday spoken use of 作业."
+            },
+            {
+              "id": "ex-0999-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生放学后在家做作业。",
+              "pinyin": "xuéshēng fàngxué hòu zài jiā zuò zuòyè.",
+              "english": "The student does homework at home after school.",
+              "teaching_note": "Simple descriptive or narrative use of 作业."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 999
+            }
+          ]
+        },
+        {
+          "id": "w-0196",
+          "hanzi": "说",
+          "pinyin": "shuō",
+          "meaning_en": "say",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "communication-social"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0196-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说一点儿中文。",
+              "pinyin": "wǒ huì shuō yìdiǎnr Zhōngwén.",
+              "english": "I can speak a little Chinese.",
+              "teaching_note": "一点儿 expresses a small amount; 会 means an ability to speak the language."
+            },
+            {
+              "id": "ex-0196-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天老师说汉语。",
+              "pinyin": "jīntiān lǎoshī shuō Hànyǔ.",
+              "english": "The teacher speaks Chinese today.",
+              "teaching_note": "School or study context showing 说 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 196
+            }
+          ]
+        },
+        {
+          "id": "w-0240",
+          "hanzi": "写",
+          "pinyin": "xiě",
+          "meaning_en": "write",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language",
+            "communication-social",
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0240-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会写这个字。",
+              "pinyin": "wǒ huì xiě zhège zì.",
+              "english": "I can write this character.",
+              "teaching_note": "写 refers to writing a character; 会 indicates learned ability."
+            },
+            {
+              "id": "ex-0240-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "请写你的名字。",
+              "pinyin": "qǐng xiě nǐ de míngzi.",
+              "english": "Please write your name.",
+              "teaching_note": "Short everyday instruction or request using 写; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 240
+            }
+          ]
+        },
+        {
+          "id": "w-0290",
+          "hanzi": "中文",
+          "pinyin": "Zhōngwén",
+          "meaning_en": "Chinese language",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "school-language",
+          "topic_ids": [
+            "school-language"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0290-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我会说中文。",
+              "pinyin": "wǒ huì shuō Zhōngwén.",
+              "english": "I can speak Chinese.",
+              "teaching_note": "中文 refers to the Chinese language or writing; 会说 indicates speaking ability."
+            },
+            {
+              "id": "ex-0290-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这里有很多中文书。",
+              "pinyin": "zhèlǐ yǒu hěn duō Zhōngwén shū.",
+              "english": "There are many Chinese-language books here.",
+              "teaching_note": "School or study context showing 中文 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 290
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 笔记 (bǐjì)",
+        "explanation": "笔记 (bǐjì) means “notes; written notes” (noun).",
+        "example_id": "ex-0523-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 笔记本 (bǐjìběn)",
+        "explanation": "笔记本 (bǐjìběn) means “notebook” (noun).",
+        "example_id": "ex-0524-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0523-1",
+      "ex-0524-1",
+      "ex-0556-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "According to the reading, why is just reading the textbook not enough?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "You should also look up new words in a dictionary, note down useful sentences, and review/practice regularly.",
+          "explanation": "The passage recommends using a dictionary, keeping a notebook, and reviewing on weekends."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about how you study Chinese using 复习, 笔记, or 提高.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我每天晚上复习课堂笔记，希望能尽快提高汉语水平。",
+          "explanation": "Use 复习笔记 and 提高水平."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"homework\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "作业",
+              "pinyin": "zuòyè",
+              "meaning_en": "homework"
+            },
+            {
+              "id": "b",
+              "hanzi": "课文",
+              "pinyin": "kèwén",
+              "meaning_en": "lesson text"
+            },
+            {
+              "id": "c",
+              "hanzi": "难题",
+              "pinyin": "nántí",
+              "meaning_en": "hard problem"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "作业 means homework or assignment."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"to review / revise\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "练习",
+              "pinyin": "liànxí",
+              "meaning_en": "practice"
+            },
+            {
+              "id": "b",
+              "hanzi": "复习",
+              "pinyin": "fùxí",
+              "meaning_en": "review"
+            },
+            {
+              "id": "c",
+              "hanzi": "提高",
+              "pinyin": "tígāo",
+              "meaning_en": "improve"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "复习 means to review previously learned material."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"notebook\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "笔记",
+              "pinyin": "bǐjì",
+              "meaning_en": "notes"
+            },
+            {
+              "id": "b",
+              "hanzi": "笔记本",
+              "pinyin": "bǐjìběn",
+              "meaning_en": "notebook"
+            },
+            {
+              "id": "c",
+              "hanzi": "词典",
+              "pinyin": "cídiǎn",
+              "meaning_en": "dictionary"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "笔记本 is the notebook itself."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Preparing for Tomorrow’s Quiz",
+        "context_en": "Two classmates review a lesson text and share study tips.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "今天的作业好多啊，你复习完第三课的课文了吗？",
+            "pinyin": "Jīntiān de zuòyè hǎoduō a, nǐ fùxí wán dì-sān kè de kèwén le ma?",
+            "english": "There’s so much homework today—have you finished reviewing Lesson 3’s text?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "刚复习完。我用铅笔在课本上记了些常用的句子。",
+            "pinyin": "Gāng fùxí wán. Wǒ yòng qiānbǐ zài kèběn shàng jì le xiē cháng yòng de jùzi.",
+            "english": "Just finished. I used a pencil to note down some commonly used sentences in the textbook."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "这个办法真好！遇到不认识的字怎么办？",
+            "pinyin": "Zhège bànfǎ zhēn hǎo! Yùdào bú rènshi de zì zěnme bàn?",
+            "english": "That’s a great method! What do you do when you run into characters you don’t know?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "我会查字典或者词典，再多做练习，这样汉语水平提高得很快。",
+            "pinyin": "Wǒ huì chá zìdiǎn huòzhě cídiǎn, zài duō zuò liànxí, zhèyàng Hànyǔ shuǐpíng tígāo de hěn kuài.",
+            "english": "I look them up in a character or word dictionary and do more exercises—that way my Chinese level improves fast."
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Raising your level with 提高",
+          "explanation_en": "Pair 提高 (tígāo) with 水平 (shuǐpíng) or 成绩 to talk about improving a skill or score.",
+          "pattern_hanzi": "提高 + <Skill> + 水平",
+          "pattern_pinyin": "tígāo + <Skill> + shuǐpíng",
+          "pattern_pseudo_translation": "raise + <Skill> + level",
+          "examples": [
+            {
+              "hanzi": "多听多说能提高口语水平。",
+              "pinyin": "Duō tīng duō shuō néng tígāo kǒuyǔ shuǐpíng.",
+              "english": "Listening and speaking more can improve your spoken language level."
+            },
+            {
+              "hanzi": "每天写日记帮助我提高了写作水平。",
+              "pinyin": "Měitiān xiě rìjì bāngzhù wǒ tígāo le xiězuò shuǐpíng.",
+              "english": "Writing a diary every day helped me raise my writing level."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Noting things down in a notebook",
+          "explanation_en": "Use 把 + notes + 记在 + 笔记本上 or 记笔记 to talk about taking study notes.",
+          "pattern_hanzi": "把 + <Word / Sentence> + 记在 + 笔记本上",
+          "pattern_pinyin": "bǎ + <Word / Sentence> + jì zài + bǐjìběn shàng",
+          "pattern_pseudo_translation": "take + <Word / Sentence> + note on + notebook",
+          "examples": [
+            {
+              "hanzi": "我把常见的难题都记在了笔记本上。",
+              "pinyin": "Wǒ bǎ cháng jiàn de nántí dōu jì zài le bǐjìběn shàng.",
+              "english": "I wrote down all the common difficult problems in my notebook."
+            },
+            {
+              "hanzi": "上课时他一边听一边认真记笔记。",
+              "pinyin": "Shàngkè shí tā yìbiān tīng yìbiān rènzhēn jì bǐjì.",
+              "english": "During class he listened while carefully taking notes."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Talk about study tools, practice, and improvement.",
+        "model": {
+          "hanzi": "每天晚上我都先做作业，再复习课文。",
+          "pinyin": "Měitiān wǎnshang wǒ dōu xiān zuò zuòyè, zài fùxí kèwén.",
+          "english": "Every evening I do my homework first, then review the lesson text."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you need to buy a new notebook and two pencils.",
+            "model_answer": {
+              "hanzi": "我要买一个新笔记本和两支铅笔。",
+              "pinyin": "Wǒ yào mǎi yí ge xīn bǐjìběn hé liǎng zhī qiānbǐ.",
+              "english": "I need to buy a new notebook and two pencils."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say this is a commonly used Chinese sentence.",
+            "model_answer": {
+              "hanzi": "这是一个非常常用的汉语句子。",
+              "pinyin": "Zhè shì yí ge fēicháng cháng yòng de Hànyǔ jùzi.",
+              "english": "This is a very commonly used Chinese sentence."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say you practice speaking Chinese every morning.",
+            "model_answer": {
+              "hanzi": "我每天早上都练说汉语。",
+              "pinyin": "Wǒ měitiān zǎoshang dōu liàn shuō Hànyǔ.",
+              "english": "I practice speaking Chinese every morning."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "How to Study Vocabulary Effectively",
+        "paragraphs": [
+          {
+            "hanzi": "学外语的时候，光看课本是不够的。每学完一篇课文，最好用词典查一查生词的用法。",
+            "pinyin": "Xué wàiyǔ de shíhou, guāng kàn kèběn shì búgòu de. Měi xué wán yì piān kèwén, zuìhǎo yòng cídiǎn chá yì chá shēngcí de yòngfǎ.",
+            "english": "When studying a foreign language, just reading the textbook is not enough. After finishing each lesson text, it is best to check the usage of new words in a dictionary."
+          },
+          {
+            "hanzi": "然后把常用的句子记在笔记本里，周末再认真复习一遍。坚持练习，语言水平自然会慢慢提高。",
+            "pinyin": "Ránhòu bǎ cháng yòng de jùzi jì zài bǐjìběn lǐ, zhōumò zài rènzhēn fùxí yí biàn. Jiānchí liànxí, yǔyán shuǐpíng zìrán huì mànmàn tígāo.",
+            "english": "Then write the commonly used sentences in a notebook, and review them carefully once more on the weekend. Keep practicing, and your language level will naturally rise."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What should you do after finishing each lesson text?",
+            "answer_en": "Check the usage of new words in a dictionary and write commonly used sentences in a notebook."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What happens if you keep practicing and reviewing?",
+            "answer_en": "Your language level will naturally improve."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe what study tools you keep on your desk.",
+          "model_answer": {
+            "hanzi": "我的桌子上放着课本、笔记本、铅笔和一本词典。",
+            "pinyin": "Wǒ de zhuōzi shàng fàng zhe kèběn, bǐjìběn, qiānbǐ hé yì běn cídiǎn.",
+            "english": "On my desk are a textbook, a notebook, a pencil, and a dictionary."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Explain how you solve a hard problem (难题) in your homework.",
+          "model_answer": {
+            "hanzi": "遇到难题时，我会先复习笔记，再请教老师。",
+            "pinyin": "Yùdào nántí shí, wǒ huì xiān fùxí bǐjì, zài qǐngjiào lǎoshī.",
+            "english": "When I run into a hard problem, I review my notes first and then ask the teacher."
+          }
+        }
+      ],
+      "common_pitfall": "字典 is a character dictionary (by single 字), while 词典 is a word/phrase dictionary (by 词). Also, 笔记 means \"notes\", whereas 笔记本 means \"notebook\" (or laptop).",
+      "pronunciation_focus": "复习 (fùxí) moves from fourth tone to second tone; 练习 (liànxí) also moves from fourth tone to second tone.",
+      "review": {
+        "can_do": [
+          "Name textbooks, dictionaries, notebooks, and pencils.",
+          "Talk about reviewing, practicing, and doing homework.",
+          "Describe raising your level with 提高水平."
+        ],
+        "entry_ids": [
+          523,
+          524,
+          556,
+          557,
+          569,
+          634,
+          692,
+          723,
+          737,
+          738,
+          751,
+          752,
+          781,
+          804,
+          846,
+          852,
+          992,
+          999
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-notes-dictionaries-practice--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Raising your level with 提高",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Noting things down in a notebook",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you need to buy a new notebook and two pencils.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this is a commonly used Chinese sentence.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you practice speaking Chinese every morning.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What should you do after finishing each lesson text?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What happens if you keep practicing and reviewing?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe what study tools you keep on your desk.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Explain how you solve a hard problem (难题) in your homework.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"homework\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"to review / revise\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-notes-dictionaries-practice--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"notebook\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-notes-dictionaries-practice--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-notes-dictionaries-practice--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

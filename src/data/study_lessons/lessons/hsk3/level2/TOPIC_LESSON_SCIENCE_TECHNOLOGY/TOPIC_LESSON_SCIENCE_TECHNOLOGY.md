@@ -146,11 +146,11 @@ You can read this book online.
 
 - 上网 (shàngwǎng) — to go online; use the internet [HSK entry 428]
 
-- 网上 (wǎngshang) — online; on the internet [HSK entry 451]
+- 网上 (wǎngshang) — online; on the internet [HSK entry 450]
 
-- 电话 (diànhuà) — telephone [HSK entry 35]
+- 电话 (diànhuà) — telephone [HSK entry 34]
 
-- 电脑 (diànnǎo) — computer [HSK entry 36]
+- 电脑 (diànnǎo) — computer [HSK entry 35]
 
 - 手机 (shǒujī) — mobile phone [HSK entry 189]
 

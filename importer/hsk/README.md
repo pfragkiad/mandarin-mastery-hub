@@ -256,8 +256,8 @@ Five Level 3 POS assignments are corrected; Level 5 adverbial 白 has its meanin
 and two examples replaced. The official citation reading for 小朋友 is retained in
 `syllabus_pinyin`; its existing neutral-tone lexical reading and matching recording
 remain exact, with an explicit pronunciation note. Official and historical IDs
-remain separately recorded. Canonical lesson packages resolve their original
-version-bound serials through the explicit mapping without rewriting source bytes.
+remain separately recorded. Runtime lessons and course manifests use current official serials directly;
+original packages and earlier identity mappings remain offline evidence.
 See the [migration report](../../reports/hsk-level1-5-official-numbering-migration.md).
 
 Current handoff SHA-256 values:

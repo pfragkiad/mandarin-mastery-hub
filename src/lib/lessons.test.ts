@@ -9,24 +9,19 @@ import { lessonGlyphHintById } from './lesson-hints';
 // only through its recorded catalog ID or, without one, its exact headword.
 const cats = [{ id: 'time-frequency-repetition', label: 'Time, Frequency & Repetition', description: '' }];
 
-describe('versioned syllabus references', () => {
-  const moved = { id: 'preserved-word-id', simplified: '电脑', entryKind: 'word', hskVersion: '3.0', hsk_index: 35,
-    studyMetadata: { numberingRevision: { name: 'official-site-1219', previousId: 36 } } };
+describe('syllabus references', () => {
+  const entry = { id: 'preserved-word-id', simplified: '电脑', entryKind: 'word', hskVersion: '3.0', hsk_index: 35 };
 
-  it('resolves an immutable lesson reference through its recorded previous ID', () => {
-    const item = { hanzi: '电脑', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 36 }] };
-    const other = { ...moved, id: 'different-word', simplified: '电影', hsk_index: 36,
-      studyMetadata: { numberingRevision: { name: 'official-site-1219', previousId: 35 } } };
-    expect(syllabusEntryFor(item, [other, moved])).toBe(moved);
-    expect(syllabusEntryFor({ ...item, hanzi: '电影' }, [other, moved])).toBeNull();
-    expect(syllabusIndexForReference(moved, 'hsk3-2025')).toBe(36);
+  it('resolves a lesson reference through the current official hsk_index', () => {
+    const item = { hanzi: '电脑', syllabus_refs: [{ curriculum_id: 'hsk3-2025', entry_id: 35 }] };
+    const other = { id: 'different-word', simplified: '电影', entryKind: 'word', hskVersion: '3.0', hsk_index: 36 };
+    expect(syllabusEntryFor(item, [other, entry])).toBe(entry);
+    expect(syllabusEntryFor({ ...item, hanzi: '电影' }, [other, entry])).toBeNull();
+    expect(syllabusIndexForReference(entry, 'hsk3-2025')).toBe(35);
   });
 
-  it('rejects unknown revisions and curricula instead of reusing the current serial', () => {
-    expect(syllabusIndexForReference({ ...moved, studyMetadata: { numberingRevision: { name: 'unrecognized', previousId: 36 } } }, 'hsk3-2025')).toBeNull();
-    expect(syllabusIndexForReference(moved, 'unknown-curriculum')).toBeNull();
-    const { studyMetadata: _studyMetadata, ...unrevised } = moved;
-    expect(syllabusIndexForReference(unrevised, 'hsk3-2025')).toBe(35);
+  it('rejects unknown curricula', () => {
+    expect(syllabusIndexForReference(entry, 'unknown-curriculum')).toBeNull();
   });
 });
 const raw = (over: Record<string, unknown> = {}) => ({ schema_version: 'mandarin-character-lesson/2.4.0', lesson_id: 'char-6B21', lesson: { title: 'Talking About Times', categories: ['time-frequency-repetition'], primary_category_id: 'time-frequency-repetition', tags: [] }, metadata: { status: 'reviewed', catalog_character_id: null }, headword: { hanzi: '次', pinyin: 'cì' }, ...over });
@@ -65,13 +60,13 @@ describe('lesson index', () => {
   it('rejects two files with the same lesson_id', () => {
     expect(() => buildLessonIndex({ 'a.json': raw(), 'b.json': raw() }, cats)).toThrow(/Duplicate lesson_id char-6B21/);
   });
-  it('lists the two character lessons, the 21 HSK Level 1 + 25 Level 2 topic lessons and the 17 conversational lessons, never the legacy copies', () => {
+  it('lists the two character lessons, the 21 HSK Level 1 + 25 Level 2 + 35 Level 3 topic lessons and the 17 conversational lessons, never the legacy copies', () => {
     const ids = lessonSummaries.map(s => s.id);
-    expect(ids.length).toBe(65);
-    expect(new Set(ids).size).toBe(65);
+    expect(ids.length).toBe(100);
+    expect(new Set(ids).size).toBe(100);
     expect(ids.filter(id => id.startsWith('convm-')).length).toBe(17);
     expect(ids.filter(id => id.startsWith('char-')).sort()).toEqual(['char-4EE5', 'char-6B21']);
-    expect(ids.filter(id => id.startsWith('topic-')).length).toBe(46);
+    expect(ids.filter(id => id.startsWith('topic-')).length).toBe(81);
     // Core v3.6 (three-line patterns): topic lessons 3.4.0; character lessons still declare 3.2.0.
     expect(lessonSummaries.filter(s => s.id.startsWith('topic-')).every(s => s.schemaVersion === 'mandarin-topic-lesson/3.4.0')).toBe(true);
     expect(lessonSummaries.filter(s => s.id.startsWith('char-')).every(s => s.schemaVersion === 'mandarin-character-lesson/3.2.0')).toBe(true);
@@ -177,7 +172,7 @@ describe('lesson files', () => {
   });
   const all = files(root);
   it('every lesson file has the eagerly read keys', () => {
-    expect(all.length).toBe(65);
+    expect(all.length).toBe(100);
     for (const f of all) {
       const json = JSON.parse(readFileSync(f, 'utf8')) as Record<string, unknown>;
       for (const key of ['lesson_id', 'schema_version', 'lesson_type', 'lesson', 'classification', 'learning_objectives', 'metadata', 'catalog_character_refs']) expect(key in json, `${f} ${key}`).toBe(true);

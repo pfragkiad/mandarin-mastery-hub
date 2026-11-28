@@ -1,0 +1,1026 @@
+{
+  "schema_version": "hsk-short-sentence-release/1.0.0",
+  "counting": "Unicode characters including punctuation, matching the owner's outlier report",
+  "ceilings": {
+    "conversational": 16,
+    "written": 20
+  },
+  "levels": [
+    {
+      "level": 2,
+      "previous_source": "importer/hsk/hsk3_level2_1.1.2.json",
+      "current_source": "importer/hsk/hsk3_level2_1.1.3.json",
+      "sha256": "e9aded46f97e1d7872a470c89011c9d7b20b10ba37339274650f71790dc57252",
+      "entries": 200,
+      "changed_examples": 1,
+      "audio_manifest": {
+        "path": "importer/data/hsk-audio/level2-manifest-1.1.3.json",
+        "sha256": "7eec07f70f8d2e4857a1e97ae0bb3e7c9dc400e4dabf176016b2947c5af2a456"
+      }
+    },
+    {
+      "level": 3,
+      "previous_source": "importer/hsk/hsk3_level3_1.1.3.json",
+      "current_source": "importer/hsk/hsk3_level3_1.1.4.json",
+      "sha256": "8b246cf67c28570c904f594eda29f6b5a2e8fdf9800afb37dedf9814b6e8e57c",
+      "entries": 500,
+      "changed_examples": 1,
+      "audio_manifest": {
+        "path": "importer/data/hsk-audio/level3-manifest-1.1.4.json",
+        "sha256": "93afa14f6af709e6fccff8d20e2d4476a1b028aeb39a7c9902f423a4b2efd7fc"
+      }
+    },
+    {
+      "level": 4,
+      "previous_source": "importer/hsk/hsk3_level4_1.1.2.json",
+      "current_source": "importer/hsk/hsk3_level4_1.1.3.json",
+      "sha256": "810e528082c3f74ec2ab3fbb2ae30485de4bed489a75b8a99d3f261e17b783c4",
+      "entries": 1000,
+      "changed_examples": 1,
+      "audio_manifest": {
+        "path": "importer/data/hsk-audio/level4-manifest-1.1.3.json",
+        "sha256": "195fdf6d148f9d3af2db0db4223a85c85a77dbf3de1186ef6b2f014478ee2182"
+      }
+    },
+    {
+      "level": 5,
+      "previous_source": "importer/hsk/hsk3_level5_1.0.6.json",
+      "current_source": "importer/hsk/hsk3_level5_1.0.7.json",
+      "sha256": "117ff6624e327d27eec026e9b4db98c18a1547e97eafb78f335aa5da3afe961f",
+      "entries": 1600,
+      "changed_examples": 29,
+      "audio_manifest": {
+        "path": "importer/data/hsk-audio/level5-manifest-1.0.7.json",
+        "sha256": "58162aba5099cc4ed93d69af1d0585ac5c9866f1b1cce18ff54dc3f33359216d"
+      }
+    }
+  ],
+  "changed_examples": 32,
+  "changed_styles": {
+    "written": 18,
+    "conversational": 14
+  },
+  "word_content_and_official_ids_unchanged": true,
+  "changes": [
+    {
+      "level": 2,
+      "id": 335,
+      "headword": "地铁",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 18,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "学校离地铁站很近，学生们经常坐地铁来上课。",
+        "pinyin": "xuéxiào lí dìtiězhàn hěn jìn, xuéshēngmen jīngcháng zuò dìtiě lái shàngkè.",
+        "english": "The school is close to the subway station, and students often take the subway to class.",
+        "note": "Beginner written-style description or narration; natural in writing without requiring a formal-only register.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "学校离地铁站很近，学生常坐地铁上课。",
+        "pinyin": "Xuéxiào lí dìtiězhàn hěn jìn, xuéshēng cháng zuò dìtiě shàngkè.",
+        "english": "The school is close to the subway station, and students often take the subway to class.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 3,
+      "id": 839,
+      "headword": "受到",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 13,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "我来中国以后，受到了很多人的帮助。",
+        "pinyin": "wǒ lái Zhōngguó yǐhòu, shòudào le hěn duō rén de bāngzhù.",
+        "english": "A lot of people helped me after I came to China.",
+        "note": "Short everyday spoken use of 受到.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "来中国后，我受到很多帮助。",
+        "pinyin": "Lái Zhōngguó hòu, wǒ shòudào hěn duō bāngzhù.",
+        "english": "I received a lot of help after coming to China.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 4,
+      "id": 1915,
+      "headword": "再说",
+      "style": "written",
+      "before_chars": 24,
+      "after_chars": 15,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "她决定坐火车去，因为比较便宜，再说她也不赶时间。",
+        "pinyin": "Tā juédìng zuò huǒchē qù, yīnwèi bǐjiào piányi, zàishuō tā yě bù gǎn shíjiān.",
+        "english": "She decided to take the train because it was cheaper. Besides, she wasn’t in a hurry.",
+        "note": "Written use of 再说; editorial revision, not independently certified.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "坐火车便宜，再说她也不赶时间。",
+        "pinyin": "Zuò huǒchē piányi, zàishuō tā yě bù gǎn shíjiān.",
+        "english": "Taking the train is cheap; besides, she is not in a hurry.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2133,
+      "headword": "称",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 13,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "他称自己没收到通知，你去问问他吧。",
+        "pinyin": "Tā chēng zìjǐ méi shōudào tōngzhī, nǐ qù wènwen tā ba.",
+        "english": "He claims he never got the notice. Why don't you go ask him?",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "他称没收到通知，你问问他。",
+        "pinyin": "Tā chēng méi shōudào tōngzhī, nǐ wènwen tā.",
+        "english": "He claims he did not get the notice. Ask him.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2201,
+      "headword": "从而",
+      "style": "conversational",
+      "before_chars": 19,
+      "after_chars": 14,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "我们把步骤简化了，从而节省了不少时间。",
+        "pinyin": "Wǒmen bǎ bùzhòu jiǎnhuà le, cóng’ér jiéshěng le bùshǎo shíjiān.",
+        "english": "We simplified the steps, which saved us quite a bit of time.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "我们简化步骤，从而省了时间。",
+        "pinyin": "Wǒmen jiǎnhuà bùzhòu, cóng'ér shěng le shíjiān.",
+        "english": "We simplified the steps and thereby saved time.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2335,
+      "headword": "反正",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 15,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "“反正时间还够，我们可以再检查一次。”他说。",
+        "pinyin": "“Fǎnzhèng shíjiān hái gòu, wǒmen kěyǐ zài jiǎnchá yī cì,” tā shuō.",
+        "english": "“We still have time anyway, so we can check again,” he said.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "反正时间还够，不妨再检查一次。",
+        "pinyin": "Fǎnzhèng shíjiān hái gòu, bùfáng zài jiǎnchá yí cì.",
+        "english": "There is still enough time anyway, so we might as well check once more.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2351,
+      "headword": "分离",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 15,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "做蛋糕的时候，蛋清和蛋黄要分离吗？",
+        "pinyin": "Zuò dàngāo de shíhou, dànqīng hé dànhuáng yào fēnlí ma?",
+        "english": "When making a cake, do I need to separate the egg whites and yolks?",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "做蛋糕时，蛋清和蛋黄要分离吗？",
+        "pinyin": "Zuò dàngāo shí, dànqīng hé dànhuáng yào fēnlí ma?",
+        "english": "Should the egg white and yolk be separated when making a cake?",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2438,
+      "headword": "光线",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 14,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "阳光透过窗户照进来，整个房间的光线十分充足。",
+        "pinyin": "Yángguāng tòuguò chuānghu zhào jìnlái, zhěnggè fángjiān de guāngxiàn shífēn chōngzú.",
+        "english": "Sunlight streamed through the windows, giving the whole room plenty of light.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "阳光透过窗户，室内光线充足。",
+        "pinyin": "Yángguāng tòuguò chuānghu, shìnèi guāngxiàn chōngzú.",
+        "english": "Sunlight streams through the window, filling the room with light.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2459,
+      "headword": "哈",
+      "style": "written",
+      "before_chars": 23,
+      "after_chars": 16,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "“哈，他居然把这道难题解出来了！”老师笑着说。",
+        "pinyin": "“Hā, tā jūrán bǎ zhè dào nántí jiě chūlái le!” lǎoshī xiàozhe shuō.",
+        "english": "“Ha, he actually solved that difficult problem!” the teacher said with a smile.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "“哈，终于解出来了！”老师笑道。",
+        "pinyin": "\"Hā, zhōngyú jiě chūlái le!\" Lǎoshī xiào dào.",
+        "english": "\"Ha, it is finally solved!\" the teacher said with a smile.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2529,
+      "headword": "即将",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 13,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "列车即将到站，请提前做好下车准备。",
+        "pinyin": "Lièchē jíjiāng dàozhàn, qǐng tíqián zuòhǎo xiàchē zhǔnbèi.",
+        "english": "The train is about to arrive. Please get ready to get off.",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "列车即将到站，请准备下车。",
+        "pinyin": "Lièchē jíjiāng dào zhàn, qǐng zhǔnbèi xià chē.",
+        "english": "The train will arrive shortly. Please get ready to get off.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2530,
+      "headword": "急忙",
+      "style": "conversational",
+      "before_chars": 19,
+      "after_chars": 14,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "刚才他急忙跑出去了，是不是出什么事了？",
+        "pinyin": "Gāngcái tā jímáng pǎo chūqù le, shì bu shì chū shénme shì le?",
+        "english": "He rushed out just now. Did something happen?",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "他急忙跑出去了，出什么事了？",
+        "pinyin": "Tā jímáng pǎo chūqù le, chū shénme shì le?",
+        "english": "He hurried out. Did something happen?",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2534,
+      "headword": "集",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 18,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "这部纪录片共分六集，介绍了各地的传统工艺。",
+        "pinyin": "Zhè bù jìlùpiàn gòng fēn liù jí, jièshào le gèdì de chuántǒng gōngyì.",
+        "english": "This six-part documentary introduces traditional crafts from different regions.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "这部纪录片分六集，介绍各地传统工艺。",
+        "pinyin": "Zhè bù jìlùpiàn fēn liù jí, jièshào gèdì chuántǒng gōngyì.",
+        "english": "This six-part documentary introduces traditional crafts from different regions.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2585,
+      "headword": "奖励",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 13,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "如果这次考得好，爸爸会奖励你什么？",
+        "pinyin": "Rúguǒ zhè cì kǎo de hǎo, bàba huì jiǎnglì nǐ shénme?",
+        "english": "If you do well on this test, what will Dad give you as a reward?",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "考得好，爸爸会奖励你什么？",
+        "pinyin": "Kǎo de hǎo, bàba huì jiǎnglì nǐ shénme?",
+        "english": "What will Dad reward you with if you do well on the exam?",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2593,
+      "headword": "较",
+      "style": "conversational",
+      "before_chars": 18,
+      "after_chars": 11,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "这两种方案里，我建议选较简单的那个。",
+        "pinyin": "Zhè liǎng zhǒng fāng'àn lǐ, wǒ jiànyì xuǎn jiào jiǎndān de nàge.",
+        "english": "Of these two options, I’d choose the simpler one.",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "我建议选较简单的方案。",
+        "pinyin": "Wǒ jiànyì xuǎn jiào jiǎndān de fāng'àn.",
+        "english": "I suggest choosing the simpler plan.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2738,
+      "headword": "陆地",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 20,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "部分动物既能在水中生活，也能在陆地上活动。",
+        "pinyin": "Bùfen dòngwù jì néng zài shuǐ zhōng shēnghuó, yě néng zài lùdì shàng huódòng.",
+        "english": "Some animals can live in water and move on land.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "有些动物既能在水中生活，也能在陆地活动。",
+        "pinyin": "Yǒuxiē dòngwù jì néng zài shuǐ zhōng shēnghuó, yě néng zài lùdì huódòng.",
+        "english": "Some animals can live in water and also move about on land.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2754,
+      "headword": "矛盾",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 18,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "调查报告指出了政策目标与实际效果之间的矛盾。",
+        "pinyin": "Diàochá bàogào zhǐchū le zhèng cè mùbiāo yǔ shíjì xiàoguǒ zhījiān de máodùn.",
+        "english": "The survey report highlighted contradictions between policy goals and actual outcomes.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "报告指出了政策目标与实际效果的矛盾。",
+        "pinyin": "Bàogào zhǐchū le zhèngcè mùbiāo yǔ shíjì xiàoguǒ de máodùn.",
+        "english": "The report highlighted a contradiction between policy goals and actual outcomes.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2755,
+      "headword": "没法儿",
+      "style": "written",
+      "before_chars": 25,
+      "after_chars": 17,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "“道路维修期间，我们没法儿开车出门。”一位居民说。",
+        "pinyin": "“Dàolù wéixiū qījiān, wǒmen méifǎr kāichē chūmén,” yī wèi jūmín shuō.",
+        "english": "“We can’t drive out while the road is being repaired,” one resident said.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "道路维修期间，居民没法儿开车出门。",
+        "pinyin": "Dàolù wéixiū qījiān, jūmín méi fǎr kāichē chūmén.",
+        "english": "Residents cannot drive out while the road is being repaired.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2829,
+      "headword": "骗",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 15,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "警方提醒居民警惕网络诈骗，避免被人骗走钱财。",
+        "pinyin": "Jǐng fāng tíxǐng jūmín jǐng tì wǎngluò zhà piàn, bìmiǎn bèi rén piàn zǒu qián cái.",
+        "english": "Police warn residents about online scams to avoid being cheated out of money.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "警方提醒居民，谨防被骗走钱财。",
+        "pinyin": "Jǐngfāng tíxǐng jūmín, jǐnfáng bèi piàn zǒu qiáncái.",
+        "english": "Police reminded residents to guard against being swindled out of money.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2848,
+      "headword": "破坏",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 14,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "别动这几张桌子，会破坏原来的布局。",
+        "pinyin": "Bié dòng zhè jǐ zhāng zhuōzi, huì pòhuài yuánlái de bùjú.",
+        "english": "Don’t move these tables. You’ll spoil the original layout.",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "别动桌子，会破坏原来的布局。",
+        "pinyin": "Bié dòng zhuōzi, huì pòhuài yuánlái de bùjú.",
+        "english": "Do not move the tables; it will spoil the original layout.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2853,
+      "headword": "其",
+      "style": "conversational",
+      "before_chars": 18,
+      "after_chars": 14,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "下面我介绍一下这项计划及其主要目标。",
+        "pinyin": "Xiàmiàn wǒ jièshào yīxià zhè xiàng jìhuà jí qí zhǔyào mùbiāo.",
+        "english": "Next, I’ll introduce this plan and its main goals.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "我介绍一下计划及其主要目标。",
+        "pinyin": "Wǒ jièshào yíxià jìhuà jí qí zhǔyào mùbiāo.",
+        "english": "Let me introduce the plan and its main goals.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 2929,
+      "headword": "认",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 16,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "他认真查看照片，最后认出了失散多年的朋友。",
+        "pinyin": "Tā rèn zhēn chákàn zhàopiàn, zuìhòu rèn chū le shī sàn duō nián de péngyou.",
+        "english": "He examined the photos carefully and finally recognized a friend lost for years.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "他从照片中认出了失散多年的朋友。",
+        "pinyin": "Tā cóng zhàopiàn zhōng rènchū le shīsàn duō nián de péngyou.",
+        "english": "He recognized a friend he had lost touch with years ago in a photograph.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3304,
+      "headword": "需",
+      "style": "conversational",
+      "before_chars": 17,
+      "after_chars": 14,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "进入实验室需佩戴手套，请大家注意。",
+        "pinyin": "Jìnrù shíyànshì xū pèidài shǒutào, qǐng dàjiā zhùyì.",
+        "english": "Please note that gloves are required to enter the laboratory.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "进实验室需戴手套，大家注意。",
+        "pinyin": "Jìn shíyànshì xū dài shǒutào, dàjiā zhùyì.",
+        "english": "Please note that gloves are required in the laboratory.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3341,
+      "headword": "要不是",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 16,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "要不是及时采取了措施，这次事故的损失会更大。",
+        "pinyin": "Yàobúshì jíshí cǎiqǔ le cuòshī, zhè cì shìgù de sǔnshī huì gèng dà.",
+        "english": "Had timely action not been taken, the losses from the accident would have been greater.",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "要不是及时采取措施，损失会更大。",
+        "pinyin": "Yàobúshì jíshí cǎiqǔ cuòshī, sǔnshī huì gèng dà.",
+        "english": "Without timely action, the losses would have been greater.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3402,
+      "headword": "由此",
+      "style": "conversational",
+      "before_chars": 24,
+      "after_chars": 13,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "大家看看这些数据，由此可以看出，新办法确实有效。",
+        "pinyin": "Dàjiā kànkan zhèxiē shùjù, yóu cǐ kěyǐ kànchū, xīn bànfǎ quèshí yǒuxiào.",
+        "english": "Take a look at these data. They show that the new method really works.",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "由此可见，新办法确实有效。",
+        "pinyin": "Yóucǐ kějiàn, xīn bànfǎ quèshí yǒuxiào.",
+        "english": "This shows that the new method really works.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3402,
+      "headword": "由此",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 18,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "两家公司签署了协议，由此建立了长期合作关系。",
+        "pinyin": "Liǎng jiā gōngsī qiānshǔ le xiéyì, yóu cǐ jiànlì le chángqī hézuò guānxì.",
+        "english": "The two companies signed an agreement, thereby establishing a long-term partnership.",
+        "note": "Newly authored editorial example; independent native-speaker review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "两家公司签署协议，由此建立长期合作。",
+        "pinyin": "Liǎng jiā gōngsī qiānshǔ xiéyì, yóucǐ jiànlì chángqī hézuò.",
+        "english": "The two companies signed an agreement, establishing long-term cooperation.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3448,
+      "headword": "糟",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 17,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "“这件事搞糟了，我们需要重新安排。”他说。",
+        "pinyin": "“Zhè jiàn shì gǎozāo le, wǒmen xūyào chóngxīn ānpái,” tā shuō.",
+        "english": "“This went wrong. We need to make new arrangements,” he said.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "“事情搞糟了，得重新安排。”他说。",
+        "pinyin": "\"Shìqing gǎo zāo le, děi chóngxīn ānpái.\" Tā shuō.",
+        "english": "\"Things have gone wrong; we need to rearrange them,\" he said.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3455,
+      "headword": "增",
+      "style": "conversational",
+      "before_chars": 18,
+      "after_chars": 13,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "今年游客数量大增，酒店房间都不够了。",
+        "pinyin": "Jīnnián yóukè shùliàng dà zēng, jiǔdiàn fángjiān dōu bù gòu le.",
+        "english": "Visitor numbers have risen sharply this year, and there aren’t enough hotel rooms.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "游客大增，酒店房间不够了。",
+        "pinyin": "Yóukè dà zēng, jiǔdiàn fángjiān bú gòu le.",
+        "english": "Tourist numbers have surged, and there are not enough hotel rooms.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3455,
+      "headword": "增",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 18,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "近五年来，该校学生人数由两千人增至三千人。",
+        "pinyin": "Jìn wǔ nián lái, gāi xiào xuésheng rénshù yóu liǎngqiān rén zēng zhì sānqiān rén.",
+        "english": "Over the past five years, enrollment at the school rose from 2,000 to 3,000.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "五年来，该校学生由两千人增至三千人。",
+        "pinyin": "Wǔ nián lái, gāi xiào xuéshēng yóu liǎng qiān rén zēng zhì sān qiān rén.",
+        "english": "Over five years, the school's student numbers rose from two thousand to three thousand.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3471,
+      "headword": "涨",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 15,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "受运输成本影响，近期部分商品价格涨了不少。",
+        "pinyin": "Shòu yùnshū chéngběn yǐngxiǎng, jìnqī bùfen shāngpǐn jiàgé zhǎng le bù shǎo.",
+        "english": "Because of transport costs, prices of some goods have risen considerably recently.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "运输成本增加，部分商品涨价了。",
+        "pinyin": "Yùnshū chéngběn zēngjiā, bùfen shāngpǐn zhǎngjià le.",
+        "english": "Higher transport costs have caused some goods to rise in price.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3508,
+      "headword": "至",
+      "style": "conversational",
+      "before_chars": 26,
+      "after_chars": 11,
+      "before": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "提醒大家一下，报名时间为今天上午九点至周日下午五点。",
+        "pinyin": "Tíxǐng dàjiā yīxià, bàomíng shíjiān wéi jīntiān shàngwǔ jiǔ diǎn zhì zhōurì xiàwǔ wǔ diǎn.",
+        "english": "A quick reminder that registration runs from 9 a.m. today until 5 p.m. on Sunday.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "conversational",
+        "register": "neutral_spoken",
+        "hanzi": "报名时间是周一至周五。",
+        "pinyin": "Bàomíng shíjiān shì zhōuyī zhì zhōuwǔ.",
+        "english": "Registration runs from Monday to Friday.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3588,
+      "headword": "足够",
+      "style": "written",
+      "before_chars": 22,
+      "after_chars": 18,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "为了确保项目顺利推进，公司准备了足够的资金。",
+        "pinyin": "Wèile quèbǎo xiàngmù shùnlì tuījìn, gōngsī zhǔnbèi le zúgòu de zījīn.",
+        "english": "The company set aside enough funds to keep the project moving forward smoothly.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "公司准备了足够的资金，保障项目推进。",
+        "pinyin": "Gōngsī zhǔnbèi le zúgòu de zījīn, bǎozhàng xiàngmù tuījìn.",
+        "english": "The company set aside sufficient funds to keep the project moving forward.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    },
+    {
+      "level": 5,
+      "id": 3595,
+      "headword": "最初",
+      "style": "written",
+      "before_chars": 21,
+      "after_chars": 20,
+      "before": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "这项研究最初只涉及三个城市，后来逐步扩大。",
+        "pinyin": "Zhè xiàng yánjiū zuìchū zhī shè jí sān gè chéngshì, hòulái zhúbù kuòdà.",
+        "english": "The study initially covered only three cities and later gradually expanded.",
+        "note": "Newly authored editorial example using the target headword in a contextual construction; independent linguistic review remains outstanding.",
+        "review_status": "draft_editorially_authored_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      },
+      "after": {
+        "style": "written",
+        "register": "plain_written",
+        "hanzi": "这项研究最初仅涉及三个城市，后来扩大了。",
+        "pinyin": "Zhè xiàng yánjiū zuìchū jǐn shèjí sān ge chéngshì, hòulái kuòdà le.",
+        "english": "The study initially covered only three cities and later expanded.",
+        "note": "Shortened to the owner-requested punctuation-inclusive ceiling; original editorial draft, requiring language review.",
+        "review_status": "editorial_not_native_certified",
+        "provenance": "newly_authored",
+        "linguistic_source": "editorial_enrichment"
+      }
+    }
+  ]
+}

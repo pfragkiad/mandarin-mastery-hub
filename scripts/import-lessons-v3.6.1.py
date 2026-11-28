@@ -12,7 +12,6 @@ import json
 from pathlib import Path
 import sys
 import tempfile
-from hsk_numbering import legacy_syllabus_view
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
@@ -84,9 +83,9 @@ def audit():
     writes[CORE / '.gitattributes'] = ('# Preserve exact canonical Core bytes.\n.gitattributes -text\n'
         '*.md whitespace=-blank-at-eol\n' + ''.join(f'{n} -text\n' for n in sorted(core_files))).encode()
     report = {'sources': source_report, 'lessons': {}, 'checks': {}, 'coreFiles': {n: h.sha(raw) for n, raw in core_files.items()}}
-    # These immutable source packages record the pre-1219 serials. Validate their
-    # exact ID/headword bindings through an explicit read-only compatibility view.
-    entries = legacy_syllabus_view(h.read_vocabulary())['entries']
+    # Runtime and authoring checks use only current official IDs. Historical
+    # packages with obsolete bindings must fail validation before any write.
+    entries = h.read_vocabulary()['entries']
     catalog = json.loads((ROOT / 'public/data/catalog_ids.json').read_bytes())['characters']
     docs, bindings, pattern_totals = {}, 0, {}
     with tempfile.TemporaryDirectory(prefix='mandarin-361-') as tmp:

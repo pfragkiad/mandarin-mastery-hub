@@ -152,7 +152,7 @@ The restroom is just ahead.
 
 - 外国 (wàiguó) — foreign country [HSK entry 446]
 
-- 往 (wǎng) — towards; in the direction of [HSK entry 450]
+- 往 (wǎng) — towards; in the direction of [HSK entry 451]
 
 - 洗手间 (xǐshǒujiān) — restroom; washroom [HSK entry 457]
 

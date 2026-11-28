@@ -1,0 +1,1809 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-ordering-snacks-and-drinks",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Ordering, Snacks & Drinks",
+    "subtitle": "Menus, takeout, flavors, fruit, and tableware",
+    "description": "Order from a menu or takeout, talk about hunger, fullness, sweetness, freshness, fruit, drinks, and utensils.",
+    "slug": "ordering-snacks-and-drinks"
+  },
+  "classification": {
+    "primary_topic_id": "food-drink",
+    "topic_ids": [
+      "food-drink"
+    ],
+    "tags": [
+      "dining",
+      "food",
+      "tableware"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Order food and drinks using 菜单, 外卖, 方便面, 蛋糕, 冰激凌, 鸡, 矿泉水, 饮料, 酒, and 啤酒.",
+    "Describe taste and appetite: 饿, 饱, 尝, 甜, 糖, 冰, and 新鲜.",
+    "Name tableware and fruit: 碗, 筷子, 勺子, 西瓜, and 香蕉."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "东": "Characters:东",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "串": "Characters:串",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "些": "Characters:些",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "份": "Characters:份",
+    "会": "Characters:会",
+    "但": "Characters:但",
+    "你": "Characters:你",
+    "便": "Characters:便",
+    "做": "Characters:做",
+    "儿": "Characters:儿",
+    "公": "Characters:公",
+    "再": "Characters:再",
+    "冰": "Characters:冰",
+    "凌": "Characters:凌",
+    "几": "Characters:几",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "加": "Characters:加",
+    "勺": "Characters:勺",
+    "午": "Characters:午",
+    "单": "Characters:单",
+    "卖": "Characters:卖",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "友": "Characters:友",
+    "双": "Characters:双",
+    "口": "Characters:口",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "呀": "Characters:呀",
+    "和": "Characters:和",
+    "咖": "Characters:咖",
+    "咱": "Characters:咱",
+    "商": "Characters:商",
+    "啊": "Characters:啊",
+    "啡": "Characters:啡",
+    "啤": "Characters:啤",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "在": "Characters:在",
+    "坐": "Characters:坐",
+    "块": "Characters:块",
+    "夏": "Characters:夏",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "够": "Characters:够",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "妈": "Characters:妈",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "定": "Characters:定",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "尝": "Characters:尝",
+    "就": "Characters:就",
+    "带": "Characters:带",
+    "常": "Characters:常",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "忘": "Characters:忘",
+    "快": "Characters:快",
+    "想": "Characters:想",
+    "我": "Characters:我",
+    "拿": "Characters:拿",
+    "放": "Characters:放",
+    "料": "Characters:料",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "日": "Characters:日",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "期": "Characters:期",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "杯": "Characters:杯",
+    "果": "Characters:果",
+    "桌": "Characters:桌",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汤": "Characters:汤",
+    "没": "Characters:没",
+    "河": "Characters:河",
+    "泉": "Characters:泉",
+    "激": "Characters:激",
+    "点": "Characters:点",
+    "烤": "Characters:烤",
+    "热": "Characters:热",
+    "然": "Characters:然",
+    "爸": "Characters:爸",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "瓜": "Characters:瓜",
+    "瓶": "Characters:瓶",
+    "甜": "Characters:甜",
+    "生": "Characters:生",
+    "用": "Characters:用",
+    "的": "Characters:的",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "矿": "Characters:矿",
+    "碗": "Characters:碗",
+    "种": "Characters:种",
+    "等": "Characters:等",
+    "筷": "Characters:筷",
+    "米": "Characters:米",
+    "糕": "Characters:糕",
+    "糖": "Characters:糖",
+    "给": "Characters:给",
+    "网": "Characters:网",
+    "聊": "Characters:聊",
+    "肉": "Characters:肉",
+    "肯": "Characters:肯",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "菜": "Characters:菜",
+    "蕉": "Characters:蕉",
+    "虽": "Characters:虽",
+    "蛋": "Characters:蛋",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "请": "Characters:请",
+    "谢": "Characters:谢",
+    "起": "Characters:起",
+    "边": "Characters:边",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "酒": "Characters:酒",
+    "里": "Characters:里",
+    "野": "Characters:野",
+    "面": "Characters:面",
+    "餐": "Characters:餐",
+    "饭": "Characters:饭",
+    "饮": "Characters:饮",
+    "饱": "Characters:饱",
+    "饿": "Characters:饿",
+    "馆": "Characters:馆",
+    "香": "Characters:香",
+    "鲜": "Characters:鲜",
+    "鸡": "Characters:鸡"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Food, drink, flavor, and dining-utensil vocabulary for restaurants and home meals.",
+      "focus": "Use 尝 for tasting a bite, 饿 / 饱 for hunger and fullness, and 碗 both as a noun and a classifier."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0515",
+          "hanzi": "饱",
+          "pinyin": "bǎo",
+          "meaning_en": "full (after eating)",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0515-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我吃饱了。",
+              "pinyin": "wǒ chī bǎo le.",
+              "english": "I'm full.",
+              "teaching_note": "Short everyday spoken use of 饱."
+            },
+            {
+              "id": "ex-0515-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们都吃饱了。",
+              "pinyin": "háizimen dōu chī bǎo le.",
+              "english": "The children have all eaten their fill.",
+              "teaching_note": "Simple descriptive or narrative use of 饱."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 515
+            }
+          ]
+        },
+        {
+          "id": "w-0534",
+          "hanzi": "冰",
+          "pinyin": "bīng",
+          "meaning_en": "ice",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun",
+            "verb"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0534-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "水里有冰吗？",
+              "pinyin": "shuǐ lǐ yǒu bīng ma?",
+              "english": "Is there ice in the water?",
+              "teaching_note": "Short everyday spoken use of 冰."
+            },
+            {
+              "id": "ex-0534-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "夏天我们喜欢喝加冰的水。",
+              "pinyin": "xiàtiān wǒmen xǐhuan hē jiā bīng de shuǐ.",
+              "english": "In summer, we like drinking water with ice.",
+              "teaching_note": "Simple descriptive or narrative use of 冰."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 534
+            }
+          ]
+        },
+        {
+          "id": "w-0535",
+          "hanzi": "冰激凌",
+          "pinyin": "bīngjīlíng",
+          "meaning_en": "ice cream",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0535-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想吃冰激凌吗？",
+              "pinyin": "nǐ xiǎng chī bīngjīlíng ma?",
+              "english": "Do you want ice cream?",
+              "teaching_note": "Short everyday spoken use of 冰激凌."
+            },
+            {
+              "id": "ex-0535-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们在公园吃冰激凌。",
+              "pinyin": "háizimen zài gōngyuán chī bīngjīlíng.",
+              "english": "The children are eating ice cream in the park.",
+              "teaching_note": "Simple descriptive or narrative use of 冰激凌."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 535
+            }
+          ]
+        },
+        {
+          "id": "w-0545",
+          "hanzi": "菜单",
+          "pinyin": "càidān",
+          "meaning_en": "menu",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0545-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我看看菜单吧。",
+              "pinyin": "gěi wǒ kàn kàn càidān ba.",
+              "english": "Let me see the menu.",
+              "teaching_note": "Short everyday spoken use of 菜单."
+            },
+            {
+              "id": "ex-0545-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "菜单上有很多中国菜。",
+              "pinyin": "càidān shàng yǒu hěn duō Zhōngguó cài.",
+              "english": "There are many Chinese dishes on the menu.",
+              "teaching_note": "Simple descriptive or narrative use of 菜单."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 545
+            }
+          ]
+        },
+        {
+          "id": "w-0553",
+          "hanzi": "尝",
+          "pinyin": "cháng",
+          "meaning_en": "taste; try a bite",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0553-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "尝尝这个吧！",
+              "pinyin": "cháng cháng zhège ba!",
+              "english": "Try a taste of this!",
+              "teaching_note": "Short everyday spoken use of 尝."
+            },
+            {
+              "id": "ex-0553-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请尝一下这个菜。",
+              "pinyin": "qǐng cháng yíxià zhège cài.",
+              "english": "Please taste this dish.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 553
+            }
+          ]
+        },
+        {
+          "id": "w-0580",
+          "hanzi": "蛋糕",
+          "pinyin": "dàngāo",
+          "meaning_en": "cake",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0580-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "蛋糕好吃吗？",
+              "pinyin": "dàngāo hǎochī ma?",
+              "english": "Is the cake tasty?",
+              "teaching_note": "Short everyday spoken use of 蛋糕."
+            },
+            {
+              "id": "ex-0580-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我们买了一个生日蛋糕。",
+              "pinyin": "wǒmen mǎi le yí ge shēngrì dàngāo.",
+              "english": "We bought a birthday cake.",
+              "teaching_note": "Simple descriptive or narrative use of 蛋糕."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 580
+            }
+          ]
+        },
+        {
+          "id": "w-0610",
+          "hanzi": "饿",
+          "pinyin": "è",
+          "meaning_en": "hungry",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0610-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我饿了！",
+              "pinyin": "wǒ è le!",
+              "english": "I'm hungry!",
+              "teaching_note": "Short everyday spoken use of 饿."
+            },
+            {
+              "id": "ex-0610-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子放学后很饿。",
+              "pinyin": "háizi fàngxué hòu hěn è.",
+              "english": "The child is hungry after school.",
+              "teaching_note": "Simple descriptive or narrative use of 饿."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 610
+            }
+          ]
+        },
+        {
+          "id": "w-0620",
+          "hanzi": "方便面",
+          "pinyin": "fāngbiànmiàn",
+          "meaning_en": "instant noodles",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0620-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "晚上吃方便面吧。",
+              "pinyin": "wǎnshang chī fāngbiànmiàn ba.",
+              "english": "Let's have instant noodles tonight.",
+              "teaching_note": "Short everyday spoken use of 方便面."
+            },
+            {
+              "id": "ex-0620-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他有时在家吃方便面。",
+              "pinyin": "tā yǒushí zài jiā chī fāngbiànmiàn.",
+              "english": "He sometimes eats instant noodles at home.",
+              "teaching_note": "Simple descriptive or narrative use of 方便面."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 620
+            }
+          ]
+        },
+        {
+          "id": "w-0689",
+          "hanzi": "鸡",
+          "pinyin": "jī",
+          "meaning_en": "chicken",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0689-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想吃鸡。",
+              "pinyin": "wǒ xiǎng chī jī.",
+              "english": "I want to eat chicken.",
+              "teaching_note": "Short everyday spoken use of 鸡."
+            },
+            {
+              "id": "ex-0689-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妈妈今天做了鸡肉和米饭。",
+              "pinyin": "māma jīntiān zuò le jī ròu hé mǐfàn.",
+              "english": "Mom cooked chicken and rice today.",
+              "teaching_note": "Simple descriptive or narrative use of 鸡."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 689
+            }
+          ]
+        },
+        {
+          "id": "w-0720",
+          "hanzi": "酒",
+          "pinyin": "jiǔ",
+          "meaning_en": "alcoholic drink; liquor",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0720-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喝酒吗？",
+              "pinyin": "nǐ hē jiǔ ma?",
+              "english": "Do you drink alcohol?",
+              "teaching_note": "Short everyday spoken use of 酒."
+            },
+            {
+              "id": "ex-0720-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爸爸今天没有喝酒。",
+              "pinyin": "bàba jīntiān méiyǒu hē jiǔ.",
+              "english": "Dad didn't drink alcohol today.",
+              "teaching_note": "Simple descriptive or narrative use of 酒."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 720
+            }
+          ]
+        },
+        {
+          "id": "w-0741",
+          "hanzi": "筷子",
+          "pinyin": "kuàizi",
+          "meaning_en": "chopsticks",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0741-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你会用筷子吗？",
+              "pinyin": "nǐ huì yòng kuàizi ma?",
+              "english": "Can you use chopsticks?",
+              "teaching_note": "Short everyday spoken use of 筷子."
+            },
+            {
+              "id": "ex-0741-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "中国人常常用筷子吃饭。",
+              "pinyin": "Zhōngguó rén chángcháng yòng kuàizi chī fàn.",
+              "english": "Chinese people often use chopsticks to eat.",
+              "teaching_note": "Simple descriptive or narrative use of 筷子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 741
+            }
+          ]
+        },
+        {
+          "id": "w-0742",
+          "hanzi": "矿泉水",
+          "pinyin": "kuàngquánshuǐ",
+          "meaning_en": "bottled mineral water",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0742-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "来点儿矿泉水吧。",
+              "pinyin": "lái diǎnr kuàngquánshuǐ ba.",
+              "english": "Let's have some mineral water.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0742-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他买了一些矿泉水。",
+              "pinyin": "tā mǎi le yìxiē kuàngquánshuǐ.",
+              "english": "He bought some mineral water.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 742
+            }
+          ]
+        },
+        {
+          "id": "w-0794",
+          "hanzi": "啤酒",
+          "pinyin": "píjiǔ",
+          "meaning_en": "beer",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0794-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你喝啤酒吗？",
+              "pinyin": "nǐ hē píjiǔ ma?",
+              "english": "Do you drink beer?",
+              "teaching_note": "Short everyday spoken use of 啤酒."
+            },
+            {
+              "id": "ex-0794-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "晚饭时他喝了一点儿啤酒。",
+              "pinyin": "wǎnfàn shí tā hē le yìdiǎnr píjiǔ.",
+              "english": "He drank a little beer with dinner.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 794
+            }
+          ]
+        },
+        {
+          "id": "w-0825",
+          "hanzi": "勺子",
+          "pinyin": "sháozi",
+          "meaning_en": "spoon",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0825-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "有勺子吗？",
+              "pinyin": "yǒu sháozi ma?",
+              "english": "Do you have a spoon?",
+              "teaching_note": "Short everyday spoken use of 勺子."
+            },
+            {
+              "id": "ex-0825-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他用勺子吃饭。",
+              "pinyin": "tā yòng sháozi chī fàn.",
+              "english": "He eats with a spoon.",
+              "teaching_note": "Simple descriptive or narrative use of 勺子."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 825
+            }
+          ]
+        },
+        {
+          "id": "w-0850",
+          "hanzi": "糖",
+          "pinyin": "táng",
+          "meaning_en": "sugar; candy",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0850-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "不要太多糖。",
+              "pinyin": "búyào tài duō táng.",
+              "english": "Not too much sugar!",
+              "teaching_note": "Short everyday spoken use of 糖."
+            },
+            {
+              "id": "ex-0850-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "咖啡里加了糖。",
+              "pinyin": "kāfēi lǐ jiā le táng.",
+              "english": "Sugar was added to the coffee.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 850
+            }
+          ]
+        },
+        {
+          "id": "w-0855",
+          "hanzi": "甜",
+          "pinyin": "tián",
+          "meaning_en": "sweet",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0855-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个蛋糕真甜！",
+              "pinyin": "zhège dàngāo zhēn tián!",
+              "english": "This cake is so sweet!",
+              "teaching_note": "Short everyday spoken use of 甜."
+            },
+            {
+              "id": "ex-0855-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这种水果很甜。",
+              "pinyin": "zhè zhǒng shuǐguǒ hěn tián.",
+              "english": "This kind of fruit is very sweet.",
+              "teaching_note": "Simple descriptive or narrative use of 甜."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 855
+            }
+          ]
+        },
+        {
+          "id": "w-0866",
+          "hanzi": "外卖",
+          "pinyin": "wàimài",
+          "meaning_en": "takeout; food delivery",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0866-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "晚上点外卖吧！",
+              "pinyin": "wǎnshang diǎn wàimài ba!",
+              "english": "Let's order takeout tonight!",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0866-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他常常在网上点外卖。",
+              "pinyin": "tā chángcháng zài wǎngshang diǎn wàimài.",
+              "english": "He often orders takeout online.",
+              "teaching_note": "Simple descriptive or narrative use of 外卖."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 866
+            }
+          ]
+        },
+        {
+          "id": "w-0871",
+          "hanzi": "碗",
+          "pinyin": "wǎn",
+          "meaning_en": "bowl (dish and classifier)",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0871-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "再来一碗饭！",
+              "pinyin": "zài lái yì wǎn fàn!",
+              "english": "Another bowl of rice, please!",
+              "teaching_note": "Short everyday spoken use of 碗."
+            },
+            {
+              "id": "ex-0871-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上有三个碗。",
+              "pinyin": "zhuōzi shàng yǒu sān gè wǎn.",
+              "english": "There are three bowls on the table.",
+              "teaching_note": "Simple descriptive or narrative use of 碗."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 871
+            }
+          ]
+        },
+        {
+          "id": "w-0883",
+          "hanzi": "西瓜",
+          "pinyin": "xīguā",
+          "meaning_en": "watermelon",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0883-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "西瓜甜吗？",
+              "pinyin": "xīguā tián ma?",
+              "english": "Is the watermelon sweet?",
+              "teaching_note": "Short everyday spoken use of 西瓜."
+            },
+            {
+              "id": "ex-0883-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "夏天大家喜欢吃西瓜。",
+              "pinyin": "xiàtiān dàjiā xǐhuan chī xīguā.",
+              "english": "People like eating watermelon in summer.",
+              "teaching_note": "Simple descriptive or narrative use of 西瓜."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 883
+            }
+          ]
+        },
+        {
+          "id": "w-0892",
+          "hanzi": "香蕉",
+          "pinyin": "xiāngjiāo",
+          "meaning_en": "banana",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0892-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你想吃香蕉吗？",
+              "pinyin": "nǐ xiǎng chī xiāngjiāo ma?",
+              "english": "Do you want a banana?",
+              "teaching_note": "Short everyday spoken use of 香蕉."
+            },
+            {
+              "id": "ex-0892-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她每天早上吃香蕉。",
+              "pinyin": "tā měi tiān zǎoshang chī xiāngjiāo.",
+              "english": "She eats bananas every morning.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 892
+            }
+          ]
+        },
+        {
+          "id": "w-0905",
+          "hanzi": "新鲜",
+          "pinyin": "xīnxiān",
+          "meaning_en": "fresh",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0905-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "水果真新鲜！",
+              "pinyin": "shuǐguǒ zhēn xīnxiān!",
+              "english": "The fruit is really fresh!",
+              "teaching_note": "Short everyday spoken use of 新鲜."
+            },
+            {
+              "id": "ex-0905-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家商店卖新鲜水果。",
+              "pinyin": "zhè jiā shāngdiàn mài xīnxiān shuǐguǒ.",
+              "english": "This shop sells fresh fruit.",
+              "teaching_note": "Simple descriptive or narrative use of 新鲜."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 905
+            }
+          ]
+        },
+        {
+          "id": "w-0938",
+          "hanzi": "饮料",
+          "pinyin": "yǐnliào",
+          "meaning_en": "drink; beverage",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0938-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你要什么饮料？",
+              "pinyin": "nǐ yào shénme yǐnliào?",
+              "english": "What drink would you like?",
+              "teaching_note": "Short everyday spoken use of 饮料."
+            },
+            {
+              "id": "ex-0938-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "饭馆里有很多种饮料。",
+              "pinyin": "fànguǎn lǐ yǒu hěn duō zhǒng yǐnliào.",
+              "english": "The restaurant offers many kinds of drinks.",
+              "teaching_note": "Simple descriptive or narrative use of 饮料."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 938
+            }
+          ]
+        },
+        {
+          "id": "w-0016",
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "meaning_en": "vegetable; dish",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0016-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个菜很好吃。",
+              "pinyin": "zhège cài hěn hǎochī.",
+              "english": "This dish is delicious.",
+              "teaching_note": "菜 usually refers to a prepared dish here, and 好吃 describes how it tastes."
+            },
+            {
+              "id": "ex-0016-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "饭店里有很多菜。",
+              "pinyin": "fàndiàn lǐ yǒu hěn duō cài.",
+              "english": "There are many dishes at the restaurant.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 菜."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 16
+            }
+          ]
+        },
+        {
+          "id": "w-0017",
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "meaning_en": "tea",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0017-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我喜欢喝茶。",
+              "pinyin": "wǒ xǐhuan hē chá.",
+              "english": "I like drinking tea.",
+              "teaching_note": "喜欢 + verb expresses an enjoyable activity; 喝茶 is “drink tea.”"
+            },
+            {
+              "id": "ex-0017-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家店卖茶。",
+              "pinyin": "zhè jiā diàn mài chá.",
+              "english": "This shop sells tea.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 茶."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 17
+            }
+          ]
+        },
+        {
+          "id": "w-0072",
+          "hanzi": "好吃",
+          "pinyin": "hǎochī",
+          "meaning_en": "tasty",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "food-drink",
+          "topic_ids": [
+            "food-drink"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0072-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这个苹果很好吃。",
+              "pinyin": "zhège píngguǒ hěn hǎochī.",
+              "english": "This apple tastes good.",
+              "teaching_note": "好吃 evaluates the taste of food, not its appearance."
+            },
+            {
+              "id": "ex-0072-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店的面条很好吃。",
+              "pinyin": "zhè jiā fàndiàn de miàntiáo hěn hǎochī.",
+              "english": "The noodles at this restaurant are delicious.",
+              "teaching_note": "The adjective describes how the noodles taste."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 72
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 饱 (bǎo)",
+        "explanation": "饱 (bǎo) means “full (after eating)” (adjective).",
+        "example_id": "ex-0515-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 冰 (bīng)",
+        "explanation": "冰 (bīng) means “ice” (noun).",
+        "example_id": "ex-0534-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0515-1",
+      "ex-0534-1",
+      "ex-0535-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What did they NOT buy for the picnic in the reading?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "Ice cream (冰激凌).",
+          "explanation": "The passage says 虽然没有买冰激凌."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences about ordering food or eating fruit using 外卖, 尝, or 饱.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我点了一份外卖，刚尝了两口就觉得很香，吃完以后很饱。",
+          "explanation": "Use 外卖, 尝, and 饱 naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"menu\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "菜单",
+              "pinyin": "càidān",
+              "meaning_en": "menu"
+            },
+            {
+              "id": "b",
+              "hanzi": "外卖",
+              "pinyin": "wàimài",
+              "meaning_en": "takeout"
+            },
+            {
+              "id": "c",
+              "hanzi": "蛋糕",
+              "pinyin": "dàngāo",
+              "meaning_en": "cake"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "菜单 is menu."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which word means \"chopsticks\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "勺子",
+              "pinyin": "sháozi",
+              "meaning_en": "spoon"
+            },
+            {
+              "id": "b",
+              "hanzi": "筷子",
+              "pinyin": "kuàizi",
+              "meaning_en": "chopsticks"
+            },
+            {
+              "id": "c",
+              "hanzi": "碗",
+              "pinyin": "wǎn",
+              "meaning_en": "bowl"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "筷子 means chopsticks."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which word means \"fresh\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "甜",
+              "pinyin": "tián",
+              "meaning_en": "sweet"
+            },
+            {
+              "id": "b",
+              "hanzi": "饱",
+              "pinyin": "bǎo",
+              "meaning_en": "full"
+            },
+            {
+              "id": "c",
+              "hanzi": "新鲜",
+              "pinyin": "xīnxiān",
+              "meaning_en": "fresh"
+            }
+          ],
+          "correct_choice_ids": [
+            "c"
+          ],
+          "explanation": "新鲜 means fresh."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Ordering Lunch Together",
+        "context_en": "Two roommates decide between cooking and ordering takeout.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "我好饿啊，今天不想吃方便面，咱们点外卖吧？",
+            "pinyin": "Wǒ hǎo è a, jīntiān bù xiǎng chī fāngbiànmiàn, zánmen diǎn wàimài ba?",
+            "english": "I’m so hungry! I don’t want instant noodles today—shall we order takeout?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "好呀，你看看菜单，这家店的烤鸡很有名。",
+            "pinyin": "Hǎo ya, nǐ kànkan càidān, zhè jiā diàn de kǎojī hěn yǒumíng.",
+            "english": "Sure, look at the menu—this place’s roast chicken is famous."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "那点一份烤鸡、两碗米饭，再来两瓶冰的矿泉水。",
+            "pinyin": "Nà diǎn yí fèn kǎojī, liǎng wǎn mǐfàn, zài lái liǎng píng bīng de kuàngquánshuǐ.",
+            "english": "Then let’s order one roast chicken, two bowls of rice, and two bottles of cold mineral water."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "等外卖到了，别忘了拿筷子和勺子，饭后还可以吃点儿新鲜西瓜！",
+            "pinyin": "Děng wàimài dào le, bié wàng le ná kuàizi hé sháozi, fànhòu hái kěyǐ chī diǎnr xīnxiān xīguā!",
+            "english": "When the delivery arrives, don’t forget chopsticks and spoons; after the meal we can eat some fresh watermelon!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Trying a taste with 尝",
+          "explanation_en": "Use 尝一尝 (cháng yì cháng) or 尝一下 to invite someone to taste food or drink.",
+          "pattern_hanzi": "尝一尝 + <Food / Drink>",
+          "pattern_pinyin": "cháng yì cháng + <Food / Drink>",
+          "pattern_pseudo_translation": "taste + <Food / Drink>",
+          "examples": [
+            {
+              "hanzi": "你尝一尝这块蛋糕，不会太甜。",
+              "pinyin": "Nǐ cháng yì cháng zhè kuài dàngāo, bú huì tài tián.",
+              "english": "Try a bite of this cake—it’s not too sweet."
+            },
+            {
+              "hanzi": "这串香蕉很新鲜，快来尝尝！",
+              "pinyin": "Zhè chuàn xiāngjiāo hěn xīnxiān, kuài lái chángchang!",
+              "english": "This bunch of bananas is very fresh—come taste some!"
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Being hungry or full",
+          "explanation_en": "饿 (è) and 饱 (bǎo) are stative verbs; use 吃饱了 to say you have eaten enough.",
+          "pattern_hanzi": "<Subject> + 饿了 / 吃饱了",
+          "pattern_pinyin": "<Subject> + è le / chī bǎo le",
+          "pattern_pseudo_translation": "<Subject> + is hungry / ate full",
+          "examples": [
+            {
+              "hanzi": "我吃饱了，再来一杯饮料就够了。",
+              "pinyin": "Wǒ chī bǎo le, zài lái yì bēi yǐnliào jiù gòu le.",
+              "english": "I’m full; one more drink is enough."
+            },
+            {
+              "hanzi": "孩子玩儿了一上午，现在肯定饿了。",
+              "pinyin": "Háizi wánr le yí shàngwǔ, xiànzài kěndìng è le.",
+              "english": "The child played all morning and must be hungry now."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Order drinks, snacks, and utensils.",
+        "model": {
+          "hanzi": "请给我一碗热汤和一双筷子。",
+          "pinyin": "Qǐng gěi wǒ yì wǎn rè tāng hé yì shuāng kuàizi.",
+          "english": "Please give me a bowl of hot soup and a pair of chopsticks."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you don’t drink alcohol or beer.",
+            "model_answer": {
+              "hanzi": "我不喝酒，也不喝啤酒。",
+              "pinyin": "Wǒ bù hē jiǔ, yě bù hē píjiǔ.",
+              "english": "I don’t drink liquor, and I don’t drink beer either."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say children like sweet ice cream.",
+            "model_answer": {
+              "hanzi": "小朋友很喜欢甜甜的冰激凌。",
+              "pinyin": "Xiǎo péngyou hěn xǐhuan tiántián de bīngjīlíng.",
+              "english": "Children really like sweet ice cream."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say this tea has too much sugar.",
+            "model_answer": {
+              "hanzi": "这杯茶里的糖放得太多了。",
+              "pinyin": "Zhè bēi chá lǐ de táng fàng de tài duō le.",
+              "english": "Too much sugar was put in this cup of tea."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Picnic by the River",
+        "paragraphs": [
+          {
+            "hanzi": "星期天天气很好，我们带了蛋糕、香蕉、西瓜和几瓶饮料去河边野餐。",
+            "pinyin": "Xīngqītiān tiānqì hěn hǎo, wǒmen dài le dàngāo, xiāngjiāo, xīguā hé jǐ píng yǐnliào qù hébiān yěcān.",
+            "english": "The weather on Sunday was great; we brought cake, bananas, watermelon, and several bottles of drinks for a picnic by the river."
+          },
+          {
+            "hanzi": "大家坐在一起吃东西、聊天儿，还尝了朋友带来的新鲜水果。虽然没有买冰激凌，但每个人都吃得很饱、很开心。",
+            "pinyin": "Dàjiā zuò zài yìqǐ chī dōngxi, liáotiānr, hái cháng le péngyou dài lái de xīnxiān shuǐguǒ. Suīrán méiyǒu mǎi bīngjīlíng, dàn měi ge rén dōu chī de hěn bǎo, hěn kāixīn.",
+            "english": "Everyone sat together eating and chatting, and tasted the fresh fruit our friend brought. Although we didn’t buy ice cream, everyone ate until full and felt very happy."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What food and drinks did they bring to the picnic?",
+            "answer_en": "Cake, bananas, watermelon, and several bottles of drinks."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "How did everyone feel at the end?",
+            "answer_en": "Full and happy."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Order a meal and a drink from a menu or takeout.",
+          "model_answer": {
+            "hanzi": "我要点一份鸡肉面和一瓶矿泉水，谢谢。",
+            "pinyin": "Wǒ yào diǎn yí fèn jīròu miàn hé yì píng kuàngquánshuǐ, xièxie.",
+            "english": "I’d like to order one chicken noodles and a bottle of mineral water, thanks."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe your favorite fruit or dessert using 新鲜 or 甜.",
+          "model_answer": {
+            "hanzi": "夏天我最喜欢吃冰西瓜，又新鲜又甜。",
+            "pinyin": "Xiàtiān wǒ zuì xǐhuan chī bīng xīguā, yòu xīnxiān yòu tián.",
+            "english": "In summer I like eating chilled watermelon best—both fresh and sweet."
+          }
+        }
+      ],
+      "common_pitfall": "Chopsticks always come in pairs, so count them with 一双筷子 (\"a pair of chopsticks\"), not *一个筷子.",
+      "pronunciation_focus": "筷子 (kuàizi) and 勺子 (sháozi) both end in a neutral-tone 子; 冰激凌 (bīngjīlíng) has two flat first tones followed by a rising second tone.",
+      "review": {
+        "can_do": [
+          "Order from a menu or takeout.",
+          "Describe taste, hunger, and fullness.",
+          "Name tableware, fruit, and drinks."
+        ],
+        "entry_ids": [
+          515,
+          534,
+          535,
+          545,
+          553,
+          580,
+          610,
+          620,
+          689,
+          720,
+          741,
+          742,
+          794,
+          825,
+          850,
+          855,
+          866,
+          871,
+          883,
+          892,
+          905,
+          938
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Trying a taste with 尝",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Being hungry or full",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you don’t drink alcohol or beer.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say children like sweet ice cream.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say this tea has too much sugar.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What food and drinks did they bring to the picnic?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: How did everyone feel at the end?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Order a meal and a drink from a menu or takeout.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe your favorite fruit or dessert using 新鲜 or 甜.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"menu\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"chopsticks\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-ordering-snacks-and-drinks--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"fresh\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-ordering-snacks-and-drinks--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-ordering-snacks-and-drinks--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

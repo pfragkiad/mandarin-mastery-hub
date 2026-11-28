@@ -154,7 +154,7 @@ A classifier is not interchangeable with every noun. For example, a room uses �
 
 - 万 (wàn) — ten thousand [HSK entry 449]
 
-- 位 (wèi) — polite classifier for people [HSK entry 453]
+- 位 (wèi) — polite classifier for people [HSK entry 454]
 
 - 八 (bā) — eight [HSK entry 2]
 

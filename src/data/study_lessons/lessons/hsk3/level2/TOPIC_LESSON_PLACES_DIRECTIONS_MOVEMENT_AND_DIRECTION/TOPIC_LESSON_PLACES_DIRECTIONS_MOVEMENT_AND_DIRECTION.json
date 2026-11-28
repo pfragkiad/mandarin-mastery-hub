@@ -590,7 +590,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 372
+              "entry_id": 371
             }
           ],
           "primary_topic_id": "places-directions",
@@ -633,7 +633,7 @@
           "syllabus_refs": [
             {
               "curriculum_id": "hsk3-2025",
-              "entry_id": 373
+              "entry_id": 372
             }
           ],
           "primary_topic_id": "places-directions",
@@ -1259,8 +1259,8 @@
           361,
           362,
           370,
+          371,
           372,
-          373,
           425,
           427,
           458,

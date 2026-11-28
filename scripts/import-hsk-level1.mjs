@@ -8,6 +8,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { readVocabulary, VOCABULARY_DIRECTORY, writeVocabulary } from './vocabulary-store.mjs';
+import { currentHskRuntimeEntry } from './hsk-runtime-references.mjs';
 import { basename, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createJiti } from 'jiti';
@@ -41,7 +42,7 @@ export const importLevel1 = options => importHskLevel({ ...options, level: 1 });
  * including its four explicitly classified phrases. Levels 3 and 4 create syllabus records.
  */
 export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, includeExamples = true, inventoryPath = resolve(root, 'src/data/pinyin/inventory.json') }) {
-  const versions = { 1: '1.7.2', 2: '1.1.2', 3: '1.1.3', 4: '1.1.2', 5: '1.0.6', 6: '1.0.1' };
+  const versions = { 1: '1.7.2', 2: '1.1.3', 3: '1.1.4', 4: '1.1.3', 5: '1.0.7', 6: '1.0.1' };
   requireThat(Object.hasOwn(versions, level), 'Unsupported HSK level');
   const count = { 1: 300, 2: 200, 3: 500, 4: 1000, 5: 1600, 6: 1800 }[level];
   const firstId = { 1: 1, 2: 301, 3: 501, 4: 1001, 5: 2001, 6: 3601 }[level], lastId = firstId + count - 1;
@@ -74,10 +75,13 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
   const inputSha256 = hash(sourcePath);
   const renumbered = Boolean(source.verification.numbering_revision);
   const byLegacyId = new Map(source.entries.map(e => [e.legacy_syllabus_id, e]));
+  const currentNumberingSource = old => old.studyMetadata?.sourceSha256 === inputSha256 ||
+    (source.verification.runtime_compatible_handoffs ?? []).some(binding => binding.numbering === 'official-site-1219' &&
+      binding.sha256 === old.studyMetadata?.sourceSha256 && binding.file === old.studyMetadata?.source.sourceName);
   // Swapped serials must never match another word's UUID/audio. Accept only the
   // exact old handoff checksum or this current handoff before choosing an ID map.
   const mappedId = old => {
-    if (!renumbered || old.studyMetadata?.sourceSha256 === inputSha256) return old.hsk_index;
+    if (!renumbered || currentNumberingSource(old)) return old.hsk_index;
     requireThat(old.studyMetadata?.sourceSha256 === source.verification.numbering_revision.baseline.sha256,
       `Unknown Level ${level} numbering source; manual identity review required`);
     const target = byLegacyId.get(old.hsk_index);
@@ -157,7 +161,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
     } : undefined);
     requireThat(old?.simplified === e.headword, `ID/headword mismatch for ${e.id}; manual identity review required`);
     if (renumbered && old.studyMetadata) {
-      const currentNumbering = old.studyMetadata.sourceSha256 === inputSha256;
+      const currentNumbering = currentNumberingSource(old);
       const expectedHeadword = currentNumbering ? e.syllabus_headword : (e.legacy_syllabus_headword ?? e.syllabus_headword);
       const expectedPos = currentNumbering ? e.syllabus_pos_zh : (e.legacy_syllabus_pos_zh ?? e.syllabus_pos_zh);
       requireThat((old.studyMetadata.syllabusHeadword == null || old.studyMetadata.syllabusHeadword === expectedHeadword) &&
@@ -205,7 +209,7 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
         ...(normalizeSoftHyphen ? { importNormalization: 'Removed leading U+00AD from Chinese and pinyin; source handoff unchanged.' } : {}),
       };
     }) : old.examples;
-    const result = {
+    const result = currentHskRuntimeEntry({
       ...old, pinyinDisplay: e.pinyin, tokens: tokens(e.headword, readings[0], `${e.id}/headword`),
       ...(renumbered ? { hsk_index: e.id, hskSource: sourceRef(e.id), sourceId: String(e.id),
         sourceName: basename(sourcePath), sourceVersion: source.data_version } : {}),
@@ -227,9 +231,8 @@ export function importHskLevel({ sourcePath, topicsPath, vocabularyPath, level, 
         ...(e.pronunciation_note ? { pronunciationNote: e.pronunciation_note } : {}),
         ...(e.meaning_source ? { meaningSource: e.meaning_source } : {}),
         ...(e.classification_status ? { classificationStatus: e.classification_status } : {}),
-        ...(renumbered ? { numberingRevision: { name: 'official-site-1219', previousId: e.legacy_syllabus_id } } : {}),
       },
-    };
+    });
     // Importing an unchanged handoff twice must not churn modification timestamps.
     const previous = { ...old }; delete previous.updatedAt;
     const next = { ...result }; delete next.updatedAt;

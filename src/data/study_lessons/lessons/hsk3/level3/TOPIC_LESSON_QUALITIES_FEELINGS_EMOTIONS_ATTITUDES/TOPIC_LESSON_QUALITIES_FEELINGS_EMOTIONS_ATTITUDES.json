@@ -1,0 +1,1709 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-feelings-and-attitudes",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Feelings, Worries & Attitudes",
+    "subtitle": "Happiness, sadness, worry, enthusiasm, and willingness",
+    "description": "Express feelings, emotions, worries, enthusiasm, effort, and willingness to do things.",
+    "slug": "feelings-and-attitudes"
+  },
+  "classification": {
+    "primary_topic_id": "qualities-feelings",
+    "topic_ids": [
+      "qualities-feelings"
+    ],
+    "tags": [
+      "emotions",
+      "feelings",
+      "attitudes"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "emotions-attitudes",
+    "subtopic_ids": [
+      "emotions-attitudes"
+    ]
+  },
+  "learning_objectives": [
+    "Express positive and negative emotions: 开心, 难过, 生气, 哭, 急, 着急, 害怕, and 怕.",
+    "Express attitudes and inner feelings: 感到, 放心, 满意, 热情, 喜爱, 愿意, 努力, and 心里.",
+    "Describe resemblance with 像."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "不": "Characters:不",
+    "丢": "Characters:丢",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "为": "Characters:为",
+    "主": "Characters:主",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "事": "Characters:事",
+    "交": "Characters:交",
+    "人": "Characters:人",
+    "什": "Characters:什",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "会": "Characters:会",
+    "位": "Characters:位",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "保": "Characters:保",
+    "做": "Characters:做",
+    "像": "Characters:像",
+    "儿": "Characters:儿",
+    "先": "Characters:先",
+    "兴": "Characters:兴",
+    "具": "Characters:具",
+    "再": "Characters:再",
+    "冷": "Characters:冷",
+    "出": "Characters:出",
+    "分": "Characters:分",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "力": "Characters:力",
+    "务": "Characters:务",
+    "动": "Characters:动",
+    "助": "Characters:助",
+    "努": "Characters:努",
+    "励": "Characters:励",
+    "十": "Characters:十",
+    "半": "Characters:半",
+    "历": "Characters:历",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "友": "Characters:友",
+    "只": "Characters:只",
+    "史": "Characters:史",
+    "同": "Characters:同",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哭": "Characters:哭",
+    "唱": "Characters:唱",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "回": "Characters:回",
+    "因": "Characters:因",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "地": "Characters:地",
+    "块": "Characters:块",
+    "复": "Characters:复",
+    "多": "Characters:多",
+    "够": "Characters:够",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "女": "Characters:女",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "如": "Characters:如",
+    "妈": "Characters:妈",
+    "妹": "Characters:妹",
+    "姐": "Characters:姐",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "定": "Characters:定",
+    "客": "Characters:客",
+    "害": "Characters:害",
+    "家": "Characters:家",
+    "宾": "Characters:宾",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "就": "Characters:就",
+    "工": "Characters:工",
+    "己": "Characters:己",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "常": "Characters:常",
+    "店": "Characters:店",
+    "开": "Characters:开",
+    "弟": "Characters:弟",
+    "张": "Characters:张",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "怕": "Characters:怕",
+    "急": "Characters:急",
+    "悉": "Characters:悉",
+    "情": "Characters:情",
+    "想": "Characters:想",
+    "意": "Characters:意",
+    "感": "Characters:感",
+    "愿": "Characters:愿",
+    "慢": "Characters:慢",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "找": "Characters:找",
+    "把": "Characters:把",
+    "担": "Characters:担",
+    "挺": "Characters:挺",
+    "放": "Characters:放",
+    "故": "Characters:故",
+    "新": "Characters:新",
+    "既": "Characters:既",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "晚": "Characters:晚",
+    "最": "Characters:最",
+    "有": "Characters:有",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "来": "Characters:来",
+    "果": "Characters:果",
+    "校": "Characters:校",
+    "歌": "Characters:歌",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "满": "Characters:满",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "熟": "Characters:熟",
+    "爱": "Characters:爱",
+    "爷": "Characters:爷",
+    "爸": "Characters:爸",
+    "狗": "Characters:狗",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "班": "Characters:班",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "的": "Characters:的",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "真": "Characters:真",
+    "着": "Characters:着",
+    "睡": "Characters:睡",
+    "紧": "Characters:紧",
+    "级": "Characters:级",
+    "练": "Characters:练",
+    "老": "Characters:老",
+    "考": "Characters:考",
+    "聊": "Characters:聊",
+    "肯": "Characters:肯",
+    "能": "Characters:能",
+    "自": "Characters:自",
+    "菜": "Characters:菜",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "觉": "Characters:觉",
+    "让": "Characters:让",
+    "证": "Characters:证",
+    "试": "Characters:试",
+    "语": "Characters:语",
+    "说": "Characters:说",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "谢": "Characters:谢",
+    "走": "Characters:走",
+    "起": "Characters:起",
+    "趣": "Characters:趣",
+    "转": "Characters:转",
+    "过": "Characters:过",
+    "近": "Characters:近",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "问": "Characters:问",
+    "间": "Characters:间",
+    "陈": "Characters:陈",
+    "难": "Characters:难",
+    "非": "Characters:非",
+    "音": "Characters:音",
+    "题": "Characters:题",
+    "饭": "Characters:饭",
+    "馆": "Characters:馆",
+    "首": "Characters:首",
+    "高": "Characters:高",
+    "鼓": "Characters:鼓"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Emotional states, attitudes, and expressions of reassurance or concern.",
+      "focus": "Use 对……满意 for \"satisfied with\", 对……感兴趣 for \"interested in\", and 别着急 / 放心 to reassure someone."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0626",
+          "hanzi": "放心",
+          "pinyin": "fàngxīn",
+          "meaning_en": "be reassured; don't worry",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0626-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "放心吧！",
+              "pinyin": "fàngxīn ba!",
+              "english": "Don't worry!",
+              "teaching_note": "Short everyday spoken use of 放心."
+            },
+            {
+              "id": "ex-0626-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子回家了，妈妈就放心了。",
+              "pinyin": "háizi huí jiā le, māma jiù fàngxīn le.",
+              "english": "The child came home, so Mom felt relieved.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 626
+            }
+          ]
+        },
+        {
+          "id": "w-0637",
+          "hanzi": "感到",
+          "pinyin": "gǎndào",
+          "meaning_en": "feel; sense",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0637-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你感到冷吗？",
+              "pinyin": "nǐ gǎndào lěng ma?",
+              "english": "Do you feel cold?",
+              "teaching_note": "Short everyday spoken use of 感到."
+            },
+            {
+              "id": "ex-0637-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他感到非常高兴。",
+              "pinyin": "tā gǎndào fēicháng gāoxìng.",
+              "english": "He feels very happy.",
+              "teaching_note": "Simple descriptive or narrative use of 感到."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 637
+            }
+          ]
+        },
+        {
+          "id": "w-0639",
+          "hanzi": "感兴趣",
+          "pinyin": "gǎn xìngqù",
+          "meaning_en": "be interested in",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0639-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你对什么感兴趣？",
+              "pinyin": "nǐ duì shénme gǎn xìngqù?",
+              "english": "What are you interested in?",
+              "teaching_note": "Short everyday spoken use of 感兴趣."
+            },
+            {
+              "id": "ex-0639-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "姐姐对中国历史感兴趣。",
+              "pinyin": "jiějie duì Zhōngguó lìshǐ gǎn xìngqù.",
+              "english": "My older sister is interested in Chinese history.",
+              "teaching_note": "Simple descriptive or narrative use of 感兴趣."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 639
+            }
+          ]
+        },
+        {
+          "id": "w-0662",
+          "hanzi": "害怕",
+          "pinyin": "hàipà",
+          "meaning_en": "be afraid; fear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0662-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我有点害怕。",
+              "pinyin": "wǒ yǒudiǎn hàipà.",
+              "english": "I'm a little scared.",
+              "teaching_note": "Short everyday spoken use of 害怕."
+            },
+            {
+              "id": "ex-0662-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "小孩子害怕一个人睡觉。",
+              "pinyin": "xiǎo háizi hàipà yí ge rén shuìjiào.",
+              "english": "The child is afraid of sleeping alone.",
+              "teaching_note": "Simple descriptive or narrative use of 害怕."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 662
+            }
+          ]
+        },
+        {
+          "id": "w-0691",
+          "hanzi": "急",
+          "pinyin": "jí",
+          "meaning_en": "urgent; anxious",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0691-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别急，慢慢来。",
+              "pinyin": "bié jí, màn màn lái.",
+              "english": "Don't rush; take your time.",
+              "teaching_note": "Short everyday spoken use of 急."
+            },
+            {
+              "id": "ex-0691-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他有急事，先走了。",
+              "pinyin": "tā yǒu jí shì, xiān zǒu le.",
+              "english": "He had something urgent to do and left first.",
+              "teaching_note": "Simple descriptive or narrative use of 急."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 691
+            }
+          ]
+        },
+        {
+          "id": "w-0729",
+          "hanzi": "开心",
+          "pinyin": "kāixīn",
+          "meaning_en": "happy; glad",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0729-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "今天真开心！",
+              "pinyin": "jīntiān zhēn kāixīn!",
+              "english": "I'm really happy today!",
+              "teaching_note": "Short everyday spoken use of 开心."
+            },
+            {
+              "id": "ex-0729-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们玩得很开心。",
+              "pinyin": "háizimen wán de hěn kāixīn.",
+              "english": "The children had a great time playing.",
+              "teaching_note": "Simple descriptive or narrative use of 开心."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 729
+            }
+          ]
+        },
+        {
+          "id": "w-0740",
+          "hanzi": "哭",
+          "pinyin": "kū",
+          "meaning_en": "cry",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0740-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别哭了。",
+              "pinyin": "bié kū le.",
+              "english": "Don't cry.",
+              "teaching_note": "Short everyday spoken use of 哭."
+            },
+            {
+              "id": "ex-0740-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子找不到妈妈，就哭了。",
+              "pinyin": "háizi zhǎo bú dào māma, jiù kū le.",
+              "english": "The child started crying when they couldn't find Mom.",
+              "teaching_note": "Simple descriptive or narrative use of 哭."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 740
+            }
+          ]
+        },
+        {
+          "id": "w-0767",
+          "hanzi": "满意",
+          "pinyin": "mǎnyì",
+          "meaning_en": "satisfied; pleased",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0767-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你满意吗？",
+              "pinyin": "nǐ mǎnyì ma?",
+              "english": "Are you satisfied?",
+              "teaching_note": "Short everyday spoken use of 满意."
+            },
+            {
+              "id": "ex-0767-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "客人对这里的服务很满意。",
+              "pinyin": "kèrén duì zhèlǐ de fúwù hěn mǎnyì.",
+              "english": "The guest is very satisfied with the service here.",
+              "teaching_note": "Simple descriptive or narrative use of 满意."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 767
+            }
+          ]
+        },
+        {
+          "id": "w-0779",
+          "hanzi": "难过",
+          "pinyin": "nánguò",
+          "meaning_en": "sad; upset",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0779-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别难过了。",
+              "pinyin": "bié nánguò le.",
+              "english": "Don't be sad.",
+              "teaching_note": "Short everyday spoken use of 难过."
+            },
+            {
+              "id": "ex-0779-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "听到这件事，她很难过。",
+              "pinyin": "tīngdào zhè jiàn shì, tā hěn nánguò.",
+              "english": "She was sad when she heard about it.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 779
+            }
+          ]
+        },
+        {
+          "id": "w-0786",
+          "hanzi": "努力",
+          "pinyin": "nǔlì",
+          "meaning_en": "work hard; make an effort",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0786-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你要努力啊！",
+              "pinyin": "nǐ yào nǔlì a!",
+              "english": "Keep working hard!",
+              "teaching_note": "Short everyday spoken use of 努力."
+            },
+            {
+              "id": "ex-0786-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他努力学习汉语。",
+              "pinyin": "tā nǔlì xuéxí Hànyǔ.",
+              "english": "He studies Chinese diligently.",
+              "teaching_note": "Simple descriptive or narrative use of 努力."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 786
+            }
+          ]
+        },
+        {
+          "id": "w-0790",
+          "hanzi": "怕",
+          "pinyin": "pà",
+          "meaning_en": "be afraid of",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0790-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你怕狗吗？",
+              "pinyin": "nǐ pà gǒu ma?",
+              "english": "Are you afraid of dogs?",
+              "teaching_note": "Short everyday spoken use of 怕."
+            },
+            {
+              "id": "ex-0790-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "妹妹怕一个人晚上出门。",
+              "pinyin": "mèimei pà yí ge rén wǎnshang chūmén.",
+              "english": "My younger sister is afraid to go out alone at night.",
+              "teaching_note": "Simple descriptive or narrative use of 怕."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 790
+            }
+          ]
+        },
+        {
+          "id": "w-0814",
+          "hanzi": "热情",
+          "pinyin": "rèqíng",
+          "meaning_en": "warm; enthusiastic; hospitable",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0814-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他们真热情！",
+              "pinyin": "tāmen zhēn rèqíng!",
+              "english": "They're so welcoming!",
+              "teaching_note": "Short everyday spoken use of 热情."
+            },
+            {
+              "id": "ex-0814-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "饭馆里的人很热情。",
+              "pinyin": "fànguǎn lǐ de rén hěn rèqíng.",
+              "english": "The people at the restaurant are very friendly.",
+              "teaching_note": "Simple descriptive or narrative use of 热情."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 814
+            }
+          ]
+        },
+        {
+          "id": "w-0829",
+          "hanzi": "生气",
+          "pinyin": "shēngqì",
+          "meaning_en": "get angry; be angry",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0829-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别生气了！",
+              "pinyin": "bié shēngqì le!",
+              "english": "Don't be angry!",
+              "teaching_note": "Short everyday spoken use of 生气."
+            },
+            {
+              "id": "ex-0829-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他听到这件事很生气。",
+              "pinyin": "tā tīngdào zhè jiàn shì hěn shēngqì.",
+              "english": "He became angry when he heard about it.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 829
+            }
+          ]
+        },
+        {
+          "id": "w-0888",
+          "hanzi": "喜爱",
+          "pinyin": "xǐ’ài",
+          "meaning_en": "love; be fond of",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0888-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我很喜爱这只猫。",
+              "pinyin": "wǒ hěn xǐ'ài zhè zhǐ māo.",
+              "english": "I'm very fond of this cat.",
+              "teaching_note": "Short everyday spoken use of 喜爱."
+            },
+            {
+              "id": "ex-0888-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "爷爷很喜爱中国音乐。",
+              "pinyin": "yéye hěn xǐ'ài Zhōngguó yīnyuè.",
+              "english": "Grandpa loves Chinese music.",
+              "teaching_note": "Simple descriptive or narrative use of 喜爱."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 888
+            }
+          ]
+        },
+        {
+          "id": "w-0896",
+          "hanzi": "像",
+          "pinyin": "xiàng",
+          "meaning_en": "look like; resemble; as if",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adverb",
+            "noun"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0896-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他像他爸爸。",
+              "pinyin": "tā xiàng tā bàba.",
+              "english": "He looks like his dad.",
+              "teaching_note": "Short everyday spoken use of 像."
+            },
+            {
+              "id": "ex-0896-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这只狗像我家的狗。",
+              "pinyin": "zhè zhī gǒu xiàng wǒ jiā de gǒu.",
+              "english": "This dog looks like our dog.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 896
+            }
+          ]
+        },
+        {
+          "id": "w-0902",
+          "hanzi": "心里",
+          "pinyin": "xīnlǐ",
+          "meaning_en": "in one's heart; in one's mind",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0902-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我心里很高兴。",
+              "pinyin": "wǒ xīnlǐ hěn gāoxìng.",
+              "english": "I'm happy inside.",
+              "teaching_note": "Short everyday spoken use of 心里."
+            },
+            {
+              "id": "ex-0902-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她心里一直想着家人。",
+              "pinyin": "tā xīnlǐ yìzhí xiǎng zhe jiārén.",
+              "english": "She keeps thinking about her family.",
+              "teaching_note": "Simple descriptive or narrative use of 心里."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 902
+            }
+          ]
+        },
+        {
+          "id": "w-0957",
+          "hanzi": "愿意",
+          "pinyin": "yuànyì",
+          "meaning_en": "be willing; be happy to",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0957-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你愿意帮我吗？",
+              "pinyin": "nǐ yuànyì bāng wǒ ma?",
+              "english": "Would you be willing to help me?",
+              "teaching_note": "Short everyday spoken use of 愿意."
+            },
+            {
+              "id": "ex-0957-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她愿意每天练习汉语。",
+              "pinyin": "tā yuànyì měi tiān liànxí Hànyǔ.",
+              "english": "She is willing to practice Chinese every day.",
+              "teaching_note": "Simple descriptive or narrative use of 愿意."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 957
+            }
+          ]
+        },
+        {
+          "id": "w-0969",
+          "hanzi": "着急",
+          "pinyin": "zháojí",
+          "meaning_en": "anxious; worried; in a hurry",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "emotions-attitudes",
+          "subtopic_ids": [
+            "emotions-attitudes"
+          ],
+          "examples": [
+            {
+              "id": "ex-0969-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别着急！",
+              "pinyin": "bié zháojí!",
+              "english": "Don't worry!",
+              "teaching_note": "Short everyday spoken use of 着急."
+            },
+            {
+              "id": "ex-0969-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他找不到手机，有点着急。",
+              "pinyin": "tā zhǎo bú dào shǒujī, yǒudiǎn zháojí.",
+              "english": "He can't find his phone and is a little anxious.",
+              "teaching_note": "Simple descriptive or narrative use of 着急."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 969
+            }
+          ]
+        },
+        {
+          "id": "w-0071",
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "meaning_en": "good",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "adverb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0071-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这本书很好。",
+              "pinyin": "zhè běn shū hěn hǎo.",
+              "english": "This book is good.",
+              "teaching_note": "好 is a broad positive adjective; 很好 can describe books, people, plans, or weather."
+            },
+            {
+              "id": "ex-0071-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这家饭店的菜很好。",
+              "pinyin": "zhè jiā fàndiàn de cài hěn hǎo.",
+              "english": "The food at this restaurant is very good.",
+              "teaching_note": "Practical shopping, food, or everyday-life context using 好."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 71
+            }
+          ]
+        },
+        {
+          "id": "w-0073",
+          "hanzi": "好看",
+          "pinyin": "hǎokàn",
+          "meaning_en": "good-looking",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": "judgments-evaluation",
+          "subtopic_ids": [
+            "judgments-evaluation"
+          ],
+          "examples": [
+            {
+              "id": "ex-0073-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这件衣服很好看。",
+              "pinyin": "zhè jiàn yīfu hěn hǎokàn.",
+              "english": "This item of clothing looks nice.",
+              "teaching_note": "件 is a classifier for clothing; 好看 describes how the garment looks."
+            },
+            {
+              "id": "ex-0073-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "这本书很好看。",
+              "pinyin": "zhè běn shū hěn hǎokàn.",
+              "english": "This book is very good to read.",
+              "teaching_note": "Short beginner-level description illustrating 好看 in context."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 73
+            }
+          ]
+        },
+        {
+          "id": "w-0180",
+          "hanzi": "少",
+          "pinyin": "shǎo",
+          "meaning_en": "few; little",
+          "primary_pos_id": "adjective",
+          "pos_ids": [
+            "adjective",
+            "verb"
+          ],
+          "primary_topic_id": "qualities-feelings",
+          "topic_ids": [
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0180-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这里的人很少。",
+              "pinyin": "zhèlǐ de rén hěn shǎo.",
+              "english": "There are very few people here.",
+              "teaching_note": "很少 describes a small number of people at this location."
+            },
+            {
+              "id": "ex-0180-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天来上课的学生很少。",
+              "pinyin": "jīntiān lái shàngkè de xuéshēng hěn shǎo.",
+              "english": "Very few students came to class today.",
+              "teaching_note": "School or study context showing 少 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 180
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 放心 (fàngxīn)",
+        "explanation": "放心 (fàngxīn) means “be reassured; don't worry” (verb).",
+        "example_id": "ex-0626-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 感到 (gǎndào)",
+        "explanation": "感到 (gǎndào) means “feel; sense” (verb).",
+        "example_id": "ex-0637-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0626-1",
+      "ex-0637-1",
+      "ex-0639-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "How did Xiao Chen’s feelings change by the end of the story?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He felt very happy and was no longer sad or afraid.",
+          "explanation": "The passage ends with 他感到十分开心，再也不难过了."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 放心 and 对……满意 or 愿意.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "请放心，我会努力把工作做好，让大家感到满意。",
+          "explanation": "Use 放心 and 满意 naturally."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which word means \"anxious / worried\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "着急",
+              "pinyin": "zháojí",
+              "meaning_en": "anxious / worried"
+            },
+            {
+              "id": "b",
+              "hanzi": "放心",
+              "pinyin": "fàngxīn",
+              "meaning_en": "reassured"
+            },
+            {
+              "id": "c",
+              "hanzi": "满意",
+              "pinyin": "mǎnyì",
+              "meaning_en": "satisfied"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "着急 means anxious or worried."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to get angry\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "害怕",
+              "pinyin": "hàipà",
+              "meaning_en": "be afraid"
+            },
+            {
+              "id": "b",
+              "hanzi": "生气",
+              "pinyin": "shēngqì",
+              "meaning_en": "get angry"
+            },
+            {
+              "id": "c",
+              "hanzi": "难过",
+              "pinyin": "nánguò",
+              "meaning_en": "sad"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "生气 means to get angry."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which verb means \"to be willing to\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "愿意",
+              "pinyin": "yuànyì",
+              "meaning_en": "be willing"
+            },
+            {
+              "id": "b",
+              "hanzi": "努力",
+              "pinyin": "nǔlì",
+              "meaning_en": "work hard"
+            },
+            {
+              "id": "c",
+              "hanzi": "哭",
+              "pinyin": "kū",
+              "meaning_en": "cry"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "愿意 means to be willing to."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Cheering Up a Friend",
+        "context_en": "Xiao Lin reassures her friend who is anxious before an exam.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "明天就要考试了，我心里有点儿着急，害怕考不好。",
+            "pinyin": "Míngtiān jiù yào kǎoshì le, wǒ xīnlǐ yǒudiǎnr zháojí, hàipà kǎo bù hǎo.",
+            "english": "The exam is tomorrow—I feel anxious inside and am afraid I won’t do well."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "别怕！你这学期一直这么努力，肯定没问题，放心吧。",
+            "pinyin": "Bié pà! Nǐ zhè xuéqī yìzhí zhème nǔlì, kěndìng méi wèntí, fàngxīn ba.",
+            "english": "Don’t be afraid! You’ve worked so hard all semester—there’s definitely no problem, rest assured."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "谢谢你这么热情地鼓励我，听你这么说我开心多了！",
+            "pinyin": "Xièxie nǐ zhème rèqíng de gǔlì wǒ, tīng nǐ zhème shuō wǒ kāixīn duō le!",
+            "english": "Thank you for encouraging me so warmly—hearing you say that makes me feel much happier!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "如果你愿意，今晚咱们再一起复习半小时，保证让你感到满意！",
+            "pinyin": "Rúguǒ nǐ yuànyì, jīnwǎn zánmen zài yìqǐ fùxí bàn xiǎoshí, bǎozhèng ràng nǐ gǎndào mǎnyì!",
+            "english": "If you’re willing, let’s review together for half an hour tonight—I guarantee you’ll feel satisfied!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Being satisfied or interested with 对……满意 / 感兴趣",
+          "explanation_en": "Place 对 + target before 满意 (satisfied) or 感兴趣 (interested).",
+          "pattern_hanzi": "<Subject> + 对 + <Target> + 很 + 满意 / 感兴趣",
+          "pattern_pinyin": "<Subject> + duì + <Target> + hěn + mǎnyì / gǎn xìngqù",
+          "pattern_pseudo_translation": "<Subject> + toward + <Target> + very + satisfied / interested",
+          "examples": [
+            {
+              "hanzi": "客人对这家宾馆的服务非常满意。",
+              "pinyin": "Kèrén duì zhè jiā bīnguǎn de fúwù fēicháng mǎnyì.",
+              "english": "The guests are very satisfied with this hotel’s service."
+            },
+            {
+              "hanzi": "弟弟从小就对历史故事很感兴趣。",
+              "pinyin": "Dìdi cóngxiǎo jiù duì lìshǐ gùshi hěn gǎn xìngqù.",
+              "english": "My younger brother has been very interested in historical stories since childhood."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Being willing to do something with 愿意",
+          "explanation_en": "Place 愿意 (yuànyì) before a verb phrase to say someone is happy or willing to do it.",
+          "pattern_hanzi": "<Subject> + 愿意 + <Verb Phrase>",
+          "pattern_pinyin": "<Subject> + yuànyì + <Verb Phrase>",
+          "pattern_pseudo_translation": "<Subject> + be willing to + <Verb Phrase>",
+          "examples": [
+            {
+              "hanzi": "他非常愿意帮助新来的同学。",
+              "pinyin": "Tā fēicháng yuànyì bāngzhù xīn lái de tóngxué.",
+              "english": "He is very willing to help newly arrived classmates."
+            },
+            {
+              "hanzi": "你愿意周末和我一块儿去看电影吗？",
+              "pinyin": "Nǐ yuànyì zhōumò hé wǒ yíkuàir qù kàn diànyǐng ma?",
+              "english": "Are you willing to go see a movie with me this weekend?"
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Express emotions, reassurance, and effort.",
+        "model": {
+          "hanzi": "小女孩因为丢了玩具，难过得哭了起来。",
+          "pinyin": "Xiǎo nǚhái yīnwèi diū le wánjù, nánguò de kū le qǐlái.",
+          "english": "Because she lost her toy, the little girl felt so sad she started crying."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say don’t get angry; let’s talk it over calmly.",
+            "model_answer": {
+              "hanzi": "别生气了，咱们好好说。",
+              "pinyin": "Bié shēngqì le, zánmen hǎohāo shuō.",
+              "english": "Don’t be angry anymore—let’s talk it over calmly."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say everyone likes this warm-hearted teacher.",
+            "model_answer": {
+              "hanzi": "大家都很喜爱这位热情的老师。",
+              "pinyin": "Dàjiā dōu hěn xǐ’ài zhè wèi rèqíng de lǎoshī.",
+              "english": "Everyone loves this warm-hearted teacher."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say she looks very much like her mother.",
+            "model_answer": {
+              "hanzi": "她长得真像她妈妈。",
+              "pinyin": "Tā zhǎng de zhēn xiàng tā māma.",
+              "english": "She really looks like her mother."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Warm Welcome on the First Day",
+        "paragraphs": [
+          {
+            "hanzi": "刚转学到新班级那天，小陈心里既紧张又有点儿害怕，担心自己交不到新朋友。",
+            "pinyin": "Gāng zhuǎnxué dào xīn bānjí nà tiān, Xiǎo Chén xīnlǐ jì jǐnzhāng yòu yǒudiǎnr hàipà, dānxīn zìjǐ jiāo bú dào xīn péngyou.",
+            "english": "On the day he transferred to a new class, Xiao Chen felt both nervous and a bit afraid inside, worried he wouldn’t make new friends."
+          },
+          {
+            "hanzi": "没想到班里的同学都非常热情，主动找他聊天儿，还愿意带他熟悉校园。他感到十分开心，再也不难过了。",
+            "pinyin": "Méi xiǎngdào bān lǐ de tóngxué dōu fēicháng rèqíng, zhǔdòng zhǎo tā liáotiānr, hái yuànyì dài tā shúxī xiàoyuán. Tā gǎndào shífēn kāixīn, zài yě bù nánguò le.",
+            "english": "Unexpectedly, the classmates were all very warm, took the initiative to chat with him, and were willing to show him around campus. He felt very happy and wasn’t sad anymore."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Why was Xiao Chen afraid on his first day?",
+            "answer_en": "He was worried he wouldn’t be able to make new friends."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "How did his classmates make him feel better?",
+            "answer_en": "They were warm, chatted with him, and showed him around campus."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Tell a friend not to worry using 放心 and 别着急.",
+          "model_answer": {
+            "hanzi": "别着急，时间还够，你一定能做完，放心吧！",
+            "pinyin": "Bié zháojí, shíjiān hái gòu, nǐ yídìng néng zuò wán, fàngxīn ba!",
+            "english": "Don’t worry—there’s still enough time, you’ll definitely finish, rest assured!"
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Say something you are interested in or satisfied with.",
+          "model_answer": {
+            "hanzi": "我对中国音乐很感兴趣，最近学唱了两首新歌，自己挺满意的。",
+            "pinyin": "Wǒ duì Zhōngguó yīnyuè hěn gǎn xìngqù, zuìjìn xué chàng le liǎng shǒu xīn gē, zìjǐ tǐng mǎnyì de.",
+            "english": "I’m very interested in Chinese music; recently I learned two new songs and I’m quite satisfied."
+          }
+        }
+      ],
+      "common_pitfall": "生气 is a separable verb (\"get angry\"): say 生谁的气 (\"get angry at someone\") or 对……生气, never *生气他.",
+      "pronunciation_focus": "着急 (zháojí) has two rising second tones; 满意 (mǎnyì) moves from low third tone to falling fourth tone.",
+      "review": {
+        "can_do": [
+          "Express happiness, sadness, anger, and worry.",
+          "Reassure others with 放心 and 别着急.",
+          "Use 对……满意 / 感兴趣 and 愿意."
+        ],
+        "entry_ids": [
+          626,
+          637,
+          639,
+          662,
+          691,
+          729,
+          740,
+          767,
+          779,
+          786,
+          790,
+          814,
+          829,
+          888,
+          896,
+          902,
+          957,
+          969
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-feelings-and-attitudes--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Being satisfied or interested with 对……满意 / 感兴趣",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Being willing to do something with 愿意",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say don’t get angry; let’s talk it over calmly.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say everyone likes this warm-hearted teacher.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say she looks very much like her mother.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Why was Xiao Chen afraid on his first day?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: How did his classmates make him feel better?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Tell a friend not to worry using 放心 and 别着急.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Say something you are interested in or satisfied with.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which word means \"anxious / worried\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to get angry\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-feelings-and-attitudes--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to be willing to\"?",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-feelings-and-attitudes--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-feelings-and-attitudes--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}

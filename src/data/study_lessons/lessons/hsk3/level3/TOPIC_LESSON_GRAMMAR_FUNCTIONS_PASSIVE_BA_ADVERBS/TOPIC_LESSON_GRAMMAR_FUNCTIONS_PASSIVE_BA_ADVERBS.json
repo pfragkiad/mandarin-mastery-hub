@@ -1,0 +1,1519 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-ba-bei-and-adverbs",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "把, 被, Perceptions & Adverbs",
+    "subtitle": "把, 被, parallel actions, perceptions, and key adverbs",
+    "description": "Master the 把 and 被 constructions, simultaneous actions (一边……一边), \"the more… the more…\", exceptions, and perception verbs.",
+    "slug": "ba-bei-and-adverbs"
+  },
+  "classification": {
+    "primary_topic_id": "grammar-functions",
+    "topic_ids": [
+      "grammar-functions"
+    ],
+    "tags": [
+      "ba-structure",
+      "passive",
+      "adverbs"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": null,
+    "subtopic_ids": []
+  },
+  "learning_objectives": [
+    "Use 把 (disposal) and 被 (passive) in everyday sentences.",
+    "Express parallel and increasing actions: 一边……一边, 越……越, 又, and 才.",
+    "Express exceptions, limits, and perceptions: 除了……以外, 只, 只能, 只是, 以为, 好像, 看来, and noun suffix 子."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "个": "Characters:个",
+    "为": "Characters:为",
+    "么": "Characters:么",
+    "乐": "Characters:乐",
+    "九": "Characters:九",
+    "习": "Characters:习",
+    "书": "Characters:书",
+    "买": "Characters:买",
+    "了": "Characters:了",
+    "五": "Characters:五",
+    "人": "Characters:人",
+    "今": "Characters:今",
+    "他": "Characters:他",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "休": "Characters:休",
+    "会": "Characters:会",
+    "伞": "Characters:伞",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "借": "Characters:借",
+    "像": "Characters:像",
+    "先": "Characters:先",
+    "六": "Characters:六",
+    "写": "Characters:写",
+    "冰": "Characters:冰",
+    "冷": "Characters:冷",
+    "刚": "Characters:刚",
+    "到": "Characters:到",
+    "前": "Characters:前",
+    "动": "Characters:动",
+    "十": "Characters:十",
+    "午": "Characters:午",
+    "半": "Characters:半",
+    "卖": "Characters:卖",
+    "原": "Characters:原",
+    "去": "Characters:去",
+    "又": "Characters:又",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "吃": "Characters:吃",
+    "后": "Characters:后",
+    "吧": "Characters:吧",
+    "听": "Characters:听",
+    "呢": "Characters:呢",
+    "周": "Characters:周",
+    "和": "Characters:和",
+    "咱": "Characters:咱",
+    "哈": "Characters:哈",
+    "哦": "Characters:哦",
+    "商": "Characters:商",
+    "啊": "Characters:啊",
+    "喜": "Characters:喜",
+    "喝": "Characters:喝",
+    "回": "Characters:回",
+    "因": "Characters:因",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "外": "Characters:外",
+    "多": "Characters:多",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "子": "Characters:子",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "它": "Characters:它",
+    "完": "Characters:完",
+    "客": "Characters:客",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "小": "Characters:小",
+    "就": "Characters:就",
+    "层": "Characters:层",
+    "屋": "Characters:屋",
+    "工": "Characters:工",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "干": "Characters:干",
+    "店": "Characters:店",
+    "弟": "Characters:弟",
+    "得": "Characters:得",
+    "心": "Characters:心",
+    "怎": "Characters:怎",
+    "思": "Characters:思",
+    "息": "Characters:息",
+    "情": "Characters:情",
+    "意": "Characters:意",
+    "我": "Characters:我",
+    "所": "Characters:所",
+    "手": "Characters:手",
+    "才": "Characters:才",
+    "打": "Characters:打",
+    "扫": "Characters:扫",
+    "把": "Characters:把",
+    "拿": "Characters:拿",
+    "换": "Characters:换",
+    "掉": "Characters:掉",
+    "搬": "Characters:搬",
+    "放": "Characters:放",
+    "教": "Characters:教",
+    "数": "Characters:数",
+    "时": "Characters:时",
+    "星": "Characters:星",
+    "昨": "Characters:昨",
+    "是": "Characters:是",
+    "晚": "Characters:晚",
+    "有": "Characters:有",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "李": "Characters:李",
+    "来": "Characters:来",
+    "杯": "Characters:杯",
+    "果": "Characters:果",
+    "桌": "Characters:桌",
+    "欢": "Characters:欢",
+    "每": "Characters:每",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "湿": "Characters:湿",
+    "点": "Characters:点",
+    "热": "Characters:热",
+    "猫": "Characters:猫",
+    "玩": "Characters:玩",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "瓜": "Characters:瓜",
+    "生": "Characters:生",
+    "电": "Characters:电",
+    "病": "Characters:病",
+    "的": "Characters:的",
+    "盘": "Characters:盘",
+    "直": "Characters:直",
+    "看": "Characters:看",
+    "睡": "Characters:睡",
+    "碎": "Characters:碎",
+    "碰": "Characters:碰",
+    "箱": "Characters:箱",
+    "糕": "Characters:糕",
+    "紧": "Characters:紧",
+    "给": "Characters:给",
+    "老": "Characters:老",
+    "聊": "Characters:聊",
+    "能": "Characters:能",
+    "色": "Characters:色",
+    "苹": "Characters:苹",
+    "茶": "Characters:茶",
+    "蛋": "Characters:蛋",
+    "衣": "Characters:衣",
+    "被": "Characters:被",
+    "裤": "Characters:裤",
+    "西": "Characters:西",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "觉": "Characters:觉",
+    "认": "Characters:认",
+    "记": "Characters:记",
+    "话": "Characters:话",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谁": "Characters:谁",
+    "贵": "Characters:贵",
+    "走": "Characters:走",
+    "赶": "Characters:赶",
+    "起": "Characters:起",
+    "越": "Characters:越",
+    "路": "Characters:路",
+    "车": "Characters:车",
+    "边": "Characters:边",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "迟": "Characters:迟",
+    "那": "Characters:那",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "铁": "Characters:铁",
+    "错": "Characters:错",
+    "问": "Characters:问",
+    "除": "Characters:除",
+    "雨": "Characters:雨",
+    "音": "Characters:音",
+    "馆": "Characters:馆"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Signature HSK 3 grammar structures (把, 被, 越……越, 除了……以外) and perception verbs.",
+      "focus": "Use 把 when emphasizing what happens to a specific object, and 被 when the subject receives the action."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0506",
+          "hanzi": "把",
+          "pinyin": "bǎ",
+          "meaning_en": "classifier for handled objects; disposal marker",
+          "primary_pos_id": "classifier",
+          "pos_ids": [
+            "classifier",
+            "preposition"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0506-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "给我一把伞吧。",
+              "pinyin": "gěi wǒ yì bǎ sǎn ba.",
+              "english": "Give me an umbrella, please.",
+              "teaching_note": "把 as a classifier (a handled object) and 把 in disposal constructions are different functions."
+            },
+            {
+              "id": "ex-0506-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请把书放在桌子上。",
+              "pinyin": "qǐng bǎ shū fàng zài zhuōzi shàng.",
+              "english": "Please put the book on the table.",
+              "teaching_note": "把 as a classifier (a handled object) and 把 in disposal constructions are different functions."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 506
+            }
+          ]
+        },
+        {
+          "id": "w-0519",
+          "hanzi": "被",
+          "pinyin": "bèi",
+          "meaning_en": "passive marker",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0519-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的手机被他拿走了。",
+              "pinyin": "wǒ de shǒujī bèi tā ná zǒu le.",
+              "english": "He took my phone away.",
+              "teaching_note": "被 introduces the affected participant in a passive construction."
+            },
+            {
+              "id": "ex-0519-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "教室里的桌子被学生们搬走了。",
+              "pinyin": "jiàoshì lǐ de zhuōzi bèi xuéshēngmen bān zǒu le.",
+              "english": "The classroom desks were moved away by the students.",
+              "teaching_note": "被 introduces the affected participant in a passive construction."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 519
+            }
+          ]
+        },
+        {
+          "id": "w-0544",
+          "hanzi": "才",
+          "pinyin": "cái",
+          "meaning_en": "only then; not until",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0544-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你怎么才来？",
+              "pinyin": "nǐ zěnme cái lái?",
+              "english": "Why are you only arriving now?",
+              "teaching_note": "才 marks a late occurrence or only then; not the same as just now."
+            },
+            {
+              "id": "ex-0544-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他晚上十点才回家。",
+              "pinyin": "tā wǎnshang shí diǎn cái huí jiā.",
+              "english": "He didn't get home until ten at night.",
+              "teaching_note": "才 marks a late occurrence or only then; not the same as just now."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 544
+            }
+          ]
+        },
+        {
+          "id": "w-0566",
+          "hanzi": "除了",
+          "pinyin": "chúle",
+          "meaning_en": "besides; except",
+          "primary_pos_id": "preposition",
+          "pos_ids": [
+            "preposition"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0566-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "除了你，还有谁？",
+              "pinyin": "chúle nǐ, hái yǒu shéi?",
+              "english": "Besides you, who else is there?",
+              "teaching_note": "Short everyday spoken use of 除了."
+            },
+            {
+              "id": "ex-0566-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "除了汉语，我还学数学。",
+              "pinyin": "chúle Hànyǔ, wǒ hái xué shùxué.",
+              "english": "Besides Chinese, I also study mathematics.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 566
+            }
+          ]
+        },
+        {
+          "id": "w-0665",
+          "hanzi": "好像",
+          "pinyin": "hǎoxiàng",
+          "meaning_en": "seem; look as if",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0665-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "他好像生病了。",
+              "pinyin": "tā hǎoxiàng shēngbìng le.",
+              "english": "He seems to be ill.",
+              "teaching_note": "Short everyday spoken use of 好像."
+            },
+            {
+              "id": "ex-0665-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "今天好像要下雨。",
+              "pinyin": "jīntiān hǎoxiàng yào xià yǔ.",
+              "english": "It looks like it's going to rain today.",
+              "teaching_note": "Simple descriptive or narrative use of 好像."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 665
+            }
+          ]
+        },
+        {
+          "id": "w-0730",
+          "hanzi": "看来",
+          "pinyin": "kànlái",
+          "meaning_en": "it seems; apparently",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0730-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "看来要下雨了。",
+              "pinyin": "kànlái yào xià yǔ le.",
+              "english": "Looks like it's going to rain.",
+              "teaching_note": "Short everyday spoken use of 看来."
+            },
+            {
+              "id": "ex-0730-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "看来他今天不会来了。",
+              "pinyin": "kànlái tā jīntiān bù huì lái le.",
+              "english": "It seems he won't come today.",
+              "teaching_note": "Simple descriptive or narrative use of 看来."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 730
+            }
+          ]
+        },
+        {
+          "id": "w-0923",
+          "hanzi": "一边",
+          "pinyin": "yìbiān",
+          "meaning_en": "while; at the same time; on one side",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0923-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我一边听一边写。",
+              "pinyin": "wǒ yìbiān tīng yìbiān xiě.",
+              "english": "I listen and write at the same time.",
+              "teaching_note": "Short everyday spoken use of 一边."
+            },
+            {
+              "id": "ex-0923-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她一边走路一边打电话。",
+              "pinyin": "tā yìbiān zǒulù yìbiān dǎ diànhuà.",
+              "english": "She talks on the phone while walking.",
+              "teaching_note": "Simple descriptive or narrative use of 一边."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 923
+            }
+          ]
+        },
+        {
+          "id": "w-0932",
+          "hanzi": "以外",
+          "pinyin": "yǐwài",
+          "meaning_en": "besides; except for",
+          "primary_pos_id": "noun",
+          "pos_ids": [
+            "noun"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0932-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "除了他以外，还有谁？",
+              "pinyin": "chúle tā yǐwài, hái yǒu shéi?",
+              "english": "Besides him, who else?",
+              "teaching_note": "Short everyday spoken use of 以外."
+            },
+            {
+              "id": "ex-0932-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "除了周末以外，他每天上班。",
+              "pinyin": "chúle zhōumò yǐwài, tā měi tiān shàngbān.",
+              "english": "He works every day except weekends.",
+              "teaching_note": "Simple descriptive or narrative use of 以外."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 932
+            }
+          ]
+        },
+        {
+          "id": "w-0933",
+          "hanzi": "以为",
+          "pinyin": "yǐwéi",
+          "meaning_en": "mistakenly think; suppose",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0933-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我以为你走了！",
+              "pinyin": "wǒ yǐwéi nǐ zǒu le!",
+              "english": "I thought you'd left!",
+              "teaching_note": "Short everyday spoken use of 以为."
+            },
+            {
+              "id": "ex-0933-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他以为今天没有课，所以还在家睡觉。",
+              "pinyin": "tā yǐwéi jīntiān méiyǒu kè, suǒyǐ hái zài jiā shuìjiào.",
+              "english": "He thought there was no class today, so he was still asleep at home.",
+              "teaching_note": "Simple descriptive or narrative use of 以为."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 933
+            }
+          ]
+        },
+        {
+          "id": "w-0949",
+          "hanzi": "又",
+          "pinyin": "yòu",
+          "meaning_en": "again; once more",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0949-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你又迟到了！",
+              "pinyin": "nǐ yòu chídào le!",
+              "english": "You're late again!",
+              "teaching_note": "Short everyday spoken use of 又."
+            },
+            {
+              "id": "ex-0949-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他昨天来了，今天又来了。",
+              "pinyin": "tā zuótiān lái le, jīntiān yòu lái le.",
+              "english": "He came yesterday and came again today.",
+              "teaching_note": "Simple descriptive or narrative use of 又."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 949
+            }
+          ]
+        },
+        {
+          "id": "w-0959",
+          "hanzi": "越",
+          "pinyin": "yuè",
+          "meaning_en": "the more... the more...",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0959-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "天气越来越冷了。",
+              "pinyin": "tiānqì yuè lái yuè lěng le.",
+              "english": "It's getting colder and colder!",
+              "teaching_note": "Short everyday spoken use of 越."
+            },
+            {
+              "id": "ex-0959-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他学汉语越学越有意思。",
+              "pinyin": "tā xué Hànyǔ yuè xué yuè yǒu yìsi.",
+              "english": "He finds Chinese more interesting the more he studies it.",
+              "teaching_note": "Simple descriptive or narrative use of 越."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 959
+            }
+          ]
+        },
+        {
+          "id": "w-0975",
+          "hanzi": "只",
+          "pinyin": "zhǐ",
+          "meaning_en": "only; merely",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0975-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我只喝茶。",
+              "pinyin": "wǒ zhǐ hē chá.",
+              "english": "I only drink tea.",
+              "teaching_note": "只 (zhǐ) means only; Level 1 只 (zhī) is a classifier for animals."
+            },
+            {
+              "id": "ex-0975-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这家商店今天只卖水果。",
+              "pinyin": "zhè jiā shāngdiàn jīntiān zhǐ mài shuǐguǒ.",
+              "english": "This shop is selling only fruit today.",
+              "teaching_note": "只 (zhǐ) means only; Level 1 只 (zhī) is a classifier for animals."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 975
+            }
+          ]
+        },
+        {
+          "id": "w-0976",
+          "hanzi": "只能",
+          "pinyin": "zhǐ néng",
+          "meaning_en": "can only; have no choice but",
+          "primary_pos_id": "fixed-expression",
+          "pos_ids": [
+            "fixed-expression"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0976-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我只能走路了。",
+              "pinyin": "wǒ zhǐ néng zǒulù le.",
+              "english": "I can only walk now.",
+              "teaching_note": "Short everyday spoken use of 只能."
+            },
+            {
+              "id": "ex-0976-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "没有车的时候，我们只能坐地铁。",
+              "pinyin": "méiyǒu chē de shíhou, wǒmen zhǐ néng zuò dìtiě.",
+              "english": "When we have no car, we can only take the subway.",
+              "teaching_note": "Simple descriptive or narrative use of 只能."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 976
+            }
+          ]
+        },
+        {
+          "id": "w-0977",
+          "hanzi": "只是",
+          "pinyin": "zhǐshì",
+          "meaning_en": "only; merely; but",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb",
+            "conjunction"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0977-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我只是问问。",
+              "pinyin": "wǒ zhǐshì wèn wèn.",
+              "english": "I'm just asking.",
+              "teaching_note": "Short everyday spoken use of 只是."
+            },
+            {
+              "id": "ex-0977-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他只是个学生，还没有工作。",
+              "pinyin": "tā zhǐshì ge xuéshēng, hái méiyǒu gōngzuò.",
+              "english": "He is just a student and doesn't have a job yet.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 977
+            }
+          ]
+        },
+        {
+          "id": "w-0990",
+          "hanzi": "子",
+          "pinyin": "zi",
+          "meaning_en": "suffix forming nouns",
+          "primary_pos_id": "suffix",
+          "pos_ids": [
+            "suffix"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0990-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "这个杯子好看！",
+              "pinyin": "zhège bēizi hǎokàn!",
+              "english": "This cup looks nice!",
+              "teaching_note": "子 is commonly a neutral-tone noun suffix, not an independent content word."
+            },
+            {
+              "id": "ex-0990-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "孩子们在屋子里玩。",
+              "pinyin": "háizimen zài wūzi lǐ wán.",
+              "english": "The children are playing in the room.",
+              "teaching_note": "子 is commonly a neutral-tone noun suffix, not an independent content word."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 990
+            }
+          ]
+        },
+        {
+          "id": "w-0041",
+          "hanzi": "都",
+          "pinyin": "dōu",
+          "meaning_en": "all; both",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0041-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我们都是学生。",
+              "pinyin": "wǒmen dōu shì xuéshēng.",
+              "english": "We are all students.",
+              "teaching_note": "都 applies to everyone in the subject group; omit it and the “all” nuance disappears."
+            },
+            {
+              "id": "ex-0041-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们都在教室里。",
+              "pinyin": "xuéshēngmen dōu zài jiàoshì lǐ.",
+              "english": "All the students are in the classroom.",
+              "teaching_note": "School or study context showing 都 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 41
+            }
+          ]
+        },
+        {
+          "id": "w-0078",
+          "hanzi": "和",
+          "pinyin": "hé",
+          "meaning_en": "and; with",
+          "primary_pos_id": "conjunction",
+          "pos_ids": [
+            "conjunction",
+            "preposition"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0078-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "我和你一起去。",
+              "pinyin": "wǒ hé nǐ yìqǐ qù.",
+              "english": "I will go with you.",
+              "teaching_note": "和 joins two people; 一起 clarifies that they go together."
+            },
+            {
+              "id": "ex-0078-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "我们和老师一起学习。",
+              "pinyin": "wǒmen hé lǎoshī yìqǐ xuéxí.",
+              "english": "We study together with the teacher.",
+              "teaching_note": "School or study context showing 和 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 78
+            }
+          ]
+        },
+        {
+          "id": "w-0206",
+          "hanzi": "太",
+          "pinyin": "tài",
+          "meaning_en": "too; very",
+          "primary_pos_id": "adverb",
+          "pos_ids": [
+            "adverb"
+          ],
+          "primary_topic_id": "grammar-functions",
+          "topic_ids": [
+            "grammar-functions",
+            "qualities-feelings"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0206-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "这本书太贵了。",
+              "pinyin": "zhè běn shū tài guì le.",
+              "english": "This book is too expensive.",
+              "teaching_note": "太…了 indicates an excessive degree, not simply a high price."
+            },
+            {
+              "id": "ex-0206-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "今天天气太热了。",
+              "pinyin": "jīntiān tiānqì tài rè le.",
+              "english": "The weather is too hot today.",
+              "teaching_note": "Revised to exemplify the headword naturally using vocabulary from HSK 3.0 Levels 1–2."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 206
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 把 (bǎ)",
+        "explanation": "把 (bǎ) means “classifier for handled objects; disposal marker” (classifier).",
+        "example_id": "ex-0506-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 被 (bèi)",
+        "explanation": "被 (bèi) means “passive marker” (preposition).",
+        "example_id": "ex-0519-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0506-1",
+      "ex-0519-1",
+      "ex-0544-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What did Xiao Li mistakenly think before walking home?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He thought he could make it home before the rain started.",
+          "explanation": "The passage says 小李原本以为能赶在雨前到家."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences: one using 把 or 被, and one using 越……越 or 一边……一边.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我把作业写完以后，一边听音乐一边休息，觉得心情越来越好了。",
+          "explanation": "Use 把/被 and 越……越 or 一边……一边."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to mistakenly think / suppose\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "以为",
+              "pinyin": "yǐwéi",
+              "meaning_en": "mistakenly think"
+            },
+            {
+              "id": "b",
+              "hanzi": "看来",
+              "pinyin": "kànlái",
+              "meaning_en": "it seems"
+            },
+            {
+              "id": "c",
+              "hanzi": "好像",
+              "pinyin": "hǎoxiàng",
+              "meaning_en": "seem"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "以为 implies a belief that turned out to be wrong."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which marker introduces the doer in a passive sentence?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "meaning_en": "disposal marker"
+            },
+            {
+              "id": "b",
+              "hanzi": "被",
+              "pinyin": "bèi",
+              "meaning_en": "passive marker"
+            },
+            {
+              "id": "c",
+              "hanzi": "才",
+              "pinyin": "cái",
+              "meaning_en": "only then"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "被 marks the passive agent."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "Which phrase means \"can only / have no choice but\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "只是",
+              "pinyin": "zhǐshì",
+              "meaning_en": "merely"
+            },
+            {
+              "id": "b",
+              "hanzi": "只能",
+              "pinyin": "zhǐ néng",
+              "meaning_en": "can only"
+            },
+            {
+              "id": "c",
+              "hanzi": "除了",
+              "pinyin": "chúle",
+              "meaning_en": "besides"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "只能 means can only / have no choice but."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Where Did the Cake Go?",
+        "context_en": "Two roommates talk about a missing cake and a busy afternoon.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "我放在冰箱里的蛋糕怎么不见了？是不是被你吃了？",
+            "pinyin": "Wǒ fàng zài bīngxiāng lǐ de dàngāo zěnme bújiàn le? Shì bu shì bèi nǐ chī le?",
+            "english": "How did the cake I put in the fridge disappear? Was it eaten by you?"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "没有啊，我以为那是你买给客人的，刚才一直没动。",
+            "pinyin": "Méiyǒu a, wǒ yǐwéi nà shì nǐ mǎi gěi kèrén de, gāngcái yìzhí méi dòng.",
+            "english": "No! I mistakenly thought you bought it for guests, so I didn’t touch it."
+          },
+          {
+            "speaker": "A",
+            "hanzi": "哦，看来是我记错了，我好像把它放到下一层了！",
+            "pinyin": "Ò, kànlái shì wǒ jì cuò le, wǒ hǎoxiàng bǎ tā fàng dào xià yì céng le!",
+            "english": "Oh, it seems I remembered wrong—looks like I put it on the lower shelf!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "哈哈，除了那个蛋糕以外，冰箱里还有西瓜，咱们一边吃一边聊吧！",
+            "pinyin": "Hāhā, chúle nàge dàngāo yǐwài, bīngxiāng lǐ hái yǒu xīguā, zánmen yìbiān chī yìbiān liáo ba!",
+            "english": "Haha, besides that cake, there’s watermelon in the fridge too—let’s eat while chatting!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "把 (disposal) vs. 被 (passive)",
+          "explanation_en": "把 moves a specific object before the verb to show how it is handled; 被 marks the doer in a passive sentence.",
+          "pattern_hanzi": "<Agent> + 把 + <Object> + <Verb + Result>  /  <Object> + 被 + (<Agent>) + <Verb + Result>",
+          "pattern_pinyin": "<Agent> + bǎ + <Object> + <Verb + Result>  /  <Object> + bèi + (<Agent>) + <Verb + Result>",
+          "pattern_pseudo_translation": "<Agent> + take + <Object> + <Verb + Result>  /  <Object> + by + (<Agent>) + <Verb + Result>",
+          "examples": [
+            {
+              "hanzi": "弟弟把杯子打碎了。",
+              "pinyin": "Dìdi bǎ bēizi dǎsuì le.",
+              "english": "My younger brother broke the cup."
+            },
+            {
+              "hanzi": "桌上的苹果被小猫碰掉在地上了。",
+              "pinyin": "Zhuō shàng de píngguǒ bèi xiǎo māo pèng diào zài dì shàng le.",
+              "english": "The apple on the table was knocked onto the floor by the kitten."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "\"The more… the more…\" with 越……越……",
+          "explanation_en": "Use 越 + verb/adj + 越 + verb/adj to show two qualities or actions increasing together.",
+          "pattern_hanzi": "<Subject> + 越 + <Verb / Adj A> + 越 + <Verb / Adj B>",
+          "pattern_pinyin": "<Subject> + yuè + <Verb / Adj A> + yuè + <Verb / Adj B>",
+          "pattern_pseudo_translation": "<Subject> + more + <A> + more + <B>",
+          "examples": [
+            {
+              "hanzi": "雨越下越大，我们只能先回家了。",
+              "pinyin": "Yǔ yuè xià yuè dà, wǒmen zhǐ néng xiān huí jiā le.",
+              "english": "The rain is falling heavier and heavier, so we can only go home first."
+            },
+            {
+              "hanzi": "汉语越学越有意思。",
+              "pinyin": "Hànyǔ yuè xué yuè yǒu yìsi.",
+              "english": "Chinese gets more and more interesting the more you study it."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Practice 除了……以外, 以为, 才, and 又.",
+        "model": {
+          "hanzi": "除了星期天以外，我每天都要上班。",
+          "pinyin": "Chúle xīngqītiān yǐwài, wǒ měitiān dōu yào shàngbān.",
+          "english": "Except for Sunday, I have to go to work every day."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you mistakenly thought today was Saturday.",
+            "model_answer": {
+              "hanzi": "我还以为今天是星期六呢！",
+              "pinyin": "Wǒ hái yǐwéi jīntiān shì xīngqīliù ne!",
+              "english": "I mistakenly thought today was Saturday!"
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say it’s already nine o’clock, why did he only arrive now?",
+            "model_answer": {
+              "hanzi": "都九点了，他怎么现在才来？",
+              "pinyin": "Dōu jiǔ diǎn le, tā zěnme xiànzài cái lái?",
+              "english": "It’s already nine—why did he only arrive now?"
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say yesterday rained and today it is raining again.",
+            "model_answer": {
+              "hanzi": "昨天下雨了，今天又下雨了。",
+              "pinyin": "Zuótiān xià yǔ le, jīntiān yòu xià yǔ le.",
+              "english": "It rained yesterday, and today it’s raining again."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "A Rainy Evening at Home",
+        "paragraphs": [
+          {
+            "hanzi": "下午五点多，天色看起来好像要下大雨。小李原本以为能赶在雨前到家，可是走到半路雨就越下越大。",
+            "pinyin": "Xiàwǔ wǔ diǎn duō, tiānsè kàn qǐlái hǎoxiàng yào xià dà yǔ. Xiǎo Lǐ yuánběn yǐwéi néng gǎn zài yǔ qián dào jiā, kěshì zǒu dào bànlù yǔ jiù yuè xià yuè dà.",
+            "english": "Past 5 p.m., the sky looked as if a heavy rain was coming. Xiao Li originally thought he could make it home before the rain, but halfway there the rain got heavier and heavier."
+          },
+          {
+            "hanzi": "因为他只带了一把小伞，裤子还是被雨水打湿了。回到屋子以后，他赶紧换了干衣服，一边喝热茶一边看书。",
+            "pinyin": "Yīnwèi tā zhǐ dài le yì bǎ xiǎo sǎn, kùzi háishi bèi yǔshuǐ dǎshī le. Huí dào wūzi yǐhòu, tā gǎnjǐn huàn le gān yīfu, yìbiān hē rè chá yìbiān kànshū.",
+            "english": "Because he only brought a small umbrella, his pants still got soaked by the rain. After returning to his room, he quickly changed into dry clothes and read while drinking hot tea."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "Why did Xiao Li’s pants still get wet?",
+            "answer_en": "Because he only brought a small umbrella and the rain got heavier and heavier."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What did he do after changing into dry clothes?",
+            "answer_en": "He read while drinking hot tea."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Describe two things you do at the same time using 一边……一边.",
+          "model_answer": {
+            "hanzi": "周末我喜欢一边听音乐一边打扫屋子。",
+            "pinyin": "Zhōumò wǒ xǐhuan yìbiān tīng yīnyuè yìbiān dǎsǎo wūzi.",
+            "english": "On weekends I like listening to music while cleaning my room."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Use 把 or 被 to describe something that happened today.",
+          "model_answer": {
+            "hanzi": "我把借来的书还给图书馆了。",
+            "pinyin": "Wǒ bǎ jiè lái de shū huán gěi túshūguǎn le.",
+            "english": "I returned the borrowed book to the library."
+          }
+        }
+      ],
+      "common_pitfall": "以为 (yǐwéi) almost always implies a mistaken belief (\"I thought X, but actually Y\"). For a neutral opinion, use 觉得 or 认为.",
+      "pronunciation_focus": "The noun suffix 子 (zi) is always neutral tone (桌子, 杯子, 盘子); 又 (yòu) is a sharp fourth tone for past/completed repetition.",
+      "review": {
+        "can_do": [
+          "Use 把 and 被 in everyday sentences.",
+          "Use 越……越, 一边……一边, 又, and 才.",
+          "Express exceptions and mistaken beliefs with 除了……以外 and 以为."
+        ],
+        "entry_ids": [
+          506,
+          519,
+          544,
+          566,
+          665,
+          730,
+          923,
+          932,
+          933,
+          949,
+          959,
+          975,
+          976,
+          977,
+          990
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-ba-bei-and-adverbs--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: 把 (disposal) vs. 被 (passive)",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: \"The more… the more…\" with 越……越……",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you mistakenly thought today was Saturday.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say it’s already nine o’clock, why did he only arrive now?",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say yesterday rained and today it is raining again.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: Why did Xiao Li’s pants still get wet?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What did he do after changing into dry clothes?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Describe two things you do at the same time using 一边……一边.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Use 把 or 被 to describe something that happened today.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to mistakenly think / suppose\"",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which marker introduces the doer in a passive se",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-ba-bei-and-adverbs--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: Which phrase means \"can only / have no choice bu",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-ba-bei-and-adverbs--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-ba-bei-and-adverbs--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 25
+}

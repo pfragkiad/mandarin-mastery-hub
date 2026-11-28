@@ -1,0 +1,3726 @@
+{
+  "version": 1,
+  "source": {
+    "name": "audio-cmn / Shtooka (cmn-caen-tan) / Yue Tan",
+    "license": "CC BY-SA 3.0 US",
+    "repository": "https://github.com/hugolpz/audio-cmn",
+    "commit": "f759a0f18f27690742957619e1248ed91e9b3f2c",
+    "quality": "64k/hsk",
+    "metadataUrl": "https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/mp3/index.xml",
+    "metadataSha256": "59052c11fcdfd0f0f21fcaf9618371f269f4a0228eaed920c3923e827f8d81a6",
+    "noticeUrl": "https://fsi-languages.yojik.eu/audiocollections/detailled/cmn-caen-tan/readme.txt",
+    "noticeSha256": "11584998323723287f6922af24006a794efcb02d0fc1ded75e9c6589e18ff95b"
+  },
+  "handoffSha256": "e9aded46f97e1d7872a470c89011c9d7b20b10ba37339274650f71790dc57252",
+  "entries": [
+    {
+      "entryId": "086f1411-69df-4023-b750-b7328a2c5b2c",
+      "hskIndex": 301,
+      "headword": "啊",
+      "reading": "a",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "ā",
+          "file": "cmn-5133df38.mp3"
+        }
+      ],
+      "previousHskIndex": 301
+    },
+    {
+      "entryId": "bf08ff2e-0db0-44d8-85ae-583e65eead59",
+      "hskIndex": 302,
+      "headword": "爱好",
+      "reading": "àihào",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "àihào",
+          "file": "cmn-5752cde3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-爱好.mp3",
+        "gitBlob": "747e0f11636b9b5fa5469f06f2dae8ab6c2e84c3",
+        "bytes": 10656,
+        "sha256": "9caa607f80ad27da58a8586b6ed5eff3f3a592c1d7e8d8ac34197265614d08e4"
+      },
+      "previousHskIndex": 302
+    },
+    {
+      "entryId": "9bfe99f6-adb3-4bee-bed7-c06a02654c34",
+      "hskIndex": 303,
+      "headword": "白色",
+      "reading": "báisè",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 303
+    },
+    {
+      "entryId": "8fa36638-cdc8-48ca-900d-06149aa81774",
+      "hskIndex": 304,
+      "headword": "班",
+      "reading": "bān",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bān",
+          "file": "cmn-479044e6.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-班.mp3",
+        "gitBlob": "2ade6b376f2ec808e443d2f5dd9cbbde72ce0d76",
+        "bytes": 8776,
+        "sha256": "e707dcbc4405a9da6be4165a81b8ccb02da7c50c1ca308aa359682d1195c8254"
+      },
+      "previousHskIndex": 304
+    },
+    {
+      "entryId": "0ff0231a-38bc-410a-a678-6e3be9c6f9ce",
+      "hskIndex": 305,
+      "headword": "帮",
+      "reading": "bāng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bāng",
+          "file": "cmn-4d1a6106.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-帮.mp3",
+        "gitBlob": "39c9f6270589b0b594c6c370d28974415f8989c3",
+        "bytes": 8358,
+        "sha256": "85634ca36ecd195291cac64f25c242d1620ba6ea98e48b616859a0cca4e9a295"
+      },
+      "previousHskIndex": 305
+    },
+    {
+      "entryId": "938a065d-1fdb-4f0d-8b8d-988eaf22b1f5",
+      "hskIndex": 306,
+      "headword": "帮忙",
+      "reading": "bāngmáng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bāngmáng",
+          "file": "cmn-3fef8dad.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-帮忙.mp3",
+        "gitBlob": "84977daba77392784cc61b5dbc3054c51ff989fb",
+        "bytes": 11074,
+        "sha256": "09370be91a679b6c824c365827395f4c7148ded89b669374e80ecea38e656f7a"
+      },
+      "previousHskIndex": 306
+    },
+    {
+      "entryId": "3e003098-781c-41d9-963a-19373000d835",
+      "hskIndex": 307,
+      "headword": "包",
+      "reading": "bāo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bāo",
+          "file": "cmn-5a8c6bb1.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-包.mp3",
+        "gitBlob": "44ba5c294f20f54746695709d3dab1b2bf6e1eec",
+        "bytes": 8776,
+        "sha256": "bc6ed654e9cfc20f5931c28ab9d4566ac1e907b8106dca414da4b479897f439f"
+      },
+      "previousHskIndex": 307
+    },
+    {
+      "entryId": "2d8f4a22-8ccd-41fd-931c-53b4c94d36fb",
+      "hskIndex": 308,
+      "headword": "本子",
+      "reading": "běnzi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "běnzi",
+          "file": "cmn-261b763b.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-本子.mp3",
+        "gitBlob": "da321e6c73542c8c392384ef51df324889f05a6d",
+        "bytes": 9612,
+        "sha256": "9dc531c781a23f01e87487e06a53ada1ce114e31a067775d55ab4be07a97816f"
+      },
+      "previousHskIndex": 308
+    },
+    {
+      "entryId": "2f964a2d-35f2-4d0c-bbab-6cd32664170e",
+      "hskIndex": 309,
+      "headword": "比",
+      "reading": "bǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bǐ",
+          "file": "cmn-8cd3827b.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-比.mp3",
+        "gitBlob": "857dd439d1bdaeb904b74aa87c9d649b478ae140",
+        "bytes": 9612,
+        "sha256": "1243eb3631f649b9cf83f55cb001e1c0ef420969ce9c3bfc610d16fb37045a74"
+      },
+      "previousHskIndex": 309
+    },
+    {
+      "entryId": "1270704a-b13e-48b5-a688-debfd8b1dab6",
+      "hskIndex": 310,
+      "headword": "笔",
+      "reading": "bǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bǐ",
+          "file": "cmn-a63cbb8f.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-笔.mp3",
+        "gitBlob": "e2fbf4b24d0fd592383dc06a7bd57550dcc6ea50",
+        "bytes": 9612,
+        "sha256": "193b31dc01b2e3dffec8f8d4d3efbf4f28bbfbd5004933a8d7ab10325825df28"
+      },
+      "previousHskIndex": 310
+    },
+    {
+      "entryId": "7564d76e-d80d-473a-9fd5-5f106e206844",
+      "hskIndex": 311,
+      "headword": "别",
+      "reading": "bié",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bié",
+          "file": "cmn-e236a37a.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-别.mp3",
+        "gitBlob": "4a1f643caba082cd716d7a748ade0628d41a859d",
+        "bytes": 8358,
+        "sha256": "947ad08ece6f4c29c84bb9a859debdff56301e6452d81557337a68311d28ffc7"
+      },
+      "previousHskIndex": 311
+    },
+    {
+      "entryId": "b3d15a3f-3b5d-43b5-8258-8d511c334a88",
+      "hskIndex": 312,
+      "headword": "不错",
+      "reading": "búcuò",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "búcuò",
+          "file": "cmn-395e5ad5.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-不错.mp3",
+        "gitBlob": "9d630597c5dd0f0ee54c9b2c3a8075e9a7187b62",
+        "bytes": 10239,
+        "sha256": "2d6bdaef0a0720ded79d0af40f9a8b887d9a94dacbfb081c729461957afed9cf"
+      },
+      "previousHskIndex": 312
+    },
+    {
+      "entryId": "610e25ca-a953-4ecc-8680-36cbc80ec73d",
+      "hskIndex": 313,
+      "headword": "不好意思",
+      "reading": "bù hǎoyìsi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "bùhǎoyìsi",
+          "file": "cmn-3c4873a3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-不好意思.mp3",
+        "gitBlob": "73644d82e6280662d919c7a5752e375c02391943",
+        "bytes": 13164,
+        "sha256": "aa8f91c5c9fd703bde19778c56f07aaac977a3c723a908e8fc216a7bf6ee7d81"
+      },
+      "previousHskIndex": 313
+    },
+    {
+      "entryId": "717719d3-3eb7-40ca-9754-f9094b28ae00",
+      "hskIndex": 314,
+      "headword": "长",
+      "reading": "cháng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "zhǎng",
+          "file": "cmn-0e9ae27f.mp3"
+        }
+      ],
+      "previousHskIndex": 314
+    },
+    {
+      "entryId": "99a4be88-f2db-464c-bcb4-97740191d281",
+      "hskIndex": 315,
+      "headword": "车站",
+      "reading": "chēzhàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "chēzhàn",
+          "file": "cmn-a30f3ad7.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-车站.mp3",
+        "gitBlob": "a69bc3a7fd2ed60b8f7c2d4e8857b393237e8b68",
+        "bytes": 11492,
+        "sha256": "7b28021451d208f4693cc5b1e6852e1225a9f704dcf6786029c39dd9d6eae514"
+      },
+      "previousHskIndex": 315
+    },
+    {
+      "entryId": "78aa91dc-b580-4f73-b203-9c0b4d182546",
+      "hskIndex": 316,
+      "headword": "出",
+      "reading": "chū",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "chū",
+          "file": "cmn-0f1e9f47.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-出.mp3",
+        "gitBlob": "c99674c9b4dd225cc3417ef851893d3f53077ba8",
+        "bytes": 8776,
+        "sha256": "f7e6efd271187b610ff68fcb76e0ca9a1ae0eaaee8fd5ece914f44ac489cb81f"
+      },
+      "previousHskIndex": 316
+    },
+    {
+      "entryId": "4584e5fc-0bfe-4abc-bbea-71e592571ca7",
+      "hskIndex": 317,
+      "headword": "出国",
+      "reading": "chūguó",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 317
+    },
+    {
+      "entryId": "73525a26-b51d-4a7d-be88-b9fc37433b6a",
+      "hskIndex": 318,
+      "headword": "出来",
+      "reading": "chūlái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "chūlái",
+          "file": "cmn-497ee6cc.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-出来.mp3",
+        "gitBlob": "d8346741a65479f38ebdcdc8db5d3d874f6e0d1e",
+        "bytes": 11074,
+        "sha256": "dcf9bf75ad99f501f909cefb5a606ece777b6c0bfd992e75c295c5b939d96a6d"
+      },
+      "previousHskIndex": 318
+    },
+    {
+      "entryId": "4572a619-a28b-4e56-9c4a-23ad17b15879",
+      "hskIndex": 319,
+      "headword": "出门",
+      "reading": "chūmén",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "chūmén",
+          "file": "cmn-c67c35c6.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-出门.mp3",
+        "gitBlob": "413390ffa7dd029eb949fa77e2a96552ff64bea4",
+        "bytes": 11910,
+        "sha256": "1b35ae819b6e5e45589ea9a86bec764610fc9c7dc21b9df1d2aa4ef44ca35b41"
+      },
+      "previousHskIndex": 319
+    },
+    {
+      "entryId": "a70c2fa3-a5c3-494b-84cd-f6364542ca24",
+      "hskIndex": 320,
+      "headword": "出去",
+      "reading": "chūqù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "chūqù",
+          "file": "cmn-d0d82464.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-出去.mp3",
+        "gitBlob": "dc9cbc560ca9057552fc807264daa67b03630a4d",
+        "bytes": 10656,
+        "sha256": "e7f6ca691228b2d87930dc21274f833aed885b026fd28eff4af7abf1d0034443"
+      },
+      "previousHskIndex": 320
+    },
+    {
+      "entryId": "4f649747-50cb-4c59-b876-7e43bd75f037",
+      "hskIndex": 321,
+      "headword": "床",
+      "reading": "chuáng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "chuáng",
+          "file": "cmn-432fe755.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-床.mp3",
+        "gitBlob": "7a401bf5512f3eafb023ec2d57c367b779c24305",
+        "bytes": 9612,
+        "sha256": "c2d9b6c89d019d64ec2cdefd4efa807db6b766d15ad9ae70964e00f7b979929a"
+      },
+      "previousHskIndex": 321
+    },
+    {
+      "entryId": "26f58bd0-311b-4410-a0fe-3e48642efd6d",
+      "hskIndex": 322,
+      "headword": "词",
+      "reading": "cí",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "cí",
+          "file": "cmn-e22607b1.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-词.mp3",
+        "gitBlob": "8cc7ff6915fa3143a1aac91d19dd1b4bcd3341a5",
+        "bytes": 9612,
+        "sha256": "d77f781ec814d3086644e932c0fe591deb4fa8d9705d35c6b31e82691d5e6de6"
+      },
+      "previousHskIndex": 322
+    },
+    {
+      "entryId": "97abc736-ebc6-4f5d-b690-d4056ff10905",
+      "hskIndex": 323,
+      "headword": "次",
+      "reading": "cì",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "cì",
+          "file": "cmn-f14d159b.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-次.mp3",
+        "gitBlob": "9e9f6073335d07af59d64b42ff0cbe155a761ad2",
+        "bytes": 8776,
+        "sha256": "689e10e81a1fe22ed119c0085861981f69ce72f40165796b45020f7484cd011d"
+      },
+      "previousHskIndex": 323
+    },
+    {
+      "entryId": "6e27f46c-87c9-4a6b-a510-4c68a3ac43c8",
+      "hskIndex": 324,
+      "headword": "从",
+      "reading": "cóng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "cóng",
+          "file": "cmn-5c9b783a.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-从.mp3",
+        "gitBlob": "d0b29dedd0ee31abb89750cef8311769687325df",
+        "bytes": 9612,
+        "sha256": "d9ab336e31dc2a812ccee3418628b328e345b578199f3a724598eee8b1895c3d"
+      },
+      "previousHskIndex": 324
+    },
+    {
+      "entryId": "01b444f8-83f0-4c0c-8153-4c030ea3d8dc",
+      "hskIndex": 325,
+      "headword": "从小",
+      "reading": "cóngxiǎo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "cóngxiǎo",
+          "file": "cmn-606d2278.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-从小.mp3",
+        "gitBlob": "03cb5f1e1e05f4aacc0ea0cee68fcd6f0fc8bbd5",
+        "bytes": 13164,
+        "sha256": "52fb095977b720c56bca330dcff54c114698d742aa38b0678f274462b83fd256"
+      },
+      "previousHskIndex": 325
+    },
+    {
+      "entryId": "34a5d5b3-3f50-4657-8c26-1947a751ca39",
+      "hskIndex": 326,
+      "headword": "错",
+      "reading": "cuò",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "cuò",
+          "file": "cmn-c58c56c3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-错.mp3",
+        "gitBlob": "e1a02732f5f191e5100c4a7ad8e768d83988031f",
+        "bytes": 8776,
+        "sha256": "85e4a6c91024d3d301a59ac263898a86e20edb782fdbc7a90cce08195c8b3522"
+      },
+      "previousHskIndex": 326
+    },
+    {
+      "entryId": "bf90b5b3-5894-40ee-bcac-8c5ca428f1a0",
+      "hskIndex": 327,
+      "headword": "打",
+      "reading": "dǎ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "dǎ",
+          "file": "cmn-d16994fc.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-打.mp3",
+        "gitBlob": "d901e29b08881cd81606b11e32e695e20a6d881b",
+        "bytes": 9612,
+        "sha256": "b248617abee64987cc87ffce072bee474834eb3f3efb742c3f0191f4f272b21a"
+      },
+      "previousHskIndex": 327
+    },
+    {
+      "entryId": "80628423-be93-4846-a387-b650738adbfc",
+      "hskIndex": 328,
+      "headword": "打车",
+      "reading": "dǎchē",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 328
+    },
+    {
+      "entryId": "1e743a67-8fee-4437-9c05-b8d1933ee399",
+      "hskIndex": 329,
+      "headword": "打开",
+      "reading": "dǎkāi",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 329
+    },
+    {
+      "entryId": "b9a2c4f3-8a11-4436-ab2d-9ee935b17a08",
+      "hskIndex": 330,
+      "headword": "但",
+      "reading": "dàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "dàn",
+          "file": "cmn-041a578e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-但.mp3",
+        "gitBlob": "74c2b5ee22c4f1a10ea11a7b97edcf54889fc058",
+        "bytes": 7522,
+        "sha256": "aecf0db96d43b130e937631dfccfbb593c5ceab5b289f34546d87123d44ef2a5"
+      },
+      "previousHskIndex": 330
+    },
+    {
+      "entryId": "20a24c8c-c089-4e44-b59c-6edd5025d662",
+      "hskIndex": 331,
+      "headword": "但是",
+      "reading": "dànshì",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "dànshì",
+          "file": "cmn-4eeccf0c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-但是.mp3",
+        "gitBlob": "8c1c4f120fac83778b814e7b95db6baac1181049",
+        "bytes": 10656,
+        "sha256": "f3f32008a480c6b1ffe4748430520aa96278fd6f658f0bfb138246cd427a3109"
+      },
+      "previousHskIndex": 331
+    },
+    {
+      "entryId": "7e525fd7-5364-49de-9027-3c872408b4fd",
+      "hskIndex": 332,
+      "headword": "地",
+      "reading": "de",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "dì",
+          "file": "cmn-46fdbdc3.mp3"
+        }
+      ],
+      "previousHskIndex": 333
+    },
+    {
+      "entryId": "d8ed9566-08f5-44e0-bd22-988a9ec5ad3b",
+      "hskIndex": 333,
+      "headword": "得",
+      "reading": "de",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "děi",
+          "file": "cmn-44454e88.mp3"
+        }
+      ],
+      "previousHskIndex": 332
+    },
+    {
+      "entryId": "b4b2f380-27da-41aa-8a08-41823651147d",
+      "hskIndex": 334,
+      "headword": "等",
+      "reading": "děng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "děng",
+          "file": "cmn-dc21e617.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-等.mp3",
+        "gitBlob": "2cd2097955835c7781ddf474ecaf2384fda92999",
+        "bytes": 9612,
+        "sha256": "a908cfb02924adec9ea7b9d7570a672d2a3750ef50860612585369c9b98c54a3"
+      },
+      "previousHskIndex": 334
+    },
+    {
+      "entryId": "449450a2-bc0f-4822-939d-aacea0ae4080",
+      "hskIndex": 335,
+      "headword": "地铁",
+      "reading": "dìtiě",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "dìtiě",
+          "file": "cmn-982f2e59.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-地铁.mp3",
+        "gitBlob": "5a69d842812eee1bbf980bedc3de03d0a9a23179",
+        "bytes": 11492,
+        "sha256": "3643be857552e1c8e807eb9b85c2494629ba226331b6bf19e77a6cb70cf5117e"
+      },
+      "previousHskIndex": 335
+    },
+    {
+      "entryId": "1766697c-2897-4a9f-820f-bc60a56f9f2c",
+      "hskIndex": 336,
+      "headword": "点",
+      "reading": "diǎn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "diǎn",
+          "file": "cmn-e8e4eed6.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-点.mp3",
+        "gitBlob": "4c941d90555ff1440789c63f48e9aea37c39353e",
+        "bytes": 10239,
+        "sha256": "d73489fd2dd8bb4e75b955f9cd9d8785802032c5535c3f50568ca9538c889a4c"
+      },
+      "previousHskIndex": 336
+    },
+    {
+      "entryId": "18192845-4311-4444-ac77-830e5c8169ea",
+      "hskIndex": 337,
+      "headword": "懂",
+      "reading": "dǒng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "dǒng",
+          "file": "cmn-255a9980.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-懂.mp3",
+        "gitBlob": "4fc5fa1f0d749df1bbe633f2a593b9ebf70b5320",
+        "bytes": 10030,
+        "sha256": "a5fea23425ce4f6b4ca745a13c67d6882cd15b8eae0705c4481e0fefc7db13f0"
+      },
+      "previousHskIndex": 337
+    },
+    {
+      "entryId": "27a634f1-90ac-4827-841f-3f272029f1d3",
+      "hskIndex": 338,
+      "headword": "动",
+      "reading": "dòng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "dòng",
+          "file": "cmn-49099042.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-动.mp3",
+        "gitBlob": "97cc5ecdd58ade9920b42355b086a5c445a7bf42",
+        "bytes": 8358,
+        "sha256": "684276a96a52b7eb3a411efd9a949fcef6d28f313d09862173954aed73779b3f"
+      },
+      "previousHskIndex": 338
+    },
+    {
+      "entryId": "87ea12aa-5b5f-46da-9636-258117320c0c",
+      "hskIndex": 339,
+      "headword": "饭馆",
+      "reading": "fànguǎn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "fànguǎn",
+          "file": "cmn-ddfaec82.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-饭馆.mp3",
+        "gitBlob": "1ec02f3feca5910c27c54fcf8a6ca03ad266a723",
+        "bytes": 10656,
+        "sha256": "40e206dbc5016b588cdb4d4876096fec9caa7692a9acf06a1f1b66a8d12ab55d"
+      },
+      "previousHskIndex": 339
+    },
+    {
+      "entryId": "7b4fd877-43f0-45c6-ac8f-a71e01972fb7",
+      "hskIndex": 340,
+      "headword": "飞",
+      "reading": "fēi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "fēi",
+          "file": "cmn-cbef6354.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-飞.mp3",
+        "gitBlob": "3701d8a7e431c9c22d111c3fa93ff53d7e3d174b",
+        "bytes": 7522,
+        "sha256": "1553df0fd566250dc33ee85b74dcae269a6500cb46e71d6dbaf5c996da0be5db"
+      },
+      "previousHskIndex": 340
+    },
+    {
+      "entryId": "21274b5c-6798-4b7f-a495-2032bd528cdc",
+      "hskIndex": 341,
+      "headword": "高",
+      "reading": "gāo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "gāo",
+          "file": "cmn-ea554c69.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-高.mp3",
+        "gitBlob": "123436c052be542e157b3984aafc6cb72f44d807",
+        "bytes": 8358,
+        "sha256": "77f7a5b01604fb763f638efdb7fcb89e648179d2e6d27a186e945d9d5c35b2db"
+      },
+      "previousHskIndex": 341
+    },
+    {
+      "entryId": "0beaa491-b974-43a4-acd9-0c61b7c02a5c",
+      "hskIndex": 342,
+      "headword": "高中",
+      "reading": "gāozhōng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "gāozhōng",
+          "file": "cmn-d51a0fbc.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-高中.mp3",
+        "gitBlob": "a423b564121bbec495deb3ea13ef0ec6dc9c80d7",
+        "bytes": 10656,
+        "sha256": "afbf4eb2d19eecd32990e4513f69a9989f9e2f7249abbabe2d39b812411d0ff8"
+      },
+      "previousHskIndex": 342
+    },
+    {
+      "entryId": "f60ccf8b-f1c4-4791-9f6e-aae0e7c1e8b5",
+      "hskIndex": 343,
+      "headword": "告诉",
+      "reading": "gàosu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "gàosu",
+          "file": "cmn-83c369d7.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-告诉.mp3",
+        "gitBlob": "7064686f1355622a8df6e977dfff1c18437368bc",
+        "bytes": 10030,
+        "sha256": "a252b12e3aa780520f3e0bbe92316ad3fa2be861af401096ed4e8480f00371b0"
+      },
+      "previousHskIndex": 343
+    },
+    {
+      "entryId": "b0521dee-bc7b-483e-a863-d1c371a43487",
+      "hskIndex": 344,
+      "headword": "个子",
+      "reading": "gèzi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "gèzi",
+          "file": "cmn-7af90128.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-个子.mp3",
+        "gitBlob": "eb1e1f23ea39bb1d519a35843132b3dce0b22134",
+        "bytes": 10030,
+        "sha256": "219cb53b73b7ba84775ecb13560277dbfcc3afe60ebed741fa2d943f79d8c1c8"
+      },
+      "previousHskIndex": 344
+    },
+    {
+      "entryId": "d99c508b-b37d-42bb-a6c2-7984d8677d39",
+      "hskIndex": 345,
+      "headword": "跟",
+      "reading": "gēn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "gēn",
+          "file": "cmn-9384eea0.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-跟.mp3",
+        "gitBlob": "f017e7137a0e418c6a58c144d050616629c384ee",
+        "bytes": 8358,
+        "sha256": "825c243093335e08c55f267ea3136b0101db83b264591464d6d8a20266258ce2"
+      },
+      "previousHskIndex": 345
+    },
+    {
+      "entryId": "bb012c0b-68bc-4df2-8b55-c1add807bb69",
+      "hskIndex": 346,
+      "headword": "公交车",
+      "reading": "gōngjiāochē",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 346
+    },
+    {
+      "entryId": "8063ab27-4d41-44dd-860c-68fe0c1e4255",
+      "hskIndex": 347,
+      "headword": "过",
+      "reading": "guò",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "guò",
+          "file": "cmn-4831fcfe.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-过.mp3",
+        "gitBlob": "8838ccf10f17a8b6140c2b0f93294b9704168ecb",
+        "bytes": 7940,
+        "sha256": "f5ac8be7a8921563979e994c80c238cfbd3b2b2635343ffdfee3be4409aedf13"
+      },
+      "previousHskIndex": 347
+    },
+    {
+      "entryId": "2203cde6-dd0d-4e55-bf82-31855aec05fa",
+      "hskIndex": 348,
+      "headword": "过来",
+      "reading": "guòlái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "guòlái",
+          "file": "cmn-66f02629.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-过来.mp3",
+        "gitBlob": "2c326cdb607889c2d030fd9bdaf8eb34e23dcaec",
+        "bytes": 10030,
+        "sha256": "89d544e917665f63eab487ae98f914a5d096b7ba35056b373392d795dd2111f0"
+      },
+      "previousHskIndex": 348
+    },
+    {
+      "entryId": "b4a7f098-64b7-43df-83b6-18f6c8cd6e07",
+      "hskIndex": 349,
+      "headword": "过年",
+      "reading": "guònián",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "guònián",
+          "file": "cmn-ffee5924.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-过年.mp3",
+        "gitBlob": "38ad1feef71889571c048de8380ec0cc29265381",
+        "bytes": 11492,
+        "sha256": "40d38d887e03f93d5a51d1d7a5646eb09489ddd1a685e92781ea24fe80a7159d"
+      },
+      "previousHskIndex": 349
+    },
+    {
+      "entryId": "f0fb6a6d-4eb6-4a4b-8512-5f551de2ac42",
+      "hskIndex": 350,
+      "headword": "过去",
+      "reading": "guòqù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "guòqù",
+          "file": "cmn-ff56e481.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-过去.mp3",
+        "gitBlob": "7c91b9eaf345f0a3299af07190f516eaf9fbf2c0",
+        "bytes": 12328,
+        "sha256": "ff7df5356a7ca561fada03cda2f8d315b9c7516800f27d671505371b103b0233"
+      },
+      "previousHskIndex": 350
+    },
+    {
+      "entryId": "4dbed31a-cdfe-4965-a430-b3b89f757ee4",
+      "hskIndex": 351,
+      "headword": "过",
+      "reading": "guo",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "guò",
+          "file": "cmn-4831fcfe.mp3"
+        }
+      ],
+      "previousHskIndex": 351
+    },
+    {
+      "entryId": "fd1f1f58-08b3-4dd0-ae17-b875592a3bfc",
+      "hskIndex": 352,
+      "headword": "还是",
+      "reading": "háishi",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "háishì",
+          "file": "cmn-f3287cbb.mp3"
+        }
+      ],
+      "previousHskIndex": 352
+    },
+    {
+      "entryId": "18362dc5-6d6e-4d53-82b7-9d3549d99ef1",
+      "hskIndex": 353,
+      "headword": "黑色",
+      "reading": "hēisè",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 353
+    },
+    {
+      "entryId": "ec72011f-cc94-431f-be10-a8e33596d1e1",
+      "hskIndex": 354,
+      "headword": "红茶",
+      "reading": "hóngchá",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "hóngchá",
+          "file": "cmn-15530b44.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-红茶.mp3",
+        "gitBlob": "4eab5d7c174b2cec8a54295b066838a18557490a",
+        "bytes": 11492,
+        "sha256": "65b75abf47b83cff2ee88518e654e8b403c2709e450786174641c70ab1d4a7b9"
+      },
+      "previousHskIndex": 354
+    },
+    {
+      "entryId": "385b60c9-0384-4e93-806f-2ce231ee9d07",
+      "hskIndex": 355,
+      "headword": "红色",
+      "reading": "hóngsè",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 355
+    },
+    {
+      "entryId": "9e17c9c8-617f-41b5-895b-5747594ea276",
+      "hskIndex": 356,
+      "headword": "后面",
+      "reading": "hòumiàn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "hòumian",
+          "file": "cmn-71cf1036.mp3"
+        }
+      ],
+      "previousHskIndex": 356
+    },
+    {
+      "entryId": "9cf7cedb-8e0e-4759-afff-5a93d649f02f",
+      "hskIndex": 357,
+      "headword": "花",
+      "reading": "huā",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "huā",
+          "file": "cmn-25baabd1.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-花.mp3",
+        "gitBlob": "5acdd53766680af482a0a80c000c177f32dba4c6",
+        "bytes": 7940,
+        "sha256": "5b892f82c6c15b520fb655c3fdff8f46d059d3ea1697fa6173f9a32d0e177a9b"
+      },
+      "previousHskIndex": 357
+    },
+    {
+      "entryId": "55e3c049-5e3e-42c8-803b-cf7fd514f9e4",
+      "hskIndex": 358,
+      "headword": "花",
+      "reading": "huā",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "huā",
+          "file": "cmn-25baabd1.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-花.mp3",
+        "gitBlob": "5acdd53766680af482a0a80c000c177f32dba4c6",
+        "bytes": 7940,
+        "sha256": "5b892f82c6c15b520fb655c3fdff8f46d059d3ea1697fa6173f9a32d0e177a9b"
+      },
+      "previousHskIndex": 358
+    },
+    {
+      "entryId": "71a044b1-6d31-4963-8151-344a0034f5df",
+      "hskIndex": 359,
+      "headword": "画",
+      "reading": "huà",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "huà",
+          "file": "cmn-1a723a2d.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-画.mp3",
+        "gitBlob": "892e06f2f7b985954548a379c200e396ec60c7b1",
+        "bytes": 7522,
+        "sha256": "56a82d3d8198c68355ec0b350b2fa7f20b98f946ce2933c980d53aa8acf4066d"
+      },
+      "previousHskIndex": 359
+    },
+    {
+      "entryId": "74d97717-ada2-487d-b6bc-6d2f47a6ad2d",
+      "hskIndex": 360,
+      "headword": "坏",
+      "reading": "huài",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "huài",
+          "file": "cmn-e980a1bf.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-坏.mp3",
+        "gitBlob": "a3a2c5f7cc180e5115608737461e81a038a755a3",
+        "bytes": 8776,
+        "sha256": "1f764eeb29fd1f830877f81fed58cb5d9104d0c729937d22f3399adb8a13cb2f"
+      },
+      "previousHskIndex": 360
+    },
+    {
+      "entryId": "c5dac6dc-3ac5-40a2-ba97-418ecc7726c9",
+      "hskIndex": 361,
+      "headword": "回来",
+      "reading": "huílái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "huílái",
+          "file": "cmn-c33ea426.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-回来.mp3",
+        "gitBlob": "223a940da5e5fc3cf52a15bcdf704027e9e93b8c",
+        "bytes": 10030,
+        "sha256": "5f9951e02ec43e4e96b6a091fc87607801605097d23ce55f143c9f0803ca5534"
+      },
+      "previousHskIndex": 361
+    },
+    {
+      "entryId": "8375b68c-56c3-4495-82eb-75b2b50e1edf",
+      "hskIndex": 362,
+      "headword": "回去",
+      "reading": "huíqù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "huíqù",
+          "file": "cmn-5a98668e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-回去.mp3",
+        "gitBlob": "bcbd075fec964e2f4d92f617352dd6cb933c0c90",
+        "bytes": 10239,
+        "sha256": "dd839853afa6eee72ba29e4805b5f088be10f791ef54d2a33fc5f83cc2e40d5c"
+      },
+      "previousHskIndex": 362
+    },
+    {
+      "entryId": "98b7c222-7b4d-459a-8ff4-801c4b837d72",
+      "hskIndex": 363,
+      "headword": "机场",
+      "reading": "jīchǎng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jīchǎng",
+          "file": "cmn-4e8fb01c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-机场.mp3",
+        "gitBlob": "6dacc439067a4f64e255d951565ed446a240b406",
+        "bytes": 11492,
+        "sha256": "fba77f611f2ca0be929174f2996f756fc2d08d8b2431eb0cf26fc156dc96e085"
+      },
+      "previousHskIndex": 363
+    },
+    {
+      "entryId": "e600cf31-f850-43e8-b306-939042746183",
+      "hskIndex": 364,
+      "headword": "机票",
+      "reading": "jīpiào",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 364
+    },
+    {
+      "entryId": "34af6f9c-a29a-490b-800f-64897053830f",
+      "hskIndex": 365,
+      "headword": "记得",
+      "reading": "jìde",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jìde",
+          "file": "cmn-22b4c0bb.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-记得.mp3",
+        "gitBlob": "c7218cb9060f3bd875623bd497f049259850f966",
+        "bytes": 9612,
+        "sha256": "05dae5e2d0c5bf8da0fa530e0d91a622ca5100d401fb9020d91837754bc70e74"
+      },
+      "previousHskIndex": 365
+    },
+    {
+      "entryId": "e43ae7af-e2f9-4b48-820b-1b170dab75e7",
+      "hskIndex": 366,
+      "headword": "间",
+      "reading": "jiān",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jiān",
+          "file": "cmn-ab7e5975.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-间.mp3",
+        "gitBlob": "eeacbed95d54de7f93e60c3336f5a59f054216e8",
+        "bytes": 9194,
+        "sha256": "37005848b8b2a976069202426973c026b2515aac09b22378aff32900a5f88918"
+      },
+      "previousHskIndex": 366
+    },
+    {
+      "entryId": "be797fd3-b4e5-46f2-9cd7-e9a66e018a7e",
+      "hskIndex": 367,
+      "headword": "教",
+      "reading": "jiāo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jiāo",
+          "file": "cmn-d7cb20bf.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-教.mp3",
+        "gitBlob": "5fec49d1621282d1614e4a316dbe498c0981c871",
+        "bytes": 8358,
+        "sha256": "4ef063a8cc4386cbb6e6dace6e363541eceaed3a350886f59f1d22bbb18fef1b"
+      },
+      "previousHskIndex": 367
+    },
+    {
+      "entryId": "6f19a3d3-cea2-4f54-afdc-590bf23ca78c",
+      "hskIndex": 368,
+      "headword": "教室",
+      "reading": "jiàoshì",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jiàoshì",
+          "file": "cmn-e667bbaf.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-教室.mp3",
+        "gitBlob": "7c47feb7a9175a8f0d890ae9f1e3fbc9e9707052",
+        "bytes": 11074,
+        "sha256": "f1cac44c87644291b2aeadcf4d936848a9d477bcc20531359b6e75a7558385ed"
+      },
+      "previousHskIndex": 368
+    },
+    {
+      "entryId": "c35c2d62-8474-4df0-a487-28bba6af71ab",
+      "hskIndex": 369,
+      "headword": "介绍",
+      "reading": "jièshào",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jièshào",
+          "file": "cmn-59cdbec3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-介绍.mp3",
+        "gitBlob": "54a9706402651f19a626ac6c3ad6f6c277495e8f",
+        "bytes": 10656,
+        "sha256": "9952fca6a0a991b6ce0a1eb39965ddffa846ddc72a7bdfdfed10e6e35012fa65"
+      },
+      "previousHskIndex": 369
+    },
+    {
+      "entryId": "d02e1199-a968-4270-8a2b-e4f1cd3568a0",
+      "hskIndex": 370,
+      "headword": "进",
+      "reading": "jìn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jìn",
+          "file": "cmn-5c30a0b1.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-进.mp3",
+        "gitBlob": "96cca93177bea3274a194f35d55423f367bd3a28",
+        "bytes": 8776,
+        "sha256": "80167d6783cc0b197c19736e826d5b59e353d517e9b0b516774f3700e9b3a9b4"
+      },
+      "previousHskIndex": 370
+    },
+    {
+      "entryId": "318c0a29-6cc7-4821-9211-1f58a40ae3d8",
+      "hskIndex": 371,
+      "headword": "进来",
+      "reading": "jìnlái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jìnlái",
+          "file": "cmn-7c3fce0e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-进来.mp3",
+        "gitBlob": "e62b3970262b8b347ef16c6b5be04e9d94308776",
+        "bytes": 11074,
+        "sha256": "ab34e7f9a7fcc7164390421816db6b2e5028cfca8a7fd1e72d86969f08956a3e"
+      },
+      "previousHskIndex": 372
+    },
+    {
+      "entryId": "cda06262-51e9-42d9-b3a8-68720091577e",
+      "hskIndex": 372,
+      "headword": "进去",
+      "reading": "jìnqù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jìnqù",
+          "file": "cmn-e5990ca6.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-进去.mp3",
+        "gitBlob": "6de1d3068b96d27ebb5f90fceac7f52024c4e815",
+        "bytes": 10656,
+        "sha256": "6dd99735d11354798714b870cf3dabb366cfd4a8b261d89fd94a70ca3971c9a8"
+      },
+      "previousHskIndex": 373
+    },
+    {
+      "entryId": "7bbba98f-62c4-412c-9a55-30c9eb95271d",
+      "hskIndex": 373,
+      "headword": "近",
+      "reading": "jìn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jìn",
+          "file": "cmn-bce549af.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-近.mp3",
+        "gitBlob": "6b7bd98e9bc0698e12d7ab34b7615d34cf6278d3",
+        "bytes": 7940,
+        "sha256": "66d65617bcc34a39ba8dcb41e8521c95abb2da898777de1ad330d84185b83ef4"
+      },
+      "previousHskIndex": 371
+    },
+    {
+      "entryId": "fb8c8bb5-35b1-4122-bb84-c0dcc459fc42",
+      "hskIndex": 374,
+      "headword": "经常",
+      "reading": "jīngcháng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jīngcháng",
+          "file": "cmn-2e2118b4.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-经常.mp3",
+        "gitBlob": "fd1fcd45cd01376cb3127715db979551acab267b",
+        "bytes": 11910,
+        "sha256": "291745d8789be571d26fd1197403675b5c7909b0acd9b3ec88177e8ebc28d36b"
+      },
+      "previousHskIndex": 374
+    },
+    {
+      "entryId": "385d71c6-d666-46cc-8b17-f54a3be7b0a0",
+      "hskIndex": 375,
+      "headword": "酒店",
+      "reading": "jiǔdiàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jiǔdiàn",
+          "file": "cmn-31aeafba.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-酒店.mp3",
+        "gitBlob": "51d2acf7ed341fe35a78f6a7f730fd728b8f64aa",
+        "bytes": 10656,
+        "sha256": "9bf3743456afb0ac20365ea1dc691c6ba737aaf4ecfe24aff690f442e70acf75"
+      },
+      "previousHskIndex": 375
+    },
+    {
+      "entryId": "5ec4b6e3-5389-47dc-a81c-42c89f8a5fe5",
+      "hskIndex": 376,
+      "headword": "就",
+      "reading": "jiù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "jiù",
+          "file": "cmn-08cbe6fb.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-就.mp3",
+        "gitBlob": "49f82ffae42e88cc9e0d898ec4f14cbef3213ac9",
+        "bytes": 8358,
+        "sha256": "9b4f8b714d5717ab7788c334a784f04f2e6dc47d2549de1db001b6d96035f448"
+      },
+      "previousHskIndex": 376
+    },
+    {
+      "entryId": "85fc88e9-6bd7-4a6f-912d-97ff6688e599",
+      "hskIndex": 377,
+      "headword": "咖啡",
+      "reading": "kāfēi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kāfēi",
+          "file": "cmn-c6681ef0.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-咖啡.mp3",
+        "gitBlob": "afe98248a8faea6c586ef07532f218b6140761dc",
+        "bytes": 10239,
+        "sha256": "c05483395b6480b968b0f73645392df0be4561ed6d7cedc9c137a909b52bede9"
+      },
+      "previousHskIndex": 377
+    },
+    {
+      "entryId": "c49b342a-eedf-4085-95dd-7add3f6d5461",
+      "hskIndex": 378,
+      "headword": "开始",
+      "reading": "kāishǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kāishǐ",
+          "file": "cmn-fb201a71.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-开始.mp3",
+        "gitBlob": "2286a0b816b4f40f927c913d717d1dd5ef2d2218",
+        "bytes": 11074,
+        "sha256": "8195edc9839a404eb297b1297fe660cdec4e0898014bce3205e5788b00c21838"
+      },
+      "previousHskIndex": 378
+    },
+    {
+      "entryId": "31ab0005-597f-4a54-b4ce-a441c93c5219",
+      "hskIndex": 379,
+      "headword": "开学",
+      "reading": "kāixué",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kāixué",
+          "file": "cmn-4410ae8e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-开学.mp3",
+        "gitBlob": "b52ab68bdc094f2c15c89ccb92fefbefd1b14b99",
+        "bytes": 10656,
+        "sha256": "0c7c3736bb96d724e59d888ba81e1e83e87dfafc6958b43dd6512c79b33578b7"
+      },
+      "previousHskIndex": 379
+    },
+    {
+      "entryId": "85559318-8842-4fa6-8e4b-13a1a1c27e6c",
+      "hskIndex": 380,
+      "headword": "考",
+      "reading": "kǎo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kǎo",
+          "file": "cmn-178212db.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-考.mp3",
+        "gitBlob": "977dfa139b1332db43b44aaf40ba31a42cc1378a",
+        "bytes": 10239,
+        "sha256": "d764a3307b312e8b43f7ba018a6181fb54ca8a10cfc7ddb33d0896b39b905896"
+      },
+      "previousHskIndex": 380
+    },
+    {
+      "entryId": "f484ebe1-3394-4075-a570-1f7e0e8c3bcd",
+      "hskIndex": 381,
+      "headword": "考试",
+      "reading": "kǎoshì",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kǎoshì",
+          "file": "cmn-0bd4d7fe.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-考试.mp3",
+        "gitBlob": "85dd4254cbd1dace2e9275e76cd3111ebdeb5478",
+        "bytes": 10656,
+        "sha256": "2d677b852a992c0ba9cc2ce15e5c3faf9f92eb863011206d532850f32c9600c0"
+      },
+      "previousHskIndex": 381
+    },
+    {
+      "entryId": "794a160c-fe72-419a-a7be-0b4034072cd4",
+      "hskIndex": 382,
+      "headword": "可能",
+      "reading": "kěnéng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kěnéng",
+          "file": "cmn-d37a8023.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-可能.mp3",
+        "gitBlob": "556d37d643b1c581e46a0205fdcb3c05ef823985",
+        "bytes": 11074,
+        "sha256": "10b69d20ceb50773197079150d99cd4d028d8051e8c609b1c46ba6f9751f4028"
+      },
+      "previousHskIndex": 382
+    },
+    {
+      "entryId": "94238ea0-1739-4142-b625-e5b9214de52d",
+      "hskIndex": 383,
+      "headword": "裤子",
+      "reading": "kùzi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kùzi",
+          "file": "cmn-fad410f3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-裤子.mp3",
+        "gitBlob": "f550f81ba9bb2e09b4898f0131b0b6714209a53f",
+        "bytes": 9194,
+        "sha256": "54c95fc544269eb3362272e5ab053dd04da9ce819e194434e30b10adcdea3ae9"
+      },
+      "previousHskIndex": 383
+    },
+    {
+      "entryId": "71a935ed-0c3a-407d-b6a0-acab772f2739",
+      "hskIndex": 384,
+      "headword": "快",
+      "reading": "kuài",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kuài",
+          "file": "cmn-7231034e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-快.mp3",
+        "gitBlob": "5977aeaeaee601bc5e6dd9e39e78cb97593b0cf1",
+        "bytes": 8776,
+        "sha256": "c31cb97f9a826b4babced6d522e7a1cdc3fd93c2f6e64c4c5eb8d0ce8d5cfd30"
+      },
+      "previousHskIndex": 384
+    },
+    {
+      "entryId": "390c9f9f-c58e-4966-9b15-a7ce02d28934",
+      "hskIndex": 385,
+      "headword": "快乐",
+      "reading": "kuàilè",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "kuàilè",
+          "file": "cmn-9455d49a.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-快乐.mp3",
+        "gitBlob": "6965c1f03c48983793ee716bfdcd826d9457d21c",
+        "bytes": 10239,
+        "sha256": "dee312ead91ef331ffba67c24fae8e92b71021f8736db4209c4a42255979f663"
+      },
+      "previousHskIndex": 385
+    },
+    {
+      "entryId": "e410e086-b557-4490-890e-3997d6d9c98e",
+      "hskIndex": 386,
+      "headword": "快要",
+      "reading": "kuàiyào",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 386
+    },
+    {
+      "entryId": "e4de590b-0b63-4d36-8bab-3b9eac5c2efa",
+      "hskIndex": 387,
+      "headword": "篮球",
+      "reading": "lánqiú",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lánqiú",
+          "file": "cmn-4c1d724d.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-篮球.mp3",
+        "gitBlob": "ae3f087f1e65a88ba33c12a689629c52a8acd32d",
+        "bytes": 10656,
+        "sha256": "46cb4fdc5cffcd066d09cca46c2d20701a778cd9170af7d5274c98884d551d11"
+      },
+      "previousHskIndex": 387
+    },
+    {
+      "entryId": "d27c2a33-018e-4cc1-9352-c026b0a3a65d",
+      "hskIndex": 388,
+      "headword": "累",
+      "reading": "lèi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lèi",
+          "file": "cmn-952ccaf2.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-累.mp3",
+        "gitBlob": "af6de52da94d1d61773f06ce268bd2cc08063d96",
+        "bytes": 7940,
+        "sha256": "ec0e04f19a98716f7c422e6b3942826050850513c99039747edf769f7ba27bb8"
+      },
+      "previousHskIndex": 388
+    },
+    {
+      "entryId": "9cdb7f72-54a8-41ee-966c-b0fdc6456db9",
+      "hskIndex": 389,
+      "headword": "离",
+      "reading": "lí",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lí",
+          "file": "cmn-f7026e5c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-离.mp3",
+        "gitBlob": "1f9c1b8584d07c503d76d37efb2d1fcda84caf61",
+        "bytes": 8358,
+        "sha256": "33d80fa2f98f76d11f6689a10e8d25b62f08c8bc6ecd5e15e71f20df2277ac38"
+      },
+      "previousHskIndex": 389
+    },
+    {
+      "entryId": "5c82541c-4034-4632-8aea-fa6d3b7846af",
+      "hskIndex": 390,
+      "headword": "里面",
+      "reading": "lǐmiàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lǐmiàn",
+          "file": "cmn-7ec45354.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-里面.mp3",
+        "gitBlob": "8e2b0c24fcc7a67f43662ed6ab16a7571434e1b9",
+        "bytes": 10656,
+        "sha256": "dff5cfecb8b1b0e505a63da4e2d672c3dd7703c739f31d9af436fed557e0885c"
+      },
+      "previousHskIndex": 390
+    },
+    {
+      "entryId": "eea18e07-ec4c-4ccc-835c-e34a7181e1b2",
+      "hskIndex": 391,
+      "headword": "楼",
+      "reading": "lóu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lóu",
+          "file": "cmn-4389c20b.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-楼.mp3",
+        "gitBlob": "006a6040bdd14f312a0714cf9450b1597d077503",
+        "bytes": 8776,
+        "sha256": "5cb76d14de854d7f96cba8c67a10932a53b7afd3696783363fe71a19d52a23ae"
+      },
+      "previousHskIndex": 391
+    },
+    {
+      "entryId": "951d420b-242a-4840-9a36-a1a9b587dc43",
+      "hskIndex": 392,
+      "headword": "路",
+      "reading": "lù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lù",
+          "file": "cmn-b55dde0c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-路.mp3",
+        "gitBlob": "ca2f5786bf8f863e59e1ec430ed49cc9dbc85cf7",
+        "bytes": 8358,
+        "sha256": "2df82517badd89989a2547704a248d205ccdd464cba7bbfeb8345bfbb56798a6"
+      },
+      "previousHskIndex": 392
+    },
+    {
+      "entryId": "62305943-59d5-4df8-acca-2884b47bfc95",
+      "hskIndex": 393,
+      "headword": "路上",
+      "reading": "lùshang",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lùshang",
+          "file": "cmn-73a0d3e9.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-路上.mp3",
+        "gitBlob": "b0dc69571db293288c47cea502d489b310d59a92",
+        "bytes": 10656,
+        "sha256": "442f91428519231e7ceb9b5ad513cd252191b9dd26f97c19d3fdcf62486b43b8"
+      },
+      "previousHskIndex": 393
+    },
+    {
+      "entryId": "e79b85a0-439a-4c5d-80d6-0e4dde6af84e",
+      "hskIndex": 394,
+      "headword": "旅游",
+      "reading": "lǚyóu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "lǚyóu",
+          "file": "cmn-8cb75729.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-旅游.mp3",
+        "gitBlob": "9e8e332b6a197a9973fc8573ff4f8e239a91cf81",
+        "bytes": 10656,
+        "sha256": "951787c76b4aa62c93c37a27ca886a4de384a0f1ea4ef9665d9f942f08f0c28f"
+      },
+      "previousHskIndex": 394
+    },
+    {
+      "entryId": "be86fd08-1bcd-4198-b856-d6a9e0373e12",
+      "hskIndex": 395,
+      "headword": "绿茶",
+      "reading": "lǜchá",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 395
+    },
+    {
+      "entryId": "a1de31e5-473c-4c05-8b81-7b9050c6b0cd",
+      "hskIndex": 396,
+      "headword": "绿色",
+      "reading": "lǜsè",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 396
+    },
+    {
+      "entryId": "4bd1ca15-f176-4d79-b9de-e0c8ae23188a",
+      "hskIndex": 397,
+      "headword": "慢",
+      "reading": "màn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "màn",
+          "file": "cmn-2c02dbca.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-慢.mp3",
+        "gitBlob": "8fe8e842bd621934a527a42b86e92180440ff3f4",
+        "bytes": 7940,
+        "sha256": "ecfd362904d321fe6dd1bc0b1dbd6d90f72d2e572ab98809e4adc91c7cd86f61"
+      },
+      "previousHskIndex": 397
+    },
+    {
+      "entryId": "1c71abd1-7b78-497e-98c9-7a9359495149",
+      "hskIndex": 398,
+      "headword": "没意思",
+      "reading": "méi yìsi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "méiyìsi",
+          "file": "cmn-f33976cf.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-没意思.mp3",
+        "gitBlob": "9d839e083069ee2e5b69fbd677594944343fd153",
+        "bytes": 11074,
+        "sha256": "a9375903eebdb4ef6aad9ba3b69b6d2ac0985e837cc3995743e74d8c09d1a5e3"
+      },
+      "previousHskIndex": 398
+    },
+    {
+      "entryId": "c0b48d3e-98f2-4418-841e-8494fa94a95b",
+      "hskIndex": 399,
+      "headword": "每",
+      "reading": "měi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "měi",
+          "file": "cmn-06b64b97.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-每.mp3",
+        "gitBlob": "ebbdde4c99eea77f55a9a03f2b0206674b2b3e20",
+        "bytes": 9612,
+        "sha256": "e48915894d7506f4fd2dfcc5051f7c3dcdae81eb10ccadb70c8e8c13c5b29811"
+      },
+      "previousHskIndex": 399
+    },
+    {
+      "entryId": "11f1180b-8444-43a5-a0bb-015af48aa898",
+      "hskIndex": 400,
+      "headword": "门",
+      "reading": "mén",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "mén",
+          "file": "cmn-bf7f053a.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-门.mp3",
+        "gitBlob": "9673aee0b7481c8d61636678798b0e2add47a442",
+        "bytes": 8776,
+        "sha256": "27499561089864b1798b3137b042459990b7a722306d2afa672904888207d743"
+      },
+      "previousHskIndex": 400
+    },
+    {
+      "entryId": "01b224ac-b444-491a-9342-1162a2a16a6b",
+      "hskIndex": 401,
+      "headword": "门口",
+      "reading": "ménkǒu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "ménkǒu",
+          "file": "cmn-379d459e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-门口.mp3",
+        "gitBlob": "cf4739102ad70691db067131821a92231c2822ca",
+        "bytes": 11074,
+        "sha256": "592a1c1dd86da507e9b767a507595def48f70329a439aa95a47e5ddd8b028dc3"
+      },
+      "previousHskIndex": 401
+    },
+    {
+      "entryId": "52c206f2-18d5-46ed-b83d-32900249fb16",
+      "hskIndex": 402,
+      "headword": "门票",
+      "reading": "ménpiào",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 402
+    },
+    {
+      "entryId": "d58b3543-ac4f-4e20-9c91-7b1195456cd7",
+      "hskIndex": 403,
+      "headword": "面",
+      "reading": "miàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "miàn",
+          "file": "cmn-a54504ae.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-面.mp3",
+        "gitBlob": "ac5beae687165e3c34937f536eeb9ebeacf43630",
+        "bytes": 8358,
+        "sha256": "4939d7e1537da71972f82118ed2c3beb4c2333d25ed248f74063f2a8f5402734"
+      },
+      "previousHskIndex": 403
+    },
+    {
+      "entryId": "cb11e336-551f-4363-8782-a591a3daf792",
+      "hskIndex": 404,
+      "headword": "名",
+      "reading": "míng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "míng",
+          "file": "cmn-b220bede.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-名.mp3",
+        "gitBlob": "311c148d61691eddccdd2d139f3083e82c9be994",
+        "bytes": 9194,
+        "sha256": "d9c71f429674a854c79361489a7343a772686649091c34a53a38e994c49814a6"
+      },
+      "previousHskIndex": 404
+    },
+    {
+      "entryId": "6cd207ef-0202-43ee-aa64-e0a6867e0e2e",
+      "hskIndex": 405,
+      "headword": "拿",
+      "reading": "ná",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "ná",
+          "file": "cmn-d1879a9d.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-拿.mp3",
+        "gitBlob": "0dbdeb9cebb48c7d1a87ff2faea43517713c9cca",
+        "bytes": 8776,
+        "sha256": "318a8ec9ce09123bf847d0b396d5e8f494e07d7ba2cac541ccabe33fdd5f0d85"
+      },
+      "previousHskIndex": 405
+    },
+    {
+      "entryId": "a2fbe67b-bfac-4718-bfcc-9cda1bcfb0ed",
+      "hskIndex": 406,
+      "headword": "那么",
+      "reading": "nàme",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "nàme",
+          "file": "cmn-6cfed86f.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-那么.mp3",
+        "gitBlob": "881ec1a7105fa77c2075b203b9739b33eec3d541",
+        "bytes": 9194,
+        "sha256": "e705872ebcf3442f01a39d4e7df799fb5a7ec132b62240cf24111a4a081cb993"
+      },
+      "previousHskIndex": 406
+    },
+    {
+      "entryId": "4512d441-6fa7-465c-a25f-a81804912761",
+      "hskIndex": 407,
+      "headword": "那样",
+      "reading": "nàyàng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "nàyàng",
+          "file": "cmn-421c8824.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-那样.mp3",
+        "gitBlob": "0908e103c0c0a59124ee265601dbd2e0063ed2aa",
+        "bytes": 10030,
+        "sha256": "bd37f5ebe81b2ac2e60cc869de64cf8e994fb576a33e1901b50e1aae35a71944"
+      },
+      "previousHskIndex": 407
+    },
+    {
+      "entryId": "c7e44739-9fe8-48c4-b7b3-ee3612f51c5a",
+      "hskIndex": 408,
+      "headword": "奶茶",
+      "reading": "nǎichá",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 408
+    },
+    {
+      "entryId": "e37141d3-9490-4e0d-a02a-0f96168490a7",
+      "hskIndex": 409,
+      "headword": "奶奶",
+      "reading": "nǎinai",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "nǎinai",
+          "file": "cmn-29ce666c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-奶奶.mp3",
+        "gitBlob": "71f11888e8e4446f6d341eb29a21d07d809a443a",
+        "bytes": 10030,
+        "sha256": "65e2b0354a70ee32f818706e6e54f3607d23cd4ead4451aae3359086a7464e27"
+      },
+      "previousHskIndex": 409
+    },
+    {
+      "entryId": "d590e82a-0f0f-4c9c-bfc7-86cc6d530960",
+      "hskIndex": 410,
+      "headword": "男孩儿",
+      "reading": "nánháir",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 410
+    },
+    {
+      "entryId": "e365a0db-1a22-4af2-a92c-474c8c236d81",
+      "hskIndex": 411,
+      "headword": "鸟",
+      "reading": "niǎo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "niǎo",
+          "file": "cmn-15de9858.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-鸟.mp3",
+        "gitBlob": "59eea0e20bda9b411a9a01b02b13fad36cb08de9",
+        "bytes": 10030,
+        "sha256": "459ae37179f4e39e7f386af709a39147c37e1ec00c23e0b385977d991bf5f078"
+      },
+      "previousHskIndex": 411
+    },
+    {
+      "entryId": "858cefe8-9518-4290-af45-aefb91625a9d",
+      "hskIndex": 412,
+      "headword": "女孩儿",
+      "reading": "nǚháir",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 412
+    },
+    {
+      "entryId": "680e10cf-079a-43c2-bc74-12aaf36ca955",
+      "hskIndex": 413,
+      "headword": "旁边",
+      "reading": "pángbiān",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "pángbiān",
+          "file": "cmn-28167a64.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-旁边.mp3",
+        "gitBlob": "1355fa7a5adbfd8ed246489eef0e66d2904af981",
+        "bytes": 10656,
+        "sha256": "f0fd9f658df96a5e19a9525bd9f2b2d2880aaea79b351993dda402e0e742c36b"
+      },
+      "previousHskIndex": 413
+    },
+    {
+      "entryId": "8954e063-5dc3-4b49-a19a-6fd8f76b4289",
+      "hskIndex": 414,
+      "headword": "跑",
+      "reading": "pǎo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "pǎo",
+          "file": "cmn-743cc3a7.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-跑.mp3",
+        "gitBlob": "b3b4ed979f5f272ff1d5842b17360834ac67673a",
+        "bytes": 10030,
+        "sha256": "6e47a4281880bd8fb7d19ec2fba93b436a5148cd83b9262a7789d214ef63513f"
+      },
+      "previousHskIndex": 414
+    },
+    {
+      "entryId": "d3ed6186-ae9e-41ac-a63a-8ad917548c57",
+      "hskIndex": 415,
+      "headword": "跑步",
+      "reading": "pǎobù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "pǎobù",
+          "file": "cmn-fcb45358.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-跑步.mp3",
+        "gitBlob": "36cc8dcf2cf266831bc87ad7d919363efb949460",
+        "bytes": 10656,
+        "sha256": "c2b5db73dd347ca8d1623eacff807bb6017afea4e6d5eef86acb4b324d56b2ef"
+      },
+      "previousHskIndex": 415
+    },
+    {
+      "entryId": "82aea34c-314d-4662-bc04-fe41fe1f74ac",
+      "hskIndex": 416,
+      "headword": "票",
+      "reading": "piào",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "piào",
+          "file": "cmn-58917c41.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-票.mp3",
+        "gitBlob": "39dae53af4e6ffa2d03ba68dec6c63ef06c57633",
+        "bytes": 7522,
+        "sha256": "adba514ed583c0df26f9254de71c66f4a6c5247a2408aa42c16465849dd11c06"
+      },
+      "previousHskIndex": 416
+    },
+    {
+      "entryId": "6f2cdee7-9123-4076-af40-a2e97e45f692",
+      "hskIndex": 417,
+      "headword": "妻子",
+      "reading": "qīzi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "qīzi",
+          "file": "cmn-86d0cb94.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-妻子.mp3",
+        "gitBlob": "7ad6fadd1a87fdd1c45f6a1bea2e954405218c8c",
+        "bytes": 10239,
+        "sha256": "5d01362fc4949617badbd5f2b2de9116917c47b0af4156786fccf7816cbb6cd7"
+      },
+      "previousHskIndex": 417
+    },
+    {
+      "entryId": "8fde8d6d-8b5c-4f87-9d4a-fb1b2d49efff",
+      "hskIndex": 418,
+      "headword": "起来",
+      "reading": "qǐlái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "qǐlái",
+          "file": "cmn-dc6bc629.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-起来.mp3",
+        "gitBlob": "5344665043f364140c9f201218331ae9de16a613",
+        "bytes": 11492,
+        "sha256": "6073e5089a80496d25232e5b409e2bc35c8dd2b5f9ee2999f510f536a78284c1"
+      },
+      "previousHskIndex": 418
+    },
+    {
+      "entryId": "a4384c1b-1a06-459f-ad69-3f613d0c3f9d",
+      "hskIndex": 419,
+      "headword": "前面",
+      "reading": "qiánmiàn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "qiánmian",
+          "file": "cmn-0e8a4a2b.mp3"
+        }
+      ],
+      "previousHskIndex": 419
+    },
+    {
+      "entryId": "021b9882-2d9c-4ff5-83f2-ee1fa5863e5c",
+      "hskIndex": 420,
+      "headword": "晴",
+      "reading": "qíng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "qíng",
+          "file": "cmn-3ea133c6.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-晴.mp3",
+        "gitBlob": "2b7b7a90dfb7efaf6b93ccd82fa6a99fad3d677c",
+        "bytes": 10030,
+        "sha256": "55a66e2112576ff9dd14557a03137a076c6acda62aaf7bc57e84c2832e6482c3"
+      },
+      "previousHskIndex": 420
+    },
+    {
+      "entryId": "b674e8bd-88e0-46d2-9803-41c4969fa11f",
+      "hskIndex": 421,
+      "headword": "球",
+      "reading": "qiú",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "qiú",
+          "file": "cmn-561c47b7.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-球.mp3",
+        "gitBlob": "048a363a610a785d79c54b0ba0b5c29664c55d2e",
+        "bytes": 9612,
+        "sha256": "4b94fdbb47ae82fccc5b1e7bbeb381c0ef6c562c4dd76582bad1c51cf6b59aaf"
+      },
+      "previousHskIndex": 421
+    },
+    {
+      "entryId": "3ace0956-ce80-43c8-b98e-ce0048fc57af",
+      "hskIndex": 422,
+      "headword": "让",
+      "reading": "ràng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "ràng",
+          "file": "cmn-c73ed221.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-让.mp3",
+        "gitBlob": "bb486c41b4fe95afa2fbc0cff51528f43fff1b5b",
+        "bytes": 8358,
+        "sha256": "e73b62682aec1a08e1b2d92ba7ed91470ec2dfcf2270d6d09c84318312fe2fa1"
+      },
+      "previousHskIndex": 422
+    },
+    {
+      "entryId": "67cc26a4-2f0d-4cad-a03e-57f0f734fed3",
+      "hskIndex": 423,
+      "headword": "肉",
+      "reading": "ròu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "ròu",
+          "file": "cmn-c5619947.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-肉.mp3",
+        "gitBlob": "81209c167a539f636c6b4c5a39978599f12639bb",
+        "bytes": 7940,
+        "sha256": "ba31dded14b6313400f1b70f31dc785e9f77f83c6d356ce8e43cd27b3e4f9362"
+      },
+      "previousHskIndex": 423
+    },
+    {
+      "entryId": "c9dd6701-a71f-431d-8a4d-203e1623cf9d",
+      "hskIndex": 424,
+      "headword": "商场",
+      "reading": "shāngchǎng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shāngchǎng",
+          "file": "cmn-7ff6e7da.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-商场.mp3",
+        "gitBlob": "5e45bfbd69030d9b20ebcab851fdd296d3174407",
+        "bytes": 13164,
+        "sha256": "2e2802988bdbb0736a516ab47b3ce372cbd0ac17b2e12f53ab0986c8163bbaca"
+      },
+      "previousHskIndex": 424
+    },
+    {
+      "entryId": "276ee419-2bc0-492c-b9ee-8335cb613fad",
+      "hskIndex": 425,
+      "headword": "上来",
+      "reading": "shànglái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shànglái",
+          "file": "cmn-5178e29f.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-上来.mp3",
+        "gitBlob": "9f5af0011c8efc2189d2209ed39544902a43bc0d",
+        "bytes": 11910,
+        "sha256": "3682073baba9d132a9f90067d269a2cffee9a0b8c9c6eb89ae6c1e0b9250521a"
+      },
+      "previousHskIndex": 425
+    },
+    {
+      "entryId": "c3f728dd-7e47-4242-a827-3c3767819130",
+      "hskIndex": 426,
+      "headword": "上面",
+      "reading": "shàngmiàn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "shàngmian",
+          "file": "cmn-c4403001.mp3"
+        }
+      ],
+      "previousHskIndex": 426
+    },
+    {
+      "entryId": "87a3e3e0-4575-44f3-a082-6128fa4ad01c",
+      "hskIndex": 427,
+      "headword": "上去",
+      "reading": "shàngqù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shàngqù",
+          "file": "cmn-c8de2037.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-上去.mp3",
+        "gitBlob": "5384c91abb9964ae95a7e4ca6ffb8e796d11e4b7",
+        "bytes": 11492,
+        "sha256": "d77b1332ae0eae5e9e72180e2dd65e007dac341e15b5a92d8c86762340985731"
+      },
+      "previousHskIndex": 427
+    },
+    {
+      "entryId": "56a2f31c-a2de-4090-a4b7-378ac9277bee",
+      "hskIndex": 428,
+      "headword": "上网",
+      "reading": "shàngwǎng",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 428
+    },
+    {
+      "entryId": "aaf2a684-3c5e-48e1-b7e0-a40b3ede767e",
+      "hskIndex": 429,
+      "headword": "身体",
+      "reading": "shēntǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shēntǐ",
+          "file": "cmn-1d4edc8a.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-身体.mp3",
+        "gitBlob": "ff65962b092f4efa9e6d166ff2d45a1871ad58bd",
+        "bytes": 11074,
+        "sha256": "2401e029f34831ff9ef6ecf96e71ead8259ebf37751490d52b40e500a716d115"
+      },
+      "previousHskIndex": 429
+    },
+    {
+      "entryId": "034c9fa9-7a09-427c-a2d7-4d2e95e861c0",
+      "hskIndex": 430,
+      "headword": "生日",
+      "reading": "shēngrì",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "shēngri",
+          "file": "cmn-4ef51d13.mp3"
+        }
+      ],
+      "previousHskIndex": 430
+    },
+    {
+      "entryId": "a71faac7-93f8-4d67-879c-36d402a54191",
+      "hskIndex": 431,
+      "headword": "时",
+      "reading": "shí",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shí",
+          "file": "cmn-4e2c7f64.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-时.mp3",
+        "gitBlob": "a22771f12afb2344f606fce6f79dcb6511ec420a",
+        "bytes": 9612,
+        "sha256": "6d152429c9229cb5d83d57d28c99d29152eb7365ba27709e82d08dcca8783041"
+      },
+      "previousHskIndex": 431
+    },
+    {
+      "entryId": "c1d5b895-456b-413c-afda-6f1ef3b35fad",
+      "hskIndex": 432,
+      "headword": "事情",
+      "reading": "shìqing",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shìqing",
+          "file": "cmn-7c2bc98d.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-事情.mp3",
+        "gitBlob": "c74d58894dd6bf62da43a18e10394c8e1b4b1817",
+        "bytes": 10656,
+        "sha256": "79a7b3627134dbe691bd8b0108e26e8b0de16e8c170aa79443ef5955b072e7a9"
+      },
+      "previousHskIndex": 432
+    },
+    {
+      "entryId": "c7dfba06-c3fe-422e-a1ad-e7f639f1a747",
+      "hskIndex": 433,
+      "headword": "手",
+      "reading": "shǒu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shǒu",
+          "file": "cmn-c2050caa.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-手.mp3",
+        "gitBlob": "fbf1d9658dfa92cbe53c19a460b62f98d3bce128",
+        "bytes": 10030,
+        "sha256": "c633b45081e8ca5b291aa7931683868015fc127495cd7a9fb644cf54a102f91c"
+      },
+      "previousHskIndex": 433
+    },
+    {
+      "entryId": "ef395836-d9b1-4f15-b75e-15671e29ea9a",
+      "hskIndex": 434,
+      "headword": "手表",
+      "reading": "shǒubiǎo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shǒubiǎo",
+          "file": "cmn-3f919d8f.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-手表.mp3",
+        "gitBlob": "af1f3a656c9bab44497899ed01d7f3b8a9398b2f",
+        "bytes": 11492,
+        "sha256": "1b8b9e4de76bb72e21cef5fca9135d7b5cb17cb4e7d1b0c9b9dcbf860293d08f"
+      },
+      "previousHskIndex": 434
+    },
+    {
+      "entryId": "039f2ad1-d13f-4e1d-80a8-91927f0000f7",
+      "hskIndex": 435,
+      "headword": "书包",
+      "reading": "shūbāo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shūbāo",
+          "file": "cmn-ec0d6628.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-书包.mp3",
+        "gitBlob": "f086396850415026740564f0401d8a39c143bc6a",
+        "bytes": 10656,
+        "sha256": "7477cdcaacedab53f57ff725fc1b3eba45fc7d9b4f34b838f4293e854090fe21"
+      },
+      "previousHskIndex": 435
+    },
+    {
+      "entryId": "48e6f066-36c1-4ddb-9ba7-53db2ab45279",
+      "hskIndex": 436,
+      "headword": "舒服",
+      "reading": "shūfu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "shūfu",
+          "file": "cmn-3e987ca9.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-舒服.mp3",
+        "gitBlob": "4f77647efacf19aedbc3f4ee3cdff350a43b1be5",
+        "bytes": 10030,
+        "sha256": "09a672ce9fbd465940b159f57fa3aff6cda4842c0a9108bd648ca0348c6fe9dd"
+      },
+      "previousHskIndex": 436
+    },
+    {
+      "entryId": "be9f67ab-d72c-4920-be84-fcbf48ecc206",
+      "hskIndex": 437,
+      "headword": "送",
+      "reading": "sòng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "sòng",
+          "file": "cmn-f84e19c0.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-送.mp3",
+        "gitBlob": "37b9d8b9618888b176eaf24f82f1632827ca30be",
+        "bytes": 8776,
+        "sha256": "9a97560effcd53d319e5e2738dc044324fd3bd4ba1cc8bf10b1c97aad9d7438a"
+      },
+      "previousHskIndex": 437
+    },
+    {
+      "entryId": "8be122ea-5036-400b-88d1-c16db11aa005",
+      "hskIndex": 438,
+      "headword": "虽然",
+      "reading": "suīrán",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "suīrán",
+          "file": "cmn-a99b66b9.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-虽然.mp3",
+        "gitBlob": "053c7778ce2d913f263e340837205f9e1ed965e4",
+        "bytes": 11910,
+        "sha256": "adebccf6ca0eb91fd87acea11608f18816e77750d4d8f542cbddd5c59ffe1dc0"
+      },
+      "previousHskIndex": 438
+    },
+    {
+      "entryId": "7266bf82-f717-4e98-a64c-0a12da80fee7",
+      "hskIndex": 439,
+      "headword": "所以",
+      "reading": "suǒyǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "suǒyǐ",
+          "file": "cmn-2f16658c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-所以.mp3",
+        "gitBlob": "dd533e63905934acc55def9a406dd91a2d27091a",
+        "bytes": 10656,
+        "sha256": "408fbfb35028662c669aa0507f2583d54f713212e1e629a48e7a0f29e2cb99a7"
+      },
+      "previousHskIndex": 439
+    },
+    {
+      "entryId": "84ae3594-b941-456d-a4c9-c0ec450455d0",
+      "hskIndex": 440,
+      "headword": "疼",
+      "reading": "téng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "téng",
+          "file": "cmn-b620cd0c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-疼.mp3",
+        "gitBlob": "55604b0625b7505fa9dd56dcf4d076fac39568e0",
+        "bytes": 8358,
+        "sha256": "7d74bda17fecf493e3f7078dc782e78b3b9c4d596cb603c17f90c13384a63e2a"
+      },
+      "previousHskIndex": 440
+    },
+    {
+      "entryId": "b624113f-2ad5-4524-87a5-8793b83a37f8",
+      "hskIndex": 441,
+      "headword": "踢",
+      "reading": "tī",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "tī",
+          "file": "cmn-4c74be7e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-踢.mp3",
+        "gitBlob": "63f83721397091ec46570e8d70a3da30ed7bd8a0",
+        "bytes": 8358,
+        "sha256": "51dd1603176704224cc7d48809e6b14a2f2d9847dc45d29eae8eaa1621ebc00c"
+      },
+      "previousHskIndex": 441
+    },
+    {
+      "entryId": "35ebbf2b-301c-4586-85f4-255087125550",
+      "hskIndex": 442,
+      "headword": "题",
+      "reading": "tí",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "tí",
+          "file": "cmn-3b97f720.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-题.mp3",
+        "gitBlob": "8ab433ec8abc0a638985b0721065e239e74f5a69",
+        "bytes": 8776,
+        "sha256": "6d26f648d87f0d61011fe7a78455ef303359f856f19d270593dd6be5f8327d89"
+      },
+      "previousHskIndex": 442
+    },
+    {
+      "entryId": "6925d528-0643-477b-b935-7e9c4ae4163f",
+      "hskIndex": 443,
+      "headword": "条",
+      "reading": "tiáo",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "tiáo",
+          "file": "cmn-37101229.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-条.mp3",
+        "gitBlob": "c840cf54c94f83229bc6b55a59f93ed6c16d5e5a",
+        "bytes": 8358,
+        "sha256": "cee129012210b3723907702a6e59ffd4a8eec07fd81d323ca23b357ba99d1165"
+      },
+      "previousHskIndex": 443
+    },
+    {
+      "entryId": "5fd40d6f-c00d-4d4b-b4b9-e0e5ba5658cd",
+      "hskIndex": 444,
+      "headword": "跳舞",
+      "reading": "tiàowǔ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "tiàowǔ",
+          "file": "cmn-a5e92024.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-跳舞.mp3",
+        "gitBlob": "277c7f7ea53ace9e3a62681351dd2432771ba2ff",
+        "bytes": 11074,
+        "sha256": "ceb764d907e003dbcd5694907651b6723652b2524a55950092624aab653501d1"
+      },
+      "previousHskIndex": 444
+    },
+    {
+      "entryId": "c99e212b-2e7d-4c7d-82df-5dd29638edb7",
+      "hskIndex": 445,
+      "headword": "头",
+      "reading": "tóu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "tóu",
+          "file": "cmn-560fc521.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-头.mp3",
+        "gitBlob": "ba0890bcfb036ab8e8721c27339426a8ac3b05f8",
+        "bytes": 8776,
+        "sha256": "411c21e787566761aad26c30ea043aab8aecfba75a53aa31ca0ae8b870ddc144"
+      },
+      "previousHskIndex": 445
+    },
+    {
+      "entryId": "899922a5-341e-4ed6-8cc7-6ea7ef0e00d4",
+      "hskIndex": 446,
+      "headword": "外国",
+      "reading": "wàiguó",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wàiguó",
+          "file": "cmn-628b2217.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-外国.mp3",
+        "gitBlob": "58382362b5a1b862caa6d8e86b95d21efb11ece1",
+        "bytes": 11074,
+        "sha256": "ce60790b2c208d2294f2620766ce81f582fe23861db24e925e6df72f93c85bc0"
+      },
+      "previousHskIndex": 446
+    },
+    {
+      "entryId": "05faad27-d9f2-4d73-844b-f183c170d1b3",
+      "hskIndex": 447,
+      "headword": "外面",
+      "reading": "wàimiàn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "wàimian",
+          "file": "cmn-b0c37100.mp3"
+        }
+      ],
+      "previousHskIndex": 447
+    },
+    {
+      "entryId": "c3950b09-fc7b-4bb3-9181-de570acedc43",
+      "hskIndex": 448,
+      "headword": "完",
+      "reading": "wán",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wán",
+          "file": "cmn-84e29535.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-完.mp3",
+        "gitBlob": "6777f1842c88f1b8532d2757e6cd45ea2126bf04",
+        "bytes": 8776,
+        "sha256": "2a451b0d24d73b65a29697e4d3b3d9ab40be6df74361e23fa51f1c93ebc40844"
+      },
+      "previousHskIndex": 448
+    },
+    {
+      "entryId": "7efa8a51-df4d-44af-a645-2b9ea0a9a5ad",
+      "hskIndex": 449,
+      "headword": "万",
+      "reading": "wàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wàn",
+          "file": "cmn-0e6a935d.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-万.mp3",
+        "gitBlob": "9d84ab5d7a95e2fb8e93f2027b4908f469ff3bc6",
+        "bytes": 7522,
+        "sha256": "601b57d561d3e93f9a771244723975531ce1a4b5a725ebe4d6c5ef133584bc3b"
+      },
+      "previousHskIndex": 449
+    },
+    {
+      "entryId": "f62a12a0-826a-411a-a589-469f1eb6e6c8",
+      "hskIndex": 450,
+      "headword": "网上",
+      "reading": "wǎngshang",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 451
+    },
+    {
+      "entryId": "72d560ee-37f5-41a7-a1a0-a5dc7a70fe04",
+      "hskIndex": 451,
+      "headword": "往",
+      "reading": "wǎng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wǎng",
+          "file": "cmn-c796cb4f.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-往.mp3",
+        "gitBlob": "5a9ad788ce91b5c7033c30132e27bf5300063fdd",
+        "bytes": 9612,
+        "sha256": "ee760b66d491d2fecd67b628d1692c3ccc6bdc839168f5416e7cfe57de0a34d9"
+      },
+      "previousHskIndex": 450
+    },
+    {
+      "entryId": "60625c1a-1f25-4477-be99-80ef1d085cc9",
+      "hskIndex": 452,
+      "headword": "忘",
+      "reading": "wàng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wàng",
+          "file": "cmn-cde16258.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-忘.mp3",
+        "gitBlob": "f526846a31e41a57853aad2f0fabe3b5209514f6",
+        "bytes": 7940,
+        "sha256": "82e89cc5b44e963853f10c5b7c229ec560855a2979646a120dfa2c10831b59b2"
+      },
+      "previousHskIndex": 452
+    },
+    {
+      "entryId": "282304f5-c0de-4f30-a031-ff9892ce452f",
+      "hskIndex": 453,
+      "headword": "为什么",
+      "reading": "wèi shénme",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wèishénme",
+          "file": "cmn-7fd1a980.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-为什么.mp3",
+        "gitBlob": "889670c15be868e66765521fba36074189cf0916",
+        "bytes": 10239,
+        "sha256": "989d0558323e476aa720f025acbf4bbc7dfa12e984ef995fe5c85f506693c55c"
+      },
+      "previousHskIndex": 454
+    },
+    {
+      "entryId": "44c13561-90f1-49e8-8a89-b2390639336f",
+      "hskIndex": 454,
+      "headword": "位",
+      "reading": "wèi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "wèi",
+          "file": "cmn-93c88e06.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-位.mp3",
+        "gitBlob": "03f31f460900bdc2a810a10de9687ef86df8b9c4",
+        "bytes": 7940,
+        "sha256": "5a69ca3d9a17ab00d122c9c140e3d7c844ef0cd37f75e2aff9e74b37eecf6dc5"
+      },
+      "previousHskIndex": 453
+    },
+    {
+      "entryId": "b2fe1c37-997e-450e-ae89-c3bf9f68e002",
+      "hskIndex": 455,
+      "headword": "希望",
+      "reading": "xīwàng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xīwàng",
+          "file": "cmn-6735420c.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-希望.mp3",
+        "gitBlob": "4ef3d84fbb3e47795966466f66e99ab8a2216ca6",
+        "bytes": 11074,
+        "sha256": "c8e3cad29aea78433f9a9f63e1383f90a97853c5c62c4ca1024d575ed64f8e68"
+      },
+      "previousHskIndex": 455
+    },
+    {
+      "entryId": "af61cdb2-bbcd-412c-ba2e-9885bf83ea2c",
+      "hskIndex": 456,
+      "headword": "洗",
+      "reading": "xǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xǐ",
+          "file": "cmn-bcec185b.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-洗.mp3",
+        "gitBlob": "db5ecef0b26eefdc8e542036cf9c2ac4c65b339b",
+        "bytes": 10239,
+        "sha256": "19a774ab26fb844e0f3bc3bbd682bd3042b2895535aecba2868ccae1f8e2d77b"
+      },
+      "previousHskIndex": 456
+    },
+    {
+      "entryId": "b53b0166-bcaf-4f7a-9abe-b45ce04df05c",
+      "hskIndex": 457,
+      "headword": "洗手间",
+      "reading": "xǐshǒujiān",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 457
+    },
+    {
+      "entryId": "77ccd6b9-1425-412b-a815-c8fc5655aee3",
+      "hskIndex": 458,
+      "headword": "下来",
+      "reading": "xiàlái",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xiàlái",
+          "file": "cmn-e9c485fa.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-下来.mp3",
+        "gitBlob": "aed8676ebddd8aa4d64c8c35eb574acf5d3b86f8",
+        "bytes": 11492,
+        "sha256": "4931568dfd7e873976bb9b499e137b05717577c5e99ef32aaff236095fadf3a9"
+      },
+      "previousHskIndex": 458
+    },
+    {
+      "entryId": "bfee13b6-a376-48dc-8995-e74f4d53dfae",
+      "hskIndex": 459,
+      "headword": "下面",
+      "reading": "xiàmiàn",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "xiàmian",
+          "file": "cmn-7cfc5764.mp3"
+        }
+      ],
+      "previousHskIndex": 459
+    },
+    {
+      "entryId": "bda98b65-de25-4916-8c58-9f1583929fbb",
+      "hskIndex": 460,
+      "headword": "下去",
+      "reading": "xiàqù",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xiàqù",
+          "file": "cmn-70624752.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-下去.mp3",
+        "gitBlob": "fe62b600cfd92c6f08aea34693e088786b4e734b",
+        "bytes": 11074,
+        "sha256": "847120110dce93aa69cd800f7e256558b3753c628f1862e52af9f3421f9652d9"
+      },
+      "previousHskIndex": 460
+    },
+    {
+      "entryId": "c74ae0e2-7bc1-43fc-8547-90984aff6c49",
+      "hskIndex": 461,
+      "headword": "小孩儿",
+      "reading": "xiǎoháir",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xiǎoháir",
+          "file": "cmn-6b45fa36.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-小孩儿.mp3",
+        "gitBlob": "743d384af32fdc9b869010626cf2a7df7c8af11c",
+        "bytes": 11492,
+        "sha256": "eaba162590a60594353f704d70e51694db71f1877a728032b431896d714bcc9f"
+      },
+      "previousHskIndex": 461
+    },
+    {
+      "entryId": "fd213f3d-07c7-4811-9029-0998569befbf",
+      "hskIndex": 462,
+      "headword": "小时候",
+      "reading": "xiǎoshíhou",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 462
+    },
+    {
+      "entryId": "319992f4-9090-4a65-abb6-a609acf68dde",
+      "hskIndex": 463,
+      "headword": "笑",
+      "reading": "xiào",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xiào",
+          "file": "cmn-d6564f00.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-笑.mp3",
+        "gitBlob": "97b09ac4ec8fce6a4115abd2caa17eb83680dca9",
+        "bytes": 8358,
+        "sha256": "181e7c327cc51bcc9fd631b03afa3e5dcb476662bd78bb3e40eceb083eaa6bef"
+      },
+      "previousHskIndex": 463
+    },
+    {
+      "entryId": "6d8edcdc-45db-48c0-a0a1-ae7c9e50397f",
+      "hskIndex": 464,
+      "headword": "姓",
+      "reading": "xìng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xìng",
+          "file": "cmn-d8282389.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-姓.mp3",
+        "gitBlob": "7938b7381da67d9efe1cdb14eb293834b2b5f12e",
+        "bytes": 8776,
+        "sha256": "a5d1dd105f6f7e9dafa77a11f5ab48e4427305381a16401134caf0f306604e91"
+      },
+      "previousHskIndex": 464
+    },
+    {
+      "entryId": "5b1b949b-6e33-44eb-b21d-ef0836fff6f7",
+      "hskIndex": 465,
+      "headword": "姓名",
+      "reading": "xìngmíng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "xìngmíng",
+          "file": "cmn-d7d84192.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-姓名.mp3",
+        "gitBlob": "a8f5308c7b5cb91d92cf745aceaf78ed0be282a0",
+        "bytes": 11910,
+        "sha256": "05046c0f7a183ee7900720ab7ab1cf3c9b9546349213a2cbd11f760877b75268"
+      },
+      "previousHskIndex": 465
+    },
+    {
+      "entryId": "13ccd570-76c4-4563-ac7b-f41870e837d0",
+      "hskIndex": 466,
+      "headword": "颜色",
+      "reading": "yánsè",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yánsè",
+          "file": "cmn-152709b9.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-颜色.mp3",
+        "gitBlob": "3729070fca2127aae5ce01fa417bb555760844fd",
+        "bytes": 10239,
+        "sha256": "7198b144d2711b613de449720ad3ae29b1cd7bcbac520dd1e853bbba98ac5bdb"
+      },
+      "previousHskIndex": 466
+    },
+    {
+      "entryId": "54b3f54d-705a-4da0-8314-3ff7809ae4e2",
+      "hskIndex": 467,
+      "headword": "眼睛",
+      "reading": "yǎnjing",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yǎnjing",
+          "file": "cmn-f64ec914.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-眼睛.mp3",
+        "gitBlob": "873b482f3a3c4782503b8304ca8c62f4fe0695a0",
+        "bytes": 10239,
+        "sha256": "2ef694283f2c57407161567e7b0bc123b70e0323f94400b2ba6631e5f9f24ba1"
+      },
+      "previousHskIndex": 467
+    },
+    {
+      "entryId": "fff2df47-3466-4783-9026-518d65ae4958",
+      "hskIndex": 468,
+      "headword": "药",
+      "reading": "yào",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yào",
+          "file": "cmn-90f40075.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-药.mp3",
+        "gitBlob": "9d993ebbf941aed713ffc2494665082ff7f3976d",
+        "bytes": 7940,
+        "sha256": "19b88aa8f43ef8a3932ca2a7e15f6fc830199be7a1cb054346e4af1614fa552b"
+      },
+      "previousHskIndex": 468
+    },
+    {
+      "entryId": "44a6ab31-1878-4f8b-a04b-814f74bbb5e5",
+      "hskIndex": 469,
+      "headword": "药店",
+      "reading": "yàodiàn",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 469
+    },
+    {
+      "entryId": "ef212e5a-7a5c-424e-8550-1f097cc944a7",
+      "hskIndex": 470,
+      "headword": "爷爷",
+      "reading": "yéye",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yéye",
+          "file": "cmn-b142f5a0.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-爷爷.mp3",
+        "gitBlob": "52ceaa943620cebd0b84585afac130d0de2942de",
+        "bytes": 9612,
+        "sha256": "2cee6d72754d665c15705c783443ea0eddcc7b5fddc22c75fab06c9b409d4396"
+      },
+      "previousHskIndex": 470
+    },
+    {
+      "entryId": "24c9cd68-5340-4dd0-8e5a-20996118f7bf",
+      "hskIndex": 471,
+      "headword": "一会儿",
+      "reading": "yíhuìr",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yíhuìr",
+          "file": "cmn-2dd1bff1.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-一会儿.mp3",
+        "gitBlob": "79fbee5f3c1b0e519fc30110d519b10b9b53e244",
+        "bytes": 9612,
+        "sha256": "ec9b201a519c59a5f7ef29715cbf7eeaa3b450f1921773bf1a465ccdaf511134"
+      },
+      "previousHskIndex": 471
+    },
+    {
+      "entryId": "85c6ecbd-8a53-4f8f-afb6-b877f13215bd",
+      "hskIndex": 472,
+      "headword": "一起",
+      "reading": "yìqǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yìqǐ",
+          "file": "cmn-9abff013.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-一起.mp3",
+        "gitBlob": "7562cd7620b384f7205ef80cc9e1b7bbb3620547",
+        "bytes": 10656,
+        "sha256": "40e11209de3952e0d5f65a9626769558fe0df043d01fc4fc082cc793042a1249"
+      },
+      "previousHskIndex": 473
+    },
+    {
+      "entryId": "2478e118-7ace-4d33-950b-83ff078be538",
+      "hskIndex": 473,
+      "headword": "已经",
+      "reading": "yǐjīng",
+      "status": "reading_mismatch",
+      "sourceCandidates": [
+        {
+          "reading": "yǐjing",
+          "file": "cmn-344c5660.mp3"
+        }
+      ],
+      "previousHskIndex": 472
+    },
+    {
+      "entryId": "c268bfea-bf8b-43fd-8591-4f342b12919a",
+      "hskIndex": 474,
+      "headword": "意思",
+      "reading": "yìsi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yìsi",
+          "file": "cmn-98d132a3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-意思.mp3",
+        "gitBlob": "bbdaac43cf416dd1776ea3aab41ff5d2c689b871",
+        "bytes": 9612,
+        "sha256": "422c377326756b55e4f62a7c41366f81c0f2dfdbeef86ae89352ec0ac22553ec"
+      },
+      "previousHskIndex": 474
+    },
+    {
+      "entryId": "85771c3c-dacf-40c1-b3db-ee3f935ed196",
+      "hskIndex": 475,
+      "headword": "因为",
+      "reading": "yīnwèi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yīnwèi",
+          "file": "cmn-b5b522c8.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-因为.mp3",
+        "gitBlob": "8a11690dfac2083316593e60a8bc64043fc16b87",
+        "bytes": 10656,
+        "sha256": "619876c88b5fcfc6f2494b3dde7a77fa7895bbef35b4acd742ae21161733bc3d"
+      },
+      "previousHskIndex": 476
+    },
+    {
+      "entryId": "387c11a2-c883-409f-bf46-e1283d9fc09a",
+      "hskIndex": 476,
+      "headword": "阴",
+      "reading": "yīn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yīn",
+          "file": "cmn-2ce645ba.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-阴.mp3",
+        "gitBlob": "2673ca45046d9c889f33a169508a3b792c341388",
+        "bytes": 8776,
+        "sha256": "f606ff3bdbef5257bc9634c00ba166c8eda2f801e97805fbc8bc7caf9429ee7a"
+      },
+      "previousHskIndex": 475
+    },
+    {
+      "entryId": "2fbf9b65-337a-4989-a1f5-235f04b4c9c4",
+      "hskIndex": 477,
+      "headword": "游",
+      "reading": "yóu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yóu",
+          "file": "cmn-bb886a0e.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-游.mp3",
+        "gitBlob": "b19a324518c63930acf8c9fc0e538c65937c6d26",
+        "bytes": 8776,
+        "sha256": "c3300f450556a760e91229980f29928e310a6cbb1372578217e6910486af1806"
+      },
+      "previousHskIndex": 477
+    },
+    {
+      "entryId": "1b4b6b1c-178c-475f-941b-4568c9698a8b",
+      "hskIndex": 478,
+      "headword": "游泳",
+      "reading": "yóuyǒng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yóuyǒng",
+          "file": "cmn-b941cfc3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-游泳.mp3",
+        "gitBlob": "4410ab1f4056b643447cc21a66337673d21d3394",
+        "bytes": 11910,
+        "sha256": "783cc443ba1d53552efa66a6829ca1b5f8760b2451d8612d0f7419517adff4ee"
+      },
+      "previousHskIndex": 478
+    },
+    {
+      "entryId": "ad0e31c2-5d1d-4e9d-a57e-030468d6db0a",
+      "hskIndex": 479,
+      "headword": "有时",
+      "reading": "yǒushí",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yǒushí",
+          "file": "cmn-4415ccea.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-有时.mp3",
+        "gitBlob": "a37a82c5d750b2e2479180b001488550ee2dead1",
+        "bytes": 11492,
+        "sha256": "0b298d74d4db6ac7e6b452ead3b326b618c1f60b15548028fff7987fd0f11530"
+      },
+      "previousHskIndex": 480
+    },
+    {
+      "entryId": "b20f26bc-06e7-417c-ba36-04568a7522a4",
+      "hskIndex": 480,
+      "headword": "有意思",
+      "reading": "yǒu yìsi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yǒuyìsi",
+          "file": "cmn-e3977150.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-有意思.mp3",
+        "gitBlob": "083fcf633e084d72aa4708318df886773aa20a6a",
+        "bytes": 11074,
+        "sha256": "1af3cfb53ebdbbd5759c34453f0748059222fab2eab4b642fcb0c96ddcb41820"
+      },
+      "previousHskIndex": 479
+    },
+    {
+      "entryId": "e8815b2b-ab2d-429b-bbbe-8c2192180a31",
+      "hskIndex": 481,
+      "headword": "右",
+      "reading": "yòu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yòu",
+          "file": "cmn-be1badeb.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-右.mp3",
+        "gitBlob": "650a539a1d09e995a00b68194570f96466252f1a",
+        "bytes": 7940,
+        "sha256": "73e078599711d131aecca35658628c3a80185b56b444cab2a7ea11fe02d1e968"
+      },
+      "previousHskIndex": 481
+    },
+    {
+      "entryId": "3e1cd2cc-704c-4d1e-8620-964f90e3fd60",
+      "hskIndex": 482,
+      "headword": "右边",
+      "reading": "yòubian",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yòubian",
+          "file": "cmn-a430e4a3.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-右边.mp3",
+        "gitBlob": "ab5bd62200ac933391ff5c1c725254bf7e49810a",
+        "bytes": 9612,
+        "sha256": "f64958e27199c16ba4d235d0735b693792d08bfeabb1a3a575710a16b27b368c"
+      },
+      "previousHskIndex": 482
+    },
+    {
+      "entryId": "b93b2f33-e3ca-424c-bbb9-673ea657a5f7",
+      "hskIndex": 483,
+      "headword": "鱼",
+      "reading": "yú",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yú",
+          "file": "cmn-667b5263.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-鱼.mp3",
+        "gitBlob": "df62ea333a8529f08f890ecd6c2a3a6a564ac3ba",
+        "bytes": 8358,
+        "sha256": "edb6b3cc4e81c0d13022c5f6241b60743b672ba044d21954352d5c4f6de3b605"
+      },
+      "previousHskIndex": 483
+    },
+    {
+      "entryId": "3330180b-e8ba-45cf-b505-0e23fca72ba7",
+      "hskIndex": 484,
+      "headword": "远",
+      "reading": "yuǎn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yuǎn",
+          "file": "cmn-c2543512.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-远.mp3",
+        "gitBlob": "6c73f5085fdbc8ac8a61d42e78f941a0cedf6fea",
+        "bytes": 10030,
+        "sha256": "255d850a580244e9752efce85498c94471da93d574d8f016153a16c11502b4a2"
+      },
+      "previousHskIndex": 484
+    },
+    {
+      "entryId": "b2d734ad-f6c4-4e6f-97b7-016fc41f353b",
+      "hskIndex": 485,
+      "headword": "运动",
+      "reading": "yùndòng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "yùndòng",
+          "file": "cmn-d24a0f7d.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-运动.mp3",
+        "gitBlob": "25fef06b8d7f2e269e853433ef32327272c10bd4",
+        "bytes": 10030,
+        "sha256": "567f5c4e7f258cd1ebbaa4495a2dccf3601bf5b3bdf73206a0aaf535eef5c83a"
+      },
+      "previousHskIndex": 485
+    },
+    {
+      "entryId": "1016e583-c40e-4eed-a6ad-ba710826274f",
+      "hskIndex": 486,
+      "headword": "站",
+      "reading": "zhàn",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhàn",
+          "file": "cmn-97cc51f5.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-站.mp3",
+        "gitBlob": "4b06c82dfdd6a9c253505dea3e698d0e926571e7",
+        "bytes": 7940,
+        "sha256": "485058ea5b804956d06c4762d9e1d8d73f6684f69c590bfa868abc11543d4205"
+      },
+      "previousHskIndex": 486
+    },
+    {
+      "entryId": "361424b9-f22d-466b-8027-7fdab480d4f7",
+      "hskIndex": 487,
+      "headword": "丈夫",
+      "reading": "zhàngfu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhàngfu",
+          "file": "cmn-100b34f0.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-丈夫.mp3",
+        "gitBlob": "b31fe7313b1da3326469d8f2665036c2159150a1",
+        "bytes": 10239,
+        "sha256": "c79ef672a6dbcb4e0fcb1c82cad765598b82a5cf93e0b6547da37146749a193a"
+      },
+      "previousHskIndex": 487
+    },
+    {
+      "entryId": "406c9040-351e-4bf6-be18-7de4d4776207",
+      "hskIndex": 488,
+      "headword": "这么",
+      "reading": "zhème",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhème",
+          "file": "cmn-61856f38.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-这么.mp3",
+        "gitBlob": "c4e3908232e0f8ff860404c333399cac1610fec4",
+        "bytes": 8776,
+        "sha256": "32610a25b2d6bd4c3acd6bc178cc4189696f9304ea68761150968b7238bc36eb"
+      },
+      "previousHskIndex": 488
+    },
+    {
+      "entryId": "24bcaeda-015a-4e91-be47-231cbbdb299d",
+      "hskIndex": 489,
+      "headword": "这样",
+      "reading": "zhèyàng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhèyàng",
+          "file": "cmn-4f673f73.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-这样.mp3",
+        "gitBlob": "7a50a3a1780fd83fc8ace256f8cc85b1e9215420",
+        "bytes": 10030,
+        "sha256": "2bd8938ac309a80ea49df42c6f3dfc8300af8de73cc7749f6674e0c8f0e43263"
+      },
+      "previousHskIndex": 489
+    },
+    {
+      "entryId": "d7aafcd0-b798-4e29-9d67-ab69145640a1",
+      "hskIndex": 490,
+      "headword": "着",
+      "reading": "zhe",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhe",
+          "file": "cmn-7abb6840.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-着.mp3",
+        "gitBlob": "278117608f96331b4c6cab0d4c77c021aa04cf06",
+        "bytes": 7104,
+        "sha256": "d0c1708fa56e7cbf38548ebd1e46ca986975a5b267ec82db535db54ae6ede93e"
+      },
+      "previousHskIndex": 490
+    },
+    {
+      "entryId": "cdfe9f5e-e553-4137-8ae8-76dfbd5a328e",
+      "hskIndex": 491,
+      "headword": "正",
+      "reading": "zhèng",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhèng",
+          "file": "cmn-065845f6.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-正.mp3",
+        "gitBlob": "50f103c54a772234643b29c705012748ad6accc2",
+        "bytes": 7940,
+        "sha256": "21638c58bfa3b70f2e5a40350df8a85fd164308769eec5277f9bc7cfce3fa9ec"
+      },
+      "previousHskIndex": 491
+    },
+    {
+      "entryId": "ac58e17c-876c-4444-9c5c-9203e58faaed",
+      "hskIndex": 492,
+      "headword": "周",
+      "reading": "zhōu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhōu",
+          "file": "cmn-e03f5bd8.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-周.mp3",
+        "gitBlob": "19a08e123ec78dd99bbbc7f7c3b4a6cd6e039c29",
+        "bytes": 7940,
+        "sha256": "0aca057e8dac430deb665f48788c9d376c3033ed7d763f84979df2bb77b9d19b"
+      },
+      "previousHskIndex": 492
+    },
+    {
+      "entryId": "43971255-8688-4fa6-9e0f-bdf3d39c70a9",
+      "hskIndex": 493,
+      "headword": "准备",
+      "reading": "zhǔnbèi",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zhǔnbèi",
+          "file": "cmn-2a21d3d2.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-准备.mp3",
+        "gitBlob": "3282075f5f5bb061d5fb473ee5360e4fcfd3a8ee",
+        "bytes": 10656,
+        "sha256": "26c0c80450e7658e9f9caaee825bf55c7a67f9ce648ae80f842bd210ea7458f5"
+      },
+      "previousHskIndex": 493
+    },
+    {
+      "entryId": "d6bbd4e3-bb32-4353-9ddb-33ee736f549d",
+      "hskIndex": 494,
+      "headword": "自己",
+      "reading": "zìjǐ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zìjǐ",
+          "file": "cmn-d20e0481.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-自己.mp3",
+        "gitBlob": "ace2e4d3f2ddc104609e80cc5c75b96799bec33f",
+        "bytes": 11074,
+        "sha256": "b5d282b05013c91ea9023b059ceb8ed78575f1caf8deb0c972d5be889631235e"
+      },
+      "previousHskIndex": 494
+    },
+    {
+      "entryId": "cf5af7ac-12dc-495c-aa05-10e8e1d5a77d",
+      "hskIndex": 495,
+      "headword": "走",
+      "reading": "zǒu",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zǒu",
+          "file": "cmn-0a63b17b.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-走.mp3",
+        "gitBlob": "e69d4a9dc49a5b4deccec50c58c5a3a01eb190dc",
+        "bytes": 10030,
+        "sha256": "d4afd0b7446206f95a1a103631c0b9e8b30be1a926e63fc36104e002b41a2a9f"
+      },
+      "previousHskIndex": 495
+    },
+    {
+      "entryId": "2dae49f9-9f09-4a7a-b0f1-a7ca45746114",
+      "hskIndex": 496,
+      "headword": "走路",
+      "reading": "zǒulù",
+      "status": "missing",
+      "sourceCandidates": [],
+      "previousHskIndex": 496
+    },
+    {
+      "entryId": "e195714e-0cbd-4949-a3d5-c6f6693404df",
+      "hskIndex": 497,
+      "headword": "足球",
+      "reading": "zúqiú",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zúqiú",
+          "file": "cmn-72c8ba29.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-足球.mp3",
+        "gitBlob": "ea3cd8de1c135efe3c19de0df6a1370a37b0d23c",
+        "bytes": 11492,
+        "sha256": "f45580f9ef193290e26f20f6164761f0c2b32c9afa4794a24b804c03d88299a2"
+      },
+      "previousHskIndex": 497
+    },
+    {
+      "entryId": "a4882fe5-1da2-4d0f-b9d2-aebb1cd8037c",
+      "hskIndex": 498,
+      "headword": "最",
+      "reading": "zuì",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zuì",
+          "file": "cmn-62623336.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-最.mp3",
+        "gitBlob": "b43ad540bc7a6734821d6ee13cb6fecc86826a30",
+        "bytes": 8358,
+        "sha256": "1011c8f4005e925ae00451c695ddd2e74b9f4165df07f009b04fd9a832ecf450"
+      },
+      "previousHskIndex": 498
+    },
+    {
+      "entryId": "834697da-0939-4ef4-84a8-0e886e16be12",
+      "hskIndex": 499,
+      "headword": "左",
+      "reading": "zuǒ",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zuǒ",
+          "file": "cmn-c459f5fb.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-左.mp3",
+        "gitBlob": "c91440d4317137bd277b9e07718065124b14706b",
+        "bytes": 9612,
+        "sha256": "cfb9360072d211957f6cc1ca983d8c84b5307ec551c067ccc82d118138d29550"
+      },
+      "previousHskIndex": 499
+    },
+    {
+      "entryId": "58db4490-3a3a-4f10-bffa-a3facae0ac9d",
+      "hskIndex": 500,
+      "headword": "左边",
+      "reading": "zuǒbian",
+      "status": "matched",
+      "sourceCandidates": [
+        {
+          "reading": "zuǒbian",
+          "file": "cmn-52a6b049.mp3"
+        }
+      ],
+      "recording": {
+        "path": "64k/hsk/cmn-左边.mp3",
+        "gitBlob": "21ca8bfc00f49a5733e607daac993b39a53ea1df",
+        "bytes": 10030,
+        "sha256": "d06b2f2a64d166e93245eb6278a24d11afd2aa032cd31d221ec537c96ef9e13e"
+      },
+      "previousHskIndex": 500
+    }
+  ],
+  "handoff": {
+    "file": "hsk3_level2_1.1.2.json",
+    "sha256": "570c01067ae3262d112ac096e990cc54b06ab336f6df7e342f4084135c67199d"
+  },
+  "numberingRevision": {
+    "name": "official-site-1219",
+    "previousManifest": {
+      "path": "importer/data/hsk-audio/level2-manifest.json",
+      "sha256_lf": "2f2a36d5556695b690ce6ec0c4e91b2cf30ceacee9926f0c89fa4ec31adfb49c"
+    }
+  },
+  "sentenceRevision": {
+    "baseline_manifest": {
+      "path": "importer/data/hsk-audio/level2-manifest-1.1.2.json",
+      "sha256": "79bc77ea929c8253f1f3fe733375f3a068a0351bcb6eeca92dbcfd5c41a60b5e"
+    },
+    "word_ids_readings_and_recordings_unchanged": true
+  }
+}

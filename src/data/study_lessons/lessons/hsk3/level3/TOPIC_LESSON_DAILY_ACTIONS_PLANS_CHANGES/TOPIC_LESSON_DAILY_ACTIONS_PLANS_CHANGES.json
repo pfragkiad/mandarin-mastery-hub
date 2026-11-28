@@ -1,0 +1,1814 @@
+{
+  "schema_version": "mandarin-topic-lesson/3.4.0",
+  "lesson_id": "topic-plans-and-changes",
+  "lesson_type": "topic_vocabulary",
+  "lesson": {
+    "title": "Plans, Changes & Keeping Going",
+    "subtitle": "Planning, discovering, exchanging, completing, and persisting",
+    "description": "Talk about making plans, discovering things, changing or exchanging, borrowing and returning, and completing goals.",
+    "slug": "plans-and-changes"
+  },
+  "classification": {
+    "primary_topic_id": "daily-actions",
+    "topic_ids": [
+      "daily-actions"
+    ],
+    "tags": [
+      "plans",
+      "changes",
+      "goals"
+    ],
+    "course_topic_refs": [],
+    "primary_subtopic_id": "processes-change",
+    "subtopic_ids": [
+      "processes-change"
+    ]
+  },
+  "learning_objectives": [
+    "Talk about intentions, persistence, and completion: 打算, 试, 选, 坚持, 完成, and 忘记.",
+    "Describe change and discovery: 变, 变成, 换, 加, 长, 不见, and 发现.",
+    "Talk about borrowing, receiving, and returning: 借, 还, 收, 得, 得到, 参加, and 照."
+  ],
+  "metadata": {
+    "status": "draft",
+    "template_version": "3.4.0",
+    "audience": "HSK 3.0 Level 3 learners with Level 1-2 foundations",
+    "language": "zh-CN",
+    "date_reviewed": null
+  },
+  "catalog_character_refs": {
+    "一": "Characters:一",
+    "三": "Characters:三",
+    "上": "Characters:上",
+    "下": "Characters:下",
+    "不": "Characters:不",
+    "业": "Characters:业",
+    "两": "Characters:两",
+    "个": "Characters:个",
+    "中": "Characters:中",
+    "么": "Characters:么",
+    "也": "Characters:也",
+    "习": "Characters:习",
+    "乡": "Characters:乡",
+    "书": "Characters:书",
+    "了": "Characters:了",
+    "什": "Characters:什",
+    "仅": "Characters:仅",
+    "今": "Characters:今",
+    "从": "Characters:从",
+    "他": "Characters:他",
+    "代": "Characters:代",
+    "以": "Characters:以",
+    "们": "Characters:们",
+    "件": "Characters:件",
+    "任": "Characters:任",
+    "会": "Characters:会",
+    "伞": "Characters:伞",
+    "体": "Characters:体",
+    "作": "Characters:作",
+    "你": "Characters:你",
+    "候": "Characters:候",
+    "借": "Characters:借",
+    "健": "Characters:健",
+    "儿": "Characters:儿",
+    "全": "Characters:全",
+    "八": "Characters:八",
+    "公": "Characters:公",
+    "典": "Characters:典",
+    "再": "Characters:再",
+    "写": "Characters:写",
+    "冰": "Characters:冰",
+    "冷": "Characters:冷",
+    "凉": "Characters:凉",
+    "几": "Characters:几",
+    "分": "Characters:分",
+    "划": "Characters:划",
+    "刚": "Characters:刚",
+    "别": "Characters:别",
+    "到": "Characters:到",
+    "办": "Characters:办",
+    "加": "Characters:加",
+    "务": "Characters:务",
+    "动": "Characters:动",
+    "助": "Characters:助",
+    "十": "Characters:十",
+    "半": "Characters:半",
+    "去": "Characters:去",
+    "参": "Characters:参",
+    "友": "Characters:友",
+    "发": "Characters:发",
+    "变": "Characters:变",
+    "只": "Characters:只",
+    "可": "Characters:可",
+    "同": "Characters:同",
+    "名": "Characters:名",
+    "后": "Characters:后",
+    "向": "Characters:向",
+    "吗": "Characters:吗",
+    "吧": "Characters:吧",
+    "周": "Characters:周",
+    "咖": "Characters:咖",
+    "哪": "Characters:哪",
+    "商": "Characters:商",
+    "啊": "Characters:啊",
+    "啡": "Characters:啡",
+    "园": "Characters:园",
+    "国": "Characters:国",
+    "图": "Characters:图",
+    "在": "Characters:在",
+    "地": "Characters:地",
+    "坐": "Characters:坐",
+    "坚": "Characters:坚",
+    "城": "Characters:城",
+    "复": "Characters:复",
+    "多": "Characters:多",
+    "够": "Characters:够",
+    "大": "Characters:大",
+    "天": "Characters:天",
+    "太": "Characters:太",
+    "她": "Characters:她",
+    "好": "Characters:好",
+    "始": "Characters:始",
+    "子": "Characters:子",
+    "字": "Characters:字",
+    "学": "Characters:学",
+    "孩": "Characters:孩",
+    "完": "Characters:完",
+    "定": "Characters:定",
+    "室": "Characters:室",
+    "家": "Characters:家",
+    "对": "Characters:对",
+    "小": "Characters:小",
+    "少": "Characters:少",
+    "屋": "Characters:屋",
+    "工": "Characters:工",
+    "差": "Characters:差",
+    "己": "Characters:己",
+    "已": "Characters:已",
+    "市": "Characters:市",
+    "师": "Characters:师",
+    "带": "Characters:带",
+    "帮": "Characters:帮",
+    "年": "Characters:年",
+    "店": "Characters:店",
+    "度": "Characters:度",
+    "座": "Characters:座",
+    "康": "Characters:康",
+    "开": "Characters:开",
+    "弃": "Characters:弃",
+    "张": "Characters:张",
+    "影": "Characters:影",
+    "很": "Characters:很",
+    "得": "Characters:得",
+    "忘": "Characters:忘",
+    "快": "Characters:快",
+    "总": "Characters:总",
+    "想": "Characters:想",
+    "成": "Characters:成",
+    "我": "Characters:我",
+    "手": "Characters:手",
+    "打": "Characters:打",
+    "把": "Characters:把",
+    "持": "Characters:持",
+    "按": "Characters:按",
+    "换": "Characters:换",
+    "摄": "Characters:摄",
+    "收": "Characters:收",
+    "放": "Characters:放",
+    "教": "Characters:教",
+    "新": "Characters:新",
+    "方": "Characters:方",
+    "早": "Characters:早",
+    "时": "Characters:时",
+    "明": "Characters:明",
+    "景": "Characters:景",
+    "更": "Characters:更",
+    "月": "Characters:月",
+    "朋": "Characters:朋",
+    "服": "Characters:服",
+    "期": "Characters:期",
+    "末": "Characters:末",
+    "本": "Characters:本",
+    "机": "Characters:机",
+    "条": "Characters:条",
+    "来": "Characters:来",
+    "标": "Characters:标",
+    "树": "Characters:树",
+    "校": "Characters:校",
+    "桌": "Characters:桌",
+    "次": "Characters:次",
+    "正": "Characters:正",
+    "每": "Characters:每",
+    "比": "Characters:比",
+    "气": "Characters:气",
+    "水": "Characters:水",
+    "汉": "Characters:汉",
+    "没": "Characters:没",
+    "法": "Characters:法",
+    "活": "Characters:活",
+    "点": "Characters:点",
+    "照": "Characters:照",
+    "片": "Characters:片",
+    "物": "Characters:物",
+    "现": "Characters:现",
+    "班": "Characters:班",
+    "甚": "Characters:甚",
+    "生": "Characters:生",
+    "男": "Characters:男",
+    "留": "Characters:留",
+    "的": "Characters:的",
+    "目": "Characters:目",
+    "相": "Characters:相",
+    "看": "Characters:看",
+    "着": "Characters:着",
+    "礼": "Characters:礼",
+    "秋": "Characters:秋",
+    "种": "Characters:种",
+    "穿": "Characters:穿",
+    "笔": "Characters:笔",
+    "第": "Characters:第",
+    "算": "Characters:算",
+    "糖": "Characters:糖",
+    "累": "Characters:累",
+    "线": "Characters:线",
+    "练": "Characters:练",
+    "经": "Characters:经",
+    "给": "Characters:给",
+    "绩": "Characters:绩",
+    "绿": "Characters:绿",
+    "老": "Characters:老",
+    "能": "Characters:能",
+    "脸": "Characters:脸",
+    "自": "Characters:自",
+    "至": "Characters:至",
+    "草": "Characters:草",
+    "衣": "Characters:衣",
+    "要": "Characters:要",
+    "见": "Characters:见",
+    "觉": "Characters:觉",
+    "计": "Characters:计",
+    "让": "Characters:让",
+    "记": "Characters:记",
+    "词": "Characters:词",
+    "试": "Characters:试",
+    "该": "Characters:该",
+    "语": "Characters:语",
+    "请": "Characters:请",
+    "课": "Characters:课",
+    "谢": "Characters:谢",
+    "赛": "Characters:赛",
+    "跑": "Characters:跑",
+    "路": "Characters:路",
+    "身": "Characters:身",
+    "边": "Characters:边",
+    "过": "Characters:过",
+    "运": "Characters:运",
+    "还": "Characters:还",
+    "这": "Characters:这",
+    "进": "Characters:进",
+    "选": "Characters:选",
+    "那": "Characters:那",
+    "部": "Characters:部",
+    "都": "Characters:都",
+    "里": "Characters:里",
+    "钱": "Characters:钱",
+    "长": "Characters:长",
+    "门": "Characters:门",
+    "间": "Characters:间",
+    "阳": "Characters:阳",
+    "零": "Characters:零",
+    "项": "Characters:项",
+    "风": "Characters:风",
+    "馆": "Characters:馆",
+    "高": "Characters:高"
+  },
+  "sections": {
+    "overview": {
+      "topic_description": "Verbs of planning, transformation, exchange, and accomplishment.",
+      "focus": "Note the two pronunciations of 还 (huán \"return\" vs. hái \"still\") and 变成 (\"turn into\")."
+    },
+    "vocabulary": {
+      "items": [
+        {
+          "id": "w-0526",
+          "hanzi": "变",
+          "pinyin": "biàn",
+          "meaning_en": "change; become different",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0526-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "天气变冷了。",
+              "pinyin": "tiānqì biàn lěng le.",
+              "english": "The weather has turned cold.",
+              "teaching_note": "Short everyday spoken use of 变."
+            },
+            {
+              "id": "ex-0526-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他的生活变了很多。",
+              "pinyin": "tā de shēnghuó biàn le hěn duō.",
+              "english": "His life has changed a great deal.",
+              "teaching_note": "Simple descriptive or narrative use of 变."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 526
+            }
+          ]
+        },
+        {
+          "id": "w-0527",
+          "hanzi": "变成",
+          "pinyin": "biànchéng",
+          "meaning_en": "become; turn into",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0527-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "水变成冰了。",
+              "pinyin": "shuǐ biànchéng bīng le.",
+              "english": "The water has turned into ice.",
+              "teaching_note": "Short everyday spoken use of 变成."
+            },
+            {
+              "id": "ex-0527-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这间屋子变成了教室。",
+              "pinyin": "zhè jiān wūzi biànchéng le jiàoshì.",
+              "english": "This room has been turned into a classroom.",
+              "teaching_note": "Simple descriptive or narrative use of 变成."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 527
+            }
+          ]
+        },
+        {
+          "id": "w-0539",
+          "hanzi": "不见",
+          "pinyin": "bújiàn",
+          "meaning_en": "be missing; disappear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0539-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我的手机不见了！",
+              "pinyin": "wǒ de shǒujī bújiàn le!",
+              "english": "My phone has disappeared!",
+              "teaching_note": "Short everyday spoken use of 不见."
+            },
+            {
+              "id": "ex-0539-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "桌子上的书不见了。",
+              "pinyin": "zhuōzi shàng de shū bújiàn le.",
+              "english": "The book on the table is missing.",
+              "teaching_note": "Simple descriptive or narrative use of 不见."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 539
+            }
+          ]
+        },
+        {
+          "id": "w-0546",
+          "hanzi": "参加",
+          "pinyin": "cānjiā",
+          "meaning_en": "participate; join",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0546-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你参加吗？",
+              "pinyin": "nǐ cānjiā ma?",
+              "english": "Are you joining?",
+              "teaching_note": "Short everyday spoken use of 参加."
+            },
+            {
+              "id": "ex-0546-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "这个班的学生都参加了比赛。",
+              "pinyin": "zhège bān de xuéshēng dōu cānjiā le bǐsài.",
+              "english": "All the students in this class took part in the competition.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 546
+            }
+          ]
+        },
+        {
+          "id": "w-0572",
+          "hanzi": "打算",
+          "pinyin": "dǎsuàn",
+          "meaning_en": "plan; intend",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "noun"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0572-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你打算去哪儿？",
+              "pinyin": "nǐ dǎsuàn qù nǎr?",
+              "english": "Where do you plan to go?",
+              "teaching_note": "Short everyday spoken use of 打算."
+            },
+            {
+              "id": "ex-0572-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我打算明年去中国留学。",
+              "pinyin": "wǒ dǎsuàn míngnián qù Zhōngguó liúxué.",
+              "english": "I plan to study in China next year.",
+              "teaching_note": "Simple descriptive or narrative use of 打算."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 572
+            }
+          ]
+        },
+        {
+          "id": "w-0583",
+          "hanzi": "得",
+          "pinyin": "dé",
+          "meaning_en": "obtain; get",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0583-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你得了多少分？",
+              "pinyin": "nǐ dé le duōshao fēn?",
+              "english": "How many points did you get?",
+              "teaching_note": "得 (dé) is a full verb meaning receive/get; contrast the particle de (Level 2) and modal děi (ID 587)."
+            },
+            {
+              "id": "ex-0583-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他得了第一名。",
+              "pinyin": "tā dé le dì yī míng.",
+              "english": "He came in first place.",
+              "teaching_note": "得 (dé) is a full verb meaning receive/get; contrast the particle de (Level 2) and modal děi (ID 587)."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 583
+            }
+          ]
+        },
+        {
+          "id": "w-0584",
+          "hanzi": "得到",
+          "pinyin": "dédào",
+          "meaning_en": "receive; obtain",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0584-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你得到什么礼物？",
+              "pinyin": "nǐ dédào shénme lǐwù?",
+              "english": "What gift did you receive?",
+              "teaching_note": "Short everyday spoken use of 得到."
+            },
+            {
+              "id": "ex-0584-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她得到了老师的帮助。",
+              "pinyin": "tā dédào le lǎoshī de bāngzhù.",
+              "english": "She received help from her teacher.",
+              "teaching_note": "Simple descriptive or narrative use of 得到."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 584
+            }
+          ]
+        },
+        {
+          "id": "w-0617",
+          "hanzi": "发现",
+          "pinyin": "fāxiàn",
+          "meaning_en": "discover; notice",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0617-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你发现了吗？",
+              "pinyin": "nǐ fāxiàn le ma?",
+              "english": "Did you notice?",
+              "teaching_note": "Short everyday spoken use of 发现."
+            },
+            {
+              "id": "ex-0617-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "我发现这个办法很好。",
+              "pinyin": "wǒ fāxiàn zhège bànfǎ hěn hǎo.",
+              "english": "I found that this method works well.",
+              "teaching_note": "Simple descriptive or narrative use of 发现."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 617
+            }
+          ]
+        },
+        {
+          "id": "w-0678",
+          "hanzi": "还",
+          "pinyin": "huán",
+          "meaning_en": "return; give back",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0678-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "请还我那本书。",
+              "pinyin": "qǐng huán wǒ nà běn shū.",
+              "english": "Please return that book to me.",
+              "teaching_note": "还 is huán meaning return/give back, not hái (still/also; Level 1)."
+            },
+            {
+              "id": "ex-0678-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他已经把钱还给朋友了。",
+              "pinyin": "tā yǐjīng bǎ qián huán gěi péngyou le.",
+              "english": "He has already repaid his friend.",
+              "teaching_note": "还 is huán meaning return/give back, not hái (still/also; Level 1)."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 678
+            }
+          ]
+        },
+        {
+          "id": "w-0680",
+          "hanzi": "换",
+          "pinyin": "huàn",
+          "meaning_en": "change; exchange",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0680-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我想换一件衣服。",
+              "pinyin": "wǒ xiǎng huàn yí jiàn yīfu.",
+              "english": "I want to change clothes.",
+              "teaching_note": "Short everyday spoken use of 换."
+            },
+            {
+              "id": "ex-0680-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她换了新手机。",
+              "pinyin": "tā huàn le xīn shǒujī.",
+              "english": "She got a new phone to replace her old one.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 680
+            }
+          ]
+        },
+        {
+          "id": "w-0695",
+          "hanzi": "加",
+          "pinyin": "jiā",
+          "meaning_en": "add; increase",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0695-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "再加一点儿水。",
+              "pinyin": "zài jiā yìdiǎnr shuǐ.",
+              "english": "Add a little more water.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            },
+            {
+              "id": "ex-0695-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "请在咖啡里加一点儿糖。",
+              "pinyin": "qǐng zài kāfēi lǐ jiā yìdiǎnr táng.",
+              "english": "Please add a little sugar to the coffee.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 695
+            }
+          ]
+        },
+        {
+          "id": "w-0697",
+          "hanzi": "坚持",
+          "pinyin": "jiānchí",
+          "meaning_en": "persist; keep going",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0697-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你要坚持啊！",
+              "pinyin": "nǐ yào jiānchí a!",
+              "english": "Keep at it!",
+              "teaching_note": "Short everyday spoken use of 坚持."
+            },
+            {
+              "id": "ex-0697-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他每天坚持练习汉语。",
+              "pinyin": "tā měi tiān jiānchí liànxí Hànyǔ.",
+              "english": "He practices Chinese consistently every day.",
+              "teaching_note": "Simple descriptive or narrative use of 坚持."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 697
+            }
+          ]
+        },
+        {
+          "id": "w-0715",
+          "hanzi": "借",
+          "pinyin": "jiè",
+          "meaning_en": "borrow; lend",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0715-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "我能借你的笔吗？",
+              "pinyin": "wǒ néng jiè nǐ de bǐ ma?",
+              "english": "Can I borrow your pen?",
+              "teaching_note": "Short everyday spoken use of 借."
+            },
+            {
+              "id": "ex-0715-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他从图书馆借了两本书。",
+              "pinyin": "tā cóng túshūguǎn jiè le liǎng běn shū.",
+              "english": "He borrowed two books from the library.",
+              "teaching_note": "Simple descriptive or narrative use of 借."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 715
+            }
+          ]
+        },
+        {
+          "id": "w-0834",
+          "hanzi": "试",
+          "pinyin": "shì",
+          "meaning_en": "try; attempt",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0834-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "让我试试吧。",
+              "pinyin": "ràng wǒ shì shì ba.",
+              "english": "Let me try!",
+              "teaching_note": "Short everyday spoken use of 试."
+            },
+            {
+              "id": "ex-0834-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学生想试一种新的学习方法。",
+              "pinyin": "xuéshēng xiǎng shì yì zhǒng xīn de xuéxí fāngfǎ.",
+              "english": "The students want to try a new study method.",
+              "teaching_note": "Simple descriptive or narrative use of 试."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 834
+            }
+          ]
+        },
+        {
+          "id": "w-0836",
+          "hanzi": "收",
+          "pinyin": "shōu",
+          "meaning_en": "receive; collect; put away",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0836-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "帮我收一下书吧。",
+              "pinyin": "bāng wǒ shōu yíxià shū ba.",
+              "english": "Please help me put the books away.",
+              "teaching_note": "Short everyday spoken use of 收."
+            },
+            {
+              "id": "ex-0836-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "老师正在收学生的作业。",
+              "pinyin": "lǎoshī zhèngzài shōu xuéshēng de zuòyè.",
+              "english": "The teacher is collecting the students' homework.",
+              "teaching_note": "Simple descriptive or narrative use of 收."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 836
+            }
+          ]
+        },
+        {
+          "id": "w-0868",
+          "hanzi": "完成",
+          "pinyin": "wánchéng",
+          "meaning_en": "complete; finish",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0868-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "作业完成了吗？",
+              "pinyin": "zuòyè wánchéng le ma?",
+              "english": "Is the homework finished?",
+              "teaching_note": "Short everyday spoken use of 完成."
+            },
+            {
+              "id": "ex-0868-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "他已经完成了今天的工作。",
+              "pinyin": "tā yǐjīng wánchéng le jīntiān de gōngzuò.",
+              "english": "He has finished today's work.",
+              "teaching_note": "Simple descriptive or narrative use of 完成."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 868
+            }
+          ]
+        },
+        {
+          "id": "w-0874",
+          "hanzi": "忘记",
+          "pinyin": "wàngjì",
+          "meaning_en": "forget",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0874-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "别忘记我！",
+              "pinyin": "bié wàngjì wǒ!",
+              "english": "Don't forget me!",
+              "teaching_note": "Short everyday spoken use of 忘记."
+            },
+            {
+              "id": "ex-0874-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她忘记带手机了。",
+              "pinyin": "tā wàngjì dài shǒujī le.",
+              "english": "She forgot to bring her phone.",
+              "teaching_note": "Simple descriptive or narrative use of 忘记."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 874
+            }
+          ]
+        },
+        {
+          "id": "w-0913",
+          "hanzi": "选",
+          "pinyin": "xuǎn",
+          "meaning_en": "choose; pick",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0913-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "你选哪个？",
+              "pinyin": "nǐ xuǎn nǎge?",
+              "english": "Which one do you choose?",
+              "teaching_note": "Short everyday spoken use of 选."
+            },
+            {
+              "id": "ex-0913-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "她选了一件新的衣服。",
+              "pinyin": "tā xuǎn le yí jiàn xīn de yīfu.",
+              "english": "She chose a new piece of clothing.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 913
+            }
+          ]
+        },
+        {
+          "id": "w-0968",
+          "hanzi": "长",
+          "pinyin": "zhǎng",
+          "meaning_en": "grow; develop; leader (zhǎng)",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb",
+            "suffix"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "processes-change",
+          "subtopic_ids": [
+            "processes-change"
+          ],
+          "examples": [
+            {
+              "id": "ex-0968-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "孩子长高了！",
+              "pinyin": "háizi zhǎng gāo le!",
+              "english": "The child has grown taller!",
+              "teaching_note": "长 is zhǎng meaning grow here, not cháng meaning long (Level 2)."
+            },
+            {
+              "id": "ex-0968-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "学校的树长得很快。",
+              "pinyin": "xuéxiào de shù zhǎng de hěn kuài.",
+              "english": "The trees at school grow quickly.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 968
+            }
+          ]
+        },
+        {
+          "id": "w-0970",
+          "hanzi": "照",
+          "pinyin": "zhào",
+          "meaning_en": "shine on; according to; take photograph",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": null,
+          "subtopic_ids": [],
+          "examples": [
+            {
+              "id": "ex-0970-1",
+              "style": "conversational",
+              "register": "neutral_spoken",
+              "hanzi": "太阳照进来了！",
+              "pinyin": "tàiyáng zhào jìnlái le!",
+              "english": "The sunlight is coming in!",
+              "teaching_note": "Short everyday spoken use of 照."
+            },
+            {
+              "id": "ex-0970-2",
+              "style": "written",
+              "register": "plain_written",
+              "hanzi": "太阳照在我的脸上。",
+              "pinyin": "tàiyáng zhào zài wǒ de liǎn shàng.",
+              "english": "The sun shines on my face.",
+              "teaching_note": "Editorially revised for a cumulative HSK 1–3 vocabulary ceiling while preserving the intended headword sense."
+            }
+          ],
+          "learning_role": "introduced",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 970
+            }
+          ]
+        },
+        {
+          "id": "w-0023",
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "meaning_en": "wear",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0023-1",
+              "style": "conversational",
+              "register": "neutral",
+              "hanzi": "今天我穿新衣服。",
+              "pinyin": "jīntiān wǒ chuān xīn yīfu.",
+              "english": "I am wearing new clothes today.",
+              "teaching_note": "穿 refers to wearing clothes; Chinese does not need a progressive form for the current outfit."
+            },
+            {
+              "id": "ex-0023-2",
+              "style": "written",
+              "register": "polite_instruction",
+              "hanzi": "天气冷的时候，请多穿衣服。",
+              "pinyin": "tiānqì lěng de shíhou, qǐng duō chuān yīfu.",
+              "english": "When it is cold, please wear more clothes.",
+              "teaching_note": "Short everyday instruction or request using 穿; the tone is polite or neutral."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 23
+            }
+          ]
+        },
+        {
+          "id": "w-0097",
+          "hanzi": "开",
+          "pinyin": "kāi",
+          "meaning_en": "open",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions",
+            "home-objects",
+            "travel-transport"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0097-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请开门。",
+              "pinyin": "qǐng kāi mén.",
+              "english": "Please open the door.",
+              "teaching_note": "请 softens the imperative; 开门 means open the door."
+            },
+            {
+              "id": "ex-0097-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "商店早上八点开门。",
+              "pinyin": "shāngdiàn zǎoshang bā diǎn kāimén.",
+              "english": "The shop opens at eight in the morning.",
+              "teaching_note": "Daily time or schedule context illustrating 开 in a straightforward sentence."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 97
+            }
+          ]
+        },
+        {
+          "id": "w-0298",
+          "hanzi": "坐",
+          "pinyin": "zuò",
+          "meaning_en": "sit",
+          "primary_pos_id": "verb",
+          "pos_ids": [
+            "verb"
+          ],
+          "primary_topic_id": "daily-actions",
+          "topic_ids": [
+            "daily-actions"
+          ],
+          "primary_subtopic_id": "physical-actions",
+          "subtopic_ids": [
+            "physical-actions"
+          ],
+          "examples": [
+            {
+              "id": "ex-0298-1",
+              "style": "conversational",
+              "register": "polite",
+              "hanzi": "请坐在这里。",
+              "pinyin": "qǐng zuò zài zhèlǐ.",
+              "english": "Please sit here.",
+              "teaching_note": "请 makes the request polite; 坐在这里 includes an explicit location marker."
+            },
+            {
+              "id": "ex-0298-2",
+              "style": "written",
+              "register": "neutral_written",
+              "hanzi": "学生们坐在教室里。",
+              "pinyin": "xuéshēngmen zuò zài jiàoshì lǐ.",
+              "english": "The students are sitting in the classroom.",
+              "teaching_note": "School or study context showing 坐 in a simple description."
+            }
+          ],
+          "learning_role": "reviewed",
+          "syllabus_refs": [
+            {
+              "curriculum_id": "hsk3-2025",
+              "entry_id": 298
+            }
+          ]
+        }
+      ],
+      "related_entries": []
+    },
+    "grammar_points": [
+      {
+        "id": "gp-1",
+        "title": "Using 变 (biàn)",
+        "explanation": "变 (biàn) means “change; become different” (verb).",
+        "example_id": "ex-0526-1"
+      },
+      {
+        "id": "gp-2",
+        "title": "Using 变成 (biànchéng)",
+        "explanation": "变成 (biànchéng) means “become; turn into” (verb).",
+        "example_id": "ex-0527-1"
+      }
+    ],
+    "featured_example_ids": [
+      "ex-0526-1",
+      "ex-0527-1",
+      "ex-0539-1"
+    ],
+    "practice": {
+      "enabled": true,
+      "questions": [
+        {
+          "id": "applied-reading",
+          "kind": "comprehension",
+          "prompt": "What two results did Xiao Zhang discover after half a year of running?",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "He completed his goal and became healthier.",
+          "explanation": "The passage says 不仅完成了目标，身体也变得更健康了."
+        },
+        {
+          "id": "applied-production",
+          "kind": "production",
+          "prompt": "Write two sentences using 打算 and 坚持 or 完成.",
+          "choices": [],
+          "correct_choice_ids": [],
+          "answer": "我打算这周每天练习写汉字，坚持到周末完成全部作业。",
+          "explanation": "Use 打算, 坚持, and 完成."
+        },
+        {
+          "id": "recall-1",
+          "kind": "selection",
+          "prompt": "Which verb means \"to persist / keep going\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "坚持",
+              "pinyin": "jiānchí",
+              "meaning_en": "persist"
+            },
+            {
+              "id": "b",
+              "hanzi": "忘记",
+              "pinyin": "wàngjì",
+              "meaning_en": "forget"
+            },
+            {
+              "id": "c",
+              "hanzi": "不见",
+              "pinyin": "bújiàn",
+              "meaning_en": "be missing"
+            }
+          ],
+          "correct_choice_ids": [
+            "a"
+          ],
+          "explanation": "坚持 means to persist or stick with something."
+        },
+        {
+          "id": "recall-2",
+          "kind": "selection",
+          "prompt": "Which verb means \"to discover / notice\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "完成",
+              "pinyin": "wánchéng",
+              "meaning_en": "complete"
+            },
+            {
+              "id": "b",
+              "hanzi": "发现",
+              "pinyin": "fāxiàn",
+              "meaning_en": "discover"
+            },
+            {
+              "id": "c",
+              "hanzi": "参加",
+              "pinyin": "cānjiā",
+              "meaning_en": "participate"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "发现 means to discover or notice."
+        },
+        {
+          "id": "recall-3",
+          "kind": "selection",
+          "prompt": "How is 还 pronounced when it means \"to return / give back\"?",
+          "choices": [
+            {
+              "id": "a",
+              "hanzi": "hái",
+              "pinyin": "still / also",
+              "meaning_en": "still"
+            },
+            {
+              "id": "b",
+              "hanzi": "huán",
+              "pinyin": "return / give back",
+              "meaning_en": "return"
+            },
+            {
+              "id": "c",
+              "hanzi": "huàn",
+              "pinyin": "change / exchange",
+              "meaning_en": "exchange"
+            }
+          ],
+          "correct_choice_ids": [
+            "b"
+          ],
+          "explanation": "还 meaning \"return\" is pronounced huán."
+        }
+      ]
+    },
+    "teaching_plan": {
+      "vocabulary_display": "reference_only",
+      "dialogue": {
+        "title": "Changing Plans and Keeping Going",
+        "context_en": "Two friends talk about a photography contest and returning a borrowed camera.",
+        "turns": [
+          {
+            "speaker": "A",
+            "hanzi": "我把上次借你的相机带来还给你了！",
+            "pinyin": "Wǒ bǎ shàng cì jiè nǐ de xiàngjī dài lái huán gěi nǐ le!",
+            "english": "I brought back the camera I borrowed from you last time to return it!"
+          },
+          {
+            "speaker": "B",
+            "hanzi": "谢谢！对了，你打算参加下个月的摄影比赛吗？",
+            "pinyin": "Xièxie! Duìle, nǐ dǎsuàn cānjiā xià ge yuè de shèyǐng bǐsài ma?",
+            "english": "Thanks! By the way, do you plan to join next month’s photography contest?"
+          },
+          {
+            "speaker": "A",
+            "hanzi": "想试试！我选了几张照片，可总觉得还不够好，打算再换两张。",
+            "pinyin": "Xiǎng shìshi! Wǒ xuǎn le jǐ zhāng zhàopiàn, kě zǒng juéde hái búgòu hǎo, dǎsuàn zài huàn liǎng zhāng.",
+            "english": "I want to try! I picked a few photos, but feel they’re not good enough yet, so I plan to swap two."
+          },
+          {
+            "speaker": "B",
+            "hanzi": "只要坚持练习，你一定能完成目标，得到好成绩！",
+            "pinyin": "Zhǐyào jiānchí liànxí, nǐ yídìng néng wánchéng mùbiāo, dédào hǎo chéngjì!",
+            "english": "As long as you keep practicing, you’ll definitely reach your goal and get a good result!"
+          }
+        ]
+      },
+      "patterns": [
+        {
+          "id": "pattern-1",
+          "title": "Turning into something with 变成",
+          "explanation_en": "Use 变成 (biànchéng) + noun to express changing from one state or thing into another.",
+          "pattern_hanzi": "<Subject> + 变成 + <New State / Noun>",
+          "pattern_pinyin": "<Subject> + biànchéng + <New State / Noun>",
+          "pattern_pseudo_translation": "<Subject> + turn into + <New State / Noun>",
+          "examples": [
+            {
+              "hanzi": "几年没见，那个小男孩长成大高个儿了，家乡也变成了一座现代城市。",
+              "pinyin": "Jǐ nián méi jiàn, nàge xiǎo nánhái zhǎng chéng dà gāogèr le, jiāxiāng yě biànchéng le yí zuò xiàndài chéngshì.",
+              "english": "Haven’t seen him in years—that little boy grew tall, and our hometown has turned into a modern city."
+            },
+            {
+              "hanzi": "水在零度以下会变成冰。",
+              "pinyin": "Shuǐ zài líng dù yǐxià huì biànchéng bīng.",
+              "english": "Water turns into ice below zero degrees."
+            }
+          ]
+        },
+        {
+          "id": "pattern-2",
+          "title": "Borrowing and returning with 借 / 还",
+          "explanation_en": "借 (jiè) can mean borrow (向……借) or lend (借给……); 还 (huán) means return (还给……).",
+          "pattern_hanzi": "向 + <Person> + 借 + <Item>  /  把 + <Item> + 还给 + <Person>",
+          "pattern_pinyin": "xiàng + <Person> + jiè + <Item>  /  bǎ + <Item> + huán gěi + <Person>",
+          "pattern_pseudo_translation": "from + <Person> + borrow + <Item>  /  take + <Item> + return to + <Person>",
+          "examples": [
+            {
+              "hanzi": "我向同学借了一本词典。",
+              "pinyin": "Wǒ xiàng tóngxué jiè le yì běn cídiǎn.",
+              "english": "I borrowed a dictionary from my classmate."
+            },
+            {
+              "hanzi": "看完以后，请按时把书还给图书馆。",
+              "pinyin": "Kàn wán yǐhòu, qǐng ànshí bǎ shū huán gěi túshūguǎn.",
+              "english": "After reading, please return the book to the library on time."
+            }
+          ]
+        }
+      ],
+      "guided_building": {
+        "instruction_en": "Express plans, discoveries, and completing tasks.",
+        "model": {
+          "hanzi": "我发现这个办法能更快地完成任务。",
+          "pinyin": "Wǒ fāxiàn zhège bànfǎ néng gèng kuài de wánchéng rènwu.",
+          "english": "I discovered this method can complete the task faster."
+        },
+        "substitutions": [
+          {
+            "id": "build-1",
+            "cue_en": "Say you plan to try a new sport this semester.",
+            "model_answer": {
+              "hanzi": "这学期我打算试着学一项新运动。",
+              "pinyin": "Zhè xuéqī wǒ dǎsuàn shì zhe xué yí xiàng xīn yùndòng.",
+              "english": "This semester I plan to try learning a new sport."
+            }
+          },
+          {
+            "id": "build-2",
+            "cue_en": "Say you forgot where you put your umbrella.",
+            "model_answer": {
+              "hanzi": "我忘记把伞放在哪里了，伞不见了。",
+              "pinyin": "Wǒ wàngjì bǎ sǎn fàng zài nǎlǐ le, sǎn bújiàn le.",
+              "english": "I forgot where I put my umbrella—it’s missing."
+            }
+          },
+          {
+            "id": "build-3",
+            "cue_en": "Say the weather has changed much cooler.",
+            "model_answer": {
+              "hanzi": "天气变凉快了，该加件衣服了。",
+              "pinyin": "Tiānqì biàn liángkuai le, gāi jiā jiàn yīfu le.",
+              "english": "The weather has turned cooler; it’s time to add a layer of clothes."
+            }
+          }
+        ]
+      },
+      "reading": {
+        "title": "Sticking With a Goal",
+        "paragraphs": [
+          {
+            "hanzi": "去年秋天，小张打算每天坚持跑三公里。刚开始的时候，他觉得很累，好几次都想放弃，甚至差点儿忘记自己的计划。",
+            "pinyin": "Qùnián qiūtiān, Xiǎo Zhāng dǎsuàn měitiān jiānchí pǎo sān gōnglǐ. Gāng kāishǐ de shíhou, tā juéde hěn lèi, hǎo jǐ cì dōu xiǎng fàngqì, shènzhì chàdiǎnr wàngjì zìjǐ de jìhuà.",
+            "english": "Last autumn, Xiao Zhang planned to stick to running three kilometers every day. At the start he felt very tired, wanted to quit several times, and even nearly forgot his plan."
+          },
+          {
+            "hanzi": "后来他选了一条经过公园的路线，一边跑一边看风景。半年以后，他发现自己不仅完成了目标，身体也变得更健康了。",
+            "pinyin": "Hòulái tā xuǎn le yì tiáo jīngguò gōngyuán de lùxiàn, yìbiān pǎo yìbiān kàn fēngjǐng. Bàn nián yǐhòu, tā fāxiàn zìjǐ bùjǐn wánchéng le mùbiāo, shēntǐ yě biàn de gèng jiànkāng le.",
+            "english": "Later he chose a route passing through a park, enjoying the scenery while running. Half a year later, he discovered he had not only completed his goal, but his body had also become healthier."
+          }
+        ],
+        "questions": [
+          {
+            "id": "reading-1",
+            "prompt_en": "What was Xiao Zhang’s plan last autumn?",
+            "answer_en": "To stick to running three kilometers every day."
+          },
+          {
+            "id": "reading-2",
+            "prompt_en": "What helped him keep going?",
+            "answer_en": "He chose a route passing through a park so he could enjoy the scenery while running."
+          }
+        ]
+      },
+      "speaking_tasks": [
+        {
+          "id": "speaking-1",
+          "scenario_en": "Talk about a plan you want to stick to using 打算, 坚持, and 完成.",
+          "model_answer": {
+            "hanzi": "我打算每天复习十个生词，坚持一个月完成这本课本。",
+            "pinyin": "Wǒ dǎsuàn měitiān fùxí shí ge shēngcí, jiānchí yí ge yuè wánchéng zhè běn kèběn.",
+            "english": "I plan to review ten new words every day and keep at it for a month to finish this textbook."
+          }
+        },
+        {
+          "id": "speaking-2",
+          "scenario_en": "Describe a change you noticed recently using 发现 or 变.",
+          "model_answer": {
+            "hanzi": "我发现公园里的树都长高了，草地也变绿了。",
+            "pinyin": "Wǒ fāxiàn gōngyuán lǐ de shù dōu zhǎng gāo le, cǎodì yě biàn lǜ le.",
+            "english": "I noticed the trees in the park have grown taller and the lawn has turned green."
+          }
+        }
+      ],
+      "common_pitfall": "还 has two readings: hái (\"still / also\") and huán (\"return / give back\"). In 还书 (\"return a book\"), always read it huán.",
+      "pronunciation_focus": "发现 (fāxiàn) moves from flat fā to falling xiàn; 坚持 (jiānchí) moves from flat jiān to rising chí.",
+      "review": {
+        "can_do": [
+          "Talk about plans, persistence, and completion.",
+          "Describe changes and discoveries.",
+          "Use 借 and 还 accurately."
+        ],
+        "entry_ids": [
+          526,
+          527,
+          539,
+          546,
+          572,
+          583,
+          584,
+          617,
+          678,
+          680,
+          695,
+          697,
+          715,
+          834,
+          836,
+          868,
+          874,
+          913,
+          968,
+          970
+        ]
+      }
+    }
+  },
+  "progress": {
+    "tracking_mode": "checkpoints",
+    "sections": [
+      {
+        "id": "topic-plans-and-changes--section--dialogue",
+        "section_key": "dialogue",
+        "title": "Conversation",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--dialogue",
+            "kind": "section",
+            "label": "Understand the model conversation",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--patterns",
+        "section_key": "patterns",
+        "title": "Grammar & usage patterns",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--pattern-pattern-1",
+            "kind": "section",
+            "label": "Understand: Turning into something with 变成",
+            "optional": false,
+            "target_id": "pattern-1"
+          },
+          {
+            "id": "topic-plans-and-changes--pattern-pattern-2",
+            "kind": "section",
+            "label": "Understand: Borrowing and returning with 借 / 还",
+            "optional": false,
+            "target_id": "pattern-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--guided-building",
+        "section_key": "guided-building",
+        "title": "Build new sentences",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--reveal-build-1",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you plan to try a new sport this semester.",
+            "optional": false,
+            "target_id": "build-1"
+          },
+          {
+            "id": "topic-plans-and-changes--reveal-build-2",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say you forgot where you put your umbrella.",
+            "optional": false,
+            "target_id": "build-2"
+          },
+          {
+            "id": "topic-plans-and-changes--reveal-build-3",
+            "kind": "reveal",
+            "label": "Say in Mandarin: Say the weather has changed much cooler.",
+            "optional": false,
+            "target_id": "build-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--reading",
+        "section_key": "reading",
+        "title": "Read in context",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--reveal-reading-1",
+            "kind": "reveal",
+            "label": "Answer: What was Xiao Zhang’s plan last autumn?",
+            "optional": false,
+            "target_id": "reading-1"
+          },
+          {
+            "id": "topic-plans-and-changes--reveal-reading-2",
+            "kind": "reveal",
+            "label": "Answer: What helped him keep going?",
+            "optional": false,
+            "target_id": "reading-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--speaking",
+        "section_key": "speaking",
+        "title": "Speak and personalize",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--reveal-speaking-1",
+            "kind": "reveal",
+            "label": "Respond: Talk about a plan you want to stick to using 打算, 坚持, and 完成.",
+            "optional": false,
+            "target_id": "speaking-1"
+          },
+          {
+            "id": "topic-plans-and-changes--reveal-speaking-2",
+            "kind": "reveal",
+            "label": "Respond: Describe a change you noticed recently using 发现 or 变.",
+            "optional": false,
+            "target_id": "speaking-2"
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--pitfall",
+        "section_key": "pitfall",
+        "title": "Watch out & pronunciation",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--pitfall",
+            "kind": "section",
+            "label": "Review common pitfall and pronunciation",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--practice",
+        "section_key": "practice",
+        "title": "Check what you can do",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--practice-applied-reading",
+            "kind": "practice",
+            "label": "Answer the reading comprehension check",
+            "optional": false,
+            "target_id": "applied-reading"
+          },
+          {
+            "id": "topic-plans-and-changes--practice-applied-production",
+            "kind": "practice",
+            "label": "Write your own response",
+            "optional": false,
+            "target_id": "applied-production"
+          },
+          {
+            "id": "topic-plans-and-changes--practice-recall-1",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to persist / keep going\"?",
+            "optional": true,
+            "target_id": "recall-1"
+          },
+          {
+            "id": "topic-plans-and-changes--practice-recall-2",
+            "kind": "practice",
+            "label": "Optional recall: Which verb means \"to discover / notice\"?",
+            "optional": true,
+            "target_id": "recall-2"
+          },
+          {
+            "id": "topic-plans-and-changes--practice-recall-3",
+            "kind": "practice",
+            "label": "Optional recall: How is 还 pronounced when it means \"to return / g",
+            "optional": true,
+            "target_id": "recall-3"
+          }
+        ]
+      },
+      {
+        "id": "topic-plans-and-changes--section--review",
+        "section_key": "review",
+        "title": "Review",
+        "checkpoints": [
+          {
+            "id": "topic-plans-and-changes--review",
+            "kind": "section",
+            "label": "Confirm you can use these expressions",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  "estimated_minutes": 22
+}
