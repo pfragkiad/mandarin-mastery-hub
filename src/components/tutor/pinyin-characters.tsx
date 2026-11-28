@@ -17,12 +17,14 @@ import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { libraryEntries } from '@/lib/character-library';
 import { detailTrail } from '@/lib/detail-trail';
-import { readingMeaning } from '@/lib/catalog-store';
+import { characterAudioRequest, readingMeaning } from '@/lib/catalog-store';
 import { toneMark, type Tone } from '@/lib/pinyin-guide';
 import { characterDestinations, groupScriptForms, radicalDestinations, radicalsFirst, syllableCharacters } from '@/lib/syllable-characters';
 import { usageOrder, usageRank } from '@/lib/usage-frequency';
 import { UsageLabel } from './usage-label';
 import { ExampleCardMeta, SentenceHints } from './sentence-section';
+import { ExamplePronunciation } from './example-pronunciation';
+import { splitReadings } from './reading-speakers';
 import { SoundExampleGlyph } from './sound-example-glyph';
 import { useWorkspace } from './workspace';
 import { ExpandableCharacterGrid } from './expandable-character-grid';
@@ -79,8 +81,13 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
           const ranks = usageOrder.loaded ? forms.map(entry => ({ id: entry.id, ...rankOf(entry) })) : [];
           const firstRank = ranks[0];
           const sameRank = ranks.every(({ kind, rank }) => kind === firstRank?.kind && rank === firstRank?.rank);
-          // Reuse the parent-example header and tile/facts layout exactly. Reading and
-          // speech are deliberately absent: the selected sound already supplies them.
+          // Reuse the parent-example header and tile/facts layout exactly, reading line and
+          // speaker included: the sound card supplies the same reading, but the cards keep
+          // the shared look (owner choice, for consistency with the other "In a…" cards).
+          const reading = toneMark(base, tone).normalize('NFC');
+          // Prefer the primary form's own recorded spelling of this reading, so the speaker
+          // requests the exact character-reading recording instead of a re-marked syllable.
+          const spokenReading = splitReadings(first.pinyin).find(part => part.normalize('NFC') === reading) ?? reading;
           const metadata = <>
             {firstRank ? (sameRank ? <UsageLabel rank={firstRank.rank} kind={firstRank.kind} compact/>
               : <span className="pinyin-character-ranks">{ranks.map(({ id, kind, rank }, i) => <span key={id}>{i > 0 && <span className="pinyin-character-rank-sep" aria-hidden="true">/</span>}<UsageLabel rank={rank} kind={kind} compact/></span>)}</span>) : <UsageLabel rank={null} compact/>}
@@ -121,6 +128,10 @@ export function SyllableCharacters({ base, tone, backLabel, onLeave }: { base: s
             return <SoundExampleGlyph key={entry.id} glyph={entry.hanzi} className={className} fallback={fallback}/>;
           })}</span>
           <span className="glyph-usage-facts">
+            {/* Reading + speaker above the meaning, the same row the parent-character cards use. */}
+            <span className="glyph-usage-facts-row">
+              <span className="example-pinyin-row"><span className="pinyin">{reading}</span><ExamplePronunciation request={characterAudioRequest(first.hanzi, spokenReading)} label={`character ${first.hanzi}`}/></span>
+            </span>
             {meaning && <SmallGridMeaning text={meaning}/>}
           </span>
           </div>
