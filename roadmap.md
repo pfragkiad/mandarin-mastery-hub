@@ -345,3 +345,4 @@
 - [x] Hide In a word/In a phrase tabs when both have no recorded examples; retain other available example sections. Verified empty 卤/鹵, recorded 你 examples and 39 tests.
 - [x] Cap Related characters and size Kangxi Identity cards to content; verified left-aligned widths in a widened detail window and fit at 390px with recorded text and corner stamps preserved.
 - [x] Match Related characters' maximum width to the selector above and move pinyin/script/rank beside Hanzi; verified equal 620px/700px caps, shorter cards, 390px wrapping and exact related-form navigation in both display sizes.
+- [x] Tighten the Kangxi Identity card header to the grid cards' contract (row = pill height, arrow overhangs); verified 13/12px compact and 22/19px comfortable ink gaps, arrow unclipped, build OK.
