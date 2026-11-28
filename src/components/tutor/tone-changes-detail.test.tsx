@@ -21,14 +21,15 @@ vi.mock('./expandable-character-grid', () => ({ ExpandableCharacterGrid: ({ card
 vi.mock('./example-pronunciation', () => ({ ExamplePronunciation: () => null }));
 vi.mock('./small-grid-meaning', () => ({ SmallGridMeaning: () => null }));
 vi.mock('@tanstack/react-router', () => ({ Link: ({ children }: { children: ReactNode }) => <span>{children}</span>, useSearch: () => ({}), useNavigate: () => vi.fn() }));
+const chartDataMock = vi.hoisted(() => ({ current: null as unknown }));
 vi.mock('@/lib/pinyin-guide', async () => {
   const actual = await vi.importActual<typeof import('@/lib/pinyin-guide')>('@/lib/pinyin-guide');
-  return { ...actual, loadPinyinData: async () => null };
+  return { ...actual, loadPinyinData: async () => chartDataMock.current };
 });
 vi.mock('./pinyin-shared', () => ({ ToneContour: () => null, sound: vi.fn(), usePinyinPlayer: () => ({ stop: vi.fn(), clearError: vi.fn(), error: '', playing: null }) }));
 vi.mock('@/lib/audio', () => ({ playRecordingAt: vi.fn(async () => true), stopRecording: vi.fn(), NORMAL_RATE: 1, SLOW_RATE: 0.65 }));
 
-afterEach(() => { cleanup(); detailTrail.clear(); vi.clearAllMocks(); sharedSpeed.slow = false; });
+afterEach(() => { cleanup(); detailTrail.clear(); vi.clearAllMocks(); sharedSpeed.slow = false; chartDataMock.current = null; });
 
 describe('Tone changes shared detail navigation', () => {
   it.each(['pairs', 'changes'] as const)('uses the shared Slower preference in %s details', async mode => {
@@ -72,5 +73,33 @@ describe('Tone changes shared detail navigation', () => {
     fireEvent.click(screen.getByRole('button', { name: /The tone of 一/ }));
     expect(onPick).toHaveBeenCalledWith('yi');
     expect(detailTrail.get()).toEqual([]);
+  });
+
+  it('Written → Spoken plays both citation syllables with pauses before the whole word and highlights each playing tone card', async () => {
+    const row = rulePool(data as unknown as TonePairData, 'bu').find(example => example.headword === '不错');
+    if (!row) throw new Error('Missing recorded 不错 fixture');
+    const [first, second] = row.chartLinks;
+    if (!first || !second) throw new Error('Missing chartLinks for 不错');
+    chartDataMock.current = {
+      recordings: {
+        [`${first.base}${first.tone}`]: { url: 'https://cdn.example/bu4.mp3' },
+        [`${second.base}${second.tone}`]: { url: 'https://cdn.example/cuo4.mp3' },
+      },
+    };
+    const { playRecordingAt } = await import('@/lib/audio');
+    const played: string[] = [];
+    vi.mocked(playRecordingAt).mockImplementation(async (url, _rate, onSettle) => {
+      played.push(url);
+      onSettle?.('ended');
+      return true;
+    });
+    render(<ToneSoundsPage mode="changes" search={{ rule: 'bu', example: row.id }} onChange={vi.fn()}/>);
+    const btn = await screen.findByRole('button', { name: 'Play 不错' });
+    // Wait for lazy loadPinyinData() to resolve.
+    await vi.waitFor(() => { expect(btn).toBeTruthy(); });
+    fireEvent.click(btn);
+    await vi.waitFor(() => {
+      expect(played).toEqual(['https://cdn.example/bu4.mp3', 'https://cdn.example/cuo4.mp3', row.audio.url]);
+    }, { timeout: 2000 });
   });
 });

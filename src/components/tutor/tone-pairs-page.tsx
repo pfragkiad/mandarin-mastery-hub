@@ -29,7 +29,7 @@ import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingS
 import { words as vocabularyWords } from '@/lib/mandarin';
 import { openDetailsHint } from '@/lib/tile-hints';
 import { usePublishSections } from '@/lib/section-switch';
-import { hasRecording, loadPinyinData, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
+import { hasRecording, loadPinyinData, recordingFor, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
   loadTonePairs, matrixPairOrder, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
@@ -77,6 +77,8 @@ function ToneDigit({ tone, compact = false }: { tone: number; compact?: boolean 
 // the line below renders only for an error.
 type Status = { kind: 'idle' | 'loading' | 'playing' | 'error'; text: string };
 const IDLE: Status = { kind: 'idle', text: '' };
+/** Which tone card(s) in the hero are highlighted while playback runs. */
+type ActiveToneCard = { row: 'written'; index: number } | { row: 'written' | 'spoken'; index: 'all' } | null;
 
 export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMode; search: Search; onChange: (patch: ToneSoundsPatch, replace?: boolean) => void }) {
   const [data, setData] = useState<TonePairData | null>(null);
@@ -92,9 +94,10 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   useOneLineTitle(titleRef, headings[mode]);
 
   const [status, setStatus] = useState<Status>(IDLE);
+  const [activeCard, setActiveCard] = useState<ActiveToneCard>(null);
   // Each play gets a generation number; a settle from an older play is ignored.
   const generation = useRef(0);
-  const stop = () => { generation.current += 1; chipStop.current(); stopRecording(); setStatus(IDLE); };
+  const stop = () => { generation.current += 1; chipStop.current(); stopRecording(); setStatus(IDLE); setActiveCard(null); };
   // The header's Pinyin sounds switcher stops playback before changing page.
   usePublishSections('pinyin-sounds', null, { beforeSwitch: stop });
 
@@ -131,7 +134,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
 
   // Any change of what is selected (or leaving the page) stops the current recording.
   const selectionKey = `${mode}|${pair}|${rule}|${row?.id ?? ''}`;
-  useEffect(() => () => { generation.current += 1; chipStop.current(); stopRecording(); setStatus(IDLE); }, [selectionKey]);
+  useEffect(() => () => { generation.current += 1; chipStop.current(); stopRecording(); setStatus(IDLE); setActiveCard(null); }, [selectionKey]);
 
   const play = async () => {
     if (!row) return;
@@ -139,15 +142,48 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
     if (status.kind === 'loading' || status.kind === 'playing') return;
     chipStop.current(); chipPlayer.clearError();
     const mine = ++generation.current;
+    const rate = slow ? SLOW_RATE : NORMAL_RATE;
+    const changed = tonesChanged(row);
     setStatus({ kind: 'loading', text: '' });
-    const onSettle = (how: RecordingSettle) => {
-      if (mine !== generation.current) return;
-      // A finished recording leaves no label behind; only a failure says anything.
-      if (how === 'failed') setStatus({ kind: 'error', text: 'The recording could not play. No other voice was used.' });
-      else setStatus(IDLE);
-    };
-    const ok = await playRecordingAt(row.audio.url, slow ? SLOW_RATE : NORMAL_RATE, onSettle);
-    if (ok && mine === generation.current) setStatus({ kind: 'playing', text: '' });
+    const playClip = (url: string) => new Promise<RecordingSettle>(resolve => {
+      void playRecordingAt(url, rate, resolve).then(ok => {
+        if (ok && mine === generation.current) setStatus({ kind: 'playing', text: '' });
+        else if (!ok) resolve('failed');
+      });
+    });
+    const pause = (ms: number) => new Promise<void>(resolve => { setTimeout(resolve, ms); });
+    // Written → Spoken plays each recorded citation syllable with a short pause, then the whole word.
+    if (changed && chartData) {
+      let playedSyllable = false;
+      for (let i = 0; i < row.chartLinks.length; i++) {
+        if (mine !== generation.current) return;
+        const link = row.chartLinks[i];
+        const clip = link ? recordingFor(chartData, link.base, link.tone) : null;
+        if (!clip) continue;
+        if (playedSyllable) {
+          setActiveCard(null);
+          await pause(260);
+          if (mine !== generation.current) return;
+        }
+        setActiveCard({ row: 'written', index: i });
+        const how = await playClip(clip.url);
+        if (mine !== generation.current) return;
+        if (how === 'failed') { setActiveCard(null); setStatus({ kind: 'error', text: 'The recording could not play. No other voice was used.' }); return; }
+        playedSyllable = true;
+      }
+      if (playedSyllable) {
+        setActiveCard(null);
+        await pause(420);
+        if (mine !== generation.current) return;
+      }
+    }
+    setActiveCard({ row: changed ? 'spoken' : 'written', index: 'all' });
+    const how = await playClip(row.audio.url);
+    if (mine !== generation.current) return;
+    setActiveCard(null);
+    // A finished recording leaves no label behind; only a failure says anything.
+    if (how === 'failed') setStatus({ kind: 'error', text: 'The recording could not play. No other voice was used.' });
+    else setStatus(IDLE);
   };
   return <div className="page-enter library-page pinyin-page tone-sounds-page">
     <div className="page-heading library-heading"><div>
@@ -180,7 +216,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
           onPrevious={previousGroup ? () => pickGroup(previousGroup) : undefined}
           onNext={nextGroup ? () => pickGroup(nextGroup) : undefined}
           onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule: undefined, example: undefined }, true); }}>
-          <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
+          <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} activeCard={activeCard} onPick={id => onChange({ example: id })}
             slow={slow} onSlow={value => setPreferences({ ...preferences, slow: value })}
             chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
             onPlay={() => void play()}/>
@@ -256,8 +292,8 @@ export function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: Tone
  * Both speakers are play-only and the card carries no playback label: nothing appears while
  * a recording loads, plays or ends, and only a failure adds an error line.
  */
-function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips, slow, onSlow }: {
-  row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status;
+function PracticeCard({ row, pool, mode, hidden, status, activeCard, onPlay, onPick, chips, slow, onSlow }: {
+  row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status; activeCard: ActiveToneCard;
   onPlay: () => void; onPick: (id: string) => void; chips: SyllableChips;
   slow: boolean; onSlow: (slow: boolean) => void;
 }) {
@@ -267,10 +303,13 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips, 
   // Written and spoken rows stay aligned by syllable occurrence. Only the authored
   // draft supplies spoken contours/readings; a changed tile never implies listening
   // review or a separately recorded syllable. Whole-word playback stays unchanged.
-  const toneTiles = (tones: readonly Tone[], syllables: readonly string[], spoken = false) => tones.map((t, i) =>
-    <span key={i} className={`pinyin-tone-button tone-${t} tone-pair-tile${spoken && row.citationTones[i] !== t ? ' is-changed' : ''}`}>
+  const toneTiles = (tones: readonly Tone[], syllables: readonly string[], spoken = false) => tones.map((t, i) => {
+    const rowKind = spoken ? 'spoken' : 'written';
+    const playing = activeCard !== null && activeCard.row === rowKind && (activeCard.index === 'all' || activeCard.index === i);
+    return <span key={i} className={`pinyin-tone-button tone-${t} tone-pair-tile${spoken && row.citationTones[i] !== t ? ' is-changed' : ''}${playing ? ' is-current' : ''}`}>
       <ToneContour tone={t}/><small>{toneCaption(t)}</small>{!hidden && <span className="pinyin tone-row-reading" lang="zh-Latn-pinyin">{syllables[i]}</span>}
-    </span>);
+    </span>;
+  });
   const groupTitle = mode === 'changes' && row.rule && row.rule !== 'third'
     ? <>{TONE_RULES[row.rule].symbol} + {toneCaption(row.citationTones[1] ?? 5).toLowerCase()}</>
     : toneLabel(row.citationTones);
