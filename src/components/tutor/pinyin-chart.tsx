@@ -6,7 +6,7 @@
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObject } from 'react';
 import { ArrowLeft, ListMusic, Square, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
+import { SoundPlaybackRow } from './sound-playback-row';
 import { FINAL_GROUPS, INITIAL_GROUPS, SPOKEN_TONES, chartFilterOptions, TONE_HINTS, TONE_NAMES, directSoundMatch, findSyllable, hasRecording, neutralRecording, matchesFinal, matchesInitial, matchesSyllable, soundAlikes, soundId, syllableTonesHint, sortSyllables, toneMark, type PinyinData, type PinyinSyllable, type Tone } from '@/lib/pinyin-guide';
 import { DraftFilterForm } from './filter-form';
 import { FilterSelect, type FilterSelectItem } from './filter-select';
@@ -386,15 +386,14 @@ export function PinyinPlayerPanel({ data, player, syllable, tone, slow, onSlow, 
       <div><dt>Initial</dt><dd>{syllable.initial ?? '—'}</dd></div>
       <div><dt>Final</dt><dd>{syllable.final}</dd></div>
     </dl>
-    <div className="pinyin-player-actions">
+    <SoundPlaybackRow slow={slow} onSlow={onSlow}>
       {/* One button whose two labels share a grid cell: the hidden one still
           reserves its width, so switching Play all ⇄ Stop never resizes it. */}
       <Button variant="outline" size="sm" className="pinyin-playall" disabled={!sequencePlaying && recorded.length === 0} onClick={sequencePlaying ? player.stop : onPlayAll}>
         <span className={sequencePlaying ? 'is-hidden' : undefined} aria-hidden={sequencePlaying}><ListMusic />Play all</span>
         <span className={sequencePlaying ? undefined : 'is-hidden'} aria-hidden={!sequencePlaying}><Square />Stop</span>
       </Button>
-      <label className="pinyin-slow"><Switch checked={slow} onCheckedChange={onSlow} aria-label="Slower pronunciation" />Slower</label>
-    </div>
+    </SoundPlaybackRow>
     {player.error && <p className="pinyin-audio-error" role="alert">{player.error}</p>}
     {syllable.note && <p className="pinyin-note">{syllable.note}</p>}
     {/* Each case is one pill with two regions: the spelling opens that sound (as before), and

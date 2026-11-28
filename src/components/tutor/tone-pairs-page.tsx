@@ -9,7 +9,7 @@
 // State: the lazily loaded sidecars (tone pairs; the Sound chart's syllable recordings for
 // the chips) and the playback state, which stays silent: the card shows no loading/playing/
 // finished label, only an error if a recording fails. Speed is the app-wide "Slower pronunciation"
-// preference, as for every other speaker; the page has no speed control of its own.
+// preference, as for every other speaker; the detail's Slower switch edits that same preference.
 //
 // Rules carried over from the handoff:
 // - The word speaker plays one exact whole-word recording (the word card's own CDN attachment);
@@ -23,7 +23,7 @@
 //   selected pair/rule visible: a shadowing aid, not a scored quiz.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowDown, ArrowUpRight, BookOpen, Volume2, VolumeX } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, BookOpen, Play, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { playRecordingAt, stopRecording, NORMAL_RATE, SLOW_RATE, type RecordingSettle } from '@/lib/audio';
 import { words as vocabularyWords } from '@/lib/mandarin';
@@ -53,6 +53,7 @@ import { detailTrail } from '@/lib/detail-trail';
 import { SoundExampleGlyph } from './sound-example-glyph';
 import { SoundDetailHeading } from './sound-detail-heading';
 import { ExampleSection, ExampleTabs } from './example-tabs';
+import { SoundPlaybackRow } from './sound-playback-row';
 
 export type ToneSoundsMode = 'pairs' | 'changes';
 type Search = TonePairsSearch & ToneChangesSearch;
@@ -97,7 +98,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   // The header's Pinyin sounds switcher stops playback before changing page.
   usePublishSections('pinyin-sounds', null, { beforeSwitch: stop });
 
-  const { preferences } = useWorkspace();
+  const { preferences, setPreferences } = useWorkspace();
   const slow = preferences.slow;
   const hidden = Boolean(search.listen);
   // Syllable chips: the Sound chart's recordings, loaded lazily with the page.
@@ -180,6 +181,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
           onNext={nextGroup ? () => pickGroup(nextGroup) : undefined}
           onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule: undefined, example: undefined }, true); }}>
           <PracticeCard row={row} pool={pool} mode={mode} hidden={hidden} status={status} onPick={id => onChange({ example: id })}
+            slow={slow} onSlow={value => setPreferences({ ...preferences, slow: value })}
             chips={{ data: chartData, player: chipPlayer, error: chipPlayer.error, onPlay: (base, tone) => { generation.current += 1; setStatus(IDLE); void chipPlayer.play(sound(base, tone)); } }}
             onPlay={() => void play()}/>
         </DetailSheet>}
@@ -254,9 +256,10 @@ export function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: Tone
  * Both speakers are play-only and the card carries no playback label: nothing appears while
  * a recording loads, plays or ends, and only a failure adds an error line.
  */
-function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips }: {
+function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips, slow, onSlow }: {
   row: TonePairExample; pool: TonePairExample[]; mode: ToneSoundsMode; hidden: boolean; status: Status;
   onPlay: () => void; onPick: (id: string) => void; chips: SyllableChips;
+  slow: boolean; onSlow: (slow: boolean) => void;
 }) {
   const changed = tonesChanged(row);
   const wordsById = useMemo(() => new Map(vocabularyWords.map(word => [word.id, word])), []);
@@ -333,11 +336,7 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips }
                 <span className="tone-pair-syllable-tone">{toneCaption(l.tone)}</span>
               </button>;
             })}</div>}
-            <Button type="button" className="tone-pair-play-word" aria-label={`Play ${hidden ? 'the recording' : example.headword}`} title={`Play word · ${example.audio.speaker}`} onClick={onPlay}>
-              <Volume2 aria-hidden="true"/>Play word
-            </Button>
           </div>
-          {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
         </> : <>
           <ExampleCardMeta identity={hidden ? `Recording ${index + 1}` : hsk ? <span className="word-hsk-id hsk-level-pill" title={hsk.title}>{hsk.label}</span> : <UsageLabel rank={null} compact/>} link={ownLink}/>
           <span className="glyph-usage-reference">
@@ -376,6 +375,12 @@ function PracticeCard({ row, pool, mode, hidden, status, onPlay, onPick, chips }
           </div>
         </>}
       </div>
+      <SoundPlaybackRow slow={slow} onSlow={onSlow}>
+        <Button variant="outline" size="sm" className="pinyin-playall" aria-label={`Play ${hidden ? 'the recording' : row.headword}`} title={`Play word · ${row.audio.speaker}`} onClick={onPlay}>
+          <span><Play aria-hidden="true"/>{changed ? 'Written → Spoken' : 'Play word'}</span>
+        </Button>
+      </SoundPlaybackRow>
+      {(chips.error || status.kind === 'error') && <p className="tone-sounds-status pinyin-audio-error" role="status" aria-live="polite">{chips.error || status.text}</p>}
       {wordBank}
   </section>;
 }

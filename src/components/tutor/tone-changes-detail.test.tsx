@@ -10,7 +10,8 @@ vi.mock('@/lib/tone-pairs', async () => {
   const actual = await vi.importActual<typeof import('@/lib/tone-pairs')>('@/lib/tone-pairs');
   return { ...actual, loadTonePairs: async () => data as unknown as TonePairData };
 });
-vi.mock('./workspace', () => ({ useWorkspace: () => ({ preferences: { slow: false } }) }));
+const sharedSpeed = vi.hoisted(() => ({ slow: false, setPreferences: vi.fn() }));
+vi.mock('./workspace', () => ({ useWorkspace: () => ({ preferences: { slow: sharedSpeed.slow }, setPreferences: sharedSpeed.setPreferences }) }));
 vi.mock('@/lib/section-switch', () => ({ usePublishSections: vi.fn() }));
 vi.mock('./one-line-title', () => ({ useOneLineTitle: vi.fn() }));
 vi.mock('./source-info', () => ({ SourceInfo: () => null }));
@@ -25,11 +26,22 @@ vi.mock('@/lib/pinyin-guide', async () => {
   return { ...actual, loadPinyinData: async () => null };
 });
 vi.mock('./pinyin-shared', () => ({ ToneContour: () => null, sound: vi.fn(), usePinyinPlayer: () => ({ stop: vi.fn(), clearError: vi.fn(), error: '', playing: null }) }));
-vi.mock('@/lib/audio', () => ({ playRecordingAt: vi.fn(async () => true), stopRecording: vi.fn(), NORMAL_RATE: 1, SLOW_RATE: 0.8 }));
+vi.mock('@/lib/audio', () => ({ playRecordingAt: vi.fn(async () => true), stopRecording: vi.fn(), NORMAL_RATE: 1, SLOW_RATE: 0.65 }));
 
-afterEach(() => { cleanup(); detailTrail.clear(); vi.clearAllMocks(); });
+afterEach(() => { cleanup(); detailTrail.clear(); vi.clearAllMocks(); sharedSpeed.slow = false; });
 
 describe('Tone changes shared detail navigation', () => {
+  it.each(['pairs', 'changes'] as const)('uses the shared Slower preference in %s details', async mode => {
+    const { playRecordingAt } = await import('@/lib/audio');
+    const view = render(<ToneSoundsPage mode={mode} search={mode === 'pairs' ? { pair: '3-3' } : { rule: 'yi' }} onChange={vi.fn()}/>);
+    fireEvent.click(await screen.findByRole('switch', { name: 'Slower pronunciation' }));
+    expect(sharedSpeed.setPreferences).toHaveBeenCalledWith({ slow: true });
+    sharedSpeed.slow = true;
+    view.rerender(<ToneSoundsPage mode={mode} search={mode === 'pairs' ? { pair: '3-3' } : { rule: 'yi' }} onChange={vi.fn()}/>);
+    expect(screen.getByRole('switch', { name: 'Slower pronunciation' })).toBeChecked();
+    fireEvent.click(screen.getByRole('button', { name: /^Play (可以|一些)$/ }));
+    expect(playRecordingAt).toHaveBeenCalledWith(expect.any(String), 0.65, expect.any(Function));
+  });
   it('steps between rules and clears the previous exact word selection', async () => {
     const onChange = vi.fn();
     render(<ToneSoundsPage mode="changes" search={{ rule: 'third' }} onChange={onChange}/>);
