@@ -1909,6 +1909,11 @@ html[data-display-size='comfortable'] .source-info-popover > p { font-size: 13px
 .detail-sheet-nav { min-width: 0; max-width: 100%; }
 .detail-sheet-nav .detail-neighbour-button { width: auto; min-width: 0; flex-shrink: 1; gap: 4px; padding-inline: 6px; }
 .detail-sheet-nav .detail-neighbour-button > svg { flex: none; }
+/* Tone-change descriptions need more than the glyph navigator's five-em cap.
+   Let the middle track shrink and the labels wrap only when space runs out. */
+.detail-sheet-bar:has([aria-label='Neighbouring tone changes in this list']) { grid-template-columns: minmax(0, 1fr) minmax(0, auto) minmax(36px, 1fr); }
+.detail-sheet-nav[aria-label='Neighbouring tone changes in this list'] .detail-neighbour-label { max-width: none; white-space: normal; overflow: visible; overflow-wrap: anywhere; text-align: center; }
+.detail-sheet-nav[aria-label='Neighbouring tone changes in this list'] .detail-neighbour-button { height: auto; min-height: 36px; padding-block: 6px; }
 /* No scroll trap here, on any device: the modal already locks the page behind
    (Radix remove-scroll), so `contain` could never protect the grid — it only
    blocked the pan that a zoomed reader needs to reach the header X. */

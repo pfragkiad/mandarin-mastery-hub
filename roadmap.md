@@ -1,5 +1,8 @@
 # Roadmap
 
+## Tone changes navigator fit
+- [x] Fit previous/next tone-change labels in the shared detail header, wrapping when narrow and reserving Close space; verified both arrows at 2418/390/320px, 29 related tests and clean preview build.
+
 ## Tone example focus and title Hanzi
 - [x] Keep selected Tone pairs / Tone changes examples at the shared grid size with the existing selection border.
 - [x] Show the selected exact word beside both tone-detail titles; preserve hints, recordings and Listen first.
