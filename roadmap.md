@@ -346,3 +346,4 @@
 - [x] Cap Related characters and size Kangxi Identity cards to content; verified left-aligned widths in a widened detail window and fit at 390px with recorded text and corner stamps preserved.
 - [x] Match Related characters' maximum width to the selector above and move pinyin/script/rank beside Hanzi; verified equal 620px/700px caps, shorter cards, 390px wrapping and exact related-form navigation in both display sizes.
 - [x] Tighten the Kangxi Identity card header to the grid cards' contract (row = pill height, arrow overhangs); verified 13/12px compact and 22/19px comfortable ink gaps, arrow unclipped, build OK.
+- [x] Spelling notes drawer: enlarged its own content (explanation, spelling table, note column) in both display sizes and moved the evidence scope, usage caveat and Source link behind the shared (i) beside the "Spelling notes" arrow; 3 new tests plus 58 detail tests pass, browser-verified.

@@ -159,23 +159,28 @@ function AssociationNotes({ forms }: { forms: string[] }) {
 }
 
 // One pair note. Collapsed (default): the pair, its classification pill and the one-line
-// caveat with a "Spelling notes" toggle. Expanded: the recorded explanation verbatim, the
-// spelling table and the usage/source footnote, inline under the line (pushing the sections
-// below down, never covering them) with a green left border tying it to the highlighted card.
+// caveat with a "Spelling notes" toggle, plus the shared (i) holding the note's evidence
+// scope, usage caveat and source link. Expanded: the recorded explanation verbatim and the
+// spelling table, inline under the line (pushing the sections below down, never covering
+// them) with a green left border tying it to the highlighted card. The drawer's own content
+// reads larger than the surrounding card text (styles.css .association-note-details).
 // State: `open` is local to this note, so it resets when another card is shown.
 function AssociationNoteRow({ simplified, traditional, note }: { simplified: string; traditional: string; note: AssociationNote }) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
   const rows = note.example ? parseSpellingExamples(note.example) : null;
   const contextual = note.classification === CONTEXT_DEPENDENT;
-  const footnote = (note.usageCaveat || note.unchangedSense || note.evidenceScope || note.sourceUrl)
-    ? <p className="association-note-footnote">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}{note.evidenceScope && <>{note.evidenceScope}<br/></>}{note.sourceUrl && <a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a>}</p>
+  // Evidence scope, usage caveat and the source link no longer crowd the drawer: they sit
+  // behind the shared (i) beside the "Spelling notes" arrow, one tidy row per line.
+  const hint = (note.usageCaveat || note.unchangedSense || note.evidenceScope || note.sourceUrl)
+    ? <SourceInfo inline className="association-note-source" label="About this spelling note">{note.usageCaveat && <>{note.usageCaveat}<br/></>}{note.unchangedSense && <>{simplified} stays unchanged for: {note.unchangedSense}<br/></>}{note.evidenceScope && <>{note.evidenceScope}<br/></>}{note.sourceUrl && <a href={note.sourceUrl} target="_blank" rel="noreferrer">Source</a>}</SourceInfo>
     : null;
   return <li className="association-note">
     <div className="association-note-head"><span lang="zh-CN">{simplified}</span><span aria-hidden="true">↔</span><span lang="zh-CN" className="traditional-character">{traditional}</span><span className="association-note-kind">{classificationLabel(note.classification)}</span></div>
     <div className="association-note-summary">
       {contextual && <p className="association-note-caveat">Possible correspondence, not an automatic replacement.</p>}
       <button type="button" className="association-note-toggle" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(value => !value)}>Spelling notes<ChevronDown aria-hidden="true" className={open ? 'is-open' : undefined}/></button>
+      {hint}
     </div>
     {open && <div className="association-note-details" id={panelId}>
       <p className="association-note-text">{note.explanation}</p>
@@ -187,7 +192,6 @@ function AssociationNoteRow({ simplified, traditional, note }: { simplified: str
               <tbody>{rows.map((row, index) => <tr key={index}><td lang="zh-CN">{row.simplified}</td><td lang="zh-CN" className="traditional-character">{row.traditional}</td>{rows.some(item => item.note) && <td>{row.note ?? ''}</td>}</tr>)}</tbody></table>
           : <p>{note.example}</p>}
       </div>}
-      {footnote}
     </div>}
   </li>;
 }
