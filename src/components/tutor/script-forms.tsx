@@ -2,7 +2,7 @@ import { useId, useState, type CSSProperties } from 'react';
 import { openDetailsHint, practiceHint, switchFormHint } from '@/lib/tile-hints';
 import { formSwitchColumns } from '@/lib/form-switch-columns';
 import { Link } from '@tanstack/react-router';
-import { ChevronDown } from 'lucide-react';
+import { ArrowLeftRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SourceInfo } from '@/components/tutor/source-info';
 import { associationNote, characterVariants, CONTEXT_DEPENDENT, relatedGroup, scriptGroup, type AssociationNote } from '@/lib/character-variants';
@@ -210,7 +210,7 @@ export function RelatedWrittenForms({ glyph, kind = 'Characters' }: { glyph: str
     ? entry.script === 'Traditional' ? 'Traditional' : 'Simplified'
     : entry.script === 'Traditional' ? 'Traditional' : entry.script === 'Simplified' ? 'Simplified' : 'Shared form';
   return <div className="radical-family-section script-forms related-forms">
-    <h3 className="eyebrow flex-wrap"><span>RELATED CHARACTERS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
+    <h3 className="eyebrow flex-wrap"><ArrowLeftRight size={13} aria-hidden="true"/><span>RELATED CHARACTERS</span><SourceInfo inline className="detail-footnote">These forms correspond only for some meanings, so each keeps its own card, reading, meaning, strokes and rank.<br/>Simplified ↔ traditional links · {VARIANT_LINK_SOURCE}</SourceInfo></h3>
     <div className="radical-form-list" role="group" aria-label={`Related characters of ${glyph}`}>
       {forms.map(entry => {
         const selected = entry.hanzi === glyph;
