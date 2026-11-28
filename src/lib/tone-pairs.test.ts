@@ -5,11 +5,27 @@ import { describe, expect, it } from 'vitest';
 import data from '@/data/pinyin/tone-pairs.json';
 import { vocabularyData } from './data-contract';
 import inventory from '@/data/pinyin/inventory.json';
-import { FIRST_TONES, SECOND_TONES, matrixPairOrder, nextExample, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged, validateToneChangesSearch, validateTonePairsSearch, type TonePairData } from './tone-pairs';
+import { FIRST_TONES, SECOND_TONES, matrixPairOrder, nextExample, pairLabel, pairPool, rulePool, resolveToneRule, selectedExample, toneLabel, tonesChanged, validateToneChangesSearch, validateTonePairsSearch, type TonePairData } from './tone-pairs';
 
 const tp = data as unknown as TonePairData;
 
 describe('tone pair matrix', () => {
+  it('separates 一 1 → 2 examples from 1 → 4 using recorded expected tones', () => {
+    expect(rulePool(tp, 'yi-2').map(e => e.headword)).toEqual(['一共', '一定']);
+    expect(rulePool(tp, 'yi-4').map(e => e.headword)).toEqual(['一些', '一直', '一起']);
+    expect(rulePool(tp, 'yi-2').every(e => e.citationTones[0] === 1 && e.expectedSpokenTones[0] === 2)).toBe(true);
+    expect(rulePool(tp, 'yi-4').every(e => e.citationTones[0] === 1 && e.expectedSpokenTones[0] === 4)).toBe(true);
+  });
+  it('restores old 一 links into the case of their exact recorded example', () => {
+    const rising = tp.examples.find(e => e.headword === '一定');
+    const falling = tp.examples.find(e => e.headword === '一起');
+    if (!rising || !falling) throw new Error('Missing exact 一 fixtures');
+    expect(resolveToneRule(tp, 'yi', rising.id)).toBe('yi-2');
+    expect(resolveToneRule(tp, 'yi', falling.id)).toBe('yi-4');
+    expect(resolveToneRule(tp, 'yi')).toBe('yi-4');
+    expect(validateToneChangesSearch({ rule: 'yi-2' })).toEqual({ rule: 'yi-2' });
+    expect(validateToneChangesSearch({ rule: 'yi-4' })).toEqual({ rule: 'yi-4' });
+  });
   it('has two recorded words in each of the 20 cells (first tone 1–4, second 1–4 or neutral)', () => {
     for (const a of FIRST_TONES) for (const b of SECOND_TONES) expect(pairPool(tp, `${a}-${b}`)).toHaveLength(2);
     expect(tp.examples.filter(e => e.inPairMatrix)).toHaveLength(40);

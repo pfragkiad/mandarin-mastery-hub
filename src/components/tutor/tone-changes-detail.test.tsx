@@ -48,19 +48,19 @@ describe('Tone changes shared detail navigation', () => {
     const onChange = vi.fn();
     render(<ToneSoundsPage mode="changes" search={{ rule: 'third' }} onChange={onChange}/>);
     fireEvent.click(await screen.findByRole('button', { name: 'Next tone change in this list' }));
-    expect(onChange).toHaveBeenCalledWith({ rule: 'yi', example: undefined, closed: undefined });
+    expect(onChange).toHaveBeenCalledWith({ rule: 'yi-2', example: undefined, closed: undefined });
   });
 
-  it.each(['yi', 'bu'] as const)('keeps the current %s rule and exact example when closing and reopening', async rule => {
+  it.each(['yi-2', 'yi-4', 'bu'] as const)('keeps the current %s rule and exact example when closing and reopening', async rule => {
     const onChange = vi.fn();
-    const row = rulePool(data as unknown as TonePairData, rule)[1];
+    const row = rulePool(data as unknown as TonePairData, rule)[0];
     if (!row) throw new Error(`Missing ${rule} example fixture`);
     const view = render(<ToneSoundsPage mode="changes" search={{ rule, example: row.id }} onChange={onChange}/>);
     fireEvent.click(await screen.findByRole('button', { name: 'Close and show card in list' }));
     expect(onChange).toHaveBeenCalledWith({ rule, closed: true }, true);
     view.rerender(<ToneSoundsPage mode="changes" search={{ rule, example: row.id, closed: true }} onChange={onChange}/>);
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    const selectedRule = screen.getByRole('button', { name: rule === 'yi' ? /The tone of 一/ : /The tone of 不/ });
+    const selectedRule = screen.getByRole('button', { name: rule === 'yi-2' ? /The tone of 一 · 1 → 2/ : rule === 'yi-4' ? /The tone of 一 · 1 → 4/ : /The tone of 不/ });
     expect(selectedRule).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('button', { name: /Two third tones/ })).toHaveAttribute('aria-pressed', 'false');
     fireEvent.click(selectedRule);
@@ -80,8 +80,8 @@ describe('Tone changes shared detail navigation', () => {
     detailTrail.replace({ label: 'Old word', href: '/vocabulary?word=old' });
     const onPick = vi.fn();
     render(<RuleList rule="third" onPick={onPick}/>);
-    fireEvent.click(screen.getByRole('button', { name: /The tone of 一/ }));
-    expect(onPick).toHaveBeenCalledWith('yi');
+    fireEvent.click(screen.getByRole('button', { name: /The tone of 一 · 1 → 2/ }));
+    expect(onPick).toHaveBeenCalledWith('yi-2');
     expect(detailTrail.get()).toEqual([]);
   });
 

@@ -16,7 +16,7 @@
  */
 
 export type PairTone = 1 | 2 | 3 | 4 | 5;
-export type ToneRule = 'third' | 'yi' | 'bu';
+export type ToneRule = 'third' | 'yi' | 'yi-2' | 'yi-4' | 'bu';
 export type TonePairExample = {
   id: string; sourceFileIds: string[]; headword: string; sourceReading: string;
   citationSyllables: string[]; citationTones: PairTone[];
@@ -37,17 +37,19 @@ export const SECOND_TONES = [1, 2, 3, 4, 5] as const;
 export const DEFAULT_PAIR = '3-3';
 export const DEFAULT_RULE: ToneRule = 'third';
 
-/** Authored teaching copy for the three tone-change focus areas (from the owner's prototype). */
+/** Separate display cases retain the source rule and exact expected-tone metadata. */
 export const TONE_RULES: Record<ToneRule, { symbol: string; hanzi: boolean; title: string; short: string; description: string; detail: string }> = {
   third: { symbol: '3 + 3', hanzi: false, title: 'Two third tones', short: '3 + 3 becomes 2 + 3', description: 'The first third tone takes a rising form before another third tone.', detail: 'Listen for the first syllable rising into the second. Its dictionary identity stays third tone.' },
   yi: { symbol: '一', hanzi: true, title: 'The tone of 一', short: '1 becomes 2 or 4', description: 'Usually yí before tone 4; yì before tones 1, 2 and 3.', detail: 'These examples illustrate common contextual readings of 一. Counting and ordinal uses can retain yī.' },
+  'yi-2': { symbol: '一', hanzi: true, title: 'The tone of 一 · 1 → 2', short: '1 becomes 2', description: 'Usually yí before tone 4.', detail: 'Before a fourth tone, 一 is usually spoken with tone 2. Counting and ordinal uses can retain yī.' },
+  'yi-4': { symbol: '一', hanzi: true, title: 'The tone of 一 · 1 → 4', short: '1 becomes 4', description: 'Usually yì before tones 1, 2 and 3.', detail: 'Before tones 1, 2 and 3, 一 is usually spoken with tone 4. Counting and ordinal uses can retain yī.' },
   bu: { symbol: '不', hanzi: true, title: 'The tone of 不', short: '4 + 4 becomes 2 + 4', description: 'Usually bú before another fourth tone; bù before other full tones.', detail: 'Compare 不要 and 不错 with 不行. The word’s source reading remains attached to its whole-word recording.' },
 };
-export const RULE_ORDER: ToneRule[] = ['third', 'yi', 'bu'];
+export const RULE_ORDER: ToneRule[] = ['third', 'yi-2', 'yi-4', 'bu'];
 
 const PAIR_RE = /^[1-4]-[1-5]$/;
 export const isPair = (value: unknown): value is string => typeof value === 'string' && PAIR_RE.test(value);
-export const isRule = (value: unknown): value is ToneRule => value === 'third' || value === 'yi' || value === 'bu';
+export const isRule = (value: unknown): value is ToneRule => value === 'third' || value === 'yi' || value === 'yi-2' || value === 'yi-4' || value === 'bu';
 
 export type ToneSoundsSearch = { example?: string | undefined; listen?: true | undefined };
 export type TonePairsSearch = ToneSoundsSearch & { pair?: string | undefined };
@@ -90,7 +92,17 @@ export function matrixPairOrder(hasExamples: (pair: string) => boolean): string[
   return keys;
 }
 /** Examples for one tone change: the two 3 + 3 matrix words, or the 一 / 不 sets. */
-export const rulePool = (data: Pick<TonePairData, 'examples'>, rule: ToneRule) => data.examples.filter(e => e.rule === rule);
+export const rulePool = (data: Pick<TonePairData, 'examples'>, rule: ToneRule) => data.examples.filter(e => {
+  if (rule === 'yi-2' || rule === 'yi-4') return e.rule === 'yi' && e.citationTones[0] === 1 && e.expectedSpokenTones[0] === (rule === 'yi-2' ? 2 : 4);
+  return e.rule === rule;
+});
+/** Existing rule=yi links resolve through their exact example's recorded draft,
+ * never a headword/reading guess. The original default example belongs to 1 → 4. */
+export function resolveToneRule(data: Pick<TonePairData, 'examples'> | null, rule: ToneRule, example?: string): ToneRule {
+  if (rule !== 'yi') return rule;
+  const recorded = data?.examples.find(row => row.rule === 'yi' && row.id === example);
+  return recorded?.expectedSpokenTones[0] === 2 ? 'yi-2' : 'yi-4';
+}
 /** The URL's exact example when it belongs to this pool, otherwise the pool's first word. */
 export const selectedExample = (pool: readonly TonePairExample[], id: string | undefined) => pool.find(e => e.id === id) ?? pool[0] ?? null;
 /** Next word in the pool, wrapping round (Next word never plays by itself). */

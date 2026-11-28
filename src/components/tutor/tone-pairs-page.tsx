@@ -32,7 +32,7 @@ import { usePublishSections } from '@/lib/section-switch';
 import { hasRecording, loadPinyinData, recordingFor, soundId, toneMark, type PinyinData, type Tone } from '@/lib/pinyin-guide';
 import {
   DEFAULT_PAIR, DEFAULT_RULE, FIRST_TONES, RULE_ORDER, SECOND_TONES, TONE_RULES,
-  loadTonePairs, matrixPairOrder, pairLabel, pairPool, rulePool, selectedExample, toneLabel, tonesChanged,
+  loadTonePairs, matrixPairOrder, pairLabel, pairPool, rulePool, resolveToneRule, selectedExample, toneLabel, tonesChanged,
   type TonePairData, type TonePairExample, type ToneRule, type ToneChangesSearch, type TonePairsSearch,
 } from '@/lib/tone-pairs';
 import { SourceInfo } from './source-info';
@@ -111,7 +111,7 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
   const chipStop = useRef(chipPlayer.stop);
   chipStop.current = chipPlayer.stop;
   const pair = search.pair ?? DEFAULT_PAIR;
-  const rule = search.rule ?? DEFAULT_RULE;
+  const rule = resolveToneRule(data, search.rule ?? DEFAULT_RULE, search.example);
   const pool = useMemo(() => data ? toneExamplesByHsk(mode === 'pairs' ? pairPool(data, pair) : rulePool(data, rule), vocabularyWords) : [], [data, mode, pair, rule]);
   const row = selectedExample(pool, search.example);
   /* The window's middle-top ‹ › walk the matrix cells themselves, in the grid's reading order
@@ -211,8 +211,8 @@ export function ToneSoundsPage({ mode, search, onChange }: { mode: ToneSoundsMod
             skipping example changes within this same tone-pair window. */}
         {detailOpen && <DetailSheet open title={row.headword} label={row.headword}
           position={groupIndex} total={groupOrder.length} neighbourLabel={mode === 'pairs' ? 'tone pair' : 'tone change'}
-          neighbourKind="text" previousLabel={previousGroup ? (mode === 'pairs' ? pairLabel(previousGroup) : TONE_RULES[ruleOrder[groupIndex - 1] ?? DEFAULT_RULE].symbol) : undefined}
-          nextLabel={nextGroup ? (mode === 'pairs' ? pairLabel(nextGroup) : TONE_RULES[ruleOrder[groupIndex + 1] ?? DEFAULT_RULE].symbol) : undefined}
+          neighbourKind="text" previousLabel={previousGroup ? (mode === 'pairs' ? pairLabel(previousGroup) : TONE_RULES[ruleOrder[groupIndex - 1] ?? DEFAULT_RULE].short) : undefined}
+          nextLabel={nextGroup ? (mode === 'pairs' ? pairLabel(nextGroup) : TONE_RULES[ruleOrder[groupIndex + 1] ?? DEFAULT_RULE].short) : undefined}
           onPrevious={previousGroup ? () => pickGroup(previousGroup) : undefined}
           onNext={nextGroup ? () => pickGroup(nextGroup) : undefined}
           onClose={() => { stop(); onChange(mode === 'pairs' ? { pair: undefined, example: undefined } : { rule, closed: true }, true); }}>
@@ -268,10 +268,10 @@ export function PairMatrix({ data, pair, hidden, onPick }: { data: TonePairData;
   </section>;
 }
 
-/** The three tone-change focus areas. */
+/** Four focus cards: the two 一 changes have independent exact-example pools. */
 export function RuleList({ rule, onPick }: { rule: ToneRule; onPick: (rule: ToneRule) => void }) {
   return <section className="tone-rule-section" aria-label="Tone changes">
-    <h2 className="pinyin-group-title">Common tone changes <span>3 focus areas</span></h2>
+    <h2 className="pinyin-group-title">Common tone changes <span>4 focus areas</span></h2>
     <div className="tone-rule-list">
       {RULE_ORDER.map(id => { const r = TONE_RULES[id]; return <button key={id} type="button" className={`tone-rule${rule === id ? ' is-selected' : ''}`} aria-pressed={rule === id} onClick={() => { detailTrail.clear(); onPick(id); }}>
         <span className="tone-rule-symbol" lang={r.hanzi ? 'zh-CN' : undefined}>{r.symbol}</span>
